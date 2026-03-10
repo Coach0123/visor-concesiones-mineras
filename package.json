@@ -1,0 +1,29 @@
+{
+  "name": "visor-concesiones-mineras",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Coach0123/visor-concesiones-mineras.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Coach0123/visor-concesiones-mineras/issues"
+  },
+  "homepage": "https://github.com/Coach0123/visor-concesiones-mineras#readme",
+  "dependencies": {
+    "adm-zip": "^0.5.16",
+    "express": "^5.2.1",
+    "fs-extra": "^11.3.4",
+    "node-fetch": "^2.7.0",
+    "shapefile": "^0.6.6",
+    "shpjs": "^6.2.0"
+  }
+}

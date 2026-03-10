@@ -1,0 +1,13 @@
+node_modules/
+data/
+temp_*
+extract_*
+*.zip
+*.shp
+*.dbf
+*.shx
+*.prj
+*.sbn
+*.sbx
+package-lock.json
+.DS_Store
