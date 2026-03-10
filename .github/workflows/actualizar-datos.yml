@@ -1,35 +1,24 @@
-name: Actualizar Datos Shapefile
+name: Actualizar Datos
 
 on:
   schedule:
-    # Ejecutar a las 11 PM UTC (6 PM Perú)
     - cron: '0 23 * * *'
-  workflow_dispatch: # Permite ejecución manual
+  workflow_dispatch:
 
 jobs:
-  actualizar-shapefiles:
+  actualizar:
     runs-on: ubuntu-latest
-    
     steps:
-    - name: Checkout repositorio
-      uses: actions/checkout@v4  # Actualizado a v4
-      
-    - name: Configurar Node.js
-      uses: actions/setup-node@v4  # Actualizado a v4
-      with:
-        node-version: '18'
-        
-    - name: Instalar dependencias
-      run: npm install adm-zip fs-extra node-fetch shapefile
-      
-    - name: Ejecutar script de actualización
-      run: node scripts/actualizar-shapefiles.js
-      
-    - name: Forzar adición de archivos ignorados y commit
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        # Forzar la adición de la carpeta data aunque esté en .gitignore
-        git add -f data/
-        git diff --quiet && git diff --staged --quiet || git commit -m "Actualización automática de shapefiles $(date +'%d%m%y')"
-        git push
+      - uses: actions/checkout@v4  # Actualizado a v4
+      - uses: actions/setup-node@v4  # Actualizado a v4
+        with:
+          node-version: '18'
+      - run: npm install adm-zip fs-extra node-fetch shapefile
+      - run: node scripts/actualizar-shapefiles.js
+      - run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          # FORZAR la adición de archivos aunque estén en .gitignore
+          git add -f data/
+          git diff --quiet && git diff --staged --quiet || git commit -m "Actualización automática $(date +'%d%m%y')"
+          git push
