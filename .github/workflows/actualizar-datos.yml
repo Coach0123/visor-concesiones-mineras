@@ -1,24 +1,37 @@
-name: Actualizar Datos
+name: Actualizar Datos Mineros
 
 on:
   schedule:
-    - cron: '0 23 * * *'
+    # Ejecutar a las 01, 06, 11, 16, 21 UTC (que son 20, 01, 06, 11, 16 en Perú)
+    - cron: '0 1 * * *'   # 01 UTC = 20 Perú (día anterior)
+    - cron: '0 6 * * *'   # 06 UTC = 01 Perú
+    - cron: '0 11 * * *'  # 11 UTC = 06 Perú
+    - cron: '0 16 * * *'  # 16 UTC = 11 Perú
+    - cron: '0 21 * * *'  # 21 UTC = 16 Perú
   workflow_dispatch:
 
 jobs:
   actualizar:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4  # Actualizado a v4
-      - uses: actions/setup-node@v4  # Actualizado a v4
+      - name: Checkout repositorio
+        uses: actions/checkout@v4
+        
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: '18'
-      - run: npm install adm-zip fs-extra node-fetch shapefile
-      - run: node scripts/actualizar-shapefiles.js
-      - run: |
+          
+      - name: Instalar dependencias
+        run: npm install adm-zip fs-extra node-fetch shapefile
+        
+      - name: Ejecutar script de actualización
+        run: node scripts/actualizar-shapefiles.js
+        
+      - name: Forzar subida de archivos
+        run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          # FORZAR la adición de archivos aunque estén en .gitignore
           git add -f data/
-          git diff --quiet && git diff --staged --quiet || git commit -m "Actualización automática $(date +'%d%m%y')"
+          git diff --quiet && git diff --staged --quiet || git commit -m "Actualización automática $(date +'%d%m%y_%H')"
           git push
