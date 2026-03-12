@@ -2,21 +2,30 @@ name: Actualizar Datos Mineros
 
 on:
   schedule:
-    # Ejecutar a las 01, 06, 11, 16, 21 UTC (que son 20, 01, 06, 11, 16 en Perú)
-    - cron: '0 1 * * *'   # 01 UTC = 20 Perú (día anterior)
-    - cron: '0 6 * * *'   # 06 UTC = 01 Perú
-    - cron: '0 11 * * *'  # 11 UTC = 06 Perú
-    - cron: '0 16 * * *'  # 16 UTC = 11 Perú
-    - cron: '0 21 * * *'  # 21 UTC = 16 Perú
+    - cron: '0 1 * * *'   # 01 UTC
+    - cron: '0 6 * * *'   # 06 UTC
+    - cron: '0 11 * * *'  # 11 UTC
+    - cron: '0 16 * * *'  # 16 UTC
+    - cron: '0 21 * * *'  # 21 UTC
   workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   actualizar:
     runs-on: ubuntu-latest
+    # Permisos necesarios para hacer push
+    permissions:
+      contents: write
+      
     steps:
       - name: Checkout repositorio
         uses: actions/checkout@v4
-        
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+          
       - name: Configurar Node.js
         uses: actions/setup-node@v4
         with:
@@ -28,10 +37,30 @@ jobs:
       - name: Ejecutar script de actualización
         run: node scripts/actualizar-shapefiles.js
         
-      - name: Forzar subida de archivos
+      - name: Verificar cambios y subir
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          
+          # Forzar adición de archivos nuevos/modificados
           git add -f data/
-          git diff --quiet && git diff --staged --quiet || git commit -m "Actualización automática $(date +'%d%m%y_%H')"
+          
+          # Verificar si hay cambios
+          if git diff --cached --quiet; then
+            echo "✅ No hay cambios nuevos. Saliendo sin errores."
+            exit 0
+          fi
+          
+          # Mostrar qué archivos se van a commitear
+          echo "📦 Archivos a commitear:"
+          git diff --cached --name-only
+          
+          # Hacer commit
+          git commit -m "Actualización automática $(date +'%d%m%y_%H%M')"
+          
+          # Hacer push (con reintentos)
+          echo "🚀 Subiendo cambios..."
+          git pull --rebase origin main
           git push
+          
+          echo "✅ Cambios subidos exitosamente"
