@@ -84,7 +84,7 @@ function obtenerHorariosActuales() {
     const horarioAnterior = indexActual > 0 ? horarios[indexActual - 1] : horarios[horarios.length - 1];
     
     console.log(`Hora Perú: ${horaPeru}:${minutoUTC.toString().padStart(2, '0')}`);
-    console.log(`Cargando horarios: ${horarioAnterior} y ${horarioActual}`);
+    console.log(`Horarios sugeridos: ${horarioAnterior} y ${horarioActual}`);
     
     return { actual: horarioActual, anterior: horarioAnterior };
 }
@@ -119,68 +119,78 @@ async function cargarDatos() {
         console.log('No hay cambios para colorear');
     }
 
+    // Lista completa de horarios posibles en orden de prioridad
+    const horariosPrioritarios = [
+        horarios.actual,           // Primero el actual
+        horarios.anterior,         // Segundo el anterior
+        '22', '20', '18', '16', '14', '12', '10', '08', '06', '04', '02', '00' // Luego todos en orden descendente
+    ];
+
     for (const zona of zonas) {
-        try {
-            const archivoActual = `${baseURL}/data/${zona}_${fechaStr}_${horarios.actual}.geojson`;
-            const archivoAnterior = `${baseURL}/data/${zona}_${fechaStr}_${horarios.anterior}.geojson`;
+        let datosCargados = null;
+        let horarioCargado = null;
+        
+        // Probar cada horario hasta encontrar uno que exista
+        for (const horario of horariosPrioritarios) {
+            const url = `${baseURL}/data/${zona}_${fechaStr}_${horario}.geojson`;
             
-            console.log(`Buscando: ${archivoActual}`);
-            
-            let response = await fetch(archivoActual);
-            let datos, horarioCargado = horarios.actual;
-            
-            if (!response.ok) {
-                console.log(`No encontrado, intentando: ${archivoAnterior}`);
-                response = await fetch(archivoAnterior);
-                horarioCargado = horarios.anterior;
+            try {
+                const response = await fetch(url);
+                if (response.ok) {
+                    datosCargados = await response.json();
+                    horarioCargado = horario;
+                    console.log(`✅ ${zona} cargado con horario ${horario}`);
+                    break;
+                }
+            } catch (e) {
+                // Ignorar errores de red
             }
+        }
+        
+        if (datosCargados && horarioCargado) {
+            console.log(`${zona}: ${datosCargados.features.length} polígonos`);
             
-            if (response.ok) {
-                datos = await response.json();
-                console.log(`${zona}: ${datos.features.length} polígonos (horario ${horarioCargado})`);
-                
-                const getColor = (codigo) => {
-                    if (cambiosMap.has(codigo)) {
-                        const tipo = cambiosMap.get(codigo);
-                        return tipo === 'aparece' ? '#4444ff' : '#ff4444';
-                    }
-                    return '#888888';
-                };
-                
-                const capa = L.geoJSON(datos, {
-                    coordsToLatLng: (coords) => {
-                        const [lat, lon] = convertirUTM_A_WGS84(coords[0], coords[1], zona);
-                        return L.latLng(lat, lon);
-                    },
-                    style: (feature) => {
-                        const codigo = feature.properties.CODIGOU;
-                        return {
-                            color: getColor(codigo),
-                            weight: 1,
-                            opacity: 0.7,
-                            fillOpacity: 0.3
-                        };
-                    },
-                    onEachFeature: (feature, layer) => {
-                        layer.on('click', () => {
-                            cerrarPopup();
-                            const props = feature.properties;
-                            
-                            document.getElementById('info-codigo').textContent = corregirTexto(props.CODIGOU);
-                            document.getElementById('info-fecha').textContent = corregirTexto(props.FEC_DENU);
-                            document.getElementById('info-concesion').textContent = corregirTexto(props.CONCESION);
-                            document.getElementById('info-titular').textContent = corregirTexto(props.TIT_CONCES);
-                            
-                            document.getElementById('info-popup').style.display = 'block';
-                            popupAbierto = true;
-                        });
-                    }
-                }).addTo(map);
-                
-                capas[zona] = capa;
-            }
-        } catch (error) {
-            console.error(`Error en ${zona}:`, error);
+            const getColor = (codigo) => {
+                if (cambiosMap.has(codigo)) {
+                    const tipo = cambiosMap.get(codigo);
+                    return tipo === 'aparece' ? '#4444ff' : '#ff4444';
+                }
+                return '#888888';
+            };
+            
+            const capa = L.geoJSON(datosCargados, {
+                coordsToLatLng: (coords) => {
+                    const [lat, lon] = convertirUTM_A_WGS84(coords[0], coords[1], zona);
+                    return L.latLng(lat, lon);
+                },
+                style: (feature) => {
+                    const codigo = feature.properties.CODIGOU;
+                    return {
+                        color: getColor(codigo),
+                        weight: 1,
+                        opacity: 0.7,
+                        fillOpacity: 0.3
+                    };
+                },
+                onEachFeature: (feature, layer) => {
+                    layer.on('click', () => {
+                        cerrarPopup();
+                        const props = feature.properties;
+                        
+                        document.getElementById('info-codigo').textContent = corregirTexto(props.CODIGOU);
+                        document.getElementById('info-fecha').textContent = corregirTexto(props.FEC_DENU);
+                        document.getElementById('info-concesion').textContent = corregirTexto(props.CONCESION);
+                        document.getElementById('info-titular').textContent = corregirTexto(props.TIT_CONCES);
+                        
+                        document.getElementById('info-popup').style.display = 'block';
+                        popupAbierto = true;
+                    });
+                }
+            }).addTo(map);
+            
+            capas[zona] = capa;
+        } else {
+            console.error(`❌ No se encontró ningún archivo para la zona ${zona}`);
         }
     }
 }
@@ -220,56 +230,38 @@ async function buscarConcesion() {
     console.log(`🔍 Buscando: "${texto}"`);
     const resultados = [];
     
+    // Lista de horarios a buscar (los mismos que usa cargarDatos)
+    const horariosBusqueda = [
+        horarios.actual,
+        horarios.anterior,
+        '22', '20', '18', '16', '14', '12', '10', '08', '06', '04', '02', '00'
+    ];
+    
     for (const zona of zonas) {
-        // Intentar con horario actual
-        try {
-            const response = await fetch(`${baseURL}/data/${zona}_${fechaStr}_${horarios.actual}.geojson`);
-            if (response.ok) {
-                const datos = await response.json();
-                console.log(`📁 Buscando en: ${zona}_${fechaStr}_${horarios.actual}.geojson`);
-                
-                datos.features.forEach(feature => {
-                    const props = feature.properties;
-                    const concesion = (props.CONCESION || '').toLowerCase();
-                    const titular = (props.TIT_CONCES || '').toLowerCase();
-                    const codigo = (props.CODIGOU || '').toLowerCase();
+        for (const horario of horariosBusqueda) {
+            try {
+                const response = await fetch(`${baseURL}/data/${zona}_${fechaStr}_${horario}.geojson`);
+                if (response.ok) {
+                    const datos = await response.json();
                     
-                    if (concesion.includes(texto) || titular.includes(texto) || codigo.includes(texto)) {
-                        resultados.push({
-                            ...feature,
-                            zona,
-                            nombre: props.CONCESION || 'Sin nombre',
-                            titular: props.TIT_CONCES || 'Sin titular'
-                        });
-                    }
-                });
-            }
-        } catch (error) {}
-        
-        // Intentar con horario anterior
-        try {
-            const response = await fetch(`${baseURL}/data/${zona}_${fechaStr}_${horarios.anterior}.geojson`);
-            if (response.ok) {
-                const datos = await response.json();
-                console.log(`📁 Buscando en: ${zona}_${fechaStr}_${horarios.anterior}.geojson`);
-                
-                datos.features.forEach(feature => {
-                    const props = feature.properties;
-                    const concesion = (props.CONCESION || '').toLowerCase();
-                    const titular = (props.TIT_CONCES || '').toLowerCase();
-                    const codigo = (props.CODIGOU || '').toLowerCase();
-                    
-                    if (concesion.includes(texto) || titular.includes(texto) || codigo.includes(texto)) {
-                        resultados.push({
-                            ...feature,
-                            zona,
-                            nombre: props.CONCESION || 'Sin nombre',
-                            titular: props.TIT_CONCES || 'Sin titular'
-                        });
-                    }
-                });
-            }
-        } catch (error) {}
+                    datos.features.forEach(feature => {
+                        const props = feature.properties;
+                        const concesion = (props.CONCESION || '').toLowerCase();
+                        const titular = (props.TIT_CONCES || '').toLowerCase();
+                        const codigo = (props.CODIGOU || '').toLowerCase();
+                        
+                        if (concesion.includes(texto) || titular.includes(texto) || codigo.includes(texto)) {
+                            resultados.push({
+                                ...feature,
+                                zona,
+                                nombre: props.CONCESION || 'Sin nombre',
+                                titular: props.TIT_CONCES || 'Sin titular'
+                            });
+                        }
+                    });
+                }
+            } catch (error) {}
+        }
     }
     
     const div = document.getElementById('resultados-busqueda');
