@@ -2,6 +2,7 @@
 let map;
 let capas = {};
 let popupAbierto = false;
+let todosLosDatos = []; // Almacenar todos los datos para búsqueda global
 
 // Función para corregir caracteres especiales
 function corregirTexto(texto) {
@@ -65,14 +66,14 @@ function obtenerHorariosActuales() {
     const minutoUTC = ahora.getUTCMinutes();
     const horaPeru = (horaUTC - 5 + 24) % 24;
     
-    // Horarios disponibles (cada 2 horas)
+    // Horarios disponibles (cada hora)
     const horarios = [];
-    for (let i = 0; i < 24; i += 2) {
+    for (let i = 0; i < 24; i++) {
         horarios.push(i.toString().padStart(2, '0'));
     }
     
     // Determinar horario actual (el más reciente)
-    let horarioActual = '22';
+    let horarioActual = '23';
     for (let i = horarios.length - 1; i >= 0; i--) {
         if (horaUTC >= parseInt(horarios[i])) {
             horarioActual = horarios[i];
@@ -119,12 +120,11 @@ async function cargarDatos() {
         console.log('No hay cambios para colorear');
     }
 
-    // Lista completa de horarios posibles en orden de prioridad
-    const horariosPrioritarios = [
-        horarios.actual,           // Primero el actual
-        horarios.anterior,         // Segundo el anterior
-        '22', '20', '18', '16', '14', '12', '10', '08', '06', '04', '02', '00' // Luego todos en orden descendente
-    ];
+    // Lista completa de horarios posibles en orden de prioridad (todos)
+    const horariosPrioritarios = [];
+    for (let i = 23; i >= 0; i--) {
+        horariosPrioritarios.push(i.toString().padStart(2, '0'));
+    }
 
     for (const zona of zonas) {
         let datosCargados = null;
@@ -149,6 +149,13 @@ async function cargarDatos() {
         
         if (datosCargados && horarioCargado) {
             console.log(`${zona}: ${datosCargados.features.length} polígonos`);
+            
+            // Almacenar todos los datos para búsqueda global
+            todosLosDatos.push({
+                zona: zona,
+                horario: horarioCargado,
+                features: datosCargados.features
+            });
             
             const getColor = (codigo) => {
                 if (cambiosMap.has(codigo)) {
@@ -208,7 +215,7 @@ async function cargarCambios() {
                 return;
             }
             
-            cambios.slice(-10).reverse().forEach(c => {
+            cambios.slice(-20).reverse().forEach(c => {
                 const item = document.createElement('div');
                 item.className = `cambio-item ${c.tipo}`;
                 item.innerHTML = `<strong>${corregirTexto(c.nombre)}</strong><br><small>${c.tipo} - ${c.fecha}</small>`;
@@ -230,37 +237,22 @@ async function buscarConcesion() {
     console.log(`🔍 Buscando: "${texto}"`);
     const resultados = [];
     
-    // Lista de horarios a buscar (los mismos que usa cargarDatos)
-    const horariosBusqueda = [
-        horarios.actual,
-        horarios.anterior,
-        '22', '20', '18', '16', '14', '12', '10', '08', '06', '04', '02', '00'
-    ];
-    
-    for (const zona of zonas) {
-        for (const horario of horariosBusqueda) {
-            try {
-                const response = await fetch(`${baseURL}/data/${zona}_${fechaStr}_${horario}.geojson`);
-                if (response.ok) {
-                    const datos = await response.json();
-                    
-                    datos.features.forEach(feature => {
-                        const props = feature.properties;
-                        const concesion = (props.CONCESION || '').toLowerCase();
-                        const titular = (props.TIT_CONCES || '').toLowerCase();
-                        const codigo = (props.CODIGOU || '').toLowerCase();
-                        
-                        if (concesion.includes(texto) || titular.includes(texto) || codigo.includes(texto)) {
-                            resultados.push({
-                                ...feature,
-                                zona,
-                                nombre: props.CONCESION || 'Sin nombre',
-                                titular: props.TIT_CONCES || 'Sin titular'
-                            });
-                        }
-                    });
-                }
-            } catch (error) {}
+    // Buscar en todos los datos almacenados
+    for (const zonaData of todosLosDatos) {
+        for (const feature of zonaData.features) {
+            const props = feature.properties;
+            const concesion = (props.CONCESION || '').toLowerCase();
+            const titular = (props.TIT_CONCES || '').toLowerCase();
+            const codigo = (props.CODIGOU || '').toLowerCase();
+            
+            if (concesion.includes(texto) || titular.includes(texto) || codigo.includes(texto)) {
+                resultados.push({
+                    ...feature,
+                    zona: zonaData.zona,
+                    nombre: props.CONCESION || 'Sin nombre',
+                    titular: props.TIT_CONCES || 'Sin titular'
+                });
+            }
         }
     }
     
@@ -284,7 +276,7 @@ async function buscarConcesion() {
     
     console.log(`✅ ${unicos.length} resultados únicos encontrados`);
     
-    unicos.slice(0, 15).forEach(r => {
+    unicos.slice(0, 20).forEach(r => {
         const item = document.createElement('div');
         item.className = 'resultado-item';
         item.textContent = `${corregirTexto(r.nombre)} - ${corregirTexto(r.titular)}`;
