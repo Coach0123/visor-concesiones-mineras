@@ -112,5 +112,101 @@
     "codigo": "080016926",
     "nombre": "TOTOROMA SILVER",
     "tipo": "aparece"
+  },
+  {
+    "fecha": "130326_16",
+    "codigo": "010129726",
+    "nombre": "EL PALTO 2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "130326_16",
+    "codigo": "030024926",
+    "nombre": "CARANTRA MINERALES III",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "130326_16",
+    "codigo": "010129326",
+    "nombre": "HEFEST MINERAL 3",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "130326_16",
+    "codigo": "010129426",
+    "nombre": "HEFEST MINERAL 2",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "130326_16",
+    "codigo": "010129526",
+    "nombre": "HEFEST MINERAL 1",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "130326_16",
+    "codigo": "030024126",
+    "nombre": "LA CUMBRE",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "130326_16",
+    "codigo": "030024226",
+    "nombre": "MILLPO PUNTA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "130326_16",
+    "codigo": "030024326",
+    "nombre": "TERRANOVA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "130326_16",
+    "codigo": "030024426",
+    "nombre": "APU DORADO",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "130326_16",
+    "codigo": "030024526",
+    "nombre": "FORTUNA COOPER",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "130326_16",
+    "codigo": "070009526",
+    "nombre": "TINEAGA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "130326_16",
+    "codigo": "580001726",
+    "nombre": "GRUPO YANACONA 2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "130326_16",
+    "codigo": "030024626",
+    "nombre": "CORONA ANDINA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "130326_16",
+    "codigo": "070009126",
+    "nombre": "SEYNY",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "130326_16",
+    "codigo": "010129626",
+    "nombre": "CAMILA IV",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "130326_16",
+    "codigo": "030024726",
+    "nombre": "GIGANTE DORADO",
+    "tipo": "aparece"
   }
 ]
