@@ -58,7 +58,7 @@ const fechaStr = fechaHoy.toLocaleDateString('es-ES', {
     year: '2-digit'
 }).replace(/\//g, '');
 
-// Obtener hora actual en Perú para determinar qué archivos cargar
+// Obtener hora actual para determinar qué archivos cargar
 function obtenerHorariosActuales() {
     const ahora = new Date();
     const horaUTC = ahora.getUTCHours();
@@ -104,14 +104,13 @@ function initMap() {
 }
 
 async function cargarDatos() {
-    // Cargar cambios primero para saber qué colores aplicar
+    // Cargar cambios para colorear polígonos
     let cambiosMap = new Map();
     try {
         const cambiosResponse = await fetch(`${baseURL}/data/cambios.json`);
         if (cambiosResponse.ok) {
             const cambios = await cambiosResponse.json();
             console.log(`📊 Registros de cambios: ${cambios.length}`);
-            
             cambios.forEach(cambio => {
                 cambiosMap.set(cambio.codigo, cambio.tipo);
             });
@@ -122,7 +121,6 @@ async function cargarDatos() {
 
     for (const zona of zonas) {
         try {
-            // Intentar cargar primero el horario actual, luego el anterior
             const archivoActual = `${baseURL}/data/${zona}_${fechaStr}_${horarios.actual}.geojson`;
             const archivoAnterior = `${baseURL}/data/${zona}_${fechaStr}_${horarios.anterior}.geojson`;
             
@@ -213,29 +211,65 @@ async function cargarCambios() {
 }
 
 async function buscarConcesion() {
-    const texto = document.getElementById('buscador').value.toLowerCase();
-    if (!texto) return;
+    const texto = document.getElementById('buscador').value.trim().toLowerCase();
+    if (!texto) {
+        alert('Ingrese un texto para buscar');
+        return;
+    }
     
+    console.log(`🔍 Buscando: "${texto}"`);
     const resultados = [];
-    const horariosABuscar = [horarios.actual, horarios.anterior];
     
     for (const zona of zonas) {
-        for (const horario of horariosABuscar) {
-            try {
-                const response = await fetch(`${baseURL}/data/${zona}_${fechaStr}_${horario}.geojson`);
-                if (response.ok) {
-                    const datos = await response.json();
-                    datos.features.forEach(feature => {
-                        const props = feature.properties;
-                        if ((props.CODIGOU && props.CODIGOU.toLowerCase().includes(texto)) ||
-                            (props.CONCESION && props.CONCESION.toLowerCase().includes(texto)) ||
-                            (props.TIT_CONCES && props.TIT_CONCES.toLowerCase().includes(texto))) {
-                            resultados.push({...feature, zona, horario});
-                        }
-                    });
-                }
-            } catch (error) {}
-        }
+        // Intentar con horario actual
+        try {
+            const response = await fetch(`${baseURL}/data/${zona}_${fechaStr}_${horarios.actual}.geojson`);
+            if (response.ok) {
+                const datos = await response.json();
+                console.log(`📁 Buscando en: ${zona}_${fechaStr}_${horarios.actual}.geojson`);
+                
+                datos.features.forEach(feature => {
+                    const props = feature.properties;
+                    const concesion = (props.CONCESION || '').toLowerCase();
+                    const titular = (props.TIT_CONCES || '').toLowerCase();
+                    const codigo = (props.CODIGOU || '').toLowerCase();
+                    
+                    if (concesion.includes(texto) || titular.includes(texto) || codigo.includes(texto)) {
+                        resultados.push({
+                            ...feature,
+                            zona,
+                            nombre: props.CONCESION || 'Sin nombre',
+                            titular: props.TIT_CONCES || 'Sin titular'
+                        });
+                    }
+                });
+            }
+        } catch (error) {}
+        
+        // Intentar con horario anterior
+        try {
+            const response = await fetch(`${baseURL}/data/${zona}_${fechaStr}_${horarios.anterior}.geojson`);
+            if (response.ok) {
+                const datos = await response.json();
+                console.log(`📁 Buscando en: ${zona}_${fechaStr}_${horarios.anterior}.geojson`);
+                
+                datos.features.forEach(feature => {
+                    const props = feature.properties;
+                    const concesion = (props.CONCESION || '').toLowerCase();
+                    const titular = (props.TIT_CONCES || '').toLowerCase();
+                    const codigo = (props.CODIGOU || '').toLowerCase();
+                    
+                    if (concesion.includes(texto) || titular.includes(texto) || codigo.includes(texto)) {
+                        resultados.push({
+                            ...feature,
+                            zona,
+                            nombre: props.CONCESION || 'Sin nombre',
+                            titular: props.TIT_CONCES || 'Sin titular'
+                        });
+                    }
+                });
+            }
+        } catch (error) {}
     }
     
     const div = document.getElementById('resultados-busqueda');
@@ -256,10 +290,12 @@ async function buscarConcesion() {
         }
     });
     
-    unicos.slice(0, 10).forEach(r => {
+    console.log(`✅ ${unicos.length} resultados únicos encontrados`);
+    
+    unicos.slice(0, 15).forEach(r => {
         const item = document.createElement('div');
         item.className = 'resultado-item';
-        item.textContent = `${corregirTexto(r.properties.CONCESION)} - ${corregirTexto(r.properties.TIT_CONCES)}`;
+        item.textContent = `${corregirTexto(r.nombre)} - ${corregirTexto(r.titular)}`;
         item.onclick = () => {
             cerrarPopup();
             if (r.geometry.type === 'Polygon') {
@@ -299,6 +335,7 @@ function buscarCoordenadas() {
     }
 }
 
+// Event listeners
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') cerrarPopup();
 });
