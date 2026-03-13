@@ -2,20 +2,16 @@ name: Actualizar Datos Mineros
 
 on:
   schedule:
-    - cron: '0 1 * * *'   # 01 UTC
-    - cron: '0 6 * * *'   # 06 UTC
-    - cron: '0 11 * * *'  # 11 UTC
-    - cron: '0 16 * * *'  # 16 UTC
-    - cron: '0 21 * * *'  # 21 UTC
+    - cron: '0 */2 * * *'
   workflow_dispatch:
 
+# Forzar Node.js 24 para eliminar advertencias
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   actualizar:
     runs-on: ubuntu-latest
-    # Permisos necesarios para hacer push
     permissions:
       contents: write
       
@@ -42,7 +38,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           
-          # Forzar adición de archivos nuevos/modificados
+          # Forzar adición de archivos nuevos
           git add -f data/
           
           # Verificar si hay cambios
@@ -51,15 +47,12 @@ jobs:
             exit 0
           fi
           
-          # Mostrar qué archivos se van a commitear
+          # Mostrar archivos a commitear
           echo "📦 Archivos a commitear:"
           git diff --cached --name-only
           
-          # Hacer commit
+          # Hacer commit y push
           git commit -m "Actualización automática $(date +'%d%m%y_%H%M')"
-          
-          # Hacer push (con reintentos)
-          echo "🚀 Subiendo cambios..."
           git pull --rebase origin main
           git push
           
