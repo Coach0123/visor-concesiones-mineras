@@ -62,15 +62,19 @@ const fechaStr = fechaHoy.toLocaleDateString('es-ES', {
 function obtenerHorariosActuales() {
     const ahora = new Date();
     const horaUTC = ahora.getUTCHours();
+    const minutoUTC = ahora.getUTCMinutes();
     const horaPeru = (horaUTC - 5 + 24) % 24;
     
-    // Horarios disponibles
-    const horarios = ['01', '06', '11', '16', '21'];
+    // Horarios disponibles (cada 2 horas)
+    const horarios = [];
+    for (let i = 0; i < 24; i += 2) {
+        horarios.push(i.toString().padStart(2, '0'));
+    }
     
-    // Determinar horario actual y anterior
-    let horarioActual = '21';
-    for (let i = 0; i < horarios.length; i++) {
-        if (horaPeru <= parseInt(horarios[i])) {
+    // Determinar horario actual (el más reciente)
+    let horarioActual = '22'; // Por defecto
+    for (let i = horarios.length - 1; i >= 0; i--) {
+        if (horaUTC >= parseInt(horarios[i])) {
             horarioActual = horarios[i];
             break;
         }
@@ -79,7 +83,7 @@ function obtenerHorariosActuales() {
     const indexActual = horarios.indexOf(horarioActual);
     const horarioAnterior = indexActual > 0 ? horarios[indexActual - 1] : horarios[horarios.length - 1];
     
-    console.log(`Hora Perú: ${horaPeru}:00`);
+    console.log(`Hora Perú: ${horaPeru}:${minutoUTC.toString().padStart(2, '0')}`);
     console.log(`Cargando horarios: ${horarioAnterior} y ${horarioActual}`);
     
     return { actual: horarioActual, anterior: horarioAnterior };
@@ -100,9 +104,26 @@ function initMap() {
 }
 
 async function cargarDatos() {
+    // Cargar cambios primero para saber qué colores aplicar
+    let cambiosMap = new Map(); // Mapa de códigos a tipo de cambio
+    try {
+        const cambiosResponse = await fetch(`${baseURL}/data/cambios.json`);
+        if (cambiosResponse.ok) {
+            const cambios = await cambiosResponse.json();
+            console.log(`📊 Registros de cambios: ${cambios.length}`);
+            
+            // Crear un mapa con los últimos cambios (aparece/desaparece)
+            cambios.forEach(cambio => {
+                cambiosMap.set(cambio.codigo, cambio.tipo);
+            });
+        }
+    } catch (error) {
+        console.log('No hay cambios para colorear');
+    }
+
     for (const zona of zonas) {
         try {
-            // Intentar cargar primero el horario actual, luego el anterior
+            // Intentar cargar primero el horario actual
             const archivoActual = `${baseURL}/data/${zona}_${fechaStr}_${horarios.actual}.geojson`;
             const archivoAnterior = `${baseURL}/data/${zona}_${fechaStr}_${horarios.anterior}.geojson`;
             
@@ -121,12 +142,29 @@ async function cargarDatos() {
                 datos = await response.json();
                 console.log(`${zona}: ${datos.features.length} polígonos (horario ${fechaArchivo})`);
                 
+                // FUNCIÓN PARA DETERMINAR COLOR SEGÚN CAMBIOS
+                const getColor = (codigo) => {
+                    if (cambiosMap.has(codigo)) {
+                        const tipo = cambiosMap.get(codigo);
+                        return tipo === 'aparece' ? '#4444ff' : '#ff4444'; // Azul para aparece, rojo para desaparece
+                    }
+                    return '#888888'; // Gris por defecto
+                };
+                
                 const capa = L.geoJSON(datos, {
                     coordsToLatLng: (coords) => {
                         const [lat, lon] = convertirUTM_A_WGS84(coords[0], coords[1], zona);
                         return L.latLng(lat, lon);
                     },
-                    style: { color: '#888888', weight: 1, opacity: 0.7, fillOpacity: 0.3 },
+                    style: (feature) => {
+                        const codigo = feature.properties.CODIGOU;
+                        return {
+                            color: getColor(codigo),
+                            weight: 1,
+                            opacity: 0.7,
+                            fillOpacity: 0.3
+                        };
+                    },
                     onEachFeature: (feature, layer) => {
                         layer.on('click', () => {
                             cerrarPopup();
@@ -148,6 +186,32 @@ async function cargarDatos() {
         } catch (error) {
             console.error(`Error en ${zona}:`, error);
         }
+    }
+}
+
+async function cargarCambios() {
+    try {
+        const response = await fetch(`${baseURL}/data/cambios.json`);
+        if (response.ok) {
+            const cambios = await response.json();
+            const div = document.getElementById('tabla-cambios');
+            div.innerHTML = '';
+            
+            if (cambios.length === 0) {
+                div.innerHTML = '<div class="cambio-item">No hay cambios registrados</div>';
+                return;
+            }
+            
+            // Mostrar últimos 10 cambios
+            cambios.slice(-10).reverse().forEach(c => {
+                const item = document.createElement('div');
+                item.className = `cambio-item ${c.tipo}`;
+                item.innerHTML = `<strong>${corregirTexto(c.nombre)}</strong><br><small>${c.tipo} - ${c.fecha}</small>`;
+                div.appendChild(item);
+            });
+        }
+    } catch (error) {
+        document.getElementById('tabla-cambios').innerHTML = 'Error cargando cambios';
     }
 }
 
@@ -205,26 +269,6 @@ async function buscarConcesion() {
     });
 }
 
-async function cargarCambios() {
-    try {
-        const response = await fetch(`${baseURL}/data/cambios.json`);
-        if (response.ok) {
-            const cambios = await response.json();
-            const div = document.getElementById('tabla-cambios');
-            div.innerHTML = '';
-            
-            cambios.slice(-10).reverse().forEach(c => {
-                const item = document.createElement('div');
-                item.className = `cambio-item ${c.tipo}`;
-                item.innerHTML = `<strong>${corregirTexto(c.nombre)}</strong><br><small>${c.tipo} - ${c.fecha}</small>`;
-                div.appendChild(item);
-            });
-        }
-    } catch (error) {
-        document.getElementById('tabla-cambios').innerHTML = 'Error cargando cambios';
-    }
-}
-
 function cerrarPopup() {
     document.getElementById('info-popup').style.display = 'none';
     popupAbierto = false;
@@ -245,10 +289,12 @@ function buscarCoordenadas() {
     }
 }
 
+// Cerrar popup con Escape
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') cerrarPopup();
 });
 
+// Cerrar popup haciendo clic fuera
 document.addEventListener('click', (e) => {
     if (popupAbierto && !e.target.closest('.info-popup') && !e.target.closest('.leaflet-interactive')) {
         cerrarPopup();
