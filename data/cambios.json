@@ -1,0 +1,116 @@
+[
+  {
+    "fecha": "130326_11",
+    "codigo": "100001026",
+    "nombre": "MINERALES FECC IV",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "130326_11",
+    "codigo": "100001126",
+    "nombre": "MINERALES FECC V",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "130326_11",
+    "codigo": "100001226",
+    "nombre": "MINERALES FECC VI",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "130326_11",
+    "codigo": "100001326",
+    "nombre": "MINERALES FECC VII",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "130326_11",
+    "codigo": "060005826",
+    "nombre": "ROCA DE FUEGO",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "130326_11",
+    "codigo": "060005926",
+    "nombre": "CUMBRE 010",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "130326_11",
+    "codigo": "100001426",
+    "nombre": "MINERALES FECC VIII",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "130326_11",
+    "codigo": "100001526",
+    "nombre": "MINERALES FECC IX",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "130326_11",
+    "codigo": "540004126",
+    "nombre": "MISION FORTUNA GOLD",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "130326_11",
+    "codigo": "010128826",
+    "nombre": "MI NIÑA DE ORO I",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "130326_11",
+    "codigo": "010128926",
+    "nombre": "EL TESORO DE JESUS I",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "130326_11",
+    "codigo": "010129026",
+    "nombre": "LUNA DEL MAR 15",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "130326_11",
+    "codigo": "020005626",
+    "nombre": "MARIA2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "130326_11",
+    "codigo": "520002426",
+    "nombre": "PAMPAS-CMG",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "130326_11",
+    "codigo": "590001826",
+    "nombre": "SANTA TERESITA 26",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "130326_11",
+    "codigo": "010129126",
+    "nombre": "SOL DEL PERU V 2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "130326_11",
+    "codigo": "010129226",
+    "nombre": "SOL DEL PERU VI 2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "130326_11",
+    "codigo": "030024026",
+    "nombre": "ARGENTUR-I",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "130326_11",
+    "codigo": "080016926",
+    "nombre": "TOTOROMA SILVER",
+    "tipo": "aparece"
+  }
+]
