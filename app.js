@@ -50,7 +50,7 @@ const baseURL = window.location.hostname.includes('github.io')
     ? '/visor-concesiones-mineras' 
     : '';
 
-// Obtener fecha y hora actual
+// Obtener fecha actual
 const fechaHoy = new Date();
 const fechaStr = fechaHoy.toLocaleDateString('es-ES', {
     day: '2-digit',
@@ -72,7 +72,7 @@ function obtenerHorariosActuales() {
     }
     
     // Determinar horario actual (el más reciente)
-    let horarioActual = '22'; // Por defecto
+    let horarioActual = '22';
     for (let i = horarios.length - 1; i >= 0; i--) {
         if (horaUTC >= parseInt(horarios[i])) {
             horarioActual = horarios[i];
@@ -105,14 +105,13 @@ function initMap() {
 
 async function cargarDatos() {
     // Cargar cambios primero para saber qué colores aplicar
-    let cambiosMap = new Map(); // Mapa de códigos a tipo de cambio
+    let cambiosMap = new Map();
     try {
         const cambiosResponse = await fetch(`${baseURL}/data/cambios.json`);
         if (cambiosResponse.ok) {
             const cambios = await cambiosResponse.json();
             console.log(`📊 Registros de cambios: ${cambios.length}`);
             
-            // Crear un mapa con los últimos cambios (aparece/desaparece)
             cambios.forEach(cambio => {
                 cambiosMap.set(cambio.codigo, cambio.tipo);
             });
@@ -123,32 +122,31 @@ async function cargarDatos() {
 
     for (const zona of zonas) {
         try {
-            // Intentar cargar primero el horario actual
+            // Intentar cargar primero el horario actual, luego el anterior
             const archivoActual = `${baseURL}/data/${zona}_${fechaStr}_${horarios.actual}.geojson`;
             const archivoAnterior = `${baseURL}/data/${zona}_${fechaStr}_${horarios.anterior}.geojson`;
             
             console.log(`Buscando: ${archivoActual}`);
             
             let response = await fetch(archivoActual);
-            let datos, fechaArchivo = horarios.actual;
+            let datos, horarioCargado = horarios.actual;
             
             if (!response.ok) {
                 console.log(`No encontrado, intentando: ${archivoAnterior}`);
                 response = await fetch(archivoAnterior);
-                fechaArchivo = horarios.anterior;
+                horarioCargado = horarios.anterior;
             }
             
             if (response.ok) {
                 datos = await response.json();
-                console.log(`${zona}: ${datos.features.length} polígonos (horario ${fechaArchivo})`);
+                console.log(`${zona}: ${datos.features.length} polígonos (horario ${horarioCargado})`);
                 
-                // FUNCIÓN PARA DETERMINAR COLOR SEGÚN CAMBIOS
                 const getColor = (codigo) => {
                     if (cambiosMap.has(codigo)) {
                         const tipo = cambiosMap.get(codigo);
-                        return tipo === 'aparece' ? '#4444ff' : '#ff4444'; // Azul para aparece, rojo para desaparece
+                        return tipo === 'aparece' ? '#4444ff' : '#ff4444';
                     }
-                    return '#888888'; // Gris por defecto
+                    return '#888888';
                 };
                 
                 const capa = L.geoJSON(datos, {
@@ -202,7 +200,6 @@ async function cargarCambios() {
                 return;
             }
             
-            // Mostrar últimos 10 cambios
             cambios.slice(-10).reverse().forEach(c => {
                 const item = document.createElement('div');
                 item.className = `cambio-item ${c.tipo}`;
@@ -220,22 +217,25 @@ async function buscarConcesion() {
     if (!texto) return;
     
     const resultados = [];
+    const horariosABuscar = [horarios.actual, horarios.anterior];
     
     for (const zona of zonas) {
-        try {
-            const response = await fetch(`${baseURL}/data/${zona}_${fechaStr}_${horarios.actual}.geojson`);
-            if (response.ok) {
-                const datos = await response.json();
-                datos.features.forEach(feature => {
-                    const props = feature.properties;
-                    if (props.CODIGOU?.toLowerCase().includes(texto) ||
-                        props.CONCESION?.toLowerCase().includes(texto) ||
-                        props.TIT_CONCES?.toLowerCase().includes(texto)) {
-                        resultados.push({...feature, zona});
-                    }
-                });
-            }
-        } catch (error) {}
+        for (const horario of horariosABuscar) {
+            try {
+                const response = await fetch(`${baseURL}/data/${zona}_${fechaStr}_${horario}.geojson`);
+                if (response.ok) {
+                    const datos = await response.json();
+                    datos.features.forEach(feature => {
+                        const props = feature.properties;
+                        if ((props.CODIGOU && props.CODIGOU.toLowerCase().includes(texto)) ||
+                            (props.CONCESION && props.CONCESION.toLowerCase().includes(texto)) ||
+                            (props.TIT_CONCES && props.TIT_CONCES.toLowerCase().includes(texto))) {
+                            resultados.push({...feature, zona, horario});
+                        }
+                    });
+                }
+            } catch (error) {}
+        }
     }
     
     const div = document.getElementById('resultados-busqueda');
@@ -246,7 +246,17 @@ async function buscarConcesion() {
         return;
     }
     
-    resultados.slice(0, 10).forEach(r => {
+    // Eliminar duplicados por código
+    const unicos = [];
+    const codigosVistos = new Set();
+    resultados.forEach(r => {
+        if (!codigosVistos.has(r.properties.CODIGOU)) {
+            codigosVistos.add(r.properties.CODIGOU);
+            unicos.push(r);
+        }
+    });
+    
+    unicos.slice(0, 10).forEach(r => {
         const item = document.createElement('div');
         item.className = 'resultado-item';
         item.textContent = `${corregirTexto(r.properties.CONCESION)} - ${corregirTexto(r.properties.TIT_CONCES)}`;
@@ -289,12 +299,10 @@ function buscarCoordenadas() {
     }
 }
 
-// Cerrar popup con Escape
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') cerrarPopup();
 });
 
-// Cerrar popup haciendo clic fuera
 document.addEventListener('click', (e) => {
     if (popupAbierto && !e.target.closest('.info-popup') && !e.target.closest('.leaflet-interactive')) {
         cerrarPopup();
