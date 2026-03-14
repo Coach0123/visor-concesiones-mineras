@@ -1,107 +1,5 @@
 [
   {
-    "fecha": "130326_11",
-    "codigo": "010129226",
-    "nombre": "SOL DEL PERU VI 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "130326_11",
-    "codigo": "030024026",
-    "nombre": "ARGENTUR-I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "130326_11",
-    "codigo": "080016926",
-    "nombre": "TOTOROMA SILVER",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "130326_16",
-    "codigo": "010129726",
-    "nombre": "EL PALTO 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "130326_16",
-    "codigo": "030024926",
-    "nombre": "CARANTRA MINERALES III",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "130326_16",
-    "codigo": "010129326",
-    "nombre": "HEFEST MINERAL 3",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "130326_16",
-    "codigo": "010129426",
-    "nombre": "HEFEST MINERAL 2",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "130326_16",
-    "codigo": "010129526",
-    "nombre": "HEFEST MINERAL 1",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "130326_16",
-    "codigo": "030024126",
-    "nombre": "LA CUMBRE",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "130326_16",
-    "codigo": "030024226",
-    "nombre": "MILLPO PUNTA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "130326_16",
-    "codigo": "030024326",
-    "nombre": "TERRANOVA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "130326_16",
-    "codigo": "030024426",
-    "nombre": "APU DORADO",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "130326_16",
-    "codigo": "030024526",
-    "nombre": "FORTUNA COOPER",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "130326_16",
-    "codigo": "070009526",
-    "nombre": "TINEAGA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "130326_16",
-    "codigo": "580001726",
-    "nombre": "GRUPO YANACONA 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "130326_16",
-    "codigo": "030024626",
-    "nombre": "CORONA ANDINA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "130326_16",
-    "codigo": "070009126",
-    "nombre": "SEYNY",
-    "tipo": "aparece"
-  },
-  {
     "fecha": "130326_16",
     "codigo": "010129626",
     "nombre": "CAMILA IV",
@@ -306,99 +204,201 @@
     "tipo": "aparece"
   },
   {
-    "fecha": "130326_16",
-    "codigo": "010129726",
-    "nombre": "EL PALTO 2026",
+    "fecha": "140326_11",
+    "codigo": "030025426",
+    "nombre": "AVENTURA SUYO UNO",
     "tipo": "aparece"
   },
   {
-    "fecha": "130326_16",
-    "codigo": "030024926",
-    "nombre": "CARANTRA MINERALES III",
+    "fecha": "140326_11",
+    "codigo": "030025026",
+    "nombre": "PRESENTACION DORADA",
     "tipo": "aparece"
   },
   {
-    "fecha": "130326_16",
-    "codigo": "010129326",
-    "nombre": "HEFEST MINERAL 3",
+    "fecha": "140326_11",
+    "codigo": "030025126",
+    "nombre": "MARCELO19",
     "tipo": "aparece"
   },
   {
-    "fecha": "130326_16",
-    "codigo": "010129426",
-    "nombre": "HEFEST MINERAL 2",
+    "fecha": "140326_11",
+    "codigo": "030025226",
+    "nombre": "MARY1",
     "tipo": "aparece"
   },
   {
-    "fecha": "130326_16",
-    "codigo": "010129526",
-    "nombre": "HEFEST MINERAL 1",
+    "fecha": "140326_11",
+    "codigo": "030025326",
+    "nombre": "MARY2",
     "tipo": "aparece"
   },
   {
-    "fecha": "130326_16",
-    "codigo": "030024126",
-    "nombre": "LA CUMBRE",
+    "fecha": "140326_11",
+    "codigo": "060006026",
+    "nombre": "ALICON AURUM",
     "tipo": "aparece"
   },
   {
-    "fecha": "130326_16",
-    "codigo": "030024226",
-    "nombre": "MILLPO PUNTA",
+    "fecha": "140326_11",
+    "codigo": "060006126",
+    "nombre": "KILLA QORI",
     "tipo": "aparece"
   },
   {
-    "fecha": "130326_16",
-    "codigo": "030024326",
-    "nombre": "TERRANOVA",
+    "fecha": "140326_11",
+    "codigo": "060006226",
+    "nombre": "EL TUCAN",
     "tipo": "aparece"
   },
   {
-    "fecha": "130326_16",
-    "codigo": "030024426",
-    "nombre": "APU DORADO",
+    "fecha": "140326_11",
+    "codigo": "070009326",
+    "nombre": "PACHIS II",
     "tipo": "aparece"
   },
   {
-    "fecha": "130326_16",
-    "codigo": "030024526",
-    "nombre": "FORTUNA COOPER",
+    "fecha": "140326_11",
+    "codigo": "070009426",
+    "nombre": "PACHIS III",
     "tipo": "aparece"
   },
   {
-    "fecha": "130326_16",
-    "codigo": "070009526",
-    "nombre": "TINEAGA",
+    "fecha": "140326_11",
+    "codigo": "620001226",
+    "nombre": "YITUANIA I",
     "tipo": "aparece"
   },
   {
-    "fecha": "130326_16",
-    "codigo": "580001726",
-    "nombre": "GRUPO YANACONA 2026",
+    "fecha": "140326_11",
+    "codigo": "010129826",
+    "nombre": "GOOD LUCKY EAST",
     "tipo": "aparece"
   },
   {
-    "fecha": "130326_16",
-    "codigo": "030024626",
-    "nombre": "CORONA ANDINA",
+    "fecha": "140326_11",
+    "codigo": "010129926",
+    "nombre": "DON SHESHA",
     "tipo": "aparece"
   },
   {
-    "fecha": "130326_16",
-    "codigo": "070009126",
-    "nombre": "SEYNY",
+    "fecha": "140326_11",
+    "codigo": "050015426",
+    "nombre": "VALLE ENCANTADO 3",
     "tipo": "aparece"
   },
   {
-    "fecha": "130326_16",
-    "codigo": "010129626",
-    "nombre": "CAMILA IV",
+    "fecha": "140326_11",
+    "codigo": "050015526",
+    "nombre": "NIÑO JESUS XXVII",
     "tipo": "aparece"
   },
   {
-    "fecha": "130326_16",
-    "codigo": "030024726",
-    "nombre": "GIGANTE DORADO",
+    "fecha": "140326_11",
+    "codigo": "070009226",
+    "nombre": "PACHIS I",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140326_11",
+    "codigo": "650001626",
+    "nombre": "DAVID 1 2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140326_11",
+    "codigo": "010130526",
+    "nombre": "COPPER 2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140326_11",
+    "codigo": "010130626",
+    "nombre": "JOSE 1",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140326_11",
+    "codigo": "010130726",
+    "nombre": "JOSE 2",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140326_11",
+    "codigo": "030025526",
+    "nombre": "EL DORADO IV",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140326_11",
+    "codigo": "030025626",
+    "nombre": "AMARU I",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140326_11",
+    "codigo": "070009726",
+    "nombre": "FLORES V",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140326_11",
+    "codigo": "070009826",
+    "nombre": "BRAVITO",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140326_11",
+    "codigo": "680000426",
+    "nombre": "SEÑOR DE LAS ARENAS",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140326_11",
+    "codigo": "050015626",
+    "nombre": "MOYSERKA COOPER",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140326_11",
+    "codigo": "010130026",
+    "nombre": "FERROMINA 3",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140326_11",
+    "codigo": "010130126",
+    "nombre": "MINAS PICHACANI 2",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140326_11",
+    "codigo": "010130226",
+    "nombre": "MINAS PICHACANI 3",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140326_11",
+    "codigo": "010130326",
+    "nombre": "PATILLANI GOLDER 2",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140326_11",
+    "codigo": "010130426",
+    "nombre": "PATILLANI GOLDER",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140326_11",
+    "codigo": "080017026",
+    "nombre": "PAUCAR MINING",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140326_11",
+    "codigo": "070009626",
+    "nombre": "GABINO II",
     "tipo": "aparece"
   },
   {
