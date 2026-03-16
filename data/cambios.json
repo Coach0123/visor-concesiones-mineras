@@ -1,96 +1,6 @@
 [
   {
     "fecha": "140326_11",
-    "codigo": "010130326",
-    "nombre": "PATILLANI GOLDER 2",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140326_11",
-    "codigo": "010130426",
-    "nombre": "PATILLANI GOLDER",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140326_11",
-    "codigo": "080017026",
-    "nombre": "PAUCAR MINING",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140326_11",
-    "codigo": "070009626",
-    "nombre": "GABINO II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140326_11",
-    "codigo": "030025426",
-    "nombre": "AVENTURA SUYO UNO",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140326_11",
-    "codigo": "030025026",
-    "nombre": "PRESENTACION DORADA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140326_11",
-    "codigo": "030025126",
-    "nombre": "MARCELO19",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140326_11",
-    "codigo": "030025226",
-    "nombre": "MARY1",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140326_11",
-    "codigo": "030025326",
-    "nombre": "MARY2",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140326_11",
-    "codigo": "060006026",
-    "nombre": "ALICON AURUM",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140326_11",
-    "codigo": "060006126",
-    "nombre": "KILLA QORI",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140326_11",
-    "codigo": "060006226",
-    "nombre": "EL TUCAN",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140326_11",
-    "codigo": "070009326",
-    "nombre": "PACHIS II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140326_11",
-    "codigo": "070009426",
-    "nombre": "PACHIS III",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140326_11",
-    "codigo": "620001226",
-    "nombre": "YITUANIA I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140326_11",
     "codigo": "010129826",
     "nombre": "GOOD LUCKY EAST",
     "tipo": "aparece"
@@ -418,6 +328,96 @@
     "codigo": "070009626",
     "nombre": "GABINO II",
     "tipo": "aparece"
+  },
+  {
+    "fecha": "160326_11",
+    "codigo": "010126224",
+    "nombre": "CHM II",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "160326_11",
+    "codigo": "540000124",
+    "nombre": "ESTRELLA 2024 I",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "160326_11",
+    "codigo": "550002325",
+    "nombre": "IGNACIA 2025",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "160326_11",
+    "codigo": "010055125",
+    "nombre": "MINERA MATTEO A",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "160326_11",
+    "codigo": "590001424",
+    "nombre": "ESAF 2",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "160326_11",
+    "codigo": "540005524",
+    "nombre": "CESIA 24",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "160326_11",
+    "codigo": "010033425",
+    "nombre": "SOCIEDAD MINA CATALINA",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "160326_11",
+    "codigo": "690002425",
+    "nombre": "ANTAQORI 9",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "160326_11",
+    "codigo": "030010825",
+    "nombre": "MARIA ISABEL SOROR 2",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "160326_11",
+    "codigo": "020020125",
+    "nombre": "ROCA DURA XX",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "160326_11",
+    "codigo": "010345325",
+    "nombre": "MINERA CARMELITA GRUP",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "160326_11",
+    "codigo": "010425625",
+    "nombre": "LA FONTANA DEL SUR",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "160326_11",
+    "codigo": "710013622",
+    "nombre": "ALERTA 1",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "160326_11",
+    "codigo": "010087425",
+    "nombre": "BUFANIO NORTE",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "160326_11",
+    "codigo": "010087525",
+    "nombre": "BUFANIO SUR",
+    "tipo": "desaparece"
   },
   {
     "fecha": "160326_11",
