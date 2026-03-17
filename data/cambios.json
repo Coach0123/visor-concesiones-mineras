@@ -1,59 +1,5 @@
 [
   {
-    "fecha": "160326_11",
-    "codigo": "010087525",
-    "nombre": "BUFANIO SUR",
-    "tipo": "desaparece"
-  },
-  {
-    "fecha": "170326_11",
-    "codigo": "010130826",
-    "nombre": "MIRADOR DE COBRE",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "170326_11",
-    "codigo": "030025826",
-    "nombre": "MASHU I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "170326_11",
-    "codigo": "030026126",
-    "nombre": "SUYO 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "170326_11",
-    "codigo": "640000626",
-    "nombre": "CANTERA MILLONES",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "170326_06",
-    "codigo": "650005825",
-    "nombre": "MINERA CIELO 2025",
-    "tipo": "desaparece"
-  },
-  {
-    "fecha": "170326_06",
-    "codigo": "650003324",
-    "nombre": "CANTERA EL AMANECER",
-    "tipo": "desaparece"
-  },
-  {
-    "fecha": "170326_06",
-    "codigo": "650003524",
-    "nombre": "CANTERAS EL MARAVILLOSO",
-    "tipo": "desaparece"
-  },
-  {
-    "fecha": "170326_11",
-    "codigo": "520002526",
-    "nombre": "ESTRELLA DE BELEN IV",
-    "tipo": "aparece"
-  },
-  {
     "fecha": "170326_11",
     "codigo": "010131126",
     "nombre": "ICHUNI",
@@ -543,6 +489,60 @@
     "fecha": "170326_11",
     "codigo": "040006426",
     "nombre": "QEQLLAORCO3",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "170326_11",
+    "codigo": "010000914AF",
+    "nombre": "CANTERA CALLAS",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "170326_16",
+    "codigo": "030026226",
+    "nombre": "MARY2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "170326_16",
+    "codigo": "060006326",
+    "nombre": "HNOS HUATAY",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "170326_11",
+    "codigo": "070018225",
+    "nombre": "GOLDEN MAN LORETANO",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "170326_11",
+    "codigo": "540015824",
+    "nombre": "DON JOSE I 2024",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "170326_16",
+    "codigo": "540004226",
+    "nombre": "WIÑAY WARMI VIII",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "170326_11",
+    "codigo": "080063325",
+    "nombre": "LIGANTE DEL NORTE I",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "170326_16",
+    "codigo": "730001026",
+    "nombre": "GLOBAL TAC",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "170326_16",
+    "codigo": "010131426",
+    "nombre": "ALEXANDER  I",
     "tipo": "aparece"
   },
   {
