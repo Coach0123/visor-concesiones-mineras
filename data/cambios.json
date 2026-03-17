@@ -1,59 +1,5 @@
 [
   {
-    "fecha": "170326_11",
-    "codigo": "010131126",
-    "nombre": "ICHUNI",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "170326_11",
-    "codigo": "050015726",
-    "nombre": "VALLE ENCANTADA V",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "170326_11",
-    "codigo": "050015826",
-    "nombre": "PIEDRA DORADA 1",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "170326_11",
-    "codigo": "030025926",
-    "nombre": "ALTO EDIGIO IV",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "170326_11",
-    "codigo": "030026026",
-    "nombre": "ALTO EDIGIO V",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "170326_11",
-    "codigo": "010131326",
-    "nombre": "EVELIN2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "170326_11",
-    "codigo": "020005726",
-    "nombre": "RAMIREZ ALVARADO",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "170326_11",
-    "codigo": "030025726",
-    "nombre": "ALTO ADIGIO III",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "170326_06",
-    "codigo": "680001225",
-    "nombre": "NISI",
-    "tipo": "desaparece"
-  },
-  {
     "fecha": "170326_06",
     "codigo": "680001025",
     "nombre": "DOMINICK 1",
@@ -489,6 +435,60 @@
     "fecha": "170326_11",
     "codigo": "040006426",
     "nombre": "QEQLLAORCO3",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "170326_11",
+    "codigo": "010000914AF",
+    "nombre": "CANTERA CALLAS",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "170326_16",
+    "codigo": "030026226",
+    "nombre": "MARY2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "170326_16",
+    "codigo": "060006326",
+    "nombre": "HNOS HUATAY",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "170326_11",
+    "codigo": "070018225",
+    "nombre": "GOLDEN MAN LORETANO",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "170326_11",
+    "codigo": "540015824",
+    "nombre": "DON JOSE I 2024",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "170326_16",
+    "codigo": "540004226",
+    "nombre": "WIÑAY WARMI VIII",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "170326_11",
+    "codigo": "080063325",
+    "nombre": "LIGANTE DEL NORTE I",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "170326_16",
+    "codigo": "730001026",
+    "nombre": "GLOBAL TAC",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "170326_16",
+    "codigo": "010131426",
+    "nombre": "ALEXANDER  I",
     "tipo": "aparece"
   },
   {
