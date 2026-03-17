@@ -17,16 +17,25 @@
         input, button { width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px; }
         button { background: #4CAF50; color: white; cursor: pointer; }
         button:hover { background: #45a049; }
+        .button-secundario { background: #2196F3; }
+        .button-secundario:hover { background: #1976D2; }
+        .button-peligro { background: #ff4444; }
+        .button-peligro:hover { background: #cc0000; }
         .leyenda-item { display: flex; align-items: center; margin-bottom: 8px; }
         .color-box { width: 20px; height: 20px; margin-right: 10px; border-radius: 4px; }
         .gris { background: #888; }
         .rojo { background: #ff4444; }
         .azul { background: #4444ff; }
         .verde { background: #44ff44; border: 2px dashed #00aa00; }
-        #resultados-busqueda { max-height: 150px; overflow-y: auto; background: white; border: 1px solid #ddd; }
+        .magenta { background: #ff44ff; border: 2px dashed #aa00aa; }
+        #resultados-busqueda { max-height: 200px; overflow-y: auto; background: white; border: 1px solid #ddd; margin-top: 5px; }
         .resultado-item { padding: 8px; border-bottom: 1px solid #eee; cursor: pointer; }
         .resultado-item:hover { background: #f0f0f0; }
+        .resultado-item.historico { background: #fff0f0; color: #666; }
         #tabla-cambios { max-height: 200px; overflow-y: auto; background: white; border: 1px solid #ddd; padding: 10px; }
+        .cambio-item { padding: 5px; margin-bottom: 5px; border-left: 4px solid; background: #f9f9f9; }
+        .cambio-item.aparece { border-left-color: #4444ff; }
+        .cambio-item.desaparece { border-left-color: #ff4444; }
         .info-popup { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%,-50%); background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 20px rgba(0,0,0,0.2); z-index: 2000; max-width: 400px; width: 90%; }
         .popup-content { position: relative; }
         .close { position: absolute; top: -10px; right: -10px; font-size: 24px; cursor: pointer; }
@@ -34,6 +43,24 @@
         #info-tabla { width: 100%; border-collapse: collapse; margin-top: 15px; }
         #info-tabla th, #info-tabla td { padding: 8px; text-align: left; border-bottom: 1px solid #ddd; }
         #info-tabla th { background: #f2f2f2; width: 40%; }
+        .dibujo-activo { cursor: crosshair !important; }
+        .mensaje-emergente { 
+            position: fixed; 
+            bottom: 20px; 
+            right: 20px; 
+            background: #333; 
+            color: white; 
+            padding: 10px 20px; 
+            border-radius: 5px; 
+            z-index: 3000;
+            animation: fadeInOut 3s ease-in-out;
+        }
+        @keyframes fadeInOut {
+            0% { opacity: 0; transform: translateY(20px); }
+            10% { opacity: 1; transform: translateY(0); }
+            90% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(-20px); }
+        }
     </style>
 </head>
 <body>
@@ -46,29 +73,44 @@
                 <input type="text" id="buscador" placeholder="Buscar por código, nombre, titular...">
                 <button onclick="buscarConcesion()">Buscar</button>
                 <div id="resultados-busqueda"></div>
+                <small style="color: #666;">Los resultados históricos aparecen en fondo rosado 📜</small>
             </div>
             
             <div class="leyenda-section">
                 <h3>Leyenda</h3>
                 <div class="leyenda-item"><span class="color-box gris"></span> Sin cambios</div>
-                <div class="leyenda-item"><span class="color-box rojo"></span> Desapareció</div>
-                <div class="leyenda-item"><span class="color-box azul"></span> Apareció</div>
+                <div class="leyenda-item"><span class="color-box rojo"></span> Desapareció (hoy)</div>
+                <div class="leyenda-item"><span class="color-box azul"></span> Apareció (hoy)</div>
+                <div class="leyenda-item"><span class="color-box magenta"></span> Histórico (mes)</div>
                 <div class="leyenda-item"><span class="color-box verde"></span> Búsqueda/Área</div>
             </div>
             
             <div class="carga-archivos">
                 <h3>Cargar área de interés</h3>
-                <input type="file" id="archivo-input" accept=".geojson">
-                <button onclick="cargarArchivo()">Cargar</button>
-                <div>
-                    <input type="text" id="coordenadas-texto" placeholder="Ej: -9.5, -75.5">
-                    <button onclick="buscarCoordenadas()">Ir</button>
+                <input type="file" id="archivo-input" accept=".geojson,.kml,.kmz,.zip,.rar">
+                <button onclick="cargarArchivo()">Cargar archivo</button>
+                
+                <div style="display: flex; gap: 5px; margin: 10px 0;">
+                    <input type="text" id="coordenadas-texto" placeholder="Ej: -9.5, -75.5" style="flex: 1;">
+                    <button onclick="buscarCoordenadas()" style="width: auto; padding: 8px 15px;">Ir</button>
+                </div>
+                
+                <button onclick="activarDibujoRectangulo()" class="button-secundario" style="margin-top: 5px;">✏️ Dibujar área</button>
+                <button onclick="enviarAreaPorCorreo()" class="button-secundario" style="margin-top: 5px;">📧 Enviar área por correo</button>
+                <button onclick="limpiarDibujo()" class="button-peligro" style="margin-top: 5px;">🗑️ Limpiar dibujo</button>
+                
+                <div style="margin-top: 10px; font-size: 12px; color: #666;">
+                    <p>Formatos soportados: .geojson, .kml, .kmz, .zip, .rar</p>
                 </div>
             </div>
             
             <div class="cambios-section">
                 <h3>Últimos cambios</h3>
                 <div id="tabla-cambios">Cargando cambios...</div>
+            </div>
+            
+            <div style="margin-top: 15px; font-size: 11px; color: #999; text-align: center;">
+                Actualización cada hora · Datos INGEMMET
             </div>
         </div>
         
@@ -86,9 +128,13 @@
                 <tr><th>Fecha Denuncio</th><td id="info-fecha"></td></tr>
                 <tr><th>Concesión</th><td id="info-concesion"></td></tr>
                 <tr><th>Titular</th><td id="info-titular"></td></tr>
+                <tr id="fila-tipo-cambio" style="display: none;"><th>Tipo</th><td id="info-tipo-cambio"></td></tr>
+                <tr id="fila-fecha-cambio" style="display: none;"><th>Fecha cambio</th><td id="info-fecha-cambio"></td></tr>
             </table>
         </div>
     </div>
+    
+    <div id="mensaje-emergente" class="mensaje-emergente" style="display: none;"></div>
     
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.8.0/proj4.js"></script>
