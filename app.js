@@ -3,6 +3,10 @@ let map;
 let capas = {};
 let popupAbierto = false;
 let todosLosDatos = []; // Almacenar todos los datos para búsqueda global
+let datosHistoricos = []; // Almacenar datos históricos mensuales
+let rectanguloDibujo = null;
+let puntosDibujo = [];
+let capaDibujo = null;
 
 // Función para corregir caracteres especiales
 function corregirTexto(texto) {
@@ -100,10 +104,15 @@ function initMap() {
         attribution: '&copy; OpenStreetMap'
     }).addTo(map);
     
+    // Inicializar controles de dibujo
+    inicializarDibujo();
+    
     cargarDatos();
     cargarCambios();
+    cargarHistorialMensual();
 }
 
+// Función para cargar datos con respaldo automático
 async function cargarDatos() {
     // Cargar cambios para colorear polígonos
     let cambiosMap = new Map();
@@ -120,26 +129,47 @@ async function cargarDatos() {
         console.log('No hay cambios para colorear');
     }
 
-    // Lista completa de horarios posibles en orden de prioridad (todos)
+    // Lista completa de horarios posibles (últimas 48 horas para respaldo)
     const horariosPrioritarios = [];
+    const fechasRespaldo = [];
+    
+    // Fecha actual
     for (let i = 23; i >= 0; i--) {
-        horariosPrioritarios.push(i.toString().padStart(2, '0'));
+        horariosPrioritarios.push({ fecha: fechaStr, hora: i.toString().padStart(2, '0') });
     }
+    
+    // Fecha anterior (para respaldo)
+    const fechaAnterior = new Date(fechaHoy);
+    fechaAnterior.setDate(fechaAnterior.getDate() - 1);
+    const fechaAnteriorStr = fechaAnterior.toLocaleDateString('es-ES', {
+        day: '2-digit',
+        month: '2-digit',
+        year: '2-digit'
+    }).replace(/\//g, '');
+    
+    for (let i = 23; i >= 0; i--) {
+        horariosPrioritarios.push({ fecha: fechaAnteriorStr, hora: i.toString().padStart(2, '0') });
+    }
+
+    let datosCargadosGlobalmente = false;
 
     for (const zona of zonas) {
         let datosCargados = null;
         let horarioCargado = null;
+        let fechaCargada = null;
         
         // Probar cada horario hasta encontrar uno que exista
-        for (const horario of horariosPrioritarios) {
-            const url = `${baseURL}/data/${zona}_${fechaStr}_${horario}.geojson`;
+        for (const item of horariosPrioritarios) {
+            const url = `${baseURL}/data/${zona}_${item.fecha}_${item.hora}.geojson`;
             
             try {
                 const response = await fetch(url);
                 if (response.ok) {
                     datosCargados = await response.json();
-                    horarioCargado = horario;
-                    console.log(`✅ ${zona} cargado con horario ${horario}`);
+                    horarioCargado = item.hora;
+                    fechaCargada = item.fecha;
+                    console.log(`✅ ${zona} cargado con fecha ${item.fecha} horario ${item.hora}`);
+                    datosCargadosGlobalmente = true;
                     break;
                 }
             } catch (e) {
@@ -153,6 +183,7 @@ async function cargarDatos() {
             // Almacenar todos los datos para búsqueda global
             todosLosDatos.push({
                 zona: zona,
+                fecha: fechaCargada,
                 horario: horarioCargado,
                 features: datosCargados.features
             });
@@ -197,8 +228,54 @@ async function cargarDatos() {
             
             capas[zona] = capa;
         } else {
-            console.error(`❌ No se encontró ningún archivo para la zona ${zona}`);
+            console.warn(`⚠️ No se encontró archivo para zona ${zona}, usando datos de respaldo si existen`);
         }
+    }
+    
+    if (!datosCargadosGlobalmente) {
+        console.error('❌ No se pudo cargar ningún dato. Verifica la conexión o los archivos en GitHub');
+        mostrarMensaje('No se pudieron cargar los datos. Verifica tu conexión o intenta más tarde.', 'error');
+    }
+}
+
+// Cargar historial mensual
+async function cargarHistorialMensual() {
+    try {
+        const mesActual = fechaHoy.getFullYear() + (fechaHoy.getMonth() + 1).toString().padStart(2, '0');
+        const response = await fetch(`${baseURL}/data/historial_${mesActual}.geojson`);
+        
+        if (response.ok) {
+            const historial = await response.json();
+            console.log(`📜 Cargando ${historial.features.length} polígonos del historial mensual`);
+            
+            datosHistoricos = historial.features;
+            
+            // Mostrar en mapa con estilo diferente
+            L.geoJSON(historial, {
+                coordsToLatLng: (coords) => {
+                    const [lat, lon] = convertirUTM_A_WGS84(coords[0], coords[1], '17s');
+                    return L.latLng(lat, lon);
+                },
+                style: (feature) => {
+                    return {
+                        color: feature.properties.TIPO_CAMBIO === 'aparece' ? '#44ff44' : '#ff44ff',
+                        weight: 2,
+                        opacity: 0.8,
+                        fillOpacity: 0.1,
+                        dashArray: '5,5'
+                    };
+                },
+                onEachFeature: (feature, layer) => {
+                    layer.bindPopup(`
+                        <b>${corregirTexto(feature.properties.CONCESION)}</b><br>
+                        ${feature.properties.TIPO_CAMBIO} el ${feature.properties.FECHA_CAMBIO}<br>
+                        Titular: ${corregirTexto(feature.properties.TIT_CONCES)}
+                    `);
+                }
+            }).addTo(map);
+        }
+    } catch (error) {
+        console.log('No hay historial mensual disponible');
     }
 }
 
@@ -227,6 +304,7 @@ async function cargarCambios() {
     }
 }
 
+// Buscador mejorado que incluye datos históricos
 async function buscarConcesion() {
     const texto = document.getElementById('buscador').value.trim().toLowerCase();
     if (!texto) {
@@ -237,7 +315,7 @@ async function buscarConcesion() {
     console.log(`🔍 Buscando: "${texto}"`);
     const resultados = [];
     
-    // Buscar en todos los datos almacenados
+    // Buscar en datos actuales
     for (const zonaData of todosLosDatos) {
         for (const feature of zonaData.features) {
             const props = feature.properties;
@@ -249,10 +327,29 @@ async function buscarConcesion() {
                 resultados.push({
                     ...feature,
                     zona: zonaData.zona,
+                    tipo: 'actual',
                     nombre: props.CONCESION || 'Sin nombre',
                     titular: props.TIT_CONCES || 'Sin titular'
                 });
             }
+        }
+    }
+    
+    // Buscar en datos históricos (polígonos que ya no existen)
+    for (const feature of datosHistoricos) {
+        const props = feature.properties;
+        const concesion = (props.CONCESION || '').toLowerCase();
+        const titular = (props.TIT_CONCES || '').toLowerCase();
+        const codigo = (props.CODIGOU || '').toLowerCase();
+        
+        if (concesion.includes(texto) || titular.includes(texto) || codigo.includes(texto)) {
+            resultados.push({
+                ...feature,
+                zona: '17s',
+                tipo: 'historico',
+                nombre: props.CONCESION || 'Sin nombre',
+                titular: props.TIT_CONCES || 'Sin titular'
+            });
         }
     }
     
@@ -276,10 +373,11 @@ async function buscarConcesion() {
     
     console.log(`✅ ${unicos.length} resultados únicos encontrados`);
     
-    unicos.slice(0, 20).forEach(r => {
+    unicos.slice(0, 25).forEach(r => {
         const item = document.createElement('div');
-        item.className = 'resultado-item';
-        item.textContent = `${corregirTexto(r.nombre)} - ${corregirTexto(r.titular)}`;
+        item.className = 'resultado-item' + (r.tipo === 'historico' ? ' historico' : '');
+        const icono = r.tipo === 'historico' ? '📜 ' : '';
+        item.textContent = `${icono}${corregirTexto(r.nombre)} - ${corregirTexto(r.titular)}`;
         item.onclick = () => {
             cerrarPopup();
             if (r.geometry.type === 'Polygon') {
@@ -291,7 +389,7 @@ async function buscarConcesion() {
                 });
                 const centerX = sumX / coords.length;
                 const centerY = sumY / coords.length;
-                const [lat, lon] = convertirUTM_A_WGS84(centerX, centerY, r.zona);
+                const [lat, lon] = convertirUTM_A_WGS84(centerX, centerY, r.zona || '17s');
                 map.setView([lat, lon], 14);
             }
         };
@@ -299,13 +397,191 @@ async function buscarConcesion() {
     });
 }
 
+// Función mejorada para cargar archivos
+async function cargarArchivo() {
+    const input = document.getElementById('archivo-input');
+    const archivo = input.files[0];
+    
+    if (!archivo) return;
+    
+    const reader = new FileReader();
+    const extension = archivo.name.split('.').pop().toLowerCase();
+    
+    reader.onload = async function(e) {
+        try {
+            let geojson = null;
+            
+            if (extension === 'geojson' || extension === 'json') {
+                geojson = JSON.parse(e.target.result);
+            } else if (extension === 'kml') {
+                mostrarMensaje('Para KML necesitas la biblioteca togeojson. Por ahora, convierte a GeoJSON.', 'info');
+                return;
+            } else if (extension === 'zip' || extension === 'rar') {
+                mostrarMensaje('Los archivos ZIP/RAR deben contener shapefile. Extrae y sube el .shp', 'info');
+                return;
+            } else if (extension === 'shp') {
+                mostrarMensaje('Para shapefiles, usa un ZIP con .shp, .dbf, .shx', 'info');
+                return;
+            }
+            
+            if (geojson) {
+                mostrarAreaInteres(geojson);
+                mostrarMensaje(`Archivo cargado: ${archivo.name}`, 'exito');
+            }
+        } catch (error) {
+            console.error('Error al cargar archivo:', error);
+            mostrarMensaje('Error al procesar el archivo', 'error');
+        }
+    };
+    
+    if (extension === 'kml' || extension === 'geojson' || extension === 'json') {
+        reader.readAsText(archivo);
+    } else {
+        reader.readAsArrayBuffer(archivo);
+    }
+}
+
+// Inicializar herramientas de dibujo
+function inicializarDibujo() {
+    // Las funciones ya están definidas globalmente
+    console.log('🖌️ Herramientas de dibujo inicializadas');
+}
+
+// Variables para dibujo
+let dibujando = false;
+let puntoInicio = null;
+
+function activarDibujoRectangulo() {
+    dibujando = true;
+    puntoInicio = null;
+    map.getContainer().style.cursor = 'crosshair';
+    mostrarMensaje('Haz clic para iniciar el rectángulo, luego otro clic para completar', 'info');
+    
+    map.on('click', function(e) {
+        if (!dibujando) return;
+        
+        if (!puntoInicio) {
+            puntoInicio = e.latlng;
+            mostrarMensaje('Ahora haz clic en la esquina opuesta', 'info');
+        } else {
+            const puntoFin = e.latlng;
+            
+            // Crear rectángulo
+            const bounds = L.latLngBounds(puntoInicio, puntoFin);
+            
+            if (capaDibujo) {
+                map.removeLayer(capaDibujo);
+            }
+            
+            capaDibujo = L.rectangle(bounds, {
+                color: '#ff44ff',
+                weight: 3,
+                opacity: 0.8,
+                fillOpacity: 0.2
+            }).addTo(map);
+            
+            // Guardar área para envío por correo
+            rectanguloDibujo = bounds;
+            
+            dibujando = false;
+            map.getContainer().style.cursor = '';
+            map.off('click');
+            mostrarMensaje('Área dibujada correctamente', 'exito');
+        }
+    });
+}
+
+function limpiarDibujo() {
+    if (capaDibujo) {
+        map.removeLayer(capaDibujo);
+        capaDibujo = null;
+        rectanguloDibujo = null;
+    }
+    if (marcadorBusqueda) {
+        map.removeLayer(marcadorBusqueda);
+        marcadorBusqueda = null;
+    }
+    dibujando = false;
+    map.getContainer().style.cursor = '';
+    map.off('click');
+    mostrarMensaje('Dibujo limpiado', 'info');
+}
+
+// Función para enviar área por correo
+async function enviarAreaPorCorreo() {
+    if (!rectanguloDibujo) {
+        mostrarMensaje('Primero dibuja un área en el mapa', 'error');
+        return;
+    }
+    
+    const email = prompt('Ingresa tu correo electrónico:');
+    if (!email) return;
+    
+    mostrarMensaje('Procesando polígonos en el área...', 'info');
+    
+    // Obtener todos los polígonos dentro del área
+    const poligonosEnArea = [];
+    
+    for (const zonaData of todosLosDatos) {
+        for (const feature of zonaData.features) {
+            if (feature.geometry.type === 'Polygon') {
+                const coords = feature.geometry.coordinates[0];
+                const centro = coords.reduce((acc, coord) => {
+                    const [lat, lon] = convertirUTM_A_WGS84(coord[0], coord[1], zonaData.zona);
+                    return [acc[0] + lat, acc[1] + lon];
+                }, [0, 0]);
+                
+                const centroLat = centro[0] / coords.length;
+                const centroLon = centro[1] / coords.length;
+                
+                if (rectanguloDibujo.contains([centroLat, centroLon])) {
+                    poligonosEnArea.push(feature.properties);
+                }
+            }
+        }
+    }
+    
+    // Generar CSV
+    let csv = 'CODIGOU,FEC_DENU,CONCESION,TIT_CONCES\n';
+    poligonosEnArea.forEach(p => {
+        csv += `"${p.CODIGOU || ''}","${p.FEC_DENU || ''}","${p.CONCESION || ''}","${p.TIT_CONCES || ''}"\n`;
+    });
+    
+    // Descargar CSV
+    const blob = new Blob([csv], { type: 'text/csv' });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `poligonos_area_${new Date().toISOString().slice(0,10)}.csv`;
+    a.click();
+    
+    mostrarMensaje(`Se encontraron ${poligonosEnArea.length} polígonos. CSV descargado.`, 'exito');
+}
+
+function mostrarAreaInteres(geojson) {
+    if (capaAreaInteres) {
+        map.removeLayer(capaAreaInteres);
+    }
+    
+    capaAreaInteres = L.geoJSON(geojson, {
+        style: {
+            color: '#44ff44',
+            weight: 3,
+            opacity: 0.8,
+            fillOpacity: 0.1,
+            dashArray: '5, 10'
+        },
+        onEachFeature: (feature, layer) => {
+            layer.bindPopup('Área de interés cargada');
+        }
+    }).addTo(map);
+    
+    map.fitBounds(capaAreaInteres.getBounds());
+}
+
 function cerrarPopup() {
     document.getElementById('info-popup').style.display = 'none';
     popupAbierto = false;
-}
-
-function cargarArchivo() {
-    alert('Función en desarrollo');
 }
 
 function buscarCoordenadas() {
@@ -315,13 +591,39 @@ function buscarCoordenadas() {
         if (parts.length === 2) {
             cerrarPopup();
             map.setView([parts[0], parts[1]], 12);
+            
+            if (marcadorBusqueda) {
+                map.removeLayer(marcadorBusqueda);
+            }
+            marcadorBusqueda = L.marker([parts[0], parts[1]]).addTo(map);
+            mostrarMensaje(`Coordenadas: ${parts[0]}, ${parts[1]}`, 'info');
         }
     }
 }
 
+function mostrarMensaje(texto, tipo = 'info') {
+    const msgDiv = document.getElementById('mensaje-emergente');
+    if (!msgDiv) return;
+    
+    msgDiv.textContent = texto;
+    msgDiv.style.backgroundColor = tipo === 'error' ? '#ff4444' : (tipo === 'exito' ? '#4CAF50' : '#333');
+    msgDiv.style.display = 'block';
+    
+    setTimeout(() => {
+        msgDiv.style.display = 'none';
+    }, 3000);
+}
+
+// Variables globales
+let marcadorBusqueda;
+let capaAreaInteres;
+
 // Event listeners
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') cerrarPopup();
+    if (e.key === 'Escape') {
+        cerrarPopup();
+        limpiarDibujo();
+    }
 });
 
 document.addEventListener('click', (e) => {
