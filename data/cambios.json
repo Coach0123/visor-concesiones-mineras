@@ -1,95 +1,5 @@
 [
   {
-    "fecha": "170326_16",
-    "codigo": "010131426",
-    "nombre": "ALEXANDER  I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "170326_11",
-    "codigo": "010000914AF",
-    "nombre": "CANTERA CALLAS",
-    "tipo": "desaparece"
-  },
-  {
-    "fecha": "170326_16",
-    "codigo": "030026226",
-    "nombre": "MARY2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "170326_16",
-    "codigo": "060006326",
-    "nombre": "HNOS HUATAY",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "170326_11",
-    "codigo": "070018225",
-    "nombre": "GOLDEN MAN LORETANO",
-    "tipo": "desaparece"
-  },
-  {
-    "fecha": "170326_11",
-    "codigo": "540015824",
-    "nombre": "DON JOSE I 2024",
-    "tipo": "desaparece"
-  },
-  {
-    "fecha": "170326_16",
-    "codigo": "540004226",
-    "nombre": "WIÑAY WARMI VIII",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "170326_11",
-    "codigo": "080063325",
-    "nombre": "LIGANTE DEL NORTE I",
-    "tipo": "desaparece"
-  },
-  {
-    "fecha": "170326_16",
-    "codigo": "730001026",
-    "nombre": "GLOBAL TAC",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "170326_16",
-    "codigo": "010131426",
-    "nombre": "ALEXANDER  I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "180326_11",
-    "codigo": "030026726",
-    "nombre": "MINERA ESPINOZA 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "180326_06",
-    "codigo": "690003525",
-    "nombre": "GEOMIA II",
-    "tipo": "desaparece"
-  },
-  {
-    "fecha": "180326_06",
-    "codigo": "530008625",
-    "nombre": "ACYM I",
-    "tipo": "desaparece"
-  },
-  {
-    "fecha": "180326_11",
-    "codigo": "600001226",
-    "nombre": "CAMPO SIERRA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "180326_11",
-    "codigo": "010131526",
-    "nombre": "LA TIERRA ES TUYA SHADDAI",
-    "tipo": "aparece"
-  },
-  {
     "fecha": "180326_11",
     "codigo": "020005826",
     "nombre": "SARAI UNO",
@@ -597,6 +507,96 @@
     "fecha": "180326_11",
     "codigo": "040006526",
     "nombre": "DAESSA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "180326_16",
+    "codigo": "010131926",
+    "nombre": "EL COBRE II",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "180326_16",
+    "codigo": "060006426",
+    "nombre": "LOS AMIGOS DE CHOTA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "180326_16",
+    "codigo": "510000326",
+    "nombre": "SAN LORENZO",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "180326_11",
+    "codigo": "010145625",
+    "nombre": "PRATAUM",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "180326_11",
+    "codigo": "530008725",
+    "nombre": "ACYM 2025",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "180326_11",
+    "codigo": "020020225",
+    "nombre": "ROCA DURA X",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "180326_11",
+    "codigo": "040042525",
+    "nombre": "VXGOLD CORP25 II",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "180326_16",
+    "codigo": "010132126",
+    "nombre": "ESPERANZA 7 MENOR",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "180326_16",
+    "codigo": "010132026",
+    "nombre": "ESPERANZA 7 MAYOR",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "180326_11",
+    "codigo": "080030125",
+    "nombre": "SPARTA DE ORO CIL",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "180326_11",
+    "codigo": "110013025",
+    "nombre": "APU V 2025",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "180326_16",
+    "codigo": "070010026",
+    "nombre": "PLAYA DANIEL",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "180326_16",
+    "codigo": "080017526",
+    "nombre": "MINERA AUJANI EL ECOLOGICO 01",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "180326_16",
+    "codigo": "730001126",
+    "nombre": "EL SANTO JUEZ II",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "180326_16",
+    "codigo": "730001226",
+    "nombre": "CANTERA MIRAVE",
     "tipo": "aparece"
   }
 ]
