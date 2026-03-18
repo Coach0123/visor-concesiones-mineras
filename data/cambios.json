@@ -1,96 +1,6 @@
 [
   {
     "fecha": "180326_11",
-    "codigo": "020005826",
-    "nombre": "SARAI UNO",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "180326_11",
-    "codigo": "070009926",
-    "nombre": "MARINA I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "180326_11",
-    "codigo": "030026326",
-    "nombre": "SERPIENTE DE ORO CASY",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "180326_11",
-    "codigo": "030026426",
-    "nombre": "INVERSIONES SAID 1",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "180326_11",
-    "codigo": "030026626",
-    "nombre": "LA ESCONDIDA 2",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "180326_11",
-    "codigo": "650001726",
-    "nombre": "CAELI 2016",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "180326_11",
-    "codigo": "650001826",
-    "nombre": "MARUF 93",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "180326_11",
-    "codigo": "650001926",
-    "nombre": "BEATRIZ 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "180326_11",
-    "codigo": "050016026",
-    "nombre": "STRATUM 3",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "180326_11",
-    "codigo": "050016126",
-    "nombre": "STRATUM 4",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "180326_11",
-    "codigo": "050016226",
-    "nombre": "STRATUM 5",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "180326_11",
-    "codigo": "050016326",
-    "nombre": "STRATUM 6",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "180326_11",
-    "codigo": "050016426",
-    "nombre": "STRATUM 7",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "180326_11",
-    "codigo": "050016526",
-    "nombre": "STRATUM 8",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "180326_11",
-    "codigo": "650002026",
-    "nombre": "CORAZON DE TORO",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "180326_11",
     "codigo": "010131826",
     "nombre": "LUCRECIA 01",
     "tipo": "aparece"
@@ -327,6 +237,96 @@
     "fecha": "180326_11",
     "codigo": "040006526",
     "nombre": "DAESSA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "180326_16",
+    "codigo": "010131926",
+    "nombre": "EL COBRE II",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "180326_16",
+    "codigo": "060006426",
+    "nombre": "LOS AMIGOS DE CHOTA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "180326_16",
+    "codigo": "510000326",
+    "nombre": "SAN LORENZO",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "180326_11",
+    "codigo": "010145625",
+    "nombre": "PRATAUM",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "180326_11",
+    "codigo": "530008725",
+    "nombre": "ACYM 2025",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "180326_11",
+    "codigo": "020020225",
+    "nombre": "ROCA DURA X",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "180326_11",
+    "codigo": "040042525",
+    "nombre": "VXGOLD CORP25 II",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "180326_16",
+    "codigo": "010132126",
+    "nombre": "ESPERANZA 7 MENOR",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "180326_16",
+    "codigo": "010132026",
+    "nombre": "ESPERANZA 7 MAYOR",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "180326_11",
+    "codigo": "080030125",
+    "nombre": "SPARTA DE ORO CIL",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "180326_11",
+    "codigo": "110013025",
+    "nombre": "APU V 2025",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "180326_16",
+    "codigo": "070010026",
+    "nombre": "PLAYA DANIEL",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "180326_16",
+    "codigo": "080017526",
+    "nombre": "MINERA AUJANI EL ECOLOGICO 01",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "180326_16",
+    "codigo": "730001126",
+    "nombre": "EL SANTO JUEZ II",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "180326_16",
+    "codigo": "730001226",
+    "nombre": "CANTERA MIRAVE",
     "tipo": "aparece"
   },
   {
