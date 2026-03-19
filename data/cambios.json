@@ -1,84 +1,6 @@
 [
   {
     "fecha": "190326_11",
-    "codigo": "080017726",
-    "nombre": "TIERRA DORADA 16",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "190326_11",
-    "codigo": "580002226",
-    "nombre": "CANTERA MARCAPATA IV",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "190326_11",
-    "codigo": "640000726",
-    "nombre": "CANTERA SAN JOAQUIN",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "190326_11",
-    "codigo": "010132326",
-    "nombre": "LA SANTA MUERTE",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "190326_11",
-    "codigo": "010132426",
-    "nombre": "EXPLORACION BRIAN GOLDEN",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "190326_11",
-    "codigo": "100001626",
-    "nombre": "VETILLA GICLAS 2",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "190326_11",
-    "codigo": "040007126",
-    "nombre": "JHONATAN JESUS 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "190326_11",
-    "codigo": "010132226",
-    "nombre": "UNIDAD MINERA ZORRITO CUATRO",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "190326_11",
-    "codigo": "030026826",
-    "nombre": "CORIQIQLLA II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "190326_11",
-    "codigo": "040006726",
-    "nombre": "ANDREAIMEY",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "190326_11",
-    "codigo": "040006826",
-    "nombre": "JOSEP EDISON 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "190326_11",
-    "codigo": "040006926",
-    "nombre": "EDIBAC",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "190326_11",
-    "codigo": "040007026",
-    "nombre": "SALOME GRACIELA  2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "190326_11",
     "codigo": "020005926",
     "nombre": "MARILUZ 2026",
     "tipo": "aparece"
@@ -441,6 +363,84 @@
     "fecha": "190326_11",
     "codigo": "580002226",
     "nombre": "CANTERA MARCAPATA IV",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "190326_11",
+    "codigo": "030082525",
+    "nombre": "NUEVA VISION",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "190326_11",
+    "codigo": "010359825",
+    "nombre": "CARMEN-6",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "190326_16",
+    "codigo": "010132726",
+    "nombre": "RUDYTA FELIZ",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "190326_16",
+    "codigo": "010132626",
+    "nombre": "CRUZ DE PACAYA - II",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "190326_16",
+    "codigo": "030026926",
+    "nombre": "LA ESCONDIDA 1",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "190326_16",
+    "codigo": "540004326",
+    "nombre": "JUVENTUD",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "190326_16",
+    "codigo": "010132526",
+    "nombre": "CRUZ DE PACAYA -I",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "190326_16",
+    "codigo": "010132826",
+    "nombre": "NUEVO COLCA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "190326_16",
+    "codigo": "010132926",
+    "nombre": "PIEDRA VIUDA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "190326_16",
+    "codigo": "020006026",
+    "nombre": "AZURITA MADRINA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "190326_16",
+    "codigo": "020006126",
+    "nombre": "SYM 1",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "190326_11",
+    "codigo": "050053225",
+    "nombre": "CHENGFENG 2512",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "190326_16",
+    "codigo": "080017826",
+    "nombre": "LAS MERCEDES 2026 I",
     "tipo": "aparece"
   },
   {
