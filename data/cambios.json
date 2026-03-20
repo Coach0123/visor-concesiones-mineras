@@ -1,42 +1,6 @@
 [
   {
     "fecha": "200326_11",
-    "codigo": "610003626",
-    "nombre": "ELBEYA 10",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "200326_11",
-    "codigo": "070010426",
-    "nombre": "CONDORI V",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "200326_11",
-    "codigo": "010133026",
-    "nombre": "ANGELITOS V",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "200326_11",
-    "codigo": "010133126",
-    "nombre": "RJM",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "200326_11",
-    "codigo": "070010526",
-    "nombre": "RIOS V",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "200326_11",
-    "codigo": "070010626",
-    "nombre": "ITZAE EMMA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "200326_11",
     "codigo": "070010726",
     "nombre": "SANSON 1",
     "tipo": "aparece"
@@ -489,6 +453,42 @@
     "fecha": "200326_11",
     "codigo": "040007326",
     "nombre": "DYAM1",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_16",
+    "codigo": "010133926",
+    "nombre": "BLUE STONE",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_16",
+    "codigo": "540004526",
+    "nombre": "ACUMULACION CIRRIRE",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_16",
+    "codigo": "610003826",
+    "nombre": "CHARACAS XXI",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_16",
+    "codigo": "010134026",
+    "nombre": "SANTA ISABEL I 2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_16",
+    "codigo": "110005026",
+    "nombre": "PAMPA COLORADA II 2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_16",
+    "codigo": "540016811A",
+    "nombre": "DIVINO NIÑO 2-B",
     "tipo": "aparece"
   },
   {
