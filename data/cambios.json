@@ -1,42 +1,6 @@
 [
   {
     "fecha": "200326_11",
-    "codigo": "610002926",
-    "nombre": "ELBEYA 8",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "200326_11",
-    "codigo": "010133226",
-    "nombre": "PIEYITO 5",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "200326_11",
-    "codigo": "010133326",
-    "nombre": "PIEYITO 6",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "200326_11",
-    "codigo": "010133426",
-    "nombre": "PIEYITO 7",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "200326_11",
-    "codigo": "010133526",
-    "nombre": "PIEYITO 8",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "200326_11",
-    "codigo": "080017926",
-    "nombre": "COMUNIDAD MINERA UQUIRA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "200326_11",
     "codigo": "610003026",
     "nombre": "ELBEYA 4",
     "tipo": "aparece"
@@ -561,6 +525,42 @@
     "fecha": "200326_11",
     "codigo": "040007326",
     "nombre": "DYAM1",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_16",
+    "codigo": "010133926",
+    "nombre": "BLUE STONE",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_16",
+    "codigo": "540004526",
+    "nombre": "ACUMULACION CIRRIRE",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_16",
+    "codigo": "610003826",
+    "nombre": "CHARACAS XXI",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_16",
+    "codigo": "010134026",
+    "nombre": "SANTA ISABEL I 2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_16",
+    "codigo": "110005026",
+    "nombre": "PAMPA COLORADA II 2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_16",
+    "codigo": "540016811A",
+    "nombre": "DIVINO NIÑO 2-B",
     "tipo": "aparece"
   },
   {
