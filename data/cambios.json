@@ -1,144 +1,6 @@
 [
   {
     "fecha": "190326_11",
-    "codigo": "050016726",
-    "nombre": "AMALTEA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "190326_11",
-    "codigo": "070010126",
-    "nombre": "EDGARDO",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "190326_11",
-    "codigo": "070010226",
-    "nombre": "RS I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "190326_11",
-    "codigo": "070010326",
-    "nombre": "BARRETO I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "190326_11",
-    "codigo": "040006626",
-    "nombre": "CAMANTI GOLD MINE UNO",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "190326_11",
-    "codigo": "040007226",
-    "nombre": "PLAYA DANIEL",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "190326_11",
-    "codigo": "580001926",
-    "nombre": "CANTERA MARCAPARA VI",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "190326_11",
-    "codigo": "580002126",
-    "nombre": "CANTERA MARCAPATA VII",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "190326_11",
-    "codigo": "580002026",
-    "nombre": "CANTERA MARCAPATA V",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "190326_11",
-    "codigo": "080017626",
-    "nombre": "GEMINIS 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "190326_11",
-    "codigo": "080017726",
-    "nombre": "TIERRA DORADA 16",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "190326_11",
-    "codigo": "580002226",
-    "nombre": "CANTERA MARCAPATA IV",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "190326_11",
-    "codigo": "030082525",
-    "nombre": "NUEVA VISION",
-    "tipo": "desaparece"
-  },
-  {
-    "fecha": "190326_11",
-    "codigo": "010359825",
-    "nombre": "CARMEN-6",
-    "tipo": "desaparece"
-  },
-  {
-    "fecha": "190326_16",
-    "codigo": "010132726",
-    "nombre": "RUDYTA FELIZ",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "190326_16",
-    "codigo": "010132626",
-    "nombre": "CRUZ DE PACAYA - II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "190326_16",
-    "codigo": "030026926",
-    "nombre": "LA ESCONDIDA 1",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "190326_16",
-    "codigo": "540004326",
-    "nombre": "JUVENTUD",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "190326_16",
-    "codigo": "010132526",
-    "nombre": "CRUZ DE PACAYA -I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "190326_16",
-    "codigo": "010132826",
-    "nombre": "NUEVO COLCA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "190326_16",
-    "codigo": "010132926",
-    "nombre": "PIEDRA VIUDA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "190326_16",
-    "codigo": "020006026",
-    "nombre": "AZURITA MADRINA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "190326_16",
-    "codigo": "020006126",
-    "nombre": "SYM 1",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "190326_11",
     "codigo": "050053225",
     "nombre": "CHENGFENG 2512",
     "tipo": "desaparece"
@@ -306,81 +168,219 @@
     "tipo": "aparece"
   },
   {
-    "fecha": "190326_11",
-    "codigo": "030082525",
-    "nombre": "NUEVA VISION",
+    "fecha": "200326_06",
+    "codigo": "010165225",
+    "nombre": "LA RINCONADA 2025 4",
     "tipo": "desaparece"
   },
   {
-    "fecha": "190326_11",
-    "codigo": "010359825",
-    "nombre": "CARMEN-6",
+    "fecha": "200326_11",
+    "codigo": "030027026",
+    "nombre": "TYCHE 01",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_11",
+    "codigo": "520002626",
+    "nombre": "ADRIAN MATEO OCHO",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_06",
+    "codigo": "010259725",
+    "nombre": "LA DORADA UNO 2025",
     "tipo": "desaparece"
   },
   {
-    "fecha": "190326_16",
-    "codigo": "010132726",
-    "nombre": "RUDYTA FELIZ",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "190326_16",
-    "codigo": "010132626",
-    "nombre": "CRUZ DE PACAYA - II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "190326_16",
-    "codigo": "030026926",
-    "nombre": "LA ESCONDIDA 1",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "190326_16",
-    "codigo": "540004326",
-    "nombre": "JUVENTUD",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "190326_16",
-    "codigo": "010132526",
-    "nombre": "CRUZ DE PACAYA -I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "190326_16",
-    "codigo": "010132826",
-    "nombre": "NUEVO COLCA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "190326_16",
-    "codigo": "010132926",
-    "nombre": "PIEDRA VIUDA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "190326_16",
-    "codigo": "020006026",
-    "nombre": "AZURITA MADRINA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "190326_16",
-    "codigo": "020006126",
-    "nombre": "SYM 1",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "190326_11",
-    "codigo": "050053225",
-    "nombre": "CHENGFENG 2512",
+    "fecha": "200326_06",
+    "codigo": "050091825",
+    "nombre": "MINERA LUZ CH",
     "tipo": "desaparece"
   },
   {
-    "fecha": "190326_16",
-    "codigo": "080017826",
-    "nombre": "LAS MERCEDES 2026 I",
+    "fecha": "200326_06",
+    "codigo": "050088525",
+    "nombre": "ADORADA 25",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "200326_06",
+    "codigo": "050088725",
+    "nombre": "LAS ESMERALDAS 25",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "200326_11",
+    "codigo": "070010826",
+    "nombre": "JC Q",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_11",
+    "codigo": "610003726",
+    "nombre": "ELBEYA 9",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_11",
+    "codigo": "040007426",
+    "nombre": "CANTERA RANCAGUA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_11",
+    "codigo": "010133626",
+    "nombre": "CORPORACION RAY & EVER",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_11",
+    "codigo": "010133726",
+    "nombre": "CONSORCIO EVERS RAY",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_11",
+    "codigo": "610002726",
+    "nombre": "ELBEYA 11",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_11",
+    "codigo": "610002826",
+    "nombre": "ELBEYA 7",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_11",
+    "codigo": "610002926",
+    "nombre": "ELBEYA 8",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_11",
+    "codigo": "010133226",
+    "nombre": "PIEYITO 5",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_11",
+    "codigo": "010133326",
+    "nombre": "PIEYITO 6",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_11",
+    "codigo": "010133426",
+    "nombre": "PIEYITO 7",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_11",
+    "codigo": "010133526",
+    "nombre": "PIEYITO 8",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_11",
+    "codigo": "080017926",
+    "nombre": "COMUNIDAD MINERA UQUIRA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_11",
+    "codigo": "610003026",
+    "nombre": "ELBEYA 4",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_11",
+    "codigo": "610003126",
+    "nombre": "ELBEYA 3",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_11",
+    "codigo": "610003226",
+    "nombre": "ELBEYA 5",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_11",
+    "codigo": "610003326",
+    "nombre": "ELBEYA 1",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_11",
+    "codigo": "610003426",
+    "nombre": "ELBEYA 2",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_11",
+    "codigo": "610003526",
+    "nombre": "ELBEYA 6",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_11",
+    "codigo": "610003626",
+    "nombre": "ELBEYA 10",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_11",
+    "codigo": "070010426",
+    "nombre": "CONDORI V",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_11",
+    "codigo": "010133026",
+    "nombre": "ANGELITOS V",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_11",
+    "codigo": "010133126",
+    "nombre": "RJM",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_11",
+    "codigo": "070010526",
+    "nombre": "RIOS V",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_11",
+    "codigo": "070010626",
+    "nombre": "ITZAE EMMA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_11",
+    "codigo": "070010726",
+    "nombre": "SANSON 1",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_11",
+    "codigo": "540004426",
+    "nombre": "CAYLLOMA APM V",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_11",
+    "codigo": "010133826",
+    "nombre": "MARIA AUXILIADORA XXI",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_11",
+    "codigo": "040007326",
+    "nombre": "DYAM1",
     "tipo": "aparece"
   },
   {
