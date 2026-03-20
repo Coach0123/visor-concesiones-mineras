@@ -1,42 +1,6 @@
 [
   {
     "fecha": "200326_11",
-    "codigo": "610003726",
-    "nombre": "ELBEYA 9",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "200326_11",
-    "codigo": "040007426",
-    "nombre": "CANTERA RANCAGUA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "200326_11",
-    "codigo": "010133626",
-    "nombre": "CORPORACION RAY & EVER",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "200326_11",
-    "codigo": "010133726",
-    "nombre": "CONSORCIO EVERS RAY",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "200326_11",
-    "codigo": "610002726",
-    "nombre": "ELBEYA 11",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "200326_11",
-    "codigo": "610002826",
-    "nombre": "ELBEYA 7",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "200326_11",
     "codigo": "610002926",
     "nombre": "ELBEYA 8",
     "tipo": "aparece"
@@ -597,6 +561,42 @@
     "fecha": "200326_11",
     "codigo": "040007326",
     "nombre": "DYAM1",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_16",
+    "codigo": "010133926",
+    "nombre": "BLUE STONE",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_16",
+    "codigo": "540004526",
+    "nombre": "ACUMULACION CIRRIRE",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_16",
+    "codigo": "610003826",
+    "nombre": "CHARACAS XXI",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_16",
+    "codigo": "010134026",
+    "nombre": "SANTA ISABEL I 2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_16",
+    "codigo": "110005026",
+    "nombre": "PAMPA COLORADA II 2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200326_16",
+    "codigo": "540016811A",
+    "nombre": "DIVINO NIÑO 2-B",
     "tipo": "aparece"
   }
 ]
