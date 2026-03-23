@@ -98206,7 +98206,7 @@
         "CODIGOU": "030018522",
         "FEC_DENU": "Fri Jun 03 2022 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "CANTERA EL COBRE",
-        "TIT_CONCES": "WCH TRANSER PERU E.I.R.L."
+        "TIT_CONCES": "WCH - TRANSER -  PERU E.I.R.L."
       }
     },
     {
@@ -104978,7 +104978,7 @@
         "CODIGOU": "010082126",
         "FEC_DENU": "Wed Feb 04 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "UNIVERSO OFIR",
-        "TIT_CONCES": "ESCAMILO FLORES LUIS ANTONIO"
+        "TIT_CONCES": "LUIS ANTONIO ESCAMILO FLORES"
       }
     },
     {
@@ -231994,6 +231994,78 @@
         "coordinates": [
           [
             [
+              701000,
+              9418000
+            ],
+            [
+              701000,
+              9417000
+            ],
+            [
+              699000,
+              9417000
+            ],
+            [
+              699000,
+              9418000
+            ],
+            [
+              701000,
+              9418000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "010136026",
+        "FEC_DENU": "Mon Mar 23 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "MINERA CHICUATE",
+        "TIT_CONCES": "HOSGABA E.I.R.L."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              779000,
+              9305000
+            ],
+            [
+              779000,
+              9304000
+            ],
+            [
+              778000,
+              9304000
+            ],
+            [
+              778000,
+              9305000
+            ],
+            [
+              779000,
+              9305000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "060006526",
+        "FEC_DENU": "Mon Mar 23 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "EL REJO 2026",
+        "TIT_CONCES": "RAMON PAISIG MARTINEZ"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
               756000,
               9131000
             ],
@@ -238084,7 +238156,7 @@
         "CODIGOU": "010131926",
         "FEC_DENU": "Wed Mar 18 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "EL COBRE II",
-        "TIT_CONCES": "WCH TRANSER PERU E.I.R.L."
+        "TIT_CONCES": "WCH - TRANSER -  PERU E.I.R.L."
       }
     },
     {

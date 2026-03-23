@@ -265388,7 +265388,7 @@
         "CODIGOU": "080065525",
         "FEC_DENU": "Fri Oct 10 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "QORI FLOR 2026",
-        "TIT_CONCES": "VIRGINIA PARI CHAMBI Y OTROS"
+        "TIT_CONCES": "S.M.R.L. QORI FLOR 2026"
       }
     },
     {
@@ -333178,6 +333178,42 @@
         "coordinates": [
           [
             [
+              208000,
+              8397000
+            ],
+            [
+              208000,
+              8396000
+            ],
+            [
+              207000,
+              8396000
+            ],
+            [
+              207000,
+              8397000
+            ],
+            [
+              208000,
+              8397000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "040007526",
+        "FEC_DENU": "Mon Mar 23 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "GATUZO 26",
+        "TIT_CONCES": "TEOFILO GONGORA SANCHEZ"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
               348810.5,
               8604629.12
             ],
@@ -375416,42 +375452,6 @@
         "coordinates": [
           [
             [
-              484000,
-              8430000
-            ],
-            [
-              484000,
-              8429000
-            ],
-            [
-              483000,
-              8429000
-            ],
-            [
-              483000,
-              8430000
-            ],
-            [
-              484000,
-              8430000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "080018026",
-        "FEC_DENU": "Fri Mar 20 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "QUEBRADA DE CHALLUMA",
-        "TIT_CONCES": "MARIO BORDA VALENCIA"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
               243000,
               8184000
             ],
@@ -375932,6 +375932,42 @@
         "coordinates": [
           [
             [
+              484000,
+              8430000
+            ],
+            [
+              484000,
+              8429000
+            ],
+            [
+              483000,
+              8429000
+            ],
+            [
+              483000,
+              8430000
+            ],
+            [
+              484000,
+              8430000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "080018026",
+        "FEC_DENU": "Fri Mar 20 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "QUEBRADA DE CHALLUMA",
+        "TIT_CONCES": "MARIO BORDA VALENCIA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
               384000,
               8170000
             ],
@@ -376392,6 +376428,42 @@
         "coordinates": [
           [
             [
+              180000,
+              8207000
+            ],
+            [
+              180000,
+              8205000
+            ],
+            [
+              179000,
+              8205000
+            ],
+            [
+              179000,
+              8207000
+            ],
+            [
+              180000,
+              8207000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "010135826",
+        "FEC_DENU": "Mon Mar 23 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "ARLEEN",
+        "TIT_CONCES": "CAROLINA ANA LLANOS HUANCA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
               335811.38999999966,
               8426625.9
             ],
@@ -376675,6 +376747,42 @@
         "FEC_DENU": "Thu Jan 02 2014 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "COCA 10",
         "TIT_CONCES": "COMPAÑIA MINERA ZAHENA S.A.C."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              418000,
+              8456000
+            ],
+            [
+              418000,
+              8455000
+            ],
+            [
+              416000,
+              8455000
+            ],
+            [
+              416000,
+              8456000
+            ],
+            [
+              418000,
+              8456000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "080018126",
+        "FEC_DENU": "Fri Mar 20 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "LAS MERCEDES 2026 II",
+        "TIT_CONCES": "YUDITH ARAUJO TURPO Y OTROS"
       }
     },
     {
@@ -377051,42 +377159,6 @@
         "FEC_DENU": "Tue Aug 01 2023 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "CARPANITO 52",
         "TIT_CONCES": "ANGLO AMERICAN QUELLAVECO S.A."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              418000,
-              8456000
-            ],
-            [
-              418000,
-              8455000
-            ],
-            [
-              416000,
-              8455000
-            ],
-            [
-              416000,
-              8456000
-            ],
-            [
-              418000,
-              8456000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "080018126",
-        "FEC_DENU": "Fri Mar 20 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "LAS MERCEDES 2026 II",
-        "TIT_CONCES": "YUDITH ARAUJO TURPO y Otros"
       }
     },
     {
@@ -415037,50 +415109,6 @@
         "FEC_DENU": "Tue Sep 22 2015 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "LAURA JOSEFINA III",
         "TIT_CONCES": "RICARDO DIAZ MACUCHAPI"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              288000,
-              8416000
-            ],
-            [
-              288000,
-              8414000
-            ],
-            [
-              289000,
-              8414000
-            ],
-            [
-              289000,
-              8413000
-            ],
-            [
-              286000,
-              8413000
-            ],
-            [
-              286000,
-              8416000
-            ],
-            [
-              288000,
-              8416000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "010120726",
-        "FEC_DENU": "Mon Mar 09 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "CUSCO-SB6",
-        "TIT_CONCES": "ANTIMONIO DEL ALTIPLANO SAC"
       }
     },
     {
@@ -464012,6 +464040,50 @@
         "coordinates": [
           [
             [
+              288000,
+              8416000
+            ],
+            [
+              288000,
+              8414000
+            ],
+            [
+              289000,
+              8414000
+            ],
+            [
+              289000,
+              8413000
+            ],
+            [
+              286000,
+              8413000
+            ],
+            [
+              286000,
+              8416000
+            ],
+            [
+              288000,
+              8416000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "010120726",
+        "FEC_DENU": "Mon Mar 09 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "CUSCO-SB6",
+        "TIT_CONCES": "ANTIMONIO DEL ALTIPLANO SAC"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
               389000,
               8486000
             ],
@@ -470046,7 +470118,7 @@
         "CODIGOU": "080023723",
         "FEC_DENU": "Tue Aug 01 2023 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "EM TORRE PAMPA ECM",
-        "TIT_CONCES": "CRIN COMPANY E.I.R.L. Y OTROS"
+        "TIT_CONCES": "S.M.R.L. EM TORRE PAMPA ECM"
       }
     },
     {
@@ -672088,7 +672160,7 @@
         "CODIGOU": "080064425",
         "FEC_DENU": "Mon Sep 29 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "CHACLLANI II",
-        "TIT_CONCES": "GEAN AHSLY HUAMANTUCO PACOSONCO Y OTROS"
+        "TIT_CONCES": "S.M.R.L. CHACLLANI II"
       }
     },
     {
