@@ -1,78 +1,6 @@
 [
   {
     "fecha": "210326_11",
-    "codigo": "030027526",
-    "nombre": "EVO I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "210326_11",
-    "codigo": "030027626",
-    "nombre": "KUCHUSHA III",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "210326_11",
-    "codigo": "050016826",
-    "nombre": "BEQUER III",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "210326_11",
-    "codigo": "050016926",
-    "nombre": "AMALTEA III",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "210326_11",
-    "codigo": "050017026",
-    "nombre": "AMALTEA II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "210326_11",
-    "codigo": "110005126",
-    "nombre": "SAN PEDRO 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "210326_11",
-    "codigo": "660000626",
-    "nombre": "MEZA PEREZ HNOS",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "210326_11",
-    "codigo": "690000726",
-    "nombre": "GALENA 14",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "210326_11",
-    "codigo": "050017126",
-    "nombre": "AMALTEA I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "210326_11",
-    "codigo": "520002726",
-    "nombre": "MORALES VI",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "210326_11",
-    "codigo": "010134526",
-    "nombre": "LIA - 56",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "210326_11",
-    "codigo": "010134626",
-    "nombre": "LIA - 55",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "210326_11",
     "codigo": "010134726",
     "nombre": "BAMBAS NORTE RTX 21",
     "tipo": "aparece"
@@ -525,6 +453,78 @@
     "fecha": "210326_11",
     "codigo": "070011026",
     "nombre": "KURAW I",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230326_16",
+    "codigo": "010136026",
+    "nombre": "MINERA CHICUATE",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230326_16",
+    "codigo": "060006526",
+    "nombre": "EL REJO 2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230326_16",
+    "codigo": "530003826",
+    "nombre": "SAN MIGUEL DE MALLMANYA I",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230326_16",
+    "codigo": "620001326",
+    "nombre": "LA BELLA SANTA BEQUITA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230326_16",
+    "codigo": "650002126",
+    "nombre": "MUNAY WARMI",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230326_16",
+    "codigo": "010135426",
+    "nombre": "G369 - 1",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230326_16",
+    "codigo": "010135526",
+    "nombre": "G369 - 2",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230326_16",
+    "codigo": "010135626",
+    "nombre": "G369 - 3",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230326_16",
+    "codigo": "010135726",
+    "nombre": "RYMEXPLO 2",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230326_16",
+    "codigo": "010135926",
+    "nombre": "ASOCIADOS DEYKOR",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230326_16",
+    "codigo": "040007526",
+    "nombre": "GATUZO 26",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230326_16",
+    "codigo": "010135826",
+    "nombre": "ARLEEN",
     "tipo": "aparece"
   },
   {
