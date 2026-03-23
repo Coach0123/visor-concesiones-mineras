@@ -1,78 +1,6 @@
 [
   {
     "fecha": "210326_11",
-    "codigo": "010134726",
-    "nombre": "BAMBAS NORTE RTX 21",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "210326_11",
-    "codigo": "010134826",
-    "nombre": "CAYITA1",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "210326_11",
-    "codigo": "010134926",
-    "nombre": "CJURO 28",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "210326_11",
-    "codigo": "080018026",
-    "nombre": "QUEBRADA DE CHALLUMA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "210326_11",
-    "codigo": "080018126",
-    "nombre": "LAS MERCEDES 2026 II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "210326_11",
-    "codigo": "070011026",
-    "nombre": "KURAW I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "210326_11",
-    "codigo": "010134126",
-    "nombre": "FAICAL 1",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "210326_11",
-    "codigo": "100001726",
-    "nombre": "MINERALES FECC X",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "210326_11",
-    "codigo": "010134226",
-    "nombre": "JGARCIA 3",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "210326_11",
-    "codigo": "010134326",
-    "nombre": "MINERIA CORZO",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "210326_11",
-    "codigo": "010134426",
-    "nombre": "CORZO Y HUAYNALAYA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "210326_11",
-    "codigo": "030027126",
-    "nombre": "SHUNTARI III",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "210326_11",
     "codigo": "030027226",
     "nombre": "QORITAY II",
     "tipo": "aparece"
@@ -453,6 +381,78 @@
     "fecha": "210326_11",
     "codigo": "070011026",
     "nombre": "KURAW I",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230326_16",
+    "codigo": "010136026",
+    "nombre": "MINERA CHICUATE",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230326_16",
+    "codigo": "060006526",
+    "nombre": "EL REJO 2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230326_16",
+    "codigo": "530003826",
+    "nombre": "SAN MIGUEL DE MALLMANYA I",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230326_16",
+    "codigo": "620001326",
+    "nombre": "LA BELLA SANTA BEQUITA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230326_16",
+    "codigo": "650002126",
+    "nombre": "MUNAY WARMI",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230326_16",
+    "codigo": "010135426",
+    "nombre": "G369 - 1",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230326_16",
+    "codigo": "010135526",
+    "nombre": "G369 - 2",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230326_16",
+    "codigo": "010135626",
+    "nombre": "G369 - 3",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230326_16",
+    "codigo": "010135726",
+    "nombre": "RYMEXPLO 2",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230326_16",
+    "codigo": "010135926",
+    "nombre": "ASOCIADOS DEYKOR",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230326_16",
+    "codigo": "040007526",
+    "nombre": "GATUZO 26",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230326_16",
+    "codigo": "010135826",
+    "nombre": "ARLEEN",
     "tipo": "aparece"
   },
   {
