@@ -1,120 +1,6 @@
 [
   {
     "fecha": "210326_11",
-    "codigo": "010134226",
-    "nombre": "JGARCIA 3",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "210326_11",
-    "codigo": "010134326",
-    "nombre": "MINERIA CORZO",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "210326_11",
-    "codigo": "010134426",
-    "nombre": "CORZO Y HUAYNALAYA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "210326_11",
-    "codigo": "030027126",
-    "nombre": "SHUNTARI III",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "210326_11",
-    "codigo": "030027226",
-    "nombre": "QORITAY II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "210326_11",
-    "codigo": "030027326",
-    "nombre": "SHUNTARY V",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "210326_11",
-    "codigo": "030027426",
-    "nombre": "QORITAY III",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "210326_11",
-    "codigo": "070010926",
-    "nombre": "PROYECTO MINERO CAHUAPANAS I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "210326_11",
-    "codigo": "070011126",
-    "nombre": "TOLVA DE ORO 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "210326_11",
-    "codigo": "070011226",
-    "nombre": "PROYECTO MINERO ARIPARI",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "210326_11",
-    "codigo": "010135026",
-    "nombre": "ARGENTO I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "210326_11",
-    "codigo": "010135126",
-    "nombre": "MARICIELO 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "210326_11",
-    "codigo": "010135226",
-    "nombre": "BELEN 11-2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "210326_11",
-    "codigo": "010135326",
-    "nombre": "DAHILY",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "210326_11",
-    "codigo": "020006226",
-    "nombre": "RUBI TACANA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "210326_11",
-    "codigo": "030027526",
-    "nombre": "EVO I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "210326_11",
-    "codigo": "030027626",
-    "nombre": "KUCHUSHA III",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "210326_11",
-    "codigo": "050016826",
-    "nombre": "BEQUER III",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "210326_11",
-    "codigo": "050016926",
-    "nombre": "AMALTEA III",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "210326_11",
     "codigo": "050017026",
     "nombre": "AMALTEA II",
     "tipo": "aparece"
@@ -483,6 +369,120 @@
     "fecha": "230326_16",
     "codigo": "010135826",
     "nombre": "ARLEEN",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "240326_11",
+    "codigo": "030027826",
+    "nombre": "PAJILLAS  4",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "240326_11",
+    "codigo": "010136326",
+    "nombre": "MIS TRES AMORES SAF",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "240326_11",
+    "codigo": "640000826",
+    "nombre": "CANTERA JULIO CESAR I",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "240326_11",
+    "codigo": "010136226",
+    "nombre": "MINERA FRAN CIELO",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "240326_11",
+    "codigo": "010136426",
+    "nombre": "EL LIBRO DE ELY TOMO 2",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "240326_11",
+    "codigo": "010136526",
+    "nombre": "CLARINIAV",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "240326_11",
+    "codigo": "010136626",
+    "nombre": "RUPAK-C3",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "240326_11",
+    "codigo": "010136726",
+    "nombre": "CHINCHAYCOCHA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "240326_11",
+    "codigo": "030027726",
+    "nombre": "MATAVE 2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "240326_11",
+    "codigo": "010136826",
+    "nombre": "PESACH",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "240326_11",
+    "codigo": "010136926",
+    "nombre": "PESACH I",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "240326_11",
+    "codigo": "070011426",
+    "nombre": "JAIRO WILIAM",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "240326_11",
+    "codigo": "070011526",
+    "nombre": "EDGAR MARACANA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "240326_11",
+    "codigo": "040007626",
+    "nombre": "COMITE APOYO SOCIAL KALLPITOPATA 1",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "240326_11",
+    "codigo": "070011326",
+    "nombre": "AMAZON GOLD PERÚ",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "240326_11",
+    "codigo": "010136126",
+    "nombre": "MINERA ARRIETA GOMEZ",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "240326_11",
+    "codigo": "040007726",
+    "nombre": "EM ESTRELLA DORADA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "240326_11",
+    "codigo": "050017226",
+    "nombre": "FILOMENA 1 2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "240326_11",
+    "codigo": "050017326",
+    "nombre": "FILOMENA 2 2026",
     "tipo": "aparece"
   },
   {
