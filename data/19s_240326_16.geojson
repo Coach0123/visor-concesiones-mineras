@@ -327718,6 +327718,42 @@
         "coordinates": [
           [
             [
+              208000,
+              8397000
+            ],
+            [
+              208000,
+              8396000
+            ],
+            [
+              207000,
+              8396000
+            ],
+            [
+              207000,
+              8397000
+            ],
+            [
+              208000,
+              8397000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "040007526",
+        "FEC_DENU": "Mon Mar 23 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "GATUZO 26",
+        "TIT_CONCES": "TEOFILO GONGORA SANCHEZ"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
               333812.76999999955,
               8269623.25
             ],
@@ -329269,6 +329305,42 @@
         "FEC_DENU": "Fri Oct 24 2003 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "ANGELICA 18",
         "TIT_CONCES": "LADRILLERA EL DIAMANTE S.A.C."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              236000,
+              8158000
+            ],
+            [
+              236000,
+              8155000
+            ],
+            [
+              235000,
+              8155000
+            ],
+            [
+              235000,
+              8158000
+            ],
+            [
+              236000,
+              8158000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "050017326",
+        "FEC_DENU": "Mon Mar 23 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "FILOMENA 2 2026",
+        "TIT_CONCES": "JUAN DE LA CRUZ CONTRERAS CORNEJO Y OTROS"
       }
     },
     {
@@ -333222,42 +333294,6 @@
         "coordinates": [
           [
             [
-              208000,
-              8397000
-            ],
-            [
-              208000,
-              8396000
-            ],
-            [
-              207000,
-              8396000
-            ],
-            [
-              207000,
-              8397000
-            ],
-            [
-              208000,
-              8397000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "040007526",
-        "FEC_DENU": "Mon Mar 23 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "GATUZO 26",
-        "TIT_CONCES": "TEOFILO GONGORA SANCHEZ"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
               348810.5,
               8604629.12
             ],
@@ -333700,7 +333736,7 @@
         "CODIGOU": "050017226",
         "FEC_DENU": "Mon Mar 23 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "FILOMENA 1 2026",
-        "TIT_CONCES": "JUAN DE LA CRUZ CONTRERAS CORNEJO y Otros"
+        "TIT_CONCES": "JUAN DE LA CRUZ CONTRERAS CORNEJO Y OTROS"
       }
     },
     {
@@ -333737,42 +333773,6 @@
         "FEC_DENU": "Fri Sep 24 2004 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "MATRIX",
         "TIT_CONCES": "EFRAIN RIOS QUENTA"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              236000,
-              8158000
-            ],
-            [
-              236000,
-              8155000
-            ],
-            [
-              235000,
-              8155000
-            ],
-            [
-              235000,
-              8158000
-            ],
-            [
-              236000,
-              8158000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "050017326",
-        "FEC_DENU": "Mon Mar 23 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "FILOMENA 2 2026",
-        "TIT_CONCES": "JUAN DE LA CRUZ CONTRERAS CORNEJO y Otros"
       }
     },
     {
@@ -425585,7 +425585,7 @@
       "properties": {
         "CODIGOU": "080044524",
         "FEC_DENU": "Mon Nov 04 2024 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "QORI ORQO",
+        "CONCESION": "VILLSAC CORPORATION II",
         "TIT_CONCES": "JUAN FREDY ZUÑIGA CHURA Y OTROS"
       }
     },
@@ -433106,42 +433106,6 @@
         "CODIGOU": "010126626",
         "FEC_DENU": "Wed Mar 11 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "NUNOA 23",
-        "TIT_CONCES": "BEAR CREEK MINING S.A.C."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              314000,
-              8421000
-            ],
-            [
-              316000,
-              8421000
-            ],
-            [
-              316000,
-              8416000
-            ],
-            [
-              314000,
-              8416000
-            ],
-            [
-              314000,
-              8421000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "010127026",
-        "FEC_DENU": "Wed Mar 11 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "NUNOA 27",
         "TIT_CONCES": "BEAR CREEK MINING S.A.C."
       }
     },
@@ -464831,6 +464795,42 @@
         "FEC_DENU": "Thu May 23 2019 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "CORI ADACYL",
         "TIT_CONCES": "EMPRESA CORI ADACYL S.A.C."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              314000,
+              8421000
+            ],
+            [
+              316000,
+              8421000
+            ],
+            [
+              316000,
+              8416000
+            ],
+            [
+              314000,
+              8416000
+            ],
+            [
+              314000,
+              8421000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "010127026",
+        "FEC_DENU": "Wed Mar 11 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "NUNOA 27",
+        "TIT_CONCES": "BEAR CREEK MINING S.A.C."
       }
     },
     {
@@ -665577,58 +665577,6 @@
         "FEC_DENU": "Tue Aug 26 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "REY DAVID GOLD MINE CUATRO",
         "TIT_CONCES": "ELIZABETH CURI YUCRA"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              491000,
-              8171000
-            ],
-            [
-              491000,
-              8170000
-            ],
-            [
-              489000,
-              8170000
-            ],
-            [
-              489000,
-              8169000
-            ],
-            [
-              488000,
-              8169000
-            ],
-            [
-              488000,
-              8173000
-            ],
-            [
-              489000,
-              8173000
-            ],
-            [
-              489000,
-              8171000
-            ],
-            [
-              491000,
-              8171000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "110014225",
-        "FEC_DENU": "Tue Aug 26 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "APU VI 2025",
-        "TIT_CONCES": "FREDY CHURA QUISPE Y OTROS"
       }
     },
     {

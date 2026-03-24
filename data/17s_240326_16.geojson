@@ -1330,6 +1330,42 @@
         "coordinates": [
           [
             [
+              783000,
+              9079000
+            ],
+            [
+              783000,
+              9076000
+            ],
+            [
+              782000,
+              9076000
+            ],
+            [
+              782000,
+              9079000
+            ],
+            [
+              783000,
+              9079000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "010137526",
+        "FEC_DENU": "Tue Mar 24 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "FLINT 1",
+        "TIT_CONCES": "LATIN GOLD S.A.C."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
               611000,
               9259000
             ],
@@ -161212,42 +161248,6 @@
         "coordinates": [
           [
             [
-              809000,
-              9079000
-            ],
-            [
-              809000,
-              9077000
-            ],
-            [
-              808000,
-              9077000
-            ],
-            [
-              808000,
-              9079000
-            ],
-            [
-              809000,
-              9079000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "030027826",
-        "FEC_DENU": "Mon Mar 23 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "PAJILLAS  4",
-        "TIT_CONCES": "MARITZA PAJILLA ALEJANDRO"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
               797000,
               9297000
             ],
@@ -168856,6 +168856,42 @@
         "coordinates": [
           [
             [
+              529000,
+              9430000
+            ],
+            [
+              529000,
+              9429000
+            ],
+            [
+              528000,
+              9429000
+            ],
+            [
+              528000,
+              9430000
+            ],
+            [
+              529000,
+              9430000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "010137326",
+        "FEC_DENU": "Tue Mar 24 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "CANTERA EL DORADO 2026",
+        "TIT_CONCES": "INC MINERA EL DORADO S.A.C"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
               827000,
               9036000
             ],
@@ -169179,6 +169215,42 @@
         "FEC_DENU": "Mon Mar 05 1951 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "AMBARA NÂº2",
         "TIT_CONCES": "ACTIVOS MINEROS S.A.C."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              784000,
+              9082000
+            ],
+            [
+              784000,
+              9079000
+            ],
+            [
+              783000,
+              9079000
+            ],
+            [
+              783000,
+              9082000
+            ],
+            [
+              784000,
+              9082000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "010137426",
+        "FEC_DENU": "Tue Mar 24 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "FLINT 2",
+        "TIT_CONCES": "LATIN GOLD S.A.C."
       }
     },
     {
@@ -261855,6 +261927,42 @@
         "FEC_DENU": "Mon Jul 13 2020 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "CORDILLERA I",
         "TIT_CONCES": "S.M.R.L. CORDILLERA I"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              809000,
+              9079000
+            ],
+            [
+              809000,
+              9077000
+            ],
+            [
+              808000,
+              9077000
+            ],
+            [
+              808000,
+              9079000
+            ],
+            [
+              809000,
+              9079000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "030027826",
+        "FEC_DENU": "Mon Mar 23 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "PAJILLAS  4",
+        "TIT_CONCES": "MARITZA PAJILLA ALEJANDRO"
       }
     },
     {

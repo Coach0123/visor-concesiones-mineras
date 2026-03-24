@@ -1,60 +1,6 @@
 [
   {
     "fecha": "230326_16",
-    "codigo": "010135426",
-    "nombre": "G369 - 1",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "230326_16",
-    "codigo": "010135526",
-    "nombre": "G369 - 2",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "230326_16",
-    "codigo": "010135626",
-    "nombre": "G369 - 3",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "230326_16",
-    "codigo": "010135726",
-    "nombre": "RYMEXPLO 2",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "230326_16",
-    "codigo": "010135926",
-    "nombre": "ASOCIADOS DEYKOR",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "230326_16",
-    "codigo": "040007526",
-    "nombre": "GATUZO 26",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "230326_16",
-    "codigo": "010135826",
-    "nombre": "ARLEEN",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "230326_16",
-    "codigo": "010136026",
-    "nombre": "MINERA CHICUATE",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "230326_16",
-    "codigo": "060006526",
-    "nombre": "EL REJO 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "230326_16",
     "codigo": "530003826",
     "nombre": "SAN MIGUEL DE MALLMANYA I",
     "tipo": "aparece"
@@ -598,5 +544,59 @@
     "codigo": "050017326",
     "nombre": "FILOMENA 2 2026",
     "tipo": "aparece"
+  },
+  {
+    "fecha": "240326_16",
+    "codigo": "010137526",
+    "nombre": "FLINT 1",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "240326_16",
+    "codigo": "010137326",
+    "nombre": "CANTERA EL DORADO 2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "240326_16",
+    "codigo": "010137426",
+    "nombre": "FLINT 2",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "240326_16",
+    "codigo": "030027926",
+    "nombre": "MARINA 2",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "240326_16",
+    "codigo": "010137026",
+    "nombre": "KIRA 26",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "240326_16",
+    "codigo": "010137126",
+    "nombre": "SHANGHAI II",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "240326_16",
+    "codigo": "010137226",
+    "nombre": "SHANGHAI I",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "240326_16",
+    "codigo": "530003926",
+    "nombre": "GABINA ADELA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "240326_11",
+    "codigo": "110014225",
+    "nombre": "APU VI 2025",
+    "tipo": "desaparece"
   }
 ]
