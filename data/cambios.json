@@ -1,77 +1,5 @@
 [
   {
-    "fecha": "230326_16",
-    "codigo": "010135726",
-    "nombre": "RYMEXPLO 2",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "230326_16",
-    "codigo": "010135926",
-    "nombre": "ASOCIADOS DEYKOR",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "230326_16",
-    "codigo": "040007526",
-    "nombre": "GATUZO 26",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "230326_16",
-    "codigo": "010135826",
-    "nombre": "ARLEEN",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "240326_11",
-    "codigo": "030027826",
-    "nombre": "PAJILLAS  4",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "240326_11",
-    "codigo": "010136326",
-    "nombre": "MIS TRES AMORES SAF",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "240326_11",
-    "codigo": "640000826",
-    "nombre": "CANTERA JULIO CESAR I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "240326_11",
-    "codigo": "010136226",
-    "nombre": "MINERA FRAN CIELO",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "240326_11",
-    "codigo": "010136426",
-    "nombre": "EL LIBRO DE ELY TOMO 2",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "240326_11",
-    "codigo": "010136526",
-    "nombre": "CLARINIAV",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "240326_11",
-    "codigo": "010136626",
-    "nombre": "RUPAK-C3",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "240326_11",
-    "codigo": "010136726",
-    "nombre": "CHINCHAYCOCHA",
-    "tipo": "aparece"
-  },
-  {
     "fecha": "240326_11",
     "codigo": "030027726",
     "nombre": "MATAVE 2026",
@@ -526,6 +454,78 @@
     "codigo": "110014225",
     "nombre": "APU VI 2025",
     "tipo": "desaparece"
+  },
+  {
+    "fecha": "250326_11",
+    "codigo": "010137626",
+    "nombre": "ROSA VICTORIA 2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "250326_11",
+    "codigo": "010138126",
+    "nombre": "HEFEST MINERAL 4",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "250326_11",
+    "codigo": "030028026",
+    "nombre": "LUZ DE OFIR",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "250326_11",
+    "codigo": "050017426",
+    "nombre": "BEQUER IV",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "250326_11",
+    "codigo": "040007826",
+    "nombre": "QORY BARA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "250326_11",
+    "codigo": "110005226",
+    "nombre": "AMELITA USHPACOTO 2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "250326_11",
+    "codigo": "010137726",
+    "nombre": "INVICTA 1",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "250326_11",
+    "codigo": "010137826",
+    "nombre": "HEFEST MINERAL 7",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "250326_11",
+    "codigo": "010137926",
+    "nombre": "HEFEST MINERAL 6",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "250326_11",
+    "codigo": "010138026",
+    "nombre": "HEFEST MINERAL 5",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "250326_11",
+    "codigo": "010138326",
+    "nombre": "RAYO M3",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "250326_11",
+    "codigo": "010138226",
+    "nombre": "RAYO N2",
+    "tipo": "aparece"
   },
   {
     "fecha": "250326_11",
