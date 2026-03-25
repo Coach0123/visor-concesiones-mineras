@@ -159164,7 +159164,7 @@
         "CODIGOU": "040004799",
         "FEC_DENU": "Mon Aug 02 1999 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "ROSMERY 1",
-        "TIT_CONCES": "ROSMERY QUILLAHUAMAN HUARANCA Y OTROS"
+        "TIT_CONCES": "ROSMERY QUILLAHUAMAN HUARANCCA Y OTROS"
       }
     },
     {
@@ -331742,50 +331742,6 @@
         "coordinates": [
           [
             [
-              325000,
-              8465000
-            ],
-            [
-              325000,
-              8464000
-            ],
-            [
-              324000,
-              8464000
-            ],
-            [
-              324000,
-              8462000
-            ],
-            [
-              321000,
-              8462000
-            ],
-            [
-              321000,
-              8465000
-            ],
-            [
-              325000,
-              8465000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "010138326",
-        "FEC_DENU": "Tue Mar 24 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "RAYO M3",
-        "TIT_CONCES": "EPART S.A.C."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
               241983.16999999993,
               8164298.24
             ],
@@ -477376,6 +477332,50 @@
         "coordinates": [
           [
             [
+              325000,
+              8465000
+            ],
+            [
+              325000,
+              8464000
+            ],
+            [
+              324000,
+              8464000
+            ],
+            [
+              324000,
+              8462000
+            ],
+            [
+              321000,
+              8462000
+            ],
+            [
+              321000,
+              8465000
+            ],
+            [
+              325000,
+              8465000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "010138326",
+        "FEC_DENU": "Tue Mar 24 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "RAYO M3",
+        "TIT_CONCES": "EPART S.A.C."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
               304000,
               8125000
             ],
@@ -480543,6 +480543,42 @@
         "FEC_DENU": "Fri Apr 19 1974 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "REF.DE COBRE - ILO",
         "TIT_CONCES": "SOUTHERN PERU COPPER CORPORATION, SUCURSAL DEL PERU"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              305000,
+              8544000
+            ],
+            [
+              305000,
+              8543000
+            ],
+            [
+              303000,
+              8543000
+            ],
+            [
+              303000,
+              8544000
+            ],
+            [
+              305000,
+              8544000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "580002326",
+        "FEC_DENU": "Wed Mar 25 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "TIGRETUNQUI II",
+        "TIT_CONCES": "EMERSON ALHUAY NAVARRO"
       }
     },
     {

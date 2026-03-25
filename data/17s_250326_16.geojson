@@ -169224,42 +169224,6 @@
         "coordinates": [
           [
             [
-              784000,
-              9082000
-            ],
-            [
-              784000,
-              9079000
-            ],
-            [
-              783000,
-              9079000
-            ],
-            [
-              783000,
-              9082000
-            ],
-            [
-              784000,
-              9082000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "010137426",
-        "FEC_DENU": "Tue Mar 24 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "FLINT 2",
-        "TIT_CONCES": "LATIN GOLD S.A.C."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
               494466.9900000002,
               9464360.53
             ],
@@ -269864,6 +269828,42 @@
         "coordinates": [
           [
             [
+              784000,
+              9082000
+            ],
+            [
+              784000,
+              9079000
+            ],
+            [
+              783000,
+              9079000
+            ],
+            [
+              783000,
+              9082000
+            ],
+            [
+              784000,
+              9082000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "010137426",
+        "FEC_DENU": "Tue Mar 24 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "FLINT 2",
+        "TIT_CONCES": "LATIN GOLD S.A.C."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
               746000,
               9128000
             ],
@@ -270651,6 +270651,42 @@
         "FEC_DENU": "Fri Jan 08 2021 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "FRANCISCA 2021",
         "TIT_CONCES": "HERMAN ANTONIO CONCHA GARCIA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              586000,
+              9495000
+            ],
+            [
+              586000,
+              9493000
+            ],
+            [
+              585000,
+              9493000
+            ],
+            [
+              585000,
+              9495000
+            ],
+            [
+              586000,
+              9495000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "030028126",
+        "FEC_DENU": "Wed Mar 25 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "LOMASI",
+        "TIT_CONCES": "EMILL MANUEL RUIZ CHAFFO y Otros"
       }
     },
     {
@@ -302324,7 +302360,7 @@
         "CODIGOU": "630009322",
         "FEC_DENU": "Wed Aug 24 2022 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "CLARITA 2022",
-        "TIT_CONCES": "TRANSPORTES, SERVICIOS MINEROS Y AGRICOLAS S.A.C."
+        "TIT_CONCES": "EXPLOTACION Y COMERCIALIZACION MINERA CHAVEZ E.I.R.L."
       }
     },
     {
