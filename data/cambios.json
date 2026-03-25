@@ -1,24 +1,6 @@
 [
   {
     "fecha": "240326_11",
-    "codigo": "010136726",
-    "nombre": "CHINCHAYCOCHA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "240326_11",
-    "codigo": "030027726",
-    "nombre": "MATAVE 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "240326_11",
-    "codigo": "010136826",
-    "nombre": "PESACH",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "240326_11",
     "codigo": "010136926",
     "nombre": "PESACH I",
     "tipo": "aparece"
@@ -561,6 +543,24 @@
     "fecha": "250326_11",
     "codigo": "010138226",
     "nombre": "RAYO N2",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "250326_16",
+    "codigo": "030028126",
+    "nombre": "LOMASI",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "250326_16",
+    "codigo": "030028226",
+    "nombre": "JESUS AMIGO ETERNO 25923 PDL",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "250326_16",
+    "codigo": "580002326",
+    "nombre": "TIGRETUNQUI II",
     "tipo": "aparece"
   },
   {
