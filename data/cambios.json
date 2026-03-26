@@ -1,66 +1,6 @@
 [
   {
     "fecha": "240326_16",
-    "codigo": "030027926",
-    "nombre": "MARINA 2",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "240326_16",
-    "codigo": "010137026",
-    "nombre": "KIRA 26",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "240326_16",
-    "codigo": "010137126",
-    "nombre": "SHANGHAI II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "240326_16",
-    "codigo": "010137226",
-    "nombre": "SHANGHAI I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "240326_16",
-    "codigo": "530003926",
-    "nombre": "GABINA ADELA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "240326_11",
-    "codigo": "110014225",
-    "nombre": "APU VI 2025",
-    "tipo": "desaparece"
-  },
-  {
-    "fecha": "240326_16",
-    "codigo": "010137526",
-    "nombre": "FLINT 1",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "240326_16",
-    "codigo": "010137326",
-    "nombre": "CANTERA EL DORADO 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "240326_16",
-    "codigo": "010137426",
-    "nombre": "FLINT 2",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "240326_16",
-    "codigo": "030027926",
-    "nombre": "MARINA 2",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "240326_16",
     "codigo": "010137026",
     "nombre": "KIRA 26",
     "tipo": "aparece"
@@ -597,6 +537,66 @@
     "fecha": "260326_11",
     "codigo": "050018026",
     "nombre": "AGUA SALADA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "260326_11",
+    "codigo": "020007825",
+    "nombre": "MERY 1",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "260326_11",
+    "codigo": "020007925",
+    "nombre": "SILVANA 1",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "260326_11",
+    "codigo": "010429425",
+    "nombre": "HM005",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "260326_16",
+    "codigo": "010139326",
+    "nombre": "RRHM 7",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "260326_16",
+    "codigo": "010139426",
+    "nombre": "RRHM 8",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "260326_16",
+    "codigo": "530004026",
+    "nombre": "LOS ALCONES",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "260326_11",
+    "codigo": "040011425",
+    "nombre": "DANTON I",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "260326_16",
+    "codigo": "010139226",
+    "nombre": "CANTERA ROCA FUERTE",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "260326_16",
+    "codigo": "540004626",
+    "nombre": "AMANECER B&V",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "260326_16",
+    "codigo": "680000526",
+    "nombre": "ADONAI",
     "tipo": "aparece"
   }
 ]

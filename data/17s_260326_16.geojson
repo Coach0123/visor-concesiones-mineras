@@ -269568,6 +269568,42 @@
         "coordinates": [
           [
             [
+              586000,
+              9495000
+            ],
+            [
+              586000,
+              9493000
+            ],
+            [
+              585000,
+              9493000
+            ],
+            [
+              585000,
+              9495000
+            ],
+            [
+              586000,
+              9495000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "030028126",
+        "FEC_DENU": "Wed Mar 25 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "LOMASI",
+        "TIT_CONCES": "EMILL MANUEL RUIZ CHAFFO Y OTROS"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
               758000,
               9248000
             ],
@@ -270731,42 +270767,6 @@
         "FEC_DENU": "Fri Jan 08 2021 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "FRANCISCA 2021",
         "TIT_CONCES": "HERMAN ANTONIO CONCHA GARCIA"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              586000,
-              9495000
-            ],
-            [
-              586000,
-              9493000
-            ],
-            [
-              585000,
-              9493000
-            ],
-            [
-              585000,
-              9495000
-            ],
-            [
-              586000,
-              9495000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "030028126",
-        "FEC_DENU": "Wed Mar 25 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "LOMASI",
-        "TIT_CONCES": "EMILL MANUEL RUIZ CHAFFO y Otros"
       }
     },
     {

@@ -369872,6 +369872,42 @@
         "coordinates": [
           [
             [
+              227000,
+              8198000
+            ],
+            [
+              227000,
+              8197000
+            ],
+            [
+              224000,
+              8197000
+            ],
+            [
+              224000,
+              8198000
+            ],
+            [
+              227000,
+              8198000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "010139226",
+        "FEC_DENU": "Thu Mar 26 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "CANTERA ROCA FUERTE",
+        "TIT_CONCES": "JACOB JOSE PACORI PACORI"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
               373811,
               8574628.62
             ],
@@ -371787,6 +371823,78 @@
         "FEC_DENU": "Mon Jul 04 2016 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "COLPACOTA 84 4",
         "TIT_CONCES": "GOLD FIELDS LA CIMA S.A."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              213000,
+              8186000
+            ],
+            [
+              213000,
+              8184000
+            ],
+            [
+              212000,
+              8184000
+            ],
+            [
+              212000,
+              8186000
+            ],
+            [
+              213000,
+              8186000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "540004626",
+        "FEC_DENU": "Thu Mar 26 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "AMANECER B&V",
+        "TIT_CONCES": "MURIEL MARILIA FERNANDEZ MEJIA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              277000,
+              8094000
+            ],
+            [
+              277000,
+              8093000
+            ],
+            [
+              276000,
+              8093000
+            ],
+            [
+              276000,
+              8094000
+            ],
+            [
+              277000,
+              8094000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "680000526",
+        "FEC_DENU": "Thu Mar 26 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "ADONAI",
+        "TIT_CONCES": "MIGUEL ANGEL MAMANI HUAYAPA"
       }
     },
     {
@@ -408786,42 +408894,6 @@
         "coordinates": [
           [
             [
-              215000,
-              8410000
-            ],
-            [
-              215000,
-              8409000
-            ],
-            [
-              214000,
-              8409000
-            ],
-            [
-              214000,
-              8410000
-            ],
-            [
-              215000,
-              8410000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "040011425",
-        "FEC_DENU": "Mon May 05 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "DANTON I",
-        "TIT_CONCES": "REPRESENTACIONES LEAMIN E.I.R.L."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
               217000,
               8409000
             ],
@@ -438842,7 +438914,7 @@
         "CODIGOU": "050043424",
         "FEC_DENU": "Mon Oct 14 2024 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "BRISALINDA 01",
-        "TIT_CONCES": "JAVIER ZUÑIGA ARIAS Y OTROS"
+        "TIT_CONCES": "CEFERINO SERAPIO CALDERON ZUÑIGA Y OTROS"
       }
     },
     {
