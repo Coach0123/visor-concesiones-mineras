@@ -1,125 +1,5 @@
 [
   {
-    "fecha": "240326_11",
-    "codigo": "070011426",
-    "nombre": "JAIRO WILIAM",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "240326_11",
-    "codigo": "070011526",
-    "nombre": "EDGAR MARACANA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "240326_11",
-    "codigo": "040007626",
-    "nombre": "COMITE APOYO SOCIAL KALLPITOPATA 1",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "240326_11",
-    "codigo": "070011326",
-    "nombre": "AMAZON GOLD PERÚ",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "240326_11",
-    "codigo": "010136126",
-    "nombre": "MINERA ARRIETA GOMEZ",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "240326_11",
-    "codigo": "040007726",
-    "nombre": "EM ESTRELLA DORADA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "240326_11",
-    "codigo": "050017226",
-    "nombre": "FILOMENA 1 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "240326_11",
-    "codigo": "050017326",
-    "nombre": "FILOMENA 2 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "240326_16",
-    "codigo": "010137526",
-    "nombre": "FLINT 1",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "240326_16",
-    "codigo": "010137326",
-    "nombre": "CANTERA EL DORADO 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "240326_16",
-    "codigo": "010137426",
-    "nombre": "FLINT 2",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "240326_16",
-    "codigo": "030027926",
-    "nombre": "MARINA 2",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "240326_16",
-    "codigo": "010137026",
-    "nombre": "KIRA 26",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "240326_16",
-    "codigo": "010137126",
-    "nombre": "SHANGHAI II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "240326_16",
-    "codigo": "010137226",
-    "nombre": "SHANGHAI I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "240326_16",
-    "codigo": "530003926",
-    "nombre": "GABINA ADELA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "240326_11",
-    "codigo": "110014225",
-    "nombre": "APU VI 2025",
-    "tipo": "desaparece"
-  },
-  {
-    "fecha": "240326_16",
-    "codigo": "010137526",
-    "nombre": "FLINT 1",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "240326_16",
-    "codigo": "010137326",
-    "nombre": "CANTERA EL DORADO 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "240326_16",
-    "codigo": "010137426",
-    "nombre": "FLINT 2",
-    "tipo": "aparece"
-  },
-  {
     "fecha": "240326_16",
     "codigo": "030027926",
     "nombre": "MARINA 2",
@@ -477,6 +357,126 @@
     "fecha": "250326_16",
     "codigo": "580002326",
     "nombre": "TIGRETUNQUI II",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "260326_11",
+    "codigo": "050017526",
+    "nombre": "CRUZ DE CHUCA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "260326_11",
+    "codigo": "010139126",
+    "nombre": "SOFIA I",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "260326_11",
+    "codigo": "030028726",
+    "nombre": "HORIZONTE PIAS III",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "260326_11",
+    "codigo": "550001826",
+    "nombre": "VILLA LOMA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "260326_11",
+    "codigo": "010139026",
+    "nombre": "ROSARIO 1",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "260326_11",
+    "codigo": "050017826",
+    "nombre": "CUNA DE ORO I",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "260326_11",
+    "codigo": "050017926",
+    "nombre": "SERPIENTE DE DORADA III",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "260326_11",
+    "codigo": "010138426",
+    "nombre": "PIEDRA DE ESTRELLAS 3 2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "260326_11",
+    "codigo": "010138526",
+    "nombre": "PIEDRA DE ESTRELLAS 4 2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "260326_11",
+    "codigo": "010138626",
+    "nombre": "PIEDRA DE ESTRELLAS 5 2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "260326_11",
+    "codigo": "010138726",
+    "nombre": "PIEDRA DE ESTRELLAS 7 2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "260326_11",
+    "codigo": "010138826",
+    "nombre": "PIEDRA DE ESTRELLAS 8 2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "260326_11",
+    "codigo": "010138926",
+    "nombre": "PIEDRA DE ESTRELLAS 9 2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "260326_11",
+    "codigo": "030028326",
+    "nombre": "MINERA AMPEL I",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "260326_11",
+    "codigo": "030028426",
+    "nombre": "CORICOCHA VI",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "260326_11",
+    "codigo": "030028526",
+    "nombre": "MARSHAL III",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "260326_11",
+    "codigo": "030028626",
+    "nombre": "CORICOCHA V",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "260326_11",
+    "codigo": "050017626",
+    "nombre": "BETICITA I",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "260326_11",
+    "codigo": "050017726",
+    "nombre": "BETICITA II",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "260326_11",
+    "codigo": "050018026",
+    "nombre": "AGUA SALADA",
     "tipo": "aparece"
   },
   {
