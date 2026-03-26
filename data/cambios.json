@@ -1,66 +1,6 @@
 [
   {
     "fecha": "250326_11",
-    "codigo": "110005226",
-    "nombre": "AMELITA USHPACOTO 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "250326_11",
-    "codigo": "010137726",
-    "nombre": "INVICTA 1",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "250326_11",
-    "codigo": "010137826",
-    "nombre": "HEFEST MINERAL 7",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "250326_11",
-    "codigo": "010137926",
-    "nombre": "HEFEST MINERAL 6",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "250326_11",
-    "codigo": "010138026",
-    "nombre": "HEFEST MINERAL 5",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "250326_11",
-    "codigo": "010138326",
-    "nombre": "RAYO M3",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "250326_11",
-    "codigo": "010138226",
-    "nombre": "RAYO N2",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "250326_11",
-    "codigo": "010137626",
-    "nombre": "ROSA VICTORIA 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "250326_11",
-    "codigo": "010138126",
-    "nombre": "HEFEST MINERAL 4",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "250326_11",
-    "codigo": "030028026",
-    "nombre": "LUZ DE OFIR",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "250326_11",
     "codigo": "050017426",
     "nombre": "BEQUER IV",
     "tipo": "aparece"
@@ -477,6 +417,66 @@
     "fecha": "260326_11",
     "codigo": "050018026",
     "nombre": "AGUA SALADA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "260326_11",
+    "codigo": "020007825",
+    "nombre": "MERY 1",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "260326_11",
+    "codigo": "020007925",
+    "nombre": "SILVANA 1",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "260326_11",
+    "codigo": "010429425",
+    "nombre": "HM005",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "260326_16",
+    "codigo": "010139326",
+    "nombre": "RRHM 7",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "260326_16",
+    "codigo": "010139426",
+    "nombre": "RRHM 8",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "260326_16",
+    "codigo": "530004026",
+    "nombre": "LOS ALCONES",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "260326_11",
+    "codigo": "040011425",
+    "nombre": "DANTON I",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "260326_16",
+    "codigo": "010139226",
+    "nombre": "CANTERA ROCA FUERTE",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "260326_16",
+    "codigo": "540004626",
+    "nombre": "AMANECER B&V",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "260326_16",
+    "codigo": "680000526",
+    "nombre": "ADONAI",
     "tipo": "aparece"
   },
   {
