@@ -1,161 +1,5 @@
 [
   {
-    "fecha": "250326_16",
-    "codigo": "580002326",
-    "nombre": "TIGRETUNQUI II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "250326_16",
-    "codigo": "030028126",
-    "nombre": "LOMASI",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "250326_16",
-    "codigo": "030028226",
-    "nombre": "JESUS AMIGO ETERNO 25923 PDL",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "250326_16",
-    "codigo": "580002326",
-    "nombre": "TIGRETUNQUI II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "260326_11",
-    "codigo": "050017526",
-    "nombre": "CRUZ DE CHUCA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "260326_11",
-    "codigo": "010139126",
-    "nombre": "SOFIA I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "260326_11",
-    "codigo": "030028726",
-    "nombre": "HORIZONTE PIAS III",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "260326_11",
-    "codigo": "550001826",
-    "nombre": "VILLA LOMA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "260326_11",
-    "codigo": "010139026",
-    "nombre": "ROSARIO 1",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "260326_11",
-    "codigo": "050017826",
-    "nombre": "CUNA DE ORO I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "260326_11",
-    "codigo": "050017926",
-    "nombre": "SERPIENTE DE DORADA III",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "260326_11",
-    "codigo": "010138426",
-    "nombre": "PIEDRA DE ESTRELLAS 3 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "260326_11",
-    "codigo": "010138526",
-    "nombre": "PIEDRA DE ESTRELLAS 4 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "260326_11",
-    "codigo": "010138626",
-    "nombre": "PIEDRA DE ESTRELLAS 5 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "260326_11",
-    "codigo": "010138726",
-    "nombre": "PIEDRA DE ESTRELLAS 7 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "260326_11",
-    "codigo": "010138826",
-    "nombre": "PIEDRA DE ESTRELLAS 8 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "260326_11",
-    "codigo": "010138926",
-    "nombre": "PIEDRA DE ESTRELLAS 9 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "260326_11",
-    "codigo": "030028326",
-    "nombre": "MINERA AMPEL I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "260326_11",
-    "codigo": "030028426",
-    "nombre": "CORICOCHA VI",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "260326_11",
-    "codigo": "030028526",
-    "nombre": "MARSHAL III",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "260326_11",
-    "codigo": "030028626",
-    "nombre": "CORICOCHA V",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "260326_11",
-    "codigo": "050017626",
-    "nombre": "BETICITA I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "260326_11",
-    "codigo": "050017726",
-    "nombre": "BETICITA II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "260326_11",
-    "codigo": "050018026",
-    "nombre": "AGUA SALADA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "260326_11",
-    "codigo": "050017526",
-    "nombre": "CRUZ DE CHUCA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "260326_11",
-    "codigo": "010139126",
-    "nombre": "SOFIA I",
-    "tipo": "aparece"
-  },
-  {
     "fecha": "260326_11",
     "codigo": "030028726",
     "nombre": "HORIZONTE PIAS III",
@@ -441,6 +285,162 @@
     "fecha": "260326_16",
     "codigo": "680000526",
     "nombre": "ADONAI",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270326_11",
+    "codigo": "100001826",
+    "nombre": "ALTO PERU JD",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270326_11",
+    "codigo": "100001926",
+    "nombre": "GEMINIS JL",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270326_11",
+    "codigo": "560000626",
+    "nombre": "MARGA 2",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270326_11",
+    "codigo": "640000926",
+    "nombre": "ARENAL MORROPE 20",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270326_06",
+    "codigo": "630002322",
+    "nombre": "ESPERANZAS 2016 V",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "270326_06",
+    "codigo": "010409725",
+    "nombre": "MINERIA LONJAMA",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "270326_11",
+    "codigo": "660000726",
+    "nombre": "CANIHUAY II",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270326_11",
+    "codigo": "660000826",
+    "nombre": "RICHARLISON I",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270326_11",
+    "codigo": "660000926",
+    "nombre": "TANCARAYOC II",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270326_11",
+    "codigo": "660001026",
+    "nombre": "CONDORAMI I",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270326_11",
+    "codigo": "010140026",
+    "nombre": "TON 5",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270326_11",
+    "codigo": "010140126",
+    "nombre": "HACHI IV",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270326_11",
+    "codigo": "010140326",
+    "nombre": "JOSEFA-II",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270326_11",
+    "codigo": "010140426",
+    "nombre": "CATALEYA MOGROVEJO",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270326_11",
+    "codigo": "010140526",
+    "nombre": "TACCATA 2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270326_11",
+    "codigo": "010139526",
+    "nombre": "COBRE COMAS 03",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270326_11",
+    "codigo": "010139626",
+    "nombre": "CORPLOGISTICS MINING PERU",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270326_11",
+    "codigo": "010139726",
+    "nombre": "MINERA RADIANTE CINCO",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270326_11",
+    "codigo": "010139826",
+    "nombre": "MINERA EUEMI",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270326_11",
+    "codigo": "010139926",
+    "nombre": "HACHI III",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270326_11",
+    "codigo": "050018126",
+    "nombre": "CERRO PLATOSO VI",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270326_11",
+    "codigo": "110005426",
+    "nombre": "GABRIEL 2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270326_11",
+    "codigo": "070011626",
+    "nombre": "GAEL ELIZABETH",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270326_11",
+    "codigo": "070011726",
+    "nombre": "FLOR JARDY",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270326_11",
+    "codigo": "070011826",
+    "nombre": "SEBASTIAN PLATINI",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270326_11",
+    "codigo": "050018226",
+    "nombre": "CHAMAQUITA RUMI GOLD",
     "tipo": "aparece"
   },
   {
