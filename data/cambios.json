@@ -1,72 +1,6 @@
 [
   {
     "fecha": "270326_11",
-    "codigo": "010139526",
-    "nombre": "COBRE COMAS 03",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "010139626",
-    "nombre": "CORPLOGISTICS MINING PERU",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "010139726",
-    "nombre": "MINERA RADIANTE CINCO",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "010139826",
-    "nombre": "MINERA EUEMI",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "010139926",
-    "nombre": "HACHI III",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "050018126",
-    "nombre": "CERRO PLATOSO VI",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "110005426",
-    "nombre": "GABRIEL 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "070011626",
-    "nombre": "GAEL ELIZABETH",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "070011726",
-    "nombre": "FLOR JARDY",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "070011826",
-    "nombre": "SEBASTIAN PLATINI",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "050018226",
-    "nombre": "CHAMAQUITA RUMI GOLD",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
     "codigo": "100001826",
     "nombre": "ALTO PERU JD",
     "tipo": "aparece"
@@ -531,6 +465,72 @@
     "fecha": "270326_11",
     "codigo": "050018226",
     "nombre": "CHAMAQUITA RUMI GOLD",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270326_11",
+    "codigo": "520004624",
+    "nombre": "SAN JUAN M C J",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "270326_11",
+    "codigo": "010385225",
+    "nombre": "BRILLANTE GRIS 2",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "270326_16",
+    "codigo": "110005526",
+    "nombre": "ABBA10",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270326_16",
+    "codigo": "010140826",
+    "nombre": "PARIGUANA NORTE",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270326_16",
+    "codigo": "010140926",
+    "nombre": "PARIGUANA SUR",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270326_16",
+    "codigo": "540004726",
+    "nombre": "ELBEYA 15",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270326_16",
+    "codigo": "540004826",
+    "nombre": "ELBEYA 14",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270326_16",
+    "codigo": "600001326",
+    "nombre": "MILAGROSA DE QUIO",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270326_16",
+    "codigo": "010140626",
+    "nombre": "G369 - 4",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270326_16",
+    "codigo": "010140726",
+    "nombre": "TESORO ESCONDIDO B",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270326_16",
+    "codigo": "590001926",
+    "nombre": "JESUS DE NAZARENO",
     "tipo": "aparece"
   },
   {
