@@ -240658,6 +240658,42 @@
         "coordinates": [
           [
             [
+              401000,
+              8143000
+            ],
+            [
+              401000,
+              8140000
+            ],
+            [
+              399000,
+              8140000
+            ],
+            [
+              399000,
+              8143000
+            ],
+            [
+              401000,
+              8143000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "010417825",
+        "FEC_DENU": "Mon Nov 10 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "TERRA VI",
+        "TIT_CONCES": "VON TERRA SOCIEDAD ANONIMA CERRADA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
               357000,
               8225000
             ],
@@ -243017,42 +243053,6 @@
         "FEC_DENU": "Mon Nov 03 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "SH VALENTINA",
         "TIT_CONCES": "CONSORCIO AGROMINERO SAN HILARION S.A.C."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              401000,
-              8143000
-            ],
-            [
-              401000,
-              8140000
-            ],
-            [
-              399000,
-              8140000
-            ],
-            [
-              399000,
-              8143000
-            ],
-            [
-              401000,
-              8143000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "010417825",
-        "FEC_DENU": "Mon Nov 10 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "TERRA VI",
-        "TIT_CONCES": "VON TERRA SOCIEDAD ANONIMA CERRADA"
       }
     },
     {
@@ -382306,7 +382306,7 @@
         "CODIGOU": "050018226",
         "FEC_DENU": "Thu Mar 26 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "CHAMAQUITA RUMI GOLD",
-        "TIT_CONCES": "ALFREDO ALCCAHUAMAN HUAMANI y Otros"
+        "TIT_CONCES": "ALFREDO ALCCAHUAMAN HUAMANI Y OTROS"
       }
     },
     {
@@ -442716,6 +442716,58 @@
         "coordinates": [
           [
             [
+              353000,
+              8416000
+            ],
+            [
+              353000,
+              8415000
+            ],
+            [
+              350000,
+              8415000
+            ],
+            [
+              350000,
+              8413000
+            ],
+            [
+              347000,
+              8413000
+            ],
+            [
+              347000,
+              8414000
+            ],
+            [
+              348000,
+              8414000
+            ],
+            [
+              348000,
+              8416000
+            ],
+            [
+              353000,
+              8416000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "010330325",
+        "FEC_DENU": "Wed Oct 01 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "ANTAUTA 8",
+        "TIT_CONCES": "MINSUR S.A."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
               222000,
               8113000
             ],
@@ -446567,6 +446619,50 @@
         "FEC_DENU": "Wed Mar 18 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "CANTERA MIRAVE",
         "TIT_CONCES": "GRUPO NAZGUL S.R.L."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              369000,
+              8412000
+            ],
+            [
+              369000,
+              8411000
+            ],
+            [
+              368000,
+              8411000
+            ],
+            [
+              368000,
+              8409000
+            ],
+            [
+              365000,
+              8409000
+            ],
+            [
+              365000,
+              8412000
+            ],
+            [
+              369000,
+              8412000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "010332925",
+        "FEC_DENU": "Wed Oct 01 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "POTONI 13",
+        "TIT_CONCES": "MINSUR S.A."
       }
     },
     {
@@ -672523,7 +672619,7 @@
       "properties": {
         "CODIGOU": "040035625",
         "FEC_DENU": "Thu Sep 11 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "PAITITI2",
+        "CONCESION": "GRUPO MYH",
         "TIT_CONCES": "JUAN MACHACCA HUANCA"
       }
     },
@@ -679574,50 +679670,6 @@
         "coordinates": [
           [
             [
-              369000,
-              8412000
-            ],
-            [
-              369000,
-              8411000
-            ],
-            [
-              368000,
-              8411000
-            ],
-            [
-              368000,
-              8409000
-            ],
-            [
-              365000,
-              8409000
-            ],
-            [
-              365000,
-              8412000
-            ],
-            [
-              369000,
-              8412000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "010332925",
-        "FEC_DENU": "Wed Oct 01 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "POTONI 13",
-        "TIT_CONCES": "MINSUR S.A."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
               374000,
               8411000
             ],
@@ -681548,58 +681600,6 @@
         "CODIGOU": "010329125",
         "FEC_DENU": "Wed Oct 01 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "ANTAUTA 2",
-        "TIT_CONCES": "MINSUR S.A."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              353000,
-              8416000
-            ],
-            [
-              353000,
-              8415000
-            ],
-            [
-              350000,
-              8415000
-            ],
-            [
-              350000,
-              8413000
-            ],
-            [
-              347000,
-              8413000
-            ],
-            [
-              347000,
-              8414000
-            ],
-            [
-              348000,
-              8414000
-            ],
-            [
-              348000,
-              8416000
-            ],
-            [
-              353000,
-              8416000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "010330325",
-        "FEC_DENU": "Wed Oct 01 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "ANTAUTA 8",
         "TIT_CONCES": "MINSUR S.A."
       }
     },

@@ -80550,42 +80550,6 @@
         "coordinates": [
           [
             [
-              795000,
-              8990000
-            ],
-            [
-              794000,
-              8990000
-            ],
-            [
-              794000,
-              8991000
-            ],
-            [
-              795000,
-              8991000
-            ],
-            [
-              795000,
-              8990000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "030006925",
-        "FEC_DENU": "Fri Feb 07 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "MIS TRES MARIAS 2025",
-        "TIT_CONCES": "SANTOS BENITO VEGA TERRONES"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
               726000,
               9452000
             ],
@@ -118691,42 +118655,6 @@
         "FEC_DENU": "Thu Oct 31 2013 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "CANTERA CALLAYUC 3",
         "TIT_CONCES": "MINISTERIO DE TRANSPORTES Y COMUNICACIONES"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              813000,
-              8989000
-            ],
-            [
-              813000,
-              8988000
-            ],
-            [
-              811000,
-              8988000
-            ],
-            [
-              811000,
-              8989000
-            ],
-            [
-              813000,
-              8989000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "010415825",
-        "FEC_DENU": "Fri Nov 07 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "MINERA EL FUERTE",
-        "TIT_CONCES": "JUAN ARMANDO VILLON ANGELES"
       }
     },
     {
@@ -229300,42 +229228,6 @@
         "coordinates": [
           [
             [
-              727000,
-              9108000
-            ],
-            [
-              727000,
-              9107000
-            ],
-            [
-              726000,
-              9107000
-            ],
-            [
-              726000,
-              9108000
-            ],
-            [
-              727000,
-              9108000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "100001926",
-        "FEC_DENU": "Thu Mar 26 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "GEMINIS JL",
-        "TIT_CONCES": "JORGE LUIS RENGIFO MORALES"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
               744000,
               9408000
             ],
@@ -233178,50 +233070,6 @@
         "coordinates": [
           [
             [
-              605000,
-              9276000
-            ],
-            [
-              605000,
-              9272000
-            ],
-            [
-              602000,
-              9272000
-            ],
-            [
-              602000,
-              9273000
-            ],
-            [
-              603000,
-              9273000
-            ],
-            [
-              603000,
-              9276000
-            ],
-            [
-              605000,
-              9276000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "640000926",
-        "FEC_DENU": "Thu Mar 26 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "ARENAL MORROPE 20",
-        "TIT_CONCES": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
               715000,
               9269000
             ],
@@ -233609,6 +233457,50 @@
         "FEC_DENU": "Thu Jan 02 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "SAN BENITO 5 2024",
         "TIT_CONCES": "FRESNILLO PERU S.A.C."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              605000,
+              9276000
+            ],
+            [
+              605000,
+              9272000
+            ],
+            [
+              602000,
+              9272000
+            ],
+            [
+              602000,
+              9273000
+            ],
+            [
+              603000,
+              9273000
+            ],
+            [
+              603000,
+              9276000
+            ],
+            [
+              605000,
+              9276000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "640000926",
+        "FEC_DENU": "Thu Mar 26 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "ARENAL MORROPE 20",
+        "TIT_CONCES": ""
       }
     },
     {
@@ -244790,6 +244682,42 @@
         "coordinates": [
           [
             [
+              727000,
+              9108000
+            ],
+            [
+              727000,
+              9107000
+            ],
+            [
+              726000,
+              9107000
+            ],
+            [
+              726000,
+              9108000
+            ],
+            [
+              727000,
+              9108000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "100001926",
+        "FEC_DENU": "Thu Mar 26 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "GEMINIS JL",
+        "TIT_CONCES": "JORGE LUIS RENGIFO MORALES"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
               496000,
               9473000
             ],
@@ -246813,6 +246741,154 @@
         "FEC_DENU": "Mon May 05 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "BRUNEY CASMA 2",
         "TIT_CONCES": "GLOBALWEALTH S.A.C."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              775000,
+              9545000
+            ],
+            [
+              775000,
+              9544000
+            ],
+            [
+              771000,
+              9544000
+            ],
+            [
+              771000,
+              9546599.46
+            ],
+            [
+              771021.8300000001,
+              9546635.64
+            ],
+            [
+              771028.7800000003,
+              9546647.16
+            ],
+            [
+              771032.75,
+              9546685.53
+            ],
+            [
+              771032.4299999997,
+              9546686.88
+            ],
+            [
+              771033.21,
+              9546689.68
+            ],
+            [
+              771022.75,
+              9546748.93
+            ],
+            [
+              771008.4400000004,
+              9546796.05
+            ],
+            [
+              771002.7300000004,
+              9546838.57
+            ],
+            [
+              771000,
+              9546856.89
+            ],
+            [
+              771000,
+              9546968.6
+            ],
+            [
+              771007.8499999996,
+              9547000
+            ],
+            [
+              772000,
+              9547000
+            ],
+            [
+              772000,
+              9545000
+            ],
+            [
+              773000,
+              9545000
+            ],
+            [
+              773000,
+              9546000
+            ],
+            [
+              775000,
+              9546000
+            ],
+            [
+              775000,
+              9547000
+            ],
+            [
+              776000,
+              9547000
+            ],
+            [
+              776000,
+              9545000
+            ],
+            [
+              775000,
+              9545000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "010294125",
+        "FEC_DENU": "Wed Aug 13 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "COBRECON 4",
+        "TIT_CONCES": "EDWING WHILMER BASTIDAS QUISPE"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              812000,
+              8989000
+            ],
+            [
+              812000,
+              8988000
+            ],
+            [
+              811000,
+              8988000
+            ],
+            [
+              811000,
+              8989000
+            ],
+            [
+              812000,
+              8989000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "010415825",
+        "FEC_DENU": "Fri Nov 07 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "MINERA EL FUERTE",
+        "TIT_CONCES": "JUAN ARMANDO VILLON ANGELES"
       }
     },
     {
@@ -257583,6 +257659,42 @@
         "FEC_DENU": "Thu Jan 30 2020 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "COLLIS VIRIDI 1",
         "TIT_CONCES": "KARIM NOELIA VERA MORENO"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              795000,
+              8990000
+            ],
+            [
+              794000,
+              8990000
+            ],
+            [
+              794000,
+              8991000
+            ],
+            [
+              795000,
+              8991000
+            ],
+            [
+              795000,
+              8990000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "030006925",
+        "FEC_DENU": "Fri Feb 07 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "MIS TRES MARIAS 2025",
+        "TIT_CONCES": "SANTOS BENITO VEGA TERRONES"
       }
     },
     {
@@ -381157,74 +381269,6 @@
         "FEC_DENU": "Mon Sep 29 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "EL GUAYACAN",
         "TIT_CONCES": "KARELY MONTENEGRO & COFFE S.A.C."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              772000,
-              9547000
-            ],
-            [
-              772000,
-              9545000
-            ],
-            [
-              773000,
-              9545000
-            ],
-            [
-              773000,
-              9546000
-            ],
-            [
-              775000,
-              9546000
-            ],
-            [
-              775000,
-              9547000
-            ],
-            [
-              776000,
-              9547000
-            ],
-            [
-              776000,
-              9545000
-            ],
-            [
-              775000,
-              9545000
-            ],
-            [
-              775000,
-              9544000
-            ],
-            [
-              771000,
-              9544000
-            ],
-            [
-              771000,
-              9547000
-            ],
-            [
-              772000,
-              9547000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "010294125",
-        "FEC_DENU": "Wed Aug 13 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "COBRECON 4",
-        "TIT_CONCES": "EDWING WHILMER BASTIDAS QUISPE"
       }
     },
     {
