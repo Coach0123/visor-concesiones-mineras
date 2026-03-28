@@ -1,395 +1,5 @@
 [
   {
-    "fecha": "270326_11",
-    "codigo": "070011626",
-    "nombre": "GAEL ELIZABETH",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "070011726",
-    "nombre": "FLOR JARDY",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "070011826",
-    "nombre": "SEBASTIAN PLATINI",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "050018226",
-    "nombre": "CHAMAQUITA RUMI GOLD",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "100001826",
-    "nombre": "ALTO PERU JD",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "100001926",
-    "nombre": "GEMINIS JL",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "560000626",
-    "nombre": "MARGA 2",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "640000926",
-    "nombre": "ARENAL MORROPE 20",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_06",
-    "codigo": "630002322",
-    "nombre": "ESPERANZAS 2016 V",
-    "tipo": "desaparece"
-  },
-  {
-    "fecha": "270326_06",
-    "codigo": "010409725",
-    "nombre": "MINERIA LONJAMA",
-    "tipo": "desaparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "660000726",
-    "nombre": "CANIHUAY II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "660000826",
-    "nombre": "RICHARLISON I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "660000926",
-    "nombre": "TANCARAYOC II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "660001026",
-    "nombre": "CONDORAMI I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "010140026",
-    "nombre": "TON 5",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "010140126",
-    "nombre": "HACHI IV",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "010140326",
-    "nombre": "JOSEFA-II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "010140426",
-    "nombre": "CATALEYA MOGROVEJO",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "010140526",
-    "nombre": "TACCATA 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "010139526",
-    "nombre": "COBRE COMAS 03",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "010139626",
-    "nombre": "CORPLOGISTICS MINING PERU",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "010139726",
-    "nombre": "MINERA RADIANTE CINCO",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "010139826",
-    "nombre": "MINERA EUEMI",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "010139926",
-    "nombre": "HACHI III",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "050018126",
-    "nombre": "CERRO PLATOSO VI",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "110005426",
-    "nombre": "GABRIEL 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "070011626",
-    "nombre": "GAEL ELIZABETH",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "070011726",
-    "nombre": "FLOR JARDY",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "070011826",
-    "nombre": "SEBASTIAN PLATINI",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "050018226",
-    "nombre": "CHAMAQUITA RUMI GOLD",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "100001826",
-    "nombre": "ALTO PERU JD",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "100001926",
-    "nombre": "GEMINIS JL",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "560000626",
-    "nombre": "MARGA 2",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "640000926",
-    "nombre": "ARENAL MORROPE 20",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_06",
-    "codigo": "630002322",
-    "nombre": "ESPERANZAS 2016 V",
-    "tipo": "desaparece"
-  },
-  {
-    "fecha": "270326_06",
-    "codigo": "010409725",
-    "nombre": "MINERIA LONJAMA",
-    "tipo": "desaparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "660000726",
-    "nombre": "CANIHUAY II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "660000826",
-    "nombre": "RICHARLISON I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "660000926",
-    "nombre": "TANCARAYOC II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "660001026",
-    "nombre": "CONDORAMI I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "010140026",
-    "nombre": "TON 5",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "010140126",
-    "nombre": "HACHI IV",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "010140326",
-    "nombre": "JOSEFA-II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "010140426",
-    "nombre": "CATALEYA MOGROVEJO",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "010140526",
-    "nombre": "TACCATA 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "010139526",
-    "nombre": "COBRE COMAS 03",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "010139626",
-    "nombre": "CORPLOGISTICS MINING PERU",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "010139726",
-    "nombre": "MINERA RADIANTE CINCO",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "010139826",
-    "nombre": "MINERA EUEMI",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "010139926",
-    "nombre": "HACHI III",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "050018126",
-    "nombre": "CERRO PLATOSO VI",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "110005426",
-    "nombre": "GABRIEL 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "070011626",
-    "nombre": "GAEL ELIZABETH",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "070011726",
-    "nombre": "FLOR JARDY",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "070011826",
-    "nombre": "SEBASTIAN PLATINI",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "050018226",
-    "nombre": "CHAMAQUITA RUMI GOLD",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "520004624",
-    "nombre": "SAN JUAN M C J",
-    "tipo": "desaparece"
-  },
-  {
-    "fecha": "270326_11",
-    "codigo": "010385225",
-    "nombre": "BRILLANTE GRIS 2",
-    "tipo": "desaparece"
-  },
-  {
-    "fecha": "270326_16",
-    "codigo": "110005526",
-    "nombre": "ABBA10",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_16",
-    "codigo": "010140826",
-    "nombre": "PARIGUANA NORTE",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_16",
-    "codigo": "010140926",
-    "nombre": "PARIGUANA SUR",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_16",
-    "codigo": "540004726",
-    "nombre": "ELBEYA 15",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_16",
-    "codigo": "540004826",
-    "nombre": "ELBEYA 14",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_16",
-    "codigo": "600001326",
-    "nombre": "MILAGROSA DE QUIO",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "270326_16",
-    "codigo": "010140626",
-    "nombre": "G369 - 4",
-    "tipo": "aparece"
-  },
-  {
     "fecha": "270326_16",
     "codigo": "010140726",
     "nombre": "TESORO ESCONDIDO B",
@@ -597,6 +207,396 @@
     "fecha": "270326_16",
     "codigo": "590001926",
     "nombre": "JESUS DE NAZARENO",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "640001026",
+    "nombre": "CORPORACION HERRERA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010146526",
+    "nombre": "LUISA IV",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_06",
+    "codigo": "010258125",
+    "nombre": "CALOGERO 2",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010145026",
+    "nombre": "TARTARO NORTE MBP 13",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010141026",
+    "nombre": "CHACHACO 001",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010143326",
+    "nombre": "TARTATO NORTE MBP 52",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010143526",
+    "nombre": "TARTARO NORTE MBP 51",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010143726",
+    "nombre": "TARTARO NORTE MBP 50",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010145926",
+    "nombre": "TARTARO NORTE MBP 39",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010146326",
+    "nombre": "TARTARO NORTE MBP 36",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010146426",
+    "nombre": "TARTARO NORTE MBP 35",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010141126",
+    "nombre": "AUGUSTA 6",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010141226",
+    "nombre": "TARTARO NORTE MBP 34",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010141326",
+    "nombre": "TARTARO NORTE MBP 33",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010141426",
+    "nombre": "TARTARO NORTE MBP 32",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010141526",
+    "nombre": "TARTARO NORTE MBP 31",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010141626",
+    "nombre": "TARTARO NORTE MBP 30",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010142826",
+    "nombre": "TARTARO NORTE MBP 55",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010143026",
+    "nombre": "TARTARO NORTE MBP 23",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010143226",
+    "nombre": "TARTARO NORTE MBP 22",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010143926",
+    "nombre": "TARTARO NORTE MBP 49",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010144126",
+    "nombre": "TARTARO NORTE MBP 48",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010144226",
+    "nombre": "TARTARO NORTE MBP 17",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010144326",
+    "nombre": "TARTARO NORTE MBP 47",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010144426",
+    "nombre": "TARTARO NORTE MBP 16",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010144526",
+    "nombre": "TARTARO NORTE MBP 46",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010144626",
+    "nombre": "TARTARO NORTE MBP 15",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010144726",
+    "nombre": "TARTARO NORTE MBP 45",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010144826",
+    "nombre": "TARTARO NORTE MBP 14",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010143426",
+    "nombre": "TARTARO NORTE MBP 21",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010143626",
+    "nombre": "TARTARO NORTE MBP 20",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010143826",
+    "nombre": "TARTARO NORTE MBP 19",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010144026",
+    "nombre": "TARTARO NORTE MBP 18",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010145626",
+    "nombre": "TARTARO NORTE MBP 10",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010145826",
+    "nombre": "TARTARO NORTE MBP 12",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010144926",
+    "nombre": "TARTARO NORTE MBP 44",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010145326",
+    "nombre": "TARTARO NORTE MBP 42",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010145426",
+    "nombre": "TARTARO NORTE MBP 09",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010145526",
+    "nombre": "TARTARO NORTE MBP 41",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010145726",
+    "nombre": "TARTARO NORTE MBP 40",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "080018226",
+    "nombre": "SUMERINDE J L 1",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "610003926",
+    "nombre": "ELBEYA 13",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010141726",
+    "nombre": "TARTARO NORTE MBP 29",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010146026",
+    "nombre": "TARTARO NORTE MBP 11",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010146126",
+    "nombre": "TARTARO NORTE MBP 38",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010146226",
+    "nombre": "TARTARO NORTE MBP 37",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010141826",
+    "nombre": "TARTARO NORTE MBP 28",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010141926",
+    "nombre": "TARTARO NORTE MBP 60",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010142026",
+    "nombre": "TARTARO NORTE MBP 27",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "110005626",
+    "nombre": "SANTA ROSA 2026 DOS",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010142926",
+    "nombre": "TARTARO NORTE MBP 54",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010143126",
+    "nombre": "TARTARO NORTE MBP 53",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010142126",
+    "nombre": "TARTARO NORTE MBP 59",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010142226",
+    "nombre": "TARTARO NORTE MBP 26",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010142326",
+    "nombre": "TARTARO NORTE MBP 58",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010142426",
+    "nombre": "TARTARO NORTE MBP 57",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010142526",
+    "nombre": "TARTARO NORTE MBP 25",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010142626",
+    "nombre": "TARTARO NORTE MBP 56",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010142726",
+    "nombre": "TARTARO NORTE MBP 24",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010146926",
+    "nombre": "KIMSAN CHIRAPA SUQTA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010147026",
+    "nombre": "KIMSAN CHIRAPA QANCHIS",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010145126",
+    "nombre": "TARTARO NORTE MBP 43",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010145226",
+    "nombre": "TARTARO NORTE MBP 08",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010146726",
+    "nombre": "ALEJANDRA ANDREA 4",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280326_11",
+    "codigo": "010146826",
+    "nombre": "KIMSAN CHIRAPA PICHQA",
     "tipo": "aparece"
   }
 ]
