@@ -1,72 +1,6 @@
 [
   {
     "fecha": "280326_11",
-    "codigo": "010146726",
-    "nombre": "ALEJANDRA ANDREA 4",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "280326_11",
-    "codigo": "010146826",
-    "nombre": "KIMSAN CHIRAPA PICHQA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "280326_11",
-    "codigo": "640001026",
-    "nombre": "CORPORACION HERRERA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "280326_11",
-    "codigo": "010146526",
-    "nombre": "LUISA IV",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "280326_06",
-    "codigo": "010258125",
-    "nombre": "CALOGERO 2",
-    "tipo": "desaparece"
-  },
-  {
-    "fecha": "280326_11",
-    "codigo": "010145026",
-    "nombre": "TARTARO NORTE MBP 13",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "280326_11",
-    "codigo": "010141026",
-    "nombre": "CHACHACO 001",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "280326_11",
-    "codigo": "010143326",
-    "nombre": "TARTATO NORTE MBP 52",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "280326_11",
-    "codigo": "010143526",
-    "nombre": "TARTARO NORTE MBP 51",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "280326_11",
-    "codigo": "010143726",
-    "nombre": "TARTARO NORTE MBP 50",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "280326_11",
-    "codigo": "010145926",
-    "nombre": "TARTARO NORTE MBP 39",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "280326_11",
     "codigo": "010146326",
     "nombre": "TARTARO NORTE MBP 36",
     "tipo": "aparece"
@@ -400,6 +334,72 @@
     "codigo": "010146826",
     "nombre": "KIMSAN CHIRAPA PICHQA",
     "tipo": "aparece"
+  },
+  {
+    "fecha": "300326_11",
+    "codigo": "620002224",
+    "nombre": "MACC 2024",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "300326_11",
+    "codigo": "540007823",
+    "nombre": "PLANTA MINA SRTA EINAT",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "300326_11",
+    "codigo": "550003425",
+    "nombre": "SUMAQ RUMI",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "300326_11",
+    "codigo": "550001325",
+    "nombre": "KALEF 24",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "300326_16",
+    "codigo": "010147126",
+    "nombre": "ALEJANDRA ANDREA 5",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "300326_16",
+    "codigo": "010147226",
+    "nombre": "ALEJANDRA ANDREA 6",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "300326_16",
+    "codigo": "010147326",
+    "nombre": "MINERA SANTA EULALIA V",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "300326_16",
+    "codigo": "010147426",
+    "nombre": "SHANGHAI III",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "300326_16",
+    "codigo": "010147526",
+    "nombre": "AVENTURA-830",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "300326_11",
+    "codigo": "070000725",
+    "nombre": "REY DAVID",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "300326_11",
+    "codigo": "070029625",
+    "nombre": "SEÑOR DE MURUGUAY",
+    "tipo": "desaparece"
   },
   {
     "fecha": "300326_11",
