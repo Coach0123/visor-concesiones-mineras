@@ -305624,42 +305624,6 @@
         "coordinates": [
           [
             [
-              249000,
-              8128000
-            ],
-            [
-              249000,
-              8126000
-            ],
-            [
-              244000,
-              8126000
-            ],
-            [
-              244000,
-              8128000
-            ],
-            [
-              249000,
-              8128000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "010112826",
-        "FEC_DENU": "Mon Mar 02 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "ESPERANZA E 2026",
-        "TIT_CONCES": "DLP RESOURCES PERU S.A.C."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
               258000,
               8422000
             ],
@@ -327709,42 +327673,6 @@
         "FEC_DENU": "Tue May 04 2004 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "MOISES I",
         "TIT_CONCES": "ARTURO ORTIZ ORTIZ"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              208000,
-              8397000
-            ],
-            [
-              208000,
-              8396000
-            ],
-            [
-              207000,
-              8396000
-            ],
-            [
-              207000,
-              8397000
-            ],
-            [
-              208000,
-              8397000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "040007526",
-        "FEC_DENU": "Mon Mar 23 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "GATUZO 26",
-        "TIT_CONCES": "TEOFILO GONGORA SANCHEZ"
       }
     },
     {
@@ -369374,42 +369302,6 @@
         "coordinates": [
           [
             [
-              324000,
-              8331000
-            ],
-            [
-              324000,
-              8330000
-            ],
-            [
-              323000,
-              8330000
-            ],
-            [
-              323000,
-              8331000
-            ],
-            [
-              324000,
-              8331000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "080016326",
-        "FEC_DENU": "Thu Mar 05 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "FLOR I JF",
-        "TIT_CONCES": "JUAN FERNANDO AHUMADA HUAYNACHO"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
               421811.9000000004,
               8613629.77
             ],
@@ -377048,42 +376940,6 @@
         "coordinates": [
           [
             [
-              418000,
-              8456000
-            ],
-            [
-              418000,
-              8455000
-            ],
-            [
-              416000,
-              8455000
-            ],
-            [
-              416000,
-              8456000
-            ],
-            [
-              418000,
-              8456000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "080018126",
-        "FEC_DENU": "Fri Mar 20 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "LAS MERCEDES 2026 II",
-        "TIT_CONCES": "YUDITH ARAUJO TURPO Y OTROS"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
               349813.3200000003,
               8150623.32
             ],
@@ -379651,42 +379507,6 @@
         "FEC_DENU": "Thu Mar 26 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "GAEL ELIZABETH",
         "TIT_CONCES": "ADRIEL PAZ FARFAN"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              373000,
-              8588000
-            ],
-            [
-              373000,
-              8587000
-            ],
-            [
-              372000,
-              8587000
-            ],
-            [
-              372000,
-              8588000
-            ],
-            [
-              373000,
-              8588000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "070011726",
-        "FEC_DENU": "Thu Mar 26 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "FLOR JARDY",
-        "TIT_CONCES": "GREGORIA QUISPE YLLA"
       }
     },
     {
@@ -399510,42 +399330,6 @@
         "coordinates": [
           [
             [
-              399000,
-              8463000
-            ],
-            [
-              399000,
-              8462000
-            ],
-            [
-              398000,
-              8462000
-            ],
-            [
-              398000,
-              8463000
-            ],
-            [
-              399000,
-              8463000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "080017126",
-        "FEC_DENU": "Mon Mar 16 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "CHAMUN DORADO",
-        "TIT_CONCES": "JUAN ALBERTO CANAZA GUTIERREZ"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
               299000,
               8304000
             ],
@@ -399717,42 +399501,6 @@
         "FEC_DENU": "Mon Nov 02 2020 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "SEÑOR CHARUMAYO",
         "TIT_CONCES": "SANTOS JULIAN PACCORI MAMANI"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              366000,
-              8021000
-            ],
-            [
-              366000,
-              8020000
-            ],
-            [
-              364000,
-              8020000
-            ],
-            [
-              364000,
-              8021000
-            ],
-            [
-              366000,
-              8021000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "730001026",
-        "FEC_DENU": "Tue Mar 17 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "GLOBAL TAC",
-        "TIT_CONCES": "ALEXANDER MAMANI NAVARRO"
       }
     },
     {
@@ -401266,6 +401014,42 @@
         "coordinates": [
           [
             [
+              399000,
+              8463000
+            ],
+            [
+              399000,
+              8462000
+            ],
+            [
+              398000,
+              8462000
+            ],
+            [
+              398000,
+              8463000
+            ],
+            [
+              399000,
+              8463000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "080017126",
+        "FEC_DENU": "Mon Mar 16 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "CHAMUN DORADO",
+        "TIT_CONCES": "JUAN ALBERTO CANAZA GUTIERREZ"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
               383000,
               8488000
             ],
@@ -401749,6 +401533,42 @@
         "FEC_DENU": "Mon Nov 02 2020 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "VALE810",
         "TIT_CONCES": "VALE EXPLORATION PERU S.A.C."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              366000,
+              8021000
+            ],
+            [
+              366000,
+              8020000
+            ],
+            [
+              364000,
+              8020000
+            ],
+            [
+              364000,
+              8021000
+            ],
+            [
+              366000,
+              8021000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "730001026",
+        "FEC_DENU": "Tue Mar 17 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "GLOBAL TAC",
+        "TIT_CONCES": "ALEXANDER MAMANI NAVARRO"
       }
     },
     {
@@ -408217,42 +408037,6 @@
         "FEC_DENU": "Wed Apr 01 2015 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "JOAQUIN 3 2014",
         "TIT_CONCES": "ANGLO AMERICAN QUELLAVECO S.A."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              375000,
-              8587000
-            ],
-            [
-              375000,
-              8585000
-            ],
-            [
-              372000,
-              8585000
-            ],
-            [
-              372000,
-              8587000
-            ],
-            [
-              375000,
-              8587000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "670000226",
-        "FEC_DENU": "Thu Mar 12 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "PLAYA EDISON",
-        "TIT_CONCES": "SABINA CONDORI CCOLQUE"
       }
     },
     {
@@ -430720,42 +430504,6 @@
         "coordinates": [
           [
             [
-              338000,
-              8590000
-            ],
-            [
-              338000,
-              8589000
-            ],
-            [
-              337000,
-              8589000
-            ],
-            [
-              337000,
-              8590000
-            ],
-            [
-              338000,
-              8590000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "070000725",
-        "FEC_DENU": "Mon Jan 27 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "REY DAVID",
-        "TIT_CONCES": "INOCENCIO LAUREANO AROCUTIPA SUPO"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
               328000,
               8431000
             ],
@@ -447432,6 +447180,58 @@
         "coordinates": [
           [
             [
+              393000,
+              8465000
+            ],
+            [
+              393000,
+              8464000
+            ],
+            [
+              392000,
+              8464000
+            ],
+            [
+              392000,
+              8463000
+            ],
+            [
+              391000,
+              8463000
+            ],
+            [
+              391000,
+              8466000
+            ],
+            [
+              392000,
+              8466000
+            ],
+            [
+              392000,
+              8465000
+            ],
+            [
+              393000,
+              8465000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "050015926",
+        "FEC_DENU": "Tue Mar 17 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "LA VIÑA DEL ORO",
+        "TIT_CONCES": "JHAIR ERICK TUPAC AMARU RAMOS Y OTROS"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
               285000,
               8090000
             ],
@@ -448819,58 +448619,6 @@
         "FEC_DENU": "Tue Jun 27 2023 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "FRONTERA V",
         "TIT_CONCES": "MARIO MARTIN FLORES LLANOS Y OTROS"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              393000,
-              8465000
-            ],
-            [
-              393000,
-              8464000
-            ],
-            [
-              392000,
-              8464000
-            ],
-            [
-              392000,
-              8463000
-            ],
-            [
-              391000,
-              8463000
-            ],
-            [
-              391000,
-              8466000
-            ],
-            [
-              392000,
-              8466000
-            ],
-            [
-              392000,
-              8465000
-            ],
-            [
-              393000,
-              8465000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "050015926",
-        "FEC_DENU": "Tue Mar 17 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "LA VIÑA DEL ORO",
-        "TIT_CONCES": "JHAIR ERICK TUPAC AMARU RAMOS Y OTROS"
       }
     },
     {
@@ -482276,6 +482024,42 @@
         "coordinates": [
           [
             [
+              208000,
+              8397000
+            ],
+            [
+              208000,
+              8396000
+            ],
+            [
+              207000,
+              8396000
+            ],
+            [
+              207000,
+              8397000
+            ],
+            [
+              208000,
+              8397000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "040007526",
+        "FEC_DENU": "Mon Mar 23 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "GATUZO 26",
+        "TIT_CONCES": "TEOFILO GONGORA SANCHEZ"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
               484000,
               8444000
             ],
@@ -482383,6 +482167,78 @@
         "FEC_DENU": "Wed May 02 2018 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "LEONELA",
         "TIT_CONCES": "CESAR COLQUE COLQUE"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              249000,
+              8128000
+            ],
+            [
+              249000,
+              8126000
+            ],
+            [
+              244000,
+              8126000
+            ],
+            [
+              244000,
+              8128000
+            ],
+            [
+              249000,
+              8128000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "010112826",
+        "FEC_DENU": "Mon Mar 02 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "ESPERANZA E 2026",
+        "TIT_CONCES": "DLP RESOURCES PERU S.A.C."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              418000,
+              8456000
+            ],
+            [
+              418000,
+              8455000
+            ],
+            [
+              416000,
+              8455000
+            ],
+            [
+              416000,
+              8456000
+            ],
+            [
+              418000,
+              8456000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "080018126",
+        "FEC_DENU": "Fri Mar 20 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "LAS MERCEDES 2026 II",
+        "TIT_CONCES": "YUDITH ARAUJO TURPO Y OTROS"
       }
     },
     {
@@ -482687,6 +482543,78 @@
         "FEC_DENU": "Mon Nov 02 2020 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "JULIETA 2020",
         "TIT_CONCES": "DARIO QUISPE GARATE"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              324000,
+              8331000
+            ],
+            [
+              324000,
+              8330000
+            ],
+            [
+              323000,
+              8330000
+            ],
+            [
+              323000,
+              8331000
+            ],
+            [
+              324000,
+              8331000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "080016326",
+        "FEC_DENU": "Thu Mar 05 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "FLOR I JF",
+        "TIT_CONCES": "JUAN FERNANDO AHUMADA HUAYNACHO"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              375000,
+              8587000
+            ],
+            [
+              375000,
+              8585000
+            ],
+            [
+              372000,
+              8585000
+            ],
+            [
+              372000,
+              8587000
+            ],
+            [
+              375000,
+              8587000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "670000226",
+        "FEC_DENU": "Thu Mar 12 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "PLAYA EDISON",
+        "TIT_CONCES": "SABINA CONDORI CCOLQUE"
       }
     },
     {
@@ -483287,6 +483215,42 @@
         "FEC_DENU": "Fri Feb 01 2019 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "TALABAYA 05",
         "TIT_CONCES": "NEXA RESOURCES PERU S.A.A."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              373000,
+              8588000
+            ],
+            [
+              373000,
+              8587000
+            ],
+            [
+              372000,
+              8587000
+            ],
+            [
+              372000,
+              8588000
+            ],
+            [
+              373000,
+              8588000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "070011726",
+        "FEC_DENU": "Thu Mar 26 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "FLOR JARDY",
+        "TIT_CONCES": "GREGORIA QUISPE YLLA"
       }
     },
     {
@@ -699521,42 +699485,6 @@
         "FEC_DENU": "Wed Nov 19 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "THEOS",
         "TIT_CONCES": "TEOFILO CHAUCCA PASCA"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              350000,
-              8561000
-            ],
-            [
-              350000,
-              8560000
-            ],
-            [
-              349000,
-              8560000
-            ],
-            [
-              349000,
-              8561000
-            ],
-            [
-              350000,
-              8561000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "070029625",
-        "FEC_DENU": "Fri Oct 31 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "SEÑOR DE MURUGUAY",
-        "TIT_CONCES": "JORGE RAYMUNDO QUISPE CHAMBI"
       }
     },
     {

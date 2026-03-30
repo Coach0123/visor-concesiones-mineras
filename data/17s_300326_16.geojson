@@ -2762,42 +2762,6 @@
         "coordinates": [
           [
             [
-              686000,
-              9186000
-            ],
-            [
-              686000,
-              9185000
-            ],
-            [
-              684000,
-              9185000
-            ],
-            [
-              684000,
-              9186000
-            ],
-            [
-              686000,
-              9186000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "010106826",
-        "FEC_DENU": "Tue Feb 24 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "GENESIS TRECE",
-        "TIT_CONCES": "NELSON MAMANI TACO"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
               822000,
               9104000
             ],
@@ -164754,42 +164718,6 @@
         "coordinates": [
           [
             [
-              817000,
-              9138000
-            ],
-            [
-              817000,
-              9137000
-            ],
-            [
-              816000,
-              9137000
-            ],
-            [
-              816000,
-              9138000
-            ],
-            [
-              817000,
-              9138000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "060005626",
-        "FEC_DENU": "Wed Mar 11 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "MILENY J&R",
-        "TIT_CONCES": "JESUS ISRRAEL POLO AGUIRRE"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
               713000,
               9197000
             ],
@@ -165497,42 +165425,6 @@
         "FEC_DENU": "Fri Oct 30 2020 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "SOLE IIIA",
         "TIT_CONCES": "KARINA AGURTO GUZMAN"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              831000,
-              9235000
-            ],
-            [
-              831000,
-              9230000
-            ],
-            [
-              829000,
-              9230000
-            ],
-            [
-              829000,
-              9235000
-            ],
-            [
-              831000,
-              9235000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "060005326",
-        "FEC_DENU": "Wed Mar 04 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "DIAMANTE ANDINO I",
-        "TIT_CONCES": "SERVICIOS GENERALES PLAYA HERMOSA E.I.R.L."
       }
     },
     {
@@ -168784,42 +168676,6 @@
         "coordinates": [
           [
             [
-              529000,
-              9430000
-            ],
-            [
-              529000,
-              9429000
-            ],
-            [
-              528000,
-              9429000
-            ],
-            [
-              528000,
-              9430000
-            ],
-            [
-              529000,
-              9430000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "010137326",
-        "FEC_DENU": "Tue Mar 24 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "CANTERA EL DORADO 2026",
-        "TIT_CONCES": "INC MINERA EL DORADO S.A.C"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
               827000,
               9036000
             ],
@@ -168927,42 +168783,6 @@
         "FEC_DENU": "Fri Oct 18 1991 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "SUSANA",
         "TIT_CONCES": "COLIBRI COPPER S.A.C."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              817000,
-              9077000
-            ],
-            [
-              817000,
-              9075000
-            ],
-            [
-              816000,
-              9075000
-            ],
-            [
-              816000,
-              9077000
-            ],
-            [
-              817000,
-              9077000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "030021026",
-        "FEC_DENU": "Mon Mar 02 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "ISABELLA AMELIE",
-        "TIT_CONCES": "SOLUCIONES MINERALES COMPANY S.A.C."
       }
     },
     {
@@ -215286,42 +215106,6 @@
         "coordinates": [
           [
             [
-              790000,
-              9158000
-            ],
-            [
-              790000,
-              9155000
-            ],
-            [
-              789000,
-              9155000
-            ],
-            [
-              789000,
-              9158000
-            ],
-            [
-              790000,
-              9158000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "010111526",
-        "FEC_DENU": "Fri Feb 27 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "H.MUR.",
-        "TIT_CONCES": "HENRY MURILLO ROMERO"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
               788000,
               9138000
             ],
@@ -244682,42 +244466,6 @@
         "coordinates": [
           [
             [
-              727000,
-              9108000
-            ],
-            [
-              727000,
-              9107000
-            ],
-            [
-              726000,
-              9107000
-            ],
-            [
-              726000,
-              9108000
-            ],
-            [
-              727000,
-              9108000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "100001926",
-        "FEC_DENU": "Thu Mar 26 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "GEMINIS JL",
-        "TIT_CONCES": "JORGE LUIS RENGIFO MORALES"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
               496000,
               9473000
             ],
@@ -245409,42 +245157,6 @@
         "FEC_DENU": "Mon May 05 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "NICELV 15",
         "TIT_CONCES": "CONSULTORES GROUP PERU JH S.A.C."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              738000,
-              9119000
-            ],
-            [
-              738000,
-              9118000
-            ],
-            [
-              737000,
-              9118000
-            ],
-            [
-              737000,
-              9119000
-            ],
-            [
-              738000,
-              9119000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "030025126",
-        "FEC_DENU": "Fri Mar 13 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "MARCELO19",
-        "TIT_CONCES": "MARCELA MILAGROS GALINDO ZAVALETA"
       }
     },
     {
@@ -266824,6 +266536,42 @@
         "coordinates": [
           [
             [
+              790000,
+              9158000
+            ],
+            [
+              790000,
+              9155000
+            ],
+            [
+              789000,
+              9155000
+            ],
+            [
+              789000,
+              9158000
+            ],
+            [
+              790000,
+              9158000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "010111526",
+        "FEC_DENU": "Fri Feb 27 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "H.MUR.",
+        "TIT_CONCES": "HENRY MURILLO ROMERO"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
               524000,
               9406000
             ],
@@ -267308,6 +267056,42 @@
         "coordinates": [
           [
             [
+              529000,
+              9430000
+            ],
+            [
+              529000,
+              9429000
+            ],
+            [
+              528000,
+              9429000
+            ],
+            [
+              528000,
+              9430000
+            ],
+            [
+              529000,
+              9430000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "010137326",
+        "FEC_DENU": "Tue Mar 24 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "CANTERA EL DORADO 2026",
+        "TIT_CONCES": "INC MINERA EL DORADO S.A.C"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
               637000,
               9236000
             ],
@@ -267371,6 +267155,42 @@
         "FEC_DENU": "Wed Feb 19 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "CULPON 2025",
         "TIT_CONCES": "ANGEL JAVIER CERDAN ZAMORA Y OTROS"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              817000,
+              9077000
+            ],
+            [
+              817000,
+              9075000
+            ],
+            [
+              816000,
+              9075000
+            ],
+            [
+              816000,
+              9077000
+            ],
+            [
+              817000,
+              9077000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "030021026",
+        "FEC_DENU": "Mon Mar 02 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "ISABELLA AMELIE",
+        "TIT_CONCES": "SOLUCIONES MINERALES COMPANY S.A.C."
       }
     },
     {
@@ -267716,6 +267536,42 @@
         "coordinates": [
           [
             [
+              831000,
+              9235000
+            ],
+            [
+              831000,
+              9230000
+            ],
+            [
+              829000,
+              9230000
+            ],
+            [
+              829000,
+              9235000
+            ],
+            [
+              831000,
+              9235000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "060005326",
+        "FEC_DENU": "Wed Mar 04 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "DIAMANTE ANDINO I",
+        "TIT_CONCES": "SERVICIOS GENERALES PLAYA HERMOSA E.I.R.L."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
               822000,
               9079000
             ],
@@ -267759,6 +267615,42 @@
         "FEC_DENU": "Mon Jun 06 2022 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "BASTA - BASTA -2",
         "TIT_CONCES": "S.M.R.L. BASTA - BASTA -2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              686000,
+              9186000
+            ],
+            [
+              686000,
+              9185000
+            ],
+            [
+              684000,
+              9185000
+            ],
+            [
+              684000,
+              9186000
+            ],
+            [
+              686000,
+              9186000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "010106826",
+        "FEC_DENU": "Tue Feb 24 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "GENESIS TRECE",
+        "TIT_CONCES": "NELSON MAMANI TACO"
       }
     },
     {
@@ -268968,6 +268860,42 @@
         "coordinates": [
           [
             [
+              738000,
+              9119000
+            ],
+            [
+              738000,
+              9118000
+            ],
+            [
+              737000,
+              9118000
+            ],
+            [
+              737000,
+              9119000
+            ],
+            [
+              738000,
+              9119000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "030025126",
+        "FEC_DENU": "Fri Mar 13 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "MARCELO19",
+        "TIT_CONCES": "MARCELA MILAGROS GALINDO ZAVALETA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
               818000,
               9230000
             ],
@@ -269948,6 +269876,42 @@
         "coordinates": [
           [
             [
+              727000,
+              9108000
+            ],
+            [
+              727000,
+              9107000
+            ],
+            [
+              726000,
+              9107000
+            ],
+            [
+              726000,
+              9108000
+            ],
+            [
+              727000,
+              9108000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "100001926",
+        "FEC_DENU": "Thu Mar 26 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "GEMINIS JL",
+        "TIT_CONCES": "JORGE LUIS RENGIFO MORALES"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
               728000,
               9109000
             ],
@@ -270547,6 +270511,42 @@
         "FEC_DENU": "Wed Jan 03 2024 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "MOGOL 2024 04",
         "TIT_CONCES": "NEXA RESOURCES PERU S.A.A."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              817000,
+              9138000
+            ],
+            [
+              817000,
+              9137000
+            ],
+            [
+              816000,
+              9137000
+            ],
+            [
+              816000,
+              9138000
+            ],
+            [
+              817000,
+              9138000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "060005626",
+        "FEC_DENU": "Wed Mar 11 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "MILENY J&R",
+        "TIT_CONCES": "JESUS ISRRAEL POLO AGUIRRE"
       }
     },
     {
@@ -274124,42 +274124,6 @@
         "coordinates": [
           [
             [
-              651000,
-              9269000
-            ],
-            [
-              651000,
-              9268000
-            ],
-            [
-              649000,
-              9268000
-            ],
-            [
-              649000,
-              9269000
-            ],
-            [
-              651000,
-              9269000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "640001026",
-        "FEC_DENU": "Fri Mar 27 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "CORPORACION HERRERA",
-        "TIT_CONCES": "CORPORACION HERRERA SOCIEDAD ANONIMA CERRADA"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
               749000,
               9109000
             ],
@@ -274775,6 +274739,42 @@
         "FEC_DENU": "Thu May 27 2021 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "MINA LINDA",
         "TIT_CONCES": "S.M.R.L. MINA LINDA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              651000,
+              9269000
+            ],
+            [
+              651000,
+              9268000
+            ],
+            [
+              649000,
+              9268000
+            ],
+            [
+              649000,
+              9269000
+            ],
+            [
+              651000,
+              9269000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "640001026",
+        "FEC_DENU": "Fri Mar 27 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "CORPORACION HERRERA",
+        "TIT_CONCES": "CORPORACION HERRERA SOCIEDAD ANONIMA CERRADA"
       }
     },
     {
