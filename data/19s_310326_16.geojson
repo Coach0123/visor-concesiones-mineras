@@ -198348,7 +198348,7 @@
         "CODIGOU": "670051111",
         "FEC_DENU": "Thu Jan 13 2011 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "ORION 2011 UNO",
-        "TIT_CONCES": "CLAUDIA GUZMAN LOAIZA"
+        "TIT_CONCES": "S.M.R.L. CINTHIA II"
       }
     },
     {
@@ -228286,50 +228286,6 @@
         "coordinates": [
           [
             [
-              259000,
-              8059000
-            ],
-            [
-              259000,
-              8057000
-            ],
-            [
-              257000,
-              8057000
-            ],
-            [
-              257000,
-              8058000
-            ],
-            [
-              256000,
-              8058000
-            ],
-            [
-              256000,
-              8059000
-            ],
-            [
-              259000,
-              8059000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "010101725",
-        "FEC_DENU": "Tue Apr 22 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "V V 6",
-        "TIT_CONCES": "CARLOS ALBERTO MEZA ISLA"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
               359000,
               8504000
             ],
@@ -236682,42 +236638,6 @@
         "coordinates": [
           [
             [
-              370000,
-              8589000
-            ],
-            [
-              370000,
-              8587000
-            ],
-            [
-              368000,
-              8587000
-            ],
-            [
-              368000,
-              8589000
-            ],
-            [
-              370000,
-              8589000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "070035125",
-        "FEC_DENU": "Fri Nov 07 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "SALVADOR UNO",
-        "TIT_CONCES": "JUSTO CARLOS HUAMAN ANCCASI"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
               388000,
               8562000
             ],
@@ -241933,42 +241853,6 @@
         "FEC_DENU": "Fri Nov 07 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "MINAS PICHACANI",
         "TIT_CONCES": "JOHAM MICHEL CCORAHUA LARA"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              393000,
-              8474000
-            ],
-            [
-              393000,
-              8473000
-            ],
-            [
-              392000,
-              8473000
-            ],
-            [
-              392000,
-              8474000
-            ],
-            [
-              393000,
-              8474000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "080081625",
-        "FEC_DENU": "Fri Nov 07 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "ALDINES GOLD 25",
-        "TIT_CONCES": "ADOLFO MARRON PAMPA"
       }
     },
     {
@@ -266906,50 +266790,6 @@
         "coordinates": [
           [
             [
-              216000,
-              8409000
-            ],
-            [
-              216000,
-              8408000
-            ],
-            [
-              214000,
-              8408000
-            ],
-            [
-              214000,
-              8410000
-            ],
-            [
-              215000,
-              8410000
-            ],
-            [
-              215000,
-              8409000
-            ],
-            [
-              216000,
-              8409000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "010122325",
-        "FEC_DENU": "Mon May 05 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "SIETE MARES",
-        "TIT_CONCES": "7SP MINING S.A.C."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
               306573.2000000002,
               8148713.39
             ],
@@ -283729,42 +283569,6 @@
         "FEC_DENU": "Tue Nov 21 2023 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "GLENY ELIAN",
         "TIT_CONCES": "EDDY POZO SARMIENTO"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              180000,
-              8296000
-            ],
-            [
-              178000,
-              8296000
-            ],
-            [
-              178000,
-              8301000
-            ],
-            [
-              180000,
-              8301000
-            ],
-            [
-              180000,
-              8296000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "010094826",
-        "FEC_DENU": "Tue Feb 17 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "PONDEROSA ORO 5",
-        "TIT_CONCES": "MALPOL E.I.R.L."
       }
     },
     {
@@ -432612,42 +432416,6 @@
         "coordinates": [
           [
             [
-              340000,
-              8254000
-            ],
-            [
-              340000,
-              8253000
-            ],
-            [
-              339000,
-              8253000
-            ],
-            [
-              339000,
-              8254000
-            ],
-            [
-              340000,
-              8254000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "080008717",
-        "FEC_DENU": "Thu Jul 20 2017 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "CCORI PUNCHO",
-        "TIT_CONCES": "LUCIANO PACORI PACORI"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
               431000,
               8387000
             ],
@@ -448922,7 +448690,7 @@
         "CODIGOU": "080044524A",
         "FEC_DENU": "Mon Nov 04 2024 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "QORI ORQO",
-        "TIT_CONCES": "JUAN FREDY ZUÑIGA CHURA y Otros"
+        "TIT_CONCES": "JUAN FREDY ZUÑIGA CHURA Y OTROS"
       }
     },
     {
@@ -461760,6 +461528,50 @@
         "coordinates": [
           [
             [
+              259000,
+              8059000
+            ],
+            [
+              259000,
+              8057000
+            ],
+            [
+              257000,
+              8057000
+            ],
+            [
+              257000,
+              8058000
+            ],
+            [
+              256000,
+              8058000
+            ],
+            [
+              256000,
+              8059000
+            ],
+            [
+              259000,
+              8059000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "010101725",
+        "FEC_DENU": "Tue Apr 22 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "V V 6",
+        "TIT_CONCES": "CARLOS ALBERTO MEZA ISLA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
               317000,
               8112000
             ],
@@ -462212,6 +462024,74 @@
         "coordinates": [
           [
             [
+              365000,
+              8435000
+            ],
+            [
+              365000,
+              8434000
+            ],
+            [
+              363000,
+              8434000
+            ],
+            [
+              363000,
+              8435000
+            ],
+            [
+              361000,
+              8435000
+            ],
+            [
+              361000,
+              8436000
+            ],
+            [
+              360000,
+              8436000
+            ],
+            [
+              360000,
+              8437000
+            ],
+            [
+              363000,
+              8437000
+            ],
+            [
+              363000,
+              8438000
+            ],
+            [
+              364000,
+              8438000
+            ],
+            [
+              364000,
+              8435000
+            ],
+            [
+              365000,
+              8435000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "010334925",
+        "FEC_DENU": "Wed Oct 01 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "AJOYANI 4",
+        "TIT_CONCES": "MINSUR S.A."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
               349000,
               8251000
             ],
@@ -462608,42 +462488,6 @@
         "coordinates": [
           [
             [
-              321000,
-              8303000
-            ],
-            [
-              321000,
-              8302000
-            ],
-            [
-              320000,
-              8302000
-            ],
-            [
-              320000,
-              8303000
-            ],
-            [
-              321000,
-              8303000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "080023824",
-        "FEC_DENU": "Thu Aug 01 2024 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "GRUPO SAN CARLOS MIL AMORES I",
-        "TIT_CONCES": "GRUPO SAN CARLOS MIL AMORES E.I.R.L."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
               313000,
               8539000
             ],
@@ -462795,6 +462639,42 @@
         "FEC_DENU": "Wed Aug 07 2019 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "NUÑOA 2019 2",
         "TIT_CONCES": "COMPAÑIA MINERA BOSSI S.A.C."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              180000,
+              8296000
+            ],
+            [
+              178000,
+              8296000
+            ],
+            [
+              178000,
+              8301000
+            ],
+            [
+              180000,
+              8301000
+            ],
+            [
+              180000,
+              8296000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "010094826",
+        "FEC_DENU": "Tue Feb 17 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "PONDEROSA ORO 5",
+        "TIT_CONCES": "MALPOL E.I.R.L."
       }
     },
     {
@@ -463295,6 +463175,42 @@
         "FEC_DENU": "Thu May 02 2019 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "KALUYO I",
         "TIT_CONCES": "COMPAÑIA MINERA POMATAREA S.A.C."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              340000,
+              8254000
+            ],
+            [
+              340000,
+              8253000
+            ],
+            [
+              339000,
+              8253000
+            ],
+            [
+              339000,
+              8254000
+            ],
+            [
+              340000,
+              8254000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "080008717",
+        "FEC_DENU": "Thu Jul 20 2017 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "CCORI PUNCHO",
+        "TIT_CONCES": "LUCIANO PACORI PACORI"
       }
     },
     {
@@ -472275,42 +472191,6 @@
         "FEC_DENU": "Mon May 05 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "PROYECTO THIAGUS",
         "TIT_CONCES": "EMPRESA MINERA IMPERIO COOPER S.C.R.L"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              455000,
-              8372000
-            ],
-            [
-              455000,
-              8370000
-            ],
-            [
-              454000,
-              8370000
-            ],
-            [
-              454000,
-              8372000
-            ],
-            [
-              455000,
-              8372000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "080022025",
-        "FEC_DENU": "Mon May 05 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "FAMAY 2025 DOS",
-        "TIT_CONCES": "ELIZABEL CHACON HUICHE"
       }
     },
     {
@@ -488500,6 +488380,42 @@
         "coordinates": [
           [
             [
+              320000,
+              8320000
+            ],
+            [
+              320000,
+              8319000
+            ],
+            [
+              319000,
+              8319000
+            ],
+            [
+              319000,
+              8320000
+            ],
+            [
+              320000,
+              8320000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "080018526",
+        "FEC_DENU": "Tue Mar 31 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "ALI 1 COMPANI PARIHUANA",
+        "TIT_CONCES": "ALI LEONCIO AGRAMONTE AHUMADA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
               360000,
               8254000
             ],
@@ -489307,42 +489223,6 @@
         "FEC_DENU": "Mon Nov 02 2020 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "IVAN YOEL",
         "TIT_CONCES": "CYNTIA QUISPE CURASI"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              350000,
-              8611000
-            ],
-            [
-              350000,
-              8610000
-            ],
-            [
-              349000,
-              8610000
-            ],
-            [
-              349000,
-              8611000
-            ],
-            [
-              350000,
-              8611000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "070035525",
-        "FEC_DENU": "Mon Nov 10 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "MILAGRITOS",
-        "TIT_CONCES": "LUCERITO MILIANE ANCALLE PACHECO"
       }
     },
     {
@@ -493232,42 +493112,6 @@
         "coordinates": [
           [
             [
-              459000,
-              8347000
-            ],
-            [
-              459000,
-              8346000
-            ],
-            [
-              457000,
-              8346000
-            ],
-            [
-              457000,
-              8347000
-            ],
-            [
-              459000,
-              8347000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "080018326",
-        "FEC_DENU": "Mon Mar 30 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "PROYECTO MINERO OJEDA 26",
-        "TIT_CONCES": "HENRY IVAN OJEDA CRUZ y Otros"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
               320000,
               8452000
             ],
@@ -493366,51 +493210,7 @@
         "CODIGOU": "080018426",
         "FEC_DENU": "Mon Mar 30 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "GOLD MAYNING OROGÉNICO",
-        "TIT_CONCES": "AFMER JHON MAYTA YAMPARA y Otros"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              360000,
-              8497000
-            ],
-            [
-              360000,
-              8495000
-            ],
-            [
-              359000,
-              8495000
-            ],
-            [
-              359000,
-              8494000
-            ],
-            [
-              358000,
-              8494000
-            ],
-            [
-              358000,
-              8497000
-            ],
-            [
-              360000,
-              8497000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "710003826",
-        "FEC_DENU": "Mon Mar 30 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "MINA SOL NACIENTE 2026",
-        "TIT_CONCES": "SANTOS PERFECTO JAIMES JONSECA"
+        "TIT_CONCES": "AFMER JHON MAYTA YAMPARA Y OTROS"
       }
     },
     {
@@ -493491,42 +493291,6 @@
         "FEC_DENU": "Mon Mar 30 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "YACONSUR",
         "TIT_CONCES": "LUDWIN YANAPA CONTRERAS"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              348000,
-              8525000
-            ],
-            [
-              348000,
-              8522000
-            ],
-            [
-              347000,
-              8522000
-            ],
-            [
-              347000,
-              8525000
-            ],
-            [
-              348000,
-              8525000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "070012026",
-        "FEC_DENU": "Mon Mar 30 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "AYANKA REGALO DE DIOS II",
-        "TIT_CONCES": "INVERSIONES OXIMANGUERAS E.I.R.L."
       }
     },
     {
@@ -493891,42 +493655,6 @@
         "FEC_DENU": "Tue Nov 17 2020 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "YANAURCCO",
         "TIT_CONCES": "DELFIN MEZA CONDORI"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              354000,
-              8536000
-            ],
-            [
-              354000,
-              8534000
-            ],
-            [
-              353000,
-              8534000
-            ],
-            [
-              353000,
-              8536000
-            ],
-            [
-              354000,
-              8536000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "070012326",
-        "FEC_DENU": "Mon Mar 30 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "YACONSUR II",
-        "TIT_CONCES": "REGINA CONTRERAS MAMANI DE YANAPA"
       }
     },
     {
@@ -494391,6 +494119,42 @@
         "FEC_DENU": "Wed Oct 23 2024 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "CANTERA HUATA",
         "TIT_CONCES": "MINISTERIO DE TRANSPORTES Y COMUNICACIONES"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              348000,
+              8525000
+            ],
+            [
+              348000,
+              8522000
+            ],
+            [
+              347000,
+              8522000
+            ],
+            [
+              347000,
+              8525000
+            ],
+            [
+              348000,
+              8525000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "070012026",
+        "FEC_DENU": "Mon Mar 30 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "AYANKA REGALO DE DIOS II",
+        "TIT_CONCES": "INVERSIONES OXIMANGUERAS E.I.R.L."
       }
     },
     {
@@ -495736,6 +495500,42 @@
         "coordinates": [
           [
             [
+              354000,
+              8536000
+            ],
+            [
+              354000,
+              8534000
+            ],
+            [
+              353000,
+              8534000
+            ],
+            [
+              353000,
+              8536000
+            ],
+            [
+              354000,
+              8536000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "070012326",
+        "FEC_DENU": "Mon Mar 30 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "YACONSUR II",
+        "TIT_CONCES": "REGINA CONTRERAS MAMANI DE YANAPA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
               197000,
               8320000
             ],
@@ -496731,6 +496531,86 @@
         "FEC_DENU": "Thu Jul 14 2022 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "REX II",
         "TIT_CONCES": "S.M.R.L. REX II"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              360000,
+              8497000
+            ],
+            [
+              360000,
+              8495000
+            ],
+            [
+              359000,
+              8495000
+            ],
+            [
+              359000,
+              8494000
+            ],
+            [
+              358000,
+              8494000
+            ],
+            [
+              358000,
+              8497000
+            ],
+            [
+              360000,
+              8497000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "710003826",
+        "FEC_DENU": "Mon Mar 30 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "MINA SOL NACIENTE 2026",
+        "TIT_CONCES": "SANTOS PERFECTO JAIMES JONSECA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              459000,
+              8347000
+            ],
+            [
+              459000,
+              8346000
+            ],
+            [
+              457000,
+              8346000
+            ],
+            [
+              457000,
+              8347000
+            ],
+            [
+              459000,
+              8347000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "080018326",
+        "FEC_DENU": "Mon Mar 30 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "PROYECTO MINERO OJEDA 26",
+        "TIT_CONCES": "HENRY IVAN OJEDA CRUZ Y OTROS"
       }
     },
     {
@@ -604540,42 +604420,6 @@
         "coordinates": [
           [
             [
-              258000,
-              8495000
-            ],
-            [
-              258000,
-              8494000
-            ],
-            [
-              257000,
-              8494000
-            ],
-            [
-              257000,
-              8495000
-            ],
-            [
-              258000,
-              8495000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "040010824",
-        "FEC_DENU": "Thu May 02 2024 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "INVERSIONES APU LLAQUINTO",
-        "TIT_CONCES": "JESUS CCAHUANA PACSI Y OTROS"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
               185000,
               8407000
             ],
@@ -673706,42 +673550,6 @@
         "coordinates": [
           [
             [
-              421000,
-              8595000
-            ],
-            [
-              421000,
-              8594000
-            ],
-            [
-              419000,
-              8594000
-            ],
-            [
-              419000,
-              8595000
-            ],
-            [
-              421000,
-              8595000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "070028425",
-        "FEC_DENU": "Tue Oct 28 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "ROLAND SMITH",
-        "TIT_CONCES": "DENIS ROLFIN CHOQUEMAMANI SAIRE"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
               437000,
               8374000
             ],
@@ -675401,42 +675209,6 @@
         "FEC_DENU": "Thu Sep 11 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "MINERA SAN ESTEBAN",
         "TIT_CONCES": "JAIME VALERIANO FERNANDEZ Y OTROS"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              338000,
-              8589000
-            ],
-            [
-              338000,
-              8588000
-            ],
-            [
-              337000,
-              8588000
-            ],
-            [
-              337000,
-              8589000
-            ],
-            [
-              338000,
-              8589000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "070022725",
-        "FEC_DENU": "Thu Sep 11 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "DELTA 4 II",
-        "TIT_CONCES": "FLORENTINO ESCOBEDO RAMOS"
       }
     },
     {
@@ -678438,42 +678210,6 @@
         "coordinates": [
           [
             [
-              397000,
-              8560000
-            ],
-            [
-              397000,
-              8559000
-            ],
-            [
-              396000,
-              8559000
-            ],
-            [
-              396000,
-              8560000
-            ],
-            [
-              397000,
-              8560000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "070025125",
-        "FEC_DENU": "Thu Oct 02 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "ROSITA I",
-        "TIT_CONCES": "AMITH NETAHEL CHAMARU TRIGOSO"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
               223000,
               8527000
             ],
@@ -679072,74 +678808,6 @@
         "CODIGOU": "010334025",
         "FEC_DENU": "Wed Oct 01 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "MACUSANI 5 2026",
-        "TIT_CONCES": "MINSUR S.A."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              365000,
-              8435000
-            ],
-            [
-              365000,
-              8434000
-            ],
-            [
-              363000,
-              8434000
-            ],
-            [
-              363000,
-              8435000
-            ],
-            [
-              361000,
-              8435000
-            ],
-            [
-              361000,
-              8436000
-            ],
-            [
-              360000,
-              8436000
-            ],
-            [
-              360000,
-              8437000
-            ],
-            [
-              363000,
-              8437000
-            ],
-            [
-              363000,
-              8438000
-            ],
-            [
-              364000,
-              8438000
-            ],
-            [
-              364000,
-              8435000
-            ],
-            [
-              365000,
-              8435000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "010334925",
-        "FEC_DENU": "Wed Oct 01 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "AJOYANI 4",
         "TIT_CONCES": "MINSUR S.A."
       }
     },
@@ -682277,42 +681945,6 @@
         "FEC_DENU": "Mon Oct 06 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "OTTO I",
         "TIT_CONCES": "CORPORACION LA MOLLEBAYITA S.A.C."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              341000,
-              8589000
-            ],
-            [
-              341000,
-              8587000
-            ],
-            [
-              340000,
-              8587000
-            ],
-            [
-              340000,
-              8589000
-            ],
-            [
-              341000,
-              8589000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "070025325",
-        "FEC_DENU": "Mon Oct 06 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "ANGELO I",
-        "TIT_CONCES": "JHON ALARCON LOPEZ"
       }
     },
     {
@@ -691054,42 +690686,6 @@
         "coordinates": [
           [
             [
-              315000,
-              8545000
-            ],
-            [
-              315000,
-              8544000
-            ],
-            [
-              314000,
-              8544000
-            ],
-            [
-              314000,
-              8545000
-            ],
-            [
-              315000,
-              8545000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "040048125",
-        "FEC_DENU": "Mon Nov 03 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "BOCA CULEBRAYOC CAMANTI",
-        "TIT_CONCES": "IBETH HERRERA ROZAS"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
               184000,
               8404000
             ],
@@ -691321,50 +690917,6 @@
         "FEC_DENU": "Mon Nov 03 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "CRISTIAN J J ABELARDO III",
         "TIT_CONCES": "MARIZOL QUISPE PILLCO"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              262000,
-              8504000
-            ],
-            [
-              262000,
-              8501000
-            ],
-            [
-              260000,
-              8501000
-            ],
-            [
-              260000,
-              8502000
-            ],
-            [
-              261000,
-              8502000
-            ],
-            [
-              261000,
-              8504000
-            ],
-            [
-              262000,
-              8504000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "080079025",
-        "FEC_DENU": "Mon Nov 03 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "CCORIPUNCO25",
-        "TIT_CONCES": "HEBER RIVERA CHOQUE Y OTROS"
       }
     },
     {
@@ -696182,42 +695734,6 @@
         "coordinates": [
           [
             [
-              329000,
-              8563000
-            ],
-            [
-              329000,
-              8562000
-            ],
-            [
-              328000,
-              8562000
-            ],
-            [
-              328000,
-              8563000
-            ],
-            [
-              329000,
-              8563000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "070035625",
-        "FEC_DENU": "Mon Nov 10 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "VERITO UNO",
-        "TIT_CONCES": "ORLANDO CRUZ LIPE"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
               381000,
               8068000
             ],
@@ -698337,42 +697853,6 @@
         "FEC_DENU": "Mon Nov 03 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "EL VENCEDOR 2025",
         "TIT_CONCES": "JUSTO EDISON LEVIZACA ZAVALA"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              184000,
-              8404000
-            ],
-            [
-              184000,
-              8402000
-            ],
-            [
-              183000,
-              8402000
-            ],
-            [
-              183000,
-              8404000
-            ],
-            [
-              184000,
-              8404000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "010407925",
-        "FEC_DENU": "Mon Nov 03 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "ALMUDENA 26",
-        "TIT_CONCES": "INVERSIONES VERZIEL E.I.R.L."
       }
     },
     {
@@ -702776,42 +702256,6 @@
         "CODIGOU": "070033225",
         "FEC_DENU": "Mon Nov 03 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "LUCIANA",
-        "TIT_CONCES": "CUBER LUIS SULLCA TTITO"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              318000,
-              8542000
-            ],
-            [
-              318000,
-              8541000
-            ],
-            [
-              317000,
-              8541000
-            ],
-            [
-              317000,
-              8542000
-            ],
-            [
-              318000,
-              8542000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "070033325",
-        "FEC_DENU": "Mon Nov 03 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "LUISIN",
         "TIT_CONCES": "CUBER LUIS SULLCA TTITO"
       }
     },
@@ -708761,42 +708205,6 @@
         "FEC_DENU": "Wed Dec 03 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "QUEBRADA CARNAVAL",
         "TIT_CONCES": "SANTIAGO COAQUIRA AMAO"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              231000,
-              8194000
-            ],
-            [
-              231000,
-              8193000
-            ],
-            [
-              230000,
-              8193000
-            ],
-            [
-              230000,
-              8194000
-            ],
-            [
-              231000,
-              8194000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "010456225",
-        "FEC_DENU": "Tue Dec 16 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "SAN JOSE 09",
-        "TIT_CONCES": "JOSE LUIS COIMBRA VILCA"
       }
     },
     {

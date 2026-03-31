@@ -36396,6 +36396,108 @@
         "coordinates": [
           [
             [
+              492615.4900000002,
+              9466093.42
+            ],
+            [
+              494259.21999999974,
+              9463952.83
+            ],
+            [
+              492612.6799999997,
+              9462688.44
+            ],
+            [
+              492254.91000000015,
+              9462647.98
+            ],
+            [
+              492266.13999999966,
+              9462548.61
+            ],
+            [
+              492458.96999999974,
+              9462570.4
+            ],
+            [
+              492446.1200000001,
+              9462560.53
+            ],
+            [
+              492279.58999999985,
+              9462541.92
+            ],
+            [
+              492290.83999999985,
+              9462441.29
+            ],
+            [
+              492277.1900000004,
+              9462430.8
+            ],
+            [
+              492221.3499999996,
+              9462503.52
+            ],
+            [
+              492329.2999999998,
+              9463600.15
+            ],
+            [
+              491632.66000000015,
+              9463668.72
+            ],
+            [
+              491597.8799999999,
+              9463315.44
+            ],
+            [
+              490633.4500000002,
+              9464571.4
+            ],
+            [
+              492615.4900000002,
+              9466093.42
+            ]
+          ],
+          [
+            [
+              492287.53000000026,
+              9463846.44
+            ],
+            [
+              491591.6699999999,
+              9463922.4
+            ],
+            [
+              491569.95999999996,
+              9463723.58
+            ],
+            [
+              492265.8300000001,
+              9463647.61
+            ],
+            [
+              492287.53000000026,
+              9463846.44
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "12001512X01",
+        "FEC_DENU": "Mon Sep 01 1969 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "GARAY 6-9",
+        "TIT_CONCES": "HOLCIM PERU AGREGADOS S.A."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
               764967.5300000003,
               9114781.25
             ],
@@ -68165,42 +68267,6 @@
         "FEC_DENU": "Wed Oct 18 2023 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "FERMACOM 2023 II",
         "TIT_CONCES": "FERRETERIA Y MAT. CONSTRUC. MIRANDA EIRL"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              742000,
-              9120000
-            ],
-            [
-              742000,
-              9119000
-            ],
-            [
-              741000,
-              9119000
-            ],
-            [
-              741000,
-              9120000
-            ],
-            [
-              742000,
-              9120000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "030080125",
-        "FEC_DENU": "Mon Nov 03 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "VIRTUES",
-        "TIT_CONCES": "WALTER SEGUNDO VALDIVIEZO SANTIAGO"
       }
     },
     {
@@ -127328,42 +127394,6 @@
         "coordinates": [
           [
             [
-              494349.51999999955,
-              9464139.86
-            ],
-            [
-              494440.0700000003,
-              9464182.29
-            ],
-            [
-              494524.9299999997,
-              9464001.18
-            ],
-            [
-              494434.3799999999,
-              9463958.75
-            ],
-            [
-              494349.51999999955,
-              9464139.86
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "010054303",
-        "FEC_DENU": "Mon Mar 03 2003 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "PITUSO NÂº 33 - 03",
-        "TIT_CONCES": "HOLCIM PERU AGREGADOS S.A."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
               792000,
               9066000
             ],
@@ -143720,108 +143750,6 @@
         "coordinates": [
           [
             [
-              492615.4900000002,
-              9466093.42
-            ],
-            [
-              494259.21999999974,
-              9463952.83
-            ],
-            [
-              492612.6799999997,
-              9462688.44
-            ],
-            [
-              492254.91000000015,
-              9462647.98
-            ],
-            [
-              492266.13999999966,
-              9462548.61
-            ],
-            [
-              492458.96999999974,
-              9462570.4
-            ],
-            [
-              492446.1200000001,
-              9462560.53
-            ],
-            [
-              492279.58999999985,
-              9462541.92
-            ],
-            [
-              492290.83999999985,
-              9462441.29
-            ],
-            [
-              492277.1900000004,
-              9462430.8
-            ],
-            [
-              492221.3499999996,
-              9462503.52
-            ],
-            [
-              492329.2999999998,
-              9463600.15
-            ],
-            [
-              491632.66000000015,
-              9463668.72
-            ],
-            [
-              491597.8799999999,
-              9463315.44
-            ],
-            [
-              490633.4500000002,
-              9464571.4
-            ],
-            [
-              492615.4900000002,
-              9466093.42
-            ]
-          ],
-          [
-            [
-              492287.53000000026,
-              9463846.44
-            ],
-            [
-              491591.6699999999,
-              9463922.4
-            ],
-            [
-              491569.95999999996,
-              9463723.58
-            ],
-            [
-              492265.8300000001,
-              9463647.61
-            ],
-            [
-              492287.53000000026,
-              9463846.44
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "12001512X01",
-        "FEC_DENU": "Mon Sep 01 1969 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "GARAY 6-9",
-        "TIT_CONCES": "HOLCIM PERU AGREGADOS S.A."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
               567745.0700000003,
               9445634
             ],
@@ -144849,42 +144777,6 @@
         "FEC_DENU": "Mon May 30 2022 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "MANGA XV",
         "TIT_CONCES": "JULIO CESAR LOBE SOLIS"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              497106.51999999955,
-              9465202.05
-            ],
-            [
-              496907.46999999974,
-              9465220.65
-            ],
-            [
-              496953.98000000045,
-              9465718.28
-            ],
-            [
-              497153.03000000026,
-              9465699.68
-            ],
-            [
-              497106.51999999955,
-              9465202.05
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "12000396X01",
-        "FEC_DENU": "Sat Oct 01 1966 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "CERRO BLANCO",
-        "TIT_CONCES": "HOLCIM PERU AGREGADOS S.A."
       }
     },
     {
@@ -150183,42 +150075,6 @@
         "FEC_DENU": "Mon May 03 2021 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "GUAYAMASMA",
         "TIT_CONCES": "WELSER MICHAEL CARRASCO MENDO"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              815979.5800000001,
-              8979022.92
-            ],
-            [
-              815560.3799999999,
-              8978460.85
-            ],
-            [
-              814757.4400000004,
-              8979059.72
-            ],
-            [
-              815176.6399999997,
-              8979621.78
-            ],
-            [
-              815979.5800000001,
-              8979022.92
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "520000315",
-        "FEC_DENU": "Mon Jan 05 2015 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "MORO 2 2015",
-        "TIT_CONCES": "HOLCIM PERU AGREGADOS S.A."
       }
     },
     {
@@ -232098,58 +231954,6 @@
         "coordinates": [
           [
             [
-              765000,
-              9521000
-            ],
-            [
-              765000,
-              9519000
-            ],
-            [
-              764000,
-              9519000
-            ],
-            [
-              764000,
-              9518000
-            ],
-            [
-              763000,
-              9518000
-            ],
-            [
-              763000,
-              9516000
-            ],
-            [
-              762000,
-              9516000
-            ],
-            [
-              762000,
-              9521000
-            ],
-            [
-              765000,
-              9521000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "100000925",
-        "FEC_DENU": "Thu Feb 27 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "CORDOVA 2",
-        "TIT_CONCES": "JESUS MANUEL CORDOVA HUERTAS Y OTROS"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
               759000,
               9218000
             ],
@@ -258672,6 +258476,42 @@
         "coordinates": [
           [
             [
+              497106.51999999955,
+              9465202.05
+            ],
+            [
+              496907.46999999974,
+              9465220.65
+            ],
+            [
+              496953.98000000045,
+              9465718.28
+            ],
+            [
+              497153.03000000026,
+              9465699.68
+            ],
+            [
+              497106.51999999955,
+              9465202.05
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "12000396X01",
+        "FEC_DENU": "Sat Oct 01 1966 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "CERRO BLANCO",
+        "TIT_CONCES": "HOLCIM PERU AGREGADOS S.A."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
               828000,
               8943000
             ],
@@ -258967,6 +258807,42 @@
         "FEC_DENU": "Mon Jul 13 2020 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "TAVOLIN III",
         "TIT_CONCES": "KARINA AGURTO GUZMAN"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              494349.51999999955,
+              9464139.86
+            ],
+            [
+              494440.0700000003,
+              9464182.29
+            ],
+            [
+              494524.9299999997,
+              9464001.18
+            ],
+            [
+              494434.3799999999,
+              9463958.75
+            ],
+            [
+              494349.51999999955,
+              9464139.86
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "010054303",
+        "FEC_DENU": "Mon Mar 03 2003 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "PITUSO NÂº 33 - 03",
+        "TIT_CONCES": "HOLCIM PERU AGREGADOS S.A."
       }
     },
     {
@@ -259756,6 +259632,42 @@
         "coordinates": [
           [
             [
+              815979.5800000001,
+              8979022.92
+            ],
+            [
+              815560.3799999999,
+              8978460.85
+            ],
+            [
+              814757.4400000004,
+              8979059.72
+            ],
+            [
+              815176.6399999997,
+              8979621.78
+            ],
+            [
+              815979.5800000001,
+              8979022.92
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "520000315",
+        "FEC_DENU": "Mon Jan 05 2015 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "MORO 2 2015",
+        "TIT_CONCES": "HOLCIM PERU AGREGADOS S.A."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
               793000,
               9093000
             ],
@@ -259863,6 +259775,58 @@
         "FEC_DENU": "Wed Sep 23 2020 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "CRISTO JESUS",
         "TIT_CONCES": "FEFECO PERU SAC"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              765000,
+              9521000
+            ],
+            [
+              765000,
+              9519000
+            ],
+            [
+              764000,
+              9519000
+            ],
+            [
+              764000,
+              9518000
+            ],
+            [
+              763000,
+              9518000
+            ],
+            [
+              763000,
+              9516000
+            ],
+            [
+              762000,
+              9516000
+            ],
+            [
+              762000,
+              9521000
+            ],
+            [
+              765000,
+              9521000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "100000925",
+        "FEC_DENU": "Thu Feb 27 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "CORDOVA 2",
+        "TIT_CONCES": "JESUS MANUEL CORDOVA HUERTAS Y OTROS"
       }
     },
     {
@@ -266196,6 +266160,42 @@
         "coordinates": [
           [
             [
+              809000,
+              9224000
+            ],
+            [
+              809000,
+              9222000
+            ],
+            [
+              806000,
+              9222000
+            ],
+            [
+              806000,
+              9224000
+            ],
+            [
+              809000,
+              9224000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "010148226",
+        "FEC_DENU": "Tue Mar 31 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "ENCAÑADA 102",
+        "TIT_CONCES": "SOUTHERN PERU COPPER CORPORATION, SUCURSAL DEL PERU"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
               597000,
               9492000
             ],
@@ -266239,6 +266239,42 @@
         "FEC_DENU": "Mon May 05 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "ROMA 2511",
         "TIT_CONCES": "TORRINE S.A.C."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              811000,
+              9242000
+            ],
+            [
+              811000,
+              9241000
+            ],
+            [
+              810000,
+              9241000
+            ],
+            [
+              810000,
+              9242000
+            ],
+            [
+              811000,
+              9242000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "060007026",
+        "FEC_DENU": "Tue Mar 31 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "PATAHUASI 2026",
+        "TIT_CONCES": "JUAN ONESIMO SANCHEZ CHAVEZ"
       }
     },
     {
@@ -274748,42 +274784,6 @@
         "coordinates": [
           [
             [
-              651000,
-              9269000
-            ],
-            [
-              651000,
-              9268000
-            ],
-            [
-              649000,
-              9268000
-            ],
-            [
-              649000,
-              9269000
-            ],
-            [
-              651000,
-              9269000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "640001026",
-        "FEC_DENU": "Fri Mar 27 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "CORPORACION HERRERA",
-        "TIT_CONCES": "CORPORACION HERRERA SOCIEDAD ANONIMA CERRADA"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
               652000,
               9382000
             ],
@@ -275836,6 +275836,42 @@
         "coordinates": [
           [
             [
+              651000,
+              9269000
+            ],
+            [
+              651000,
+              9268000
+            ],
+            [
+              649000,
+              9268000
+            ],
+            [
+              649000,
+              9269000
+            ],
+            [
+              651000,
+              9269000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "640001026",
+        "FEC_DENU": "Fri Mar 27 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "CORPORACION HERRERA",
+        "TIT_CONCES": "CORPORACION HERRERA SOCIEDAD ANONIMA CERRADA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
               827000,
               9108000
             ],
@@ -276023,6 +276059,42 @@
         "FEC_DENU": "Fri Mar 27 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "LUISA IV",
         "TIT_CONCES": "EMPRESA CORPORATIVVA LUISA III SAC"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              801000,
+              9221000
+            ],
+            [
+              801000,
+              9219000
+            ],
+            [
+              800000,
+              9219000
+            ],
+            [
+              800000,
+              9221000
+            ],
+            [
+              801000,
+              9221000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "010148126",
+        "FEC_DENU": "Tue Mar 31 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "ENCAÑADA 101",
+        "TIT_CONCES": "SOUTHERN PERU COPPER CORPORATION, SUCURSAL DEL PERU"
       }
     },
     {
@@ -279315,6 +279387,42 @@
         "FEC_DENU": "Tue Nov 09 2021 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "LA PIEDRA DEL DINOSAURIO",
         "TIT_CONCES": "EDGAR ALEXANDER NEGREIROS VILLANUEVA Y OTROS"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              773000,
+              9197000
+            ],
+            [
+              773000,
+              9196000
+            ],
+            [
+              772000,
+              9196000
+            ],
+            [
+              772000,
+              9197000
+            ],
+            [
+              773000,
+              9197000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "060006926",
+        "FEC_DENU": "Tue Mar 31 2026 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "EL NARANJO 2026",
+        "TIT_CONCES": "GILMER AGUSTO FLORES CALUA y Otros"
       }
     },
     {
@@ -379702,6 +379810,42 @@
         "coordinates": [
           [
             [
+              787000,
+              8952000
+            ],
+            [
+              787000,
+              8949000
+            ],
+            [
+              786000,
+              8949000
+            ],
+            [
+              786000,
+              8952000
+            ],
+            [
+              787000,
+              8952000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "010233625",
+        "FEC_DENU": "Wed Jul 16 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "PAMPAMAR 1",
+        "TIT_CONCES": "PAMPAMAR MINING SAC"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
               781000,
               9066000
             ],
@@ -380965,42 +381109,6 @@
         "FEC_DENU": "Mon Aug 04 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "GUAYANO 2025",
         "TIT_CONCES": "IVAN HOYOS QUISPE"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              787000,
-              8952000
-            ],
-            [
-              787000,
-              8949000
-            ],
-            [
-              786000,
-              8949000
-            ],
-            [
-              786000,
-              8952000
-            ],
-            [
-              787000,
-              8952000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "010233625",
-        "FEC_DENU": "Wed Jul 16 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "PAMPAMAR 1",
-        "TIT_CONCES": "PAMPAMAR MINING SAC"
       }
     },
     {
@@ -391026,42 +391134,6 @@
         "coordinates": [
           [
             [
-              740000,
-              9182000
-            ],
-            [
-              741000,
-              9182000
-            ],
-            [
-              741000,
-              9181000
-            ],
-            [
-              740000,
-              9181000
-            ],
-            [
-              740000,
-              9182000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "030082325",
-        "FEC_DENU": "Mon Nov 03 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "SHEBITA 1",
-        "TIT_CONCES": "SHEBITA S.A.C."
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
               769000,
               9046000
             ],
@@ -395997,42 +396069,6 @@
         "FEC_DENU": "Mon Nov 10 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
         "CONCESION": "CONCESION MINERA ATAHUALPA #1",
         "TIT_CONCES": "NEIRO VALLEJOS FUENTES"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              788000,
-              9301000
-            ],
-            [
-              790000,
-              9301000
-            ],
-            [
-              790000,
-              9300000
-            ],
-            [
-              788000,
-              9300000
-            ],
-            [
-              788000,
-              9301000
-            ]
-          ]
-        ]
-      },
-      "properties": {
-        "CODIGOU": "030085425",
-        "FEC_DENU": "Mon Nov 10 2025 00:00:00 GMT+0000 (Coordinated Universal Time)",
-        "CONCESION": "CHUCEN ALTO II",
-        "TIT_CONCES": "RAQUELA URIARTE CARUAJULCA"
       }
     },
     {
