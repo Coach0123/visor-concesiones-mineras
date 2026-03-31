@@ -1,108 +1,6 @@
 [
   {
     "fecha": "280326_11",
-    "codigo": "010144626",
-    "nombre": "TARTARO NORTE MBP 15",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "280326_11",
-    "codigo": "010144726",
-    "nombre": "TARTARO NORTE MBP 45",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "280326_11",
-    "codigo": "010144826",
-    "nombre": "TARTARO NORTE MBP 14",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "280326_11",
-    "codigo": "010143426",
-    "nombre": "TARTARO NORTE MBP 21",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "280326_11",
-    "codigo": "010143626",
-    "nombre": "TARTARO NORTE MBP 20",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "280326_11",
-    "codigo": "010143826",
-    "nombre": "TARTARO NORTE MBP 19",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "280326_11",
-    "codigo": "010144026",
-    "nombre": "TARTARO NORTE MBP 18",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "280326_11",
-    "codigo": "010145626",
-    "nombre": "TARTARO NORTE MBP 10",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "280326_11",
-    "codigo": "010145826",
-    "nombre": "TARTARO NORTE MBP 12",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "280326_11",
-    "codigo": "010144926",
-    "nombre": "TARTARO NORTE MBP 44",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "280326_11",
-    "codigo": "010145326",
-    "nombre": "TARTARO NORTE MBP 42",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "280326_11",
-    "codigo": "010145426",
-    "nombre": "TARTARO NORTE MBP 09",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "280326_11",
-    "codigo": "010145526",
-    "nombre": "TARTARO NORTE MBP 41",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "280326_11",
-    "codigo": "010145726",
-    "nombre": "TARTARO NORTE MBP 40",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "280326_11",
-    "codigo": "080018226",
-    "nombre": "SUMERINDE J L 1",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "280326_11",
-    "codigo": "610003926",
-    "nombre": "ELBEYA 13",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "280326_11",
-    "codigo": "010141726",
-    "nombre": "TARTARO NORTE MBP 29",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "280326_11",
     "codigo": "010146026",
     "nombre": "TARTARO NORTE MBP 11",
     "tipo": "aparece"
@@ -496,6 +394,108 @@
     "codigo": "070029625",
     "nombre": "SEÑOR DE MURUGUAY",
     "tipo": "desaparece"
+  },
+  {
+    "fecha": "310326_11",
+    "codigo": "060006626",
+    "nombre": "EL PADERON",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "310326_11",
+    "codigo": "060006726",
+    "nombre": "LOS 3 AMORES",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "310326_11",
+    "codigo": "060006826",
+    "nombre": "VIRGEN DEL CARMEN 2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "310326_11",
+    "codigo": "590002722A",
+    "nombre": "GEMINIS",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "310326_11",
+    "codigo": "010147626",
+    "nombre": "MANDRAGORA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "310326_11",
+    "codigo": "030028826",
+    "nombre": "INVERSIONES SAID 01",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "310326_11",
+    "codigo": "610004026",
+    "nombre": "TUNKI 100",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "310326_11",
+    "codigo": "080044524A",
+    "nombre": "QORI ORQO",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "310326_11",
+    "codigo": "080018326",
+    "nombre": "PROYECTO MINERO OJEDA 26",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "310326_11",
+    "codigo": "080018426",
+    "nombre": "GOLD MAYNING OROGÉNICO",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "310326_11",
+    "codigo": "710003826",
+    "nombre": "MINA SOL NACIENTE 2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "310326_11",
+    "codigo": "070011926",
+    "nombre": "YACONSUR",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "310326_11",
+    "codigo": "070012026",
+    "nombre": "AYANKA REGALO DE DIOS II",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "310326_11",
+    "codigo": "070012126",
+    "nombre": "CARDEY 2019",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "310326_11",
+    "codigo": "070012226",
+    "nombre": "BRIMIC",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "310326_11",
+    "codigo": "070012326",
+    "nombre": "YACONSUR II",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "310326_11",
+    "codigo": "070012426",
+    "nombre": "CONCESION ABM",
+    "tipo": "aparece"
   },
   {
     "fecha": "310326_11",
