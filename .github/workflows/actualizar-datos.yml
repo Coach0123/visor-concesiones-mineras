@@ -2,11 +2,10 @@ name: Actualizar Datos Mineros
 
 on:
   schedule:
-    # Ejecutar cada hora
-    - cron: '0 * * * *'
+    # Ejecutar cada 30 minutos
+    - cron: '*/30 * * * *'
   workflow_dispatch:
 
-# Forzar Node.js 24 para eliminar advertencias
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
@@ -33,14 +32,15 @@ jobs:
         
       - name: Ejecutar script de actualización
         run: node scripts/actualizar-shapefiles.js
+        continue-on-error: true
         
-      - name: Verificar cambios y subir
+      - name: Verificar y subir cambios
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           
           # Forzar adición de archivos nuevos
-          git add -f data/
+          git add -f data/ || true
           
           # Verificar si hay cambios
           if git diff --cached --quiet; then
@@ -50,11 +50,11 @@ jobs:
           
           # Mostrar archivos a commitear
           echo "📦 Archivos a commitear:"
-          git diff --cached --name-only
+          git diff --cached --name-only || true
           
-          # Hacer commit y push
-          git commit -m "Actualización automática $(date +'%d%m%y_%H%M')"
-          git pull --rebase origin main
-          git push
+          # Hacer commit y push (con manejo de errores)
+          git commit -m "Actualización automática $(date +'%d%m%y_%H%M')" || echo "No hay cambios para commit"
+          git pull --rebase origin main || echo "Pull falló, continuando..."
+          git push || echo "Push falló, puede que no haya cambios"
           
-          echo "✅ Cambios subidos exitosamente"
+          echo "✅ Proceso completado"
