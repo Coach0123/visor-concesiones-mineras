@@ -2,8 +2,8 @@
 let map;
 let capas = {};
 let popupAbierto = false;
-let todosLosDatos = []; // Almacenar todos los datos para búsqueda global
-let datosHistoricos = []; // Almacenar datos históricos mensuales
+let todosLosDatos = [];
+let datosHistoricos = [];
 let rectanguloDibujo = null;
 let puntosDibujo = [];
 let capaDibujo = null;
@@ -17,7 +17,8 @@ function corregirTexto(texto) {
         'Ã“': 'Ó', 'Ã³': 'ó', 'Ãš': 'Ú', 'Ãº': 'ú', 'Ã ': 'Í', 'Ã­': 'í',
         'Ãœ': 'Ü', 'Ã¼': 'ü', 'Ã€': 'À', 'Ã ': 'à', 'ÃŠ': 'Ê', 'Ãª': 'ê',
         'Ã‡': 'Ç', 'Ã§': 'ç', 'Â¿': '¿', 'Â¡': '¡', 'Â°': '°', 'â€™': "'",
-        'â€œ': '"', 'â€': '"', 'Â´': "'", 'Ã': 'í', '³': 'ó', '±': 'ñ'
+        'â€œ': '"', 'â€': '"', 'Â´': "'", 'Ã': 'í', '³': 'ó', '±': 'ñ',
+        'estÃ¡ndar': 'estándar'
     };
     
     let textoCorregido = texto.toString();
@@ -25,6 +26,24 @@ function corregirTexto(texto) {
         textoCorregido = textoCorregido.replace(new RegExp(mal, 'g'), bien);
     }
     return textoCorregido;
+}
+
+// Función específica para CSV (con caracteres especiales para Excel)
+function corregirTextoCSV(texto) {
+    if (!texto) return '';
+    let t = texto.toString();
+    const reemplazos = {
+        'Ã‘': 'Ñ', 'Ã±': 'ñ', 'Ã‰': 'É', 'Ã©': 'é', 'Ã ': 'Á', 'Ã¡': 'á',
+        'Ã“': 'Ó', 'Ã³': 'ó', 'Ãš': 'Ú', 'Ãº': 'ú', 'Ã ': 'Í', 'Ã­': 'í',
+        'Ãœ': 'Ü', 'Ã¼': 'ü', 'Ã€': 'À', 'Ã ': 'à', 'ÃŠ': 'Ê', 'Ãª': 'ê',
+        'Ã‡': 'Ç', 'Ã§': 'ç', 'Â¿': '¿', 'Â¡': '¡', 'Â°': '°', 'â€™': "'",
+        'â€œ': '"', 'â€': '"', 'Â´': "'", 'Ã': 'í', '³': 'ó', '±': 'ñ',
+        'estÃ¡ndar': 'estándar'
+    };
+    for (const [mal, bien] of Object.entries(reemplazos)) {
+        t = t.replace(new RegExp(mal, 'g'), bien);
+    }
+    return t;
 }
 
 // Definir proyecciones UTM
@@ -70,13 +89,11 @@ function obtenerHorariosActuales() {
     const minutoUTC = ahora.getUTCMinutes();
     const horaPeru = (horaUTC - 5 + 24) % 24;
     
-    // Horarios disponibles (cada hora)
     const horarios = [];
     for (let i = 0; i < 24; i++) {
         horarios.push(i.toString().padStart(2, '0'));
     }
     
-    // Determinar horario actual (el más reciente)
     let horarioActual = '23';
     for (let i = horarios.length - 1; i >= 0; i--) {
         if (horaUTC >= parseInt(horarios[i])) {
@@ -104,17 +121,13 @@ function initMap() {
         attribution: '&copy; OpenStreetMap'
     }).addTo(map);
     
-    // Inicializar controles de dibujo
     inicializarDibujo();
-    
     cargarDatos();
     cargarCambios();
     cargarHistorialMensual();
 }
 
-// Función para cargar datos con respaldo automático
 async function cargarDatos() {
-    // Cargar cambios para colorear polígonos
     let cambiosMap = new Map();
     try {
         const cambiosResponse = await fetch(`${baseURL}/data/cambios.json`);
@@ -129,16 +142,12 @@ async function cargarDatos() {
         console.log('No hay cambios para colorear');
     }
 
-    // Lista completa de horarios posibles (últimas 48 horas para respaldo)
     const horariosPrioritarios = [];
-    const fechasRespaldo = [];
     
-    // Fecha actual
     for (let i = 23; i >= 0; i--) {
         horariosPrioritarios.push({ fecha: fechaStr, hora: i.toString().padStart(2, '0') });
     }
     
-    // Fecha anterior (para respaldo)
     const fechaAnterior = new Date(fechaHoy);
     fechaAnterior.setDate(fechaAnterior.getDate() - 1);
     const fechaAnteriorStr = fechaAnterior.toLocaleDateString('es-ES', {
@@ -158,7 +167,6 @@ async function cargarDatos() {
         let horarioCargado = null;
         let fechaCargada = null;
         
-        // Probar cada horario hasta encontrar uno que exista
         for (const item of horariosPrioritarios) {
             const url = `${baseURL}/data/${zona}_${item.fecha}_${item.hora}.geojson`;
             
@@ -172,15 +180,12 @@ async function cargarDatos() {
                     datosCargadosGlobalmente = true;
                     break;
                 }
-            } catch (e) {
-                // Ignorar errores de red
-            }
+            } catch (e) {}
         }
         
         if (datosCargados && horarioCargado) {
             console.log(`${zona}: ${datosCargados.features.length} polígonos`);
             
-            // Almacenar todos los datos para búsqueda global
             todosLosDatos.push({
                 zona: zona,
                 fecha: fechaCargada,
@@ -228,17 +233,16 @@ async function cargarDatos() {
             
             capas[zona] = capa;
         } else {
-            console.warn(`⚠️ No se encontró archivo para zona ${zona}, usando datos de respaldo si existen`);
+            console.warn(`⚠️ No se encontró archivo para zona ${zona}`);
         }
     }
     
     if (!datosCargadosGlobalmente) {
-        console.error('❌ No se pudo cargar ningún dato. Verifica la conexión o los archivos en GitHub');
-        mostrarMensaje('No se pudieron cargar los datos. Verifica tu conexión o intenta más tarde.', 'error');
+        console.error('❌ No se pudo cargar ningún dato');
+        mostrarMensaje('No se pudieron cargar los datos. Verifica tu conexión.', 'error');
     }
 }
 
-// Cargar historial mensual
 async function cargarHistorialMensual() {
     try {
         const mesActual = fechaHoy.getFullYear() + (fechaHoy.getMonth() + 1).toString().padStart(2, '0');
@@ -247,10 +251,8 @@ async function cargarHistorialMensual() {
         if (response.ok) {
             const historial = await response.json();
             console.log(`📜 Cargando ${historial.features.length} polígonos del historial mensual`);
-            
             datosHistoricos = historial.features;
             
-            // Mostrar en mapa con estilo diferente
             L.geoJSON(historial, {
                 coordsToLatLng: (coords) => {
                     const [lat, lon] = convertirUTM_A_WGS84(coords[0], coords[1], '17s');
@@ -304,7 +306,6 @@ async function cargarCambios() {
     }
 }
 
-// Buscador mejorado que incluye datos históricos
 async function buscarConcesion() {
     const texto = document.getElementById('buscador').value.trim().toLowerCase();
     if (!texto) {
@@ -315,7 +316,6 @@ async function buscarConcesion() {
     console.log(`🔍 Buscando: "${texto}"`);
     const resultados = [];
     
-    // Buscar en datos actuales
     for (const zonaData of todosLosDatos) {
         for (const feature of zonaData.features) {
             const props = feature.properties;
@@ -335,7 +335,6 @@ async function buscarConcesion() {
         }
     }
     
-    // Buscar en datos históricos (polígonos que ya no existen)
     for (const feature of datosHistoricos) {
         const props = feature.properties;
         const concesion = (props.CONCESION || '').toLowerCase();
@@ -361,7 +360,6 @@ async function buscarConcesion() {
         return;
     }
     
-    // Eliminar duplicados por código
     const unicos = [];
     const codigosVistos = new Set();
     resultados.forEach(r => {
@@ -397,7 +395,6 @@ async function buscarConcesion() {
     });
 }
 
-// Función mejorada para cargar archivos
 async function cargarArchivo() {
     const input = document.getElementById('archivo-input');
     const archivo = input.files[0];
@@ -414,13 +411,13 @@ async function cargarArchivo() {
             if (extension === 'geojson' || extension === 'json') {
                 geojson = JSON.parse(e.target.result);
             } else if (extension === 'kml') {
-                mostrarMensaje('Para KML necesitas la biblioteca togeojson. Por ahora, convierte a GeoJSON.', 'info');
+                mostrarMensaje('Para KML necesita convertir a GeoJSON', 'info');
                 return;
             } else if (extension === 'zip' || extension === 'rar') {
-                mostrarMensaje('Los archivos ZIP/RAR deben contener shapefile. Extrae y sube el .shp', 'info');
+                mostrarMensaje('Extraiga el archivo y suba el .shp', 'info');
                 return;
             } else if (extension === 'shp') {
-                mostrarMensaje('Para shapefiles, usa un ZIP con .shp, .dbf, .shx', 'info');
+                mostrarMensaje('Use un ZIP con .shp, .dbf, .shx', 'info');
                 return;
             }
             
@@ -441,13 +438,10 @@ async function cargarArchivo() {
     }
 }
 
-// Inicializar herramientas de dibujo
 function inicializarDibujo() {
-    // Las funciones ya están definidas globalmente
     console.log('🖌️ Herramientas de dibujo inicializadas');
 }
 
-// Variables para dibujo
 let dibujando = false;
 let puntoInicio = null;
 
@@ -465,8 +459,6 @@ function activarDibujoRectangulo() {
             mostrarMensaje('Ahora haz clic en la esquina opuesta', 'info');
         } else {
             const puntoFin = e.latlng;
-            
-            // Crear rectángulo
             const bounds = L.latLngBounds(puntoInicio, puntoFin);
             
             if (capaDibujo) {
@@ -480,7 +472,6 @@ function activarDibujoRectangulo() {
                 fillOpacity: 0.2
             }).addTo(map);
             
-            // Guardar área para envío por correo
             rectanguloDibujo = bounds;
             
             dibujando = false;
@@ -507,19 +498,16 @@ function limpiarDibujo() {
     mostrarMensaje('Dibujo limpiado', 'info');
 }
 
-// Función para enviar área por correo
 async function enviarAreaPorCorreo() {
     if (!rectanguloDibujo) {
         mostrarMensaje('Primero dibuja un área en el mapa', 'error');
         return;
     }
     
-    const email = prompt('Ingresa tu correo electrónico:');
-    if (!email) return;
+    const email = prompt('Ingresa tu correo electrónico (opcional, solo para referencia):');
     
     mostrarMensaje('Procesando polígonos en el área...', 'info');
     
-    // Obtener todos los polígonos dentro del área
     const poligonosEnArea = [];
     
     for (const zonaData of todosLosDatos) {
@@ -541,21 +529,30 @@ async function enviarAreaPorCorreo() {
         }
     }
     
-    // Generar CSV
-    let csv = 'CODIGOU,FEC_DENU,CONCESION,TIT_CONCES\n';
+    // Generar CSV con separador punto y coma y caracteres corregidos
+    let csv = 'CODIGOU;FEC_DENU;CONCESION;TIT_CONCES\n';
     poligonosEnArea.forEach(p => {
-        csv += `"${p.CODIGOU || ''}","${p.FEC_DENU || ''}","${p.CONCESION || ''}","${p.TIT_CONCES || ''}"\n`;
+        const codigo = corregirTextoCSV(p.CODIGOU || '');
+        const fecha = corregirTextoCSV(p.FEC_DENU || '');
+        const concesion = corregirTextoCSV(p.CONCESION || '');
+        const titular = corregirTextoCSV(p.TIT_CONCES || '');
+        csv += `"${codigo}";"${fecha}";"${concesion}";"${titular}"\n`;
     });
     
-    // Descargar CSV
-    const blob = new Blob([csv], { type: 'text/csv' });
+    // Descargar CSV con codificación UTF-8 BOM
+    const blob = new Blob([new Uint8Array([0xEF, 0xBB, 0xBF]), csv], { type: 'text/csv;charset=utf-8;' });
     const url = window.URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
     a.download = `poligonos_area_${new Date().toISOString().slice(0,10)}.csv`;
     a.click();
     
-    mostrarMensaje(`Se encontraron ${poligonosEnArea.length} polígonos. CSV descargado.`, 'exito');
+    const mensaje = `✅ Se encontraron ${poligonosEnArea.length} polígonos. CSV descargado.`;
+    if (email && email.includes('@')) {
+        mostrarMensaje(mensaje + ` (referencia: se enviaría a ${email})`, 'exito');
+    } else {
+        mostrarMensaje(mensaje, 'exito');
+    }
 }
 
 function mostrarAreaInteres(geojson) {
@@ -614,11 +611,9 @@ function mostrarMensaje(texto, tipo = 'info') {
     }, 3000);
 }
 
-// Variables globales
 let marcadorBusqueda;
 let capaAreaInteres;
 
-// Event listeners
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         cerrarPopup();
