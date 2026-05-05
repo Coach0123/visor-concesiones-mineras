@@ -18,7 +18,7 @@ function corregirTexto(texto) {
         'Ãœ': 'Ü', 'Ã¼': 'ü', 'Ã€': 'À', 'Ã ': 'à', 'ÃŠ': 'Ê', 'Ãª': 'ê',
         'Ã‡': 'Ç', 'Ã§': 'ç', 'Â¿': '¿', 'Â¡': '¡', 'Â°': '°', 'â€™': "'",
         'â€œ': '"', 'â€': '"', 'Â´': "'", 'Ã': 'í', '³': 'ó', '±': 'ñ',
-        'estÃ¡ndar': 'estándar'
+        'estÃ¡ndar': 'estándar', 'COMPAÃ‘IA': 'COMPAÑÍA', 'PerÃº': 'Perú'
     };
     
     let textoCorregido = texto.toString();
@@ -38,7 +38,7 @@ function corregirTextoCSV(texto) {
         'Ãœ': 'Ü', 'Ã¼': 'ü', 'Ã€': 'À', 'Ã ': 'à', 'ÃŠ': 'Ê', 'Ãª': 'ê',
         'Ã‡': 'Ç', 'Ã§': 'ç', 'Â¿': '¿', 'Â¡': '¡', 'Â°': '°', 'â€™': "'",
         'â€œ': '"', 'â€': '"', 'Â´': "'", 'Ã': 'í', '³': 'ó', '±': 'ñ',
-        'estÃ¡ndar': 'estándar'
+        'estÃ¡ndar': 'estándar', 'COMPAÃ‘IA': 'COMPAÑÍA', 'PerÃº': 'Perú'
     };
     for (const [mal, bien] of Object.entries(reemplazos)) {
         t = t.replace(new RegExp(mal, 'g'), bien);
@@ -440,6 +440,19 @@ async function cargarArchivo() {
 
 function inicializarDibujo() {
     console.log('🖌️ Herramientas de dibujo inicializadas');
+    
+    // Agregar el botón de descarga de CSV manualmente
+    const downloadButton = document.createElement('button');
+    downloadButton.textContent = '📥 Descargar CSV del área';
+    downloadButton.onclick = descargarCSVArea;
+    downloadButton.style.marginTop = '10px';
+    downloadButton.style.backgroundColor = '#FF9800';
+    
+    // Buscar el contenedor y agregar el botón
+    const contenedor = document.querySelector('.carga-archivos');
+    if (contenedor) {
+        contenedor.appendChild(downloadButton);
+    }
 }
 
 let dibujando = false;
@@ -477,7 +490,7 @@ function activarDibujoRectangulo() {
             dibujando = false;
             map.getContainer().style.cursor = '';
             map.off('click');
-            mostrarMensaje('Área dibujada correctamente', 'exito');
+            mostrarMensaje('Área dibujada correctamente. Click en "Descargar CSV" para obtener los datos.', 'exito');
         }
     });
 }
@@ -498,13 +511,11 @@ function limpiarDibujo() {
     mostrarMensaje('Dibujo limpiado', 'info');
 }
 
-async function enviarAreaPorCorreo() {
+function descargarCSVArea() {
     if (!rectanguloDibujo) {
-        mostrarMensaje('Primero dibuja un área en el mapa', 'error');
+        mostrarMensaje('Primero dibuja un área en el mapa (usa el botón "✏️ Dibujar área")', 'error');
         return;
     }
-    
-    const email = prompt('Ingresa tu correo electrónico (opcional, solo para referencia):');
     
     mostrarMensaje('Procesando polígonos en el área...', 'info');
     
@@ -547,12 +558,7 @@ async function enviarAreaPorCorreo() {
     a.download = `poligonos_area_${new Date().toISOString().slice(0,10)}.csv`;
     a.click();
     
-    const mensaje = `✅ Se encontraron ${poligonosEnArea.length} polígonos. CSV descargado.`;
-    if (email && email.includes('@')) {
-        mostrarMensaje(mensaje + ` (referencia: se enviaría a ${email})`, 'exito');
-    } else {
-        mostrarMensaje(mensaje, 'exito');
-    }
+    mostrarMensaje(`✅ Se encontraron ${poligonosEnArea.length} polígonos. CSV descargado.`, 'exito');
 }
 
 function mostrarAreaInteres(geojson) {
