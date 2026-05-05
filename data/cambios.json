@@ -1,36 +1,6 @@
 [
   {
     "fecha": "010426_06",
-    "codigo": "540001319",
-    "nombre": "LA PODEROSA 2019",
-    "tipo": "desaparece"
-  },
-  {
-    "fecha": "010426_06",
-    "codigo": "010246417",
-    "nombre": "SALLAPATA 2",
-    "tipo": "desaparece"
-  },
-  {
-    "fecha": "010426_06",
-    "codigo": "010246517",
-    "nombre": "SALLAPATA 3",
-    "tipo": "desaparece"
-  },
-  {
-    "fecha": "010426_06",
-    "codigo": "680002317",
-    "nombre": "VIRGEN DE CHAPI 2018",
-    "tipo": "desaparece"
-  },
-  {
-    "fecha": "010426_06",
-    "codigo": "710006611",
-    "nombre": "LA PODEROSA MISKI 2011",
-    "tipo": "desaparece"
-  },
-  {
-    "fecha": "010426_06",
     "codigo": "050026812",
     "nombre": "CESIA 3",
     "tipo": "desaparece"
@@ -2997,6 +2967,36 @@
     "fecha": "040526_23",
     "codigo": "080021126",
     "nombre": "LA PODEROSA VARILLA DE COBRE",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "050526_12",
+    "codigo": "050037526",
+    "nombre": "GRAN PACHACUTEC II",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "050526_12",
+    "codigo": "050037626",
+    "nombre": "GRAN PACHACUTEC III",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "050526_12",
+    "codigo": "050037026",
+    "nombre": "ROVAK I",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "050526_12",
+    "codigo": "050037426",
+    "nombre": "GRAN PACHACUTEC I",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "050526_12",
+    "codigo": "050030026",
+    "nombre": "PODEROSA XXI",
     "tipo": "aparece"
   }
 ]
