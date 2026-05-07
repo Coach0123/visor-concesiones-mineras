@@ -1,72 +1,6 @@
 [
   {
     "fecha": "050526_18",
-    "codigo": "050044626",
-    "nombre": "KORIHUAYRACHINA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "050054126",
-    "nombre": "SANTA BERNARDINA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "050032326",
-    "nombre": "SAGUALQUE I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080027126",
-    "nombre": "CORPORACION GARNICA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010264026",
-    "nombre": "CHARCANI COPPER",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010282226",
-    "nombre": "QUINCEMIL GOLD",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080026926",
-    "nombre": "DIANITA 2027",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010252626",
-    "nombre": "HIRU PAMPA I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080030726",
-    "nombre": "NAYELY 1",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "050041126",
-    "nombre": "GATO DORADO 05",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "110007526",
-    "nombre": "PROSPERIDAD DE LIMBANI",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
     "codigo": "010250826",
     "nombre": "SHIRLEY 2026",
     "tipo": "aparece"
@@ -2997,6 +2931,72 @@
     "fecha": "070526_12",
     "codigo": "070021926",
     "nombre": "AMARU I",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "070526_17",
+    "codigo": "030052325",
+    "nombre": "SPARTACUS MACATE",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "070526_17",
+    "codigo": "030053825",
+    "nombre": "CAMPANA GOLD MMM",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "070526_17",
+    "codigo": "030024825",
+    "nombre": "TIERRA NOBLE",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "070526_17",
+    "codigo": "010313424",
+    "nombre": "CANTERASANTAELISA",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "070526_17",
+    "codigo": "010274725",
+    "nombre": "MOGAN",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "070526_17",
+    "codigo": "010264525",
+    "nombre": "ISCAY XXVI-A",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "070526_17",
+    "codigo": "010257025",
+    "nombre": "MILO SEIS",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "070526_19",
+    "codigo": "010439325A",
+    "nombre": "AXEL I",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "070526_17",
+    "codigo": "070019925",
+    "nombre": "YUDID 2025",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "070526_17",
+    "codigo": "070020125",
+    "nombre": "QORI ADRIANA 2",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "070526_19",
+    "codigo": "010151825A",
+    "nombre": "CRISTO MORADO UNO",
     "tipo": "aparece"
   }
 ]
