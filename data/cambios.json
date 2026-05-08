@@ -1,12 +1,6 @@
 [
   {
     "fecha": "050526_18",
-    "codigo": "010250826",
-    "nombre": "SHIRLEY 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
     "codigo": "010244226",
     "nombre": "YA LING UNO",
     "tipo": "aparece"
@@ -2997,6 +2991,12 @@
     "fecha": "070526_19",
     "codigo": "010151825A",
     "nombre": "CRISTO MORADO UNO",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "080526_13",
+    "codigo": "010456025A",
+    "nombre": "SEÑOR DE HUANCA NIEVES",
     "tipo": "aparece"
   }
 ]
