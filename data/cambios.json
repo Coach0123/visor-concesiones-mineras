@@ -1,18 +1,6 @@
 [
   {
     "fecha": "050526_18",
-    "codigo": "040022826",
-    "nombre": "CCORI SONCCO I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "050028626",
-    "nombre": "OSITO DORADO II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
     "codigo": "050048226",
     "nombre": "QORI ALLPA 1",
     "tipo": "aparece"
@@ -2998,5 +2986,17 @@
     "codigo": "070022726",
     "nombre": "PLAYA WILY",
     "tipo": "aparece"
+  },
+  {
+    "fecha": "100526_13",
+    "codigo": "010272126",
+    "nombre": "CCOLLPA DORADA IV",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "100526_11",
+    "codigo": "010272126",
+    "nombre": "CCOLLPA DORADA IV",
+    "tipo": "desaparece"
   }
 ]
