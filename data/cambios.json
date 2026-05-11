@@ -1,18 +1,6 @@
 [
   {
     "fecha": "050526_18",
-    "codigo": "050048226",
-    "nombre": "QORI ALLPA 1",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010223026",
-    "nombre": "VALERIA I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
     "codigo": "040025226",
     "nombre": "TRIUNFADOR 8",
     "tipo": "aparece"
@@ -2998,5 +2986,17 @@
     "codigo": "010272126",
     "nombre": "CCOLLPA DORADA IV",
     "tipo": "desaparece"
+  },
+  {
+    "fecha": "110526_15",
+    "codigo": "730002722",
+    "nombre": "TESORO DEL INKA 2",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "110526_18",
+    "codigo": "010290726",
+    "nombre": "CMATHEW 2026",
+    "tipo": "aparece"
   }
 ]
