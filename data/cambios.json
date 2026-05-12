@@ -1,72 +1,6 @@
 [
   {
     "fecha": "050526_18",
-    "codigo": "040013626",
-    "nombre": "APU INTI M&N",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010200826",
-    "nombre": "CR 2606",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010268326",
-    "nombre": "CHOCOLLO 26",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010222926",
-    "nombre": "TOMINO I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010253926",
-    "nombre": "ANCHAQUI 28 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "580004126",
-    "nombre": "RONALDO2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010197526",
-    "nombre": "BIMBA 2",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "050042626",
-    "nombre": "ROGMINSUR I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "710005726",
-    "nombre": "SOLEDAD GOLD II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "710004326",
-    "nombre": "SAN IGNACIO ESEQUIS 5",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "710004626",
-    "nombre": "MEGAGOLD",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
     "codigo": "010178426",
     "nombre": "KALLPA GOLD II",
     "tipo": "aparece"
@@ -2997,6 +2931,72 @@
     "fecha": "120526_12",
     "codigo": "070023126",
     "nombre": "FIDELA II",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "120526_19",
+    "codigo": "010292026",
+    "nombre": "ALPHAMET I",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "120526_19",
+    "codigo": "520004626",
+    "nombre": "AMAIA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "120526_19",
+    "codigo": "010291926",
+    "nombre": "SARAGOZA I",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "120526_19",
+    "codigo": "700002226",
+    "nombre": "KEIKO 2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "120526_19",
+    "codigo": "520004726",
+    "nombre": "LOS PELICANOS II",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "120526_19",
+    "codigo": "010292326",
+    "nombre": "ISAIAS 2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "120526_19",
+    "codigo": "010292126",
+    "nombre": "MCR 01",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "120526_19",
+    "codigo": "530010426",
+    "nombre": "GUMERCINDA 3",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "120526_19",
+    "codigo": "020010226",
+    "nombre": "FATIMA LA HUAYCHA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "120526_19",
+    "codigo": "540012326",
+    "nombre": "ESTRELLA DEL SUR",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "120526_19",
+    "codigo": "710006326",
+    "nombre": "EMPRESA MINERA PARIS II",
     "tipo": "aparece"
   }
 ]
