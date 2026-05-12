@@ -1,216 +1,6 @@
 [
   {
     "fecha": "050526_18",
-    "codigo": "010253426",
-    "nombre": "CERRO MASITA 7 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010256426",
-    "nombre": "COLUMBA 2",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080028526",
-    "nombre": "CHUNCHUSMAYO DE ORO III",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080022726",
-    "nombre": "INTI GOLD",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "040026826",
-    "nombre": "VALENTINA 01",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010178226",
-    "nombre": "ANYA III",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "040021326",
-    "nombre": "SAPANCARIS",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "050031026",
-    "nombre": "KORY MYRCELA 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "040017426",
-    "nombre": "CANTERAVIRGENASUNTA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010273826",
-    "nombre": "REAL FATIMA 005",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080025426",
-    "nombre": "PAZ VICTORIA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "040025326",
-    "nombre": "TRIUNFADOR 9",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "730002026",
-    "nombre": "LOS OASIS DEL SUR",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "050028526",
-    "nombre": "TRES LEONES V",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "050041026",
-    "nombre": "GATO DORADO 06",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "040016126",
-    "nombre": "BRAMAR 1",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080027026",
-    "nombre": "RIO DORADO 4",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010253526",
-    "nombre": "CERRO MASITA 6 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010265026",
-    "nombre": "FORTUNAMONTESINOS III",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "040021726",
-    "nombre": "MAXIMILIANA 1",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010171826",
-    "nombre": "VILLARICA 4",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "540008326",
-    "nombre": "MILAGROS 26 I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010184026",
-    "nombre": "LIVITACA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010279226",
-    "nombre": "OLLACHEA 400",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "050029326",
-    "nombre": "MACUSI 26 I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010214926",
-    "nombre": "ATENEA DORADA 2",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "050052926",
-    "nombre": "XIMENITA III",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "580004426",
-    "nombre": "FREDY COLQUEMARCA 2027",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "580004526",
-    "nombre": "ALESIA 4",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080028826",
-    "nombre": "DIMITRI VIII",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "710004526",
-    "nombre": "FORTALEZA SAGRADA 2606",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "070020526",
-    "nombre": "SANDRA DOS",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "070019926",
-    "nombre": "OMER EMIR",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "040015126",
-    "nombre": "HATUNQORI METALS 1",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "540011626",
-    "nombre": "FIELDGATE",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
     "codigo": "040013626",
     "nombre": "APU INTI M&N",
     "tipo": "aparece"
@@ -2997,6 +2787,216 @@
     "fecha": "110526_20",
     "codigo": "010290426",
     "nombre": "G&M CORPORACIÓN CANDELA CONSTITUCIÓN",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "120526_12",
+    "codigo": "030051526",
+    "nombre": "ANDES PERU I",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "120526_12",
+    "codigo": "060011426",
+    "nombre": "BINRO I",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "120526_12",
+    "codigo": "030051826",
+    "nombre": "PATY 2",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "120526_12",
+    "codigo": "030051626",
+    "nombre": "ROMERITO V",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "120526_12",
+    "codigo": "030051726",
+    "nombre": "MADY 23II",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "120526_12",
+    "codigo": "070022926",
+    "nombre": "ARONIRIOS II",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "120526_12",
+    "codigo": "030051926",
+    "nombre": "LUZ DIVINA 91",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "120526_12",
+    "codigo": "030052126",
+    "nombre": "CRAYOLA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "120526_12",
+    "codigo": "010291826",
+    "nombre": "KOTY JOSEFA UNO",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "120526_12",
+    "codigo": "080035026",
+    "nombre": "BAYO III",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "120526_12",
+    "codigo": "010291626",
+    "nombre": "KEY LING 5",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "120526_12",
+    "codigo": "050057026",
+    "nombre": "LUIS ARTURO II",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "120526_12",
+    "codigo": "010291526",
+    "nombre": "KEY LING 6",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "120526_12",
+    "codigo": "010291726",
+    "nombre": "EMMA 2",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "120526_12",
+    "codigo": "010290926",
+    "nombre": "LA ESPERANZA DE CHAVIN",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "120526_12",
+    "codigo": "530010226",
+    "nombre": "GOLDEN FORD",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "120526_12",
+    "codigo": "530010326",
+    "nombre": "DOS ONZAS",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "120526_12",
+    "codigo": "010291426",
+    "nombre": "BORBON 2",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "120526_12",
+    "codigo": "050056926",
+    "nombre": "LUIS ARTURO I",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "120526_12",
+    "codigo": "050057126",
+    "nombre": "OSO DORADO DE ALTO CHUMALLE II",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "120526_12",
+    "codigo": "030052326",
+    "nombre": "SALTO",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "120526_12",
+    "codigo": "030052226",
+    "nombre": "MEDIALUNA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "120526_12",
+    "codigo": "070023026",
+    "nombre": "ARONIRIOS III",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "120526_12",
+    "codigo": "030052426",
+    "nombre": "FERIADO",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "120526_12",
+    "codigo": "010291126",
+    "nombre": "CANDELARIA DE HNE",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "120526_12",
+    "codigo": "080035126",
+    "nombre": "CONGAR",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "120526_12",
+    "codigo": "080034926",
+    "nombre": "LAS MERCEDES 2026 III",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "120526_12",
+    "codigo": "010290826",
+    "nombre": "CN ANDREW 2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "120526_12",
+    "codigo": "040027626",
+    "nombre": "APU SUMBAY",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "120526_12",
+    "codigo": "010291226",
+    "nombre": "THREE ELEMENTS",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "120526_12",
+    "codigo": "010291026",
+    "nombre": "COPACABANA DOS AURA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "120526_12",
+    "codigo": "080035226",
+    "nombre": "PROYECTO MINERO GODEI",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "120526_12",
+    "codigo": "050057226",
+    "nombre": "ESQUINA 18",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "120526_12",
+    "codigo": "580005726",
+    "nombre": "MINERA TURPO",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "120526_12",
+    "codigo": "070023126",
+    "nombre": "FIDELA II",
     "tipo": "aparece"
   }
 ]
