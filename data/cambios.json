@@ -1,54 +1,6 @@
 [
   {
     "fecha": "050526_18",
-    "codigo": "010248526",
-    "nombre": "ACHACHILA DE PUTINA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010216526",
-    "nombre": "MINERA ARGOS 3",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "040025526",
-    "nombre": "TRIUNFADOR 11",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010254826",
-    "nombre": "LUCERO 3",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "040013726",
-    "nombre": "APU INTI M&N I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "040014126",
-    "nombre": "APU INTI M&N V",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010230826",
-    "nombre": "CCOROPURO MBP 03",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010223226",
-    "nombre": "TOMINO II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
     "codigo": "050039426",
     "nombre": "ANGEL MINING II",
     "tipo": "aparece"
@@ -2997,6 +2949,54 @@
     "fecha": "130526_13",
     "codigo": "050057326",
     "nombre": "DELSY 2",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "130526_18",
+    "codigo": "600002726",
+    "nombre": "SHALON SHADAI",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "130526_18",
+    "codigo": "010292926",
+    "nombre": "G&M CORPORACION CANDELA YUYAPICHIS",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "130526_18",
+    "codigo": "010292626",
+    "nombre": "G369-8",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "130526_18",
+    "codigo": "010293126",
+    "nombre": "MALAPAMPA 01",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "130526_18",
+    "codigo": "010292726",
+    "nombre": "G369-9",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "130526_18",
+    "codigo": "010292826",
+    "nombre": "ZOILA DORADA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "130526_18",
+    "codigo": "010293026",
+    "nombre": "AVE FENIX",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "130526_18",
+    "codigo": "070023526",
+    "nombre": "ROSITA II",
     "tipo": "aparece"
   }
 ]
