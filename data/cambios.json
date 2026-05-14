@@ -1,72 +1,6 @@
 [
   {
     "fecha": "050526_18",
-    "codigo": "710004226",
-    "nombre": "MINERA F&E I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "040023526",
-    "nombre": "RAYMUNDA II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "730001526",
-    "nombre": "SAN PABLO 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "040015426",
-    "nombre": "GRAN LEON 19",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010223126",
-    "nombre": "GEOMATERIALES I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010271326",
-    "nombre": "ARIES I 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080024126",
-    "nombre": "PIEDRA SANTA VII",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080027626",
-    "nombre": "CAELUM 01",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010280126",
-    "nombre": "PAMPA AZUL 10",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010273926",
-    "nombre": "REAL FATIMA 004",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "710004126",
-    "nombre": "JAVI YERALD UNO",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
     "codigo": "040014426",
     "nombre": "VETA DORADA HC",
     "tipo": "aparece"
@@ -2998,5 +2932,71 @@
     "codigo": "080035526",
     "nombre": "LURBY MINERALS",
     "tipo": "aparece"
+  },
+  {
+    "fecha": "140526_17",
+    "codigo": "640001023",
+    "nombre": "ORO BLANCO 6988",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "140526_17",
+    "codigo": "700006123",
+    "nombre": "PIEDRA DE AGUA II",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "140526_17",
+    "codigo": "610015824",
+    "nombre": "NUEVA ESPERAZA SARAMARCA",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "140526_17",
+    "codigo": "660001425",
+    "nombre": "NUEVO HORIZONTE 2025",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "140526_17",
+    "codigo": "660001625",
+    "nombre": "BALSIAN",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "140526_17",
+    "codigo": "610005324",
+    "nombre": "MINERA SEGUNDO",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "140526_17",
+    "codigo": "610014924",
+    "nombre": "ÑUSTA MICAELA I 2024",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "140526_17",
+    "codigo": "610007623",
+    "nombre": "NUEVO CANAAN",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "140526_17",
+    "codigo": "610005624",
+    "nombre": "MINERA APEMASON 46 DOS",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "140526_17",
+    "codigo": "610015424",
+    "nombre": "BUCEFALO",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "140526_17",
+    "codigo": "610015024",
+    "nombre": "ÑUSTA MICAELA II 2024",
+    "tipo": "desaparece"
   }
 ]
