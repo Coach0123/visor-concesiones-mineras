@@ -1,228 +1,6 @@
 [
   {
     "fecha": "050526_18",
-    "codigo": "050039426",
-    "nombre": "ANGEL MINING II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080028226",
-    "nombre": "MISKI GOLD",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080023826",
-    "nombre": "QORI KENTI TIVAR",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010183026",
-    "nombre": "OSPREY 8",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "040018226",
-    "nombre": "FABRIZZIO I 2005",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "040026426",
-    "nombre": "ANDREW CM2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010204226",
-    "nombre": "CONSTANCIA 63",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "040026626",
-    "nombre": "PUMACOCHA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "070020726",
-    "nombre": "JUAN WILLI",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "040017226",
-    "nombre": "KORI HUALLPA I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010238126",
-    "nombre": "CHOCCOYO 01",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "050041926",
-    "nombre": "BODOQUE DORADO",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "050031126",
-    "nombre": "QORIPATA 7",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080024526",
-    "nombre": "JAVI YERALD TRES",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080028026",
-    "nombre": "PATAYNAMAYO26",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080023126",
-    "nombre": "JTD BROWN MULTISERVICIOS EIRL",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010273626",
-    "nombre": "REAL FATIMA 007",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "050029226",
-    "nombre": "MACUSI 26",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080027226",
-    "nombre": "RAYDA INVERSIONES 1",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010277126",
-    "nombre": "ELENA 27",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "050028126",
-    "nombre": "TRES LEONES I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010274026",
-    "nombre": "REAL FATIMA 003",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010199326",
-    "nombre": "PUNO SB4",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "050034626",
-    "nombre": "GANCHO",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010249226",
-    "nombre": "MARTINEZ 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "050031626",
-    "nombre": "STAR GOLD 3",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010202026",
-    "nombre": "MADRIGAL",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "730001326",
-    "nombre": "INCAPUGUIO COPPER DOMINION",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010250226",
-    "nombre": "ESTEFANY 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010254226",
-    "nombre": "QORY QHUYA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010233726",
-    "nombre": "QURIQUIPA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "070019726",
-    "nombre": "EIDAM CRUCINTA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "040017926",
-    "nombre": "CUNA DEL ORO",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010251726",
-    "nombre": "DIANA 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "040025626",
-    "nombre": "SAN LORO I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010178026",
-    "nombre": "CHAMAQUITA 200",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "050042726",
-    "nombre": "KOKY MAYO X",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
     "codigo": "710004226",
     "nombre": "MINERA F&E I",
     "tipo": "aparece"
@@ -2997,6 +2775,228 @@
     "fecha": "130526_18",
     "codigo": "070023526",
     "nombre": "ROSITA II",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140526_12",
+    "codigo": "060011626",
+    "nombre": "APU DORADO 2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140526_12",
+    "codigo": "060011826",
+    "nombre": "MONTECAL",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140526_12",
+    "codigo": "060011726",
+    "nombre": "CHATIN XXI",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140526_12",
+    "codigo": "030052526",
+    "nombre": "VG YHAWEH",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140526_10",
+    "codigo": "050049425",
+    "nombre": "PULGAR2",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "140526_12",
+    "codigo": "550003026",
+    "nombre": "MINERVA CUATRO",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140526_12",
+    "codigo": "010293626",
+    "nombre": "CARAVELI OESTE",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140526_12",
+    "codigo": "050057626",
+    "nombre": "VIKINGOS 01",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140526_12",
+    "codigo": "010293326",
+    "nombre": "SANTO DOMINGO DE HUARAL",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140526_12",
+    "codigo": "010293426",
+    "nombre": "LA PAMPA DEL SANTA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140526_12",
+    "codigo": "650005526",
+    "nombre": "MINDU E232",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140526_12",
+    "codigo": "650005326",
+    "nombre": "MINDU E235",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140526_12",
+    "codigo": "010293726",
+    "nombre": "ANDES DORADOS III",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140526_12",
+    "codigo": "010294026",
+    "nombre": "SWAN 176",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140526_12",
+    "codigo": "010293926",
+    "nombre": "SWAN 175",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140526_12",
+    "codigo": "540012426",
+    "nombre": "YOLITA 13 5",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140526_12",
+    "codigo": "650005426",
+    "nombre": "MINDU E236",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140526_12",
+    "codigo": "540012526",
+    "nombre": "LA REYNA LEONA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140526_12",
+    "codigo": "650005226",
+    "nombre": "MINDU E205",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140526_12",
+    "codigo": "010293526",
+    "nombre": "CARAVELI NOROESTE",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140526_12",
+    "codigo": "010293826",
+    "nombre": "ANDES DORADOS II",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140526_12",
+    "codigo": "110009126",
+    "nombre": "PIERINA 2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140526_12",
+    "codigo": "650005126",
+    "nombre": "MINDU E237",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140526_12",
+    "codigo": "650005626",
+    "nombre": "MINDU E220",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140526_12",
+    "codigo": "650005826",
+    "nombre": "MINDU E230",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140526_12",
+    "codigo": "650006326",
+    "nombre": "MINDU E233",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140526_12",
+    "codigo": "650006126",
+    "nombre": "MINDU E208",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140526_12",
+    "codigo": "650005926",
+    "nombre": "MINDU E231",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140526_12",
+    "codigo": "620003626",
+    "nombre": "SEBASTIAN ALEJANDRO",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140526_12",
+    "codigo": "650006026",
+    "nombre": "MINDU E209",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140526_12",
+    "codigo": "650006226",
+    "nombre": "MINDU E207",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140526_12",
+    "codigo": "650005726",
+    "nombre": "MINDU E206",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140526_12",
+    "codigo": "050057726",
+    "nombre": "PACCHUA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140526_10",
+    "codigo": "010082725",
+    "nombre": "BARRACA 2000",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "140526_10",
+    "codigo": "010409825",
+    "nombre": "HERMANOS TAIPE 1",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "140526_12",
+    "codigo": "010293226",
+    "nombre": "COPACABANA TRES AURA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "140526_12",
+    "codigo": "080035526",
+    "nombre": "LURBY MINERALS",
     "tipo": "aparece"
   }
 ]
