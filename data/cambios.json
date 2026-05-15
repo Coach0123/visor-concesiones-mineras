@@ -1,234 +1,6 @@
 [
   {
     "fecha": "050526_18",
-    "codigo": "040014426",
-    "nombre": "VETA DORADA HC",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "580003726",
-    "nombre": "ALTIPLANO III",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080030026",
-    "nombre": "DMX ONE",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "730002126",
-    "nombre": "PIEDRA DE MIRAVE",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "710004926",
-    "nombre": "FER I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010264126",
-    "nombre": "SAN MARTIN DE PORRES 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010197426",
-    "nombre": "BIMBA 3",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "540010426",
-    "nombre": "TUPAMARU",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "040015626",
-    "nombre": "COPACABANA 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "540012026",
-    "nombre": "RAUL",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "040017326",
-    "nombre": "KORI HALLPA II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080023426",
-    "nombre": "COMIN FM",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "070018026",
-    "nombre": "CAMIL STEYCI",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "040015726",
-    "nombre": "VIRGEN DE CHAPI AQP",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080030526",
-    "nombre": "YASEMINA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "030048826",
-    "nombre": "X3",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "040022426",
-    "nombre": "MINA CHIQUILLA 2",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010214826",
-    "nombre": "ATENEA DORADA 3",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010267826",
-    "nombre": "NUEVO QORI 26",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "050038626",
-    "nombre": "HERCUSII",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "050052426",
-    "nombre": "NINIVE",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080026626",
-    "nombre": "JAPUPATJA CHURO PAMPA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010201326",
-    "nombre": "SOLEIL05",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080032126",
-    "nombre": "FLOR DE ORO T&NV 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080027426",
-    "nombre": "UNION AR I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080021626",
-    "nombre": "KOLTAN KALION",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080031026",
-    "nombre": "QORYMAKY 26",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010230926",
-    "nombre": "ALQO 164",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080029526",
-    "nombre": "BYB EXPLOCALMIN 3",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010215126",
-    "nombre": "ATENEA DORADA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080027826",
-    "nombre": "GOLDY MINERS 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010238326",
-    "nombre": "JINGXING I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080023926",
-    "nombre": "KALASASAYA EXPLORING 1",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080022426",
-    "nombre": "NEW GERATION MINING PROJECT",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080025326",
-    "nombre": "FENIX 2026 UNO",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "050050826",
-    "nombre": "REYES DE COLQUEMARCA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "040016026",
-    "nombre": "J Y V",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "050039326",
-    "nombre": "ANGEL MINING I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
     "codigo": "040020826",
     "nombre": "YANAWANKA 6",
     "tipo": "aparece"
@@ -2998,5 +2770,233 @@
     "codigo": "610015024",
     "nombre": "ÑUSTA MICAELA II 2024",
     "tipo": "desaparece"
+  },
+  {
+    "fecha": "150526_13",
+    "codigo": "010294126",
+    "nombre": "FENIX I",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_13",
+    "codigo": "030052726",
+    "nombre": "PODEROSO ROCAR A&C IV",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_13",
+    "codigo": "510000726",
+    "nombre": "SANTA ROSA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_13",
+    "codigo": "600002826",
+    "nombre": "YURAG RUMI",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_13",
+    "codigo": "030052626",
+    "nombre": "PODEROSO ROCAR A&C III",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_13",
+    "codigo": "620003726",
+    "nombre": "HIPOLITO 26",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_13",
+    "codigo": "010294226",
+    "nombre": "2026 PERU MINING DOS",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_13",
+    "codigo": "590003126",
+    "nombre": "IRON ORE PROJECT",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_13",
+    "codigo": "660001626",
+    "nombre": "YOLIMAR",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_13",
+    "codigo": "010294326",
+    "nombre": "ARTEMIS II M",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_13",
+    "codigo": "080035626",
+    "nombre": "GRUPO CCARI",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_13",
+    "codigo": "680001426",
+    "nombre": "VILLAVICENCIO-I",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_13",
+    "codigo": "070023626",
+    "nombre": "LOS TRES AMIGOS",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_13",
+    "codigo": "080035726",
+    "nombre": "CORI JAWIRA MINER6",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_13",
+    "codigo": "010295826",
+    "nombre": "MUÑANI 32",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_13",
+    "codigo": "010295226",
+    "nombre": "QUIMSA 2026 3",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_13",
+    "codigo": "010296926",
+    "nombre": "POTONI 19",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_13",
+    "codigo": "010294926",
+    "nombre": "MUÑANI 35",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_13",
+    "codigo": "010294826",
+    "nombre": "MUÑANI 36",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_13",
+    "codigo": "010296726",
+    "nombre": "MUÑANI 26",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_13",
+    "codigo": "010294626",
+    "nombre": "MUÑANI 33",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_13",
+    "codigo": "010295926",
+    "nombre": "MUÑANI 31",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_13",
+    "codigo": "010296426",
+    "nombre": "MUÑANI 30",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_13",
+    "codigo": "010295526",
+    "nombre": "QUIMSA 2026 7",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_13",
+    "codigo": "010296526",
+    "nombre": "MUÑANI 48",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_13",
+    "codigo": "010294726",
+    "nombre": "MUÑANI 34",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_13",
+    "codigo": "080035826",
+    "nombre": "CORI JAWIRA MINER5",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_13",
+    "codigo": "010295126",
+    "nombre": "QUIMSA 2026 2",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_13",
+    "codigo": "010295626",
+    "nombre": "QUIMSA 2026 8",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_13",
+    "codigo": "010295426",
+    "nombre": "QUIMSA 2026 5",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_13",
+    "codigo": "010296226",
+    "nombre": "MUÑANI 27",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_13",
+    "codigo": "010295326",
+    "nombre": "QUIMSA 2026 4",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_13",
+    "codigo": "010295026",
+    "nombre": "QUIMSA 2026 1",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_13",
+    "codigo": "010294426",
+    "nombre": "COPACABANA CUATRO",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_13",
+    "codigo": "010295726",
+    "nombre": "QUIMSA 2026 6",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_13",
+    "codigo": "010296326",
+    "nombre": "MUÑANI 46",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_13",
+    "codigo": "010296026",
+    "nombre": "MUÑANI 28",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_13",
+    "codigo": "010294526",
+    "nombre": "MUÑANI 37",
+    "tipo": "aparece"
   }
 ]
