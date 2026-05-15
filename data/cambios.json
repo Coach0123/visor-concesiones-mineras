@@ -1,414 +1,6 @@
 [
   {
     "fecha": "050526_18",
-    "codigo": "040020826",
-    "nombre": "YANAWANKA 6",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010173126",
-    "nombre": "YONATAN UNO",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "050039526",
-    "nombre": "ANGEL MINING III",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010253626",
-    "nombre": "CERRO MASITA 5 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "040015826",
-    "nombre": "MINING LUNAR DE ORO",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010264926",
-    "nombre": "FORTUNAMONTESINOS I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "050030826",
-    "nombre": "MINASNETSURMIN II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "050030326",
-    "nombre": "SAN ANTONIO",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080023226",
-    "nombre": "TORRES L&A",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080030226",
-    "nombre": "JKRAMOSYASOCIADOS",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010253826",
-    "nombre": "ANCHAQUI 29 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "040021226",
-    "nombre": "EL REY MIDAS",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "050053326",
-    "nombre": "KORI SONCO 4",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080027726",
-    "nombre": "MINERA CONDOR RC2",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010252526",
-    "nombre": "HIRU PAMPA J",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010254926",
-    "nombre": "LUCERO 2",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010267426",
-    "nombre": "CAMPANANE 26-3",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "030048726",
-    "nombre": "X2",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080030926",
-    "nombre": "SUMAC SIPAS 2",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080032026",
-    "nombre": "GOLDEN HERMANOS J&D",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "040026726",
-    "nombre": "KILATES 3",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "050038426",
-    "nombre": "PUZONANDO 2 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "580003026",
-    "nombre": "CMM EL DORADO ANQAS MAYU 8",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "580003526",
-    "nombre": "LIVAR 26",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080029726",
-    "nombre": "PROYECTO MINERO ANKA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010182326",
-    "nombre": "INCACORP DOS",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010244126",
-    "nombre": "YA LING DOS",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080022126",
-    "nombre": "ARES COMPANY JY2",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "580004226",
-    "nombre": "FREDY COLQUEMARCA DOS",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010220726",
-    "nombre": "NUEVA PUTINA 26",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "040025426",
-    "nombre": "TRIUNFADOR 10",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010264426",
-    "nombre": "CATERA FINA526",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010264526",
-    "nombre": "CANTERA JAIME426",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010279726",
-    "nombre": "OLLACHEA 600",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080031626",
-    "nombre": "NUEVO PORVENIR WYG",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "070018926",
-    "nombre": "FRANK 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "070018826",
-    "nombre": "EMY II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "050031726",
-    "nombre": "ARENAS DEL SOL 1",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010199126",
-    "nombre": "FLOR DE CAPULI 3",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080031426",
-    "nombre": "LA PODEROSA 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080031326",
-    "nombre": "GOLD MININGMARA II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "050044526",
-    "nombre": "LA SOBERANA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "050041426",
-    "nombre": "GATO DORADO 02",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "710005526",
-    "nombre": "CANDELARIA SILVER II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "040014826",
-    "nombre": "CCORI ANKA METAL 3",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "040013826",
-    "nombre": "APU INTI M&N II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010172026",
-    "nombre": "VILLARICA 5",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "680001326",
-    "nombre": "PLATANALES 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010238026",
-    "nombre": "CHOCCOYO 02",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010182926",
-    "nombre": "OSPREY 7",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "050034726",
-    "nombre": "CHOCOYO",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080028926",
-    "nombre": "DIMITRI VII",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "040015226",
-    "nombre": "LA FE QUE LUCHA \"A\"",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "050035026",
-    "nombre": "RIO YURA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "050033226",
-    "nombre": "INVERSIONES AQP II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "710005026",
-    "nombre": "FER II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "710005226",
-    "nombre": "MINERO PERU ALFA 7",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "710005426",
-    "nombre": "MINAPATA DOS",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "730001626",
-    "nombre": "PACHIA SILVER 2605",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010177726",
-    "nombre": "ALONDRA YSABELLA I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080029026",
-    "nombre": "DIMITRI VI",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080030326",
-    "nombre": "VERITO TLMS I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "050048326",
-    "nombre": "QORI ALLPA 2",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "050030226",
-    "nombre": "KEN II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "580003426",
-    "nombre": "KANTUTA DE ORO III",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "580004026",
-    "nombre": "JAYA III",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "580004326",
-    "nombre": "FREDY COLQUEMARCA UNO",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "580004726",
-    "nombre": "ALESIA 5",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
     "codigo": "010170826",
     "nombre": "TIERRAS SUR 3M",
     "tipo": "aparece"
@@ -2997,6 +2589,414 @@
     "fecha": "150526_13",
     "codigo": "010294526",
     "nombre": "MUÑANI 37",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "700002326",
+    "nombre": "LARD",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010302226",
+    "nombre": "2026 PERU MINING TRES",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "060011926",
+    "nombre": "ARCILLAS LLANOS 09",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010000126L",
+    "nombre": "GRAN CAMILISSE",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_17",
+    "codigo": "010157625",
+    "nombre": "TRES-MARIAS.",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "150526_17",
+    "codigo": "010185825",
+    "nombre": "LA ESPAÑOLA 2025",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "150526_17",
+    "codigo": "010023725",
+    "nombre": "RMEXPLO 1",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010302326",
+    "nombre": "VILLENA CM2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "550003126",
+    "nombre": "FRANCISCA 1",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010302126",
+    "nombre": "VETA URBINA 2",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "030052026",
+    "nombre": "2026 PERU MINING UNO",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "050057826",
+    "nombre": "ZAFIRO 26",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010301826",
+    "nombre": "WANU ALLPA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "050058026",
+    "nombre": "MISCANA TOCCOROCRUZ",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010301726",
+    "nombre": "PACOYA I",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010301926",
+    "nombre": "CHUÑONA 1",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010299326",
+    "nombre": "MUÑANI 22",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010301126",
+    "nombre": "MUÑANI 16",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010300426",
+    "nombre": "MUÑANI 444",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010302026",
+    "nombre": "CCORI CCAHUANA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010297826",
+    "nombre": "PUTINA 40",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010301326",
+    "nombre": "MUÑANI 12",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010297226",
+    "nombre": "POTONI 24",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010298626",
+    "nombre": "POTONI 28",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "050057926",
+    "nombre": "VIRGEN DE COPACABANA 1 2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010299626",
+    "nombre": "MUÑANI 43",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010300826",
+    "nombre": "MUÑANI 15",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010299726",
+    "nombre": "POTONI 21",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010299526",
+    "nombre": "POTONI 20",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010299226",
+    "nombre": "MUÑANI 23",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010301526",
+    "nombre": "MUÑANI 11",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010298126",
+    "nombre": "PUTINA 36",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010297726",
+    "nombre": "MUÑANI 41",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010297526",
+    "nombre": "PUTINA 41",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010300026",
+    "nombre": "MUÑANI 42",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010299026",
+    "nombre": "MUÑANI 24",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010298926",
+    "nombre": "PUTINA 33",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010297626",
+    "nombre": "POTONI 25",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010300326",
+    "nombre": "PUTINA 38",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010300526",
+    "nombre": "PUTINA32",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010297926",
+    "nombre": "POTONI 22",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010299426",
+    "nombre": "MUÑANI 45",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010300626",
+    "nombre": "MUÑANI 13",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010301426",
+    "nombre": "MUÑANI 17",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010296126",
+    "nombre": "MUÑANI 29",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010300126",
+    "nombre": "MUÑANI 19",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010300226",
+    "nombre": "MUÑANI 20",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010298726",
+    "nombre": "PUTINA 37",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010297426",
+    "nombre": "MUÑANI 9",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010299126",
+    "nombre": "MUÑANI 38",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010298226",
+    "nombre": "POTONI 26",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010298026",
+    "nombre": "PUTINA 39",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010299926",
+    "nombre": "MUÑANI 40",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010297026",
+    "nombre": "PUTINA 43",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010299826",
+    "nombre": "POTONI 23",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010296826",
+    "nombre": "PUTINA 44",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010301626",
+    "nombre": "MUÑANI 10",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010300926",
+    "nombre": "MUÑANI 39",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010298526",
+    "nombre": "PUTINA 35",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010298326",
+    "nombre": "PUTINA 34",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010301026",
+    "nombre": "MUÑANI 14",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010297326",
+    "nombre": "PUTINA 42",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010301226",
+    "nombre": "MUÑANI 18",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010300726",
+    "nombre": "MUÑANI 21",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010298426",
+    "nombre": "POTONI 27",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010297126",
+    "nombre": "MUÑANI 47",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010298826",
+    "nombre": "POTONI 29",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "150526_19",
+    "codigo": "010296626",
+    "nombre": "MUÑANI 25",
     "tipo": "aparece"
   }
 ]
