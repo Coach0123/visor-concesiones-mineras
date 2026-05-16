@@ -1,72 +1,6 @@
 [
   {
     "fecha": "060526_19",
-    "codigo": "030049426",
-    "nombre": "RIOALFA I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "060526_19",
-    "codigo": "700002126",
-    "nombre": "CHULUCANAS SGV 3",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "060526_19",
-    "codigo": "070021326",
-    "nombre": "PIERITO",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "060526_19",
-    "codigo": "060010826",
-    "nombre": "PROYECTO MINERO SAN CRISTOBAL III",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "060526_19",
-    "codigo": "010284226",
-    "nombre": "BEELZEBUB",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "060526_19",
-    "codigo": "640001626",
-    "nombre": "LOS AMIGOS 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "060526_19",
-    "codigo": "660001326",
-    "nombre": "MURGUETITO 1",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "060526_19",
-    "codigo": "050055226",
-    "nombre": "ESTACION 42",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "060526_19",
-    "codigo": "530009226",
-    "nombre": "VCS - ENCANTO 01",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "060526_19",
-    "codigo": "010284626",
-    "nombre": "FABIOLA DORADA II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "060526_19",
-    "codigo": "080033126",
-    "nombre": "CANO UNO",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "060526_19",
     "codigo": "010283826",
     "nombre": "GOLDEN FALCON",
     "tipo": "aparece"
@@ -2997,6 +2931,72 @@
     "fecha": "160526_12",
     "codigo": "080035926",
     "nombre": "ODIN 1",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "160526_18",
+    "codigo": "050058426",
+    "nombre": "MATER DEI",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "160526_18",
+    "codigo": "050058126",
+    "nombre": "HERMANOS NEVADO",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "160526_18",
+    "codigo": "030052826",
+    "nombre": "JESUS MI REY",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "160526_18",
+    "codigo": "070024326",
+    "nombre": "PLAYA MERMELIO",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "160526_18",
+    "codigo": "070024226",
+    "nombre": "GRUPO AIYALI",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "160526_18",
+    "codigo": "070023926",
+    "nombre": "GRUPO LEO",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "160526_18",
+    "codigo": "010302726",
+    "nombre": "TORO MUERTO",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "160526_18",
+    "codigo": "070024026",
+    "nombre": "GUILLER I",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "160526_18",
+    "codigo": "050058226",
+    "nombre": "MI SANTA I",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "160526_18",
+    "codigo": "070024126",
+    "nombre": "OLIVERA II",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "160526_18",
+    "codigo": "050058326",
+    "nombre": "KRATOS 5",
     "tipo": "aparece"
   }
 ]
