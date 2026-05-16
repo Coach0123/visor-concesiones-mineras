@@ -1,143 +1,5 @@
 [
   {
-    "fecha": "050526_18",
-    "codigo": "010170826",
-    "nombre": "TIERRAS SUR 3M",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010210126",
-    "nombre": "HAPPY MINING",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "040026226",
-    "nombre": "KORY MAQUI UNO",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "050046126",
-    "nombre": "NORMA 1",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "050044726",
-    "nombre": "EXTRACTIA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "050042526",
-    "nombre": "ROGMINSUR II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080026726",
-    "nombre": "WILUTANI UNO",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "050042926",
-    "nombre": "ESPERANZA W A",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080022926",
-    "nombre": "FAMACO  EIRL",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080023626",
-    "nombre": "GRUPO AURIFERA H&A",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080024426",
-    "nombre": "J & M METALS",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080024926",
-    "nombre": "CCORITIKA 4",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010252126",
-    "nombre": "PUCARA B",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080028426",
-    "nombre": "RICHAR II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080029926",
-    "nombre": "MOLLINEDO MINING GROUP",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "040017526",
-    "nombre": "SOL DE NOVIEMBRE",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "540010526",
-    "nombre": "PUENTE FE",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "050050726",
-    "nombre": "REY DE COLQUEMARCA 2",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010254326",
-    "nombre": "QORY QHUYA I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "080031726",
-    "nombre": "FSAYANY",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "050526_18",
-    "codigo": "010200926",
-    "nombre": "CR 2607",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "060526_19",
-    "codigo": "060010926",
-    "nombre": "PROYECTO MINERO SAN CRISTOBAL II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "060526_19",
-    "codigo": "030049826",
-    "nombre": "GISSELA DOS 2026",
-    "tipo": "aparece"
-  },
-  {
     "fecha": "060526_19",
     "codigo": "030049426",
     "nombre": "RIOALFA I",
@@ -2997,6 +2859,144 @@
     "fecha": "150526_19",
     "codigo": "010296626",
     "nombre": "MUÑANI 25",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "160526_11",
+    "codigo": "010278925",
+    "nombre": "CAMILISSE I",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "160526_11",
+    "codigo": "010242225",
+    "nombre": "CAMILISSE II",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "160526_11",
+    "codigo": "010289325",
+    "nombre": "CAMILISSE III",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "160526_11",
+    "codigo": "010150225",
+    "nombre": "ANGELITA 2025",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "160526_11",
+    "codigo": "030018925",
+    "nombre": "ISABEL82025",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "160526_11",
+    "codigo": "010270025",
+    "nombre": "TESORITO 2025",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "160526_12",
+    "codigo": "010302626",
+    "nombre": "RATÓN 8",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "160526_12",
+    "codigo": "070023826",
+    "nombre": "COCO V",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "160526_12",
+    "codigo": "110009226",
+    "nombre": "MINERIA CAMI 19",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "160526_12",
+    "codigo": "020010326",
+    "nombre": "OFIR I",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "160526_12",
+    "codigo": "110009326",
+    "nombre": "MINERIA CAMI 17",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "160526_12",
+    "codigo": "070023726",
+    "nombre": "CHABELITA DOS",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "160526_12",
+    "codigo": "010302426",
+    "nombre": "GEOCAL 01",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "160526_11",
+    "codigo": "010128524",
+    "nombre": "INGENIA I 2024",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "160526_11",
+    "codigo": "050014424",
+    "nombre": "FREYA I",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "160526_11",
+    "codigo": "080040425",
+    "nombre": "HUANCAINA C 2",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "160526_11",
+    "codigo": "080057725",
+    "nombre": "GM & JHON I",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "160526_11",
+    "codigo": "080052625",
+    "nombre": "PALMA DORADA DOS",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "160526_11",
+    "codigo": "070021625",
+    "nombre": "PINA I",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "160526_11",
+    "codigo": "070023525",
+    "nombre": "PROYECTO MINERO SAN CARLOS",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "160526_12",
+    "codigo": "040027826",
+    "nombre": "MUKI GOLD",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "160526_12",
+    "codigo": "010302526",
+    "nombre": "PARAKLETOS",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "160526_12",
+    "codigo": "080035926",
+    "nombre": "ODIN 1",
     "tipo": "aparece"
   }
 ]
