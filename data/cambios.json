@@ -1,162 +1,6 @@
 [
   {
     "fecha": "060526_19",
-    "codigo": "010283826",
-    "nombre": "GOLDEN FALCON",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "060526_19",
-    "codigo": "050054826",
-    "nombre": "EL CRUZERO GOLD",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "060526_19",
-    "codigo": "010284526",
-    "nombre": "MAXIMILIANO1",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "060526_19",
-    "codigo": "070021426",
-    "nombre": "KEVIN I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "060526_19",
-    "codigo": "080032226",
-    "nombre": "ANDROMEDA MINING",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "060526_19",
-    "codigo": "030049626",
-    "nombre": "BETANIA II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "060526_19",
-    "codigo": "010283926",
-    "nombre": "MERCEDES SUR",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "060526_19",
-    "codigo": "050054626",
-    "nombre": "MINE K",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "060526_19",
-    "codigo": "010284426",
-    "nombre": "CUEVA DEL PUMA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "060526_19",
-    "codigo": "650004726",
-    "nombre": "VICTORIA 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "060526_19",
-    "codigo": "050054726",
-    "nombre": "CUSCUS04",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "060526_19",
-    "codigo": "010283626",
-    "nombre": "ECO RUNA 02",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "060526_19",
-    "codigo": "050054926",
-    "nombre": "MOLLE DORADO I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "060526_19",
-    "codigo": "030049326",
-    "nombre": "PELUCAS 2026 II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "060526_19",
-    "codigo": "010285026",
-    "nombre": "MINERA REFISA COMPANI",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "060526_19",
-    "codigo": "010284726",
-    "nombre": "FABIOLA DORADA I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "060526_19",
-    "codigo": "620003426",
-    "nombre": "AITANA PRIMERA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "060526_19",
-    "codigo": "050055126",
-    "nombre": "MINERA FLOREZ GOLD",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "060526_19",
-    "codigo": "540012126",
-    "nombre": "ACHIKILLA DE TINAJONES",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "060526_19",
-    "codigo": "620003526",
-    "nombre": "AITANA SEGUNDA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "060526_19",
-    "codigo": "690001426",
-    "nombre": "CAMILO",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "060526_19",
-    "codigo": "010284026",
-    "nombre": "KAYA 2",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "060526_19",
-    "codigo": "070021526",
-    "nombre": "VELITA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "060526_19",
-    "codigo": "070021226",
-    "nombre": "LUISITO COLAS",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "060526_19",
-    "codigo": "050055426",
-    "nombre": "WILLO 2022",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "060526_19",
-    "codigo": "030049526",
-    "nombre": "BETANIA I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "060526_19",
     "codigo": "030049226",
     "nombre": "NUEVA ESPERANZA 2026",
     "tipo": "aparece"
@@ -2997,6 +2841,162 @@
     "fecha": "160526_18",
     "codigo": "050058326",
     "nombre": "KRATOS 5",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "180526_18",
+    "codigo": "010302826",
+    "nombre": "MINERA ARENA ENCANTADA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "180526_16",
+    "codigo": "690002124",
+    "nombre": "MINDU 134",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "180526_16",
+    "codigo": "030055725",
+    "nombre": "CAMPANA LAGUNA VERDE",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "180526_16",
+    "codigo": "010249025",
+    "nombre": "SEDUCTORA N°4",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "180526_16",
+    "codigo": "110003326",
+    "nombre": "SEÑOR DE LA SOLEDAD 2026",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "180526_16",
+    "codigo": "010423425",
+    "nombre": "VIRINA I",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "180526_16",
+    "codigo": "040025225",
+    "nombre": "TRINIDAD MINING II",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "180526_16",
+    "codigo": "010129725",
+    "nombre": "ST 002",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "180526_16",
+    "codigo": "040027125",
+    "nombre": "HUACCHI 1",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "180526_16",
+    "codigo": "010186725",
+    "nombre": "NEGRITOS 2025",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "180526_16",
+    "codigo": "030056925",
+    "nombre": "EL FUTURO VI",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "180526_16",
+    "codigo": "030051725",
+    "nombre": "ADIHS COAL X",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "180526_18",
+    "codigo": "010302926",
+    "nombre": "GABIFATI",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "180526_18",
+    "codigo": "540012626",
+    "nombre": "THE FUTURE 26",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "180526_18",
+    "codigo": "010303026",
+    "nombre": "SAN JUAN BAUTISTA 2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "180526_18",
+    "codigo": "010303226",
+    "nombre": "HUMABO 2026II",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "180526_18",
+    "codigo": "010303326",
+    "nombre": "MONALIZA I",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "180526_18",
+    "codigo": "010303126",
+    "nombre": "TESORO ESCONDIDO 2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "180526_18",
+    "codigo": "030052926",
+    "nombre": "ROCA ESPERANZA SIETE",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "180526_16",
+    "codigo": "670000225",
+    "nombre": "LIRIOS IX",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "180526_16",
+    "codigo": "070010525",
+    "nombre": "MARGARITA DOS B",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "180526_16",
+    "codigo": "070008725",
+    "nombre": "CINCO AMIGOS II",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "180526_16",
+    "codigo": "070012525",
+    "nombre": "JULIO ENRIQUE I",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "180526_16",
+    "codigo": "070024725",
+    "nombre": "MAHOME",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "180526_18",
+    "codigo": "580005826",
+    "nombre": "FORTALEZA CYS",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "180526_18",
+    "codigo": "010303426",
+    "nombre": "ALPORTI 179",
     "tipo": "aparece"
   }
 ]
