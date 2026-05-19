@@ -1,119 +1,5 @@
 [
   {
-    "fecha": "060526_19",
-    "codigo": "080032726",
-    "nombre": "QORI TUNKI",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "060526_19",
-    "codigo": "070021626",
-    "nombre": "LIA VG 25",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "060526_19",
-    "codigo": "050054426",
-    "nombre": "COPACABANA II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "060526_19",
-    "codigo": "050055726",
-    "nombre": "VIRGEN DEL CARMEN VEINTIDOS",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "060526_19",
-    "codigo": "050055526",
-    "nombre": "ANDES STONE",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_10",
-    "codigo": "030051324",
-    "nombre": "CENTAURO I",
-    "tipo": "desaparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "010285626",
-    "nombre": "JV INVERSIONES MINERA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "060011026",
-    "nombre": "INTI DE GOLD",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "520004526",
-    "nombre": "HUISCO DOS",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "630003726",
-    "nombre": "LA FORTALEZA 07",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_10",
-    "codigo": "050093225",
-    "nombre": "CERAFINA I",
-    "tipo": "desaparece"
-  },
-  {
-    "fecha": "070526_10",
-    "codigo": "010408325",
-    "nombre": "ARIANA 2029",
-    "tipo": "desaparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "010285926",
-    "nombre": "CONYMIN 2",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "600002326",
-    "nombre": "KIARA NAOMI",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "590003026",
-    "nombre": "JUAN LINO 3",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "070021726",
-    "nombre": "CHUMBES",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "010286326",
-    "nombre": "KHRUSOS 003",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "530009326",
-    "nombre": "VCS - ENCANTO 02",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "030049926",
-    "nombre": "VENANCIO 07",
-    "tipo": "aparece"
-  },
-  {
     "fecha": "070526_12",
     "codigo": "010285426",
     "nombre": "JALAPAMPA",
@@ -2997,6 +2883,120 @@
     "fecha": "190526_12",
     "codigo": "080036126",
     "nombre": "HNOS ROJAS II",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "190526_16",
+    "codigo": "030080225",
+    "nombre": "SALMO23",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "190526_16",
+    "codigo": "010185425",
+    "nombre": "OCAÑA 90",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "190526_16",
+    "codigo": "010046325",
+    "nombre": "CMZ-ZF2025-08",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "190526_16",
+    "codigo": "010195324",
+    "nombre": "CMZ 09-2024",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "190526_16",
+    "codigo": "010186925",
+    "nombre": "PITUFO 2 2025",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "190526_16",
+    "codigo": "010113225",
+    "nombre": "SOL NACIENTE 1",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "190526_16",
+    "codigo": "010187025",
+    "nombre": "PITUFO 2025",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "190526_16",
+    "codigo": "010185225",
+    "nombre": "DINEXIM 1",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "190526_16",
+    "codigo": "010186825",
+    "nombre": "SUCHILLO 2025",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "190526_16",
+    "codigo": "010195725",
+    "nombre": "DINEXIM 2",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "190526_16",
+    "codigo": "030055325",
+    "nombre": "ESGAR I",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "190526_16",
+    "codigo": "010198425",
+    "nombre": "MINA EMMIFRANI I",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "190526_16",
+    "codigo": "050055425",
+    "nombre": "BEYONCE 3",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "190526_16",
+    "codigo": "010268625",
+    "nombre": "TINGO RUMI 2025",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "190526_16",
+    "codigo": "030065125",
+    "nombre": "GENI01",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "190526_18",
+    "codigo": "010000211LI",
+    "nombre": "ACUMULACION AZUCA 1E",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "190526_16",
+    "codigo": "050022525",
+    "nombre": "CORATIOM",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "190526_16",
+    "codigo": "010151425",
+    "nombre": "PUCARA TORO A",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "190526_18",
+    "codigo": "010303826",
+    "nombre": "MINITA 2025",
     "tipo": "aparece"
   }
 ]
