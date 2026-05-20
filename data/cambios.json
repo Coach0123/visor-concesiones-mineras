@@ -1,11 +1,5 @@
 [
   {
-    "fecha": "070526_12",
-    "codigo": "070021926",
-    "nombre": "AMARU I",
-    "tipo": "aparece"
-  },
-  {
     "fecha": "070526_17",
     "codigo": "030052325",
     "nombre": "SPARTACUS MACATE",
@@ -2998,5 +2992,11 @@
     "codigo": "080036226",
     "nombre": "RESILIENCIA I",
     "tipo": "aparece"
+  },
+  {
+    "fecha": "200526_16",
+    "codigo": "720001725",
+    "nombre": "PERLA ESCONDIDA ALTO CAPULI",
+    "tipo": "desaparece"
   }
 ]
