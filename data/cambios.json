@@ -1,258 +1,6 @@
 [
   {
     "fecha": "070526_12",
-    "codigo": "010285426",
-    "nombre": "JALAPAMPA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "010285526",
-    "nombre": "MINA LA DORADA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "070021826",
-    "nombre": "MINAPAS II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "010285126",
-    "nombre": "KODOMO COBRE",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "530009526",
-    "nombre": "EL PONGO",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "010286226",
-    "nombre": "KHRUSOS 002",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "010285726",
-    "nombre": "AYSEL II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "540012226",
-    "nombre": "YUKMAR I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "010286126",
-    "nombre": "KHRUSOS 001",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "010285226",
-    "nombre": "QUILLARI 04",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "010285826",
-    "nombre": "NINAMARCA DOS",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "030050126",
-    "nombre": "LUNACURI IV",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "070022326",
-    "nombre": "ARONIRIOS",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "010286426",
-    "nombre": "TRIPULANTE ESPACIAL WOU 9",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "070022226",
-    "nombre": "MINA FJR I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "070022426",
-    "nombre": "BORIS I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "010286026",
-    "nombre": "VIENA II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "050055926",
-    "nombre": "LUZ MARINA 19",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "030050026",
-    "nombre": "CYM NAMOLE 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "530009426",
-    "nombre": "SUNCHO",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_10",
-    "codigo": "080054625",
-    "nombre": "ORIENTAL DIEZ",
-    "tipo": "desaparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "080034226",
-    "nombre": "HERMANOS NINA SAC DOS",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "040027026",
-    "nombre": "QORI SUR ANDINO I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "070022126",
-    "nombre": "GALEANO",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "050055826",
-    "nombre": "VIRGEN DEL CARMEN VEINTITRES",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "070022026",
-    "nombre": "DAROMAYA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "080034326",
-    "nombre": "TORO BLANCO 01",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "080034426",
-    "nombre": "COFAC QORI",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "040026926",
-    "nombre": "VILAUMA GOLDMINE",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "080034026",
-    "nombre": "SAN RAFAEL ARCANGEL 001",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "580005526",
-    "nombre": "SANTA X",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "040027326",
-    "nombre": "HONG KONG DE ORO",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "710005926",
-    "nombre": "TARUKA MARKA I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "010285326",
-    "nombre": "ALFA 02",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "710006026",
-    "nombre": "TAKARUKA MARKA II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "080034126",
-    "nombre": "HERMANOS NINA SAC",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "080033826",
-    "nombre": "PROYECTO QOLLQE II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "080033626",
-    "nombre": "JAVI0001",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "040027226",
-    "nombre": "CUMBRE DE ORO 26",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "080033926",
-    "nombre": "JAVI0002",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "040027126",
-    "nombre": "QORI SUR ANDINO II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
-    "codigo": "080033726",
-    "nombre": "PROYECTO QOLLQE I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "070526_12",
     "codigo": "070021926",
     "nombre": "AMARU I",
     "tipo": "aparece"
@@ -2997,6 +2745,258 @@
     "fecha": "190526_18",
     "codigo": "010303826",
     "nombre": "MINITA 2025",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200526_12",
+    "codigo": "070024826",
+    "nombre": "ALMENDRA DE ORO II",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200526_12",
+    "codigo": "100004126",
+    "nombre": "EMANUEL2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200526_12",
+    "codigo": "070024926",
+    "nombre": "ALMENDRA DE ORO III",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200526_12",
+    "codigo": "010304026",
+    "nombre": "AGROMIN",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200526_12",
+    "codigo": "100004026",
+    "nombre": "SEÑOR DE LOS MILAGROS 2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200526_12",
+    "codigo": "060012226",
+    "nombre": "MINAS QORIMIN",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200526_12",
+    "codigo": "030054026",
+    "nombre": "CORIQIQLLA XIII",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200526_12",
+    "codigo": "030053926",
+    "nombre": "LUNACURI XX",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200526_12",
+    "codigo": "030053326",
+    "nombre": "CORIQIQLLA X",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200526_12",
+    "codigo": "070024726",
+    "nombre": "KARELIA I",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200526_12",
+    "codigo": "600003026",
+    "nombre": "MINERA CARAPACHO",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200526_12",
+    "codigo": "040028126",
+    "nombre": "CCAPAHOJO",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200526_12",
+    "codigo": "650006426",
+    "nombre": "BEAKO I",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200526_12",
+    "codigo": "030054126",
+    "nombre": "LUNACURI IX",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200526_12",
+    "codigo": "520004826",
+    "nombre": "GRUPO VERA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200526_12",
+    "codigo": "070024626",
+    "nombre": "FRAN UNO",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200526_12",
+    "codigo": "030053826",
+    "nombre": "LUNACURI XV",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200526_12",
+    "codigo": "070025126",
+    "nombre": "ARMANDO II",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200526_12",
+    "codigo": "070025026",
+    "nombre": "ARMANDO I",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200526_12",
+    "codigo": "070025226",
+    "nombre": "ARMANDO III",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200526_12",
+    "codigo": "030053426",
+    "nombre": "CORIQIQLLA 11",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200526_12",
+    "codigo": "050058726",
+    "nombre": "JULLIITO 6",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200526_12",
+    "codigo": "030053526",
+    "nombre": "LUNACURI XI",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200526_12",
+    "codigo": "010303926",
+    "nombre": "GOLDEN NEW",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200526_12",
+    "codigo": "010304426",
+    "nombre": "TRIPULANTE ESPACIAL WOV 10",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200526_12",
+    "codigo": "010304326",
+    "nombre": "TORO MUERTO 1",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200526_12",
+    "codigo": "010304126",
+    "nombre": "SOL PODEROSO",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200526_12",
+    "codigo": "600002926",
+    "nombre": "MINERA CARHUA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200526_12",
+    "codigo": "030054326",
+    "nombre": "ILLAYRUMI IV",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200526_12",
+    "codigo": "030053626",
+    "nombre": "LUNACURI XIII",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200526_12",
+    "codigo": "040028026",
+    "nombre": "IGOR CM2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200526_12",
+    "codigo": "010304526",
+    "nombre": "TRIPULANTE ESPACIAL WOV 11",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200526_12",
+    "codigo": "050058926",
+    "nombre": "SILVER COOPER I",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200526_12",
+    "codigo": "050058826",
+    "nombre": "MINERVA GOLD",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200526_12",
+    "codigo": "030054226",
+    "nombre": "ILLAYRUMI VIII",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200526_12",
+    "codigo": "010304226",
+    "nombre": "ORCCO ICHU VI",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200526_12",
+    "codigo": "030053726",
+    "nombre": "CORICOCHA X",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200526_12",
+    "codigo": "070025326",
+    "nombre": "TAYPE",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200526_12",
+    "codigo": "080036326",
+    "nombre": "HAKAME UNO",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200526_12",
+    "codigo": "080036426",
+    "nombre": "AMOROSO",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200526_12",
+    "codigo": "050058626",
+    "nombre": "VANSQUIN 3",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "200526_12",
+    "codigo": "080036226",
+    "nombre": "RESILIENCIA I",
     "tipo": "aparece"
   }
 ]
