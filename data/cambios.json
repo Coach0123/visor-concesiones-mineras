@@ -1,294 +1,6 @@
 [
   {
     "fecha": "090526_12",
-    "codigo": "060011326",
-    "nombre": "VERBENA DORADA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "090526_12",
-    "codigo": "010290126",
-    "nombre": "SUMAC GOLD 1",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "090526_12",
-    "codigo": "030050826",
-    "nombre": "ANDERSON I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "090526_12",
-    "codigo": "010289526",
-    "nombre": "SUMAC GOLD 2",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "090526_12",
-    "codigo": "010289826",
-    "nombre": "MAURO Y JULIA AP",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "090526_12",
-    "codigo": "060011226",
-    "nombre": "EL YUNQUE",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "090526_11",
-    "codigo": "010146725",
-    "nombre": "PIRAHUAY 25-1",
-    "tipo": "desaparece"
-  },
-  {
-    "fecha": "090526_11",
-    "codigo": "030022325",
-    "nombre": "LEAL PARAN",
-    "tipo": "desaparece"
-  },
-  {
-    "fecha": "090526_11",
-    "codigo": "010140225",
-    "nombre": "TIERRA COLORADA 1 2025",
-    "tipo": "desaparece"
-  },
-  {
-    "fecha": "090526_11",
-    "codigo": "010452725",
-    "nombre": "MINAS DORADAS SILVERGOLD",
-    "tipo": "desaparece"
-  },
-  {
-    "fecha": "090526_12",
-    "codigo": "010288926",
-    "nombre": "MARISOL 2026 1",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "090526_12",
-    "codigo": "600002426",
-    "nombre": "VALLE - DORADO-I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "090526_12",
-    "codigo": "010288726",
-    "nombre": "PAULA 02",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "090526_12",
-    "codigo": "010288626",
-    "nombre": "KORIPUNCO",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "090526_12",
-    "codigo": "030051126",
-    "nombre": "PORTACHUELO CRJA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "090526_12",
-    "codigo": "010289126",
-    "nombre": "MARISOL 2026 3",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "090526_12",
-    "codigo": "010289226",
-    "nombre": "AUSTIN III",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "090526_12",
-    "codigo": "010289726",
-    "nombre": "SAN MARTIN DE PORRES I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "090526_12",
-    "codigo": "610006226",
-    "nombre": "MINA SANTA ROSA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "090526_12",
-    "codigo": "530010126",
-    "nombre": "FERNANDO 1",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "090526_12",
-    "codigo": "010289326",
-    "nombre": "MIRELLA I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "090526_12",
-    "codigo": "650004926",
-    "nombre": "CHT II-2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "090526_12",
-    "codigo": "600002526",
-    "nombre": "PODEROSO HUAMASH 3",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "090526_12",
-    "codigo": "010288526",
-    "nombre": "MINERIA QORI 2",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "090526_12",
-    "codigo": "050056426",
-    "nombre": "TRES REYES II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "090526_12",
-    "codigo": "030051426",
-    "nombre": "MINA SHEYLA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "090526_12",
-    "codigo": "010288826",
-    "nombre": "EBEN-EZER 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "090526_12",
-    "codigo": "010289426",
-    "nombre": "APU CCORI",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "090526_12",
-    "codigo": "030051026",
-    "nombre": "CAÑABRAVA CRJA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "090526_12",
-    "codigo": "030051226",
-    "nombre": "HUALANGUITO CRJA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "090526_12",
-    "codigo": "030050926",
-    "nombre": "CUSHPANO CRJA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "090526_12",
-    "codigo": "010288326",
-    "nombre": "CCOLLPA DORADA V",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "090526_12",
-    "codigo": "030051326",
-    "nombre": "MINERA POZO RICO 1",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "090526_12",
-    "codigo": "010290026",
-    "nombre": "AMERICAN MINING",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "090526_12",
-    "codigo": "650004826",
-    "nombre": "CHT I-2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "090526_12",
-    "codigo": "070022826",
-    "nombre": "KIARA YUVER",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "090526_12",
-    "codigo": "530009926",
-    "nombre": "COMUNIDAD CAMPESINA DE LAMBRAMA 01",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "090526_12",
-    "codigo": "040027526",
-    "nombre": "DAKAR 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "090526_12",
-    "codigo": "530010026",
-    "nombre": "COMUNIDAD CAMPESINA DE LAMBRAMA 02",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "090526_12",
-    "codigo": "010289926",
-    "nombre": "RAMOS SANTANA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "090526_12",
-    "codigo": "010289026",
-    "nombre": "MARISOL 2026 2",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "090526_12",
-    "codigo": "020010126",
-    "nombre": "RICO WAUJENTUYOCC UNO",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "090526_12",
-    "codigo": "010288226",
-    "nombre": "COACEÑO CORAPA II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "090526_12",
-    "codigo": "010289626",
-    "nombre": "EL TESORO DEL REY 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "090526_12",
-    "codigo": "050056626",
-    "nombre": "FILOMENA 5 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "090526_12",
-    "codigo": "050056826",
-    "nombre": "TEPEYAC 48",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "090526_12",
-    "codigo": "080034726",
-    "nombre": "COACEÑO CORAPA I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "090526_12",
-    "codigo": "050056526",
-    "nombre": "FILOMENA 4 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "090526_12",
     "codigo": "050056726",
     "nombre": "CRUZ DE MAYO 48",
     "tipo": "aparece"
@@ -2997,6 +2709,294 @@
     "fecha": "220526_19",
     "codigo": "070026326",
     "nombre": "FIDELA III",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230526_12",
+    "codigo": "010307226",
+    "nombre": "ISCU MACHAY",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230526_12",
+    "codigo": "030055326",
+    "nombre": "YANIANTHRA 11",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230526_12",
+    "codigo": "100004226",
+    "nombre": "CANTERA RAMER AGREGADOS",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230526_12",
+    "codigo": "030055526",
+    "nombre": "YANIANTHRA IV",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230526_12",
+    "codigo": "030055226",
+    "nombre": "YANIANTHRA 8",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230526_12",
+    "codigo": "030055426",
+    "nombre": "YANIANTHRA 14",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230526_12",
+    "codigo": "040028726",
+    "nombre": "TESOROS P1",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230526_12",
+    "codigo": "010307326",
+    "nombre": "QUEROPALCA 2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230526_12",
+    "codigo": "600003126",
+    "nombre": "FFF KATG 7",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230526_12",
+    "codigo": "050059626",
+    "nombre": "RAMSAK 1",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230526_12",
+    "codigo": "020010926",
+    "nombre": "TERRA PROMETIDA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230526_12",
+    "codigo": "010306926",
+    "nombre": "LEOMIL2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230526_12",
+    "codigo": "030055626",
+    "nombre": "LA VIRGEN",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230526_12",
+    "codigo": "010306526",
+    "nombre": "JADE 18",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230526_12",
+    "codigo": "070026926",
+    "nombre": "ABAD",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230526_12",
+    "codigo": "010306126",
+    "nombre": "SIERRA FORTUNA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230526_12",
+    "codigo": "070027026",
+    "nombre": "MI BELLA GRINGA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230526_12",
+    "codigo": "040028826",
+    "nombre": "TESOROS P2",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230526_12",
+    "codigo": "520004926",
+    "nombre": "ENDURANCE PERU",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230526_12",
+    "codigo": "110009426",
+    "nombre": "MINERA ROSALES CRUZ",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230526_12",
+    "codigo": "040028926",
+    "nombre": "RIQUEZA DEL SUR",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230526_12",
+    "codigo": "010306726",
+    "nombre": "GIANLUCA 1",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230526_12",
+    "codigo": "010307026",
+    "nombre": "GENARO2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230526_12",
+    "codigo": "010307126",
+    "nombre": "RESPLANDOR UNO 2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230526_12",
+    "codigo": "690001826",
+    "nombre": "MINERA RONY 01",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230526_12",
+    "codigo": "690001726",
+    "nombre": "ROMELIA Y MISHELL 04",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230526_12",
+    "codigo": "050059826",
+    "nombre": "RUMI SUMAC",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230526_12",
+    "codigo": "050059726",
+    "nombre": "MINERA ALTIPLANO",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230526_12",
+    "codigo": "540012826",
+    "nombre": "MARIA FERNANDA 2026 1",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230526_12",
+    "codigo": "540012726",
+    "nombre": "CAMILA II",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230526_12",
+    "codigo": "010306626",
+    "nombre": "MINA JUPAY 1",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230526_10",
+    "codigo": "040012804",
+    "nombre": "VIALBE II",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "230526_10",
+    "codigo": "040012804A",
+    "nombre": "VIALBE II-A",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "230526_12",
+    "codigo": "580006026",
+    "nombre": "MARIO G2",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230526_12",
+    "codigo": "040028626",
+    "nombre": "FAMAY SEIS",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230526_12",
+    "codigo": "060012426",
+    "nombre": "WAYRA COPPER",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230526_12",
+    "codigo": "580006126",
+    "nombre": "SHAMY 2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230526_12",
+    "codigo": "580005926",
+    "nombre": "MARIO G1",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230526_12",
+    "codigo": "070027226",
+    "nombre": "OVISAB III",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230526_12",
+    "codigo": "070027326",
+    "nombre": "EDITH I 2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230526_12",
+    "codigo": "070027126",
+    "nombre": "OVISAB II",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230526_12",
+    "codigo": "080037126",
+    "nombre": "ORO-I",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230526_12",
+    "codigo": "010306326",
+    "nombre": "ALEXMIN 2",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230526_12",
+    "codigo": "010307426",
+    "nombre": "EL REY SAMYR",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230526_12",
+    "codigo": "010306426",
+    "nombre": "ALEXMIN 1",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230526_12",
+    "codigo": "040028526",
+    "nombre": "DOS ESTRELLAS DE TRES CRUCES",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230526_12",
+    "codigo": "010306226",
+    "nombre": "ARABYJ 8",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "230526_12",
+    "codigo": "670000225L",
+    "nombre": "VIALBE II",
     "tipo": "aparece"
   }
 ]
