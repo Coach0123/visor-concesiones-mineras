@@ -1,12 +1,6 @@
 [
   {
     "fecha": "090526_12",
-    "codigo": "050056726",
-    "nombre": "CRUZ DE MAYO 48",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "090526_12",
     "codigo": "730002226",
     "nombre": "CANTERA LA YARADA B",
     "tipo": "aparece"
@@ -2998,5 +2992,11 @@
     "codigo": "670000225L",
     "nombre": "VIALBE II",
     "tipo": "aparece"
+  },
+  {
+    "fecha": "250526_17",
+    "codigo": "670000323",
+    "nombre": "TORIBIA 3",
+    "tipo": "desaparece"
   }
 ]
