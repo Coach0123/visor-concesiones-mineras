@@ -1,227 +1,5 @@
 [
   {
-    "fecha": "120526_12",
-    "codigo": "580005726",
-    "nombre": "MINERA TURPO",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "120526_12",
-    "codigo": "070023126",
-    "nombre": "FIDELA II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "120526_19",
-    "codigo": "010292026",
-    "nombre": "ALPHAMET I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "120526_19",
-    "codigo": "520004626",
-    "nombre": "AMAIA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "120526_19",
-    "codigo": "010291926",
-    "nombre": "SARAGOZA I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "120526_19",
-    "codigo": "700002226",
-    "nombre": "KEIKO 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "120526_19",
-    "codigo": "520004726",
-    "nombre": "LOS PELICANOS II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "120526_19",
-    "codigo": "010292326",
-    "nombre": "ISAIAS 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "120526_19",
-    "codigo": "010292126",
-    "nombre": "MCR 01",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "120526_19",
-    "codigo": "530010426",
-    "nombre": "GUMERCINDA 3",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "120526_19",
-    "codigo": "020010226",
-    "nombre": "FATIMA LA HUAYCHA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "120526_19",
-    "codigo": "540012326",
-    "nombre": "ESTRELLA DEL SUR",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "120526_19",
-    "codigo": "710006326",
-    "nombre": "EMPRESA MINERA PARIS II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "130526_13",
-    "codigo": "060011526",
-    "nombre": "EL CONSUELO 01",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "130526_13",
-    "codigo": "100003926",
-    "nombre": "FABRIX EV",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "130526_13",
-    "codigo": "010292226",
-    "nombre": "ALPHAMET II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "130526_13",
-    "codigo": "040027726",
-    "nombre": "MINA ELVITA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "130526_13",
-    "codigo": "010292426",
-    "nombre": "MINA ISIDORA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "130526_13",
-    "codigo": "600002626",
-    "nombre": "JHONTINO 10",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "130526_13",
-    "codigo": "050057526",
-    "nombre": "VIRGEN DE LA ALTAGRACIA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "130526_13",
-    "codigo": "010292526",
-    "nombre": "KOYARUNA  I",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "130526_13",
-    "codigo": "650005026",
-    "nombre": "CHACHACO 002",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "130526_13",
-    "codigo": "070023226",
-    "nombre": "PRINCESA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "130526_13",
-    "codigo": "080035426",
-    "nombre": "CULLACANI 22",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "130526_13",
-    "codigo": "080035326",
-    "nombre": "DIANITA 1998",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "130526_13",
-    "codigo": "070023326",
-    "nombre": "MARIO III",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "130526_13",
-    "codigo": "070023426",
-    "nombre": "PRINCESA 1",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "130526_13",
-    "codigo": "050057426",
-    "nombre": "SEBASTIAN2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "130526_13",
-    "codigo": "050057326",
-    "nombre": "DELSY 2",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "130526_18",
-    "codigo": "600002726",
-    "nombre": "SHALON SHADAI",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "130526_18",
-    "codigo": "010292926",
-    "nombre": "G&M CORPORACION CANDELA YUYAPICHIS",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "130526_18",
-    "codigo": "010292626",
-    "nombre": "G369-8",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "130526_18",
-    "codigo": "010293126",
-    "nombre": "MALAPAMPA 01",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "130526_18",
-    "codigo": "010292726",
-    "nombre": "G369-9",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "130526_18",
-    "codigo": "010292826",
-    "nombre": "ZOILA DORADA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "130526_18",
-    "codigo": "010293026",
-    "nombre": "AVE FENIX",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "130526_18",
-    "codigo": "070023526",
-    "nombre": "ROSITA II",
-    "tipo": "aparece"
-  },
-  {
     "fecha": "140526_12",
     "codigo": "060011626",
     "nombre": "APU DORADO 2026",
@@ -2997,6 +2775,228 @@
     "fecha": "260526_16",
     "codigo": "100004326",
     "nombre": "MARIAM GOLD MINES",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270526_12",
+    "codigo": "15009020X01BA",
+    "nombre": "ROSA AMPARO 6D-1",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270526_12",
+    "codigo": "010309726",
+    "nombre": "MINERA 5 DE AGOSTO",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270526_12",
+    "codigo": "640001726",
+    "nombre": "YACIMIENTO LA ABEJA III",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270526_12",
+    "codigo": "100004426",
+    "nombre": "CHEM II-A",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270526_12",
+    "codigo": "030056126",
+    "nombre": "EL FUTURO VIII",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270526_12",
+    "codigo": "030056226",
+    "nombre": "EL FUTURO VII",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270526_12",
+    "codigo": "030056626",
+    "nombre": "ÑARI 1",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270526_12",
+    "codigo": "060012726",
+    "nombre": "GOLDEN HEIGHT VI",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270526_12",
+    "codigo": "010309926",
+    "nombre": "EL REY 1",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270526_12",
+    "codigo": "010309826",
+    "nombre": "EL REY 2",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270526_12",
+    "codigo": "060012626",
+    "nombre": "GOLDEN ROCK",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270526_12",
+    "codigo": "050060626",
+    "nombre": "VIRGEN DE CHAPI CUSCO 2",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270526_12",
+    "codigo": "050060326",
+    "nombre": "EL PATRON 2",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270526_12",
+    "codigo": "010309626",
+    "nombre": "LUSTIF1328",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270526_12",
+    "codigo": "030056326",
+    "nombre": "TYCHE 02",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270526_12",
+    "codigo": "020011326",
+    "nombre": "ROGER I",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270526_12",
+    "codigo": "020011226",
+    "nombre": "ROGER II",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270526_12",
+    "codigo": "070027626",
+    "nombre": "ANGHELY II JUNIOR I",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270526_12",
+    "codigo": "620003926",
+    "nombre": "AUPACSHUAY QORI QHUYA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270526_12",
+    "codigo": "070028126",
+    "nombre": "MI THALIA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270526_12",
+    "codigo": "030056426",
+    "nombre": "SANTIAGO MARTIN III",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270526_12",
+    "codigo": "110009526",
+    "nombre": "MANUELI 2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270526_12",
+    "codigo": "010310326",
+    "nombre": "MARIA JESUS TINTAY",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270526_12",
+    "codigo": "540013226",
+    "nombre": "MINERA MONTESITOS DOS MS",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270526_12",
+    "codigo": "070027726",
+    "nombre": "FELIPE SAHIR",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270526_12",
+    "codigo": "030056526",
+    "nombre": "SANTIAGO MARTIN II",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270526_12",
+    "codigo": "070028026",
+    "nombre": "SIMON LA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270526_12",
+    "codigo": "010310226",
+    "nombre": "NUEVO AMANECER 26",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270526_12",
+    "codigo": "050060426",
+    "nombre": "EL PATRON 1",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270526_12",
+    "codigo": "070028226",
+    "nombre": "MUKESH GOLD",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270526_12",
+    "codigo": "050060726",
+    "nombre": "COLLA50",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270526_12",
+    "codigo": "010310026",
+    "nombre": "CORPORACION MINERO TORRE",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270526_12",
+    "codigo": "050060526",
+    "nombre": "VIRGEN DE CHAPI CUSCO 1",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270526_12",
+    "codigo": "010310126",
+    "nombre": "ANDES DORADOS IV",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270526_12",
+    "codigo": "070027926",
+    "nombre": "SERGIO UNO",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270526_12",
+    "codigo": "070027826",
+    "nombre": "TERESA YANQUE",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "270526_12",
+    "codigo": "010309526",
+    "nombre": "JUAN LUIS",
     "tipo": "aparece"
   }
 ]
