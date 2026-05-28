@@ -1,114 +1,6 @@
 [
   {
     "fecha": "140526_12",
-    "codigo": "650005226",
-    "nombre": "MINDU E205",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140526_12",
-    "codigo": "010293526",
-    "nombre": "CARAVELI NOROESTE",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140526_12",
-    "codigo": "010293826",
-    "nombre": "ANDES DORADOS II",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140526_12",
-    "codigo": "110009126",
-    "nombre": "PIERINA 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140526_12",
-    "codigo": "650005126",
-    "nombre": "MINDU E237",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140526_12",
-    "codigo": "650005626",
-    "nombre": "MINDU E220",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140526_12",
-    "codigo": "650005826",
-    "nombre": "MINDU E230",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140526_12",
-    "codigo": "650006326",
-    "nombre": "MINDU E233",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140526_12",
-    "codigo": "650006126",
-    "nombre": "MINDU E208",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140526_12",
-    "codigo": "650005926",
-    "nombre": "MINDU E231",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140526_12",
-    "codigo": "620003626",
-    "nombre": "SEBASTIAN ALEJANDRO",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140526_12",
-    "codigo": "650006026",
-    "nombre": "MINDU E209",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140526_12",
-    "codigo": "650006226",
-    "nombre": "MINDU E207",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140526_12",
-    "codigo": "650005726",
-    "nombre": "MINDU E206",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140526_12",
-    "codigo": "050057726",
-    "nombre": "PACCHUA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140526_10",
-    "codigo": "010082725",
-    "nombre": "BARRACA 2000",
-    "tipo": "desaparece"
-  },
-  {
-    "fecha": "140526_10",
-    "codigo": "010409825",
-    "nombre": "HERMANOS TAIPE 1",
-    "tipo": "desaparece"
-  },
-  {
-    "fecha": "140526_12",
-    "codigo": "010293226",
-    "nombre": "COPACABANA TRES AURA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140526_12",
     "codigo": "080035526",
     "nombre": "LURBY MINERALS",
     "tipo": "aparece"
@@ -2998,5 +2890,113 @@
     "codigo": "050061126",
     "nombre": "CHANGUITOTRES",
     "tipo": "aparece"
+  },
+  {
+    "fecha": "280526_16",
+    "codigo": "010001718AF",
+    "nombre": "CANTERA KM. 15+240",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "280526_16",
+    "codigo": "010001818AF",
+    "nombre": "CANTERA KM. 9+380",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "280526_16",
+    "codigo": "010001518AF",
+    "nombre": "CANTERA KM. 20+740",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "280526_16",
+    "codigo": "010001618AF",
+    "nombre": "CANTERA KM. 17+400",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "280526_16",
+    "codigo": "630004123",
+    "nombre": "MINERALES ALTEZA 2",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "280526_19",
+    "codigo": "010310826",
+    "nombre": "NUEVA CANTERA 7 DE NOVIEMBRE",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280526_16",
+    "codigo": "020001126",
+    "nombre": "SORTILEGIO UNO",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "280526_16",
+    "codigo": "010009016AF",
+    "nombre": "CANTERA KM 2+140",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "280526_16",
+    "codigo": "010009116AF",
+    "nombre": "CANTERA KM 9+900",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "280526_16",
+    "codigo": "050049925",
+    "nombre": "LAYGUA",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "280526_16",
+    "codigo": "010389425",
+    "nombre": "MINERA VICTORIA UNO",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "280526_16",
+    "codigo": "540005525",
+    "nombre": "VALERIA XXX",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "280526_16",
+    "codigo": "710003825",
+    "nombre": "JHOVANITA ARG",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "280526_16",
+    "codigo": "010150325",
+    "nombre": "CUY CHACTADO I",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "280526_16",
+    "codigo": "540006525",
+    "nombre": "URANIA 2025",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "280526_16",
+    "codigo": "050022425",
+    "nombre": "TORCONTA XXV",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "280526_16",
+    "codigo": "540005025",
+    "nombre": "KIN II",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "280526_16",
+    "codigo": "050050925",
+    "nombre": "MARISOL XXV",
+    "tipo": "desaparece"
   }
 ]
