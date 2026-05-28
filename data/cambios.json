@@ -1,114 +1,6 @@
 [
   {
     "fecha": "140526_12",
-    "codigo": "060011626",
-    "nombre": "APU DORADO 2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140526_12",
-    "codigo": "060011826",
-    "nombre": "MONTECAL",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140526_12",
-    "codigo": "060011726",
-    "nombre": "CHATIN XXI",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140526_12",
-    "codigo": "030052526",
-    "nombre": "VG YHAWEH",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140526_10",
-    "codigo": "050049425",
-    "nombre": "PULGAR2",
-    "tipo": "desaparece"
-  },
-  {
-    "fecha": "140526_12",
-    "codigo": "550003026",
-    "nombre": "MINERVA CUATRO",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140526_12",
-    "codigo": "010293626",
-    "nombre": "CARAVELI OESTE",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140526_12",
-    "codigo": "050057626",
-    "nombre": "VIKINGOS 01",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140526_12",
-    "codigo": "010293326",
-    "nombre": "SANTO DOMINGO DE HUARAL",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140526_12",
-    "codigo": "010293426",
-    "nombre": "LA PAMPA DEL SANTA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140526_12",
-    "codigo": "650005526",
-    "nombre": "MINDU E232",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140526_12",
-    "codigo": "650005326",
-    "nombre": "MINDU E235",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140526_12",
-    "codigo": "010293726",
-    "nombre": "ANDES DORADOS III",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140526_12",
-    "codigo": "010294026",
-    "nombre": "SWAN 176",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140526_12",
-    "codigo": "010293926",
-    "nombre": "SWAN 175",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140526_12",
-    "codigo": "540012426",
-    "nombre": "YOLITA 13 5",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140526_12",
-    "codigo": "650005426",
-    "nombre": "MINDU E236",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140526_12",
-    "codigo": "540012526",
-    "nombre": "LA REYNA LEONA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "140526_12",
     "codigo": "650005226",
     "nombre": "MINDU E205",
     "tipo": "aparece"
@@ -2997,6 +2889,114 @@
     "fecha": "270526_12",
     "codigo": "010309526",
     "nombre": "JUAN LUIS",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280526_12",
+    "codigo": "060012926",
+    "nombre": "BARBON II",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280526_12",
+    "codigo": "060012826",
+    "nombre": "BARBON I",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280526_12",
+    "codigo": "060013026",
+    "nombre": "BARBON III",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280526_12",
+    "codigo": "010310726",
+    "nombre": "RESTAURACION I",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280526_12",
+    "codigo": "100004526",
+    "nombre": "NELIDAD ONE",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280526_12",
+    "codigo": "010310626",
+    "nombre": "RESTAURACION II",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280526_12",
+    "codigo": "050061226",
+    "nombre": "PATRON SANTIAGO APU PELLUNE",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280526_12",
+    "codigo": "550003426",
+    "nombre": "AMARU 2016",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280526_12",
+    "codigo": "050060826",
+    "nombre": "STRATUM10",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280526_12",
+    "codigo": "010310526",
+    "nombre": "MOLTEN GOLD",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280526_12",
+    "codigo": "050060926",
+    "nombre": "STRATUM11",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280526_12",
+    "codigo": "540013426",
+    "nombre": "LEONELA 11",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280526_12",
+    "codigo": "540013326",
+    "nombre": "LEONELA 10",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280526_12",
+    "codigo": "070028426",
+    "nombre": "PEPA DORADA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280526_12",
+    "codigo": "010310426",
+    "nombre": "CONCESION MINERA CTC",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280526_12",
+    "codigo": "070028326",
+    "nombre": "SELVA DORADA I",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280526_12",
+    "codigo": "050061026",
+    "nombre": "CHANGUITODOS",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "280526_12",
+    "codigo": "050061126",
+    "nombre": "CHANGUITOTRES",
     "tipo": "aparece"
   }
 ]
