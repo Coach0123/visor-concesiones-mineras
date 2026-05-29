@@ -1,54 +1,6 @@
 [
   {
     "fecha": "150526_13",
-    "codigo": "010294926",
-    "nombre": "MUÑANI 35",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "150526_13",
-    "codigo": "010294826",
-    "nombre": "MUÑANI 36",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "150526_13",
-    "codigo": "010296726",
-    "nombre": "MUÑANI 26",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "150526_13",
-    "codigo": "010294626",
-    "nombre": "MUÑANI 33",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "150526_13",
-    "codigo": "010295926",
-    "nombre": "MUÑANI 31",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "150526_13",
-    "codigo": "010296426",
-    "nombre": "MUÑANI 30",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "150526_13",
-    "codigo": "010295526",
-    "nombre": "QUIMSA 2026 7",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "150526_13",
-    "codigo": "010296526",
-    "nombre": "MUÑANI 48",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "150526_13",
     "codigo": "010294726",
     "nombre": "MUÑANI 34",
     "tipo": "aparece"
@@ -2997,6 +2949,54 @@
     "fecha": "290526_14",
     "codigo": "040029226",
     "nombre": "PAQARIMUY-UNO",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "290526_17",
+    "codigo": "540000224",
+    "nombre": "ROCA FUERTE 2024",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "290526_17",
+    "codigo": "010135724",
+    "nombre": "DOÑA MARGARITA",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "290526_17",
+    "codigo": "540006625",
+    "nombre": "PALCA 2000",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "290526_17",
+    "codigo": "010121425",
+    "nombre": "LADERAS GOLD",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "290526_17",
+    "codigo": "050028025",
+    "nombre": "MARUJITA UNO",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "290526_17",
+    "codigo": "080020825",
+    "nombre": "CCORICANCHA VI",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "290526_17",
+    "codigo": "050021125",
+    "nombre": "AGUILAS XXXIII",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "290526_20",
+    "codigo": "070002508C",
+    "nombre": "SAN GABRIEL 2",
     "tipo": "aparece"
   }
 ]
