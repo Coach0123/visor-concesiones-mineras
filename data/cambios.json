@@ -1,173 +1,5 @@
 [
   {
-    "fecha": "150526_13",
-    "codigo": "010294726",
-    "nombre": "MUÑANI 34",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "150526_13",
-    "codigo": "080035826",
-    "nombre": "CORI JAWIRA MINER5",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "150526_13",
-    "codigo": "010295126",
-    "nombre": "QUIMSA 2026 2",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "150526_13",
-    "codigo": "010295626",
-    "nombre": "QUIMSA 2026 8",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "150526_13",
-    "codigo": "010295426",
-    "nombre": "QUIMSA 2026 5",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "150526_13",
-    "codigo": "010296226",
-    "nombre": "MUÑANI 27",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "150526_13",
-    "codigo": "010295326",
-    "nombre": "QUIMSA 2026 4",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "150526_13",
-    "codigo": "010295026",
-    "nombre": "QUIMSA 2026 1",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "150526_13",
-    "codigo": "010294426",
-    "nombre": "COPACABANA CUATRO",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "150526_13",
-    "codigo": "010295726",
-    "nombre": "QUIMSA 2026 6",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "150526_13",
-    "codigo": "010296326",
-    "nombre": "MUÑANI 46",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "150526_13",
-    "codigo": "010296026",
-    "nombre": "MUÑANI 28",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "150526_13",
-    "codigo": "010294526",
-    "nombre": "MUÑANI 37",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "150526_19",
-    "codigo": "700002326",
-    "nombre": "LARD",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "150526_19",
-    "codigo": "010302226",
-    "nombre": "2026 PERU MINING TRES",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "150526_19",
-    "codigo": "060011926",
-    "nombre": "ARCILLAS LLANOS 09",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "150526_19",
-    "codigo": "010000126L",
-    "nombre": "GRAN CAMILISSE",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "150526_17",
-    "codigo": "010157625",
-    "nombre": "TRES-MARIAS.",
-    "tipo": "desaparece"
-  },
-  {
-    "fecha": "150526_17",
-    "codigo": "010185825",
-    "nombre": "LA ESPAÑOLA 2025",
-    "tipo": "desaparece"
-  },
-  {
-    "fecha": "150526_17",
-    "codigo": "010023725",
-    "nombre": "RMEXPLO 1",
-    "tipo": "desaparece"
-  },
-  {
-    "fecha": "150526_19",
-    "codigo": "010302326",
-    "nombre": "VILLENA CM2026",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "150526_19",
-    "codigo": "550003126",
-    "nombre": "FRANCISCA 1",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "150526_19",
-    "codigo": "010302126",
-    "nombre": "VETA URBINA 2",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "150526_19",
-    "codigo": "030052026",
-    "nombre": "2026 PERU MINING UNO",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "150526_19",
-    "codigo": "050057826",
-    "nombre": "ZAFIRO 26",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "150526_19",
-    "codigo": "010301826",
-    "nombre": "WANU ALLPA",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "150526_19",
-    "codigo": "050058026",
-    "nombre": "MISCANA TOCCOROCRUZ",
-    "tipo": "aparece"
-  },
-  {
-    "fecha": "150526_19",
-    "codigo": "010301726",
-    "nombre": "PACOYA I",
-    "tipo": "aparece"
-  },
-  {
     "fecha": "150526_19",
     "codigo": "010301926",
     "nombre": "CHUÑONA 1",
@@ -2997,6 +2829,174 @@
     "fecha": "290526_20",
     "codigo": "070002508C",
     "nombre": "SAN GABRIEL 2",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "300526_11",
+    "codigo": "010139025",
+    "nombre": "NARANJO 1 2025",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "300526_13",
+    "codigo": "010164807A",
+    "nombre": "ASTRAMACON",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "300526_13",
+    "codigo": "010312226",
+    "nombre": "WANDA & LUIS MINE",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "300526_13",
+    "codigo": "030057526",
+    "nombre": "PIRA DORADA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "300526_11",
+    "codigo": "010001224",
+    "nombre": "MARIA LUISA 2024",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "300526_11",
+    "codigo": "050055525",
+    "nombre": "BEYONCE 4",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "300526_13",
+    "codigo": "010312126",
+    "nombre": "KAORI J1",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "300526_13",
+    "codigo": "030057226",
+    "nombre": "VIRATH 3",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "300526_13",
+    "codigo": "070028726",
+    "nombre": "CALIOPE A7",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "300526_13",
+    "codigo": "010312326",
+    "nombre": "BELDAD 100",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "300526_13",
+    "codigo": "600003226",
+    "nombre": "PODER YUYA",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "300526_13",
+    "codigo": "010312426",
+    "nombre": "SANTA LUCIA LG",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "300526_13",
+    "codigo": "070028926",
+    "nombre": "MAYDA CCQ",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "300526_13",
+    "codigo": "010311926",
+    "nombre": "AMPARO DIVINO",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "300526_13",
+    "codigo": "010311826",
+    "nombre": "JOSELYN 01",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "300526_13",
+    "codigo": "030056926",
+    "nombre": "FELIPE DJR",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "300526_13",
+    "codigo": "030057026",
+    "nombre": "VIRATH 1",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "300526_13",
+    "codigo": "050061626",
+    "nombre": "DACREIN MINING",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "300526_13",
+    "codigo": "030057126",
+    "nombre": "VIRATH 2",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "300526_13",
+    "codigo": "070028826",
+    "nombre": "ANFLOR I 2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "300526_13",
+    "codigo": "010312026",
+    "nombre": "TRIPLE KKK M&C",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "300526_13",
+    "codigo": "030057326",
+    "nombre": "VIRATH 4",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "300526_13",
+    "codigo": "030057426",
+    "nombre": "VIRATH 5",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "300526_13",
+    "codigo": "010312526",
+    "nombre": "NEW COPPER MINING",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "300526_13",
+    "codigo": "590003326",
+    "nombre": "KILLA I",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "300526_13",
+    "codigo": "540013526",
+    "nombre": "DAYLIN 2026",
+    "tipo": "aparece"
+  },
+  {
+    "fecha": "300526_11",
+    "codigo": "080014425",
+    "nombre": "GAVILAN AN",
+    "tipo": "desaparece"
+  },
+  {
+    "fecha": "300526_13",
+    "codigo": "580006326",
+    "nombre": "MARIO G3",
     "tipo": "aparece"
   }
 ]
