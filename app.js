@@ -311,7 +311,7 @@ async function cargarCambios() {
                 item.className = `cambio-item ${c.tipo}`;
                 item.style.cursor = 'pointer';
                 item.innerHTML = `<strong>${corregirTexto(c.nombre)}</strong><br><small>${c.tipo} - ${c.fecha}</small>`;
-                item.onclick = () => buscarYCentrarPoligono(c.codigo, c.nombre);
+                item.onclick = () => buscarYCentrarPoligono(c.codigo, c.nombre, c.tipo);
                 div.appendChild(item);
             });
         }
@@ -320,9 +320,67 @@ async function cargarCambios() {
     }
 }
 
-function buscarYCentrarPoligono(codigo, nombre) {
-    console.log(`🔍 Buscando polígono: ${codigo} - ${nombre}`);
+async function buscarYCentrarPoligono(codigo, nombre, tipo) {
+    console.log(`🔍 Buscando polígono: ${codigo} - ${nombre} (${tipo})`);
     
+    // PRIMERO: Buscar en archivos mensuales (desaparecidos_*.geojson o aparecidos_*.geojson)
+    const mesActual = new Date();
+    const mesNumero = (mesActual.getMonth() + 1).toString().padStart(2, '0');
+    const anio = mesActual.getFullYear();
+    const archivoMensual = `${tipo === 'desaparece' ? 'desaparecidos' : 'aparecidos'}_${anio}${mesNumero}.geojson`;
+    
+    try {
+        const response = await fetch(`${baseURL}/data/${archivoMensual}`);
+        if (response.ok) {
+            const geojson = await response.json();
+            const feature = geojson.features.find(f => f.properties.CODIGOU === codigo);
+            
+            if (feature && feature.geometry) {
+                console.log(`✅ Polígono encontrado en archivo mensual: ${archivoMensual}`);
+                let centro = null;
+                
+                if (feature.geometry.type === 'Polygon') {
+                    const coords = feature.geometry.coordinates[0];
+                    let sumX = 0, sumY = 0;
+                    coords.forEach(c => { sumX += c[0]; sumY += c[1]; });
+                    const centerX = sumX / coords.length;
+                    const centerY = sumY / coords.length;
+                    centro = convertirUTM_A_WGS84(centerX, centerY, '17s');
+                } else if (feature.geometry.type === 'MultiPolygon') {
+                    const coords = feature.geometry.coordinates[0][0];
+                    let sumX = 0, sumY = 0;
+                    coords.forEach(c => { sumX += c[0]; sumY += c[1]; });
+                    const centerX = sumX / coords.length;
+                    const centerY = sumY / coords.length;
+                    centro = convertirUTM_A_WGS84(centerX, centerY, '17s');
+                }
+                
+                if (centro) {
+                    map.setView([centro[0], centro[1]], 14);
+                    
+                    // Crear un borde rojo temporal para el polígono encontrado
+                    if (capaDibujo) map.removeLayer(capaDibujo);
+                    capaDibujo = L.geoJSON(feature, {
+                        style: {
+                            color: tipo === 'desaparece' ? '#ff4444' : '#4444ff',
+                            weight: 4,
+                            opacity: 1,
+                            fillOpacity: 0.2,
+                            dashArray: '5,10'
+                        }
+                    }).addTo(map);
+                    
+                    mostrarMensaje(`📍 Centrando: ${corregirTexto(nombre)}`, 'exito');
+                    cerrarPopup();
+                    return;
+                }
+            }
+        }
+    } catch (error) {
+        console.log('No encontrado en archivo mensual, buscando en datos diarios...');
+    }
+    
+    // SEGUNDO: Buscar en datos diarios (respaldo)
     for (const zonaData of todosLosDatos) {
         const feature = zonaData.features.find(f => f.properties.CODIGOU === codigo);
         if (feature && feature.geometry) {
@@ -345,12 +403,23 @@ function buscarYCentrarPoligono(codigo, nombre) {
             
             if (centro) {
                 map.setView([centro[0], centro[1]], 14);
+                if (capaDibujo) map.removeLayer(capaDibujo);
+                capaDibujo = L.geoJSON(feature, {
+                    style: {
+                        color: tipo === 'desaparece' ? '#ff4444' : '#4444ff',
+                        weight: 4,
+                        opacity: 1,
+                        fillOpacity: 0.2,
+                        dashArray: '5,10'
+                    }
+                }).addTo(map);
                 mostrarMensaje(`📍 Centrando: ${corregirTexto(nombre)}`, 'exito');
                 cerrarPopup();
                 return;
             }
         }
     }
+    
     mostrarMensaje(`No se encontró el polígono: ${nombre}`, 'error');
 }
 
