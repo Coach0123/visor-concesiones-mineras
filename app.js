@@ -1,3 +1,4 @@
+
 // Configuración del mapa
 let map;
 let capas = {};
@@ -141,6 +142,8 @@ function initMap() {
     }).addTo(map);
     
     agregarBotonesPersonalizados();
+    agregarBotonMonitoreo();      // <--- LÍNEA NUEVA
+    cargarAreaMonitoreada();       // <--- LÍNEA NUEVA
     cargarDatos();
     cargarCambios();
     cargarHistorialMensual();
@@ -171,6 +174,143 @@ function agregarBotonesPersonalizados() {
     contenedor.appendChild(btnDibujar);
     contenedor.appendChild(btnCSV);
     contenedor.appendChild(btnLimpiar);
+}
+
+// ========== FUNCIONES PARA ALERTAS POR CORREO ==========
+
+let areaMonitoreada = null;
+let ultimosCambiosEnviados = new Set();
+
+// Guardar área dibujada para monitoreo
+function guardarAreaParaMonitoreo() {
+    if (!rectanguloDibujo) {
+        mostrarMensaje('Primero dibuja un área en el mapa', 'error');
+        return;
+    }
+    
+    const bounds = rectanguloDibujo.toBBoxString();
+    localStorage.setItem('areaMonitoreada', bounds);
+    areaMonitoreada = rectanguloDibujo;
+    
+    mostrarMensaje('✅ Área guardada para monitoreo.', 'exito');
+    
+    const email = prompt('Ingresa tu correo para recibir alertas:', localStorage.getItem('emailAlertas') || '');
+    if (email && email.includes('@')) {
+        localStorage.setItem('emailAlertas', email);
+        mostrarMensaje(`📧 Alertas se enviarán a: ${email}`, 'exito');
+        
+        // CORRECTO: Para confirmación, total=0 y cambios=[]
+        emailjs.send('service_gmail_visor', 'template_visor_alertas', {
+            to_email: email,
+            total: 0,
+            date: new Date().toLocaleString(),
+            cambios: []
+        }).then(() => {
+            console.log('Correo de confirmación enviado');
+        }).catch((error) => {
+            console.error('Error al enviar confirmación:', error);
+            mostrarMensaje('Error al enviar correo. Revisa consola.', 'error');
+        });
+    } else {
+        mostrarMensaje('Correo no válido. No se guardó.', 'error');
+    }
+}
+
+// Cargar área guardada al iniciar
+function cargarAreaMonitoreada() {
+    const boundsString = localStorage.getItem('areaMonitoreada');
+    if (boundsString) {
+        const [minx, miny, maxx, maxy] = boundsString.split(',').map(Number);
+        const bounds = L.latLngBounds([miny, minx], [maxy, maxx]);
+        areaMonitoreada = bounds;
+        if (capaDibujo) map.removeLayer(capaDibujo);
+        capaDibujo = L.rectangle(bounds, {
+            color: '#ff44ff',
+            weight: 3,
+            opacity: 0.8,
+            fillOpacity: 0.2
+        }).addTo(map);
+        rectanguloDibujo = bounds;
+        mostrarMensaje('📌 Área de monitoreo cargada', 'info');
+    }
+}
+
+// Verificar cambios y enviar alerta
+async function verificarCambiosYEnviarAlerta() {
+    if (!areaMonitoreada) {
+        mostrarMensaje('Primero dibuja un área y actívala con "🔔 Monitorear esta área"', 'error');
+        return;
+    }
+    
+    const email = localStorage.getItem('emailAlertas');
+    if (!email) {
+        mostrarMensaje('No hay correo guardado. Configura primero el monitoreo.', 'error');
+        return;
+    }
+    
+    mostrarMensaje('🔍 Verificando cambios en el área...', 'info');
+    
+    try {
+        const response = await fetch(`${baseURL}/data/cambios.json`);
+        if (!response.ok) throw new Error('Error al cargar cambios');
+        
+        const cambios = await response.json();
+        const cambiosNuevos = cambios.slice(-10).reverse();
+        
+        if (cambiosNuevos.length > 0) {
+            emailjs.send('service_gmail_visor', 'template_visor_alertas', {
+                to_email: email,
+                total: cambiosNuevos.length,
+                date: new Date().toLocaleString(),
+                cambios: cambiosNuevos
+            }).then(() => {
+                mostrarMensaje(`📧 Alerta enviada: ${cambiosNuevos.length} cambios`, 'exito');
+            }).catch((error) => {
+                console.error('Error al enviar correo:', error);
+                mostrarMensaje('Error al enviar correo. Revisa consola.', 'error');
+            });
+        } else {
+            mostrarMensaje('No hay cambios nuevos', 'info');
+        }
+    } catch (error) {
+        console.error(error);
+        mostrarMensaje('Error al verificar cambios', 'error');
+    }
+}
+
+function cancelarMonitoreo() {
+    localStorage.removeItem('areaMonitoreada');
+    localStorage.removeItem('emailAlertas');
+    areaMonitoreada = null;
+    limpiarDibujo();
+    mostrarMensaje('🗑️ Monitoreo cancelado', 'info');
+}
+
+function agregarBotonMonitoreo() {
+    const contenedor = document.querySelector('.carga-archivos');
+    if (!contenedor) return;
+    
+    const btnMonitorear = document.createElement('button');
+    btnMonitorear.textContent = '🔔 Monitorear esta área';
+    btnMonitorear.style.marginTop = '10px';
+    btnMonitorear.style.backgroundColor = '#FF9800';
+    btnMonitorear.onclick = guardarAreaParaMonitoreo;
+    
+    const btnVerificar = document.createElement('button');
+    btnVerificar.textContent = '📧 Verificar cambios ahora';
+    btnVerificar.style.marginTop = '10px';
+    btnVerificar.style.backgroundColor = '#9C27B0';
+    btnVerificar.onclick = verificarCambiosYEnviarAlerta;
+    
+    const btnCancelar = document.createElement('button');
+    btnCancelar.textContent = '🗑️ Cancelar monitoreo';
+    btnCancelar.style.marginTop = '10px';
+    btnCancelar.style.backgroundColor = '#f44336';
+    btnCancelar.onclick = cancelarMonitoreo;
+    
+    contenedor.appendChild(btnMonitorear);
+    contenedor.appendChild(btnVerificar);
+    contenedor.appendChild(btnCancelar);
 }
 
 async function cargarDatos() {
