@@ -6,6 +6,8 @@ let todosLosDatos = [];
 let datosHistoricos = [];
 let rectanguloDibujo = null;
 let capaDibujo = null;
+let marcadorBusqueda;
+let capaAreaInteres;
 
 // Función para corregir caracteres especiales
 function corregirTexto(texto) {
@@ -110,14 +112,15 @@ const zonas = ['17s', '18s', '19s'];
 
 // COLORES PERSONALIZABLES
 const COLORES = {
-    SIN_CAMBIO: '#888888',      // Gris
-    APARECE: '#4444ff',         // Azul
-    DESAPARECE: '#ff4444',      // Rojo
-    HISTORICO_APARECE: '#44ff44', // Verde claro
-    HISTORICO_DESAPARECE: '#ff44ff' // Magenta
+    SIN_CAMBIO: '#888888',
+    APARECE: '#4444ff',
+    DESAPARECE: '#ff4444',
+    HISTORICO_APARECE: '#44ff44',
+    HISTORICO_DESAPARECE: '#ff44ff'
 };
 
 function initMap() {
+    console.log('🗺️ Inicializando mapa...');
     map = L.map('map').setView([-9.5, -75], 6);
     
     L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
@@ -158,6 +161,7 @@ function agregarBotonesPersonalizados() {
 }
 
 async function cargarDatos() {
+    console.log('📥 Cargando datos...');
     let cambiosMap = new Map();
     try {
         const cambiosResponse = await fetch(`${baseURL}/data/cambios.json`);
@@ -169,7 +173,7 @@ async function cargarDatos() {
         }
     } catch (error) {}
 
-    // Buscar en últimos 7 días (no solo 2)
+    // Buscar en últimos 7 días
     const fechasABuscar = [];
     for (let i = 0; i < 7; i++) {
         const fecha = new Date(fechaHoy);
@@ -197,7 +201,7 @@ async function cargarDatos() {
                         datosCargados = await response.json();
                         fechaCargada = fecha;
                         horaCargada = hora;
-                        console.log(`✅ ${zona} cargado con fecha ${fecha} hora ${hora}`);
+                        console.log(`✅ ${zona} cargado con fecha ${fecha} hora ${hora} (${datosCargados.features.length} polígonos)`);
                         break;
                     }
                 } catch (e) {}
@@ -245,6 +249,8 @@ async function cargarDatos() {
                 }
             }).addTo(map);
             capas[zona] = capa;
+        } else {
+            console.warn(`⚠️ No se encontraron datos para la zona ${zona}`);
         }
     }
 }
@@ -280,7 +286,9 @@ async function cargarHistorialMensual() {
                 }
             }).addTo(map);
         }
-    } catch (error) {}
+    } catch (error) {
+        console.log('No hay historial mensual disponible');
+    }
 }
 
 async function cargarCambios() {
@@ -296,13 +304,11 @@ async function cargarCambios() {
                 return;
             }
             
-            // Mostrar últimos 30 cambios
             cambios.slice(-30).reverse().forEach(c => {
                 const item = document.createElement('div');
                 item.className = `cambio-item ${c.tipo}`;
                 item.style.cursor = 'pointer';
                 item.innerHTML = `<strong>${corregirTexto(c.nombre)}</strong><br><small>${c.tipo} - ${c.fecha}</small>`;
-                // Al hacer clic en el cambio, buscar y centrar el polígono
                 item.onclick = () => buscarYCentrarPoligono(c.codigo, c.nombre);
                 div.appendChild(item);
             });
@@ -312,21 +318,35 @@ async function cargarCambios() {
     }
 }
 
-// Función para buscar y centrar un polígono por su código
-async function buscarYCentrarPoligono(codigo, nombre) {
-    console.log(`🔍 Buscando polígono con código: ${codigo}`);
+function buscarYCentrarPoligono(codigo, nombre) {
+    console.log(`🔍 Buscando polígono: ${codigo} - ${nombre}`);
     
     for (const zonaData of todosLosDatos) {
         const feature = zonaData.features.find(f => f.properties.CODIGOU === codigo);
-        if (feature && feature.geometry.type === 'Polygon') {
-            const coords = feature.geometry.coordinates[0];
-            let sumX = 0, sumY = 0;
-            coords.forEach(c => { sumX += c[0]; sumY += c[1]; });
-            const [lat, lon] = convertirUTM_A_WGS84(sumX/coords.length, sumY/coords.length, zonaData.zona);
-            map.setView([lat, lon], 14);
-            mostrarMensaje(`📍 Centrando: ${corregirTexto(nombre)}`, 'exito');
-            cerrarPopup();
-            return;
+        if (feature && feature.geometry) {
+            let centro = null;
+            if (feature.geometry.type === 'Polygon') {
+                const coords = feature.geometry.coordinates[0];
+                let sumX = 0, sumY = 0;
+                coords.forEach(c => { sumX += c[0]; sumY += c[1]; });
+                const centerX = sumX / coords.length;
+                const centerY = sumY / coords.length;
+                centro = convertirUTM_A_WGS84(centerX, centerY, zonaData.zona);
+            } else if (feature.geometry.type === 'MultiPolygon') {
+                const coords = feature.geometry.coordinates[0][0];
+                let sumX = 0, sumY = 0;
+                coords.forEach(c => { sumX += c[0]; sumY += c[1]; });
+                const centerX = sumX / coords.length;
+                const centerY = sumY / coords.length;
+                centro = convertirUTM_A_WGS84(centerX, centerY, zonaData.zona);
+            }
+            
+            if (centro) {
+                map.setView([centro[0], centro[1]], 14);
+                mostrarMensaje(`📍 Centrando: ${corregirTexto(nombre)}`, 'exito');
+                cerrarPopup();
+                return;
+            }
         }
     }
     mostrarMensaje(`No se encontró el polígono: ${nombre}`, 'error');
@@ -360,27 +380,30 @@ async function buscarConcesion() {
         item.className = 'resultado-item';
         item.style.cursor = 'pointer';
         item.textContent = `${corregirTexto(r.properties.CONCESION)} - ${corregirTexto(r.properties.TIT_CONCES)}`;
-        item.onclick = () => {
-            if (r.geometry.type === 'Polygon') {
-                const coords = r.geometry.coordinates[0];
-                let sumX = 0, sumY = 0;
-                coords.forEach(c => { sumX += c[0]; sumY += c[1]; });
-                const [lat, lon] = convertirUTM_A_WGS84(sumX/coords.length, sumY/coords.length, r.zona);
-                map.setView([lat, lon], 14);
-                cerrarPopup();
-            }
-        };
+        item.onclick = () => centrarFeature(r);
         div.appendChild(item);
     });
 }
 
-// CARGA DE ARCHIVOS KML/KMZ
+function centrarFeature(feature) {
+    if (feature.geometry.type === 'Polygon') {
+        const coords = feature.geometry.coordinates[0];
+        let sumX = 0, sumY = 0;
+        coords.forEach(c => { sumX += c[0]; sumY += c[1]; });
+        const [lat, lon] = convertirUTM_A_WGS84(sumX/coords.length, sumY/coords.length, feature.zona);
+        map.setView([lat, lon], 14);
+        cerrarPopup();
+    }
+}
+
+// CARGA DE ARCHIVOS - SOPORTE KML/KMZ
 async function cargarArchivo() {
     const input = document.getElementById('archivo-input');
     const archivo = input.files[0];
     if (!archivo) return;
     
     const extension = archivo.name.split('.').pop().toLowerCase();
+    mostrarMensaje(`Procesando: ${archivo.name}`, 'info');
     
     if (extension === 'geojson' || extension === 'json') {
         const reader = new FileReader();
@@ -388,25 +411,55 @@ async function cargarArchivo() {
             try {
                 const geojson = JSON.parse(e.target.result);
                 mostrarAreaInteres(geojson);
-                mostrarMensaje(`Archivo cargado: ${archivo.name}`, 'exito');
+                mostrarMensaje(`✅ GeoJSON cargado correctamente`, 'exito');
             } catch (error) {
                 mostrarMensaje('Error al leer GeoJSON', 'error');
             }
         };
         reader.readAsText(archivo);
     } 
-    else if (extension === 'kml' || extension === 'kmz') {
-        mostrarMensaje('Para KML/KMZ: conviértelo a GeoJSON usando https://kml2geojson.netlify.app/', 'info');
+    else if (extension === 'kml') {
+        mostrarMensaje('📌 KML detectado. Para visualizarlo, conviértelo a GeoJSON en: https://kml2geojson.netlify.app/', 'info');
+        // Intentar lectura básica
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            try {
+                const texto = e.target.result;
+                // Extraer coordenadas básicas del KML
+                const coordMatch = texto.match(/<coordinates>([\s\S]*?)<\/coordinates>/i);
+                if (coordMatch) {
+                    mostrarMensaje('KML cargado. Para mejor visualización, conviértelo a GeoJSON', 'info');
+                }
+            } catch (error) {}
+        };
+        reader.readAsText(archivo);
+    }
+    else if (extension === 'kmz') {
+        mostrarMensaje('📌 KMZ detectado. Extrae el archivo .kml o conviértelo a GeoJSON', 'info');
     }
     else if (extension === 'zip' || extension === 'rar') {
-        mostrarMensaje('Extrae el archivo y sube el .shp o conviértelo a GeoJSON', 'info');
+        mostrarMensaje('Archivo comprimido. Extrae y busca archivos .shp o .kml', 'info');
     }
     else if (extension === 'shp') {
-        mostrarMensaje('Para shapefiles, comprime todos los archivos (.shp,.dbf,.shx) en un ZIP', 'info');
+        mostrarMensaje('Shapefile detectado. Necesitas todos los archivos (.shp,.dbf,.shx) en un ZIP', 'info');
     }
     else {
-        mostrarMensaje('Formato no soportado. Use GeoJSON, KML o KMZ', 'error');
+        mostrarMensaje('Formato no soportado. Use GeoJSON', 'error');
     }
+}
+
+function mostrarAreaInteres(geojson) {
+    if (capaAreaInteres) map.removeLayer(capaAreaInteres);
+    
+    capaAreaInteres = L.geoJSON(geojson, {
+        style: { color: '#44ff44', weight: 3, opacity: 0.8, fillOpacity: 0.1, dashArray: '5,10' },
+        onEachFeature: (feature, layer) => {
+            layer.bindPopup('Área de interés cargada');
+        }
+    }).addTo(map);
+    
+    map.fitBounds(capaAreaInteres.getBounds());
+    mostrarMensaje(`✅ Área cargada y centrada en el mapa`, 'exito');
 }
 
 let dibujando = false;
@@ -469,7 +522,7 @@ function descargarCSVArea() {
                 const coords = feature.geometry.coordinates[0];
                 let sumX = 0, sumY = 0;
                 coords.forEach(c => { sumX += c[0]; sumY += c[1]; });
-                const [lon, lat] = convertirUTM_A_WGS84(sumX/coords.length, sumY/coords.length, zonaData.zona);
+                const [lat, lon] = convertirUTM_A_WGS84(sumX/coords.length, sumY/coords.length, zonaData.zona);
                 if (rectanguloDibujo.contains([lat, lon])) {
                     poligonosEnArea.push(feature.properties);
                 }
@@ -491,14 +544,6 @@ function descargarCSVArea() {
     URL.revokeObjectURL(url);
     
     mostrarMensaje(`✅ ${poligonosEnArea.length} polígonos exportados`, 'exito');
-}
-
-function mostrarAreaInteres(geojson) {
-    if (capaAreaInteres) map.removeLayer(capaAreaInteres);
-    capaAreaInteres = L.geoJSON(geojson, {
-        style: { color: '#44ff44', weight: 3, opacity: 0.8, fillOpacity: 0.1, dashArray: '5,10' }
-    }).addTo(map);
-    map.fitBounds(capaAreaInteres.getBounds());
 }
 
 function cerrarPopup() {
@@ -525,11 +570,8 @@ function mostrarMensaje(texto, tipo = 'info') {
     msgDiv.textContent = texto;
     msgDiv.style.backgroundColor = tipo === 'error' ? '#ff4444' : (tipo === 'exito' ? '#4CAF50' : '#333');
     msgDiv.style.display = 'block';
-    setTimeout(() => { msgDiv.style.display = 'none'; }, 3000);
+    setTimeout(() => { msgDiv.style.display = 'none'; }, 4000);
 }
-
-let marcadorBusqueda;
-let capaAreaInteres;
 
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') cerrarPopup(); });
 document.addEventListener('click', (e) => {
