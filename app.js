@@ -73,12 +73,25 @@ const baseURL = window.location.hostname.includes('github.io')
     ? '/visor-concesiones-mineras' 
     : '';
 
+// Obtener fecha actual en formato DDMMYY
 const fechaHoy = new Date();
-const fechaStr = fechaHoy.toLocaleDateString('es-ES', {
-    day: '2-digit',
-    month: '2-digit',
-    year: '2-digit'
-}).replace(/\//g, '');
+const dia = fechaHoy.getDate().toString().padStart(2, '0');
+const mes = (fechaHoy.getMonth() + 1).toString().padStart(2, '0');
+const anio = fechaHoy.getFullYear().toString().slice(-2);
+const fechaStr = `${dia}${mes}${anio}`;
+console.log(`📅 Fecha actual: ${fechaStr}`);
+
+// Generar array de fechas de los últimos 10 días
+const fechasUltimosDias = [];
+for (let i = 0; i < 10; i++) {
+    const fecha = new Date();
+    fecha.setDate(fecha.getDate() - i);
+    const d = fecha.getDate().toString().padStart(2, '0');
+    const m = (fecha.getMonth() + 1).toString().padStart(2, '0');
+    const a = fecha.getFullYear().toString().slice(-2);
+    fechasUltimosDias.push(`${d}${m}${a}`);
+}
+console.log(`📅 Buscando en fechas: ${fechasUltimosDias.join(', ')}`);
 
 function obtenerHorariosActuales() {
     const ahora = new Date();
@@ -167,31 +180,20 @@ async function cargarDatos() {
         const cambiosResponse = await fetch(`${baseURL}/data/cambios.json`);
         if (cambiosResponse.ok) {
             const cambios = await cambiosResponse.json();
+            console.log(`📊 Registros de cambios: ${cambios.length}`);
             cambios.forEach(cambio => {
                 cambiosMap.set(cambio.codigo, cambio.tipo);
             });
         }
     } catch (error) {}
 
-    // Buscar en últimos 7 días
-    const fechasABuscar = [];
-    for (let i = 0; i < 7; i++) {
-        const fecha = new Date(fechaHoy);
-        fecha.setDate(fecha.getDate() - i);
-        const fechaStrBuscar = fecha.toLocaleDateString('es-ES', {
-            day: '2-digit',
-            month: '2-digit',
-            year: '2-digit'
-        }).replace(/\//g, '');
-        fechasABuscar.push(fechaStrBuscar);
-    }
-
     for (const zona of zonas) {
         let datosCargados = null;
         let fechaCargada = null;
         let horaCargada = null;
         
-        for (const fecha of fechasABuscar) {
+        // Buscar en las últimas fechas
+        for (const fecha of fechasUltimosDias) {
             for (let h = 23; h >= 0; h--) {
                 const hora = h.toString().padStart(2, '0');
                 const url = `${baseURL}/data/${zona}_${fecha}_${hora}.geojson`;
@@ -250,7 +252,7 @@ async function cargarDatos() {
             }).addTo(map);
             capas[zona] = capa;
         } else {
-            console.warn(`⚠️ No se encontraron datos para la zona ${zona}`);
+            console.warn(`⚠️ No se encontró archivo para zona ${zona}`);
         }
     }
 }
@@ -380,23 +382,21 @@ async function buscarConcesion() {
         item.className = 'resultado-item';
         item.style.cursor = 'pointer';
         item.textContent = `${corregirTexto(r.properties.CONCESION)} - ${corregirTexto(r.properties.TIT_CONCES)}`;
-        item.onclick = () => centrarFeature(r);
+        item.onclick = () => {
+            if (r.geometry.type === 'Polygon') {
+                const coords = r.geometry.coordinates[0];
+                let sumX = 0, sumY = 0;
+                coords.forEach(c => { sumX += c[0]; sumY += c[1]; });
+                const [lat, lon] = convertirUTM_A_WGS84(sumX/coords.length, sumY/coords.length, r.zona);
+                map.setView([lat, lon], 14);
+                cerrarPopup();
+            }
+        };
         div.appendChild(item);
     });
 }
 
-function centrarFeature(feature) {
-    if (feature.geometry.type === 'Polygon') {
-        const coords = feature.geometry.coordinates[0];
-        let sumX = 0, sumY = 0;
-        coords.forEach(c => { sumX += c[0]; sumY += c[1]; });
-        const [lat, lon] = convertirUTM_A_WGS84(sumX/coords.length, sumY/coords.length, feature.zona);
-        map.setView([lat, lon], 14);
-        cerrarPopup();
-    }
-}
-
-// CARGA DE ARCHIVOS - SOPORTE KML/KMZ
+// CARGA DE ARCHIVOS
 async function cargarArchivo() {
     const input = document.getElementById('archivo-input');
     const archivo = input.files[0];
@@ -419,20 +419,7 @@ async function cargarArchivo() {
         reader.readAsText(archivo);
     } 
     else if (extension === 'kml') {
-        mostrarMensaje('📌 KML detectado. Para visualizarlo, conviértelo a GeoJSON en: https://kml2geojson.netlify.app/', 'info');
-        // Intentar lectura básica
-        const reader = new FileReader();
-        reader.onload = (e) => {
-            try {
-                const texto = e.target.result;
-                // Extraer coordenadas básicas del KML
-                const coordMatch = texto.match(/<coordinates>([\s\S]*?)<\/coordinates>/i);
-                if (coordMatch) {
-                    mostrarMensaje('KML cargado. Para mejor visualización, conviértelo a GeoJSON', 'info');
-                }
-            } catch (error) {}
-        };
-        reader.readAsText(archivo);
+        mostrarMensaje('📌 KML detectado. Conviértelo a GeoJSON en: https://kml2geojson.netlify.app/', 'info');
     }
     else if (extension === 'kmz') {
         mostrarMensaje('📌 KMZ detectado. Extrae el archivo .kml o conviértelo a GeoJSON', 'info');
