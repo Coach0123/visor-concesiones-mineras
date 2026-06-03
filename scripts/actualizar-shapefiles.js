@@ -15,26 +15,19 @@ const URLS = {
 
 function corregirCaracteres(texto) {
   if (!texto) return '';
-  
   const reemplazos = {
     'Ã‘': 'Ñ', 'Ã±': 'ñ', 'Ã‰': 'É', 'Ã©': 'é', 'Ã ': 'Á', 'Ã¡': 'á',
     'Ã“': 'Ó', 'Ã³': 'ó', 'Ãš': 'Ú', 'Ãº': 'ú', 'Ã ': 'Í', 'Ã­': 'í',
     'Ãœ': 'Ü', 'Ã¼': 'ü', 'Ã€': 'À', 'Ã ': 'à', 'ÃŠ': 'Ê', 'Ãª': 'ê',
     'Ã‡': 'Ç', 'Ã§': 'ç', 'Â¿': '¿', 'Â¡': '¡', 'Â°': '°', 'â€™': "'",
-    'â€œ': '"', 'â€': '"', 'Â´': "'", 'Ã': 'í', '³': 'ó', '±': 'ñ'
+    'â€œ': '"', 'â€': '"', 'Â´': "'", 'Ã': 'í', '³': 'ó', '±': 'ñ',
+    'estÃ¡ndar': 'estándar', 'PerÃº': 'Perú'
   };
-  
   let textoCorregido = texto.toString();
   for (const [mal, bien] of Object.entries(reemplazos)) {
     textoCorregido = textoCorregido.replace(new RegExp(mal, 'g'), bien);
   }
   return textoCorregido;
-}
-
-function obtenerHoraUTCParaArchivo() {
-  const ahora = new Date();
-  const horaUTC = ahora.getUTCHours();
-  return horaUTC.toString().padStart(2, '0');
 }
 
 async function descargarYProcesar() {
@@ -47,41 +40,15 @@ async function descargarYProcesar() {
     year: '2-digit'
   }).replace(/\//g, '');
   
-  const horaActual = obtenerHoraUTCParaArchivo();
+  const horaActual = fechaHoy.getUTCHours().toString().padStart(2, '0');
   console.log(`📅 Fecha: ${fechaStr}`);
   console.log(`🕐 Hora UTC: ${horaActual}:00`);
   
   const dataDir = path.join(__dirname, '..', 'data');
   await fs.ensureDir(dataDir);
   
-  // Limpiar archivos antiguos (mantener solo últimos 10 por zona para respaldo)
-  console.log('🧹 Limpiando archivos muy antiguos...');
-  try {
-    const archivos = await fs.readdir(dataDir);
-    const archivosPorZona = {};
-    
-    for (const archivo of archivos) {
-      if (archivo.endsWith('.geojson') && !archivo.includes('historial')) {
-        const partes = archivo.split('_');
-        if (partes.length >= 2) {
-          const zona = partes[0];
-          if (!archivosPorZona[zona]) archivosPorZona[zona] = [];
-          archivosPorZona[zona].push(archivo);
-        }
-      }
-    }
-    
-    for (const zona in archivosPorZona) {
-      archivosPorZona[zona].sort().reverse();
-      const archivosAEliminar = archivosPorZona[zona].slice(10);
-      for (const archivo of archivosAEliminar) {
-        await fs.remove(path.join(dataDir, archivo));
-        console.log(`  Eliminado antiguo: ${archivo}`);
-      }
-    }
-  } catch (error) {
-    console.log('  No se pudieron limpiar archivos antiguos:', error.message);
-  }
+  // NO ELIMINAR archivos antiguos - solo agregar nuevos
+  console.log('📁 Manteniendo todos los archivos existentes como respaldo');
   
   for (const zona of ZONAS) {
     try {
@@ -97,7 +64,6 @@ async function descargarYProcesar() {
       }
       
       const buffer = await response.buffer();
-      
       const zipPath = path.join(dataDir, `temp_${zona}.zip`);
       await fs.writeFile(zipPath, buffer);
       
@@ -158,7 +124,6 @@ async function descargarYProcesar() {
       const outputPath = path.join(dataDir, `${zona.toLowerCase()}_${fechaStr}_${horaActual}.geojson`);
       await fs.writeJson(outputPath, geojson, { spaces: 0 });
       
-      // Limpiar temporales
       await fs.remove(zipPath);
       await fs.remove(extractPath);
       
@@ -167,11 +132,9 @@ async function descargarYProcesar() {
       
     } catch (error) {
       console.error(`❌ Error en zona ${zona}:`, error.message);
-      // No detener el proceso, continuar con la siguiente zona
     }
   }
   
-  // Generar archivo de cambios
   await generarRegistroCambios();
   console.log('\n🎉 PROCESO COMPLETADO');
 }
@@ -196,7 +159,6 @@ async function generarRegistroCambios() {
       }
     }
     
-    // Comparar archivos dentro de cada zona
     for (const zona in archivosPorZona) {
       archivosPorZona[zona].sort((a, b) => b.fechaHora.localeCompare(a.fechaHora));
       
@@ -242,9 +204,9 @@ async function generarRegistroCambios() {
     if (await fs.pathExists(cambiosPath)) {
       cambiosExistentes = await fs.readJson(cambiosPath);
     }
-    cambiosExistentes = [...cambiosExistentes, ...cambios].slice(-500);
+    cambiosExistentes = [...cambiosExistentes, ...cambios];
     await fs.writeJson(cambiosPath, cambiosExistentes, { spaces: 2 });
-    console.log(`📊 Registrados ${cambios.length} cambios`);
+    console.log(`📊 Registrados ${cambios.length} cambios (total: ${cambiosExistentes.length})`);
   }
 }
 

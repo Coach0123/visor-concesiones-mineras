@@ -5,7 +5,6 @@ let popupAbierto = false;
 let todosLosDatos = [];
 let datosHistoricos = [];
 let rectanguloDibujo = null;
-let puntosDibujo = [];
 let capaDibujo = null;
 
 // Función para corregir caracteres especiales
@@ -18,7 +17,7 @@ function corregirTexto(texto) {
         'Ãœ': 'Ü', 'Ã¼': 'ü', 'Ã€': 'À', 'Ã ': 'à', 'ÃŠ': 'Ê', 'Ãª': 'ê',
         'Ã‡': 'Ç', 'Ã§': 'ç', 'Â¿': '¿', 'Â¡': '¡', 'Â°': '°', 'â€™': "'",
         'â€œ': '"', 'â€': '"', 'Â´': "'", 'Ã': 'í', '³': 'ó', '±': 'ñ',
-        'estÃ¡ndar': 'estándar', 'COMPAÃ‘IA': 'COMPAÑÍA', 'PerÃº': 'Perú'
+        'estÃ¡ndar': 'estándar', 'PerÃº': 'Perú'
     };
     
     let textoCorregido = texto.toString();
@@ -28,7 +27,6 @@ function corregirTexto(texto) {
     return textoCorregido;
 }
 
-// Función específica para CSV (con caracteres especiales para Excel)
 function corregirTextoCSV(texto) {
     if (!texto) return '';
     let t = texto.toString();
@@ -38,7 +36,7 @@ function corregirTextoCSV(texto) {
         'Ãœ': 'Ü', 'Ã¼': 'ü', 'Ã€': 'À', 'Ã ': 'à', 'ÃŠ': 'Ê', 'Ãª': 'ê',
         'Ã‡': 'Ç', 'Ã§': 'ç', 'Â¿': '¿', 'Â¡': '¡', 'Â°': '°', 'â€™': "'",
         'â€œ': '"', 'â€': '"', 'Â´': "'", 'Ã': 'í', '³': 'ó', '±': 'ñ',
-        'estÃ¡ndar': 'estándar', 'COMPAÃ‘IA': 'COMPAÑÍA', 'PerÃº': 'Perú'
+        'estÃ¡ndar': 'estándar', 'PerÃº': 'Perú'
     };
     for (const [mal, bien] of Object.entries(reemplazos)) {
         t = t.replace(new RegExp(mal, 'g'), bien);
@@ -69,12 +67,10 @@ function convertirUTM_A_WGS84(x, y, zona) {
     }
 }
 
-// Detectar si estamos en GitHub Pages
 const baseURL = window.location.hostname.includes('github.io') 
     ? '/visor-concesiones-mineras' 
     : '';
 
-// Obtener fecha actual
 const fechaHoy = new Date();
 const fechaStr = fechaHoy.toLocaleDateString('es-ES', {
     day: '2-digit',
@@ -82,7 +78,6 @@ const fechaStr = fechaHoy.toLocaleDateString('es-ES', {
     year: '2-digit'
 }).replace(/\//g, '');
 
-// Obtener hora actual para determinar qué archivos cargar
 function obtenerHorariosActuales() {
     const ahora = new Date();
     const horaUTC = ahora.getUTCHours();
@@ -106,13 +101,21 @@ function obtenerHorariosActuales() {
     const horarioAnterior = indexActual > 0 ? horarios[indexActual - 1] : horarios[horarios.length - 1];
     
     console.log(`Hora Perú: ${horaPeru}:${minutoUTC.toString().padStart(2, '0')}`);
-    console.log(`Horarios sugeridos: ${horarioAnterior} y ${horarioActual}`);
     
     return { actual: horarioActual, anterior: horarioAnterior };
 }
 
 const horarios = obtenerHorariosActuales();
 const zonas = ['17s', '18s', '19s'];
+
+// COLORES PERSONALIZABLES
+const COLORES = {
+    SIN_CAMBIO: '#888888',      // Gris
+    APARECE: '#4444ff',         // Azul
+    DESAPARECE: '#ff4444',      // Rojo
+    HISTORICO_APARECE: '#44ff44', // Verde claro
+    HISTORICO_DESAPARECE: '#ff44ff' // Magenta
+};
 
 function initMap() {
     map = L.map('map').setView([-9.5, -75], 6);
@@ -121,10 +124,37 @@ function initMap() {
         attribution: '&copy; OpenStreetMap'
     }).addTo(map);
     
-    inicializarDibujo();
+    agregarBotonesPersonalizados();
     cargarDatos();
     cargarCambios();
     cargarHistorialMensual();
+}
+
+function agregarBotonesPersonalizados() {
+    const contenedor = document.querySelector('.carga-archivos');
+    if (!contenedor) return;
+    
+    const btnDibujar = document.createElement('button');
+    btnDibujar.textContent = '✏️ Dibujar área';
+    btnDibujar.style.marginTop = '10px';
+    btnDibujar.style.backgroundColor = '#2196F3';
+    btnDibujar.onclick = activarDibujoRectangulo;
+    
+    const btnCSV = document.createElement('button');
+    btnCSV.textContent = '📥 Descargar CSV del área';
+    btnCSV.style.marginTop = '10px';
+    btnCSV.style.backgroundColor = '#4CAF50';
+    btnCSV.onclick = descargarCSVArea;
+    
+    const btnLimpiar = document.createElement('button');
+    btnLimpiar.textContent = '🗑️ Limpiar dibujo';
+    btnLimpiar.style.marginTop = '10px';
+    btnLimpiar.style.backgroundColor = '#ff4444';
+    btnLimpiar.onclick = limpiarDibujo;
+    
+    contenedor.appendChild(btnDibujar);
+    contenedor.appendChild(btnCSV);
+    contenedor.appendChild(btnLimpiar);
 }
 
 async function cargarDatos() {
@@ -133,72 +163,61 @@ async function cargarDatos() {
         const cambiosResponse = await fetch(`${baseURL}/data/cambios.json`);
         if (cambiosResponse.ok) {
             const cambios = await cambiosResponse.json();
-            console.log(`📊 Registros de cambios: ${cambios.length}`);
             cambios.forEach(cambio => {
                 cambiosMap.set(cambio.codigo, cambio.tipo);
             });
         }
-    } catch (error) {
-        console.log('No hay cambios para colorear');
-    }
+    } catch (error) {}
 
-    const horariosPrioritarios = [];
-    
-    for (let i = 23; i >= 0; i--) {
-        horariosPrioritarios.push({ fecha: fechaStr, hora: i.toString().padStart(2, '0') });
+    // Buscar en últimos 7 días (no solo 2)
+    const fechasABuscar = [];
+    for (let i = 0; i < 7; i++) {
+        const fecha = new Date(fechaHoy);
+        fecha.setDate(fecha.getDate() - i);
+        const fechaStrBuscar = fecha.toLocaleDateString('es-ES', {
+            day: '2-digit',
+            month: '2-digit',
+            year: '2-digit'
+        }).replace(/\//g, '');
+        fechasABuscar.push(fechaStrBuscar);
     }
-    
-    const fechaAnterior = new Date(fechaHoy);
-    fechaAnterior.setDate(fechaAnterior.getDate() - 1);
-    const fechaAnteriorStr = fechaAnterior.toLocaleDateString('es-ES', {
-        day: '2-digit',
-        month: '2-digit',
-        year: '2-digit'
-    }).replace(/\//g, '');
-    
-    for (let i = 23; i >= 0; i--) {
-        horariosPrioritarios.push({ fecha: fechaAnteriorStr, hora: i.toString().padStart(2, '0') });
-    }
-
-    let datosCargadosGlobalmente = false;
 
     for (const zona of zonas) {
         let datosCargados = null;
-        let horarioCargado = null;
         let fechaCargada = null;
+        let horaCargada = null;
         
-        for (const item of horariosPrioritarios) {
-            const url = `${baseURL}/data/${zona}_${item.fecha}_${item.hora}.geojson`;
-            
-            try {
-                const response = await fetch(url);
-                if (response.ok) {
-                    datosCargados = await response.json();
-                    horarioCargado = item.hora;
-                    fechaCargada = item.fecha;
-                    console.log(`✅ ${zona} cargado con fecha ${item.fecha} horario ${item.hora}`);
-                    datosCargadosGlobalmente = true;
-                    break;
-                }
-            } catch (e) {}
+        for (const fecha of fechasABuscar) {
+            for (let h = 23; h >= 0; h--) {
+                const hora = h.toString().padStart(2, '0');
+                const url = `${baseURL}/data/${zona}_${fecha}_${hora}.geojson`;
+                try {
+                    const response = await fetch(url);
+                    if (response.ok) {
+                        datosCargados = await response.json();
+                        fechaCargada = fecha;
+                        horaCargada = hora;
+                        console.log(`✅ ${zona} cargado con fecha ${fecha} hora ${hora}`);
+                        break;
+                    }
+                } catch (e) {}
+            }
+            if (datosCargados) break;
         }
         
-        if (datosCargados && horarioCargado) {
-            console.log(`${zona}: ${datosCargados.features.length} polígonos`);
-            
+        if (datosCargados) {
             todosLosDatos.push({
                 zona: zona,
                 fecha: fechaCargada,
-                horario: horarioCargado,
+                hora: horaCargada,
                 features: datosCargados.features
             });
             
             const getColor = (codigo) => {
                 if (cambiosMap.has(codigo)) {
-                    const tipo = cambiosMap.get(codigo);
-                    return tipo === 'aparece' ? '#4444ff' : '#ff4444';
+                    return cambiosMap.get(codigo) === 'aparece' ? COLORES.APARECE : COLORES.DESAPARECE;
                 }
-                return '#888888';
+                return COLORES.SIN_CAMBIO;
             };
             
             const capa = L.geoJSON(datosCargados, {
@@ -206,40 +225,27 @@ async function cargarDatos() {
                     const [lat, lon] = convertirUTM_A_WGS84(coords[0], coords[1], zona);
                     return L.latLng(lat, lon);
                 },
-                style: (feature) => {
-                    const codigo = feature.properties.CODIGOU;
-                    return {
-                        color: getColor(codigo),
-                        weight: 1,
-                        opacity: 0.7,
-                        fillOpacity: 0.3
-                    };
-                },
+                style: (feature) => ({
+                    color: getColor(feature.properties.CODIGOU),
+                    weight: 1.5,
+                    opacity: 0.8,
+                    fillOpacity: 0.25
+                }),
                 onEachFeature: (feature, layer) => {
                     layer.on('click', () => {
                         cerrarPopup();
                         const props = feature.properties;
-                        
                         document.getElementById('info-codigo').textContent = corregirTexto(props.CODIGOU);
                         document.getElementById('info-fecha').textContent = corregirTexto(props.FEC_DENU);
                         document.getElementById('info-concesion').textContent = corregirTexto(props.CONCESION);
                         document.getElementById('info-titular').textContent = corregirTexto(props.TIT_CONCES);
-                        
                         document.getElementById('info-popup').style.display = 'block';
                         popupAbierto = true;
                     });
                 }
             }).addTo(map);
-            
             capas[zona] = capa;
-        } else {
-            console.warn(`⚠️ No se encontró archivo para zona ${zona}`);
         }
-    }
-    
-    if (!datosCargadosGlobalmente) {
-        console.error('❌ No se pudo cargar ningún dato');
-        mostrarMensaje('No se pudieron cargar los datos. Verifica tu conexión.', 'error');
     }
 }
 
@@ -258,15 +264,13 @@ async function cargarHistorialMensual() {
                     const [lat, lon] = convertirUTM_A_WGS84(coords[0], coords[1], '17s');
                     return L.latLng(lat, lon);
                 },
-                style: (feature) => {
-                    return {
-                        color: feature.properties.TIPO_CAMBIO === 'aparece' ? '#44ff44' : '#ff44ff',
-                        weight: 2,
-                        opacity: 0.8,
-                        fillOpacity: 0.1,
-                        dashArray: '5,5'
-                    };
-                },
+                style: (feature) => ({
+                    color: feature.properties.TIPO_CAMBIO === 'aparece' ? COLORES.HISTORICO_APARECE : COLORES.HISTORICO_DESAPARECE,
+                    weight: 2,
+                    opacity: 0.7,
+                    fillOpacity: 0.1,
+                    dashArray: '5,5'
+                }),
                 onEachFeature: (feature, layer) => {
                     layer.bindPopup(`
                         <b>${corregirTexto(feature.properties.CONCESION)}</b><br>
@@ -276,9 +280,7 @@ async function cargarHistorialMensual() {
                 }
             }).addTo(map);
         }
-    } catch (error) {
-        console.log('No hay historial mensual disponible');
-    }
+    } catch (error) {}
 }
 
 async function cargarCambios() {
@@ -294,10 +296,14 @@ async function cargarCambios() {
                 return;
             }
             
-            cambios.slice(-20).reverse().forEach(c => {
+            // Mostrar últimos 30 cambios
+            cambios.slice(-30).reverse().forEach(c => {
                 const item = document.createElement('div');
                 item.className = `cambio-item ${c.tipo}`;
+                item.style.cursor = 'pointer';
                 item.innerHTML = `<strong>${corregirTexto(c.nombre)}</strong><br><small>${c.tipo} - ${c.fecha}</small>`;
+                // Al hacer clic en el cambio, buscar y centrar el polígono
+                item.onclick = () => buscarYCentrarPoligono(c.codigo, c.nombre);
                 div.appendChild(item);
             });
         }
@@ -306,152 +312,100 @@ async function cargarCambios() {
     }
 }
 
+// Función para buscar y centrar un polígono por su código
+async function buscarYCentrarPoligono(codigo, nombre) {
+    console.log(`🔍 Buscando polígono con código: ${codigo}`);
+    
+    for (const zonaData of todosLosDatos) {
+        const feature = zonaData.features.find(f => f.properties.CODIGOU === codigo);
+        if (feature && feature.geometry.type === 'Polygon') {
+            const coords = feature.geometry.coordinates[0];
+            let sumX = 0, sumY = 0;
+            coords.forEach(c => { sumX += c[0]; sumY += c[1]; });
+            const [lat, lon] = convertirUTM_A_WGS84(sumX/coords.length, sumY/coords.length, zonaData.zona);
+            map.setView([lat, lon], 14);
+            mostrarMensaje(`📍 Centrando: ${corregirTexto(nombre)}`, 'exito');
+            cerrarPopup();
+            return;
+        }
+    }
+    mostrarMensaje(`No se encontró el polígono: ${nombre}`, 'error');
+}
+
 async function buscarConcesion() {
     const texto = document.getElementById('buscador').value.trim().toLowerCase();
-    if (!texto) {
-        alert('Ingrese un texto para buscar');
-        return;
-    }
+    if (!texto) return;
     
-    console.log(`🔍 Buscando: "${texto}"`);
     const resultados = [];
-    
     for (const zonaData of todosLosDatos) {
         for (const feature of zonaData.features) {
             const props = feature.properties;
-            const concesion = (props.CONCESION || '').toLowerCase();
-            const titular = (props.TIT_CONCES || '').toLowerCase();
-            const codigo = (props.CODIGOU || '').toLowerCase();
-            
-            if (concesion.includes(texto) || titular.includes(texto) || codigo.includes(texto)) {
-                resultados.push({
-                    ...feature,
-                    zona: zonaData.zona,
-                    tipo: 'actual',
-                    nombre: props.CONCESION || 'Sin nombre',
-                    titular: props.TIT_CONCES || 'Sin titular'
-                });
+            if ((props.CONCESION || '').toLowerCase().includes(texto) ||
+                (props.TIT_CONCES || '').toLowerCase().includes(texto) ||
+                (props.CODIGOU || '').toLowerCase().includes(texto)) {
+                resultados.push({...feature, zona: zonaData.zona});
             }
-        }
-    }
-    
-    for (const feature of datosHistoricos) {
-        const props = feature.properties;
-        const concesion = (props.CONCESION || '').toLowerCase();
-        const titular = (props.TIT_CONCES || '').toLowerCase();
-        const codigo = (props.CODIGOU || '').toLowerCase();
-        
-        if (concesion.includes(texto) || titular.includes(texto) || codigo.includes(texto)) {
-            resultados.push({
-                ...feature,
-                zona: '17s',
-                tipo: 'historico',
-                nombre: props.CONCESION || 'Sin nombre',
-                titular: props.TIT_CONCES || 'Sin titular'
-            });
         }
     }
     
     const div = document.getElementById('resultados-busqueda');
     div.innerHTML = '';
-    
     if (resultados.length === 0) {
         div.innerHTML = '<div class="resultado-item">No se encontraron resultados</div>';
         return;
     }
     
-    const unicos = [];
-    const codigosVistos = new Set();
-    resultados.forEach(r => {
-        if (!codigosVistos.has(r.properties.CODIGOU)) {
-            codigosVistos.add(r.properties.CODIGOU);
-            unicos.push(r);
-        }
-    });
-    
-    console.log(`✅ ${unicos.length} resultados únicos encontrados`);
-    
-    unicos.slice(0, 25).forEach(r => {
+    resultados.slice(0, 20).forEach(r => {
         const item = document.createElement('div');
-        item.className = 'resultado-item' + (r.tipo === 'historico' ? ' historico' : '');
-        const icono = r.tipo === 'historico' ? '📜 ' : '';
-        item.textContent = `${icono}${corregirTexto(r.nombre)} - ${corregirTexto(r.titular)}`;
+        item.className = 'resultado-item';
+        item.style.cursor = 'pointer';
+        item.textContent = `${corregirTexto(r.properties.CONCESION)} - ${corregirTexto(r.properties.TIT_CONCES)}`;
         item.onclick = () => {
-            cerrarPopup();
             if (r.geometry.type === 'Polygon') {
                 const coords = r.geometry.coordinates[0];
                 let sumX = 0, sumY = 0;
-                coords.forEach(coord => {
-                    sumX += coord[0];
-                    sumY += coord[1];
-                });
-                const centerX = sumX / coords.length;
-                const centerY = sumY / coords.length;
-                const [lat, lon] = convertirUTM_A_WGS84(centerX, centerY, r.zona || '17s');
+                coords.forEach(c => { sumX += c[0]; sumY += c[1]; });
+                const [lat, lon] = convertirUTM_A_WGS84(sumX/coords.length, sumY/coords.length, r.zona);
                 map.setView([lat, lon], 14);
+                cerrarPopup();
             }
         };
         div.appendChild(item);
     });
 }
 
+// CARGA DE ARCHIVOS KML/KMZ
 async function cargarArchivo() {
     const input = document.getElementById('archivo-input');
     const archivo = input.files[0];
-    
     if (!archivo) return;
     
-    const reader = new FileReader();
     const extension = archivo.name.split('.').pop().toLowerCase();
     
-    reader.onload = async function(e) {
-        try {
-            let geojson = null;
-            
-            if (extension === 'geojson' || extension === 'json') {
-                geojson = JSON.parse(e.target.result);
-            } else if (extension === 'kml') {
-                mostrarMensaje('Para KML necesita convertir a GeoJSON', 'info');
-                return;
-            } else if (extension === 'zip' || extension === 'rar') {
-                mostrarMensaje('Extraiga el archivo y suba el .shp', 'info');
-                return;
-            } else if (extension === 'shp') {
-                mostrarMensaje('Use un ZIP con .shp, .dbf, .shx', 'info');
-                return;
-            }
-            
-            if (geojson) {
+    if (extension === 'geojson' || extension === 'json') {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            try {
+                const geojson = JSON.parse(e.target.result);
                 mostrarAreaInteres(geojson);
                 mostrarMensaje(`Archivo cargado: ${archivo.name}`, 'exito');
+            } catch (error) {
+                mostrarMensaje('Error al leer GeoJSON', 'error');
             }
-        } catch (error) {
-            console.error('Error al cargar archivo:', error);
-            mostrarMensaje('Error al procesar el archivo', 'error');
-        }
-    };
-    
-    if (extension === 'kml' || extension === 'geojson' || extension === 'json') {
+        };
         reader.readAsText(archivo);
-    } else {
-        reader.readAsArrayBuffer(archivo);
+    } 
+    else if (extension === 'kml' || extension === 'kmz') {
+        mostrarMensaje('Para KML/KMZ: conviértelo a GeoJSON usando https://kml2geojson.netlify.app/', 'info');
     }
-}
-
-function inicializarDibujo() {
-    console.log('🖌️ Herramientas de dibujo inicializadas');
-    
-    // Agregar el botón de descarga de CSV manualmente
-    const downloadButton = document.createElement('button');
-    downloadButton.textContent = '📥 Descargar CSV del área';
-    downloadButton.onclick = descargarCSVArea;
-    downloadButton.style.marginTop = '10px';
-    downloadButton.style.backgroundColor = '#FF9800';
-    
-    // Buscar el contenedor y agregar el botón
-    const contenedor = document.querySelector('.carga-archivos');
-    if (contenedor) {
-        contenedor.appendChild(downloadButton);
+    else if (extension === 'zip' || extension === 'rar') {
+        mostrarMensaje('Extrae el archivo y sube el .shp o conviértelo a GeoJSON', 'info');
+    }
+    else if (extension === 'shp') {
+        mostrarMensaje('Para shapefiles, comprime todos los archivos (.shp,.dbf,.shx) en un ZIP', 'info');
+    }
+    else {
+        mostrarMensaje('Formato no soportado. Use GeoJSON, KML o KMZ', 'error');
     }
 }
 
@@ -462,37 +416,30 @@ function activarDibujoRectangulo() {
     dibujando = true;
     puntoInicio = null;
     map.getContainer().style.cursor = 'crosshair';
-    mostrarMensaje('Haz clic para iniciar el rectángulo, luego otro clic para completar', 'info');
+    mostrarMensaje('Haz clic para iniciar el rectángulo', 'info');
     
-    map.on('click', function(e) {
+    const clickHandler = (e) => {
         if (!dibujando) return;
-        
         if (!puntoInicio) {
             puntoInicio = e.latlng;
             mostrarMensaje('Ahora haz clic en la esquina opuesta', 'info');
         } else {
-            const puntoFin = e.latlng;
-            const bounds = L.latLngBounds(puntoInicio, puntoFin);
-            
-            if (capaDibujo) {
-                map.removeLayer(capaDibujo);
-            }
-            
+            const bounds = L.latLngBounds(puntoInicio, e.latlng);
+            if (capaDibujo) map.removeLayer(capaDibujo);
             capaDibujo = L.rectangle(bounds, {
                 color: '#ff44ff',
                 weight: 3,
                 opacity: 0.8,
                 fillOpacity: 0.2
             }).addTo(map);
-            
             rectanguloDibujo = bounds;
-            
             dibujando = false;
             map.getContainer().style.cursor = '';
-            map.off('click');
-            mostrarMensaje('Área dibujada correctamente. Click en "Descargar CSV" para obtener los datos.', 'exito');
+            map.off('click', clickHandler);
+            mostrarMensaje('Área dibujada correctamente', 'exito');
         }
-    });
+    };
+    map.on('click', clickHandler);
 }
 
 function limpiarDibujo() {
@@ -500,10 +447,6 @@ function limpiarDibujo() {
         map.removeLayer(capaDibujo);
         capaDibujo = null;
         rectanguloDibujo = null;
-    }
-    if (marcadorBusqueda) {
-        map.removeLayer(marcadorBusqueda);
-        marcadorBusqueda = null;
     }
     dibujando = false;
     map.getContainer().style.cursor = '';
@@ -513,72 +456,48 @@ function limpiarDibujo() {
 
 function descargarCSVArea() {
     if (!rectanguloDibujo) {
-        mostrarMensaje('Primero dibuja un área en el mapa (usa el botón "✏️ Dibujar área")', 'error');
+        mostrarMensaje('Primero dibuja un área en el mapa', 'error');
         return;
     }
     
-    mostrarMensaje('Procesando polígonos en el área...', 'info');
+    mostrarMensaje('Procesando polígonos...', 'info');
     
     const poligonosEnArea = [];
-    
     for (const zonaData of todosLosDatos) {
         for (const feature of zonaData.features) {
             if (feature.geometry.type === 'Polygon') {
                 const coords = feature.geometry.coordinates[0];
-                const centro = coords.reduce((acc, coord) => {
-                    const [lat, lon] = convertirUTM_A_WGS84(coord[0], coord[1], zonaData.zona);
-                    return [acc[0] + lat, acc[1] + lon];
-                }, [0, 0]);
-                
-                const centroLat = centro[0] / coords.length;
-                const centroLon = centro[1] / coords.length;
-                
-                if (rectanguloDibujo.contains([centroLat, centroLon])) {
+                let sumX = 0, sumY = 0;
+                coords.forEach(c => { sumX += c[0]; sumY += c[1]; });
+                const [lon, lat] = convertirUTM_A_WGS84(sumX/coords.length, sumY/coords.length, zonaData.zona);
+                if (rectanguloDibujo.contains([lat, lon])) {
                     poligonosEnArea.push(feature.properties);
                 }
             }
         }
     }
     
-    // Generar CSV con separador punto y coma y caracteres corregidos
     let csv = 'CODIGOU;FEC_DENU;CONCESION;TIT_CONCES\n';
     poligonosEnArea.forEach(p => {
-        const codigo = corregirTextoCSV(p.CODIGOU || '');
-        const fecha = corregirTextoCSV(p.FEC_DENU || '');
-        const concesion = corregirTextoCSV(p.CONCESION || '');
-        const titular = corregirTextoCSV(p.TIT_CONCES || '');
-        csv += `"${codigo}";"${fecha}";"${concesion}";"${titular}"\n`;
+        csv += `"${corregirTextoCSV(p.CODIGOU || '')}";"${corregirTextoCSV(p.FEC_DENU || '')}";"${corregirTextoCSV(p.CONCESION || '')}";"${corregirTextoCSV(p.TIT_CONCES || '')}"\n`;
     });
     
-    // Descargar CSV con codificación UTF-8 BOM
-    const blob = new Blob([new Uint8Array([0xEF, 0xBB, 0xBF]), csv], { type: 'text/csv;charset=utf-8;' });
-    const url = window.URL.createObjectURL(blob);
+    const blob = new Blob(["\uFEFF" + csv], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
     a.download = `poligonos_area_${new Date().toISOString().slice(0,10)}.csv`;
     a.click();
+    URL.revokeObjectURL(url);
     
-    mostrarMensaje(`✅ Se encontraron ${poligonosEnArea.length} polígonos. CSV descargado.`, 'exito');
+    mostrarMensaje(`✅ ${poligonosEnArea.length} polígonos exportados`, 'exito');
 }
 
 function mostrarAreaInteres(geojson) {
-    if (capaAreaInteres) {
-        map.removeLayer(capaAreaInteres);
-    }
-    
+    if (capaAreaInteres) map.removeLayer(capaAreaInteres);
     capaAreaInteres = L.geoJSON(geojson, {
-        style: {
-            color: '#44ff44',
-            weight: 3,
-            opacity: 0.8,
-            fillOpacity: 0.1,
-            dashArray: '5, 10'
-        },
-        onEachFeature: (feature, layer) => {
-            layer.bindPopup('Área de interés cargada');
-        }
+        style: { color: '#44ff44', weight: 3, opacity: 0.8, fillOpacity: 0.1, dashArray: '5,10' }
     }).addTo(map);
-    
     map.fitBounds(capaAreaInteres.getBounds());
 }
 
@@ -592,14 +511,10 @@ function buscarCoordenadas() {
     if (texto) {
         const parts = texto.split(',').map(Number);
         if (parts.length === 2) {
-            cerrarPopup();
             map.setView([parts[0], parts[1]], 12);
-            
-            if (marcadorBusqueda) {
-                map.removeLayer(marcadorBusqueda);
-            }
+            if (marcadorBusqueda) map.removeLayer(marcadorBusqueda);
             marcadorBusqueda = L.marker([parts[0], parts[1]]).addTo(map);
-            mostrarMensaje(`Coordenadas: ${parts[0]}, ${parts[1]}`, 'info');
+            cerrarPopup();
         }
     }
 }
@@ -607,30 +522,19 @@ function buscarCoordenadas() {
 function mostrarMensaje(texto, tipo = 'info') {
     const msgDiv = document.getElementById('mensaje-emergente');
     if (!msgDiv) return;
-    
     msgDiv.textContent = texto;
     msgDiv.style.backgroundColor = tipo === 'error' ? '#ff4444' : (tipo === 'exito' ? '#4CAF50' : '#333');
     msgDiv.style.display = 'block';
-    
-    setTimeout(() => {
-        msgDiv.style.display = 'none';
-    }, 3000);
+    setTimeout(() => { msgDiv.style.display = 'none'; }, 3000);
 }
 
 let marcadorBusqueda;
 let capaAreaInteres;
 
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-        cerrarPopup();
-        limpiarDibujo();
-    }
-});
-
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') cerrarPopup(); });
 document.addEventListener('click', (e) => {
     if (popupAbierto && !e.target.closest('.info-popup') && !e.target.closest('.leaflet-interactive')) {
         cerrarPopup();
     }
 });
-
 document.addEventListener('DOMContentLoaded', initMap);
