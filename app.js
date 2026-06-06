@@ -1,4 +1,3 @@
-
 // Configuración del mapa
 let map;
 let capas = {};
@@ -74,7 +73,6 @@ const baseURL = window.location.hostname.includes('github.io')
     ? '/visor-concesiones-mineras' 
     : '';
 
-// Obtener fecha actual en formato DDMMYY
 const fechaHoy = new Date();
 const dia = fechaHoy.getDate().toString().padStart(2, '0');
 const mes = (fechaHoy.getMonth() + 1).toString().padStart(2, '0');
@@ -82,7 +80,6 @@ const anio = fechaHoy.getFullYear().toString().slice(-2);
 const fechaStr = `${dia}${mes}${anio}`;
 console.log(`📅 Fecha actual: ${fechaStr}`);
 
-// Generar array de fechas de los últimos 10 días
 const fechasUltimosDias = [];
 for (let i = 0; i < 10; i++) {
     const fecha = new Date();
@@ -124,7 +121,6 @@ function obtenerHorariosActuales() {
 const horarios = obtenerHorariosActuales();
 const zonas = ['17s', '18s', '19s'];
 
-// COLORES PERSONALIZABLES
 const COLORES = {
     SIN_CAMBIO: '#888888',
     APARECE: '#4444ff',
@@ -142,8 +138,8 @@ function initMap() {
     }).addTo(map);
     
     agregarBotonesPersonalizados();
-    agregarBotonMonitoreo();      // <--- LÍNEA NUEVA
-    cargarAreaMonitoreada();       // <--- LÍNEA NUEVA
+    agregarBotonMonitoreo();
+    cargarAreaMonitoreada();
     cargarDatos();
     cargarCambios();
     cargarHistorialMensual();
@@ -181,7 +177,6 @@ function agregarBotonesPersonalizados() {
 let areaMonitoreada = null;
 let ultimosCambiosEnviados = new Set();
 
-// Guardar área dibujada para monitoreo
 function guardarAreaParaMonitoreo() {
     if (!rectanguloDibujo) {
         mostrarMensaje('Primero dibuja un área en el mapa', 'error');
@@ -199,8 +194,7 @@ function guardarAreaParaMonitoreo() {
         localStorage.setItem('emailAlertas', email);
         mostrarMensaje(`📧 Alertas se enviarán a: ${email}`, 'exito');
         
-        // CORRECTO: Para confirmación, total=0 y cambios=[]
-        emailjs.send('service_gmail_visor', 'template_visor_alertas', {
+        emailjs.send('service_gmail_visor', 'template_visor_alertas_v2', {
             to_email: email,
             total: 0,
             date: new Date().toLocaleString(),
@@ -216,7 +210,6 @@ function guardarAreaParaMonitoreo() {
     }
 }
 
-// Cargar área guardada al iniciar
 function cargarAreaMonitoreada() {
     const boundsString = localStorage.getItem('areaMonitoreada');
     if (boundsString) {
@@ -235,7 +228,6 @@ function cargarAreaMonitoreada() {
     }
 }
 
-// Verificar cambios y enviar alerta
 async function verificarCambiosYEnviarAlerta() {
     if (!areaMonitoreada) {
         mostrarMensaje('Primero dibuja un área y actívala con "🔔 Monitorear esta área"', 'error');
@@ -258,7 +250,7 @@ async function verificarCambiosYEnviarAlerta() {
         const cambiosNuevos = cambios.slice(-10).reverse();
         
         if (cambiosNuevos.length > 0) {
-            emailjs.send('service_gmail_visor', 'template_visor_alertas', {
+            emailjs.send('service_gmail_visor', 'template_visor_alertas_v2', {
                 to_email: email,
                 total: cambiosNuevos.length,
                 date: new Date().toLocaleString(),
@@ -332,7 +324,6 @@ async function cargarDatos() {
         let fechaCargada = null;
         let horaCargada = null;
         
-        // Buscar en las últimas fechas
         for (const fecha of fechasUltimosDias) {
             for (let h = 23; h >= 0; h--) {
                 const hora = h.toString().padStart(2, '0');
@@ -463,11 +454,10 @@ async function cargarCambios() {
 async function buscarYCentrarPoligono(codigo, nombre, tipo) {
     console.log(`🔍 Buscando polígono: ${codigo} - ${nombre} (${tipo})`);
     
-    // PRIMERO: Buscar en archivos mensuales (desaparecidos_*.geojson o aparecidos_*.geojson)
-    const mesActual = new Date();
-    const mesNumero = (mesActual.getMonth() + 1).toString().padStart(2, '0');
-    const anio = mesActual.getFullYear();
-    const archivoMensual = `${tipo === 'desaparece' ? 'desaparecidos' : 'aparecidos'}_${anio}${mesNumero}.geojson`;
+    const ahora = new Date();
+    const mesNumero = (ahora.getMonth() + 1).toString().padStart(2, '0');
+    const anioActual = ahora.getFullYear();
+    const archivoMensual = `${tipo === 'desaparece' ? 'desaparecidos' : 'aparecidos'}_${anioActual}${mesNumero}.geojson`;
     
     try {
         const response = await fetch(`${baseURL}/data/${archivoMensual}`);
@@ -476,9 +466,7 @@ async function buscarYCentrarPoligono(codigo, nombre, tipo) {
             const feature = geojson.features.find(f => f.properties.CODIGOU === codigo);
             
             if (feature && feature.geometry) {
-                console.log(`✅ Polígono encontrado en archivo mensual: ${archivoMensual}`);
                 let centro = null;
-                
                 if (feature.geometry.type === 'Polygon') {
                     const coords = feature.geometry.coordinates[0];
                     let sumX = 0, sumY = 0;
@@ -497,8 +485,6 @@ async function buscarYCentrarPoligono(codigo, nombre, tipo) {
                 
                 if (centro) {
                     map.setView([centro[0], centro[1]], 14);
-                    
-                    // Crear un borde rojo temporal para el polígono encontrado
                     if (capaDibujo) map.removeLayer(capaDibujo);
                     capaDibujo = L.geoJSON(feature, {
                         style: {
@@ -509,7 +495,6 @@ async function buscarYCentrarPoligono(codigo, nombre, tipo) {
                             dashArray: '5,10'
                         }
                     }).addTo(map);
-                    
                     mostrarMensaje(`📍 Centrando: ${corregirTexto(nombre)}`, 'exito');
                     cerrarPopup();
                     return;
@@ -520,7 +505,6 @@ async function buscarYCentrarPoligono(codigo, nombre, tipo) {
         console.log('No encontrado en archivo mensual, buscando en datos diarios...');
     }
     
-    // SEGUNDO: Buscar en datos diarios (respaldo)
     for (const zonaData of todosLosDatos) {
         const feature = zonaData.features.find(f => f.properties.CODIGOU === codigo);
         if (feature && feature.geometry) {
@@ -605,7 +589,6 @@ async function buscarConcesion() {
     });
 }
 
-// CARGA DE ARCHIVOS
 async function cargarArchivo() {
     const input = document.getElementById('archivo-input');
     const archivo = input.files[0];

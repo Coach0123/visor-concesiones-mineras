@@ -17,10 +17,6 @@
         input, button { width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px; }
         button { background: #4CAF50; color: white; cursor: pointer; }
         button:hover { background: #45a049; }
-        .button-secundario { background: #2196F3; }
-        .button-secundario:hover { background: #1976D2; }
-        .button-peligro { background: #ff4444; }
-        .button-peligro:hover { background: #cc0000; }
         .leyenda-item { display: flex; align-items: center; margin-bottom: 8px; }
         .color-box { width: 20px; height: 20px; margin-right: 10px; border-radius: 4px; }
         .gris { background: #888; }
@@ -33,9 +29,10 @@
         .resultado-item:hover { background: #f0f0f0; }
         .resultado-item.historico { background: #fff0f0; color: #666; }
         #tabla-cambios { max-height: 200px; overflow-y: auto; background: white; border: 1px solid #ddd; padding: 10px; }
-        .cambio-item { padding: 5px; margin-bottom: 5px; border-left: 4px solid; background: #f9f9f9; }
+        .cambio-item { padding: 5px; margin-bottom: 5px; border-left: 4px solid; background: #f9f9f9; cursor: pointer; }
         .cambio-item.aparece { border-left-color: #4444ff; }
         .cambio-item.desaparece { border-left-color: #ff4444; }
+        .cambio-item:hover { background: #e0e0e0; }
         .info-popup { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%,-50%); background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 20px rgba(0,0,0,0.2); z-index: 2000; max-width: 400px; width: 90%; }
         .popup-content { position: relative; }
         .close { position: absolute; top: -10px; right: -10px; font-size: 24px; cursor: pointer; }
@@ -43,24 +40,14 @@
         #info-tabla { width: 100%; border-collapse: collapse; margin-top: 15px; }
         #info-tabla th, #info-tabla td { padding: 8px; text-align: left; border-bottom: 1px solid #ddd; }
         #info-tabla th { background: #f2f2f2; width: 40%; }
-        .dibujo-activo { cursor: crosshair !important; }
-        .mensaje-emergente { 
-            position: fixed; 
-            bottom: 20px; 
-            right: 20px; 
-            background: #333; 
-            color: white; 
-            padding: 10px 20px; 
-            border-radius: 5px; 
-            z-index: 3000;
-            animation: fadeInOut 3s ease-in-out;
-        }
+        .mensaje-emergente { position: fixed; bottom: 20px; right: 20px; background: #333; color: white; padding: 10px 20px; border-radius: 5px; z-index: 3000; animation: fadeInOut 3s ease-in-out; }
         @keyframes fadeInOut {
             0% { opacity: 0; transform: translateY(20px); }
             10% { opacity: 1; transform: translateY(0); }
             90% { opacity: 1; transform: translateY(0); }
             100% { opacity: 0; transform: translateY(-20px); }
         }
+        .dibujo-activo { cursor: crosshair !important; }
     </style>
 </head>
 <body>
@@ -95,10 +82,6 @@
                     <button onclick="buscarCoordenadas()" style="width: auto; padding: 8px 15px;">Ir</button>
                 </div>
                 
-                <button onclick="activarDibujoRectangulo()" class="button-secundario" style="margin-top: 5px;">✏️ Dibujar área</button>
-                <button onclick="enviarAreaPorCorreo()" class="button-secundario" style="margin-top: 5px;">📧 Enviar área por correo</button>
-                <button onclick="limpiarDibujo()" class="button-peligro" style="margin-top: 5px;">🗑️ Limpiar dibujo</button>
-                
                 <div style="margin-top: 10px; font-size: 12px; color: #666;">
                     <p>Formatos soportados: .geojson, .kml, .kmz, .zip, .rar</p>
                 </div>
@@ -110,7 +93,7 @@
             </div>
             
             <div style="margin-top: 15px; font-size: 11px; color: #999; text-align: center;">
-                Actualización cada hora · Datos INGEMMET
+                Actualización cada 30 min · Datos INGEMMET
             </div>
         </div>
         
@@ -124,12 +107,12 @@
             <span class="close" onclick="cerrarPopup()">&times;</span>
             <h3>Detalles de la Concesión</h3>
             <table id="info-tabla">
-                <tr><th>Código</th><td id="info-codigo"></td></tr>
-                <tr><th>Fecha Denuncio</th><td id="info-fecha"></td></tr>
-                <tr><th>Concesión</th><td id="info-concesion"></td></tr>
-                <tr><th>Titular</th><td id="info-titular"></td></tr>
-                <tr id="fila-tipo-cambio" style="display: none;"><th>Tipo</th><td id="info-tipo-cambio"></td></tr>
-                <tr id="fila-fecha-cambio" style="display: none;"><th>Fecha cambio</th><td id="info-fecha-cambio"></td></tr>
+                <tr><th>Código</th><td id="info-codigo">NonNullative
+                <tr><th>Fecha Denuncio</th><td id="info-fecha">NonNullative
+                <tr><th>Concesión</th><td id="info-concesion">NonNullative
+                <tr><th>Titular</th><td id="info-titular">NonNullative
+                <tr id="fila-tipo-cambio" style="display: none;"><th>Tipo</th><td id="info-tipo-cambio">NonNullative
+                <tr id="fila-fecha-cambio" style="display: none;"><th>Fecha cambio</th><td id="info-fecha-cambio">NonNullative
             </table>
         </div>
     </div>
@@ -139,14 +122,11 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.8.0/proj4.js"></script>
     <script src="app.js"></script>
-
-
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script>
-   // Reemplaza con tu Public Key real de EmailJS
-   emailjs.init("_PBGYuyGPuKRPK-_F");
-</script>
-
-
+    
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        emailjs.init("_PBGYuyGPuKRPK-_F");
+    </script>
 </body>
 </html>

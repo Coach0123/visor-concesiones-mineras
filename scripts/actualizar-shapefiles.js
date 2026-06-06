@@ -50,16 +50,12 @@ async function actualizarArchivoMensual(tipo, nuevasFeatures) {
   
   let featuresExistentes = [];
   
-  // Cargar archivo existente si existe
   if (await fs.pathExists(rutaArchivo)) {
     const geojsonExistente = await fs.readJson(rutaArchivo);
     featuresExistentes = geojsonExistente.features || [];
   }
   
-  // Crear mapa de códigos existentes para evitar duplicados
   const codigosExistentes = new Set(featuresExistentes.map(f => f.properties.CODIGOU));
-  
-  // Agregar nuevas features que no existan
   const nuevasFeaturesUnicas = nuevasFeatures.filter(f => !codigosExistentes.has(f.properties.CODIGOU));
   
   if (nuevasFeaturesUnicas.length === 0) return;
@@ -72,7 +68,7 @@ async function actualizarArchivoMensual(tipo, nuevasFeatures) {
   };
   
   await fs.writeJson(rutaArchivo, geojsonMensual, { spaces: 2 });
-  console.log(`📁 ${tipo}: ${nuevasFeaturesUnicas.length} nuevos polígonos agregados (total: ${todasFeatures.length})`);
+  console.log(`📁 ${tipo}: +${nuevasFeaturesUnicas.length} (total: ${todasFeatures.length})`);
 }
 
 async function limpiarArchivosMesAnterior() {
@@ -85,13 +81,11 @@ async function limpiarArchivosMesAnterior() {
   
   for (const archivo of archivos) {
     if (archivo.startsWith('desaparecidos_') || archivo.startsWith('aparecidos_')) {
-      // Extraer año y mes del nombre del archivo
       const match = archivo.match(/(desaparecidos|aparecidos)_(\d{4})(\d{2})\.geojson/);
       if (match) {
         const anioArchivo = parseInt(match[2]);
-        const mesArchivo = parseInt(match[3]) - 1; // mes en JS es 0-11
+        const mesArchivo = parseInt(match[3]) - 1;
         
-        // Si es de un mes anterior, eliminarlo
         if (anioArchivo < anioActual || (anioArchivo === anioActual && mesArchivo < mesActual)) {
           await fs.remove(path.join(dataDir, archivo));
           console.log(`🗑️ Eliminado archivo antiguo: ${archivo}`);
@@ -118,25 +112,10 @@ async function descargarYProcesar() {
   const dataDir = path.join(__dirname, '..', 'data');
   await fs.ensureDir(dataDir);
   
-  // Limpiar archivos de meses anteriores
   await limpiarArchivosMesAnterior();
   
-  // Diccionario para almacenar cambios del mes
   const desaparecidosDelMes = [];
   const aparecidosDelMes = [];
-  
-  // Obtener archivo anterior para comparar (el más reciente antes de este)
-  let archivoAnterior = null;
-  const archivosExistentes = await fs.readdir(dataDir);
-  const archivosGeoJSON = archivosExistentes.filter(f => 
-    f.match(/^17s_\d{6}_\d{2}\.geojson$/) || 
-    f.match(/^18s_\d{6}_\d{2}\.geojson$/) || 
-    f.match(/^19s_\d{6}_\d{2}\.geojson$/)
-  );
-  archivosGeoJSON.sort().reverse();
-  if (archivosGeoJSON.length > 0) {
-    archivoAnterior = archivosGeoJSON[0];
-  }
   
   for (const zona of ZONAS) {
     try {
@@ -223,7 +202,6 @@ async function descargarYProcesar() {
     }
   }
   
-  // Generar cambios y actualizar archivos mensuales
   await generarRegistroCambiosYCrearMensuales(desaparecidosDelMes, aparecidosDelMes);
   
   console.log('\n🎉 PROCESO COMPLETADO');
@@ -259,7 +237,6 @@ async function generarRegistroCambiosYCrearMensuales(desaparecidosDelMes, aparec
         const codigosActual = new Set(actual.features.map(f => f.properties.CODIGOU));
         const codigosAnterior = new Set(anterior.features.map(f => f.properties.CODIGOU));
         
-        // Desaparecidos (estaban antes, no están ahora)
         for (const codigo of codigosAnterior) {
           if (!codigosActual.has(codigo)) {
             const feature = anterior.features.find(f => f.properties.CODIGOU === codigo);
@@ -277,7 +254,6 @@ async function generarRegistroCambiosYCrearMensuales(desaparecidosDelMes, aparec
           }
         }
         
-        // Aparecidos (no estaban antes, están ahora)
         for (const codigo of codigosActual) {
           if (!codigosAnterior.has(codigo)) {
             const feature = actual.features.find(f => f.properties.CODIGOU === codigo);
@@ -300,7 +276,6 @@ async function generarRegistroCambiosYCrearMensuales(desaparecidosDelMes, aparec
     console.error('Error generando cambios:', error.message);
   }
   
-  // Guardar cambios.json
   if (cambios.length > 0) {
     const cambiosPath = path.join(dataDir, 'cambios.json');
     let cambiosExistentes = [];
@@ -312,12 +287,43 @@ async function generarRegistroCambiosYCrearMensuales(desaparecidosDelMes, aparec
     console.log(`📊 Registrados ${cambios.length} cambios (total: ${cambiosExistentes.length})`);
   }
   
-  // Actualizar archivos mensuales
+  const ahora = new Date();
+  const mesNumero = (ahora.getMonth() + 1).toString().padStart(2, '0');
+  const anio = ahora.getFullYear();
+  const mesStr = `${anio}${mesNumero}`;
+  
   if (desaparecidosDelMes.length > 0) {
-    await actualizarArchivoMensual('desaparecidos', desaparecidosDelMes);
+    const desaparecidosPath = path.join(dataDir, `desaparecidos_${mesStr}.geojson`);
+    let existentes = [];
+    if (await fs.pathExists(desaparecidosPath)) {
+      const existente = await fs.readJson(desaparecidosPath);
+      existentes = existente.features;
+    }
+    const codigosExistentes = new Set(existentes.map(f => f.properties.CODIGOU));
+    const nuevos = desaparecidosDelMes.filter(f => !codigosExistentes.has(f.properties.CODIGOU));
+    if (nuevos.length > 0) {
+      const todasFeatures = [...existentes, ...nuevos];
+      const geojson = { type: 'FeatureCollection', features: todasFeatures };
+      await fs.writeJson(desaparecidosPath, geojson, { spaces: 2 });
+      console.log(`📁 Desaparecidos: +${nuevos.length} (total: ${todasFeatures.length})`);
+    }
   }
+  
   if (aparecidosDelMes.length > 0) {
-    await actualizarArchivoMensual('aparecidos', aparecidosDelMes);
+    const aparecidosPath = path.join(dataDir, `aparecidos_${mesStr}.geojson`);
+    let existentes = [];
+    if (await fs.pathExists(aparecidosPath)) {
+      const existente = await fs.readJson(aparecidosPath);
+      existentes = existente.features;
+    }
+    const codigosExistentes = new Set(existentes.map(f => f.properties.CODIGOU));
+    const nuevos = aparecidosDelMes.filter(f => !codigosExistentes.has(f.properties.CODIGOU));
+    if (nuevos.length > 0) {
+      const todasFeatures = [...existentes, ...nuevos];
+      const geojson = { type: 'FeatureCollection', features: todasFeatures };
+      await fs.writeJson(aparecidosPath, geojson, { spaces: 2 });
+      console.log(`📁 Aparecidos: +${nuevos.length} (total: ${todasFeatures.length})`);
+    }
   }
 }
 
