@@ -1,0 +1,31 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-69.52594877925428, -16.29985294218083]
+      },
+      "properties": {
+        "CODIGOU": "050009505",
+        "FEC_DENU": "Thu Jun 02 2005 00:00:00 GMT+0000",
+        "CONCESION": "CHILACHAMBILLA2",
+        "TIT_CONCES": "KUSKALLA MINING COMPANY SOCIEDAD ANONIMA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-69.51303208316524, -16.329026362724143]
+      },
+      "properties": {
+        "CODIGOU": "010185022",
+        "FEC_DENU": "Thu Jul 14 2022 00:00:00 GMT+0000",
+        "CONCESION": "REX II",
+        "TIT_CONCES": "S.M.R.L. REX II"
+      }
+    }
+  ]
+}

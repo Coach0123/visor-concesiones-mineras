@@ -26,6 +26,19 @@
         "CONCESION": "SANTA ROSA DE LIMA 2026",
         "TIT_CONCES": "WALTER GARCIA LIMA"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-69.52599694837043, -16.317932457700174]
+      },
+      "properties": {
+        "CODIGOU": "050009405",
+        "FEC_DENU": "Thu Jun 02 2005 00:00:00 GMT+0000",
+        "CONCESION": "CHILACHAMBILLA 1",
+        "TIT_CONCES": "KUSKALLA MINING COMPANY SOCIEDAD ANONIMA"
+      }
     }
   ]
 }

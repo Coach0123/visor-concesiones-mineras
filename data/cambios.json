@@ -1,4 +1,7 @@
 [
   {"fecha":"070626_15","codigo":"040013823","nombre":"FENIX DE ORO BC","tipo":"desaparece"},
-  {"fecha":"070626_15","codigo":"040029426","nombre":"SANTA ROSA DE LIMA 2026","tipo":"desaparece"}
+  {"fecha":"070626_15","codigo":"040029426","nombre":"SANTA ROSA DE LIMA 2026","tipo":"desaparece"},
+  {"fecha":"070626_15","codigo":"050009505","nombre":"CHILACHAMBILLA2","tipo":"aparece"},
+  {"fecha":"070626_15","codigo":"050009405","nombre":"CHILACHAMBILLA 1","tipo":"desaparece"},
+  {"fecha":"070626_15","codigo":"010185022","nombre":"REX II","tipo":"aparece"}
 ]
