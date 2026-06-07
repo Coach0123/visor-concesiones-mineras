@@ -1,0 +1,57 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              256000,
+              8523000
+            ],
+            [
+              256000,
+              8521000
+            ],
+            [
+              255000,
+              8521000
+            ],
+            [
+              255000,
+              8520000
+            ],
+            [
+              254000,
+              8520000
+            ],
+            [
+              254000,
+              8522000
+            ],
+            [
+              255000,
+              8522000
+            ],
+            [
+              255000,
+              8523000
+            ],
+            [
+              256000,
+              8523000
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "CODIGOU": "040013823",
+        "FEC_DENU": "Tue Jul 18 2023 00:00:00 GMT+0000 (Coordinated Universal Time)",
+        "CONCESION": "FENIX DE ORO BC",
+        "TIT_CONCES": "KLEN ALCIDES CCARITA MEZA"
+      }
+    }
+  ]
+}

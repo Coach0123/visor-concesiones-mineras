@@ -1,5 +1,11 @@
 [
   {
+    "fecha": "070626_15",
+    "codigo": "040013823",
+    "nombre": "FENIX DE ORO BC",
+    "tipo": "desaparece"
+  },
+  {
     "fecha": "150526_19",
     "codigo": "010301926",
     "nombre": "CHUÑONA 1",
@@ -2992,11 +2998,5 @@
     "codigo": "080014425",
     "nombre": "GAVILAN AN",
     "tipo": "desaparece"
-  },
-  {
-    "fecha": "300526_13",
-    "codigo": "580006326",
-    "nombre": "MARIO G3",
-    "tipo": "aparece"
   }
 ]
