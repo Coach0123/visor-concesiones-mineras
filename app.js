@@ -9,6 +9,7 @@ let capaDibujo = null;
 let marcadorBusqueda;
 let capaAreaInteres;
 
+// Función para corregir caracteres especiales
 function corregirTexto(texto) {
     if (!texto || texto === 'N/A') return 'N/A';
     
@@ -45,6 +46,7 @@ function corregirTextoCSV(texto) {
     return t;
 }
 
+// Definir proyecciones UTM
 proj4.defs([
     ['EPSG:32717', '+proj=utm +zone=17 +south +datum=WGS84 +units=m +no_defs'],
     ['EPSG:32718', '+proj=utm +zone=18 +south +datum=WGS84 +units=m +no_defs'],
@@ -76,6 +78,7 @@ const dia = fechaHoy.getDate().toString().padStart(2, '0');
 const mes = (fechaHoy.getMonth() + 1).toString().padStart(2, '0');
 const anio = fechaHoy.getFullYear().toString().slice(-2);
 const fechaStr = `${dia}${mes}${anio}`;
+console.log(`📅 Fecha actual: ${fechaStr}`);
 
 const fechasUltimosDias = [];
 for (let i = 0; i < 10; i++) {
@@ -86,6 +89,7 @@ for (let i = 0; i < 10; i++) {
     const a = fecha.getFullYear().toString().slice(-2);
     fechasUltimosDias.push(`${d}${m}${a}`);
 }
+console.log(`📅 Buscando en fechas: ${fechasUltimosDias.join(', ')}`);
 
 function obtenerHorariosActuales() {
     const ahora = new Date();
@@ -311,9 +315,11 @@ async function buscarYCentrarPoligono(codigo, nombre, tipo) {
     console.log(`🔍 Buscando: ${codigo} - ${nombre} (${tipo})`);
     
     const ahora = new Date();
-    const mesNumero = (ahora.getMonth() + 1).toString().padStart(2, '0');
+    const mesActual = (ahora.getMonth() + 1).toString().padStart(2, '0');
     const anioActual = ahora.getFullYear();
-    const archivoMensual = `${tipo === 'desaparece' ? 'desaparecidos' : 'aparecidos'}_${anioActual}${mesNumero}.geojson`;
+    const archivoMensual = `${tipo === 'desaparece' ? 'desaparecidos' : 'aparecidos'}_${mesActual}_${anioActual}.geojson`;
+    
+    console.log(`📁 Buscando en: ${archivoMensual}`);
     
     try {
         const response = await fetch(`${baseURL}/data/${archivoMensual}`);
@@ -321,15 +327,33 @@ async function buscarYCentrarPoligono(codigo, nombre, tipo) {
             const geojson = await response.json();
             const feature = geojson.features.find(f => f.properties.CODIGOU === codigo);
             
-            if (feature && feature.geometry && feature.geometry.coordinates) {
-                const coords = feature.geometry.coordinates;
+            if (feature && feature.geometry) {
                 let lat, lon;
-                if (Array.isArray(coords[0])) {
-                    lat = coords[0][1];
-                    lon = coords[0][0];
+                
+                if (feature.geometry.type === 'Polygon') {
+                    const coords = feature.geometry.coordinates[0];
+                    let sumLon = 0, sumLat = 0;
+                    coords.forEach(c => {
+                        sumLon += c[0];
+                        sumLat += c[1];
+                    });
+                    lon = sumLon / coords.length;
+                    lat = sumLat / coords.length;
+                } else if (feature.geometry.type === 'MultiPolygon') {
+                    const coords = feature.geometry.coordinates[0][0];
+                    let sumLon = 0, sumLat = 0;
+                    coords.forEach(c => {
+                        sumLon += c[0];
+                        sumLat += c[1];
+                    });
+                    lon = sumLon / coords.length;
+                    lat = sumLat / coords.length;
+                } else if (feature.geometry.type === 'Point') {
+                    lon = feature.geometry.coordinates[0];
+                    lat = feature.geometry.coordinates[1];
                 } else {
-                    lat = coords[1];
-                    lon = coords[0];
+                    mostrarMensaje(`Geometría no soportada: ${nombre}`, 'error');
+                    return;
                 }
                 
                 map.setView([lat, lon], 14);
@@ -349,7 +373,7 @@ async function buscarYCentrarPoligono(codigo, nombre, tipo) {
             }
         }
     } catch (error) {
-        console.log('No encontrado en archivo mensual');
+        console.log(`Error cargando ${archivoMensual}:`, error);
     }
     
     mostrarMensaje(`No se encontró el polígono: ${nombre}`, 'error');
