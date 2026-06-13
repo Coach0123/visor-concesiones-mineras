@@ -13,6 +13,13 @@ const URLS = {
   '19S': 'https://geocatminapp.ingemmet.gob.pe/complementos/Descargas/DESCARGA_WGS84/DESCARGA/CMI_WGS84_19S.zip'
 };
 
+// Mapa de zonas UTM a EPSG
+const ZONA_EPSG = {
+  '17s': 'EPSG:32717',
+  '18s': 'EPSG:32718',
+  '19s': 'EPSG:32719'
+};
+
 function corregirCaracteres(texto) {
   if (!texto) return '';
   const reemplazos = {
@@ -30,54 +37,46 @@ function corregirCaracteres(texto) {
   return textoCorregido;
 }
 
-function convertirGeometriaWGS84(geometry, zona) {
-  if (!geometry) return null;
-  
-  try {
-    if (geometry.type === 'Polygon') {
-      const coords = geometry.coordinates[0];
-      const coordsWGS84 = coords.map(c => {
-        const [lat, lon] = convertirUTM_A_WGS84(c[0], c[1], zona);
-        return [lon, lat];
-      });
-      return { type: 'Polygon', coordinates: [coordsWGS84] };
-    } else if (geometry.type === 'MultiPolygon') {
-      const polygons = geometry.coordinates.map(poly => {
-        return poly.map(ring => {
-          return ring.map(c => {
-            const [lat, lon] = convertirUTM_A_WGS84(c[0], c[1], zona);
-            return [lon, lat];
-          });
-        });
-      });
-      return { type: 'MultiPolygon', coordinates: polygons };
-    }
-  } catch (e) {
-    console.error('Error convirtiendo geometría:', e);
-  }
-  return null;
-}
-
 function convertirUTM_A_WGS84(x, y, zona) {
   try {
-    let projSrc;
-    switch(zona) {
-      case '17s': projSrc = 'EPSG:32717'; break;
-      case '18s': projSrc = 'EPSG:32718'; break;
-      case '19s': projSrc = 'EPSG:32719'; break;
-      default: return [y, x];
-    }
+    const epsg = ZONA_EPSG[zona];
+    if (!epsg) return [y, x];
+    
     const proj4 = require('proj4');
     proj4.defs([
       ['EPSG:32717', '+proj=utm +zone=17 +south +datum=WGS84 +units=m +no_defs'],
       ['EPSG:32718', '+proj=utm +zone=18 +south +datum=WGS84 +units=m +no_defs'],
       ['EPSG:32719', '+proj=utm +zone=19 +south +datum=WGS84 +units=m +no_defs']
     ]);
-    const wgs84 = proj4(projSrc, 'EPSG:4326', [x, y]);
+    const wgs84 = proj4(epsg, 'EPSG:4326', [x, y]);
     return [wgs84[1], wgs84[0]];
   } catch (e) {
     return [y, x];
   }
+}
+
+function convertirGeometriaWGS84(geometry, zona) {
+  if (!geometry) return null;
+  
+  try {
+    function convertirCoordenada(c) {
+      const [lat, lon] = convertirUTM_A_WGS84(c[0], c[1], zona);
+      return [lon, lat]; // IMPORTANTE: [longitud, latitud] para GeoJSON
+    }
+    
+    if (geometry.type === 'Polygon') {
+      const rings = geometry.coordinates.map(ring => ring.map(convertirCoordenada));
+      return { type: 'Polygon', coordinates: rings };
+    } else if (geometry.type === 'MultiPolygon') {
+      const polygons = geometry.coordinates.map(poly => 
+        poly.map(ring => ring.map(convertirCoordenada))
+      );
+      return { type: 'MultiPolygon', coordinates: polygons };
+    }
+  } catch (e) {
+    console.error('Error convirtiendo geometría:', e);
+  }
+  return null;
 }
 
 async function descargarYProcesar() {
@@ -111,9 +110,12 @@ async function descargarYProcesar() {
   const aparecidos = [];
   
   for (const zona of ZONAS) {
+    const zonaLower = zona.toLowerCase();
+    const epsg = ZONA_EPSG[zonaLower];
+    
     try {
       console.log(`\n${'='.repeat(50)}`);
-      console.log(`📥 PROCESANDO ZONA ${zona} - HORA ${horaActual}:00`);
+      console.log(`📥 PROCESANDO ZONA ${zona} (${epsg}) - HORA ${horaActual}:00`);
       console.log(`${'='.repeat(50)}`);
       
       console.log(`1. Descargando archivo...`);
@@ -177,11 +179,11 @@ async function descargarYProcesar() {
         features: features
       };
       
-      const nombreArchivo = `${zona.toLowerCase()}_${fechaStr}_${horaActual}.geojson`;
+      const nombreArchivo = `${zonaLower}_${fechaStr}_${horaActual}.geojson`;
       const outputPath = path.join(dataDir, nombreArchivo);
       await fs.writeJson(outputPath, geojson, { spaces: 0 });
       
-      nuevosArchivos.push({ zona: zona.toLowerCase(), archivo: nombreArchivo, features });
+      nuevosArchivos.push({ zona: zonaLower, archivo: nombreArchivo, features });
       
       await fs.remove(zipPath);
       await fs.remove(extractPath);
@@ -212,11 +214,13 @@ async function descargarYProcesar() {
             const feature = anteriorData.features.find(f => f.properties.CODIGOU === codigo);
             if (feature && feature.geometry) {
               const geometriaWGS84 = convertirGeometriaWGS84(feature.geometry, nuevo.zona);
-              desaparecidos.push({
-                type: 'Feature',
-                geometry: geometriaWGS84,
-                properties: feature.properties
-              });
+              if (geometriaWGS84) {
+                desaparecidos.push({
+                  type: 'Feature',
+                  geometry: geometriaWGS84,
+                  properties: feature.properties
+                });
+              }
             }
           }
         }
@@ -227,11 +231,13 @@ async function descargarYProcesar() {
             const feature = nuevo.features.find(f => f.properties.CODIGOU === codigo);
             if (feature && feature.geometry) {
               const geometriaWGS84 = convertirGeometriaWGS84(feature.geometry, nuevo.zona);
-              aparecidos.push({
-                type: 'Feature',
-                geometry: geometriaWGS84,
-                properties: feature.properties
-              });
+              if (geometriaWGS84) {
+                aparecidos.push({
+                  type: 'Feature',
+                  geometry: geometriaWGS84,
+                  properties: feature.properties
+                });
+              }
             }
           }
         }
@@ -257,10 +263,13 @@ async function descargarYProcesar() {
   await fs.writeJson(cambiosPath, cambiosActualizados, { spaces: 2 });
   console.log(`\n📊 Cambios detectados: ${nuevosCambios.length} (${desaparecidos.length} desaparecidos, ${aparecidos.length} aparecidos)`);
   
-  // Guardar archivo de desaparecidos con GEOMETRÍAS COMPLETAS
-  const mesNumero = fechaStr.slice(2, 4) + fechaStr.slice(0, 2);
+  // Guardar archivo de desaparecidos con nombre: desaparecidos_MM_YYYY.geojson
+  const mes = (fechaHoy.getMonth() + 1).toString().padStart(2, '0');
+  const anio = fechaHoy.getFullYear();
+  const nombreMensual = `${mes}_${anio}`;
+  
   if (desaparecidos.length > 0) {
-    const desaparecidosPath = path.join(dataDir, `desaparecidos_${mesNumero}.geojson`);
+    const desaparecidosPath = path.join(dataDir, `desaparecidos_${nombreMensual}.geojson`);
     let existentes = [];
     if (await fs.pathExists(desaparecidosPath)) {
       const existente = await fs.readJson(desaparecidosPath);
@@ -274,13 +283,12 @@ async function descargarYProcesar() {
       const todasFeatures = [...existentes, ...nuevasFeatures];
       const geojson = { type: 'FeatureCollection', features: todasFeatures };
       await fs.writeJson(desaparecidosPath, geojson, { spaces: 2 });
-      console.log(`📁 Desaparecidos: +${nuevasFeatures.length} (total: ${todasFeatures.length})`);
+      console.log(`📁 Desaparecidos_${nombreMensual}: +${nuevasFeatures.length} (total: ${todasFeatures.length})`);
     }
   }
   
-  // Guardar archivo de aparecidos con GEOMETRÍAS COMPLETAS
   if (aparecidos.length > 0) {
-    const aparecidosPath = path.join(dataDir, `aparecidos_${mesNumero}.geojson`);
+    const aparecidosPath = path.join(dataDir, `aparecidos_${nombreMensual}.geojson`);
     let existentes = [];
     if (await fs.pathExists(aparecidosPath)) {
       const existente = await fs.readJson(aparecidosPath);
@@ -294,7 +302,7 @@ async function descargarYProcesar() {
       const todasFeatures = [...existentes, ...nuevasFeatures];
       const geojson = { type: 'FeatureCollection', features: todasFeatures };
       await fs.writeJson(aparecidosPath, geojson, { spaces: 2 });
-      console.log(`📁 Aparecidos: +${nuevasFeatures.length} (total: ${todasFeatures.length})`);
+      console.log(`📁 Aparecidos_${nombreMensual}: +${nuevasFeatures.length} (total: ${todasFeatures.length})`);
     }
   }
   
