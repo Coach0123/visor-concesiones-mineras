@@ -40,7 +40,10 @@ function corregirCaracteres(texto) {
 function convertirUTM_A_WGS84(x, y, zona) {
   try {
     const epsg = ZONA_EPSG[zona];
-    if (!epsg) return [y, x];
+    if (!epsg) {
+      console.log(`⚠️ Zona desconocida: ${zona}`);
+      return [y, x];
+    }
     
     const proj4 = require('proj4');
     proj4.defs([
@@ -48,9 +51,18 @@ function convertirUTM_A_WGS84(x, y, zona) {
       ['EPSG:32718', '+proj=utm +zone=18 +south +datum=WGS84 +units=m +no_defs'],
       ['EPSG:32719', '+proj=utm +zone=19 +south +datum=WGS84 +units=m +no_defs']
     ]);
-    const wgs84 = proj4(epsg, 'EPSG:4326', [x, y]);
-    return [wgs84[1], wgs84[0]];
+    
+    // Convertir UTM (x, y) a WGS84 (lon, lat)
+    const [lon, lat] = proj4(epsg, 'EPSG:4326', [x, y]);
+    
+    // Verificar que la conversión es razonable (dentro de Sudamérica)
+    if (lon < -85 || lon > -65) {
+      console.log(`⚠️ Posible error de zona: ${zona} (${x},${y}) → (${lon},${lat})`);
+    }
+    
+    return [lat, lon]; // [latitud, longitud] para uso interno
   } catch (e) {
+    console.error(`Error en conversión UTM: ${x},${y} (${zona})`, e.message);
     return [y, x];
   }
 }
@@ -61,17 +73,21 @@ function convertirGeometriaWGS84(geometry, zona) {
   try {
     function convertirCoordenada(c) {
       const [lat, lon] = convertirUTM_A_WGS84(c[0], c[1], zona);
-      return [lon, lat]; // IMPORTANTE: [longitud, latitud] para GeoJSON
+      return [lon, lat]; // IMPORTANTE: GeoJSON espera [lon, lat]
     }
     
     if (geometry.type === 'Polygon') {
-      const rings = geometry.coordinates.map(ring => ring.map(convertirCoordenada));
-      return { type: 'Polygon', coordinates: rings };
+      return {
+        type: 'Polygon',
+        coordinates: geometry.coordinates.map(ring => ring.map(convertirCoordenada))
+      };
     } else if (geometry.type === 'MultiPolygon') {
-      const polygons = geometry.coordinates.map(poly => 
-        poly.map(ring => ring.map(convertirCoordenada))
-      );
-      return { type: 'MultiPolygon', coordinates: polygons };
+      return {
+        type: 'MultiPolygon',
+        coordinates: geometry.coordinates.map(poly => 
+          poly.map(ring => ring.map(convertirCoordenada))
+        )
+      };
     }
   } catch (e) {
     console.error('Error convirtiendo geometría:', e);
