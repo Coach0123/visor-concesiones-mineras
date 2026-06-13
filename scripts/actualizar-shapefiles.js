@@ -30,6 +30,34 @@ function corregirCaracteres(texto) {
   return textoCorregido;
 }
 
+function convertirGeometriaWGS84(geometry, zona) {
+  if (!geometry) return null;
+  
+  try {
+    if (geometry.type === 'Polygon') {
+      const coords = geometry.coordinates[0];
+      const coordsWGS84 = coords.map(c => {
+        const [lat, lon] = convertirUTM_A_WGS84(c[0], c[1], zona);
+        return [lon, lat];
+      });
+      return { type: 'Polygon', coordinates: [coordsWGS84] };
+    } else if (geometry.type === 'MultiPolygon') {
+      const polygons = geometry.coordinates.map(poly => {
+        return poly.map(ring => {
+          return ring.map(c => {
+            const [lat, lon] = convertirUTM_A_WGS84(c[0], c[1], zona);
+            return [lon, lat];
+          });
+        });
+      });
+      return { type: 'MultiPolygon', coordinates: polygons };
+    }
+  } catch (e) {
+    console.error('Error convirtiendo geometría:', e);
+  }
+  return null;
+}
+
 function convertirUTM_A_WGS84(x, y, zona) {
   try {
     let projSrc;
@@ -52,29 +80,6 @@ function convertirUTM_A_WGS84(x, y, zona) {
   }
 }
 
-function obtenerCentroWGS84(feature, zona) {
-  try {
-    let coords;
-    if (feature.geometry.type === 'Polygon') {
-      coords = feature.geometry.coordinates[0];
-    } else if (feature.geometry.type === 'MultiPolygon') {
-      coords = feature.geometry.coordinates[0][0];
-    } else {
-      return null;
-    }
-    
-    let sumX = 0, sumY = 0;
-    coords.forEach(c => {
-      const [lat, lon] = convertirUTM_A_WGS84(c[0], c[1], zona);
-      sumX += lon;
-      sumY += lat;
-    });
-    return [sumX / coords.length, sumY / coords.length];
-  } catch (e) {
-    return null;
-  }
-}
-
 async function descargarYProcesar() {
   console.log('🚀 Iniciando proceso de actualización automática...');
   
@@ -92,7 +97,7 @@ async function descargarYProcesar() {
   const dataDir = path.join(__dirname, '..', 'data');
   await fs.ensureDir(dataDir);
   
-  // Obtener el archivo anterior para comparar (el más reciente)
+  // Obtener el archivo anterior para comparar
   const archivosExistentes = await fs.readdir(dataDir);
   const archivosGeoJSON = archivosExistentes.filter(f => 
     f.match(/^\d{2}s_\d{6}_\d{2}\.geojson$/)
@@ -205,16 +210,11 @@ async function descargarYProcesar() {
         for (const codigo of codigosAnterior) {
           if (!codigosActual.has(codigo)) {
             const feature = anteriorData.features.find(f => f.properties.CODIGOU === codigo);
-            if (feature) {
-              const centro = obtenerCentroWGS84(feature, nuevo.zona);
+            if (feature && feature.geometry) {
+              const geometriaWGS84 = convertirGeometriaWGS84(feature.geometry, nuevo.zona);
               desaparecidos.push({
-                codigo: codigo,
-                nombre: feature.properties.CONCESION || '',
-                tipo: 'desaparece',
-                geometry: {
-                  type: 'Point',
-                  coordinates: centro || [0, 0]
-                },
+                type: 'Feature',
+                geometry: geometriaWGS84,
                 properties: feature.properties
               });
             }
@@ -225,16 +225,11 @@ async function descargarYProcesar() {
         for (const codigo of codigosActual) {
           if (!codigosAnterior.has(codigo)) {
             const feature = nuevo.features.find(f => f.properties.CODIGOU === codigo);
-            if (feature) {
-              const centro = obtenerCentroWGS84(feature, nuevo.zona);
+            if (feature && feature.geometry) {
+              const geometriaWGS84 = convertirGeometriaWGS84(feature.geometry, nuevo.zona);
               aparecidos.push({
-                codigo: codigo,
-                nombre: feature.properties.CONCESION || '',
-                tipo: 'aparece',
-                geometry: {
-                  type: 'Point',
-                  coordinates: centro || [0, 0]
-                },
+                type: 'Feature',
+                geometry: geometriaWGS84,
                 properties: feature.properties
               });
             }
@@ -253,55 +248,54 @@ async function descargarYProcesar() {
   
   const nuevosCambios = [...desaparecidos, ...aparecidos].map(c => ({
     fecha: `${fechaStr}_${horaActual}`,
-    codigo: c.codigo,
-    nombre: c.nombre,
-    tipo: c.tipo
+    codigo: c.properties.CODIGOU,
+    nombre: c.properties.CONCESION,
+    tipo: desaparecidos.includes(c) ? 'desaparece' : 'aparece'
   }));
   
   const cambiosActualizados = [...nuevosCambios, ...cambiosExistentes].slice(0, 500);
   await fs.writeJson(cambiosPath, cambiosActualizados, { spaces: 2 });
   console.log(`\n📊 Cambios detectados: ${nuevosCambios.length} (${desaparecidos.length} desaparecidos, ${aparecidos.length} aparecidos)`);
   
-  // Actualizar archivo de desaparecidos
+  // Guardar archivo de desaparecidos con GEOMETRÍAS COMPLETAS
+  const mesNumero = fechaStr.slice(2, 4) + fechaStr.slice(0, 2);
   if (desaparecidos.length > 0) {
-    const desaparecidosPath = path.join(dataDir, `desaparecidos_${fechaStr.slice(-4)}.geojson`);
+    const desaparecidosPath = path.join(dataDir, `desaparecidos_${mesNumero}.geojson`);
     let existentes = [];
     if (await fs.pathExists(desaparecidosPath)) {
       const existente = await fs.readJson(desaparecidosPath);
       existentes = existente.features;
     }
     
-    const nuevasFeatures = desaparecidos.map(d => ({
-      type: 'Feature',
-      geometry: d.geometry,
-      properties: d.properties
-    }));
+    const codigosExistentes = new Set(existentes.map(f => f.properties.CODIGOU));
+    const nuevasFeatures = desaparecidos.filter(f => !codigosExistentes.has(f.properties.CODIGOU));
     
-    const todasFeatures = [...existentes, ...nuevasFeatures];
-    const geojson = { type: 'FeatureCollection', features: todasFeatures };
-    await fs.writeJson(desaparecidosPath, geojson, { spaces: 2 });
-    console.log(`📁 Desaparecidos: +${nuevasFeatures.length} (total: ${todasFeatures.length})`);
+    if (nuevasFeatures.length > 0) {
+      const todasFeatures = [...existentes, ...nuevasFeatures];
+      const geojson = { type: 'FeatureCollection', features: todasFeatures };
+      await fs.writeJson(desaparecidosPath, geojson, { spaces: 2 });
+      console.log(`📁 Desaparecidos: +${nuevasFeatures.length} (total: ${todasFeatures.length})`);
+    }
   }
   
-  // Actualizar archivo de aparecidos
+  // Guardar archivo de aparecidos con GEOMETRÍAS COMPLETAS
   if (aparecidos.length > 0) {
-    const aparecidosPath = path.join(dataDir, `aparecidos_${fechaStr.slice(-4)}.geojson`);
+    const aparecidosPath = path.join(dataDir, `aparecidos_${mesNumero}.geojson`);
     let existentes = [];
     if (await fs.pathExists(aparecidosPath)) {
       const existente = await fs.readJson(aparecidosPath);
       existentes = existente.features;
     }
     
-    const nuevasFeatures = aparecidos.map(a => ({
-      type: 'Feature',
-      geometry: a.geometry,
-      properties: a.properties
-    }));
+    const codigosExistentes = new Set(existentes.map(f => f.properties.CODIGOU));
+    const nuevasFeatures = aparecidos.filter(f => !codigosExistentes.has(f.properties.CODIGOU));
     
-    const todasFeatures = [...existentes, ...nuevasFeatures];
-    const geojson = { type: 'FeatureCollection', features: todasFeatures };
-    await fs.writeJson(aparecidosPath, geojson, { spaces: 2 });
-    console.log(`📁 Aparecidos: +${nuevasFeatures.length} (total: ${todasFeatures.length})`);
+    if (nuevasFeatures.length > 0) {
+      const todasFeatures = [...existentes, ...nuevasFeatures];
+      const geojson = { type: 'FeatureCollection', features: todasFeatures };
+      await fs.writeJson(aparecidosPath, geojson, { spaces: 2 });
+      console.log(`📁 Aparecidos: +${nuevasFeatures.length} (total: ${todasFeatures.length})`);
+    }
   }
   
   console.log('\n🎉 PROCESO COMPLETADO');
