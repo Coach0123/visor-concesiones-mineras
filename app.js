@@ -312,59 +312,63 @@ async function cargarCambios() {
 }
 
 async function buscarYCentrarPoligono(codigo, nombre, tipo) {
-    console.log(`🔍 Buscando: ${codigo} - ${nombre} (${tipo})`);
+    console.log(`🔍 Buscando: ${codigo} - ${nombre}`);
     
+    // Buscar en los archivos diarios (los que YA funcionan)
     const ahora = new Date();
-    const mes = (ahora.getMonth() + 1).toString().padStart(2, '0');
-    const anio = ahora.getFullYear();
-    const archivoMensual = `${tipo === 'desaparece' ? 'desaparecidos' : 'aparecidos'}_${mes}_${anio}.geojson`;
+    const fechaStr = ahora.toLocaleDateString('es-ES', {
+        day: '2-digit', month: '2-digit', year: '2-digit'
+    }).replace(/\//g, '');
     
-    try {
-        const response = await fetch(`${baseURL}/data/${archivoMensual}`);
-        if (response.ok) {
-            const geojson = await response.json();
-            const feature = geojson.features.find(f => f.properties.CODIGOU === codigo);
+    for (const zona of zonas) {
+        for (let h = 23; h >= 0; h--) {
+            const hora = h.toString().padStart(2, '0');
+            const url = `${baseURL}/data/${zona}_${fechaStr}_${hora}.geojson`;
             
-            if (feature && feature.geometry) {
-                let lat, lon;
-                
-                // Las coordenadas ya están en WGS84 geográficas
-                if (feature.geometry.type === 'Polygon') {
-                    const coords = feature.geometry.coordinates[0];
-                    let sumLon = 0, sumLat = 0;
-                    coords.forEach(c => {
-                        sumLon += c[0];  // longitud
-                        sumLat += c[1];  // latitud
-                    });
-                    lon = sumLon / coords.length;
-                    lat = sumLat / coords.length;
-                } else if (feature.geometry.type === 'Point') {
-                    lon = feature.geometry.coordinates[0];
-                    lat = feature.geometry.coordinates[1];
-                } else {
-                    mostrarMensaje(`Geometría no soportada`, 'error');
-                    return;
+            try {
+                const response = await fetch(url);
+                if (response.ok) {
+                    const geojson = await response.json();
+                    const feature = geojson.features.find(f => f.properties.CODIGOU === codigo);
+                    
+                    if (feature && feature.geometry) {
+                        // Calcular centro igual que en cargarDatos
+                        let sumX = 0, sumY = 0;
+                        let coords = [];
+                        
+                        if (feature.geometry.type === 'Polygon') {
+                            coords = feature.geometry.coordinates[0];
+                        } else if (feature.geometry.type === 'MultiPolygon') {
+                            coords = feature.geometry.coordinates[0][0];
+                        }
+                        
+                        coords.forEach(c => {
+                            sumX += c[0];
+                            sumY += c[1];
+                        });
+                        
+                        const centerX = sumX / coords.length;
+                        const centerY = sumY / coords.length;
+                        const [lat, lon] = convertirUTM_A_WGS84(centerX, centerY, zona);
+                        
+                        map.setView([lat, lon], 14);
+                        
+                        if (capaDibujo) map.removeLayer(capaDibujo);
+                        capaDibujo = L.circleMarker([lat, lon], {
+                            color: tipo === 'desaparece' ? '#ff4444' : '#4444ff',
+                            radius: 15,
+                            weight: 3,
+                            opacity: 1,
+                            fillOpacity: 0.3
+                        }).addTo(map);
+                        
+                        mostrarMensaje(`📍 Centrando: ${corregirTexto(nombre)}`, 'exito');
+                        cerrarPopup();
+                        return;
+                    }
                 }
-                
-                console.log(`📍 Centrando en: lat=${lat}, lon=${lon}`);
-                map.setView([lat, lon], 14);
-                
-                if (capaDibujo) map.removeLayer(capaDibujo);
-                capaDibujo = L.circleMarker([lat, lon], {
-                    color: tipo === 'desaparece' ? '#ff4444' : '#4444ff',
-                    radius: 15,
-                    weight: 3,
-                    opacity: 1,
-                    fillOpacity: 0.3
-                }).addTo(map);
-                
-                mostrarMensaje(`📍 Centrando: ${corregirTexto(nombre)}`, 'exito');
-                cerrarPopup();
-                return;
-            }
+            } catch (e) {}
         }
-    } catch (error) {
-        console.log('Error:', error);
     }
     
     mostrarMensaje(`No se encontró el polígono: ${nombre}`, 'error');
