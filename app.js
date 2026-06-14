@@ -315,11 +315,9 @@ async function buscarYCentrarPoligono(codigo, nombre, tipo) {
     console.log(`🔍 Buscando: ${codigo} - ${nombre} (${tipo})`);
     
     const ahora = new Date();
-    const mesActual = (ahora.getMonth() + 1).toString().padStart(2, '0');
-    const anioActual = ahora.getFullYear();
-    const archivoMensual = `${tipo === 'desaparece' ? 'desaparecidos' : 'aparecidos'}_${mesActual}_${anioActual}.geojson`;
-    
-    console.log(`📁 Buscando en: ${archivoMensual}`);
+    const mes = (ahora.getMonth() + 1).toString().padStart(2, '0');
+    const anio = ahora.getFullYear();
+    const archivoMensual = `${tipo === 'desaparece' ? 'desaparecidos' : 'aparecidos'}_${mes}_${anio}.geojson`;
     
     try {
         const response = await fetch(`${baseURL}/data/${archivoMensual}`);
@@ -330,21 +328,13 @@ async function buscarYCentrarPoligono(codigo, nombre, tipo) {
             if (feature && feature.geometry) {
                 let lat, lon;
                 
+                // Las coordenadas ya están en WGS84 geográficas
                 if (feature.geometry.type === 'Polygon') {
                     const coords = feature.geometry.coordinates[0];
                     let sumLon = 0, sumLat = 0;
                     coords.forEach(c => {
-                        sumLon += c[0];
-                        sumLat += c[1];
-                    });
-                    lon = sumLon / coords.length;
-                    lat = sumLat / coords.length;
-                } else if (feature.geometry.type === 'MultiPolygon') {
-                    const coords = feature.geometry.coordinates[0][0];
-                    let sumLon = 0, sumLat = 0;
-                    coords.forEach(c => {
-                        sumLon += c[0];
-                        sumLat += c[1];
+                        sumLon += c[0];  // longitud
+                        sumLat += c[1];  // latitud
                     });
                     lon = sumLon / coords.length;
                     lat = sumLat / coords.length;
@@ -352,10 +342,11 @@ async function buscarYCentrarPoligono(codigo, nombre, tipo) {
                     lon = feature.geometry.coordinates[0];
                     lat = feature.geometry.coordinates[1];
                 } else {
-                    mostrarMensaje(`Geometría no soportada: ${nombre}`, 'error');
+                    mostrarMensaje(`Geometría no soportada`, 'error');
                     return;
                 }
                 
+                console.log(`📍 Centrando en: lat=${lat}, lon=${lon}`);
                 map.setView([lat, lon], 14);
                 
                 if (capaDibujo) map.removeLayer(capaDibujo);
@@ -373,7 +364,7 @@ async function buscarYCentrarPoligono(codigo, nombre, tipo) {
             }
         }
     } catch (error) {
-        console.log(`Error cargando ${archivoMensual}:`, error);
+        console.log('Error:', error);
     }
     
     mostrarMensaje(`No se encontró el polígono: ${nombre}`, 'error');
