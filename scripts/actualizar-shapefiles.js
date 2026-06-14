@@ -14,7 +14,7 @@ const URLS = {
 };
 
 function corregirCaracteres(texto) {
-  if (!texto) return '';
+  if (!texto || typeof texto !== 'string') return '';
   return texto
     .replace(/Ã‘/g, 'Ñ').replace(/Ã±/g, 'ñ')
     .replace(/Ã‰/g, 'É').replace(/Ã©/g, 'é')
