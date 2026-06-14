@@ -320,6 +320,7 @@ async function buscarYCentrarPoligono(codigo, nombre, tipo) {
         day: '2-digit', month: '2-digit', year: '2-digit'
     }).replace(/\//g, '');
     
+    // Lista de zonas a buscar (todas)
     for (const zona of zonas) {
         for (let h = 23; h >= 0; h--) {
             const hora = h.toString().padStart(2, '0');
@@ -332,7 +333,6 @@ async function buscarYCentrarPoligono(codigo, nombre, tipo) {
                     const feature = geojson.features.find(f => f.properties.CODIGOU === codigo);
                     
                     if (feature && feature.geometry) {
-                        // Calcular centro igual que en cargarDatos
                         let sumX = 0, sumY = 0;
                         let coords = [];
                         
@@ -351,6 +351,7 @@ async function buscarYCentrarPoligono(codigo, nombre, tipo) {
                         const centerY = sumY / coords.length;
                         const [lat, lon] = convertirUTM_A_WGS84(centerX, centerY, zona);
                         
+                        console.log(`📍 ${zona} → UTM: ${centerX},${centerY} → WGS84: ${lat},${lon}`);
                         map.setView([lat, lon], 14);
                         
                         if (capaDibujo) map.removeLayer(capaDibujo);
