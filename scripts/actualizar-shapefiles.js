@@ -14,14 +14,8 @@ const URLS = {
 };
 
 function corregirCaracteres(texto) {
-  if (!texto || typeof texto !== 'string') return '';
-  return texto
-    .replace(/Ã‘/g, 'Ñ').replace(/Ã±/g, 'ñ')
-    .replace(/Ã‰/g, 'É').replace(/Ã©/g, 'é')
-    .replace(/Ã“/g, 'Ó').replace(/Ã³/g, 'ó')
-    .replace(/Ãš/g, 'Ú').replace(/Ãº/g, 'ú')
-    .replace(/estÃ¡ndar/g, 'estándar')
-    .replace(/PerÃº/g, 'Perú');
+  if (!texto) return '';
+  return texto.toString();
 }
 
 async function descargarYProcesar() {
@@ -33,12 +27,11 @@ async function descargarYProcesar() {
   const dataDir = path.join(__dirname, '..', 'data');
   await fs.ensureDir(dataDir);
   
-  // Buscar archivo anterior (la hora anterior)
+  // Buscar archivo anterior
   const archivosExistentes = await fs.readdir(dataDir);
   const archivosGeoJSON = archivosExistentes.filter(f => f.match(/^\d{2}s_\d{6}_\d{2}\.geojson$/));
   archivosGeoJSON.sort().reverse();
   const archivoAnterior = archivosGeoJSON.length > 0 ? archivosGeoJSON[0] : null;
-  console.log(`📁 Anterior: ${archivoAnterior || 'ninguno'}`);
   
   const desaparecidos = [];
   const aparecidos = [];
@@ -68,7 +61,7 @@ async function descargarYProcesar() {
         const f = result.value;
         features.push({
           type: 'Feature',
-          geometry: f.geometry,
+          geometry: f.geometry,  // Mismo formato original
           properties: {
             CODIGOU: corregirCaracteres(f.properties.CODIGOU || ''),
             FEC_DENU: corregirCaracteres(f.properties.FEC_DENU || ''),
@@ -85,7 +78,7 @@ async function descargarYProcesar() {
       await fs.remove(extractPath);
       console.log(`✅ ${nombreArchivo} (${features.length} features)`);
       
-      // Comparar con archivo anterior
+      // Detectar cambios
       if (archivoAnterior) {
         const anteriorPath = path.join(dataDir, archivoAnterior);
         if (await fs.pathExists(anteriorPath)) {
@@ -113,18 +106,18 @@ async function descargarYProcesar() {
     }
   }
   
-  // Guardar archivos mensuales
+  // Guardar archivos mensuales (MISMO FORMATO que los originales)
   const mes = (fechaHoy.getMonth() + 1).toString().padStart(2, '0');
   const anio = fechaHoy.getFullYear();
   
   if (desaparecidos.length > 0) {
     await fs.writeJson(path.join(dataDir, `desaparecidos_${mes}_${anio}.geojson`), 
-      { type: 'FeatureCollection', features: desaparecidos }, { spaces: 2 });
+      { type: 'FeatureCollection', features: desaparecidos });
     console.log(`📁 Desaparecidos: ${desaparecidos.length}`);
   }
   if (aparecidos.length > 0) {
     await fs.writeJson(path.join(dataDir, `aparecidos_${mes}_${anio}.geojson`), 
-      { type: 'FeatureCollection', features: aparecidos }, { spaces: 2 });
+      { type: 'FeatureCollection', features: aparecidos });
     console.log(`📁 Aparecidos: ${aparecidos.length}`);
   }
   
