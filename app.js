@@ -242,6 +242,21 @@ async function cargarDatos() {
                         
                         function mostrarPopup(fecha) {
                             let fechaMostrar = fecha || 'N/A';
+                            
+                            // Formatear fecha si viene en formato GMT
+                            if (fechaMostrar !== 'N/A' && fechaMostrar.includes('GMT')) {
+                                try {
+                                    const date = new Date(fechaMostrar);
+                                    fechaMostrar = date.toLocaleDateString('es-PE', {
+                                        year: 'numeric',
+                                        month: 'long',
+                                        day: 'numeric'
+                                    });
+                                } catch (e) {
+                                    fechaMostrar = fecha || 'N/A';
+                                }
+                            }
+                            
                             document.getElementById('info-codigo').textContent = corregirTexto(codigo || 'N/A');
                             document.getElementById('info-fecha').textContent = fechaMostrar;
                             document.getElementById('info-concesion').textContent = corregirTexto(props.CONCESION || 'N/A');
@@ -269,7 +284,8 @@ async function cargarDatos() {
                                 return r.json();
                             })
                             .then(d => {
-                                const f = d.features.find(f => f.properties.CODIGOU === codigo);
+                                // Usar trim() para comparar correctamente
+                                const f = d.features.find(f => f.properties.CODIGOU.trim() === codigo.trim());
                                 if (f && f.properties.FEC_DENU) {
                                     mostrarPopup(f.properties.FEC_DENU);
                                 } else {
@@ -277,7 +293,7 @@ async function cargarDatos() {
                                     fetch(`${baseURL}/data/aparecidos_${mes}_${anio}.geojson`)
                                         .then(r => r.json())
                                         .then(d2 => {
-                                            const f2 = d2.features.find(f => f.properties.CODIGOU === codigo);
+                                            const f2 = d2.features.find(f => f.properties.CODIGOU.trim() === codigo.trim());
                                             if (f2 && f2.properties.FEC_DENU) {
                                                 mostrarPopup(f2.properties.FEC_DENU);
                                             } else {
@@ -302,7 +318,7 @@ async function cargarDatos() {
                                                 throw new Error('No existe');
                                             })
                                             .then(d => {
-                                                const f = d.features.find(f => f.properties.CODIGOU === codigo);
+                                                const f = d.features.find(f => f.properties.CODIGOU.trim() === codigo.trim());
                                                 if (f && f.properties.FEC_DENU) {
                                                     encontrado = true;
                                                     mostrarPopup(f.properties.FEC_DENU);
