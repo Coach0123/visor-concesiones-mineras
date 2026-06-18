@@ -18,6 +18,58 @@ function corregirCaracteres(texto) {
   return texto.toString();
 }
 
+async function enviarResumenCambios(desaparecidos, aparecidos, fechaStr) {
+    if (desaparecidos.length === 0 && aparecidos.length === 0) {
+        console.log('📭 No hay cambios para enviar');
+        return;
+    }
+    
+    const maxMostrar = 30;
+    const totalDesap = desaparecidos.length;
+    const totalApare = aparecidos.length;
+    
+    let mensaje = `📊 RESUMEN DE CAMBIOS - ${fechaStr}\n`;
+    mensaje += `================================\n\n`;
+    
+    mensaje += `🔴 DESAPARECIDOS (${totalDesap}):\n`;
+    if (totalDesap > 0) {
+        desaparecidos.slice(0, maxMostrar).forEach(f => {
+            mensaje += `  - ${f.properties.CONCESION} (${f.properties.CODIGOU})\n`;
+        });
+        if (totalDesap > maxMostrar) {
+            mensaje += `  ... y ${totalDesap - maxMostrar} más\n`;
+        }
+    } else {
+        mensaje += `  Ninguno\n`;
+    }
+    
+    mensaje += `\n🟢 APARECIDOS (${totalApare}):\n`;
+    if (totalApare > 0) {
+        aparecidos.slice(0, maxMostrar).forEach(f => {
+            mensaje += `  - ${f.properties.CONCESION} (${f.properties.CODIGOU})\n`;
+        });
+        if (totalApare > maxMostrar) {
+            mensaje += `  ... y ${totalApare - maxMostrar} más\n`;
+        }
+    } else {
+        mensaje += `  Ninguno\n`;
+    }
+    
+    mensaje += `\n🔗 Visor: https://coach0123.github.io/visor-concesiones-mineras/\n`;
+    mensaje += `📅 ${new Date().toLocaleString('es-PE')}`;
+    
+    try {
+        const result = await emailjs.send('service_gmail_visor', 'template_visor_alertas', {
+            to_email: 'carlosfernandezgeraldino@gmail.com',
+            message: mensaje,
+            subject: `📊 Cambios en concesiones - ${fechaStr}`
+        });
+        console.log('✅ Correo enviado con', totalDesap + totalApare, 'cambios');
+    } catch (error) {
+        console.error('❌ Error enviando correo:', error.message);
+    }
+}
+
 async function descargarYProcesar() {
   console.log('🚀 Iniciando...');
   
@@ -61,7 +113,7 @@ async function descargarYProcesar() {
         const f = result.value;
         features.push({
           type: 'Feature',
-          geometry: f.geometry,  // Mismo formato original
+          geometry: f.geometry,
           properties: {
             CODIGOU: corregirCaracteres(f.properties.CODIGOU || ''),
             FEC_DENU: corregirCaracteres(f.properties.FEC_DENU || ''),
@@ -106,7 +158,7 @@ async function descargarYProcesar() {
     }
   }
   
-  // Guardar archivos mensuales (MISMO FORMATO que los originales)
+  // Guardar archivos mensuales
   const mes = (fechaHoy.getMonth() + 1).toString().padStart(2, '0');
   const anio = fechaHoy.getFullYear();
   
@@ -139,6 +191,12 @@ async function descargarYProcesar() {
   await fs.writeJson(cambiosPath, cambiosActualizados, { spaces: 2 });
   
   console.log(`\n📊 Cambios: ${desaparecidos.length} desaparecidos, ${aparecidos.length} aparecidos`);
+  
+  // ============================================================
+  // ✅ ENVIAR CORREO CON EL RESUMEN (DENTRO DE LA FUNCIÓN)
+  // ============================================================
+  await enviarResumenCambios(desaparecidos, aparecidos, fechaStr);
+  
   console.log('🎉 Proceso completado');
 }
 
