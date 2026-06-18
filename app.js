@@ -238,16 +238,85 @@ async function cargarDatos() {
                     layer.on('click', () => {
                         cerrarPopup();
                         const props = feature.properties;
+                        const codigo = props.CODIGOU;
                         
-                        // Mostrar fecha directamente (ya viene en formato dd/mm/yyyy)
-                        let fecha = props.FEC_DENU || 'N/A';
+                        function mostrarPopup(fecha) {
+                            let fechaMostrar = fecha || 'N/A';
+                            document.getElementById('info-codigo').textContent = corregirTexto(codigo || 'N/A');
+                            document.getElementById('info-fecha').textContent = fechaMostrar;
+                            document.getElementById('info-concesion').textContent = corregirTexto(props.CONCESION || 'N/A');
+                            document.getElementById('info-titular').textContent = corregirTexto(props.TIT_CONCES || 'N/A');
+                            document.getElementById('info-popup').style.display = 'block';
+                            popupAbierto = true;
+                        }
                         
-                        document.getElementById('info-codigo').textContent = corregirTexto(props.CODIGOU || 'N/A');
-                        document.getElementById('info-fecha').textContent = fecha;
-                        document.getElementById('info-concesion').textContent = corregirTexto(props.CONCESION || 'N/A');
-                        document.getElementById('info-titular').textContent = corregirTexto(props.TIT_CONCES || 'N/A');
-                        document.getElementById('info-popup').style.display = 'block';
-                        popupAbierto = true;
+                        // Primero intentar con la fecha del feature
+                        let fecha = props.FEC_DENU || '';
+                        
+                        if (fecha && fecha !== '') {
+                            mostrarPopup(fecha);
+                            return;
+                        }
+                        
+                        // Si no tiene fecha, buscar en archivos mensuales
+                        const mes = (new Date().getMonth() + 1).toString().padStart(2, '0');
+                        const anio = new Date().getFullYear();
+                        
+                        // Buscar en desaparecidos
+                        fetch(`${baseURL}/data/desaparecidos_${mes}_${anio}.geojson`)
+                            .then(r => {
+                                if (!r.ok) throw new Error('No existe');
+                                return r.json();
+                            })
+                            .then(d => {
+                                const f = d.features.find(f => f.properties.CODIGOU === codigo);
+                                if (f && f.properties.FEC_DENU) {
+                                    mostrarPopup(f.properties.FEC_DENU);
+                                } else {
+                                    // Buscar en aparecidos
+                                    fetch(`${baseURL}/data/aparecidos_${mes}_${anio}.geojson`)
+                                        .then(r => r.json())
+                                        .then(d2 => {
+                                            const f2 = d2.features.find(f => f.properties.CODIGOU === codigo);
+                                            if (f2 && f2.properties.FEC_DENU) {
+                                                mostrarPopup(f2.properties.FEC_DENU);
+                                            } else {
+                                                mostrarPopup('N/A');
+                                            }
+                                        })
+                                        .catch(() => mostrarPopup('N/A'));
+                                }
+                            })
+                            .catch(() => {
+                                // Si no hay archivo mensual, buscar en otros archivos diarios
+                                const fechas = ['170626', '160626', '150626', '140626', '130626'];
+                                let encontrado = false;
+                                
+                                for (const fecha of fechas) {
+                                    if (encontrado) break;
+                                    for (const zona of zonas) {
+                                        const url = `${baseURL}/data/${zona}_${fecha}_23.geojson`;
+                                        fetch(url)
+                                            .then(r => {
+                                                if (r.ok) return r.json();
+                                                throw new Error('No existe');
+                                            })
+                                            .then(d => {
+                                                const f = d.features.find(f => f.properties.CODIGOU === codigo);
+                                                if (f && f.properties.FEC_DENU) {
+                                                    encontrado = true;
+                                                    mostrarPopup(f.properties.FEC_DENU);
+                                                }
+                                            })
+                                            .catch(() => {});
+                                    }
+                                }
+                                
+                                // Si no se encontró en ningún lado
+                                setTimeout(() => {
+                                    if (!encontrado) mostrarPopup('N/A');
+                                }, 2000);
+                            });
                     });
                 }
             }).addTo(map);
@@ -255,6 +324,7 @@ async function cargarDatos() {
         }
     }
 }
+
 
 async function cargarHistorialMensual() {
     try {
