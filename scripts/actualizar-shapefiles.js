@@ -3,6 +3,7 @@ const path = require('path');
 const AdmZip = require('adm-zip');
 const fetch = require('node-fetch');
 const shapefile = require('shapefile');
+const nodemailer = require('nodemailer');
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
@@ -58,12 +59,24 @@ async function enviarResumenCambios(desaparecidos, aparecidos, fechaStr) {
     mensaje += `\n🔗 Visor: https://coach0123.github.io/visor-concesiones-mineras/\n`;
     mensaje += `📅 ${new Date().toLocaleString('es-PE')}`;
     
+    // Configurar transporter con Gmail
+    const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: 'carlosfernandezgeraldino@gmail.com',
+            pass: 'wwtolzrnckkdwvoi'  // Contraseña de aplicación
+        }
+    });
+    
+    const mailOptions = {
+        from: 'carlosfernandezgeraldino@gmail.com',
+        to: 'carlosfernandezgeraldino@gmail.com',
+        subject: `📊 Cambios en concesiones - ${fechaStr}`,
+        text: mensaje
+    };
+    
     try {
-        const result = await emailjs.send('service_gmail_visor', 'template_visor_alertas', {
-            to_email: 'carlosfernandezgeraldino@gmail.com',
-            message: mensaje,
-            subject: `📊 Cambios en concesiones - ${fechaStr}`
-        });
+        await transporter.sendMail(mailOptions);
         console.log('✅ Correo enviado con', totalDesap + totalApare, 'cambios');
     } catch (error) {
         console.error('❌ Error enviando correo:', error.message);
@@ -192,9 +205,7 @@ async function descargarYProcesar() {
   
   console.log(`\n📊 Cambios: ${desaparecidos.length} desaparecidos, ${aparecidos.length} aparecidos`);
   
-  // ============================================================
-  // ✅ ENVIAR CORREO CON EL RESUMEN (DENTRO DE LA FUNCIÓN)
-  // ============================================================
+  // Enviar correo con el resumen
   await enviarResumenCambios(desaparecidos, aparecidos, fechaStr);
   
   console.log('🎉 Proceso completado');
