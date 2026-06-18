@@ -238,10 +238,14 @@ async function cargarDatos() {
                     layer.on('click', () => {
                         cerrarPopup();
                         const props = feature.properties;
-                        document.getElementById('info-codigo').textContent = corregirTexto(props.CODIGOU);
-                        document.getElementById('info-fecha').textContent = corregirTexto(props.FEC_DENU);
-                        document.getElementById('info-concesion').textContent = corregirTexto(props.CONCESION);
-                        document.getElementById('info-titular').textContent = corregirTexto(props.TIT_CONCES);
+                        
+                        // Mostrar fecha directamente (ya viene en formato dd/mm/yyyy)
+                        let fecha = props.FEC_DENU || 'N/A';
+                        
+                        document.getElementById('info-codigo').textContent = corregirTexto(props.CODIGOU || 'N/A');
+                        document.getElementById('info-fecha').textContent = fecha;
+                        document.getElementById('info-concesion').textContent = corregirTexto(props.CONCESION || 'N/A');
+                        document.getElementById('info-titular').textContent = corregirTexto(props.TIT_CONCES || 'N/A');
                         document.getElementById('info-popup').style.display = 'block';
                         popupAbierto = true;
                     });
