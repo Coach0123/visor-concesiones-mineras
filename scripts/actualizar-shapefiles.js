@@ -44,9 +44,8 @@ function convertirGeometriaWGS84(geometry, zona) {
   
   try {
     function convertirCoordenada(c) {
-      // Convertir UTM (x, y) a WGS84 (lon, lat)
       const [lon, lat] = proj4(epsg, 'EPSG:4326', [c[0], c[1]]);
-      return [lon, lat]; // GeoJSON espera [lon, lat]
+      return [lon, lat];
     }
     
     if (geometry.type === 'Polygon') {
@@ -68,9 +67,6 @@ function convertirGeometriaWGS84(geometry, zona) {
   return geometry;
 }
 
-// ============================================================
-// FUNCIÓN PARA CENTROIDE WGS84 (para centrar en el mapa)
-// ============================================================
 function obtenerCentroWGS84(feature, zona) {
   try {
     const epsg = ZONA_EPSG[zona];
@@ -171,7 +167,6 @@ async function descargarYProcesar() {
   const dataDir = path.join(__dirname, '..', 'data');
   await fs.ensureDir(dataDir);
   
-  // Buscar archivo anterior (ordenado por fecha real)
   const archivosExistentes = await fs.readdir(dataDir);
   const archivosGeoJSON = archivosExistentes.filter(f => f.match(/^\d{2}s_\d{6}_\d{2}\.geojson$/));
   
@@ -189,7 +184,23 @@ async function descargarYProcesar() {
   
   archivosConFecha.sort((a, b) => b.fechaObj - a.fechaObj);
   
-  const archivoAnterior = archivosConFecha.length > 1 ? archivosConFecha[1].archivo : null;
+  // ============================================================
+  // FILTRO: SOLO ARCHIVOS DEL MES ACTUAL (JUNIO 2026)
+  // ============================================================
+  const mesActual = fechaStr.slice(2, 4); // "06"
+  const anioActual = fechaStr.slice(4, 6); // "26"
+  
+  const archivosDelMes = archivosConFecha.filter(f => {
+    const mes = f.fechaStr.slice(2, 4);
+    const anio = f.fechaStr.slice(4, 6);
+    return mes === mesActual && anio === anioActual;
+  });
+  
+  archivosDelMes.sort((a, b) => b.fechaObj - a.fechaObj);
+  const archivoAnterior = archivosDelMes.length > 1 ? archivosDelMes[1].archivo : null;
+  
+  console.log(`📁 Archivos del mes actual: ${archivosDelMes.length}`);
+  console.log(`📁 Comparando con: ${archivoAnterior || 'ninguno'}`);
   
   const desaparecidos = [];
   const aparecidos = [];
@@ -236,9 +247,6 @@ async function descargarYProcesar() {
       await fs.remove(extractPath);
       console.log(`✅ ${nombreArchivo} (${features.length} features)`);
       
-      // ============================================================
-      // COMPARAR CON ARCHIVO ANTERIOR Y GUARDAR EN WGS84
-      // ============================================================
       if (archivoAnterior) {
         const anteriorPath = path.join(dataDir, archivoAnterior);
         if (await fs.pathExists(anteriorPath)) {
@@ -246,7 +254,6 @@ async function descargarYProcesar() {
           const codigosActual = new Set(features.map(f => f.properties.CODIGOU));
           const codigosAnterior = new Set(anteriorData.features.map(f => f.properties.CODIGOU));
           
-          // Desaparecidos
           for (const codigo of codigosAnterior) {
             if (!codigosActual.has(codigo)) {
               const f = anteriorData.features.find(f => f.properties.CODIGOU === codigo);
@@ -263,7 +270,6 @@ async function descargarYProcesar() {
             }
           }
           
-          // Aparecidos
           for (const codigo of codigosActual) {
             if (!codigosAnterior.has(codigo)) {
               const f = features.find(f => f.properties.CODIGOU === codigo);
@@ -287,9 +293,6 @@ async function descargarYProcesar() {
     }
   }
   
-  // ============================================================
-  // GUARDAR ARCHIVOS MENSUALES CON COORDENADAS WGS84
-  // ============================================================
   const mes = (fechaHoy.getMonth() + 1).toString().padStart(2, '0');
   const anio = fechaHoy.getFullYear();
   
@@ -325,7 +328,6 @@ async function descargarYProcesar() {
     }
   }
   
-  // Guardar cambios.json
   const cambiosPath = path.join(dataDir, 'cambios.json');
   let cambiosExistentes = [];
   if (await fs.pathExists(cambiosPath)) {
