@@ -402,20 +402,75 @@ async function cargarCambios() {
 }
 
 async function buscarYCentrarPoligono(codigo, nombre, tipo) {
-    console.log(`🔍 Buscando: ${codigo} - ${nombre}`);
+    console.log(`🔍 Buscando: ${codigo} - ${nombre} (${tipo})`);
     
-    // Buscar en los archivos diarios (los que YA funcionan)
     const ahora = new Date();
+    const mes = (ahora.getMonth() + 1).toString().padStart(2, '0');
+    const anio = ahora.getFullYear();
+    
+    // ============================================================
+    // PASO 1: Buscar PRIMERO en el archivo mensual (desaparecidos/ aparecidos)
+    // ============================================================
+    const archivoMensual = `${tipo === 'desaparece' ? 'desaparecidos' : 'aparecidos'}_${mes}_${anio}.geojson`;
+    
+    try {
+        const response = await fetch(`${baseURL}/data/${archivoMensual}`);
+        if (response.ok) {
+            const geojson = await response.json();
+            const feature = geojson.features.find(f => f.properties.CODIGOU === codigo);
+            
+            if (feature && feature.geometry) {
+                console.log(`✅ Encontrado en archivo mensual: ${archivoMensual}`);
+                let lat, lon;
+                
+                if (feature.geometry.type === 'Polygon') {
+                    const coords = feature.geometry.coordinates[0];
+                    let sumLon = 0, sumLat = 0;
+                    coords.forEach(c => {
+                        sumLon += c[0];
+                        sumLat += c[1];
+                    });
+                    lon = sumLon / coords.length;
+                    lat = sumLat / coords.length;
+                } else if (feature.geometry.type === 'Point') {
+                    lon = feature.geometry.coordinates[0];
+                    lat = feature.geometry.coordinates[1];
+                } else {
+                    mostrarMensaje(`Geometría no soportada: ${nombre}`, 'error');
+                    return;
+                }
+                
+                map.setView([lat, lon], 14);
+                
+                if (capaDibujo) map.removeLayer(capaDibujo);
+                capaDibujo = L.circleMarker([lat, lon], {
+                    color: tipo === 'desaparece' ? '#ff4444' : '#4444ff',
+                    radius: 15,
+                    weight: 3,
+                    opacity: 1,
+                    fillOpacity: 0.3
+                }).addTo(map);
+                
+                mostrarMensaje(`📍 Centrando: ${corregirTexto(nombre)}`, 'exito');
+                cerrarPopup();
+                return;
+            }
+        }
+    } catch (error) {
+        console.log('No encontrado en archivo mensual, buscando en diarios...');
+    }
+    
+    // ============================================================
+    // PASO 2: Si no está en mensual, buscar en archivos diarios (respaldo)
+    // ============================================================
     const fechaStr = ahora.toLocaleDateString('es-ES', {
         day: '2-digit', month: '2-digit', year: '2-digit'
     }).replace(/\//g, '');
     
-    // Lista de zonas a buscar (todas)
     for (const zona of zonas) {
         for (let h = 23; h >= 0; h--) {
             const hora = h.toString().padStart(2, '0');
             const url = `${baseURL}/data/${zona}_${fechaStr}_${hora}.geojson`;
-            
             try {
                 const response = await fetch(url);
                 if (response.ok) {
@@ -441,7 +496,6 @@ async function buscarYCentrarPoligono(codigo, nombre, tipo) {
                         const centerY = sumY / coords.length;
                         const [lat, lon] = convertirUTM_A_WGS84(centerX, centerY, zona);
                         
-                        console.log(`📍 ${zona} → UTM: ${centerX},${centerY} → WGS84: ${lat},${lon}`);
                         map.setView([lat, lon], 14);
                         
                         if (capaDibujo) map.removeLayer(capaDibujo);

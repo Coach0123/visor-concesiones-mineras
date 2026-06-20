@@ -59,12 +59,11 @@ async function enviarResumenCambios(desaparecidos, aparecidos, fechaStr) {
     mensaje += `\n🔗 Visor: https://coach0123.github.io/visor-concesiones-mineras/\n`;
     mensaje += `📅 ${new Date().toLocaleString('es-PE')}`;
     
-    // Configurar transporter con Gmail
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
             user: 'carlosfernandezgeraldino@gmail.com',
-            pass: 'wwtolzrnckkdwvoi'  // Contraseña de aplicación
+            pass: 'wwtolzrnckkdwvoi'
         }
     });
     
@@ -92,11 +91,34 @@ async function descargarYProcesar() {
   const dataDir = path.join(__dirname, '..', 'data');
   await fs.ensureDir(dataDir);
   
-  // Buscar archivo anterior
+  // ============================================================
+  // CAMBIO 1: Ordenar archivos por FECHA REAL (no alfabético)
+  // ============================================================
   const archivosExistentes = await fs.readdir(dataDir);
   const archivosGeoJSON = archivosExistentes.filter(f => f.match(/^\d{2}s_\d{6}_\d{2}\.geojson$/));
-  archivosGeoJSON.sort().reverse();
-  const archivoAnterior = archivosGeoJSON.length > 0 ? archivosGeoJSON[0] : null;
+  
+  // Extraer fecha y ordenar cronológicamente
+  const archivosConFecha = archivosGeoJSON.map(f => {
+    const match = f.match(/^\d{2}s_(\d{6})_(\d{2})\.geojson$/);
+    if (!match) return null;
+    const fecha = match[1]; // DDMMYY
+    const hora = match[2];
+    // Convertir a objeto Date para ordenar
+    const dia = parseInt(fecha.slice(0,2));
+    const mes = parseInt(fecha.slice(2,4)) - 1;
+    const anio = 2000 + parseInt(fecha.slice(4,6));
+    const horas = parseInt(hora);
+    return { archivo: f, fechaObj: new Date(anio, mes, dia, horas), fechaStr: fecha, horaStr: hora };
+  }).filter(f => f !== null);
+  
+  // Ordenar por fecha (más reciente primero)
+  archivosConFecha.sort((a, b) => b.fechaObj - a.fechaObj);
+  
+  const archivoAnterior = archivosConFecha.length > 1 ? archivosConFecha[1].archivo : null;
+  const archivoActual = archivosConFecha.length > 0 ? archivosConFecha[0].archivo : null;
+  
+  console.log(`📁 Archivo actual: ${archivoActual}`);
+  console.log(`📁 Archivo anterior para comparar: ${archivoAnterior || 'ninguno'}`);
   
   const desaparecidos = [];
   const aparecidos = [];
@@ -143,7 +165,9 @@ async function descargarYProcesar() {
       await fs.remove(extractPath);
       console.log(`✅ ${nombreArchivo} (${features.length} features)`);
       
-      // Detectar cambios
+      // ============================================================
+      // CAMBIO 2: Comparar con el archivo anterior REAL (no el primero de la lista)
+      // ============================================================
       if (archivoAnterior) {
         const anteriorPath = path.join(dataDir, archivoAnterior);
         if (await fs.pathExists(anteriorPath)) {
@@ -171,19 +195,48 @@ async function descargarYProcesar() {
     }
   }
   
-  // Guardar archivos mensuales
+  // Guardar archivos mensuales con la fecha del cambio
   const mes = (fechaHoy.getMonth() + 1).toString().padStart(2, '0');
   const anio = fechaHoy.getFullYear();
   
   if (desaparecidos.length > 0) {
-    await fs.writeJson(path.join(dataDir, `desaparecidos_${mes}_${anio}.geojson`), 
-      { type: 'FeatureCollection', features: desaparecidos });
-    console.log(`📁 Desaparecidos: ${desaparecidos.length}`);
+    // ============================================================
+    // CAMBIO 3: Guardar con la fecha del cambio (no sobrescribir)
+    // ============================================================
+    const desaparecidosPath = path.join(dataDir, `desaparecidos_${mes}_${anio}.geojson`);
+    let existentes = [];
+    if (await fs.pathExists(desaparecidosPath)) {
+      const existente = await fs.readJson(desaparecidosPath);
+      existentes = existente.features;
+    }
+    
+    // Evitar duplicados (mismo CODIGOU)
+    const codigosExistentes = new Set(existentes.map(f => f.properties.CODIGOU));
+    const nuevos = desaparecidos.filter(f => !codigosExistentes.has(f.properties.CODIGOU));
+    
+    if (nuevos.length > 0) {
+      const todasFeatures = [...existentes, ...nuevos];
+      await fs.writeJson(desaparecidosPath, { type: 'FeatureCollection', features: todasFeatures }, { spaces: 2 });
+      console.log(`📁 Desaparecidos: +${nuevos.length} (total: ${todasFeatures.length})`);
+    }
   }
+  
   if (aparecidos.length > 0) {
-    await fs.writeJson(path.join(dataDir, `aparecidos_${mes}_${anio}.geojson`), 
-      { type: 'FeatureCollection', features: aparecidos });
-    console.log(`📁 Aparecidos: ${aparecidos.length}`);
+    const aparecidosPath = path.join(dataDir, `aparecidos_${mes}_${anio}.geojson`);
+    let existentes = [];
+    if (await fs.pathExists(aparecidosPath)) {
+      const existente = await fs.readJson(aparecidosPath);
+      existentes = existente.features;
+    }
+    
+    const codigosExistentes = new Set(existentes.map(f => f.properties.CODIGOU));
+    const nuevos = aparecidos.filter(f => !codigosExistentes.has(f.properties.CODIGOU));
+    
+    if (nuevos.length > 0) {
+      const todasFeatures = [...existentes, ...nuevos];
+      await fs.writeJson(aparecidosPath, { type: 'FeatureCollection', features: todasFeatures }, { spaces: 2 });
+      console.log(`📁 Aparecidos: +${nuevos.length} (total: ${todasFeatures.length})`);
+    }
   }
   
   // Guardar cambios.json
@@ -205,7 +258,6 @@ async function descargarYProcesar() {
   
   console.log(`\n📊 Cambios: ${desaparecidos.length} desaparecidos, ${aparecidos.length} aparecidos`);
   
-  // Enviar correo con el resumen
   await enviarResumenCambios(desaparecidos, aparecidos, fechaStr);
   
   console.log('🎉 Proceso completado');
