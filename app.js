@@ -786,7 +786,6 @@ async function verificarCambiosYEnviarAlerta() {
         // 3. Filtrar solo los polígonos dentro del área dibujada
         const cambiosEnArea = [];
         
-        // Función para verificar si un polígono está dentro del área
         function poligonoEnArea(feature) {
             if (!feature.geometry) return false;
             
@@ -801,7 +800,6 @@ async function verificarCambiosYEnviarAlerta() {
                 return areaMonitoreada.contains([lat, lon]);
             }
             
-            // Calcular centro del polígono
             let sumLon = 0, sumLat = 0;
             coords.forEach(c => {
                 sumLon += c[0];
@@ -870,28 +868,23 @@ async function verificarCambiosYEnviarAlerta() {
         mensaje += `\n🔗 Visor: https://coach0123.github.io/visor-concesiones-mineras/`;
         mensaje += `\n📅 ${new Date().toLocaleString('es-PE')}`;
         
-        // Enviar correo con EmailJS o nodemailer
-        try {
-            const transporter = nodemailer.createTransport({
-                service: 'gmail',
-                auth: {
-                    user: 'carlosfernandezgeraldino@gmail.com',
-                    pass: 'wwtolzrnckkdwvoi'
-                }
-            });
-            
-            await transporter.sendMail({
-                from: 'carlosfernandezgeraldino@gmail.com',
-                to: email,
-                subject: `📊 Cambios en tu área - ${new Date().toLocaleDateString('es-PE')}`,
-                text: mensaje
-            });
-            
-            mostrarMensaje(`📧 Correo enviado con ${total} cambios en el área`, 'exito');
-        } catch (error) {
-            console.error('Error enviando correo:', error);
-            mostrarMensaje('Error al enviar correo', 'error');
-        }
+        // Enviar correo
+        const transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: 'carlosfernandezgeraldino@gmail.com',
+                pass: 'wwtolzrnckkdwvoi'
+            }
+        });
+        
+        await transporter.sendMail({
+            from: 'carlosfernandezgeraldino@gmail.com',
+            to: email,
+            subject: `📊 Cambios en tu área - ${new Date().toLocaleDateString('es-PE')}`,
+            text: mensaje
+        });
+        
+        mostrarMensaje(`📧 Correo enviado con ${total} cambios en el área`, 'exito');
         
     } catch (error) {
         console.error(error);
