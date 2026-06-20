@@ -4,6 +4,7 @@ const AdmZip = require('adm-zip');
 const fetch = require('node-fetch');
 const shapefile = require('shapefile');
 const nodemailer = require('nodemailer');
+const proj4 = require('proj4');
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
@@ -14,9 +15,88 @@ const URLS = {
   '19S': 'https://geocatminapp.ingemmet.gob.pe/complementos/Descargas/DESCARGA_WGS84/DESCARGA/CMI_WGS84_19S.zip'
 };
 
+const ZONA_EPSG = {
+  '17s': 'EPSG:32717',
+  '18s': 'EPSG:32718',
+  '19s': 'EPSG:32719'
+};
+
+// Definir proyecciones UTM
+proj4.defs([
+  ['EPSG:32717', '+proj=utm +zone=17 +south +datum=WGS84 +units=m +no_defs'],
+  ['EPSG:32718', '+proj=utm +zone=18 +south +datum=WGS84 +units=m +no_defs'],
+  ['EPSG:32719', '+proj=utm +zone=19 +south +datum=WGS84 +units=m +no_defs']
+]);
+
 function corregirCaracteres(texto) {
   if (!texto) return '';
   return texto.toString();
+}
+
+// ============================================================
+// FUNCIÓN CLAVE: Convertir UTM a WGS84 (lat, lon)
+// ============================================================
+function convertirGeometriaWGS84(geometry, zona) {
+  if (!geometry) return null;
+  
+  const epsg = ZONA_EPSG[zona];
+  if (!epsg) return geometry;
+  
+  try {
+    function convertirCoordenada(c) {
+      // Convertir UTM (x, y) a WGS84 (lon, lat)
+      const [lon, lat] = proj4(epsg, 'EPSG:4326', [c[0], c[1]]);
+      return [lon, lat]; // GeoJSON espera [lon, lat]
+    }
+    
+    if (geometry.type === 'Polygon') {
+      return {
+        type: 'Polygon',
+        coordinates: geometry.coordinates.map(ring => ring.map(convertirCoordenada))
+      };
+    } else if (geometry.type === 'MultiPolygon') {
+      return {
+        type: 'MultiPolygon',
+        coordinates: geometry.coordinates.map(poly => 
+          poly.map(ring => ring.map(convertirCoordenada))
+        )
+      };
+    }
+  } catch (e) {
+    console.error('Error convirtiendo geometría:', e.message);
+  }
+  return geometry;
+}
+
+// ============================================================
+// FUNCIÓN PARA CENTROIDE WGS84 (para centrar en el mapa)
+// ============================================================
+function obtenerCentroWGS84(feature, zona) {
+  try {
+    const epsg = ZONA_EPSG[zona];
+    if (!epsg) return [0, 0];
+    
+    let coords;
+    if (feature.geometry.type === 'Polygon') {
+      coords = feature.geometry.coordinates[0];
+    } else if (feature.geometry.type === 'MultiPolygon') {
+      coords = feature.geometry.coordinates[0][0];
+    } else {
+      return [0, 0];
+    }
+    
+    let sumX = 0, sumY = 0;
+    coords.forEach(c => {
+      sumX += c[0];
+      sumY += c[1];
+    });
+    const centerX = sumX / coords.length;
+    const centerY = sumY / coords.length;
+    const [lon, lat] = proj4(epsg, 'EPSG:4326', [centerX, centerY]);
+    return [lat, lon];
+  } catch (e) {
+    return [0, 0];
+  }
 }
 
 async function enviarResumenCambios(desaparecidos, aparecidos, fechaStr) {
@@ -91,19 +171,15 @@ async function descargarYProcesar() {
   const dataDir = path.join(__dirname, '..', 'data');
   await fs.ensureDir(dataDir);
   
-  // ============================================================
-  // CAMBIO 1: Ordenar archivos por FECHA REAL (no alfabético)
-  // ============================================================
+  // Buscar archivo anterior (ordenado por fecha real)
   const archivosExistentes = await fs.readdir(dataDir);
   const archivosGeoJSON = archivosExistentes.filter(f => f.match(/^\d{2}s_\d{6}_\d{2}\.geojson$/));
   
-  // Extraer fecha y ordenar cronológicamente
   const archivosConFecha = archivosGeoJSON.map(f => {
     const match = f.match(/^\d{2}s_(\d{6})_(\d{2})\.geojson$/);
     if (!match) return null;
-    const fecha = match[1]; // DDMMYY
+    const fecha = match[1];
     const hora = match[2];
-    // Convertir a objeto Date para ordenar
     const dia = parseInt(fecha.slice(0,2));
     const mes = parseInt(fecha.slice(2,4)) - 1;
     const anio = 2000 + parseInt(fecha.slice(4,6));
@@ -111,14 +187,9 @@ async function descargarYProcesar() {
     return { archivo: f, fechaObj: new Date(anio, mes, dia, horas), fechaStr: fecha, horaStr: hora };
   }).filter(f => f !== null);
   
-  // Ordenar por fecha (más reciente primero)
   archivosConFecha.sort((a, b) => b.fechaObj - a.fechaObj);
   
   const archivoAnterior = archivosConFecha.length > 1 ? archivosConFecha[1].archivo : null;
-  const archivoActual = archivosConFecha.length > 0 ? archivosConFecha[0].archivo : null;
-  
-  console.log(`📁 Archivo actual: ${archivoActual}`);
-  console.log(`📁 Archivo anterior para comparar: ${archivoAnterior || 'ninguno'}`);
   
   const desaparecidos = [];
   const aparecidos = [];
@@ -166,7 +237,7 @@ async function descargarYProcesar() {
       console.log(`✅ ${nombreArchivo} (${features.length} features)`);
       
       // ============================================================
-      // CAMBIO 2: Comparar con el archivo anterior REAL (no el primero de la lista)
+      // COMPARAR CON ARCHIVO ANTERIOR Y GUARDAR EN WGS84
       // ============================================================
       if (archivoAnterior) {
         const anteriorPath = path.join(dataDir, archivoAnterior);
@@ -175,16 +246,37 @@ async function descargarYProcesar() {
           const codigosActual = new Set(features.map(f => f.properties.CODIGOU));
           const codigosAnterior = new Set(anteriorData.features.map(f => f.properties.CODIGOU));
           
+          // Desaparecidos
           for (const codigo of codigosAnterior) {
             if (!codigosActual.has(codigo)) {
               const f = anteriorData.features.find(f => f.properties.CODIGOU === codigo);
-              if (f) desaparecidos.push(f);
+              if (f && f.geometry) {
+                const geomWGS84 = convertirGeometriaWGS84(f.geometry, zona.toLowerCase());
+                if (geomWGS84) {
+                  desaparecidos.push({
+                    type: 'Feature',
+                    geometry: geomWGS84,
+                    properties: f.properties
+                  });
+                }
+              }
             }
           }
+          
+          // Aparecidos
           for (const codigo of codigosActual) {
             if (!codigosAnterior.has(codigo)) {
               const f = features.find(f => f.properties.CODIGOU === codigo);
-              if (f) aparecidos.push(f);
+              if (f && f.geometry) {
+                const geomWGS84 = convertirGeometriaWGS84(f.geometry, zona.toLowerCase());
+                if (geomWGS84) {
+                  aparecidos.push({
+                    type: 'Feature',
+                    geometry: geomWGS84,
+                    properties: f.properties
+                  });
+                }
+              }
             }
           }
         }
@@ -195,25 +287,21 @@ async function descargarYProcesar() {
     }
   }
   
-  // Guardar archivos mensuales con la fecha del cambio
+  // ============================================================
+  // GUARDAR ARCHIVOS MENSUALES CON COORDENADAS WGS84
+  // ============================================================
   const mes = (fechaHoy.getMonth() + 1).toString().padStart(2, '0');
   const anio = fechaHoy.getFullYear();
   
   if (desaparecidos.length > 0) {
-    // ============================================================
-    // CAMBIO 3: Guardar con la fecha del cambio (no sobrescribir)
-    // ============================================================
     const desaparecidosPath = path.join(dataDir, `desaparecidos_${mes}_${anio}.geojson`);
     let existentes = [];
     if (await fs.pathExists(desaparecidosPath)) {
       const existente = await fs.readJson(desaparecidosPath);
       existentes = existente.features;
     }
-    
-    // Evitar duplicados (mismo CODIGOU)
     const codigosExistentes = new Set(existentes.map(f => f.properties.CODIGOU));
     const nuevos = desaparecidos.filter(f => !codigosExistentes.has(f.properties.CODIGOU));
-    
     if (nuevos.length > 0) {
       const todasFeatures = [...existentes, ...nuevos];
       await fs.writeJson(desaparecidosPath, { type: 'FeatureCollection', features: todasFeatures }, { spaces: 2 });
@@ -228,10 +316,8 @@ async function descargarYProcesar() {
       const existente = await fs.readJson(aparecidosPath);
       existentes = existente.features;
     }
-    
     const codigosExistentes = new Set(existentes.map(f => f.properties.CODIGOU));
     const nuevos = aparecidos.filter(f => !codigosExistentes.has(f.properties.CODIGOU));
-    
     if (nuevos.length > 0) {
       const todasFeatures = [...existentes, ...nuevos];
       await fs.writeJson(aparecidosPath, { type: 'FeatureCollection', features: todasFeatures }, { spaces: 2 });
