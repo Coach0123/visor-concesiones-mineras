@@ -919,6 +919,14 @@ function agregarBotonMonitoreo() {
     contenedor.appendChild(btnCancelar);
 }
 
+function cancelarMonitoreo() {
+    localStorage.removeItem('areaMonitoreada');
+    localStorage.removeItem('emailAlertas');
+    areaMonitoreada = null;
+    limpiarDibujo();
+    mostrarMensaje('🗑️ Monitoreo cancelado', 'info');
+}
+
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') cerrarPopup(); });
 document.addEventListener('click', (e) => {
     if (popupAbierto && !e.target.closest('.info-popup') && !e.target.closest('.leaflet-interactive')) {
