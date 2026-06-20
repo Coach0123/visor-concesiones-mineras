@@ -750,16 +750,153 @@ async function verificarCambiosYEnviarAlerta() {
         mostrarMensaje('Primero dibuja un área y actívala con "🔔 Monitorear esta área"', 'error');
         return;
     }
-    mostrarMensaje('🔍 Verificando cambios...', 'info');
-    mostrarMensaje('📧 Función de correo en desarrollo', 'info');
-}
-
-function cancelarMonitoreo() {
-    localStorage.removeItem('areaMonitoreada');
-    localStorage.removeItem('emailAlertas');
-    areaMonitoreada = null;
-    limpiarDibujo();
-    mostrarMensaje('🗑️ Monitoreo cancelado', 'info');
+    
+    const email = localStorage.getItem('emailAlertas');
+    if (!email) {
+        mostrarMensaje('No hay correo guardado. Configura primero el monitoreo.', 'error');
+        return;
+    }
+    
+    mostrarMensaje('🔍 Verificando cambios en el área...', 'info');
+    
+    try {
+        // 1. Cargar los cambios desde cambios.json
+        const response = await fetch(`${baseURL}/data/cambios.json`);
+        if (!response.ok) throw new Error('Error al cargar cambios');
+        const cambios = await response.json();
+        
+        // 2. Cargar los polígonos de desaparecidos y aparecidos (7d)
+        const [desapResp, apResp] = await Promise.all([
+            fetch(`${baseURL}/data/desaparecidos_7d.geojson`),
+            fetch(`${baseURL}/data/aparecidos_7d.geojson`)
+        ]);
+        
+        let desaparecidos = [];
+        let aparecidos = [];
+        
+        if (desapResp.ok) {
+            const data = await desapResp.json();
+            desaparecidos = data.features || [];
+        }
+        if (apResp.ok) {
+            const data = await apResp.json();
+            aparecidos = data.features || [];
+        }
+        
+        // 3. Filtrar solo los polígonos dentro del área dibujada
+        const cambiosEnArea = [];
+        
+        // Función para verificar si un polígono está dentro del área
+        function poligonoEnArea(feature) {
+            if (!feature.geometry) return false;
+            
+            let coords = [];
+            if (feature.geometry.type === 'Polygon') {
+                coords = feature.geometry.coordinates[0];
+            } else if (feature.geometry.type === 'MultiPolygon') {
+                coords = feature.geometry.coordinates[0][0];
+            } else if (feature.geometry.type === 'Point') {
+                const lon = feature.geometry.coordinates[0];
+                const lat = feature.geometry.coordinates[1];
+                return areaMonitoreada.contains([lat, lon]);
+            }
+            
+            // Calcular centro del polígono
+            let sumLon = 0, sumLat = 0;
+            coords.forEach(c => {
+                sumLon += c[0];
+                sumLat += c[1];
+            });
+            const centerLon = sumLon / coords.length;
+            const centerLat = sumLat / coords.length;
+            
+            return areaMonitoreada.contains([centerLat, centerLon]);
+        }
+        
+        // Filtrar desaparecidos
+        desaparecidos.forEach(f => {
+            const cambio = cambios.find(c => c.codigo === f.properties.CODIGOU);
+            if (cambio && poligonoEnArea(f)) {
+                cambiosEnArea.push({
+                    ...cambio,
+                    nombre: f.properties.CONCESION || cambio.nombre,
+                    geometry: f.geometry
+                });
+            }
+        });
+        
+        // Filtrar aparecidos
+        aparecidos.forEach(f => {
+            const cambio = cambios.find(c => c.codigo === f.properties.CODIGOU);
+            if (cambio && poligonoEnArea(f)) {
+                cambiosEnArea.push({
+                    ...cambio,
+                    nombre: f.properties.CONCESION || cambio.nombre,
+                    geometry: f.geometry
+                });
+            }
+        });
+        
+        if (cambiosEnArea.length === 0) {
+            mostrarMensaje('📭 No hay cambios en el área monitoreada', 'info');
+            return;
+        }
+        
+        // 4. Enviar correo con solo los cambios del área
+        const total = cambiosEnArea.length;
+        const maxMostrar = 30;
+        let mensaje = `📊 CAMBIOS EN TU ÁREA MONITOREADA\n`;
+        mensaje += `================================\n`;
+        mensaje += `Se detectaron ${total} cambios en tu área de interés.\n\n`;
+        
+        mensaje += `🔴 DESAPARECIDOS:\n`;
+        const desapArea = cambiosEnArea.filter(c => c.tipo === 'desaparece');
+        desapArea.slice(0, maxMostrar).forEach(c => {
+            mensaje += `  - ${c.nombre} (${c.codigo})\n`;
+        });
+        if (desapArea.length > maxMostrar) {
+            mensaje += `  ... y ${desapArea.length - maxMostrar} más\n`;
+        }
+        
+        mensaje += `\n🟢 APARECIDOS:\n`;
+        const apArea = cambiosEnArea.filter(c => c.tipo === 'aparece');
+        apArea.slice(0, maxMostrar).forEach(c => {
+            mensaje += `  - ${c.nombre} (${c.codigo})\n`;
+        });
+        if (apArea.length > maxMostrar) {
+            mensaje += `  ... y ${apArea.length - maxMostrar} más\n`;
+        }
+        
+        mensaje += `\n🔗 Visor: https://coach0123.github.io/visor-concesiones-mineras/`;
+        mensaje += `\n📅 ${new Date().toLocaleString('es-PE')}`;
+        
+        // Enviar correo con EmailJS o nodemailer
+        try {
+            const transporter = nodemailer.createTransport({
+                service: 'gmail',
+                auth: {
+                    user: 'carlosfernandezgeraldino@gmail.com',
+                    pass: 'wwtolzrnckkdwvoi'
+                }
+            });
+            
+            await transporter.sendMail({
+                from: 'carlosfernandezgeraldino@gmail.com',
+                to: email,
+                subject: `📊 Cambios en tu área - ${new Date().toLocaleDateString('es-PE')}`,
+                text: mensaje
+            });
+            
+            mostrarMensaje(`📧 Correo enviado con ${total} cambios en el área`, 'exito');
+        } catch (error) {
+            console.error('Error enviando correo:', error);
+            mostrarMensaje('Error al enviar correo', 'error');
+        }
+        
+    } catch (error) {
+        console.error(error);
+        mostrarMensaje('Error al verificar cambios', 'error');
+    }
 }
 
 function agregarBotonMonitoreo() {
