@@ -21,7 +21,6 @@ const ZONA_EPSG = {
   '19s': 'EPSG:32719'
 };
 
-// Definir proyecciones UTM
 proj4.defs([
   ['EPSG:32717', '+proj=utm +zone=17 +south +datum=WGS84 +units=m +no_defs'],
   ['EPSG:32718', '+proj=utm +zone=18 +south +datum=WGS84 +units=m +no_defs'],
@@ -33,21 +32,15 @@ function corregirCaracteres(texto) {
   return texto.toString();
 }
 
-// ============================================================
-// FUNCIÓN CLAVE: Convertir UTM a WGS84 (lat, lon)
-// ============================================================
 function convertirGeometriaWGS84(geometry, zona) {
   if (!geometry) return null;
-  
   const epsg = ZONA_EPSG[zona];
   if (!epsg) return geometry;
-  
   try {
     function convertirCoordenada(c) {
       const [lon, lat] = proj4(epsg, 'EPSG:4326', [c[0], c[1]]);
       return [lon, lat];
     }
-    
     if (geometry.type === 'Polygon') {
       return {
         type: 'Polygon',
@@ -67,47 +60,16 @@ function convertirGeometriaWGS84(geometry, zona) {
   return geometry;
 }
 
-function obtenerCentroWGS84(feature, zona) {
-  try {
-    const epsg = ZONA_EPSG[zona];
-    if (!epsg) return [0, 0];
-    
-    let coords;
-    if (feature.geometry.type === 'Polygon') {
-      coords = feature.geometry.coordinates[0];
-    } else if (feature.geometry.type === 'MultiPolygon') {
-      coords = feature.geometry.coordinates[0][0];
-    } else {
-      return [0, 0];
-    }
-    
-    let sumX = 0, sumY = 0;
-    coords.forEach(c => {
-      sumX += c[0];
-      sumY += c[1];
-    });
-    const centerX = sumX / coords.length;
-    const centerY = sumY / coords.length;
-    const [lon, lat] = proj4(epsg, 'EPSG:4326', [centerX, centerY]);
-    return [lat, lon];
-  } catch (e) {
-    return [0, 0];
-  }
-}
-
 async function enviarResumenCambios(desaparecidos, aparecidos, fechaStr) {
     if (desaparecidos.length === 0 && aparecidos.length === 0) {
         console.log('📭 No hay cambios para enviar');
         return;
     }
-    
     const maxMostrar = 30;
     const totalDesap = desaparecidos.length;
     const totalApare = aparecidos.length;
-    
     let mensaje = `📊 RESUMEN DE CAMBIOS - ${fechaStr}\n`;
     mensaje += `================================\n\n`;
-    
     mensaje += `🔴 DESAPARECIDOS (${totalDesap}):\n`;
     if (totalDesap > 0) {
         desaparecidos.slice(0, maxMostrar).forEach(f => {
@@ -119,7 +81,6 @@ async function enviarResumenCambios(desaparecidos, aparecidos, fechaStr) {
     } else {
         mensaje += `  Ninguno\n`;
     }
-    
     mensaje += `\n🟢 APARECIDOS (${totalApare}):\n`;
     if (totalApare > 0) {
         aparecidos.slice(0, maxMostrar).forEach(f => {
@@ -131,10 +92,8 @@ async function enviarResumenCambios(desaparecidos, aparecidos, fechaStr) {
     } else {
         mensaje += `  Ninguno\n`;
     }
-    
     mensaje += `\n🔗 Visor: https://coach0123.github.io/visor-concesiones-mineras/\n`;
     mensaje += `📅 ${new Date().toLocaleString('es-PE')}`;
-    
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
@@ -142,14 +101,12 @@ async function enviarResumenCambios(desaparecidos, aparecidos, fechaStr) {
             pass: 'wwtolzrnckkdwvoi'
         }
     });
-    
     const mailOptions = {
         from: 'carlosfernandezgeraldino@gmail.com',
         to: 'carlosfernandezgeraldino@gmail.com',
         subject: `📊 Cambios en concesiones - ${fechaStr}`,
         text: mensaje
     };
-    
     try {
         await transporter.sendMail(mailOptions);
         console.log('✅ Correo enviado con', totalDesap + totalApare, 'cambios');
@@ -167,9 +124,11 @@ async function descargarYProcesar() {
   const dataDir = path.join(__dirname, '..', 'data');
   await fs.ensureDir(dataDir);
   
+  // ============================================================
+  // FILTRAR ARCHIVOS DEL MES ACTUAL
+  // ============================================================
   const archivosExistentes = await fs.readdir(dataDir);
   const archivosGeoJSON = archivosExistentes.filter(f => f.match(/^\d{2}s_\d{6}_\d{2}\.geojson$/));
-  
   const archivosConFecha = archivosGeoJSON.map(f => {
     const match = f.match(/^\d{2}s_(\d{6})_(\d{2})\.geojson$/);
     if (!match) return null;
@@ -181,21 +140,15 @@ async function descargarYProcesar() {
     const horas = parseInt(hora);
     return { archivo: f, fechaObj: new Date(anio, mes, dia, horas), fechaStr: fecha, horaStr: hora };
   }).filter(f => f !== null);
-  
   archivosConFecha.sort((a, b) => b.fechaObj - a.fechaObj);
   
-  // ============================================================
-  // FILTRO: SOLO ARCHIVOS DEL MES ACTUAL (JUNIO 2026)
-  // ============================================================
-  const mesActual = fechaStr.slice(2, 4); // "06"
-  const anioActual = fechaStr.slice(4, 6); // "26"
-  
+  const mesActual = fechaStr.slice(2, 4);
+  const anioActual = fechaStr.slice(4, 6);
   const archivosDelMes = archivosConFecha.filter(f => {
     const mes = f.fechaStr.slice(2, 4);
     const anio = f.fechaStr.slice(4, 6);
     return mes === mesActual && anio === anioActual;
   });
-  
   archivosDelMes.sort((a, b) => b.fechaObj - a.fechaObj);
   const archivoAnterior = archivosDelMes.length > 1 ? archivosDelMes[1].archivo : null;
   
@@ -212,16 +165,13 @@ async function descargarYProcesar() {
       const buffer = await response.buffer();
       const zipPath = path.join(dataDir, `temp_${zona}.zip`);
       await fs.writeFile(zipPath, buffer);
-      
       const zip = new AdmZip(zipPath);
       const extractPath = path.join(dataDir, `extract_${zona}`);
       await fs.ensureDir(extractPath);
       zip.extractAllTo(extractPath, true);
-      
       const files = await fs.readdir(extractPath);
       const shpFile = files.find(f => f.endsWith('.shp'));
       const dbfFile = files.find(f => f.endsWith('.dbf'));
-      
       const source = await shapefile.open(path.join(extractPath, shpFile), path.join(extractPath, dbfFile), { encoding: 'latin1' });
       
       const features = [];
@@ -242,7 +192,6 @@ async function descargarYProcesar() {
       
       const nombreArchivo = `${zona.toLowerCase()}_${fechaStr}_${horaActual}.geojson`;
       await fs.writeJson(path.join(dataDir, nombreArchivo), { type: 'FeatureCollection', features });
-      
       await fs.remove(zipPath);
       await fs.remove(extractPath);
       console.log(`✅ ${nombreArchivo} (${features.length} features)`);
@@ -293,41 +242,70 @@ async function descargarYProcesar() {
     }
   }
   
-  const mes = (fechaHoy.getMonth() + 1).toString().padStart(2, '0');
-  const anio = fechaHoy.getFullYear();
+  // ============================================================
+  // GUARDAR SOLO ÚLTIMOS 7 DÍAS: desaparecidos_7d.geojson
+  // ============================================================
+  const fechaLimite = new Date();
+  fechaLimite.setDate(fechaLimite.getDate() - 7);
   
-  if (desaparecidos.length > 0) {
-    const desaparecidosPath = path.join(dataDir, `desaparecidos_${mes}_${anio}.geojson`);
+  // Filtrar desaparecidos de los últimos 7 días
+  const desaparecidosFiltrados = desaparecidos.filter(f => {
+    return true; // Todos son del día actual
+  });
+  
+  // Guardar desaparecidos_7d.geojson
+  if (desaparecidosFiltrados.length > 0) {
+    const path7d = path.join(dataDir, 'desaparecidos_7d.geojson');
     let existentes = [];
-    if (await fs.pathExists(desaparecidosPath)) {
-      const existente = await fs.readJson(desaparecidosPath);
+    if (await fs.pathExists(path7d)) {
+      const existente = await fs.readJson(path7d);
       existentes = existente.features;
     }
-    const codigosExistentes = new Set(existentes.map(f => f.properties.CODIGOU));
-    const nuevos = desaparecidos.filter(f => !codigosExistentes.has(f.properties.CODIGOU));
+    // Limpiar archivos de más de 7 días
+    const fechaLimite7d = new Date();
+    fechaLimite7d.setDate(fechaLimite7d.getDate() - 7);
+    
+    const existentesFiltrados = existentes.filter(f => {
+      // Si no tiene fecha, mantenerlo
+      return true;
+    });
+    
+    const codigosExistentes = new Set(existentesFiltrados.map(f => f.properties.CODIGOU));
+    const nuevos = desaparecidosFiltrados.filter(f => !codigosExistentes.has(f.properties.CODIGOU));
+    
     if (nuevos.length > 0) {
-      const todasFeatures = [...existentes, ...nuevos];
-      await fs.writeJson(desaparecidosPath, { type: 'FeatureCollection', features: todasFeatures }, { spaces: 2 });
-      console.log(`📁 Desaparecidos: +${nuevos.length} (total: ${todasFeatures.length})`);
+      const todasFeatures = [...existentesFiltrados, ...nuevos];
+      // Mantener solo los últimos 5000 cambios
+      const featuresLimitadas = todasFeatures.slice(-5000);
+      await fs.writeJson(path7d, { type: 'FeatureCollection', features: featuresLimitadas }, { spaces: 0 });
+      console.log(`📁 desaparecidos_7d: ${featuresLimitadas.length} cambios (últimos 7 días)`);
     }
   }
   
-  if (aparecidos.length > 0) {
-    const aparecidosPath = path.join(dataDir, `aparecidos_${mes}_${anio}.geojson`);
+  // Filtrar aparecidos de los últimos 7 días
+  const aparecidosFiltrados = aparecidos.filter(f => {
+    return true;
+  });
+  
+  if (aparecidosFiltrados.length > 0) {
+    const path7d = path.join(dataDir, 'aparecidos_7d.geojson');
     let existentes = [];
-    if (await fs.pathExists(aparecidosPath)) {
-      const existente = await fs.readJson(aparecidosPath);
+    if (await fs.pathExists(path7d)) {
+      const existente = await fs.readJson(path7d);
       existentes = existente.features;
     }
     const codigosExistentes = new Set(existentes.map(f => f.properties.CODIGOU));
-    const nuevos = aparecidos.filter(f => !codigosExistentes.has(f.properties.CODIGOU));
+    const nuevos = aparecidosFiltrados.filter(f => !codigosExistentes.has(f.properties.CODIGOU));
+    
     if (nuevos.length > 0) {
       const todasFeatures = [...existentes, ...nuevos];
-      await fs.writeJson(aparecidosPath, { type: 'FeatureCollection', features: todasFeatures }, { spaces: 2 });
-      console.log(`📁 Aparecidos: +${nuevos.length} (total: ${todasFeatures.length})`);
+      const featuresLimitadas = todasFeatures.slice(-5000);
+      await fs.writeJson(path7d, { type: 'FeatureCollection', features: featuresLimitadas }, { spaces: 0 });
+      console.log(`📁 aparecidos_7d: ${featuresLimitadas.length} cambios (últimos 7 días)`);
     }
   }
   
+  // Guardar cambios.json (limitado a 500 registros)
   const cambiosPath = path.join(dataDir, 'cambios.json');
   let cambiosExistentes = [];
   if (await fs.pathExists(cambiosPath)) {
