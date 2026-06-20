@@ -411,7 +411,7 @@ async function buscarYCentrarPoligono(codigo, nombre, tipo) {
     // ============================================================
     // PASO 1: Buscar PRIMERO en el archivo mensual (desaparecidos/ aparecidos)
     // ============================================================
-    const archivoMensual = `${tipo === 'desaparece' ? 'desaparecidos' : 'aparecidos'}_${mes}_${anio}.geojson`;
+    const archivoMensual = `${tipo === 'desaparece' ? 'desaparecidos' : 'aparecidos'}_7d.geojson`;
     
     try {
         const response = await fetch(`${baseURL}/data/${archivoMensual}`);
