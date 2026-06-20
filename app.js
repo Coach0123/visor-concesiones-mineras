@@ -760,12 +760,12 @@ async function verificarCambiosYEnviarAlerta() {
     mostrarMensaje('🔍 Verificando cambios en el área...', 'info');
     
     try {
-        // 1. Cargar los cambios desde cambios.json
+        // Cargar los cambios desde cambios.json
         const response = await fetch(`${baseURL}/data/cambios.json`);
         if (!response.ok) throw new Error('Error al cargar cambios');
         const cambios = await response.json();
         
-        // 2. Cargar los polígonos de desaparecidos y aparecidos (7d)
+        // Cargar los polígonos de desaparecidos y aparecidos (7d)
         const [desapResp, apResp] = await Promise.all([
             fetch(`${baseURL}/data/desaparecidos_7d.geojson`),
             fetch(`${baseURL}/data/aparecidos_7d.geojson`)
@@ -783,13 +783,16 @@ async function verificarCambiosYEnviarAlerta() {
             aparecidos = data.features || [];
         }
         
-        // 3. Filtrar solo los polígonos dentro del área dibujada
-        const cambiosEnArea = [];
+        console.log(`📊 Desaparecidos cargados: ${desaparecidos.length}`);
+        console.log(`📊 Aparecidos cargados: ${aparecidos.length}`);
         
+        // Función para verificar si un polígono está dentro del área (coordenadas ya en WGS84)
         function poligonoEnArea(feature) {
             if (!feature.geometry) return false;
             
             let coords = [];
+            let centerLon = 0, centerLat = 0;
+            
             if (feature.geometry.type === 'Polygon') {
                 coords = feature.geometry.coordinates[0];
             } else if (feature.geometry.type === 'MultiPolygon') {
@@ -800,18 +803,25 @@ async function verificarCambiosYEnviarAlerta() {
                 return areaMonitoreada.contains([lat, lon]);
             }
             
-            let sumLon = 0, sumLat = 0;
-            coords.forEach(c => {
-                sumLon += c[0];
-                sumLat += c[1];
-            });
-            const centerLon = sumLon / coords.length;
-            const centerLat = sumLat / coords.length;
+            if (!coords || coords.length === 0) return false;
             
-            return areaMonitoreada.contains([centerLat, centerLon]);
+            // Calcular centro (ya está en WGS84)
+            coords.forEach(c => {
+                centerLon += c[0];
+                centerLat += c[1];
+            });
+            centerLon = centerLon / coords.length;
+            centerLat = centerLat / coords.length;
+            
+            const estaDentro = areaMonitoreada.contains([centerLat, centerLon]);
+            console.log(`📍 ${feature.properties.CONCESION}: ${centerLat}, ${centerLon} → ${estaDentro ? '✅ DENTRO' : '❌ FUERA'}`);
+            
+            return estaDentro;
         }
         
-        // Filtrar desaparecidos
+        // Filtrar cambios en el área
+        const cambiosEnArea = [];
+        
         desaparecidos.forEach(f => {
             const cambio = cambios.find(c => c.codigo === f.properties.CODIGOU);
             if (cambio && poligonoEnArea(f)) {
@@ -823,7 +833,6 @@ async function verificarCambiosYEnviarAlerta() {
             }
         });
         
-        // Filtrar aparecidos
         aparecidos.forEach(f => {
             const cambio = cambios.find(c => c.codigo === f.properties.CODIGOU);
             if (cambio && poligonoEnArea(f)) {
@@ -835,20 +844,22 @@ async function verificarCambiosYEnviarAlerta() {
             }
         });
         
+        console.log(`📊 Cambios en el área: ${cambiosEnArea.length}`);
+        
         if (cambiosEnArea.length === 0) {
             mostrarMensaje('📭 No hay cambios en el área monitoreada', 'info');
             return;
         }
         
-        // 4. Enviar correo con solo los cambios del área
+        // Generar mensaje
         const total = cambiosEnArea.length;
         const maxMostrar = 30;
         let mensaje = `📊 CAMBIOS EN TU ÁREA MONITOREADA\n`;
         mensaje += `================================\n`;
         mensaje += `Se detectaron ${total} cambios en tu área de interés.\n\n`;
         
-        mensaje += `🔴 DESAPARECIDOS:\n`;
         const desapArea = cambiosEnArea.filter(c => c.tipo === 'desaparece');
+        mensaje += `🔴 DESAPARECIDOS (${desapArea.length}):\n`;
         desapArea.slice(0, maxMostrar).forEach(c => {
             mensaje += `  - ${c.nombre} (${c.codigo})\n`;
         });
@@ -856,8 +867,8 @@ async function verificarCambiosYEnviarAlerta() {
             mensaje += `  ... y ${desapArea.length - maxMostrar} más\n`;
         }
         
-        mensaje += `\n🟢 APARECIDOS:\n`;
         const apArea = cambiosEnArea.filter(c => c.tipo === 'aparece');
+        mensaje += `\n🟢 APARECIDOS (${apArea.length}):\n`;
         apArea.slice(0, maxMostrar).forEach(c => {
             mensaje += `  - ${c.nombre} (${c.codigo})\n`;
         });
@@ -880,7 +891,7 @@ async function verificarCambiosYEnviarAlerta() {
         await transporter.sendMail({
             from: 'carlosfernandezgeraldino@gmail.com',
             to: email,
-            subject: `📊 Cambios en tu área - ${new Date().toLocaleDateString('es-PE')}`,
+            subject: `📊 ${total} cambios en tu área - ${new Date().toLocaleDateString('es-PE')}`,
             text: mensaje
         });
         
