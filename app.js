@@ -769,9 +769,9 @@ async function verificarCambiosYEnviarAlerta() {
         console.log(`📦 Área: ${areaMonitoreada.toBBoxString()}`);
         
         // ============================================================
-        // FUNCIÓN PARA CALCULAR CENTRO DE UN POLÍGONO EN WGS84
+        // FUNCIÓN PARA CALCULAR CENTRO DE UN POLÍGONO
         // ============================================================
-        function calcularCentroWGS84(feature) {
+        function calcularCentro(feature) {
             if (!feature.geometry) return null;
             
             let coords = [];
@@ -797,20 +797,84 @@ async function verificarCambiosYEnviarAlerta() {
             };
         }
         
-        // ============================================================
-        // BUSCAR EN TODOS LOS DATOS CARGADOS (todosLosDatos)
-        // ============================================================
         const cambiosEnArea = [];
+        const codigosYaProcesados = new Set();
         
-        // Recorrer todas las zonas y features cargados
+        // ============================================================
+        // PASO 1: BUSCAR EN DESAPARECIDOS_7d
+        // ============================================================
+        try {
+            const resp = await fetch(`${baseURL}/data/desaparecidos_7d.geojson`);
+            if (resp.ok) {
+                const data = await resp.json();
+                console.log(`📊 Desaparecidos_7d: ${data.features.length} polígonos`);
+                
+                data.features.forEach(f => {
+                    const codigo = f.properties.CODIGOU;
+                    if (codigosYaProcesados.has(codigo)) return;
+                    
+                    const cambio = cambios.find(c => c.codigo === codigo && c.tipo === 'desaparece');
+                    if (cambio) {
+                        const centro = calcularCentro(f);
+                        if (centro && areaMonitoreada.contains([centro.lat, centro.lon])) {
+                            codigosYaProcesados.add(codigo);
+                            cambiosEnArea.push({
+                                ...cambio,
+                                nombre: f.properties.CONCESION || cambio.nombre,
+                                geometry: f.geometry
+                            });
+                        }
+                    }
+                });
+            }
+        } catch (e) {
+            console.log('⚠️ Error cargando desaparecidos_7d:', e.message);
+        }
+        
+        // ============================================================
+        // PASO 2: BUSCAR EN APARECIDOS_7d
+        // ============================================================
+        try {
+            const resp = await fetch(`${baseURL}/data/aparecidos_7d.geojson`);
+            if (resp.ok) {
+                const data = await resp.json();
+                console.log(`📊 Aparecidos_7d: ${data.features.length} polígonos`);
+                
+                data.features.forEach(f => {
+                    const codigo = f.properties.CODIGOU;
+                    if (codigosYaProcesados.has(codigo)) return;
+                    
+                    const cambio = cambios.find(c => c.codigo === codigo && c.tipo === 'aparece');
+                    if (cambio) {
+                        const centro = calcularCentro(f);
+                        if (centro && areaMonitoreada.contains([centro.lat, centro.lon])) {
+                            codigosYaProcesados.add(codigo);
+                            cambiosEnArea.push({
+                                ...cambio,
+                                nombre: f.properties.CONCESION || cambio.nombre,
+                                geometry: f.geometry
+                            });
+                        }
+                    }
+                });
+            }
+        } catch (e) {
+            console.log('⚠️ Error cargando aparecidos_7d:', e.message);
+        }
+        
+        // ============================================================
+        // PASO 3: BUSCAR EN DATOS DIARIOS (todosLosDatos) - RESPLADO
+        // ============================================================
         for (const zonaData of todosLosDatos) {
             for (const feature of zonaData.features) {
                 const codigo = feature.properties.CODIGOU;
-                const cambio = cambios.find(c => c.codigo === codigo);
+                if (codigosYaProcesados.has(codigo)) continue;
                 
+                const cambio = cambios.find(c => c.codigo === codigo);
                 if (cambio) {
-                    const centro = calcularCentroWGS84(feature);
+                    const centro = calcularCentro(feature);
                     if (centro && areaMonitoreada.contains([centro.lat, centro.lon])) {
+                        codigosYaProcesados.add(codigo);
                         cambiosEnArea.push({
                             ...cambio,
                             nombre: feature.properties.CONCESION || cambio.nombre,
