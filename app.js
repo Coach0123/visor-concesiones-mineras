@@ -769,6 +769,27 @@ async function verificarCambiosYEnviarAlerta() {
         console.log(`📦 Área: ${areaMonitoreada.toBBoxString()}`);
         
         // ============================================================
+        // FUNCIÓN PARA CONVERTIR UTM A WGS84
+        // ============================================================
+        function convertirUTM_A_WGS84(x, y) {
+            try {
+                // Determinar zona por el valor de x (UTM)
+                let zona;
+                if (x >= 1000000) zona = '19s';
+                else if (x >= 700000) zona = '18s';
+                else zona = '17s';
+                
+                const epsg = zona === '17s' ? 'EPSG:32717' : 
+                            (zona === '18s' ? 'EPSG:32718' : 'EPSG:32719');
+                
+                const [lon, lat] = proj4(epsg, 'EPSG:4326', [x, y]);
+                return { lat, lon };
+            } catch (e) {
+                return null;
+            }
+        }
+        
+        // ============================================================
         // FUNCIÓN PARA CALCULAR CENTRO DE UN POLÍGONO
         // ============================================================
         function calcularCentro(feature) {
@@ -785,15 +806,28 @@ async function verificarCambiosYEnviarAlerta() {
             
             if (!coords || coords.length === 0) return null;
             
-            let sumLon = 0, sumLat = 0;
+            let sumX = 0, sumY = 0;
             coords.forEach(c => {
-                sumLon += c[0];
-                sumLat += c[1];
+                sumX += c[0];
+                sumY += c[1];
             });
             
+            // Si las coordenadas son UTM (valores grandes), convertir a WGS84
+            const avgX = sumX / coords.length;
+            const avgY = sumY / coords.length;
+            
+            // Detectar si es UTM (valores > 100000)
+            if (avgX > 100000 || avgY > 100000) {
+                const wgs84 = convertirUTM_A_WGS84(avgX, avgY);
+                if (wgs84) {
+                    return wgs84;
+                }
+            }
+            
+            // Si ya está en WGS84 (valores pequeños)
             return {
-                lat: sumLat / coords.length,
-                lon: sumLon / coords.length
+                lat: avgY / coords.length,
+                lon: avgX / coords.length
             };
         }
         
@@ -801,69 +835,7 @@ async function verificarCambiosYEnviarAlerta() {
         const codigosYaProcesados = new Set();
         
         // ============================================================
-        // PASO 1: BUSCAR EN DESAPARECIDOS_7d
-        // ============================================================
-        try {
-            const resp = await fetch(`${baseURL}/data/desaparecidos_7d.geojson`);
-            if (resp.ok) {
-                const data = await resp.json();
-                console.log(`📊 Desaparecidos_7d: ${data.features.length} polígonos`);
-                
-                data.features.forEach(f => {
-                    const codigo = f.properties.CODIGOU;
-                    if (codigosYaProcesados.has(codigo)) return;
-                    
-                    const cambio = cambios.find(c => c.codigo === codigo && c.tipo === 'desaparece');
-                    if (cambio) {
-                        const centro = calcularCentro(f);
-                        if (centro && areaMonitoreada.contains([centro.lat, centro.lon])) {
-                            codigosYaProcesados.add(codigo);
-                            cambiosEnArea.push({
-                                ...cambio,
-                                nombre: f.properties.CONCESION || cambio.nombre,
-                                geometry: f.geometry
-                            });
-                        }
-                    }
-                });
-            }
-        } catch (e) {
-            console.log('⚠️ Error cargando desaparecidos_7d:', e.message);
-        }
-        
-        // ============================================================
-        // PASO 2: BUSCAR EN APARECIDOS_7d
-        // ============================================================
-        try {
-            const resp = await fetch(`${baseURL}/data/aparecidos_7d.geojson`);
-            if (resp.ok) {
-                const data = await resp.json();
-                console.log(`📊 Aparecidos_7d: ${data.features.length} polígonos`);
-                
-                data.features.forEach(f => {
-                    const codigo = f.properties.CODIGOU;
-                    if (codigosYaProcesados.has(codigo)) return;
-                    
-                    const cambio = cambios.find(c => c.codigo === codigo && c.tipo === 'aparece');
-                    if (cambio) {
-                        const centro = calcularCentro(f);
-                        if (centro && areaMonitoreada.contains([centro.lat, centro.lon])) {
-                            codigosYaProcesados.add(codigo);
-                            cambiosEnArea.push({
-                                ...cambio,
-                                nombre: f.properties.CONCESION || cambio.nombre,
-                                geometry: f.geometry
-                            });
-                        }
-                    }
-                });
-            }
-        } catch (e) {
-            console.log('⚠️ Error cargando aparecidos_7d:', e.message);
-        }
-        
-        // ============================================================
-        // PASO 3: BUSCAR EN DATOS DIARIOS (todosLosDatos) - RESPLADO
+        // PASO 1: BUSCAR EN TODOS LOS DATOS CARGADOS (todosLosDatos)
         // ============================================================
         for (const zonaData of todosLosDatos) {
             for (const feature of zonaData.features) {
@@ -878,12 +850,72 @@ async function verificarCambiosYEnviarAlerta() {
                         cambiosEnArea.push({
                             ...cambio,
                             nombre: feature.properties.CONCESION || cambio.nombre,
-                            geometry: feature.geometry
+                            geometry: feature.geometry,
+                            centro: centro
                         });
+                        console.log(`✅ ${cambio.nombre}: [${centro.lat}, ${centro.lon}] → DENTRO`);
                     }
                 }
             }
         }
+        
+        // ============================================================
+        // PASO 2: BUSCAR EN DESAPARECIDOS_7d (respaldo)
+        // ============================================================
+        try {
+            const resp = await fetch(`${baseURL}/data/desaparecidos_7d.geojson`);
+            if (resp.ok) {
+                const data = await resp.json();
+                data.features.forEach(f => {
+                    const codigo = f.properties.CODIGOU;
+                    if (codigosYaProcesados.has(codigo)) return;
+                    
+                    const cambio = cambios.find(c => c.codigo === codigo && c.tipo === 'desaparece');
+                    if (cambio) {
+                        const centro = calcularCentro(f);
+                        if (centro && areaMonitoreada.contains([centro.lat, centro.lon])) {
+                            codigosYaProcesados.add(codigo);
+                            cambiosEnArea.push({
+                                ...cambio,
+                                nombre: f.properties.CONCESION || cambio.nombre,
+                                geometry: f.geometry,
+                                centro: centro
+                            });
+                            console.log(`✅ ${cambio.nombre}: [${centro.lat}, ${centro.lon}] → DENTRO (desaparecidos_7d)`);
+                        }
+                    }
+                });
+            }
+        } catch (e) {}
+        
+        // ============================================================
+        // PASO 3: BUSCAR EN APARECIDOS_7d (respaldo)
+        // ============================================================
+        try {
+            const resp = await fetch(`${baseURL}/data/aparecidos_7d.geojson`);
+            if (resp.ok) {
+                const data = await resp.json();
+                data.features.forEach(f => {
+                    const codigo = f.properties.CODIGOU;
+                    if (codigosYaProcesados.has(codigo)) return;
+                    
+                    const cambio = cambios.find(c => c.codigo === codigo && c.tipo === 'aparece');
+                    if (cambio) {
+                        const centro = calcularCentro(f);
+                        if (centro && areaMonitoreada.contains([centro.lat, centro.lon])) {
+                            codigosYaProcesados.add(codigo);
+                            cambiosEnArea.push({
+                                ...cambio,
+                                nombre: f.properties.CONCESION || cambio.nombre,
+                                geometry: f.geometry,
+                                centro: centro
+                            });
+                            console.log(`✅ ${cambio.nombre}: [${centro.lat}, ${centro.lon}] → DENTRO (aparecidos_7d)`);
+                        }
+                    }
+                });
+            }
+        } catch (e) {}
         
         console.log(`📊 Cambios en el área: ${cambiosEnArea.length}`);
         
