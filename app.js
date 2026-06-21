@@ -760,12 +760,10 @@ async function verificarCambiosYEnviarAlerta() {
     mostrarMensaje('🔍 Verificando cambios en el área...', 'info');
     
     try {
-        // Cargar los cambios desde cambios.json
         const response = await fetch(`${baseURL}/data/cambios.json`);
         if (!response.ok) throw new Error('Error al cargar cambios');
         const cambios = await response.json();
         
-        // Cargar los polígonos de desaparecidos y aparecidos (7d)
         const [desapResp, apResp] = await Promise.all([
             fetch(`${baseURL}/data/desaparecidos_7d.geojson`),
             fetch(`${baseURL}/data/aparecidos_7d.geojson`)
@@ -783,10 +781,13 @@ async function verificarCambiosYEnviarAlerta() {
             aparecidos = data.features || [];
         }
         
-        console.log(`📊 Desaparecidos cargados: ${desaparecidos.length}`);
-        console.log(`📊 Aparecidos cargados: ${aparecidos.length}`);
+        console.log(`📊 Desaparecidos_7d: ${desaparecidos.length}`);
+        console.log(`📊 Aparecidos_7d: ${aparecidos.length}`);
+        console.log(`📦 Área: ${areaMonitoreada.toBBoxString()}`);
         
-        // Función para verificar si un polígono está dentro del área (coordenadas ya en WGS84)
+        // ============================================================
+        // FUNCIÓN CORREGIDA: polígonos en [lon, lat], área en [lat, lon]
+        // ============================================================
         function poligonoEnArea(feature) {
             if (!feature.geometry) return false;
             
@@ -805,7 +806,6 @@ async function verificarCambiosYEnviarAlerta() {
             
             if (!coords || coords.length === 0) return false;
             
-            // Calcular centro (ya está en WGS84)
             coords.forEach(c => {
                 centerLon += c[0];
                 centerLat += c[1];
@@ -814,12 +814,10 @@ async function verificarCambiosYEnviarAlerta() {
             centerLat = centerLat / coords.length;
             
             const estaDentro = areaMonitoreada.contains([centerLat, centerLon]);
-            console.log(`📍 ${feature.properties.CONCESION}: ${centerLat}, ${centerLon} → ${estaDentro ? '✅ DENTRO' : '❌ FUERA'}`);
-            
+            console.log(`📍 ${feature.properties.CONCESION}: [${centerLat}, ${centerLon}] → ${estaDentro ? '✅ DENTRO' : '❌ FUERA'}`);
             return estaDentro;
         }
         
-        // Filtrar cambios en el área
         const cambiosEnArea = [];
         
         desaparecidos.forEach(f => {
@@ -879,7 +877,6 @@ async function verificarCambiosYEnviarAlerta() {
         mensaje += `\n🔗 Visor: https://coach0123.github.io/visor-concesiones-mineras/`;
         mensaje += `\n📅 ${new Date().toLocaleString('es-PE')}`;
         
-        // Enviar correo
         const transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
