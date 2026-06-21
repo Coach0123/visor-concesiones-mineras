@@ -760,7 +760,6 @@ async function verificarCambiosYEnviarAlerta() {
     mostrarMensaje('🔍 Verificando cambios en el área...', 'info');
     
     try {
-        // Cargar cambios desde cambios.json
         const response = await fetch(`${baseURL}/data/cambios.json`);
         if (!response.ok) throw new Error('Error al cargar cambios');
         const cambios = await response.json();
@@ -769,28 +768,7 @@ async function verificarCambiosYEnviarAlerta() {
         console.log(`📦 Área: ${areaMonitoreada.toBBoxString()}`);
         
         // ============================================================
-        // FUNCIÓN PARA CONVERTIR UTM A WGS84
-        // ============================================================
-        function convertirUTM_A_WGS84(x, y) {
-            try {
-                // Determinar zona por el valor de x (UTM)
-                let zona;
-                if (x >= 1000000) zona = '19s';
-                else if (x >= 700000) zona = '18s';
-                else zona = '17s';
-                
-                const epsg = zona === '17s' ? 'EPSG:32717' : 
-                            (zona === '18s' ? 'EPSG:32718' : 'EPSG:32719');
-                
-                const [lon, lat] = proj4(epsg, 'EPSG:4326', [x, y]);
-                return { lat, lon };
-            } catch (e) {
-                return null;
-            }
-        }
-        
-        // ============================================================
-        // FUNCIÓN PARA CALCULAR CENTRO DE UN POLÍGONO
+        // FUNCIÓN CORREGIDA: Calcula centro y convierte UTM a WGS84
         // ============================================================
         function calcularCentro(feature) {
             if (!feature.geometry) return null;
@@ -812,31 +790,34 @@ async function verificarCambiosYEnviarAlerta() {
                 sumY += c[1];
             });
             
-            // Si las coordenadas son UTM (valores grandes), convertir a WGS84
             const avgX = sumX / coords.length;
             const avgY = sumY / coords.length;
             
-            // Detectar si es UTM (valores > 100000)
+            // Si es UTM (valores > 100000), convertir a WGS84
             if (avgX > 100000 || avgY > 100000) {
-                const wgs84 = convertirUTM_A_WGS84(avgX, avgY);
-                if (wgs84) {
-                    return wgs84;
+                let zona;
+                if (avgX >= 1000000) zona = '19s';
+                else if (avgX >= 700000) zona = '18s';
+                else zona = '17s';
+                
+                const epsg = zona === '17s' ? 'EPSG:32717' : 
+                            (zona === '18s' ? 'EPSG:32718' : 'EPSG:32719');
+                
+                try {
+                    const [lon, lat] = proj4(epsg, 'EPSG:4326', [avgX, avgY]);
+                    return { lat, lon };
+                } catch (e) {
+                    return { lat: avgY, lon: avgX };
                 }
             }
             
-            // Si ya está en WGS84 (valores pequeños)
-            return {
-                lat: avgY / coords.length,
-                lon: avgX / coords.length
-            };
+            return { lat: avgY, lon: avgX };
         }
         
         const cambiosEnArea = [];
         const codigosYaProcesados = new Set();
         
-        // ============================================================
-        // PASO 1: BUSCAR EN TODOS LOS DATOS CARGADOS (todosLosDatos)
-        // ============================================================
+        // Buscar en todos los datos cargados
         for (const zonaData of todosLosDatos) {
             for (const feature of zonaData.features) {
                 const codigo = feature.properties.CODIGOU;
@@ -850,8 +831,7 @@ async function verificarCambiosYEnviarAlerta() {
                         cambiosEnArea.push({
                             ...cambio,
                             nombre: feature.properties.CONCESION || cambio.nombre,
-                            geometry: feature.geometry,
-                            centro: centro
+                            geometry: feature.geometry
                         });
                         console.log(`✅ ${cambio.nombre}: [${centro.lat}, ${centro.lon}] → DENTRO`);
                     }
@@ -859,9 +839,7 @@ async function verificarCambiosYEnviarAlerta() {
             }
         }
         
-        // ============================================================
-        // PASO 2: BUSCAR EN DESAPARECIDOS_7d (respaldo)
-        // ============================================================
+        // Buscar en desaparecidos_7d como respaldo
         try {
             const resp = await fetch(`${baseURL}/data/desaparecidos_7d.geojson`);
             if (resp.ok) {
@@ -878,8 +856,7 @@ async function verificarCambiosYEnviarAlerta() {
                             cambiosEnArea.push({
                                 ...cambio,
                                 nombre: f.properties.CONCESION || cambio.nombre,
-                                geometry: f.geometry,
-                                centro: centro
+                                geometry: f.geometry
                             });
                             console.log(`✅ ${cambio.nombre}: [${centro.lat}, ${centro.lon}] → DENTRO (desaparecidos_7d)`);
                         }
@@ -888,9 +865,7 @@ async function verificarCambiosYEnviarAlerta() {
             }
         } catch (e) {}
         
-        // ============================================================
-        // PASO 3: BUSCAR EN APARECIDOS_7d (respaldo)
-        // ============================================================
+        // Buscar en aparecidos_7d como respaldo
         try {
             const resp = await fetch(`${baseURL}/data/aparecidos_7d.geojson`);
             if (resp.ok) {
@@ -907,8 +882,7 @@ async function verificarCambiosYEnviarAlerta() {
                             cambiosEnArea.push({
                                 ...cambio,
                                 nombre: f.properties.CONCESION || cambio.nombre,
-                                geometry: f.geometry,
-                                centro: centro
+                                geometry: f.geometry
                             });
                             console.log(`✅ ${cambio.nombre}: [${centro.lat}, ${centro.lon}] → DENTRO (aparecidos_7d)`);
                         }
@@ -925,7 +899,7 @@ async function verificarCambiosYEnviarAlerta() {
         }
         
         // ============================================================
-        // GENERAR MENSAJE Y ENVIAR CORREO
+        // GENERAR MENSAJE Y ENVIAR CORREO (CON TU SISTEMA ACTUAL)
         // ============================================================
         const total = cambiosEnArea.length;
         const maxMostrar = 30;
@@ -954,22 +928,41 @@ async function verificarCambiosYEnviarAlerta() {
         mensaje += `\n🔗 Visor: https://coach0123.github.io/visor-concesiones-mineras/`;
         mensaje += `\n📅 ${new Date().toLocaleString('es-PE')}`;
         
-        const transporter = nodemailer.createTransport({
-            service: 'gmail',
-            auth: {
-                user: 'carlosfernandezgeraldino@gmail.com',
-                pass: 'wwtolzrnckkdwvoi'
+        // Enviar correo con tu sistema actual (EmailJS o nodemailer)
+        try {
+            // Si usas nodemailer (desde Node.js)
+            if (typeof nodemailer !== 'undefined') {
+                const transporter = nodemailer.createTransport({
+                    service: 'gmail',
+                    auth: {
+                        user: 'carlosfernandezgeraldino@gmail.com',
+                        pass: 'wwtolzrnckkdwvoi'
+                    }
+                });
+                
+                await transporter.sendMail({
+                    from: 'carlosfernandezgeraldino@gmail.com',
+                    to: email,
+                    subject: `📊 ${total} cambios en tu área - ${new Date().toLocaleDateString('es-PE')}`,
+                    text: mensaje
+                });
+            } 
+            // Si usas EmailJS (desde el navegador)
+            else if (typeof emailjs !== 'undefined') {
+                const templateParams = {
+                    to_email: email,
+                    message: mensaje,
+                    subject: `📊 ${total} cambios en tu área - ${new Date().toLocaleDateString('es-PE')}`
+                };
+                
+                await emailjs.send('service_gmail_visor', 'template_visor_alertas', templateParams);
             }
-        });
-        
-        await transporter.sendMail({
-            from: 'carlosfernandezgeraldino@gmail.com',
-            to: email,
-            subject: `📊 ${total} cambios en tu área - ${new Date().toLocaleDateString('es-PE')}`,
-            text: mensaje
-        });
-        
-        mostrarMensaje(`📧 Correo enviado con ${total} cambios en el área`, 'exito');
+            
+            mostrarMensaje(`📧 Correo enviado con ${total} cambios en el área`, 'exito');
+        } catch (emailError) {
+            console.error('❌ Error enviando correo:', emailError);
+            mostrarMensaje('Error al enviar correo. Revisa la consola.', 'error');
+        }
         
     } catch (error) {
         console.error(error);
