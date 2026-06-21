@@ -760,87 +760,66 @@ async function verificarCambiosYEnviarAlerta() {
     mostrarMensaje('🔍 Verificando cambios en el área...', 'info');
     
     try {
+        // Cargar cambios desde cambios.json
         const response = await fetch(`${baseURL}/data/cambios.json`);
         if (!response.ok) throw new Error('Error al cargar cambios');
         const cambios = await response.json();
         
-        const [desapResp, apResp] = await Promise.all([
-            fetch(`${baseURL}/data/desaparecidos_7d.geojson`),
-            fetch(`${baseURL}/data/aparecidos_7d.geojson`)
-        ]);
-        
-        let desaparecidos = [];
-        let aparecidos = [];
-        
-        if (desapResp.ok) {
-            const data = await desapResp.json();
-            desaparecidos = data.features || [];
-        }
-        if (apResp.ok) {
-            const data = await apResp.json();
-            aparecidos = data.features || [];
-        }
-        
-        console.log(`📊 Desaparecidos_7d: ${desaparecidos.length}`);
-        console.log(`📊 Aparecidos_7d: ${aparecidos.length}`);
+        console.log(`📊 Cambios totales: ${cambios.length}`);
         console.log(`📦 Área: ${areaMonitoreada.toBBoxString()}`);
         
         // ============================================================
-        // FUNCIÓN CORREGIDA: polígonos en [lon, lat], área en [lat, lon]
+        // FUNCIÓN PARA CALCULAR CENTRO DE UN POLÍGONO EN WGS84
         // ============================================================
-        function poligonoEnArea(feature) {
-            if (!feature.geometry) return false;
+        function calcularCentroWGS84(feature) {
+            if (!feature.geometry) return null;
             
             let coords = [];
-            let centerLon = 0, centerLat = 0;
-            
             if (feature.geometry.type === 'Polygon') {
                 coords = feature.geometry.coordinates[0];
             } else if (feature.geometry.type === 'MultiPolygon') {
                 coords = feature.geometry.coordinates[0][0];
             } else if (feature.geometry.type === 'Point') {
-                const lon = feature.geometry.coordinates[0];
-                const lat = feature.geometry.coordinates[1];
-                return areaMonitoreada.contains([lat, lon]);
+                return { lat: feature.geometry.coordinates[1], lon: feature.geometry.coordinates[0] };
             }
             
-            if (!coords || coords.length === 0) return false;
+            if (!coords || coords.length === 0) return null;
             
+            let sumLon = 0, sumLat = 0;
             coords.forEach(c => {
-                centerLon += c[0];
-                centerLat += c[1];
+                sumLon += c[0];
+                sumLat += c[1];
             });
-            centerLon = centerLon / coords.length;
-            centerLat = centerLat / coords.length;
             
-            const estaDentro = areaMonitoreada.contains([centerLat, centerLon]);
-            console.log(`📍 ${feature.properties.CONCESION}: [${centerLat}, ${centerLon}] → ${estaDentro ? '✅ DENTRO' : '❌ FUERA'}`);
-            return estaDentro;
+            return {
+                lat: sumLat / coords.length,
+                lon: sumLon / coords.length
+            };
         }
         
+        // ============================================================
+        // BUSCAR EN TODOS LOS DATOS CARGADOS (todosLosDatos)
+        // ============================================================
         const cambiosEnArea = [];
         
-        desaparecidos.forEach(f => {
-            const cambio = cambios.find(c => c.codigo === f.properties.CODIGOU);
-            if (cambio && poligonoEnArea(f)) {
-                cambiosEnArea.push({
-                    ...cambio,
-                    nombre: f.properties.CONCESION || cambio.nombre,
-                    geometry: f.geometry
-                });
+        // Recorrer todas las zonas y features cargados
+        for (const zonaData of todosLosDatos) {
+            for (const feature of zonaData.features) {
+                const codigo = feature.properties.CODIGOU;
+                const cambio = cambios.find(c => c.codigo === codigo);
+                
+                if (cambio) {
+                    const centro = calcularCentroWGS84(feature);
+                    if (centro && areaMonitoreada.contains([centro.lat, centro.lon])) {
+                        cambiosEnArea.push({
+                            ...cambio,
+                            nombre: feature.properties.CONCESION || cambio.nombre,
+                            geometry: feature.geometry
+                        });
+                    }
+                }
             }
-        });
-        
-        aparecidos.forEach(f => {
-            const cambio = cambios.find(c => c.codigo === f.properties.CODIGOU);
-            if (cambio && poligonoEnArea(f)) {
-                cambiosEnArea.push({
-                    ...cambio,
-                    nombre: f.properties.CONCESION || cambio.nombre,
-                    geometry: f.geometry
-                });
-            }
-        });
+        }
         
         console.log(`📊 Cambios en el área: ${cambiosEnArea.length}`);
         
@@ -849,7 +828,9 @@ async function verificarCambiosYEnviarAlerta() {
             return;
         }
         
-        // Generar mensaje
+        // ============================================================
+        // GENERAR MENSAJE Y ENVIAR CORREO
+        // ============================================================
         const total = cambiosEnArea.length;
         const maxMostrar = 30;
         let mensaje = `📊 CAMBIOS EN TU ÁREA MONITOREADA\n`;
