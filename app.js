@@ -750,7 +750,6 @@ async function verificarCambiosYEnviarAlerta() {
     mostrarMensaje('🔍 Verificando cambios en el área...', 'info');
     
     try {
-        // Cargar cambios desde cambios.json
         const response = await fetch(`${baseURL}/data/cambios.json`);
         if (!response.ok) throw new Error('Error al cargar cambios');
         const cambios = await response.json();
@@ -758,7 +757,6 @@ async function verificarCambiosYEnviarAlerta() {
         console.log(`📊 Cambios totales: ${cambios.length}`);
         console.log(`📦 Área: ${areaMonitoreada.toBBoxString()}`);
         
-        // Función para calcular centro (convierte UTM a WGS84)
         function calcularCentro(feature) {
             if (!feature.geometry) return null;
             
@@ -782,7 +780,6 @@ async function verificarCambiosYEnviarAlerta() {
             const avgX = sumX / coords.length;
             const avgY = sumY / coords.length;
             
-            // Si es UTM, convertir a WGS84
             if (avgX > 100000 || avgY > 100000) {
                 let zona;
                 if (avgX >= 1000000) zona = '19s';
@@ -806,7 +803,6 @@ async function verificarCambiosYEnviarAlerta() {
         const cambiosEnArea = [];
         const codigosYaProcesados = new Set();
         
-        // Buscar en todos los datos cargados
         for (const zonaData of todosLosDatos) {
             for (const feature of zonaData.features) {
                 const codigo = feature.properties.CODIGOU;
@@ -869,12 +865,11 @@ async function verificarCambiosYEnviarAlerta() {
         mensajeTexto += `\n📅 ${new Date().toLocaleString('es-PE')}`;
         
         // ============================================================
-        // ENVIAR CORREO CON EMAILJS - template_visor_simple
+        // ENVIAR CORREO CON template_visor_alertas1
         // ============================================================
         try {
             console.log('📧 Enviando correo a:', email);
-            console.log('📧 Template: template_visor_simple');
-            console.log('📧 Total cambios:', total);
+            console.log('📧 Template: template_visor_alertas1');
             
             const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
                 method: 'POST',
@@ -883,13 +878,15 @@ async function verificarCambiosYEnviarAlerta() {
                 },
                 body: JSON.stringify({
                     service_id: 'service_gmail_visor',
-                    template_id: 'template_visor_simple',
+                    template_id: 'template_visor_alertas1',
                     user_id: '_PBGYuyGPuKRPK-_F',
                     template_params: {
                         to_email: email,
+                        name: 'Visor de Concesiones Mineras',
                         message: mensajeTexto,
                         total: total,
-                        date: new Date().toLocaleString('es-PE')
+                        date: new Date().toLocaleString('es-PE'),
+                        time: new Date().toLocaleString('es-PE')
                     }
                 })
             });
@@ -914,6 +911,7 @@ async function verificarCambiosYEnviarAlerta() {
         mostrarMensaje('Error al verificar cambios', 'error');
     }
 }
+
 
 function agregarBotonMonitoreo() {
     const contenedor = document.querySelector('.carga-archivos');
