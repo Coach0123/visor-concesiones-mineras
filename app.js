@@ -750,6 +750,7 @@ async function verificarCambiosYEnviarAlerta() {
     mostrarMensaje('🔍 Verificando cambios en el área...', 'info');
     
     try {
+        // Cargar cambios desde cambios.json
         const response = await fetch(`${baseURL}/data/cambios.json`);
         if (!response.ok) throw new Error('Error al cargar cambios');
         const cambios = await response.json();
@@ -757,9 +758,7 @@ async function verificarCambiosYEnviarAlerta() {
         console.log(`📊 Cambios totales: ${cambios.length}`);
         console.log(`📦 Área: ${areaMonitoreada.toBBoxString()}`);
         
-        // ============================================================
-        // FUNCIÓN CORREGIDA: Calcula centro y convierte UTM a WGS84
-        // ============================================================
+        // Función para calcular centro (convierte UTM a WGS84)
         function calcularCentro(feature) {
             if (!feature.geometry) return null;
             
@@ -783,7 +782,7 @@ async function verificarCambiosYEnviarAlerta() {
             const avgX = sumX / coords.length;
             const avgY = sumY / coords.length;
             
-            // Si es UTM (valores > 100000), convertir a WGS84
+            // Si es UTM, convertir a WGS84
             if (avgX > 100000 || avgY > 100000) {
                 let zona;
                 if (avgX >= 1000000) zona = '19s';
@@ -829,58 +828,6 @@ async function verificarCambiosYEnviarAlerta() {
             }
         }
         
-        // Buscar en desaparecidos_7d como respaldo
-        try {
-            const resp = await fetch(`${baseURL}/data/desaparecidos_7d.geojson`);
-            if (resp.ok) {
-                const data = await resp.json();
-                data.features.forEach(f => {
-                    const codigo = f.properties.CODIGOU;
-                    if (codigosYaProcesados.has(codigo)) return;
-                    
-                    const cambio = cambios.find(c => c.codigo === codigo && c.tipo === 'desaparece');
-                    if (cambio) {
-                        const centro = calcularCentro(f);
-                        if (centro && areaMonitoreada.contains([centro.lat, centro.lon])) {
-                            codigosYaProcesados.add(codigo);
-                            cambiosEnArea.push({
-                                ...cambio,
-                                nombre: f.properties.CONCESION || cambio.nombre,
-                                geometry: f.geometry
-                            });
-                            console.log(`✅ ${cambio.nombre}: [${centro.lat}, ${centro.lon}] → DENTRO (desaparecidos_7d)`);
-                        }
-                    }
-                });
-            }
-        } catch (e) {}
-        
-        // Buscar en aparecidos_7d como respaldo
-        try {
-            const resp = await fetch(`${baseURL}/data/aparecidos_7d.geojson`);
-            if (resp.ok) {
-                const data = await resp.json();
-                data.features.forEach(f => {
-                    const codigo = f.properties.CODIGOU;
-                    if (codigosYaProcesados.has(codigo)) return;
-                    
-                    const cambio = cambios.find(c => c.codigo === codigo && c.tipo === 'aparece');
-                    if (cambio) {
-                        const centro = calcularCentro(f);
-                        if (centro && areaMonitoreada.contains([centro.lat, centro.lon])) {
-                            codigosYaProcesados.add(codigo);
-                            cambiosEnArea.push({
-                                ...cambio,
-                                nombre: f.properties.CONCESION || cambio.nombre,
-                                geometry: f.geometry
-                            });
-                            console.log(`✅ ${cambio.nombre}: [${centro.lat}, ${centro.lon}] → DENTRO (aparecidos_7d)`);
-                        }
-                    }
-                });
-            }
-        } catch (e) {}
-        
         console.log(`📊 Cambios en el área: ${cambiosEnArea.length}`);
         
         if (cambiosEnArea.length === 0) {
@@ -889,66 +836,55 @@ async function verificarCambiosYEnviarAlerta() {
         }
         
         // ============================================================
-        // GENERAR MENSAJE Y ENVIAR CORREO (CON TU SISTEMA ACTUAL)
+        // GENERAR MENSAJE Y ENVIAR CORREO
         // ============================================================
         const total = cambiosEnArea.length;
-        const maxMostrar = 30;
-        let mensaje = `📊 CAMBIOS EN TU ÁREA MONITOREADA\n`;
-        mensaje += `================================\n`;
-        mensaje += `Se detectaron ${total} cambios en tu área de interés.\n\n`;
+        let mensajeTexto = `📊 CAMBIOS EN TU ÁREA MONITOREADA\n`;
+        mensajeTexto += `================================\n`;
+        mensajeTexto += `Se detectaron ${total} cambios en tu área de interés.\n\n`;
         
         const desapArea = cambiosEnArea.filter(c => c.tipo === 'desaparece');
-        mensaje += `🔴 DESAPARECIDOS (${desapArea.length}):\n`;
-        desapArea.slice(0, maxMostrar).forEach(c => {
-            mensaje += `  - ${c.nombre} (${c.codigo})\n`;
-        });
-        if (desapArea.length > maxMostrar) {
-            mensaje += `  ... y ${desapArea.length - maxMostrar} más\n`;
+        if (desapArea.length > 0) {
+            mensajeTexto += `🔴 DESAPARECIDOS (${desapArea.length}):\n`;
+            desapArea.slice(0, 30).forEach(c => {
+                mensajeTexto += `  - ${c.nombre} (${c.codigo})\n`;
+            });
+            if (desapArea.length > 30) {
+                mensajeTexto += `  ... y ${desapArea.length - 30} más\n`;
+            }
         }
         
         const apArea = cambiosEnArea.filter(c => c.tipo === 'aparece');
-        mensaje += `\n🟢 APARECIDOS (${apArea.length}):\n`;
-        apArea.slice(0, maxMostrar).forEach(c => {
-            mensaje += `  - ${c.nombre} (${c.codigo})\n`;
-        });
-        if (apArea.length > maxMostrar) {
-            mensaje += `  ... y ${apArea.length - maxMostrar} más\n`;
+        if (apArea.length > 0) {
+            mensajeTexto += `\n🟢 APARECIDOS (${apArea.length}):\n`;
+            apArea.slice(0, 30).forEach(c => {
+                mensajeTexto += `  - ${c.nombre} (${c.codigo})\n`;
+            });
+            if (apArea.length > 30) {
+                mensajeTexto += `  ... y ${apArea.length - 30} más\n`;
+            }
         }
         
-        mensaje += `\n🔗 Visor: https://coach0123.github.io/visor-concesiones-mineras/`;
-        mensaje += `\n📅 ${new Date().toLocaleString('es-PE')}`;
+        mensajeTexto += `\n🔗 Visor: https://coach0123.github.io/visor-concesiones-mineras/`;
+        mensajeTexto += `\n📅 ${new Date().toLocaleString('es-PE')}`;
         
-        // Enviar correo con tu sistema actual (EmailJS o nodemailer)
+        // Enviar correo con EmailJS
         try {
-            // Si usas nodemailer (desde Node.js)
-            if (typeof nodemailer !== 'undefined') {
-                const transporter = nodemailer.createTransport({
-                    service: 'gmail',
-                    auth: {
-                        user: 'carlosfernandezgeraldino@gmail.com',
-                        pass: 'wwtolzrnckkdwvoi'
-                    }
-                });
-                
-                await transporter.sendMail({
-                    from: 'carlosfernandezgeraldino@gmail.com',
-                    to: email,
-                    subject: `📊 ${total} cambios en tu área - ${new Date().toLocaleDateString('es-PE')}`,
-                    text: mensaje
-                });
-            } 
-            // Si usas EmailJS (desde el navegador)
-            else if (typeof emailjs !== 'undefined') {
-                const templateParams = {
-                    to_email: email,
-                    message: mensaje,
-                    subject: `📊 ${total} cambios en tu área - ${new Date().toLocaleDateString('es-PE')}`
-                };
-                
-                await emailjs.send('service_gmail_visor', 'template_visor_alertas', templateParams);
-            }
+            const templateParams = {
+                to_email: email,
+                message: mensajeTexto,
+                subject: `📊 ${total} cambios en tu área - ${new Date().toLocaleDateString('es-PE')}`
+            };
             
+            const result = await emailjs.send(
+                'service_gmail_visor',
+                'template_visor_alertas',
+                templateParams
+            );
+            
+            console.log('✅ Correo enviado con', total, 'cambios');
             mostrarMensaje(`📧 Correo enviado con ${total} cambios en el área`, 'exito');
+            
         } catch (emailError) {
             console.error('❌ Error enviando correo:', emailError);
             mostrarMensaje('Error al enviar correo. Revisa la consola.', 'error');
