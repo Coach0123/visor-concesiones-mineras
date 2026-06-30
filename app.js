@@ -710,8 +710,40 @@ function guardarAreaParaMonitoreo() {
     }
     
     const bounds = rectanguloDibujo.toBBoxString();
+    const sw = rectanguloDibujo.getSouthWest();
+    const ne = rectanguloDibujo.getNorthEast();
+    
+    // Guardar en localStorage (para el visor)
     localStorage.setItem('areaMonitoreada', bounds);
+    localStorage.setItem('areaMonitoreadaSW', JSON.stringify({lat: sw.lat, lng: sw.lng}));
+    localStorage.setItem('areaMonitoreadaNE', JSON.stringify({lat: ne.lat, lng: ne.lng}));
     areaMonitoreada = rectanguloDibujo;
+    
+    // Guardar en un archivo JSON en el servidor (para el script de Node.js)
+    const areaData = {
+        sw: { lat: sw.lat, lng: sw.lng },
+        ne: { lat: ne.lat, lng: ne.lng },
+        bounds: bounds,
+        fecha: new Date().toISOString()
+    };
+    
+    // Enviar el área al servidor para guardarla
+    fetch('/guardar-area', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(areaData)
+    }).then(response => {
+        if (response.ok) {
+            console.log('✅ Área guardada en el servidor');
+        } else {
+            console.log('⚠️ No se pudo guardar el área en el servidor');
+        }
+    }).catch(err => {
+        console.log('⚠️ Error al guardar el área:', err);
+    });
+    
     mostrarMensaje('✅ Área guardada para monitoreo', 'exito');
     
     const email = prompt('Ingresa tu correo para recibir alertas:');
@@ -720,7 +752,6 @@ function guardarAreaParaMonitoreo() {
         mostrarMensaje(`📧 Alertas se enviarán a: ${email}`, 'exito');
     }
 }
-
 function cargarAreaMonitoreada() {
     const boundsString = localStorage.getItem('areaMonitoreada');
     if (boundsString) {

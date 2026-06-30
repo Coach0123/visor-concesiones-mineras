@@ -65,14 +65,100 @@ async function enviarResumenCambios(desaparecidos, aparecidos, fechaStr) {
         console.log('📭 No hay cambios para enviar');
         return;
     }
+    
+    // ============================================================
+    // CARGAR EL ÁREA MONITOREADA DESDE EL ARCHIVO
+    // ============================================================
+    let areaMonitoreada = null;
+    try {
+        const areaPath = path.join(__dirname, '..', 'data', 'area_monitoreada.json');
+        if (await fs.pathExists(areaPath)) {
+            const areaData = await fs.readJson(areaPath);
+            areaMonitoreada = areaData;
+            console.log(`📦 Área cargada: ${areaData.bounds}`);
+        } else {
+            console.log('📭 No hay área guardada. Enviando todos los cambios.');
+        }
+    } catch (error) {
+        console.log('⚠️ Error cargando área:', error.message);
+    }
+    
+    // ============================================================
+    // FUNCIÓN PARA VERIFICAR SI UN POLÍGONO ESTÁ DENTRO DEL ÁREA
+    // ============================================================
+    function poligonoEnArea(feature) {
+        if (!areaMonitoreada || !feature.geometry) return true; // Si no hay área, incluir todo
+        
+        // Extraer coordenadas del polígono
+        let coords = [];
+        if (feature.geometry.type === 'Polygon') {
+            coords = feature.geometry.coordinates[0];
+        } else if (feature.geometry.type === 'MultiPolygon') {
+            coords = feature.geometry.coordinates[0][0];
+        } else {
+            return true;
+        }
+        
+        // Calcular centro del polígono (asumiendo que está en UTM o WGS84)
+        let sumX = 0, sumY = 0;
+        coords.forEach(c => {
+            sumX += c[0];
+            sumY += c[1];
+        });
+        const centerX = sumX / coords.length;
+        const centerY = sumY / coords.length;
+        
+        // Convertir a WGS84 si es UTM (valores grandes)
+        let lat = centerY, lon = centerX;
+        if (centerX > 100000 || centerY > 100000) {
+            try {
+                let zona = '19s';
+                if (centerX >= 1000000) zona = '19s';
+                else if (centerX >= 700000) zona = '18s';
+                else zona = '17s';
+                const epsg = zona === '17s' ? 'EPSG:32717' : 
+                            (zona === '18s' ? 'EPSG:32718' : 'EPSG:32719');
+                const [lonWGS84, latWGS84] = proj4(epsg, 'EPSG:4326', [centerX, centerY]);
+                lat = latWGS84;
+                lon = lonWGS84;
+            } catch (e) {
+                // Si falla, usar los valores originales
+            }
+        }
+        
+        // Verificar si está dentro del área
+        const sw = areaMonitoreada.sw;
+        const ne = areaMonitoreada.ne;
+        return lat >= sw.lat && lat <= ne.lat && lon >= sw.lng && lon <= ne.lng;
+    }
+    
+    // ============================================================
+    // FILTRAR CAMBIOS POR ÁREA
+    // ============================================================
+    const desaparecidosFiltrados = desaparecidos.filter(f => poligonoEnArea(f));
+    const aparecidosFiltrados = aparecidos.filter(f => poligonoEnArea(f));
+    
+    const totalDesap = desaparecidosFiltrados.length;
+    const totalApare = aparecidosFiltrados.length;
+    
+    if (totalDesap === 0 && totalApare === 0) {
+        console.log('📭 No hay cambios en el área monitoreada');
+        return;
+    }
+    
+    console.log(`📊 Cambios en el área: ${totalDesap} desaparecidos, ${totalApare} aparecidos`);
+    
+    // ============================================================
+    // GENERAR MENSAJE (solo con cambios del área)
+    // ============================================================
     const maxMostrar = 30;
-    const totalDesap = desaparecidos.length;
-    const totalApare = aparecidos.length;
-    let mensaje = `📊 RESUMEN DE CAMBIOS - ${fechaStr}\n`;
-    mensaje += `================================\n\n`;
+    let mensaje = `📊 CAMBIOS EN TU ÁREA MONITOREADA\n`;
+    mensaje += `================================\n`;
+    mensaje += `Se detectaron ${totalDesap + totalApare} cambios en tu área de interés.\n\n`;
+    
     mensaje += `🔴 DESAPARECIDOS (${totalDesap}):\n`;
     if (totalDesap > 0) {
-        desaparecidos.slice(0, maxMostrar).forEach(f => {
+        desaparecidosFiltrados.slice(0, maxMostrar).forEach(f => {
             mensaje += `  - ${f.properties.CONCESION} (${f.properties.CODIGOU})\n`;
         });
         if (totalDesap > maxMostrar) {
@@ -81,9 +167,10 @@ async function enviarResumenCambios(desaparecidos, aparecidos, fechaStr) {
     } else {
         mensaje += `  Ninguno\n`;
     }
+    
     mensaje += `\n🟢 APARECIDOS (${totalApare}):\n`;
     if (totalApare > 0) {
-        aparecidos.slice(0, maxMostrar).forEach(f => {
+        aparecidosFiltrados.slice(0, maxMostrar).forEach(f => {
             mensaje += `  - ${f.properties.CONCESION} (${f.properties.CODIGOU})\n`;
         });
         if (totalApare > maxMostrar) {
@@ -92,8 +179,13 @@ async function enviarResumenCambios(desaparecidos, aparecidos, fechaStr) {
     } else {
         mensaje += `  Ninguno\n`;
     }
+    
     mensaje += `\n🔗 Visor: https://coach0123.github.io/visor-concesiones-mineras/\n`;
     mensaje += `📅 ${new Date().toLocaleString('es-PE')}`;
+    
+    // ============================================================
+    // ENVIAR CORREO (usando nodemailer)
+    // ============================================================
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
@@ -101,15 +193,17 @@ async function enviarResumenCambios(desaparecidos, aparecidos, fechaStr) {
             pass: 'wwtolzrnckkdwvoi'
         }
     });
+    
     const mailOptions = {
         from: 'carlosfernandezgeraldino@gmail.com',
         to: 'carlosfernandezgeraldino@gmail.com',
-        subject: `📊 Cambios en concesiones - ${fechaStr}`,
+        subject: `📊 Cambios en tu área - ${fechaStr}`,
         text: mensaje
     };
+    
     try {
         await transporter.sendMail(mailOptions);
-        console.log('✅ Correo enviado con', totalDesap + totalApare, 'cambios');
+        console.log('✅ Correo enviado con', totalDesap + totalApare, 'cambios del área');
     } catch (error) {
         console.error('❌ Error enviando correo:', error.message);
     }
