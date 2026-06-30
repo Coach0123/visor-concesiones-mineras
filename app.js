@@ -831,9 +831,6 @@ async function verificarCambiosYEnviarAlerta() {
             return;
         }
         
-        // ============================================================
-        // GENERAR MENSAJE
-        // ============================================================
         const total = cambiosEnArea.length;
         let mensajeTexto = `📊 CAMBIOS EN TU ÁREA MONITOREADA\n`;
         mensajeTexto += `================================\n`;
@@ -865,37 +862,46 @@ async function verificarCambiosYEnviarAlerta() {
         mensajeTexto += `\n📅 ${new Date().toLocaleString('es-PE')}`;
         
         // ============================================================
-        // ENVIAR CORREO CON EMAILJS (usando tu template)
+        // ENVIAR CORREO CON FETCH (NO usa emailjs.send)
         // ============================================================
         try {
             console.log('📧 Enviando correo a:', email);
+            console.log('📧 Template: template_visor_alertas1');
             
-            const templateParams = {
-                to_email: email,
-                name: 'Visor de Concesiones Mineras',
-                message: mensajeTexto,
-                total: total,
-                date: new Date().toLocaleString('es-PE')
-            };
+            const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    service_id: 'service_gmail_visor',
+                    template_id: 'template_visor_alertas1',
+                    user_id: '_PBGYuyGPuKRPK-_F',
+                    template_params: {
+                        to_email: email,
+                        name: 'Visor de Concesiones Mineras',
+                        message: mensajeTexto,
+                        total: total,
+                        date: new Date().toLocaleString('es-PE')
+                    }
+                })
+            });
             
-            console.log('📧 Parámetros:', templateParams);
+            const responseText = await response.text();
+            console.log('📧 Respuesta del servidor:', response.status, responseText);
             
-            const result = await emailjs.send(
-                'service_gmail_visor',
-                'template_visor_alertas1',
-                templateParams
-            );
-            
-            console.log('✅ Correo enviado exitosamente:', result);
-            mostrarMensaje(`📧 Correo enviado con ${total} cambios en el área`, 'exito');
-            
-        } catch (emailError) {
-            console.error('❌ Error al enviar correo:');
-            console.error('  - Mensaje:', emailError.message);
-            if (emailError.text) {
-                console.error('  - Detalle:', emailError.text);
+            if (response.ok) {
+                console.log('✅ Correo enviado exitosamente');
+                mostrarMensaje(`📧 Correo enviado con ${total} cambios en el área`, 'exito');
+            } else {
+                console.error('❌ Error en el envío:');
+                console.error('  - Código:', response.status);
+                console.error('  - Detalle:', responseText);
+                mostrarMensaje('Error al enviar correo. Revisa la consola.', 'error');
             }
-            mostrarMensaje('Error al enviar correo. Revisa la consola.', 'error');
+        } catch (emailError) {
+            console.error('❌ Error de red:', emailError);
+            mostrarMensaje('Error de conexión.', 'error');
         }
         
     } catch (error) {
