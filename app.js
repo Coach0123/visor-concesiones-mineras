@@ -209,11 +209,37 @@ async function cargarDatos() {
         }
         
         if (datosCargados) {
+            // ============================================================
+            // CONVERTIR TODOS LOS POLÍGONOS DE UTM A WGS84
+            // ============================================================
+            const featuresWGS84 = datosCargados.features.map(feature => {
+                if (feature.geometry && feature.geometry.type === 'Polygon') {
+                    try {
+                        const coords = feature.geometry.coordinates[0];
+                        const coordsWGS84 = coords.map(c => {
+                            const [lat, lon] = convertirUTM_A_WGS84(c[0], c[1], zona);
+                            return [lon, lat]; // GeoJSON usa [lon, lat]
+                        });
+                        return {
+                            ...feature,
+                            geometry: {
+                                type: 'Polygon',
+                                coordinates: [coordsWGS84]
+                            }
+                        };
+                    } catch (e) {
+                        console.warn('Error convirtiendo feature:', e);
+                        return feature;
+                    }
+                }
+                return feature;
+            });
+            
             todosLosDatos.push({
                 zona: zona,
                 fecha: fechaCargada,
                 hora: horaCargada,
-                features: datosCargados.features
+                features: featuresWGS84
             });
             
             const getColor = (codigo) => {
@@ -242,8 +268,6 @@ async function cargarDatos() {
                         
                         function mostrarPopup(fecha) {
                             let fechaMostrar = fecha || 'N/A';
-                            
-                            // Formatear fecha si viene en formato GMT
                             if (fechaMostrar !== 'N/A' && fechaMostrar.includes('GMT')) {
                                 try {
                                     const date = new Date(fechaMostrar);
@@ -265,31 +289,25 @@ async function cargarDatos() {
                             popupAbierto = true;
                         }
                         
-                        // Primero intentar con la fecha del feature
                         let fecha = props.FEC_DENU || '';
-                        
                         if (fecha && fecha !== '') {
                             mostrarPopup(fecha);
                             return;
                         }
                         
-                        // Si no tiene fecha, buscar en archivos mensuales
                         const mes = (new Date().getMonth() + 1).toString().padStart(2, '0');
                         const anio = new Date().getFullYear();
                         
-                        // Buscar en desaparecidos
                         fetch(`${baseURL}/data/desaparecidos_${mes}_${anio}.geojson`)
                             .then(r => {
                                 if (!r.ok) throw new Error('No existe');
                                 return r.json();
                             })
                             .then(d => {
-                                // Usar trim() para comparar correctamente
                                 const f = d.features.find(f => f.properties.CODIGOU.trim() === codigo.trim());
                                 if (f && f.properties.FEC_DENU) {
                                     mostrarPopup(f.properties.FEC_DENU);
                                 } else {
-                                    // Buscar en aparecidos
                                     fetch(`${baseURL}/data/aparecidos_${mes}_${anio}.geojson`)
                                         .then(r => r.json())
                                         .then(d2 => {
@@ -304,34 +322,7 @@ async function cargarDatos() {
                                 }
                             })
                             .catch(() => {
-                                // Si no hay archivo mensual, buscar en otros archivos diarios
-                                const fechas = ['170626', '160626', '150626', '140626', '130626'];
-                                let encontrado = false;
-                                
-                                for (const fecha of fechas) {
-                                    if (encontrado) break;
-                                    for (const zona of zonas) {
-                                        const url = `${baseURL}/data/${zona}_${fecha}_23.geojson`;
-                                        fetch(url)
-                                            .then(r => {
-                                                if (r.ok) return r.json();
-                                                throw new Error('No existe');
-                                            })
-                                            .then(d => {
-                                                const f = d.features.find(f => f.properties.CODIGOU.trim() === codigo.trim());
-                                                if (f && f.properties.FEC_DENU) {
-                                                    encontrado = true;
-                                                    mostrarPopup(f.properties.FEC_DENU);
-                                                }
-                                            })
-                                            .catch(() => {});
-                                    }
-                                }
-                                
-                                // Si no se encontró en ningún lado
-                                setTimeout(() => {
-                                    if (!encontrado) mostrarPopup('N/A');
-                                }, 2000);
+                                mostrarPopup('N/A');
                             });
                     });
                 }
@@ -340,7 +331,6 @@ async function cargarDatos() {
         }
     }
 }
-
 
 async function cargarHistorialMensual() {
     try {
