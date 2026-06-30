@@ -836,7 +836,7 @@ async function verificarCambiosYEnviarAlerta() {
         }
         
         // ============================================================
-        // GENERAR MENSAJE Y ENVIAR CORREO CON EMAILJS
+        // GENERAR MENSAJE
         // ============================================================
         const total = cambiosEnArea.length;
         let mensajeTexto = `📊 CAMBIOS EN TU ÁREA MONITOREADA\n`;
@@ -869,78 +869,44 @@ async function verificarCambiosYEnviarAlerta() {
         mensajeTexto += `\n📅 ${new Date().toLocaleString('es-PE')}`;
         
         // ============================================================
-        // ENVIAR CORREO CON EMAILJS - USANDO TEMPLATE CORRECTO
+        // ENVIAR CORREO CON EMAILJS - template_visor_simple
         // ============================================================
         try {
-            // Verificar que emailjs está disponible
-            if (typeof emailjs === 'undefined') {
-                throw new Error('EmailJS no está cargado');
-            }
-            
             console.log('📧 Enviando correo a:', email);
+            console.log('📧 Template: template_visor_simple');
+            console.log('📧 Total cambios:', total);
             
-            // Usar el template contactus que ya existe
-            const templateParams = {
-                to_email: email,
-                from_name: 'Visor de Concesiones Mineras',
-                message: mensajeTexto,
-                reply_to: email,
-                total: total,
-                date: new Date().toLocaleString('es-PE')
-            };
+            const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    service_id: 'service_gmail_visor',
+                    template_id: 'template_visor_simple',
+                    user_id: '_PBGYuyGPuKRPK-_F',
+                    template_params: {
+                        to_email: email,
+                        message: mensajeTexto,
+                        total: total,
+                        date: new Date().toLocaleString('es-PE')
+                    }
+                })
+            });
             
-            const result = await emailjs.send(
-                'service_gmail_visor',
-                'contactus',  // Usando template existente
-                templateParams
-            );
-            
-            console.log('✅ Correo enviado exitosamente');
-            mostrarMensaje(`📧 Correo enviado con ${total} cambios en el área`, 'exito');
-            
-        } catch (emailError) {
-            console.error('❌ Error detallado al enviar correo:');
-            console.error('  - Mensaje:', emailError.message);
-            if (emailError.text) {
-                console.error('  - Detalle:', emailError.text);
-            }
-            if (emailError.status) {
-                console.error('  - Código:', emailError.status);
-            }
-            
-            // Intentar con método alternativo si falla EmailJS
-            try {
-                console.log('🔄 Intentando método alternativo...');
-                const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        service_id: 'service_gmail_visor',
-                        template_id: 'contactus',
-                        user_id: '_PBGYuyGPuKRPK-_F',
-                        template_params: {
-                            to_email: email,
-                            from_name: 'Visor de Concesiones Mineras',
-                            message: mensajeTexto,
-                            reply_to: email
-                        }
-                    })
-                });
-                
-                if (response.ok) {
-                    console.log('✅ Correo enviado (método alternativo)');
-                    mostrarMensaje(`📧 Correo enviado con ${total} cambios en el área`, 'exito');
-                } else {
-                    const errorText = await response.text();
-                    console.error('❌ Error en método alternativo:', errorText);
-                    mostrarMensaje('Error al enviar correo. Revisa la consola.', 'error');
-                }
-            } catch (fallbackError) {
-                console.error('❌ Error en método alternativo:', fallbackError);
+            if (response.ok) {
+                console.log('✅ Correo enviado exitosamente');
+                mostrarMensaje(`📧 Correo enviado con ${total} cambios en el área`, 'exito');
+            } else {
+                const errorText = await response.text();
+                console.error('❌ Error en el envío:');
+                console.error('  - Código:', response.status);
+                console.error('  - Detalle:', errorText);
                 mostrarMensaje('Error al enviar correo. Revisa la consola.', 'error');
             }
+        } catch (emailError) {
+            console.error('❌ Error de red al enviar correo:', emailError);
+            mostrarMensaje('Error de conexión al enviar correo.', 'error');
         }
         
     } catch (error) {
