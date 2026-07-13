@@ -2,9 +2,7 @@ name: Monitoreo de Concesiones Mineras
 
 on:
   schedule:
-    # Ejecutar todos los días a las 23:00 (hora Perú = UTC-5)
-    # UTC: 04:00 (que son las 23:00 en Perú)
-    - cron: '0 4 * * *'
+    - cron: '0 3 * * *'
   workflow_dispatch:
 
 jobs:

@@ -34,20 +34,16 @@ async function verificarYLimpiarCambios() {
     } catch (e) {}
     
     if (!ultimaLimpieza) {
-        // Primera vez: crear archivo de limpieza
         await fs.writeJson(LIMPIEZA_FILE, { fecha: hoy.toISOString() });
         return false;
     }
     
-    // Calcular días de diferencia
     const diffTime = Math.abs(hoy - ultimaLimpieza);
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
     
     if (diffDays >= 10) {
         console.log(`🧹 Han pasado ${diffDays} días desde la última limpieza. Reiniciando cambios...`);
-        // Limpiar cambios
         await fs.writeJson(CAMBIOS_FILE, []);
-        // Actualizar fecha de limpieza
         await fs.writeJson(LIMPIEZA_FILE, { fecha: hoy.toISOString() });
         return true;
     }
@@ -135,12 +131,9 @@ async function obtenerArchivoMasReciente(zona) {
     }
     
     for (const fecha of fechas) {
-        for (let h = 23; h >= 0; h--) {
-            const hora = h.toString().padStart(2, '0');
-            const filePath = path.join(DATA_DIR, `${zona}_${fecha}_${hora}.geojson`);
-            if (await fs.pathExists(filePath)) {
-                return { fecha, hora, filePath };
-            }
+        const filePath = path.join(DATA_DIR, `${zona}_${fecha}_21.geojson`);
+        if (await fs.pathExists(filePath)) {
+            return { fecha, hora: '21', filePath };
         }
     }
     return null;
@@ -163,12 +156,9 @@ async function obtenerArchivoDiaAnterior(zona, fechaActual, horaActual) {
     const a = fechaObj.getFullYear().toString().slice(-2);
     const fechaStr = `${d}${m}${a}`;
     
-    for (let h = 23; h >= 0; h--) {
-        const hora = h.toString().padStart(2, '0');
-        const filePath = path.join(DATA_DIR, `${zona}_${fechaStr}_${hora}.geojson`);
-        if (await fs.pathExists(filePath)) {
-            return { fecha: fechaStr, hora, filePath };
-        }
+    const filePath = path.join(DATA_DIR, `${zona}_${fechaStr}_21.geojson`);
+    if (await fs.pathExists(filePath)) {
+        return { fecha: fechaStr, hora: '21', filePath };
     }
     return null;
 }
@@ -182,26 +172,24 @@ async function compararArchivos(archivoActual, archivoAnterior, areaMonitoreada)
     
     const setAnterior = new Set();
     dataAnterior.features.forEach(f => {
-        setAnterior.add(f.properties.CODIGOU);
+        setAnterior.add(String(f.properties.CODIGOU).trim());
     });
     
     const desaparecidos = [];
     const aparecidos = [];
     
-    // Buscar desaparecidos (estaban en anterior, no están en actual)
     dataAnterior.features.forEach(f => {
-        const codigo = f.properties.CODIGOU;
-        if (!dataActual.features.find(g => g.properties.CODIGOU === codigo)) {
+        const codigo = String(f.properties.CODIGOU).trim();
+        if (!dataActual.features.find(g => String(g.properties.CODIGOU).trim() === codigo)) {
             if (poligonoEnArea(f, areaMonitoreada)) {
                 desaparecidos.push(f);
             }
         }
     });
     
-    // Buscar aparecidos (están en actual, no estaban en anterior)
     dataActual.features.forEach(f => {
-        const codigo = f.properties.CODIGOU;
-        if (!dataAnterior.features.find(g => g.properties.CODIGOU === codigo)) {
+        const codigo = String(f.properties.CODIGOU).trim();
+        if (!dataAnterior.features.find(g => String(g.properties.CODIGOU).trim() === codigo)) {
             if (poligonoEnArea(f, areaMonitoreada)) {
                 aparecidos.push(f);
             }
@@ -217,38 +205,39 @@ async function compararArchivos(archivoActual, archivoAnterior, areaMonitoreada)
 async function enviarCorreoCambios(desaparecidos, aparecidos, fechaStr) {
     const total = desaparecidos.length + aparecidos.length;
     
-    if (total === 0) {
-        console.log('📭 No hay cambios para enviar');
-        return;
-    }
-    
     const maxMostrar = 30;
     let mensaje = `📊 CAMBIOS EN TU ÁREA MONITOREADA\n`;
     mensaje += `================================\n`;
-    mensaje += `Se detectaron ${total} cambios en tu área de interés.\n\n`;
     
-    mensaje += `🔴 DESAPARECIDOS (${desaparecidos.length}):\n`;
-    if (desaparecidos.length > 0) {
-        desaparecidos.slice(0, maxMostrar).forEach(f => {
-            mensaje += `  - ${f.properties.CONCESION || 'N/A'} (${f.properties.CODIGOU || 'N/A'})\n`;
-        });
-        if (desaparecidos.length > maxMostrar) {
-            mensaje += `  ... y ${desaparecidos.length - maxMostrar} más\n`;
-        }
+    if (total === 0) {
+        mensaje += `📭 No se detectaron cambios en tu área de interés.\n`;
+        mensaje += `✅ Todo permanece igual.\n\n`;
     } else {
-        mensaje += `  Ninguno\n`;
-    }
-    
-    mensaje += `\n🟢 APARECIDOS (${aparecidos.length}):\n`;
-    if (aparecidos.length > 0) {
-        aparecidos.slice(0, maxMostrar).forEach(f => {
-            mensaje += `  - ${f.properties.CONCESION || 'N/A'} (${f.properties.CODIGOU || 'N/A'})\n`;
-        });
-        if (aparecidos.length > maxMostrar) {
-            mensaje += `  ... y ${aparecidos.length - maxMostrar} más\n`;
+        mensaje += `Se detectaron ${total} cambios en tu área de interés.\n\n`;
+        
+        mensaje += `🔴 DESAPARECIDOS (${desaparecidos.length}):\n`;
+        if (desaparecidos.length > 0) {
+            desaparecidos.slice(0, maxMostrar).forEach(f => {
+                mensaje += `  - ${f.properties.CONCESION || 'N/A'} (${f.properties.CODIGOU || 'N/A'})\n`;
+            });
+            if (desaparecidos.length > maxMostrar) {
+                mensaje += `  ... y ${desaparecidos.length - maxMostrar} más\n`;
+            }
+        } else {
+            mensaje += `  Ninguno\n`;
         }
-    } else {
-        mensaje += `  Ninguno\n`;
+        
+        mensaje += `\n🟢 APARECIDOS (${aparecidos.length}):\n`;
+        if (aparecidos.length > 0) {
+            aparecidos.slice(0, maxMostrar).forEach(f => {
+                mensaje += `  - ${f.properties.CONCESION || 'N/A'} (${f.properties.CODIGOU || 'N/A'})\n`;
+            });
+            if (aparecidos.length > maxMostrar) {
+                mensaje += `  ... y ${aparecidos.length - maxMostrar} más\n`;
+            }
+        } else {
+            mensaje += `  Ninguno\n`;
+        }
     }
     
     mensaje += `\n🔗 Visor: https://coach0123.github.io/visor-concesiones-mineras/\n`;
@@ -269,7 +258,7 @@ async function enviarCorreoCambios(desaparecidos, aparecidos, fechaStr) {
             subject: `📊 Cambios en tu área - ${fechaStr}`,
             text: mensaje
         });
-        console.log(`✅ Correo enviado con ${total} cambios del área`);
+        console.log(`✅ Correo enviado (${total} cambios)`);
     } catch (error) {
         console.error('❌ Error enviando correo:', error.message);
     }
@@ -306,7 +295,6 @@ async function guardarCambiosJSON(desaparecidos, aparecidos) {
         });
     });
     
-    // Combinar con cambios existentes (evitar duplicados)
     const codigosExistentes = new Set();
     cambiosExistentes.forEach(c => codigosExistentes.add(c.codigo));
     
@@ -323,14 +311,8 @@ async function guardarCambiosJSON(desaparecidos, aparecidos) {
 async function main() {
     console.log('🚀 Iniciando actualización de shapefiles...');
     
-    // ============================================================
-    // 1. VERIFICAR LIMPIEZA DE CAMBIOS (cada 10 días)
-    // ============================================================
     await verificarYLimpiarCambios();
     
-    // ============================================================
-    // 2. CARGAR ÁREA MONITOREADA
-    // ============================================================
     let areaMonitoreada = null;
     try {
         if (await fs.pathExists(AREA_FILE)) {
@@ -343,9 +325,6 @@ async function main() {
         console.log('⚠️ Error cargando área:', error.message);
     }
     
-    // ============================================================
-    // 3. OBTENER ARCHIVOS DE CADA ZONA
-    // ============================================================
     const zonas = ['17s', '18s', '19s'];
     const todosDesaparecidos = [];
     const todosAparecidos = [];
@@ -377,14 +356,16 @@ async function main() {
     console.log(`\n📊 TOTAL: ${todosDesaparecidos.length} desaparecidos, ${todosAparecidos.length} aparecidos`);
     
     // ============================================================
-    // 4. GUARDAR CAMBIOS EN JSON
+    // 4. GUARDAR CAMBIOS EN JSON (solo si hay cambios)
     // ============================================================
     if (todosDesaparecidos.length > 0 || todosAparecidos.length > 0) {
         await guardarCambiosJSON(todosDesaparecidos, todosAparecidos);
+    } else {
+        console.log('📭 Sin cambios, pero se enviará correo con 0 cambios');
     }
     
     // ============================================================
-    // 5. ENVIAR CORREO SOLO SI HAY CAMBIOS
+    // 5. ENVIAR CORREO SIEMPRE (incluso con 0 cambios)
     // ============================================================
     const fechaStr = new Date().toISOString().slice(0, 10).replace(/-/g, '');
     await enviarCorreoCambios(todosDesaparecidos, todosAparecidos, fechaStr);
