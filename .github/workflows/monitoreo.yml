@@ -1,0 +1,37 @@
+name: Monitoreo de Concesiones Mineras
+
+on:
+  schedule:
+    # Ejecutar todos los días a las 23:00 (hora Perú = UTC-5)
+    # UTC: 04:00 (que son las 23:00 en Perú)
+    - cron: '0 4 * * *'
+  workflow_dispatch:
+
+jobs:
+  monitoreo:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repositorio
+        uses: actions/checkout@v3
+        
+      - name: Configurar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          
+      - name: Instalar dependencias
+        run: npm install
+        
+      - name: Ejecutar script de actualización
+        run: node scripts/actualizar-shapefiles.js
+        env:
+          NODE_TLS_REJECT_UNAUTHORIZED: 0
+          
+      - name: Guardar cambios en el repositorio
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add data/cambios.json data/ultima_limpieza.json
+          git commit -m "Actualizar cambios - $(date +'%Y-%m-%d %H:%M')" || echo "No hay cambios para commit"
+          git push

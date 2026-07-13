@@ -1,219 +1,251 @@
 const fs = require('fs-extra');
 const path = require('path');
-const AdmZip = require('adm-zip');
-const fetch = require('node-fetch');
-const shapefile = require('shapefile');
+const https = require('https');
 const nodemailer = require('nodemailer');
 const proj4 = require('proj4');
 
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
-
-const ZONAS = ['17S', '18S', '19S'];
-const URLS = {
-  '17S': 'https://geocatminapp.ingemmet.gob.pe/complementos/Descargas/DESCARGA_WGS84/DESCARGA/CMI_WGS84_17S.zip',
-  '18S': 'https://geocatminapp.ingemmet.gob.pe/complementos/Descargas/DESCARGA_WGS84/DESCARGA/CMI_WGS84_18S.zip',
-  '19S': 'https://geocatminapp.ingemmet.gob.pe/complementos/Descargas/DESCARGA_WGS84/DESCARGA/CMI_WGS84_19S.zip'
-};
-
-const ZONA_EPSG = {
-  '17s': 'EPSG:32717',
-  '18s': 'EPSG:32718',
-  '19s': 'EPSG:32719'
-};
-
+// Definir proyecciones UTM
 proj4.defs([
-  ['EPSG:32717', '+proj=utm +zone=17 +south +datum=WGS84 +units=m +no_defs'],
-  ['EPSG:32718', '+proj=utm +zone=18 +south +datum=WGS84 +units=m +no_defs'],
-  ['EPSG:32719', '+proj=utm +zone=19 +south +datum=WGS84 +units=m +no_defs']
+    ['EPSG:32717', '+proj=utm +zone=17 +south +datum=WGS84 +units=m +no_defs'],
+    ['EPSG:32718', '+proj=utm +zone=18 +south +datum=WGS84 +units=m +no_defs'],
+    ['EPSG:32719', '+proj=utm +zone=19 +south +datum=WGS84 +units=m +no_defs']
 ]);
 
-function corregirCaracteres(texto) {
-  if (!texto) return '';
-  return texto.toString();
+// Configuración
+const DATA_DIR = path.join(__dirname, '..', 'data');
+const CAMBIOS_FILE = path.join(DATA_DIR, 'cambios.json');
+const LIMPIEZA_FILE = path.join(DATA_DIR, 'ultima_limpieza.json');
+const AREA_FILE = path.join(DATA_DIR, 'area_monitoreada.json');
+
+// ============================================================
+// FUNCIÓN: Verificar si hay que limpiar cambios (cada 10 días)
+// ============================================================
+async function verificarYLimpiarCambios() {
+    const hoy = new Date();
+    hoy.setHours(0, 0, 0, 0);
+    
+    let ultimaLimpieza = null;
+    try {
+        if (await fs.pathExists(LIMPIEZA_FILE)) {
+            const data = await fs.readJson(LIMPIEZA_FILE);
+            ultimaLimpieza = new Date(data.fecha);
+            ultimaLimpieza.setHours(0, 0, 0, 0);
+        }
+    } catch (e) {}
+    
+    if (!ultimaLimpieza) {
+        // Primera vez: crear archivo de limpieza
+        await fs.writeJson(LIMPIEZA_FILE, { fecha: hoy.toISOString() });
+        return false;
+    }
+    
+    // Calcular días de diferencia
+    const diffTime = Math.abs(hoy - ultimaLimpieza);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    
+    if (diffDays >= 10) {
+        console.log(`🧹 Han pasado ${diffDays} días desde la última limpieza. Reiniciando cambios...`);
+        // Limpiar cambios
+        await fs.writeJson(CAMBIOS_FILE, []);
+        // Actualizar fecha de limpieza
+        await fs.writeJson(LIMPIEZA_FILE, { fecha: hoy.toISOString() });
+        return true;
+    }
+    
+    console.log(`📅 Última limpieza: hace ${diffDays} días (máximo 10)`);
+    return false;
 }
 
-function convertirGeometriaWGS84(geometry, zona) {
-  if (!geometry) return null;
-  const epsg = ZONA_EPSG[zona];
-  if (!epsg) return geometry;
-  try {
-    function convertirCoordenada(c) {
-      const [lon, lat] = proj4(epsg, 'EPSG:4326', [c[0], c[1]]);
-      return [lon, lat];
+// ============================================================
+// FUNCIÓN: Convertir UTM a WGS84
+// ============================================================
+function convertirUTM_A_WGS84(x, y, zona) {
+    try {
+        let projSrc;
+        switch(zona) {
+            case '17s': projSrc = 'EPSG:32717'; break;
+            case '18s': projSrc = 'EPSG:32718'; break;
+            case '19s': projSrc = 'EPSG:32719'; break;
+            default: return [y, x];
+        }
+        const wgs84 = proj4(projSrc, 'EPSG:4326', [x, y]);
+        return [wgs84[1], wgs84[0]];
+    } catch (e) {
+        return [y, x];
     }
-    if (geometry.type === 'Polygon') {
-      return {
-        type: 'Polygon',
-        coordinates: geometry.coordinates.map(ring => ring.map(convertirCoordenada))
-      };
-    } else if (geometry.type === 'MultiPolygon') {
-      return {
-        type: 'MultiPolygon',
-        coordinates: geometry.coordinates.map(poly => 
-          poly.map(ring => ring.map(convertirCoordenada))
-        )
-      };
-    }
-  } catch (e) {
-    console.error('Error convirtiendo geometría:', e.message);
-  }
-  return geometry;
 }
 
-async function enviarResumenCambios(desaparecidos, aparecidos, fechaStr) {
-    if (desaparecidos.length === 0 && aparecidos.length === 0) {
+// ============================================================
+// FUNCIÓN: Verificar si un polígono está dentro del área
+// ============================================================
+function poligonoEnArea(feature, areaMonitoreada) {
+    if (!areaMonitoreada || !feature.geometry) return true;
+    
+    try {
+        let coords = [];
+        if (feature.geometry.type === 'Polygon') {
+            coords = feature.geometry.coordinates[0];
+        } else if (feature.geometry.type === 'MultiPolygon') {
+            coords = feature.geometry.coordinates[0][0];
+        } else {
+            return true;
+        }
+        
+        let sumX = 0, sumY = 0;
+        coords.forEach(c => {
+            sumX += c[0];
+            sumY += c[1];
+        });
+        const centerX = sumX / coords.length;
+        const centerY = sumY / coords.length;
+        
+        let lat = centerY, lon = centerX;
+        if (centerX > 100000 || centerY > 100000) {
+            let zona = '18s';
+            if (centerX >= 1000000) zona = '19s';
+            else if (centerX >= 700000) zona = '18s';
+            else zona = '17s';
+            
+            const [latWGS, lonWGS] = convertirUTM_A_WGS84(centerX, centerY, zona);
+            lat = latWGS;
+            lon = lonWGS;
+        }
+        
+        const sw = areaMonitoreada.sw;
+        const ne = areaMonitoreada.ne;
+        return lat >= sw.lat && lat <= ne.lat && lon >= sw.lng && lon <= ne.lng;
+    } catch (e) {
+        return true;
+    }
+}
+
+// ============================================================
+// FUNCIÓN: Obtener el archivo más reciente para cada zona
+// ============================================================
+async function obtenerArchivoMasReciente(zona) {
+    const hoy = new Date();
+    const fechas = [];
+    for (let i = 0; i < 10; i++) {
+        const fecha = new Date(hoy);
+        fecha.setDate(fecha.getDate() - i);
+        const d = fecha.getDate().toString().padStart(2, '0');
+        const m = (fecha.getMonth() + 1).toString().padStart(2, '0');
+        const a = fecha.getFullYear().toString().slice(-2);
+        fechas.push(`${d}${m}${a}`);
+    }
+    
+    for (const fecha of fechas) {
+        for (let h = 23; h >= 0; h--) {
+            const hora = h.toString().padStart(2, '0');
+            const filePath = path.join(DATA_DIR, `${zona}_${fecha}_${hora}.geojson`);
+            if (await fs.pathExists(filePath)) {
+                return { fecha, hora, filePath };
+            }
+        }
+    }
+    return null;
+}
+
+// ============================================================
+// FUNCIÓN: Obtener archivo de hace 1 día (para comparar)
+// ============================================================
+async function obtenerArchivoDiaAnterior(zona, fechaActual, horaActual) {
+    const fecha = new Date();
+    const diaActual = parseInt(fechaActual.slice(0, 2));
+    const mesActual = parseInt(fechaActual.slice(2, 4));
+    const anioActual = 2000 + parseInt(fechaActual.slice(4, 6));
+    
+    const fechaObj = new Date(anioActual, mesActual - 1, diaActual);
+    fechaObj.setDate(fechaObj.getDate() - 1);
+    
+    const d = fechaObj.getDate().toString().padStart(2, '0');
+    const m = (fechaObj.getMonth() + 1).toString().padStart(2, '0');
+    const a = fechaObj.getFullYear().toString().slice(-2);
+    const fechaStr = `${d}${m}${a}`;
+    
+    for (let h = 23; h >= 0; h--) {
+        const hora = h.toString().padStart(2, '0');
+        const filePath = path.join(DATA_DIR, `${zona}_${fechaStr}_${hora}.geojson`);
+        if (await fs.pathExists(filePath)) {
+            return { fecha: fechaStr, hora, filePath };
+        }
+    }
+    return null;
+}
+
+// ============================================================
+// FUNCIÓN: Comparar dos archivos y detectar cambios
+// ============================================================
+async function compararArchivos(archivoActual, archivoAnterior, areaMonitoreada) {
+    const dataActual = await fs.readJson(archivoActual.filePath);
+    const dataAnterior = await fs.readJson(archivoAnterior.filePath);
+    
+    const setAnterior = new Set();
+    dataAnterior.features.forEach(f => {
+        setAnterior.add(f.properties.CODIGOU);
+    });
+    
+    const desaparecidos = [];
+    const aparecidos = [];
+    
+    // Buscar desaparecidos (estaban en anterior, no están en actual)
+    dataAnterior.features.forEach(f => {
+        const codigo = f.properties.CODIGOU;
+        if (!dataActual.features.find(g => g.properties.CODIGOU === codigo)) {
+            if (poligonoEnArea(f, areaMonitoreada)) {
+                desaparecidos.push(f);
+            }
+        }
+    });
+    
+    // Buscar aparecidos (están en actual, no estaban en anterior)
+    dataActual.features.forEach(f => {
+        const codigo = f.properties.CODIGOU;
+        if (!dataAnterior.features.find(g => g.properties.CODIGOU === codigo)) {
+            if (poligonoEnArea(f, areaMonitoreada)) {
+                aparecidos.push(f);
+            }
+        }
+    });
+    
+    return { desaparecidos, aparecidos };
+}
+
+// ============================================================
+// FUNCIÓN: Enviar correo con los cambios
+// ============================================================
+async function enviarCorreoCambios(desaparecidos, aparecidos, fechaStr) {
+    const total = desaparecidos.length + aparecidos.length;
+    
+    if (total === 0) {
         console.log('📭 No hay cambios para enviar');
         return;
     }
     
-    // ============================================================
-    // CARGAR EL ÁREA MONITOREADA DESDE EL ARCHIVO
-    // ============================================================
-    let areaMonitoreada = null;
-    let areaPath = path.join(__dirname, '..', 'data', 'area_monitoreada.json');
-    
-    try {
-        if (await fs.pathExists(areaPath)) {
-            const areaData = await fs.readJson(areaPath);
-            areaMonitoreada = areaData;
-            console.log(`📦 Área cargada: ${areaData.bounds}`);
-            console.log(`   SW: ${areaData.sw.lat}, ${areaData.sw.lng}`);
-            console.log(`   NE: ${areaData.ne.lat}, ${areaData.ne.lng}`);
-        } else {
-            console.log('📭 No hay área guardada. Enviando TODOS los cambios.');
-        }
-    } catch (error) {
-        console.log('⚠️ Error cargando área:', error.message);
-    }
-    
-    // ============================================================
-    // FUNCIÓN PARA VERIFICAR SI UN POLÍGONO ESTÁ DENTRO DEL ÁREA
-    // ============================================================
-    function poligonoEnArea(feature) {
-        if (!areaMonitoreada || !feature.geometry) return true; // Sin área = incluir todo
-        
-        try {
-            // Extraer coordenadas del polígono
-            let coords = [];
-            if (feature.geometry.type === 'Polygon') {
-                coords = feature.geometry.coordinates[0];
-            } else if (feature.geometry.type === 'MultiPolygon') {
-                coords = feature.geometry.coordinates[0][0];
-            } else {
-                return true;
-            }
-            
-            // Calcular centro del polígono
-            let sumX = 0, sumY = 0;
-            coords.forEach(c => {
-                sumX += c[0];
-                sumY += c[1];
-            });
-            const centerX = sumX / coords.length;
-            const centerY = sumY / coords.length;
-            
-            // Convertir a WGS84 si es UTM (valores grandes)
-            let lat = centerY, lon = centerX;
-            if (centerX > 100000 || centerY > 100000) {
-                try {
-                    // Determinar zona UTM
-                    let zona = '19s';
-                    if (centerX >= 1000000) zona = '19s';
-                    else if (centerX >= 700000) zona = '18s';
-                    else zona = '17s';
-                    
-                    const epsg = zona === '17s' ? 'EPSG:32717' : 
-                                (zona === '18s' ? 'EPSG:32718' : 'EPSG:32719');
-                    
-                    const [lonWGS84, latWGS84] = proj4(epsg, 'EPSG:4326', [centerX, centerY]);
-                    lat = latWGS84;
-                    lon = lonWGS84;
-                } catch (e) {
-                    // Si falla, usar los valores originales
-                }
-            }
-            
-            // Verificar si está dentro del área
-            const sw = areaMonitoreada.sw;
-            const ne = areaMonitoreada.ne;
-            const dentro = lat >= sw.lat && lat <= ne.lat && lon >= sw.lng && lon <= ne.lng;
-            
-            if (dentro) {
-                console.log(`   ✅ ${feature.properties.CONCESION}: dentro del área`);
-            }
-            return dentro;
-        } catch (e) {
-            // Si hay error al procesar, incluir el polígono (por seguridad)
-            console.log(`   ⚠️ Error procesando ${feature.properties.CONCESION}:`, e.message);
-            return true;
-        }
-    }
-    
-    // ============================================================
-    // FILTRAR CAMBIOS POR ÁREA
-    // ============================================================
-    const desaparecidosFiltrados = desaparecidos.filter(f => poligonoEnArea(f));
-    const aparecidosFiltrados = aparecidos.filter(f => poligonoEnArea(f));
-    
-    const totalDesap = desaparecidosFiltrados.length;
-    const totalApare = aparecidosFiltrados.length;
-    
-    // Si no hay área guardada, usar todos los cambios
-    if (!areaMonitoreada) {
-        console.log('📭 No hay área guardada. Enviando TODOS los cambios.');
-        console.log(`📊 Total: ${desaparecidos.length} desaparecidos, ${aparecidos.length} aparecidos`);
-        // Usar todos los cambios
-        const todosCambios = [...desaparecidos, ...aparecidos];
-        await enviarCorreoCambios(todosCambios, desaparecidos.length, aparecidos.length, fechaStr);
-        return;
-    }
-    
-    if (totalDesap === 0 && totalApare === 0) {
-        console.log('📭 No hay cambios en el área monitoreada');
-        return;
-    }
-    
-    console.log(`📊 Cambios en el área: ${totalDesap} desaparecidos, ${totalApare} aparecidos`);
-    
-    // ============================================================
-    // ENVIAR CORREO CON SOLO LOS CAMBIOS DEL ÁREA
-    // ============================================================
-    const todosCambios = [...desaparecidosFiltrados, ...aparecidosFiltrados];
-    await enviarCorreoCambios(todosCambios, totalDesap, totalApare, fechaStr);
-}
-
-// ============================================================
-// FUNCIÓN AUXILIAR PARA ENVIAR CORREO
-// ============================================================
-async function enviarCorreoCambios(cambios, totalDesap, totalApare, fechaStr) {
     const maxMostrar = 30;
-    const total = cambios.length;
-    
     let mensaje = `📊 CAMBIOS EN TU ÁREA MONITOREADA\n`;
     mensaje += `================================\n`;
     mensaje += `Se detectaron ${total} cambios en tu área de interés.\n\n`;
     
-    const desap = cambios.filter(c => c.tipo === 'desaparece');
-    mensaje += `🔴 DESAPARECIDOS (${totalDesap}):\n`;
-    if (totalDesap > 0) {
-        desap.slice(0, maxMostrar).forEach(c => {
-            mensaje += `  - ${c.properties.CONCESION} (${c.properties.CODIGOU})\n`;
+    mensaje += `🔴 DESAPARECIDOS (${desaparecidos.length}):\n`;
+    if (desaparecidos.length > 0) {
+        desaparecidos.slice(0, maxMostrar).forEach(f => {
+            mensaje += `  - ${f.properties.CONCESION || 'N/A'} (${f.properties.CODIGOU || 'N/A'})\n`;
         });
-        if (totalDesap > maxMostrar) {
-            mensaje += `  ... y ${totalDesap - maxMostrar} más\n`;
+        if (desaparecidos.length > maxMostrar) {
+            mensaje += `  ... y ${desaparecidos.length - maxMostrar} más\n`;
         }
     } else {
         mensaje += `  Ninguno\n`;
     }
     
-    const ap = cambios.filter(c => c.tipo === 'aparece');
-    mensaje += `\n🟢 APARECIDOS (${totalApare}):\n`;
-    if (totalApare > 0) {
-        ap.slice(0, maxMostrar).forEach(c => {
-            mensaje += `  - ${c.properties.CONCESION} (${c.properties.CODIGOU})\n`;
+    mensaje += `\n🟢 APARECIDOS (${aparecidos.length}):\n`;
+    if (aparecidos.length > 0) {
+        aparecidos.slice(0, maxMostrar).forEach(f => {
+            mensaje += `  - ${f.properties.CONCESION || 'N/A'} (${f.properties.CODIGOU || 'N/A'})\n`;
         });
-        if (totalApare > maxMostrar) {
-            mensaje += `  ... y ${totalApare - maxMostrar} más\n`;
+        if (aparecidos.length > maxMostrar) {
+            mensaje += `  ... y ${aparecidos.length - maxMostrar} más\n`;
         }
     } else {
         mensaje += `  Ninguno\n`;
@@ -222,7 +254,6 @@ async function enviarCorreoCambios(cambios, totalDesap, totalApare, fechaStr) {
     mensaje += `\n🔗 Visor: https://coach0123.github.io/visor-concesiones-mineras/\n`;
     mensaje += `📅 ${new Date().toLocaleString('es-PE')}`;
     
-    // Enviar correo
     try {
         const transporter = nodemailer.createTransport({
             service: 'gmail',
@@ -238,224 +269,130 @@ async function enviarCorreoCambios(cambios, totalDesap, totalApare, fechaStr) {
             subject: `📊 Cambios en tu área - ${fechaStr}`,
             text: mensaje
         });
-        console.log('✅ Correo enviado con', total, 'cambios del área');
+        console.log(`✅ Correo enviado con ${total} cambios del área`);
     } catch (error) {
         console.error('❌ Error enviando correo:', error.message);
     }
 }
 
-async function descargarYProcesar() {
-  console.log('🚀 Iniciando...');
-  
-  const fechaHoy = new Date();
-  const fechaStr = fechaHoy.toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: '2-digit' }).replace(/\//g, '');
-  const horaActual = fechaHoy.getUTCHours().toString().padStart(2, '0');
-  const dataDir = path.join(__dirname, '..', 'data');
-  await fs.ensureDir(dataDir);
-  
-  // ============================================================
-  // FILTRAR ARCHIVOS DEL MES ACTUAL
-  // ============================================================
-  const archivosExistentes = await fs.readdir(dataDir);
-  const archivosGeoJSON = archivosExistentes.filter(f => f.match(/^\d{2}s_\d{6}_\d{2}\.geojson$/));
-  const archivosConFecha = archivosGeoJSON.map(f => {
-    const match = f.match(/^\d{2}s_(\d{6})_(\d{2})\.geojson$/);
-    if (!match) return null;
-    const fecha = match[1];
-    const hora = match[2];
-    const dia = parseInt(fecha.slice(0,2));
-    const mes = parseInt(fecha.slice(2,4)) - 1;
-    const anio = 2000 + parseInt(fecha.slice(4,6));
-    const horas = parseInt(hora);
-    return { archivo: f, fechaObj: new Date(anio, mes, dia, horas), fechaStr: fecha, horaStr: hora };
-  }).filter(f => f !== null);
-  archivosConFecha.sort((a, b) => b.fechaObj - a.fechaObj);
-  
-  const mesActual = fechaStr.slice(2, 4);
-  const anioActual = fechaStr.slice(4, 6);
-  const archivosDelMes = archivosConFecha.filter(f => {
-    const mes = f.fechaStr.slice(2, 4);
-    const anio = f.fechaStr.slice(4, 6);
-    return mes === mesActual && anio === anioActual;
-  });
-  archivosDelMes.sort((a, b) => b.fechaObj - a.fechaObj);
-  const archivoAnterior = archivosDelMes.length > 1 ? archivosDelMes[1].archivo : null;
-  
-  console.log(`📁 Archivos del mes actual: ${archivosDelMes.length}`);
-  console.log(`📁 Comparando con: ${archivoAnterior || 'ninguno'}`);
-  
-  const desaparecidos = [];
-  const aparecidos = [];
-  
-  for (const zona of ZONAS) {
+// ============================================================
+// FUNCIÓN: Guardar cambios en archivo JSON
+// ============================================================
+async function guardarCambiosJSON(desaparecidos, aparecidos) {
+    let cambiosExistentes = [];
     try {
-      console.log(`\n📥 ZONA ${zona}`);
-      const response = await fetch(URLS[zona]);
-      const buffer = await response.buffer();
-      const zipPath = path.join(dataDir, `temp_${zona}.zip`);
-      await fs.writeFile(zipPath, buffer);
-      const zip = new AdmZip(zipPath);
-      const extractPath = path.join(dataDir, `extract_${zona}`);
-      await fs.ensureDir(extractPath);
-      zip.extractAllTo(extractPath, true);
-      const files = await fs.readdir(extractPath);
-      const shpFile = files.find(f => f.endsWith('.shp'));
-      const dbfFile = files.find(f => f.endsWith('.dbf'));
-      const source = await shapefile.open(path.join(extractPath, shpFile), path.join(extractPath, dbfFile), { encoding: 'latin1' });
-      
-      const features = [];
-      let result;
-      while (!(result = await source.read()).done) {
-        const f = result.value;
-        features.push({
-          type: 'Feature',
-          geometry: f.geometry,
-          properties: {
-            CODIGOU: corregirCaracteres(f.properties.CODIGOU || ''),
-            FEC_DENU: corregirCaracteres(f.properties.FEC_DENU || ''),
-            CONCESION: corregirCaracteres(f.properties.CONCESION || ''),
-            TIT_CONCES: corregirCaracteres(f.properties.TIT_CONCES || '')
-          }
-        });
-      }
-      
-      const nombreArchivo = `${zona.toLowerCase()}_${fechaStr}_${horaActual}.geojson`;
-      await fs.writeJson(path.join(dataDir, nombreArchivo), { type: 'FeatureCollection', features });
-      await fs.remove(zipPath);
-      await fs.remove(extractPath);
-      console.log(`✅ ${nombreArchivo} (${features.length} features)`);
-      
-      if (archivoAnterior) {
-        const anteriorPath = path.join(dataDir, archivoAnterior);
-        if (await fs.pathExists(anteriorPath)) {
-          const anteriorData = await fs.readJson(anteriorPath);
-          const codigosActual = new Set(features.map(f => f.properties.CODIGOU));
-          const codigosAnterior = new Set(anteriorData.features.map(f => f.properties.CODIGOU));
-          
-          for (const codigo of codigosAnterior) {
-            if (!codigosActual.has(codigo)) {
-              const f = anteriorData.features.find(f => f.properties.CODIGOU === codigo);
-              if (f && f.geometry) {
-                const geomWGS84 = convertirGeometriaWGS84(f.geometry, zona.toLowerCase());
-                if (geomWGS84) {
-                  desaparecidos.push({
-                    type: 'Feature',
-                    geometry: geomWGS84,
-                    properties: f.properties
-                  });
-                }
-              }
-            }
-          }
-          
-          for (const codigo of codigosActual) {
-            if (!codigosAnterior.has(codigo)) {
-              const f = features.find(f => f.properties.CODIGOU === codigo);
-              if (f && f.geometry) {
-                const geomWGS84 = convertirGeometriaWGS84(f.geometry, zona.toLowerCase());
-                if (geomWGS84) {
-                  aparecidos.push({
-                    type: 'Feature',
-                    geometry: geomWGS84,
-                    properties: f.properties
-                  });
-                }
-              }
-            }
-          }
+        if (await fs.pathExists(CAMBIOS_FILE)) {
+            cambiosExistentes = await fs.readJson(CAMBIOS_FILE);
         }
-      }
-      
-    } catch (error) {
-      console.error(`Error ${zona}:`, error.message);
-    }
-  }
-  
-  // ============================================================
-  // GUARDAR SOLO ÚLTIMOS 7 DÍAS: desaparecidos_7d.geojson
-  // ============================================================
-  const fechaLimite = new Date();
-  fechaLimite.setDate(fechaLimite.getDate() - 7);
-  
-  // Filtrar desaparecidos de los últimos 7 días
-  const desaparecidosFiltrados = desaparecidos.filter(f => {
-    return true; // Todos son del día actual
-  });
-  
-  // Guardar desaparecidos_7d.geojson
-  if (desaparecidosFiltrados.length > 0) {
-    const path7d = path.join(dataDir, 'desaparecidos_7d.geojson');
-    let existentes = [];
-    if (await fs.pathExists(path7d)) {
-      const existente = await fs.readJson(path7d);
-      existentes = existente.features;
-    }
-    // Limpiar archivos de más de 7 días
-    const fechaLimite7d = new Date();
-    fechaLimite7d.setDate(fechaLimite7d.getDate() - 7);
+    } catch (e) {}
     
-    const existentesFiltrados = existentes.filter(f => {
-      // Si no tiene fecha, mantenerlo
-      return true;
+    const nuevosCambios = [];
+    
+    desaparecidos.forEach(f => {
+        nuevosCambios.push({
+            codigo: f.properties.CODIGOU,
+            nombre: f.properties.CONCESION || 'N/A',
+            tipo: 'desaparece',
+            fecha: new Date().toISOString()
+        });
     });
     
-    const codigosExistentes = new Set(existentesFiltrados.map(f => f.properties.CODIGOU));
-    const nuevos = desaparecidosFiltrados.filter(f => !codigosExistentes.has(f.properties.CODIGOU));
+    aparecidos.forEach(f => {
+        nuevosCambios.push({
+            codigo: f.properties.CODIGOU,
+            nombre: f.properties.CONCESION || 'N/A',
+            tipo: 'aparece',
+            fecha: new Date().toISOString()
+        });
+    });
     
-    if (nuevos.length > 0) {
-      const todasFeatures = [...existentesFiltrados, ...nuevos];
-      // Mantener solo los últimos 5000 cambios
-      const featuresLimitadas = todasFeatures.slice(-5000);
-      await fs.writeJson(path7d, { type: 'FeatureCollection', features: featuresLimitadas }, { spaces: 0 });
-      console.log(`📁 desaparecidos_7d: ${featuresLimitadas.length} cambios (últimos 7 días)`);
-    }
-  }
-  
-  // Filtrar aparecidos de los últimos 7 días
-  const aparecidosFiltrados = aparecidos.filter(f => {
-    return true;
-  });
-  
-  if (aparecidosFiltrados.length > 0) {
-    const path7d = path.join(dataDir, 'aparecidos_7d.geojson');
-    let existentes = [];
-    if (await fs.pathExists(path7d)) {
-      const existente = await fs.readJson(path7d);
-      existentes = existente.features;
-    }
-    const codigosExistentes = new Set(existentes.map(f => f.properties.CODIGOU));
-    const nuevos = aparecidosFiltrados.filter(f => !codigosExistentes.has(f.properties.CODIGOU));
+    // Combinar con cambios existentes (evitar duplicados)
+    const codigosExistentes = new Set();
+    cambiosExistentes.forEach(c => codigosExistentes.add(c.codigo));
     
-    if (nuevos.length > 0) {
-      const todasFeatures = [...existentes, ...nuevos];
-      const featuresLimitadas = todasFeatures.slice(-5000);
-      await fs.writeJson(path7d, { type: 'FeatureCollection', features: featuresLimitadas }, { spaces: 0 });
-      console.log(`📁 aparecidos_7d: ${featuresLimitadas.length} cambios (últimos 7 días)`);
-    }
-  }
-  
-  // Guardar cambios.json (limitado a 500 registros)
-  const cambiosPath = path.join(dataDir, 'cambios.json');
-  let cambiosExistentes = [];
-  if (await fs.pathExists(cambiosPath)) {
-    cambiosExistentes = await fs.readJson(cambiosPath);
-  }
-  
-  const nuevosCambios = [...desaparecidos, ...aparecidos].map(c => ({
-    fecha: `${fechaStr}_${horaActual}`,
-    codigo: c.properties.CODIGOU,
-    nombre: c.properties.CONCESION,
-    tipo: desaparecidos.includes(c) ? 'desaparece' : 'aparece'
-  }));
-  
-  const cambiosActualizados = [...nuevosCambios, ...cambiosExistentes].slice(0, 500);
-  await fs.writeJson(cambiosPath, cambiosActualizados, { spaces: 2 });
-  
-  console.log(`\n📊 Cambios: ${desaparecidos.length} desaparecidos, ${aparecidos.length} aparecidos`);
-  
-  await enviarResumenCambios(desaparecidos, aparecidos, fechaStr);
-  
-  console.log('🎉 Proceso completado');
+    const cambiosFiltrados = nuevosCambios.filter(c => !codigosExistentes.has(c.codigo));
+    const todosLosCambios = [...cambiosExistentes, ...cambiosFiltrados];
+    
+    await fs.writeJson(CAMBIOS_FILE, todosLosCambios, { spaces: 2 });
+    console.log(`💾 Guardados ${cambiosFiltrados.length} nuevos cambios en cambios.json`);
 }
 
-descargarYProcesar();
+// ============================================================
+// FUNCIÓN PRINCIPAL
+// ============================================================
+async function main() {
+    console.log('🚀 Iniciando actualización de shapefiles...');
+    
+    // ============================================================
+    // 1. VERIFICAR LIMPIEZA DE CAMBIOS (cada 10 días)
+    // ============================================================
+    await verificarYLimpiarCambios();
+    
+    // ============================================================
+    // 2. CARGAR ÁREA MONITOREADA
+    // ============================================================
+    let areaMonitoreada = null;
+    try {
+        if (await fs.pathExists(AREA_FILE)) {
+            areaMonitoreada = await fs.readJson(AREA_FILE);
+            console.log(`📦 Área cargada: ${areaMonitoreada.bounds}`);
+        } else {
+            console.log('📭 No hay área guardada. Procesando TODOS los cambios.');
+        }
+    } catch (error) {
+        console.log('⚠️ Error cargando área:', error.message);
+    }
+    
+    // ============================================================
+    // 3. OBTENER ARCHIVOS DE CADA ZONA
+    // ============================================================
+    const zonas = ['17s', '18s', '19s'];
+    const todosDesaparecidos = [];
+    const todosAparecidos = [];
+    
+    for (const zona of zonas) {
+        console.log(`\n📥 Procesando zona ${zona}...`);
+        
+        const actual = await obtenerArchivoMasReciente(zona);
+        if (!actual) {
+            console.log(`⚠️ No se encontró archivo actual para zona ${zona}`);
+            continue;
+        }
+        console.log(`   Actual: ${actual.fecha}_${actual.hora}`);
+        
+        const anterior = await obtenerArchivoDiaAnterior(zona, actual.fecha, actual.hora);
+        if (!anterior) {
+            console.log(`⚠️ No se encontró archivo anterior para zona ${zona}`);
+            continue;
+        }
+        console.log(`   Anterior: ${anterior.fecha}_${anterior.hora}`);
+        
+        const { desaparecidos, aparecidos } = await compararArchivos(actual, anterior, areaMonitoreada);
+        console.log(`   📊 Desaparecidos: ${desaparecidos.length}, Aparecidos: ${aparecidos.length}`);
+        
+        todosDesaparecidos.push(...desaparecidos);
+        todosAparecidos.push(...aparecidos);
+    }
+    
+    console.log(`\n📊 TOTAL: ${todosDesaparecidos.length} desaparecidos, ${todosAparecidos.length} aparecidos`);
+    
+    // ============================================================
+    // 4. GUARDAR CAMBIOS EN JSON
+    // ============================================================
+    if (todosDesaparecidos.length > 0 || todosAparecidos.length > 0) {
+        await guardarCambiosJSON(todosDesaparecidos, todosAparecidos);
+    }
+    
+    // ============================================================
+    // 5. ENVIAR CORREO SOLO SI HAY CAMBIOS
+    // ============================================================
+    const fechaStr = new Date().toISOString().slice(0, 10).replace(/-/g, '');
+    await enviarCorreoCambios(todosDesaparecidos, todosAparecidos, fechaStr);
+    
+    console.log('🎉 Proceso completado');
+}
+
+// ============================================================
+// EJECUTAR
+// ============================================================
+main().catch(console.error);

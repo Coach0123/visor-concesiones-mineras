@@ -635,41 +635,174 @@ function limpiarDibujo() {
     mostrarMensaje('Dibujo limpiado', 'info');
 }
 
-function descargarCSVArea() {
+async function descargarCSVArea() {
     if (!rectanguloDibujo) {
         mostrarMensaje('Primero dibuja un área', 'error');
         return;
     }
     
-    const poligonosEnArea = [];
-    for (const zonaData of todosLosDatos) {
-        for (const feature of zonaData.features) {
-            if (feature.geometry.type === 'Polygon') {
-                const coords = feature.geometry.coordinates[0];
-                let sumX = 0, sumY = 0;
-                coords.forEach(c => { sumX += c[0]; sumY += c[1]; });
-                const [lat, lon] = convertirUTM_A_WGS84(sumX/coords.length, sumY/coords.length, zonaData.zona);
-                if (rectanguloDibujo.contains([lat, lon])) {
-                    poligonosEnArea.push(feature.properties);
-                }
+    mostrarMensaje('📥 Cargando datos para el CSV...', 'info');
+    
+    // ============================================================
+    // CARGAR TODAS LAS CONCESIONES DE TODOS LOS ARCHIVOS DISPONIBLES
+    // ============================================================
+    let todasLasConcesiones = [];
+    const zonas = ['17s', '18s', '19s'];
+    
+    // Obtener fechas de los últimos 10 días
+    const fechas = [];
+    for (let i = 0; i < 10; i++) {
+        const fecha = new Date();
+        fecha.setDate(fecha.getDate() - i);
+        const d = fecha.getDate().toString().padStart(2, '0');
+        const m = (fecha.getMonth() + 1).toString().padStart(2, '0');
+        const a = fecha.getFullYear().toString().slice(-2);
+        fechas.push(`${d}${m}${a}`);
+    }
+    
+    console.log('📅 Buscando en fechas:', fechas.join(', '));
+    
+    for (const zona of zonas) {
+        for (const fecha of fechas) {
+            for (let h = 23; h >= 0; h--) {
+                const hora = h.toString().padStart(2, '0');
+                const url = `${baseURL}/data/${zona}_${fecha}_${hora}.geojson`;
+                try {
+                    const response = await fetch(url);
+                    if (response.ok) {
+                        const geojson = await response.json();
+                        console.log(`✅ Cargado: ${zona}_${fecha}_${hora}.geojson (${geojson.features.length} features)`);
+                        
+                        geojson.features.forEach(feature => {
+                            if (feature.geometry && feature.geometry.type === 'Polygon') {
+                                todasLasConcesiones.push({
+                                    ...feature,
+                                    zona: zona,
+                                    fecha: fecha,
+                                    hora: hora
+                                });
+                            }
+                        });
+                        break; // Salir del bucle de horas si encontramos un archivo
+                    }
+                } catch (e) {}
             }
         }
     }
     
-    let csv = 'CODIGOU;FEC_DENU;CONCESION;TIT_CONCES\n';
+    console.log(`📊 Total de concesiones cargadas: ${todasLasConcesiones.length}`);
+    
+    if (todasLasConcesiones.length === 0) {
+        mostrarMensaje('❌ No se encontraron datos. Intenta más tarde.', 'error');
+        return;
+    }
+    
+    // ============================================================
+    // FILTRAR CONCESIONES DENTRO DEL ÁREA
+    // ============================================================
+    const poligonosEnArea = [];
+    
+    for (const feature of todasLasConcesiones) {
+        try {
+            const coords = feature.geometry.coordinates[0];
+            let sumX = 0, sumY = 0;
+            coords.forEach(c => {
+                sumX += c[0];
+                sumY += c[1];
+            });
+            const centerX = sumX / coords.length;
+            const centerY = sumY / coords.length;
+            
+            // Convertir a WGS84 si es UTM
+            let lat, lon;
+            if (centerX > 100000 || centerY > 100000) {
+                let zona = feature.zona || '18s';
+                const epsg = zona === '17s' ? 'EPSG:32717' : 
+                            (zona === '18s' ? 'EPSG:32718' : 'EPSG:32719');
+                try {
+                    const [lonWGS, latWGS] = proj4(epsg, 'EPSG:4326', [centerX, centerY]);
+                    lat = latWGS;
+                    lon = lonWGS;
+                } catch (e) {
+                    lat = centerY;
+                    lon = centerX;
+                }
+            } else {
+                lat = centerY;
+                lon = centerX;
+            }
+            
+            if (rectanguloDibujo.contains([lat, lon])) {
+                // ============================================================
+                // EXTRAER VÉRTICES DEL POLÍGONO Y CONVERTIR A WGS84
+                // ============================================================
+                let vertices = [];
+                const polygonCoords = feature.geometry.coordinates[0];
+                
+                for (const coord of polygonCoords) {
+                    let vLat, vLon;
+                    if (coord[0] > 100000 || coord[1] > 100000) {
+                        let zona = feature.zona || '18s';
+                        const epsg = zona === '17s' ? 'EPSG:32717' : 
+                                    (zona === '18s' ? 'EPSG:32718' : 'EPSG:32719');
+                        try {
+                            const [lonWGS, latWGS] = proj4(epsg, 'EPSG:4326', [coord[0], coord[1]]);
+                            vLat = latWGS;
+                            vLon = lonWGS;
+                        } catch (e) {
+                            vLat = coord[1];
+                            vLon = coord[0];
+                        }
+                    } else {
+                        vLat = coord[1];
+                        vLon = coord[0];
+                    }
+                    vertices.push(`${vLon.toFixed(6)},${vLat.toFixed(6)}`);
+                }
+                
+                poligonosEnArea.push({
+                    ...feature.properties,
+                    VERTICES: vertices.join(';')
+                });
+            }
+        } catch (e) {
+            console.warn('Error procesando feature:', e);
+        }
+    }
+    
+    console.log(`📍 Concesiones en el área: ${poligonosEnArea.length}`);
+    
+    if (poligonosEnArea.length === 0) {
+        mostrarMensaje('📭 No hay concesiones en el área dibujada', 'info');
+        return;
+    }
+    
+    // ============================================================
+    // GENERAR CSV CON COLUMNA DE VÉRTICES
+    // ============================================================
+    let csv = 'CODIGOU;FEC_DENU;CONCESION;TIT_CONCES;VERTICES\n';
     poligonosEnArea.forEach(p => {
-        csv += `"${corregirTextoCSV(p.CODIGOU || '')}";"${corregirTextoCSV(p.FEC_DENU || '')}";"${corregirTextoCSV(p.CONCESION || '')}";"${corregirTextoCSV(p.TIT_CONCES || '')}"\n`;
+        const codigo = (p.CODIGOU || '').replace(/"/g, '""');
+        const fecha = (p.FEC_DENU || '').replace(/"/g, '""');
+        const concesion = (p.CONCESION || '').replace(/"/g, '""');
+        const titular = (p.TIT_CONCES || '').replace(/"/g, '""');
+        const vertices = (p.VERTICES || '').replace(/"/g, '""');
+        
+        csv += `"${codigo}";"${fecha}";"${concesion}";"${titular}";"${vertices}"\n`;
     });
     
+    // ============================================================
+    // DESCARGAR CSV
+    // ============================================================
     const blob = new Blob(["\uFEFF" + csv], { type: 'text/csv;charset=utf-8;' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `poligonos_area_${new Date().toISOString().slice(0,10)}.csv`;
+    a.download = `concesiones_area_${new Date().toISOString().slice(0,10)}.csv`;
     a.click();
     URL.revokeObjectURL(url);
     
-    mostrarMensaje(`✅ ${poligonosEnArea.length} polígonos exportados`, 'exito');
+    mostrarMensaje(`✅ ${poligonosEnArea.length} concesiones exportadas con vértices`, 'exito');
 }
 
 function cerrarPopup() {
