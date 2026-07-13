@@ -17,6 +17,20 @@
         input, button { width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px; }
         button { background: #4CAF50; color: white; cursor: pointer; }
         button:hover { background: #45a049; }
+        .btn-guardar { background: #2196F3; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-top: 10px; }
+        .btn-guardar:hover { background: #0b7dda; }
+        .btn-monitorear { background: #FF9800; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-top: 5px; }
+        .btn-monitorear:hover { background: #e68900; }
+        .btn-cancelar { background: #f44336; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-top: 5px; }
+        .btn-cancelar:hover { background: #da190b; }
+        .btn-verificar { background: #4CAF50; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-top: 5px; }
+        .btn-verificar:hover { background: #45a049; }
+        .btn-descargar { background: #9C27B0; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-top: 5px; }
+        .btn-descargar:hover { background: #7B1FA2; }
+        .btn-limpiar { background: #607D8B; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-top: 5px; }
+        .btn-limpiar:hover { background: #455A64; }
+        .btn-group { display: flex; flex-wrap: wrap; gap: 5px; }
+        .btn-group button { flex: 1; min-width: 120px; margin-bottom: 5px; }
         .leyenda-item { display: flex; align-items: center; margin-bottom: 8px; }
         .color-box { width: 20px; height: 20px; margin-right: 10px; border-radius: 4px; }
         .gris { background: #888; }
@@ -48,12 +62,16 @@
             100% { opacity: 0; transform: translateY(-20px); }
         }
         .dibujo-activo { cursor: crosshair !important; }
+        .area-info { background: #e3f2fd; padding: 10px; border-radius: 4px; margin-top: 10px; font-size: 12px; display: none; }
+        .area-info .coord { font-family: monospace; }
+        .status-monitoreo { background: #e8f5e9; padding: 8px; border-radius: 4px; margin-top: 5px; font-size: 12px; display: none; }
+        .status-monitoreo.activo { display: block; border: 1px solid #4CAF50; }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="sidebar">
-            <h2>Visor de Concesiones Mineras</h2>
+            <h2>🗺️ Visor de Concesiones Mineras</h2>
             
             <div class="search-section">
                 <h3>Buscador</h3>
@@ -87,6 +105,32 @@
                 </div>
             </div>
             
+            <div class="acciones-area">
+                <h3>Acciones</h3>
+                <div class="btn-group">
+                    <button class="btn-dibujar" onclick="activarDibujo()" style="background: #FF5722;">✏️ Dibujar área</button>
+                    <button class="btn-descargar" onclick="descargarCSV()">📥 Descargar CSV del área</button>
+                    <button class="btn-limpiar" onclick="limpiarDibujo()">🗑️ Limpiar dibujo</button>
+                </div>
+                <div class="btn-group">
+                    <button class="btn-monitorear" onclick="monitorearArea()">🔔 Monitorear esta área</button>
+                    <button class="btn-verificar" onclick="verificarCambiosAhora()">📧 Verificar cambios ahora</button>
+                </div>
+                <div class="btn-group">
+                    <button class="btn-guardar" onclick="guardarAreaServidor()">💾 Guardar Área en Servidor</button>
+                    <button class="btn-cancelar" onclick="cancelarMonitoreo()">🗑️ Cancelar monitoreo</button>
+                </div>
+                
+                <div id="area-info" class="area-info">
+                    <strong>Área dibujada:</strong><br>
+                    <span class="coord" id="area-coords">-</span>
+                </div>
+                <div id="status-monitoreo" class="status-monitoreo">
+                    <strong>✅ Monitoreo activo</strong><br>
+                    <span id="monitoreo-info">Área guardada correctamente</span>
+                </div>
+            </div>
+            
             <div class="cambios-section">
                 <h3>Últimos cambios</h3>
                 <div id="tabla-cambios">Cargando cambios...</div>
@@ -107,12 +151,12 @@
             <span class="close" onclick="cerrarPopup()">&times;</span>
             <h3>Detalles de la Concesión</h3>
             <table id="info-tabla">
-                <tr><th>Código</th><td id="info-codigo">NonNullative
-                <tr><th>Fecha Denuncio</th><td id="info-fecha">NonNullative
-                <tr><th>Concesión</th><td id="info-concesion">NonNullative
-                <tr><th>Titular</th><td id="info-titular">NonNullative
-                <tr id="fila-tipo-cambio" style="display: none;"><th>Tipo</th><td id="info-tipo-cambio">NonNullative
-                <tr id="fila-fecha-cambio" style="display: none;"><th>Fecha cambio</th><td id="info-fecha-cambio">NonNullative
+                <tr><th>Código</th><td id="info-codigo">-</td></tr>
+                <tr><th>Fecha Denuncio</th><td id="info-fecha">-</td></tr>
+                <tr><th>Concesión</th><td id="info-concesion">-</td></tr>
+                <tr><th>Titular</th><td id="info-titular">-</td></tr>
+                <tr id="fila-tipo-cambio" style="display: none;"><th>Tipo</th><td id="info-tipo-cambio">-</td></tr>
+                <tr id="fila-fecha-cambio" style="display: none;"><th>Fecha cambio</th><td id="info-fecha-cambio">-</td></tr>
             </table>
         </div>
     </div>
@@ -127,6 +171,210 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
         emailjs.init("_PBGYuyGPuKRPK-_F");
+        
+        // ============================================================
+        // FUNCIONES AGREGADAS PARA GUARDAR ÁREA Y MONITOREAR
+        // ============================================================
+        
+        // Guardar área en el servidor
+        async function guardarAreaServidor() {
+            const area = JSON.parse(localStorage.getItem('areaMonitoreada'));
+            if (!area) {
+                mostrarMensaje('⚠️ No hay área dibujada. Dibuja un área primero.', 'warning');
+                return;
+            }
+            
+            try {
+                mostrarMensaje('💾 Guardando área...', 'info');
+                const response = await fetch('/guardar-area', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(area)
+                });
+                
+                if (response.ok) {
+                    const result = await response.json();
+                    mostrarMensaje('✅ Área guardada correctamente en el servidor', 'success');
+                    console.log('Área guardada:', result);
+                    
+                    // Mostrar estado de monitoreo
+                    document.getElementById('status-monitoreo').classList.add('activo');
+                    document.getElementById('monitoreo-info').textContent = 
+                        `Área guardada: ${area.bounds}`;
+                    
+                    // Mostrar info del área
+                    document.getElementById('area-info').style.display = 'block';
+                    document.getElementById('area-coords').textContent = 
+                        `SW: ${area.sw.lat}, ${area.sw.lng} | NE: ${area.ne.lat}, ${area.ne.lng}`;
+                } else {
+                    const error = await response.json();
+                    mostrarMensaje('❌ Error guardando área: ' + (error.error || 'Error desconocido'), 'error');
+                }
+            } catch (error) {
+                mostrarMensaje('❌ Error de conexión. Asegúrate que el servidor local esté corriendo (node server.js)', 'error');
+                console.error(error);
+            }
+        }
+        
+        // Monitorear área (guardar y activar monitoreo)
+        async function monitorearArea() {
+            const area = JSON.parse(localStorage.getItem('areaMonitoreada'));
+            if (!area) {
+                mostrarMensaje('⚠️ No hay área dibujada. Dibuja un área primero.', 'warning');
+                return;
+            }
+            
+            // Primero guardar el área
+            await guardarAreaServidor();
+            
+            // Luego verificar cambios
+            setTimeout(() => {
+                verificarCambiosAhora();
+            }, 1000);
+        }
+        
+        // Verificar cambios ahora
+        async function verificarCambiosAhora() {
+            mostrarMensaje('📧 Verificando cambios...', 'info');
+            
+            try {
+                const response = await fetch('/verificar-cambios', {
+                    method: 'POST'
+                });
+                
+                if (response.ok) {
+                    const result = await response.json();
+                    if (result.cambios > 0) {
+                        mostrarMensaje(`📧 ${result.mensaje || 'Se envió correo con los cambios'}`, 'success');
+                    } else {
+                        mostrarMensaje('📭 No se detectaron cambios en tu área', 'info');
+                    }
+                } else {
+                    const error = await response.json();
+                    mostrarMensaje('❌ Error verificando cambios: ' + (error.error || 'Error desconocido'), 'error');
+                }
+            } catch (error) {
+                mostrarMensaje('❌ Error de conexión. Asegúrate que el servidor local esté corriendo (node server.js)', 'error');
+                console.error(error);
+            }
+        }
+        
+        // Cancelar monitoreo
+        async function cancelarMonitoreo() {
+            try {
+                const response = await fetch('/cancelar-monitoreo', {
+                    method: 'POST'
+                });
+                
+                if (response.ok) {
+                    const result = await response.json();
+                    mostrarMensaje('🗑️ Monitoreo cancelado', 'info');
+                    document.getElementById('status-monitoreo').classList.remove('activo');
+                    document.getElementById('area-info').style.display = 'none';
+                } else {
+                    mostrarMensaje('❌ Error cancelando monitoreo', 'error');
+                }
+            } catch (error) {
+                mostrarMensaje('❌ Error de conexión', 'error');
+                console.error(error);
+            }
+        }
+        
+        // Funciones auxiliares para el visor (estas ya deberían estar en app.js)
+        function activarDibujo() {
+            if (window.activarDibujoMapa) {
+                window.activarDibujoMapa();
+                mostrarMensaje('✏️ Haz clic en el mapa para dibujar el área', 'info');
+            } else {
+                mostrarMensaje('⚠️ La función de dibujo no está disponible', 'error');
+            }
+        }
+        
+        function limpiarDibujo() {
+            if (window.limpiarDibujoMapa) {
+                window.limpiarDibujoMapa();
+                mostrarMensaje('🗑️ Dibujo limpiado', 'info');
+                document.getElementById('area-info').style.display = 'none';
+            } else {
+                mostrarMensaje('⚠️ La función de limpieza no está disponible', 'error');
+            }
+        }
+        
+        function descargarCSV() {
+            if (window.descargarCSVArea) {
+                window.descargarCSVArea();
+                mostrarMensaje('📥 Descargando CSV...', 'info');
+            } else {
+                mostrarMensaje('⚠️ La función de descarga no está disponible', 'error');
+            }
+        }
+        
+        function cargarArchivo() {
+            if (window.cargarArchivoArea) {
+                window.cargarArchivoArea();
+                mostrarMensaje('📂 Cargando archivo...', 'info');
+            } else {
+                mostrarMensaje('⚠️ La función de carga no está disponible', 'error');
+            }
+        }
+        
+        function buscarCoordenadas() {
+            if (window.buscarPorCoordenadas) {
+                window.buscarPorCoordenadas();
+            } else {
+                const input = document.getElementById('coordenadas-texto').value;
+                if (input) {
+                    mostrarMensaje(`🔍 Buscando: ${input}`, 'info');
+                }
+            }
+        }
+        
+        function buscarConcesion() {
+            if (window.buscarConcesionPorTexto) {
+                window.buscarConcesionPorTexto();
+            } else {
+                const input = document.getElementById('buscador').value;
+                if (input) {
+                    mostrarMensaje(`🔍 Buscando: ${input}`, 'info');
+                }
+            }
+        }
+        
+        function cerrarPopup() {
+            document.getElementById('info-popup').style.display = 'none';
+        }
+        
+        // Mostrar mensaje emergente
+        function mostrarMensaje(texto, tipo = 'info') {
+            const el = document.getElementById('mensaje-emergente');
+            el.textContent = texto;
+            el.style.display = 'block';
+            
+            // Colores según tipo
+            const colores = {
+                success: '#4CAF50',
+                error: '#f44336',
+                warning: '#FF9800',
+                info: '#2196F3'
+            };
+            el.style.background = colores[tipo] || '#333';
+            
+            // Ocultar después de 4 segundos
+            clearTimeout(el._timeout);
+            el._timeout = setTimeout(() => {
+                el.style.display = 'none';
+            }, 4000);
+        }
+        
+        // Verificar si hay área guardada al cargar
+        document.addEventListener('DOMContentLoaded', function() {
+            const area = JSON.parse(localStorage.getItem('areaMonitoreada'));
+            if (area) {
+                document.getElementById('area-info').style.display = 'block';
+                document.getElementById('area-coords').textContent = 
+                    `SW: ${area.sw.lat}, ${area.sw.lng} | NE: ${area.ne.lat}, ${area.ne.lng}`;
+            }
+        });
     </script>
 </body>
 </html>
