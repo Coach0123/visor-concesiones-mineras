@@ -41,3 +41,4 @@ jobs:
           git add data/*.geojson data/cambios.json data/ultima_limpieza.json
           git commit -m "Actualizar automático - $(date +'%Y-%m-%d %H:%M')" || echo "No hay cambios para commit"
           git push
+          
