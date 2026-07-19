@@ -2,7 +2,7 @@ name: Monitoreo de Concesiones Mineras
 
 on:
   schedule:
-    - cron: '0 3 * * *'
+    - cron: '0 0 * * *'
   workflow_dispatch:
 
 jobs:
@@ -21,6 +21,14 @@ jobs:
       - name: Instalar dependencias
         run: npm install
         
+      - name: Instalar GDAL
+        run: sudo apt-get update && sudo apt-get install -y gdal-bin
+        
+      - name: Descargar shapefiles
+        run: node scripts/descargar-shapefiles.js
+        env:
+          NODE_TLS_REJECT_UNAUTHORIZED: 0
+          
       - name: Ejecutar script de actualización
         run: node scripts/actualizar-shapefiles.js
         env:
@@ -30,6 +38,6 @@ jobs:
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
-          git add data/cambios.json data/ultima_limpieza.json
-          git commit -m "Actualizar cambios - $(date +'%Y-%m-%d %H:%M')" || echo "No hay cambios para commit"
+          git add data/*.geojson data/cambios.json data/ultima_limpieza.json
+          git commit -m "Actualizar automático - $(date +'%Y-%m-%d %H:%M')" || echo "No hay cambios para commit"
           git push
