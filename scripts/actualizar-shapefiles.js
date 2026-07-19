@@ -149,17 +149,24 @@ async function obtenerArchivoDiaAnterior(zona, fechaActual, horaActual) {
     const anioActual = 2000 + parseInt(fechaActual.slice(4, 6));
     
     const fechaObj = new Date(anioActual, mesActual - 1, diaActual);
-    fechaObj.setDate(fechaObj.getDate() - 1);
     
-    const d = fechaObj.getDate().toString().padStart(2, '0');
-    const m = (fechaObj.getMonth() + 1).toString().padStart(2, '0');
-    const a = fechaObj.getFullYear().toString().slice(-2);
-    const fechaStr = `${d}${m}${a}`;
-    
-    const filePath = path.join(DATA_DIR, `${zona}_${fechaStr}_21.geojson`);
-    if (await fs.pathExists(filePath)) {
-        return { fecha: fechaStr, hora: '21', filePath };
+    // Buscar hasta 10 días atrás si no encuentra el día anterior
+    for (let i = 1; i <= 10; i++) {
+        fechaObj.setDate(fechaObj.getDate() - 1);
+        
+        const d = fechaObj.getDate().toString().padStart(2, '0');
+        const m = (fechaObj.getMonth() + 1).toString().padStart(2, '0');
+        const a = fechaObj.getFullYear().toString().slice(-2);
+        const fechaStr = `${d}${m}${a}`;
+        
+        const filePath = path.join(DATA_DIR, `${zona}_${fechaStr}_21.geojson`);
+        if (await fs.pathExists(filePath)) {
+            console.log(`   ✅ Encontrado archivo anterior: ${fechaStr}_21 (${i} día(s) atrás)`);
+            return { fecha: fechaStr, hora: '21', filePath };
+        }
     }
+    
+    console.log(`   ⚠️ No se encontró archivo anterior para ${zona} (buscó hasta 10 días)`);
     return null;
 }
 
@@ -170,31 +177,48 @@ async function compararArchivos(archivoActual, archivoAnterior, areaMonitoreada)
     const dataActual = await fs.readJson(archivoActual.filePath);
     const dataAnterior = await fs.readJson(archivoAnterior.filePath);
     
-    const setAnterior = new Set();
-    dataAnterior.features.forEach(f => {
-        setAnterior.add(String(f.properties.CODIGOU).trim());
+    console.log(`   📁 Actual: ${dataActual.features.length} features`);
+    console.log(`   📁 Anterior: ${dataAnterior.features.length} features`);
+    
+    // Crear sets de códigos (igual que en R)
+    const codigosActual = new Set();
+    dataActual.features.forEach(f => {
+        codigosActual.add(String(f.properties.CODIGOU).trim());
     });
+    
+    const codigosAnterior = new Set();
+    dataAnterior.features.forEach(f => {
+        codigosAnterior.add(String(f.properties.CODIGOU).trim());
+    });
+    
+    console.log(`   📊 Códigos únicos Actual: ${codigosActual.size}`);
+    console.log(`   📊 Códigos únicos Anterior: ${codigosAnterior.size}`);
     
     const desaparecidos = [];
     const aparecidos = [];
     
+    // Desaparecidos (estaban en anterior, no están en actual)
     dataAnterior.features.forEach(f => {
         const codigo = String(f.properties.CODIGOU).trim();
-        if (!dataActual.features.find(g => String(g.properties.CODIGOU).trim() === codigo)) {
+        if (!codigosActual.has(codigo)) {
             if (poligonoEnArea(f, areaMonitoreada)) {
                 desaparecidos.push(f);
             }
         }
     });
     
+    // Aparecidos (están en actual, no estaban en anterior)
     dataActual.features.forEach(f => {
         const codigo = String(f.properties.CODIGOU).trim();
-        if (!dataAnterior.features.find(g => String(g.properties.CODIGOU).trim() === codigo)) {
+        if (!codigosAnterior.has(codigo)) {
             if (poligonoEnArea(f, areaMonitoreada)) {
                 aparecidos.push(f);
             }
         }
     });
+    
+    console.log(`   🔴 Desaparecidos en área: ${desaparecidos.length}`);
+    console.log(`   🟢 Aparecidos en área: ${aparecidos.length}`);
     
     return { desaparecidos, aparecidos };
 }
