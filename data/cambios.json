@@ -892,5 +892,71 @@
     "nombre": "YHABEL & VILLASOL",
     "tipo": "aparece",
     "fecha": "2026-07-19T01:49:05.329Z"
+  },
+  {
+    "codigo": "010104926",
+    "nombre": "BRIAN BH",
+    "tipo": "desaparece",
+    "fecha": "2026-07-21T01:14:38.952Z"
+  },
+  {
+    "codigo": "010116526",
+    "nombre": "MIA 2050 II",
+    "tipo": "desaparece",
+    "fecha": "2026-07-21T01:14:38.952Z"
+  },
+  {
+    "codigo": "540010724",
+    "nombre": "DIEGO VI",
+    "tipo": "desaparece",
+    "fecha": "2026-07-21T01:14:38.952Z"
+  },
+  {
+    "codigo": "010048926",
+    "nombre": "VETA REAL 72",
+    "tipo": "desaparece",
+    "fecha": "2026-07-21T01:14:38.952Z"
+  },
+  {
+    "codigo": "050007226",
+    "nombre": "LA PODEROSA 2026",
+    "tipo": "desaparece",
+    "fecha": "2026-07-21T01:14:38.952Z"
+  },
+  {
+    "codigo": "010054126",
+    "nombre": "VALLE FORTUNA",
+    "tipo": "desaparece",
+    "fecha": "2026-07-21T01:14:38.952Z"
+  },
+  {
+    "codigo": "010152926",
+    "nombre": "GOLDEN SUR 2026",
+    "tipo": "desaparece",
+    "fecha": "2026-07-21T01:14:38.952Z"
+  },
+  {
+    "codigo": "080075725",
+    "nombre": "SAN ANDRES 2025",
+    "tipo": "desaparece",
+    "fecha": "2026-07-21T01:14:38.952Z"
+  },
+  {
+    "codigo": "080018325",
+    "nombre": "EDITH 2025",
+    "tipo": "desaparece",
+    "fecha": "2026-07-21T01:14:38.952Z"
+  },
+  {
+    "codigo": "080038225",
+    "nombre": "MINING MIA GODL",
+    "tipo": "desaparece",
+    "fecha": "2026-07-21T01:14:38.952Z"
+  },
+  {
+    "codigo": "010120424A",
+    "nombre": "MOGOL 2024 10",
+    "tipo": "aparece",
+    "fecha": "2026-07-21T01:14:38.952Z"
   }
 ]
