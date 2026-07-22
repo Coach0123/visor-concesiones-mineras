@@ -958,5 +958,113 @@
     "nombre": "MOGOL 2024 10",
     "tipo": "aparece",
     "fecha": "2026-07-21T01:14:38.952Z"
+  },
+  {
+    "codigo": "010359226",
+    "nombre": "CHAUPI DM 2",
+    "tipo": "aparece",
+    "fecha": "2026-07-22T01:12:45.721Z"
+  },
+  {
+    "codigo": "010359326",
+    "nombre": "CHAUPI DM 1",
+    "tipo": "aparece",
+    "fecha": "2026-07-22T01:12:45.721Z"
+  },
+  {
+    "codigo": "100005326",
+    "nombre": "MOCHIS I",
+    "tipo": "aparece",
+    "fecha": "2026-07-22T01:12:45.721Z"
+  },
+  {
+    "codigo": "100005426",
+    "nombre": "MOCHIS II",
+    "tipo": "aparece",
+    "fecha": "2026-07-22T01:12:45.721Z"
+  },
+  {
+    "codigo": "630004426",
+    "nombre": "LA ESPERANZA DE TALAMBO 2",
+    "tipo": "aparece",
+    "fecha": "2026-07-22T01:12:45.721Z"
+  },
+  {
+    "codigo": "010358926",
+    "nombre": "AURYN I",
+    "tipo": "aparece",
+    "fecha": "2026-07-22T01:12:45.721Z"
+  },
+  {
+    "codigo": "010359026",
+    "nombre": "PERU FSK 1",
+    "tipo": "aparece",
+    "fecha": "2026-07-22T01:12:45.721Z"
+  },
+  {
+    "codigo": "010358726",
+    "nombre": "MINA ABG CHACHO",
+    "tipo": "aparece",
+    "fecha": "2026-07-22T01:12:45.721Z"
+  },
+  {
+    "codigo": "750000926",
+    "nombre": "MYM AGUAYTIA",
+    "tipo": "aparece",
+    "fecha": "2026-07-22T01:12:45.721Z"
+  },
+  {
+    "codigo": "020013126",
+    "nombre": "GRICELDA ZEPITA",
+    "tipo": "aparece",
+    "fecha": "2026-07-22T01:12:45.721Z"
+  },
+  {
+    "codigo": "020013226",
+    "nombre": "HIPOLITO UNO",
+    "tipo": "aparece",
+    "fecha": "2026-07-22T01:12:45.721Z"
+  },
+  {
+    "codigo": "620005826",
+    "nombre": "MINDU 195",
+    "tipo": "aparece",
+    "fecha": "2026-07-22T01:12:45.721Z"
+  },
+  {
+    "codigo": "010358326",
+    "nombre": "RETROACTIVO 6",
+    "tipo": "aparece",
+    "fecha": "2026-07-22T01:12:45.721Z"
+  },
+  {
+    "codigo": "590003626",
+    "nombre": "CERRO AZUL DORADO",
+    "tipo": "aparece",
+    "fecha": "2026-07-22T01:12:45.721Z"
+  },
+  {
+    "codigo": "010358826",
+    "nombre": "SAULITO_3",
+    "tipo": "aparece",
+    "fecha": "2026-07-22T01:12:45.721Z"
+  },
+  {
+    "codigo": "010358426",
+    "nombre": "SOL IMPERIAL",
+    "tipo": "aparece",
+    "fecha": "2026-07-22T01:12:45.721Z"
+  },
+  {
+    "codigo": "080044426",
+    "nombre": "ANTARUMY",
+    "tipo": "aparece",
+    "fecha": "2026-07-22T01:12:45.721Z"
+  },
+  {
+    "codigo": "010295424A",
+    "nombre": "ANTACORI 5",
+    "tipo": "aparece",
+    "fecha": "2026-07-22T01:12:45.721Z"
   }
 ]
