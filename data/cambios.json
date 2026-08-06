@@ -13996,5 +13996,221 @@
     "nombre": "FORTALEZA MINERAL",
     "tipo": "aparece",
     "fecha": "2026-08-05T01:13:00.348Z"
+  },
+  {
+    "codigo": "030081526",
+    "nombre": "ARIDELSA",
+    "tipo": "aparece",
+    "fecha": "2026-08-06T01:10:59.996Z"
+  },
+  {
+    "codigo": "030081626",
+    "nombre": "ARGINA I",
+    "tipo": "aparece",
+    "fecha": "2026-08-06T01:10:59.996Z"
+  },
+  {
+    "codigo": "030081826",
+    "nombre": "PERCON 2",
+    "tipo": "aparece",
+    "fecha": "2026-08-06T01:10:59.996Z"
+  },
+  {
+    "codigo": "110013526",
+    "nombre": "ISQUIHUANCA DOS",
+    "tipo": "aparece",
+    "fecha": "2026-08-06T01:10:59.996Z"
+  },
+  {
+    "codigo": "510001026",
+    "nombre": "EMANUEL",
+    "tipo": "aparece",
+    "fecha": "2026-08-06T01:10:59.996Z"
+  },
+  {
+    "codigo": "010473626",
+    "nombre": "CASMA PB",
+    "tipo": "aparece",
+    "fecha": "2026-08-06T01:10:59.996Z"
+  },
+  {
+    "codigo": "030081726",
+    "nombre": "APEXCONPER",
+    "tipo": "aparece",
+    "fecha": "2026-08-06T01:10:59.996Z"
+  },
+  {
+    "codigo": "750001226",
+    "nombre": "ARCANA COMPANY SAC",
+    "tipo": "aparece",
+    "fecha": "2026-08-06T01:10:59.996Z"
+  },
+  {
+    "codigo": "010474826",
+    "nombre": "HSV CONSTRUMINER",
+    "tipo": "aparece",
+    "fecha": "2026-08-06T01:10:59.996Z"
+  },
+  {
+    "codigo": "010473526",
+    "nombre": "TERENIZO I",
+    "tipo": "aparece",
+    "fecha": "2026-08-06T01:10:59.996Z"
+  },
+  {
+    "codigo": "010473426",
+    "nombre": "SISKUCHA II",
+    "tipo": "aparece",
+    "fecha": "2026-08-06T01:10:59.996Z"
+  },
+  {
+    "codigo": "010473726",
+    "nombre": "SANTUARIO X - 2",
+    "tipo": "aparece",
+    "fecha": "2026-08-06T01:10:59.996Z"
+  },
+  {
+    "codigo": "010473926",
+    "nombre": "ATICO I 2026",
+    "tipo": "aparece",
+    "fecha": "2026-08-06T01:10:59.996Z"
+  },
+  {
+    "codigo": "010474026",
+    "nombre": "DULCE MARIA I",
+    "tipo": "aparece",
+    "fecha": "2026-08-06T01:10:59.996Z"
+  },
+  {
+    "codigo": "010474126",
+    "nombre": "METALES ROMERO X",
+    "tipo": "aparece",
+    "fecha": "2026-08-06T01:10:59.996Z"
+  },
+  {
+    "codigo": "010474526",
+    "nombre": "COCHABAMBA A",
+    "tipo": "aparece",
+    "fecha": "2026-08-06T01:10:59.996Z"
+  },
+  {
+    "codigo": "010473826",
+    "nombre": "ATICO II 2026",
+    "tipo": "aparece",
+    "fecha": "2026-08-06T01:10:59.996Z"
+  },
+  {
+    "codigo": "010474626",
+    "nombre": "COCHABAMBA C",
+    "tipo": "aparece",
+    "fecha": "2026-08-06T01:10:59.996Z"
+  },
+  {
+    "codigo": "040041426",
+    "nombre": "CCORI INTI 12",
+    "tipo": "aparece",
+    "fecha": "2026-08-06T01:10:59.996Z"
+  },
+  {
+    "codigo": "050098926",
+    "nombre": "MINERA MUQUI I",
+    "tipo": "aparece",
+    "fecha": "2026-08-06T01:10:59.996Z"
+  },
+  {
+    "codigo": "050099526",
+    "nombre": "4 ESQUINAS",
+    "tipo": "aparece",
+    "fecha": "2026-08-06T01:10:59.996Z"
+  },
+  {
+    "codigo": "050099626",
+    "nombre": "MORRIS MINING UNION",
+    "tipo": "aparece",
+    "fecha": "2026-08-06T01:10:59.996Z"
+  },
+  {
+    "codigo": "050099726",
+    "nombre": "MORRIS MINING BELLA UNION",
+    "tipo": "aparece",
+    "fecha": "2026-08-06T01:10:59.996Z"
+  },
+  {
+    "codigo": "080062126",
+    "nombre": "SOL DE AMERICA ANNES CHAPARRA",
+    "tipo": "aparece",
+    "fecha": "2026-08-06T01:10:59.996Z"
+  },
+  {
+    "codigo": "530017026",
+    "nombre": "YANA RUMI 1",
+    "tipo": "aparece",
+    "fecha": "2026-08-06T01:10:59.996Z"
+  },
+  {
+    "codigo": "530017126",
+    "nombre": "CCARA CHAMPIÑA 1",
+    "tipo": "aparece",
+    "fecha": "2026-08-06T01:10:59.996Z"
+  },
+  {
+    "codigo": "550005526",
+    "nombre": "SR DE LOS MILAGROS 26",
+    "tipo": "aparece",
+    "fecha": "2026-08-06T01:10:59.996Z"
+  },
+  {
+    "codigo": "600004926",
+    "nombre": "EL GRAN SAMARITANO",
+    "tipo": "aparece",
+    "fecha": "2026-08-06T01:10:59.996Z"
+  },
+  {
+    "codigo": "050098826",
+    "nombre": "MINAS DEL SOL",
+    "tipo": "aparece",
+    "fecha": "2026-08-06T01:10:59.996Z"
+  },
+  {
+    "codigo": "050099426",
+    "nombre": "CHALCHA 1",
+    "tipo": "aparece",
+    "fecha": "2026-08-06T01:10:59.996Z"
+  },
+  {
+    "codigo": "010474926",
+    "nombre": "AMBIORA II",
+    "tipo": "aparece",
+    "fecha": "2026-08-06T01:10:59.996Z"
+  },
+  {
+    "codigo": "010475026",
+    "nombre": "JULIETT 03",
+    "tipo": "aparece",
+    "fecha": "2026-08-06T01:10:59.996Z"
+  },
+  {
+    "codigo": "080061926",
+    "nombre": "SURMIN",
+    "tipo": "aparece",
+    "fecha": "2026-08-06T01:10:59.996Z"
+  },
+  {
+    "codigo": "080062026",
+    "nombre": "SACOMAYO MY26",
+    "tipo": "aparece",
+    "fecha": "2026-08-06T01:10:59.996Z"
+  },
+  {
+    "codigo": "080061526",
+    "nombre": "QUENAQUENA STRONG GOLD",
+    "tipo": "aparece",
+    "fecha": "2026-08-06T01:10:59.996Z"
+  },
+  {
+    "codigo": "080061626",
+    "nombre": "CORPORACION VIL CAÑETE",
+    "tipo": "aparece",
+    "fecha": "2026-08-06T01:10:59.996Z"
   }
 ]
