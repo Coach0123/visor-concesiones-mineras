@@ -14212,5 +14212,263 @@
     "nombre": "CORPORACION VIL CAÑETE",
     "tipo": "aparece",
     "fecha": "2026-08-06T01:10:59.996Z"
+  },
+  {
+    "codigo": "740000626",
+    "nombre": "CANTERA JAÑAPE",
+    "tipo": "aparece",
+    "fecha": "2026-08-07T01:54:48.643Z"
+  },
+  {
+    "codigo": "010475426",
+    "nombre": "MISION 1",
+    "tipo": "aparece",
+    "fecha": "2026-08-07T01:54:48.643Z"
+  },
+  {
+    "codigo": "010476126",
+    "nombre": "INKA CORPORATION",
+    "tipo": "aparece",
+    "fecha": "2026-08-07T01:54:48.643Z"
+  },
+  {
+    "codigo": "030082026",
+    "nombre": "ARAD 1",
+    "tipo": "aparece",
+    "fecha": "2026-08-07T01:54:48.643Z"
+  },
+  {
+    "codigo": "030082326",
+    "nombre": "NEYLAN NICOOL 01",
+    "tipo": "aparece",
+    "fecha": "2026-08-07T01:54:48.643Z"
+  },
+  {
+    "codigo": "100006226",
+    "nombre": "EL PORTACHUELO",
+    "tipo": "aparece",
+    "fecha": "2026-08-07T01:54:48.643Z"
+  },
+  {
+    "codigo": "010475826",
+    "nombre": "FERJUL II 2018",
+    "tipo": "aparece",
+    "fecha": "2026-08-07T01:54:48.643Z"
+  },
+  {
+    "codigo": "010475126",
+    "nombre": "JBV MINING",
+    "tipo": "aparece",
+    "fecha": "2026-08-07T01:54:48.643Z"
+  },
+  {
+    "codigo": "060019026",
+    "nombre": "WILLIAM ALEXANDER",
+    "tipo": "aparece",
+    "fecha": "2026-08-07T01:54:48.643Z"
+  },
+  {
+    "codigo": "520006126",
+    "nombre": "MISERICORDIA",
+    "tipo": "aparece",
+    "fecha": "2026-08-07T01:54:48.643Z"
+  },
+  {
+    "codigo": "010475526",
+    "nombre": "GRECIA BVN 20",
+    "tipo": "aparece",
+    "fecha": "2026-08-07T01:54:48.643Z"
+  },
+  {
+    "codigo": "010475626",
+    "nombre": "GRECIA BVN 19",
+    "tipo": "aparece",
+    "fecha": "2026-08-07T01:54:48.643Z"
+  },
+  {
+    "codigo": "010475926",
+    "nombre": "SOL DE ORO DOS",
+    "tipo": "aparece",
+    "fecha": "2026-08-07T01:54:48.643Z"
+  },
+  {
+    "codigo": "010476326",
+    "nombre": "OSITO CHINO 1",
+    "tipo": "aparece",
+    "fecha": "2026-08-07T01:54:48.643Z"
+  },
+  {
+    "codigo": "010476526",
+    "nombre": "ANDEAN GOLD 3 R PERU",
+    "tipo": "aparece",
+    "fecha": "2026-08-07T01:54:48.643Z"
+  },
+  {
+    "codigo": "010476626",
+    "nombre": "SIDERIANS CERRO PRIETO",
+    "tipo": "aparece",
+    "fecha": "2026-08-07T01:54:48.643Z"
+  },
+  {
+    "codigo": "010476826",
+    "nombre": "MARTIN III",
+    "tipo": "aparece",
+    "fecha": "2026-08-07T01:54:48.643Z"
+  },
+  {
+    "codigo": "010476926",
+    "nombre": "LA MADRE",
+    "tipo": "aparece",
+    "fecha": "2026-08-07T01:54:48.643Z"
+  },
+  {
+    "codigo": "010477026",
+    "nombre": "MARTIN II",
+    "tipo": "aparece",
+    "fecha": "2026-08-07T01:54:48.643Z"
+  },
+  {
+    "codigo": "040041926",
+    "nombre": "TERRA MIRUS 2",
+    "tipo": "aparece",
+    "fecha": "2026-08-07T01:54:48.643Z"
+  },
+  {
+    "codigo": "050100026",
+    "nombre": "GAZZELA",
+    "tipo": "aparece",
+    "fecha": "2026-08-07T01:54:48.643Z"
+  },
+  {
+    "codigo": "050100226",
+    "nombre": "HUAYTAPALCA 1",
+    "tipo": "aparece",
+    "fecha": "2026-08-07T01:54:48.643Z"
+  },
+  {
+    "codigo": "530017226",
+    "nombre": "VIRGEN DE COCHARCAS XVI",
+    "tipo": "aparece",
+    "fecha": "2026-08-07T01:54:48.643Z"
+  },
+  {
+    "codigo": "550005626",
+    "nombre": "CRISTINA I",
+    "tipo": "aparece",
+    "fecha": "2026-08-07T01:54:48.643Z"
+  },
+  {
+    "codigo": "550005826",
+    "nombre": "CRISTINA III",
+    "tipo": "aparece",
+    "fecha": "2026-08-07T01:54:48.643Z"
+  },
+  {
+    "codigo": "610009626",
+    "nombre": "LUCASFAL-I",
+    "tipo": "aparece",
+    "fecha": "2026-08-07T01:54:48.643Z"
+  },
+  {
+    "codigo": "660002726",
+    "nombre": "FUNDO MIRIAN ALEXANDRA",
+    "tipo": "aparece",
+    "fecha": "2026-08-07T01:54:48.643Z"
+  },
+  {
+    "codigo": "010476226",
+    "nombre": "POLAR Y PANDA 1",
+    "tipo": "aparece",
+    "fecha": "2026-08-07T01:54:48.643Z"
+  },
+  {
+    "codigo": "010477126",
+    "nombre": "MARTIN I",
+    "tipo": "aparece",
+    "fecha": "2026-08-07T01:54:48.643Z"
+  },
+  {
+    "codigo": "010476026",
+    "nombre": "JJM GOLDEN",
+    "tipo": "aparece",
+    "fecha": "2026-08-07T01:54:48.643Z"
+  },
+  {
+    "codigo": "010475226",
+    "nombre": "PODEROSA 22",
+    "tipo": "aparece",
+    "fecha": "2026-08-07T01:54:48.643Z"
+  },
+  {
+    "codigo": "010476426",
+    "nombre": "POLAR Y PANDA 3",
+    "tipo": "aparece",
+    "fecha": "2026-08-07T01:54:48.643Z"
+  },
+  {
+    "codigo": "010476726",
+    "nombre": "MARTIN IV",
+    "tipo": "aparece",
+    "fecha": "2026-08-07T01:54:48.643Z"
+  },
+  {
+    "codigo": "550005726",
+    "nombre": "CRISTINA II",
+    "tipo": "aparece",
+    "fecha": "2026-08-07T01:54:48.643Z"
+  },
+  {
+    "codigo": "040041826",
+    "nombre": "TERRA MIRUS 1",
+    "tipo": "aparece",
+    "fecha": "2026-08-07T01:54:48.643Z"
+  },
+  {
+    "codigo": "040042026",
+    "nombre": "TERRA MIRUS 3",
+    "tipo": "aparece",
+    "fecha": "2026-08-07T01:54:48.643Z"
+  },
+  {
+    "codigo": "550005926",
+    "nombre": "CRISTINA IV",
+    "tipo": "aparece",
+    "fecha": "2026-08-07T01:54:48.643Z"
+  },
+  {
+    "codigo": "010475326",
+    "nombre": "PODEROSA 23",
+    "tipo": "aparece",
+    "fecha": "2026-08-07T01:54:48.643Z"
+  },
+  {
+    "codigo": "050100326",
+    "nombre": "SUAR 11",
+    "tipo": "aparece",
+    "fecha": "2026-08-07T01:54:48.643Z"
+  },
+  {
+    "codigo": "010475726",
+    "nombre": "GRECIA BVN 18",
+    "tipo": "aparece",
+    "fecha": "2026-08-07T01:54:48.643Z"
+  },
+  {
+    "codigo": "050099926",
+    "nombre": "HALCON79J",
+    "tipo": "aparece",
+    "fecha": "2026-08-07T01:54:48.643Z"
+  },
+  {
+    "codigo": "050100126",
+    "nombre": "SULLCA LA ARENA",
+    "tipo": "aparece",
+    "fecha": "2026-08-07T01:54:48.643Z"
+  },
+  {
+    "codigo": "080062226",
+    "nombre": "PROYECTO ROXANA",
+    "tipo": "aparece",
+    "fecha": "2026-08-07T01:54:48.643Z"
   }
 ]
