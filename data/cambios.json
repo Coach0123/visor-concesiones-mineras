@@ -580,5 +580,131 @@
     "nombre": "EL NUEVO PAYTITI",
     "tipo": "aparece",
     "fecha": "2026-08-13T00:47:49.083Z"
+  },
+  {
+    "codigo": "530015525",
+    "nombre": "GUADALUPE IV",
+    "tipo": "desaparece",
+    "fecha": "2026-08-14T00:47:31.679Z"
+  },
+  {
+    "codigo": "080063626",
+    "nombre": "RIOALFA II",
+    "tipo": "aparece",
+    "fecha": "2026-08-14T00:47:31.679Z"
+  },
+  {
+    "codigo": "070038826",
+    "nombre": "SANDRABEL",
+    "tipo": "aparece",
+    "fecha": "2026-08-14T00:47:31.679Z"
+  },
+  {
+    "codigo": "100006626",
+    "nombre": "TAVARA01",
+    "tipo": "aparece",
+    "fecha": "2026-08-14T00:47:31.679Z"
+  },
+  {
+    "codigo": "100006326",
+    "nombre": "TAVARA04",
+    "tipo": "aparece",
+    "fecha": "2026-08-14T00:47:31.679Z"
+  },
+  {
+    "codigo": "080063826",
+    "nombre": "RIOALFA III",
+    "tipo": "aparece",
+    "fecha": "2026-08-14T00:47:31.679Z"
+  },
+  {
+    "codigo": "100006426",
+    "nombre": "TAVARA03",
+    "tipo": "aparece",
+    "fecha": "2026-08-14T00:47:31.679Z"
+  },
+  {
+    "codigo": "100006526",
+    "nombre": "TAVARA02",
+    "tipo": "aparece",
+    "fecha": "2026-08-14T00:47:31.679Z"
+  },
+  {
+    "codigo": "100006726",
+    "nombre": "TAVARA05",
+    "tipo": "aparece",
+    "fecha": "2026-08-14T00:47:31.679Z"
+  },
+  {
+    "codigo": "100006826",
+    "nombre": "TAVARA10",
+    "tipo": "aparece",
+    "fecha": "2026-08-14T00:47:31.679Z"
+  },
+  {
+    "codigo": "100006926",
+    "nombre": "TAVARA09",
+    "tipo": "aparece",
+    "fecha": "2026-08-14T00:47:31.679Z"
+  },
+  {
+    "codigo": "100007026",
+    "nombre": "TAVARA06",
+    "tipo": "aparece",
+    "fecha": "2026-08-14T00:47:31.679Z"
+  },
+  {
+    "codigo": "100007126",
+    "nombre": "TAVARA07",
+    "tipo": "aparece",
+    "fecha": "2026-08-14T00:47:31.679Z"
+  },
+  {
+    "codigo": "100007226",
+    "nombre": "TAVARA08",
+    "tipo": "aparece",
+    "fecha": "2026-08-14T00:47:31.679Z"
+  },
+  {
+    "codigo": "010486826",
+    "nombre": "CARLITOS",
+    "tipo": "aparece",
+    "fecha": "2026-08-14T00:47:31.679Z"
+  },
+  {
+    "codigo": "010486726",
+    "nombre": "LUCERO DEL ALVA",
+    "tipo": "aparece",
+    "fecha": "2026-08-14T00:47:31.679Z"
+  },
+  {
+    "codigo": "010486626",
+    "nombre": "LA SAGRADA",
+    "tipo": "aparece",
+    "fecha": "2026-08-14T00:47:31.679Z"
+  },
+  {
+    "codigo": "530017726",
+    "nombre": "LIRIOS XII",
+    "tipo": "aparece",
+    "fecha": "2026-08-14T00:47:31.679Z"
+  },
+  {
+    "codigo": "010486926",
+    "nombre": "CARLITOS1",
+    "tipo": "aparece",
+    "fecha": "2026-08-14T00:47:31.679Z"
+  },
+  {
+    "codigo": "070038926",
+    "nombre": "FLAVIO GUERRERO",
+    "tipo": "aparece",
+    "fecha": "2026-08-14T00:47:31.679Z"
+  },
+  {
+    "codigo": "070039026",
+    "nombre": "LIA AYLI",
+    "tipo": "aparece",
+    "fecha": "2026-08-14T00:47:31.679Z"
   }
 ]
