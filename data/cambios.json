@@ -706,5 +706,233 @@
     "nombre": "LIA AYLI",
     "tipo": "aparece",
     "fecha": "2026-08-14T00:47:31.679Z"
+  },
+  {
+    "codigo": "590001125",
+    "nombre": "SHADDAI",
+    "tipo": "desaparece",
+    "fecha": "2026-08-15T00:25:57.370Z"
+  },
+  {
+    "codigo": "530003020",
+    "nombre": "MONTOYA I",
+    "tipo": "desaparece",
+    "fecha": "2026-08-15T00:25:57.370Z"
+  },
+  {
+    "codigo": "540017924",
+    "nombre": "MINERA SONCCO",
+    "tipo": "desaparece",
+    "fecha": "2026-08-15T00:25:57.370Z"
+  },
+  {
+    "codigo": "540017824",
+    "nombre": "MINERA LLOCCO",
+    "tipo": "desaparece",
+    "fecha": "2026-08-15T00:25:57.370Z"
+  },
+  {
+    "codigo": "030083526",
+    "nombre": "CHEPATEE",
+    "tipo": "aparece",
+    "fecha": "2026-08-15T00:25:57.370Z"
+  },
+  {
+    "codigo": "010488126",
+    "nombre": "EMBARCADERO PUERTO PACÍFICO",
+    "tipo": "aparece",
+    "fecha": "2026-08-15T00:25:57.370Z"
+  },
+  {
+    "codigo": "030083626",
+    "nombre": "RVK 17",
+    "tipo": "aparece",
+    "fecha": "2026-08-15T00:25:57.370Z"
+  },
+  {
+    "codigo": "700003526",
+    "nombre": "FRANK II 2026",
+    "tipo": "aparece",
+    "fecha": "2026-08-15T00:25:57.370Z"
+  },
+  {
+    "codigo": "050104326",
+    "nombre": "MINERA CAPAC 9",
+    "tipo": "aparece",
+    "fecha": "2026-08-15T00:25:57.370Z"
+  },
+  {
+    "codigo": "010487126",
+    "nombre": "MIS SUEÑOS DORADOS",
+    "tipo": "aparece",
+    "fecha": "2026-08-15T00:25:57.370Z"
+  },
+  {
+    "codigo": "050103526",
+    "nombre": "MINERA CAPAC 1",
+    "tipo": "aparece",
+    "fecha": "2026-08-15T00:25:57.370Z"
+  },
+  {
+    "codigo": "010488626",
+    "nombre": "CELIA FERNANDA I P",
+    "tipo": "aparece",
+    "fecha": "2026-08-15T00:25:57.370Z"
+  },
+  {
+    "codigo": "050104226",
+    "nombre": "MINERA CAPAC 8",
+    "tipo": "aparece",
+    "fecha": "2026-08-15T00:25:57.370Z"
+  },
+  {
+    "codigo": "050103926",
+    "nombre": "MINERA CAPAC 5",
+    "tipo": "aparece",
+    "fecha": "2026-08-15T00:25:57.370Z"
+  },
+  {
+    "codigo": "010487926",
+    "nombre": "MINERA ECOAURUM",
+    "tipo": "aparece",
+    "fecha": "2026-08-15T00:25:57.370Z"
+  },
+  {
+    "codigo": "010487026",
+    "nombre": "JOEL 87",
+    "tipo": "aparece",
+    "fecha": "2026-08-15T00:25:57.370Z"
+  },
+  {
+    "codigo": "010487226",
+    "nombre": "CARAL 101",
+    "tipo": "aparece",
+    "fecha": "2026-08-15T00:25:57.370Z"
+  },
+  {
+    "codigo": "010487326",
+    "nombre": "ANGELICAL 2026",
+    "tipo": "aparece",
+    "fecha": "2026-08-15T00:25:57.370Z"
+  },
+  {
+    "codigo": "010487426",
+    "nombre": "CATALEYA 2026",
+    "tipo": "aparece",
+    "fecha": "2026-08-15T00:25:57.370Z"
+  },
+  {
+    "codigo": "010487726",
+    "nombre": "NANLONG I",
+    "tipo": "aparece",
+    "fecha": "2026-08-15T00:25:57.370Z"
+  },
+  {
+    "codigo": "010488426",
+    "nombre": "DON NELSON I",
+    "tipo": "aparece",
+    "fecha": "2026-08-15T00:25:57.370Z"
+  },
+  {
+    "codigo": "010488726",
+    "nombre": "LUIS LYAM I P",
+    "tipo": "aparece",
+    "fecha": "2026-08-15T00:25:57.370Z"
+  },
+  {
+    "codigo": "010488826",
+    "nombre": "SAUL JOSE I P",
+    "tipo": "aparece",
+    "fecha": "2026-08-15T00:25:57.370Z"
+  },
+  {
+    "codigo": "010488926",
+    "nombre": "DAYANITA I P",
+    "tipo": "aparece",
+    "fecha": "2026-08-15T00:25:57.370Z"
+  },
+  {
+    "codigo": "010489026",
+    "nombre": "BRIGIDA I P",
+    "tipo": "aparece",
+    "fecha": "2026-08-15T00:25:57.370Z"
+  },
+  {
+    "codigo": "040043426",
+    "nombre": "MINERA MADRID ARAGON",
+    "tipo": "aparece",
+    "fecha": "2026-08-15T00:25:57.370Z"
+  },
+  {
+    "codigo": "050103626",
+    "nombre": "MINERA CAPAC 2",
+    "tipo": "aparece",
+    "fecha": "2026-08-15T00:25:57.370Z"
+  },
+  {
+    "codigo": "050104026",
+    "nombre": "MINERA CAPAC 6",
+    "tipo": "aparece",
+    "fecha": "2026-08-15T00:25:57.370Z"
+  },
+  {
+    "codigo": "050104126",
+    "nombre": "MINERA CAPAC 7",
+    "tipo": "aparece",
+    "fecha": "2026-08-15T00:25:57.370Z"
+  },
+  {
+    "codigo": "050104426",
+    "nombre": "PROYECTO CUSIATAU",
+    "tipo": "aparece",
+    "fecha": "2026-08-15T00:25:57.370Z"
+  },
+  {
+    "codigo": "540021526",
+    "nombre": "LUCY 26 I",
+    "tipo": "aparece",
+    "fecha": "2026-08-15T00:25:57.370Z"
+  },
+  {
+    "codigo": "610009726",
+    "nombre": "DANIELITA UNO",
+    "tipo": "aparece",
+    "fecha": "2026-08-15T00:25:57.370Z"
+  },
+  {
+    "codigo": "690002926",
+    "nombre": "LUISA DOMINGUEZ",
+    "tipo": "aparece",
+    "fecha": "2026-08-15T00:25:57.370Z"
+  },
+  {
+    "codigo": "080064226",
+    "nombre": "VALLE DORADA R&C",
+    "tipo": "aparece",
+    "fecha": "2026-08-15T00:25:57.370Z"
+  },
+  {
+    "codigo": "710010026",
+    "nombre": "JOBMINING 2",
+    "tipo": "aparece",
+    "fecha": "2026-08-15T00:25:57.370Z"
+  },
+  {
+    "codigo": "040043526",
+    "nombre": "AMARU 07",
+    "tipo": "aparece",
+    "fecha": "2026-08-15T00:25:57.370Z"
+  },
+  {
+    "codigo": "080064326",
+    "nombre": "ADRIAN LUZBEL",
+    "tipo": "aparece",
+    "fecha": "2026-08-15T00:25:57.370Z"
+  },
+  {
+    "codigo": "710009926",
+    "nombre": "FAMAY ONCE",
+    "tipo": "aparece",
+    "fecha": "2026-08-15T00:25:57.370Z"
   }
 ]
