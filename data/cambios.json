@@ -1678,5 +1678,215 @@
     "nombre": "QORI COCHA OM",
     "tipo": "aparece",
     "fecha": "2026-08-19T00:25:39.935Z"
+  },
+  {
+    "codigo": "590001024",
+    "nombre": "PATRICIA2024",
+    "tipo": "desaparece",
+    "fecha": "2026-08-20T00:26:21.129Z"
+  },
+  {
+    "codigo": "580006524",
+    "nombre": "COORPORACION TAINI 2025",
+    "tipo": "desaparece",
+    "fecha": "2026-08-20T00:26:21.129Z"
+  },
+  {
+    "codigo": "590005325",
+    "nombre": "ORO MARUDY III",
+    "tipo": "desaparece",
+    "fecha": "2026-08-20T00:26:21.129Z"
+  },
+  {
+    "codigo": "010495226",
+    "nombre": "ZAPALLAL ESTE",
+    "tipo": "aparece",
+    "fecha": "2026-08-20T00:26:21.129Z"
+  },
+  {
+    "codigo": "010494526",
+    "nombre": "KEY LING 7",
+    "tipo": "aparece",
+    "fecha": "2026-08-20T00:26:21.129Z"
+  },
+  {
+    "codigo": "100007326",
+    "nombre": "HOM TRES",
+    "tipo": "aparece",
+    "fecha": "2026-08-20T00:26:21.129Z"
+  },
+  {
+    "codigo": "030084426",
+    "nombre": "SOPHIA SILVER",
+    "tipo": "aparece",
+    "fecha": "2026-08-20T00:26:21.129Z"
+  },
+  {
+    "codigo": "100007426",
+    "nombre": "HOM CUATRO",
+    "tipo": "aparece",
+    "fecha": "2026-08-20T00:26:21.129Z"
+  },
+  {
+    "codigo": "100007526",
+    "nombre": "HOM CINCO",
+    "tipo": "aparece",
+    "fecha": "2026-08-20T00:26:21.129Z"
+  },
+  {
+    "codigo": "740000726",
+    "nombre": "LA PROFESORA",
+    "tipo": "aparece",
+    "fecha": "2026-08-20T00:26:21.129Z"
+  },
+  {
+    "codigo": "030084326",
+    "nombre": "ORIMINA SILVER 3",
+    "tipo": "aparece",
+    "fecha": "2026-08-20T00:26:21.129Z"
+  },
+  {
+    "codigo": "010494126",
+    "nombre": "BLABEL 2",
+    "tipo": "aparece",
+    "fecha": "2026-08-20T00:26:21.129Z"
+  },
+  {
+    "codigo": "010494226",
+    "nombre": "BLABEL 1",
+    "tipo": "aparece",
+    "fecha": "2026-08-20T00:26:21.129Z"
+  },
+  {
+    "codigo": "010496426",
+    "nombre": "DANTH THREE ROCKS",
+    "tipo": "aparece",
+    "fecha": "2026-08-20T00:26:21.129Z"
+  },
+  {
+    "codigo": "010496526",
+    "nombre": "CHONTA DE ORO UNO",
+    "tipo": "aparece",
+    "fecha": "2026-08-20T00:26:21.129Z"
+  },
+  {
+    "codigo": "010496626",
+    "nombre": "ASOCIACION REATEGUI 2026",
+    "tipo": "aparece",
+    "fecha": "2026-08-20T00:26:21.129Z"
+  },
+  {
+    "codigo": "550006326",
+    "nombre": "POCCOÑE II",
+    "tipo": "aparece",
+    "fecha": "2026-08-20T00:26:21.129Z"
+  },
+  {
+    "codigo": "550006426",
+    "nombre": "ESPIGA DE ORO 26",
+    "tipo": "aparece",
+    "fecha": "2026-08-20T00:26:21.129Z"
+  },
+  {
+    "codigo": "010494326",
+    "nombre": "KUNY 2",
+    "tipo": "aparece",
+    "fecha": "2026-08-20T00:26:21.129Z"
+  },
+  {
+    "codigo": "010494426",
+    "nombre": "KUNY 1",
+    "tipo": "aparece",
+    "fecha": "2026-08-20T00:26:21.129Z"
+  },
+  {
+    "codigo": "050105826",
+    "nombre": "BLANCA BIANCA",
+    "tipo": "aparece",
+    "fecha": "2026-08-20T00:26:21.129Z"
+  },
+  {
+    "codigo": "050105926",
+    "nombre": "ALEXIA AITANA",
+    "tipo": "aparece",
+    "fecha": "2026-08-20T00:26:21.129Z"
+  },
+  {
+    "codigo": "050106026",
+    "nombre": "DAFNE",
+    "tipo": "aparece",
+    "fecha": "2026-08-20T00:26:21.129Z"
+  },
+  {
+    "codigo": "010495326",
+    "nombre": "BANCO DORADO 2027",
+    "tipo": "aparece",
+    "fecha": "2026-08-20T00:26:21.129Z"
+  },
+  {
+    "codigo": "010495426",
+    "nombre": "ARGUS II",
+    "tipo": "aparece",
+    "fecha": "2026-08-20T00:26:21.129Z"
+  },
+  {
+    "codigo": "010495626",
+    "nombre": "SM 2602",
+    "tipo": "aparece",
+    "fecha": "2026-08-20T00:26:21.129Z"
+  },
+  {
+    "codigo": "010495726",
+    "nombre": "SM 2601",
+    "tipo": "aparece",
+    "fecha": "2026-08-20T00:26:21.129Z"
+  },
+  {
+    "codigo": "010495826",
+    "nombre": "COOPER MINING SAT",
+    "tipo": "aparece",
+    "fecha": "2026-08-20T00:26:21.129Z"
+  },
+  {
+    "codigo": "010495926",
+    "nombre": "GEOSATMIN I",
+    "tipo": "aparece",
+    "fecha": "2026-08-20T00:26:21.129Z"
+  },
+  {
+    "codigo": "010496026",
+    "nombre": "ANTARUMI 55",
+    "tipo": "aparece",
+    "fecha": "2026-08-20T00:26:21.129Z"
+  },
+  {
+    "codigo": "010496126",
+    "nombre": "APU VIRGEN DOLORES",
+    "tipo": "aparece",
+    "fecha": "2026-08-20T00:26:21.129Z"
+  },
+  {
+    "codigo": "010496226",
+    "nombre": "FOLDEN JANEALICE",
+    "tipo": "aparece",
+    "fecha": "2026-08-20T00:26:21.129Z"
+  },
+  {
+    "codigo": "530018026",
+    "nombre": "DELITA",
+    "tipo": "aparece",
+    "fecha": "2026-08-20T00:26:21.129Z"
+  },
+  {
+    "codigo": "050105726",
+    "nombre": "SMAFER 02",
+    "tipo": "aparece",
+    "fecha": "2026-08-20T00:26:21.129Z"
+  },
+  {
+    "codigo": "070039926",
+    "nombre": "CRISTO REY",
+    "tipo": "aparece",
+    "fecha": "2026-08-20T00:26:21.129Z"
   }
 ]
