@@ -1888,5 +1888,233 @@
     "nombre": "CRISTO REY",
     "tipo": "aparece",
     "fecha": "2026-08-20T00:26:21.129Z"
+  },
+  {
+    "codigo": "030011526",
+    "nombre": "CANTERA PIEDRA LIZA",
+    "tipo": "desaparece",
+    "fecha": "2026-08-21T00:28:24.844Z"
+  },
+  {
+    "codigo": "010085526",
+    "nombre": "ANTO NINO 26",
+    "tipo": "desaparece",
+    "fecha": "2026-08-21T00:28:24.844Z"
+  },
+  {
+    "codigo": "030043426",
+    "nombre": "CIA MINERA J&H SAC.3",
+    "tipo": "desaparece",
+    "fecha": "2026-08-21T00:28:24.844Z"
+  },
+  {
+    "codigo": "020000826",
+    "nombre": "CANTERA FLORIDA 01",
+    "tipo": "desaparece",
+    "fecha": "2026-08-21T00:28:24.844Z"
+  },
+  {
+    "codigo": "010059026",
+    "nombre": "CARMENCITA Y PANCHITA I",
+    "tipo": "desaparece",
+    "fecha": "2026-08-21T00:28:24.844Z"
+  },
+  {
+    "codigo": "010064026",
+    "nombre": "CR 5",
+    "tipo": "desaparece",
+    "fecha": "2026-08-21T00:28:24.844Z"
+  },
+  {
+    "codigo": "040004126",
+    "nombre": "YESERIA PUMAORCO",
+    "tipo": "desaparece",
+    "fecha": "2026-08-21T00:28:24.844Z"
+  },
+  {
+    "codigo": "010115624",
+    "nombre": "AQUEL CIELO A",
+    "tipo": "desaparece",
+    "fecha": "2026-08-21T00:28:24.844Z"
+  },
+  {
+    "codigo": "010117324",
+    "nombre": "OJO TIGRE 4 2024",
+    "tipo": "desaparece",
+    "fecha": "2026-08-21T00:28:24.844Z"
+  },
+  {
+    "codigo": "010117424",
+    "nombre": "OJO TIGRE 3 2024",
+    "tipo": "desaparece",
+    "fecha": "2026-08-21T00:28:24.844Z"
+  },
+  {
+    "codigo": "010182626",
+    "nombre": "LATINA III",
+    "tipo": "desaparece",
+    "fecha": "2026-08-21T00:28:24.844Z"
+  },
+  {
+    "codigo": "050014624",
+    "nombre": "GUMERCINDA-XXXXL",
+    "tipo": "desaparece",
+    "fecha": "2026-08-21T00:28:24.844Z"
+  },
+  {
+    "codigo": "010115524",
+    "nombre": "AQUEL CIELO B",
+    "tipo": "desaparece",
+    "fecha": "2026-08-21T00:28:24.844Z"
+  },
+  {
+    "codigo": "040049425",
+    "nombre": "CANTERA GORE",
+    "tipo": "desaparece",
+    "fecha": "2026-08-21T00:28:24.844Z"
+  },
+  {
+    "codigo": "010450725",
+    "nombre": "HAZ 25",
+    "tipo": "desaparece",
+    "fecha": "2026-08-21T00:28:24.844Z"
+  },
+  {
+    "codigo": "010288026",
+    "nombre": "FLAMINGO",
+    "tipo": "desaparece",
+    "fecha": "2026-08-21T00:28:24.844Z"
+  },
+  {
+    "codigo": "070039025",
+    "nombre": "GIORVANA II",
+    "tipo": "desaparece",
+    "fecha": "2026-08-21T00:28:24.844Z"
+  },
+  {
+    "codigo": "010497526",
+    "nombre": "MONTECRISTO Z",
+    "tipo": "aparece",
+    "fecha": "2026-08-21T00:28:24.844Z"
+  },
+  {
+    "codigo": "640003226",
+    "nombre": "NIFE 2026",
+    "tipo": "aparece",
+    "fecha": "2026-08-21T00:28:24.844Z"
+  },
+  {
+    "codigo": "640003326",
+    "nombre": "ARENERA SR DE LOS MILAGROS II",
+    "tipo": "aparece",
+    "fecha": "2026-08-21T00:28:24.844Z"
+  },
+  {
+    "codigo": "030084626",
+    "nombre": "ILLAYRUMI XIII",
+    "tipo": "aparece",
+    "fecha": "2026-08-21T00:28:24.844Z"
+  },
+  {
+    "codigo": "110013826",
+    "nombre": "MALQUI",
+    "tipo": "aparece",
+    "fecha": "2026-08-21T00:28:24.844Z"
+  },
+  {
+    "codigo": "590004526",
+    "nombre": "MINA CHOQUEQUIRAO II",
+    "tipo": "aparece",
+    "fecha": "2026-08-21T00:28:24.844Z"
+  },
+  {
+    "codigo": "010496726",
+    "nombre": "INVERSIONES HURACAN I 2012",
+    "tipo": "aparece",
+    "fecha": "2026-08-21T00:28:24.844Z"
+  },
+  {
+    "codigo": "010496926",
+    "nombre": "KALLPA OCOÑA",
+    "tipo": "aparece",
+    "fecha": "2026-08-21T00:28:24.844Z"
+  },
+  {
+    "codigo": "060020326",
+    "nombre": "PEPITAS DE MOLLE",
+    "tipo": "aparece",
+    "fecha": "2026-08-21T00:28:24.844Z"
+  },
+  {
+    "codigo": "540021726",
+    "nombre": "ANDY ZEUS IV",
+    "tipo": "aparece",
+    "fecha": "2026-08-21T00:28:24.844Z"
+  },
+  {
+    "codigo": "610009826",
+    "nombre": "VORTREM",
+    "tipo": "aparece",
+    "fecha": "2026-08-21T00:28:24.844Z"
+  },
+  {
+    "codigo": "010497226",
+    "nombre": "REAL FATIMA VI",
+    "tipo": "aparece",
+    "fecha": "2026-08-21T00:28:24.844Z"
+  },
+  {
+    "codigo": "020017626",
+    "nombre": "SAMIRA TI",
+    "tipo": "aparece",
+    "fecha": "2026-08-21T00:28:24.844Z"
+  },
+  {
+    "codigo": "540021826",
+    "nombre": "ANDY ZEUS V",
+    "tipo": "aparece",
+    "fecha": "2026-08-21T00:28:24.844Z"
+  },
+  {
+    "codigo": "590004426",
+    "nombre": "RIO DE LA VIRGEN UNO",
+    "tipo": "aparece",
+    "fecha": "2026-08-21T00:28:24.844Z"
+  },
+  {
+    "codigo": "010497326",
+    "nombre": "REAL FATIMA V",
+    "tipo": "aparece",
+    "fecha": "2026-08-21T00:28:24.844Z"
+  },
+  {
+    "codigo": "080065826",
+    "nombre": "FLOR DORADA II",
+    "tipo": "aparece",
+    "fecha": "2026-08-21T00:28:24.844Z"
+  },
+  {
+    "codigo": "710010226",
+    "nombre": "ALICIA 1987",
+    "tipo": "aparece",
+    "fecha": "2026-08-21T00:28:24.844Z"
+  },
+  {
+    "codigo": "710010326",
+    "nombre": "ALPACA LIQUID GOLD",
+    "tipo": "aparece",
+    "fecha": "2026-08-21T00:28:24.844Z"
+  },
+  {
+    "codigo": "080065426",
+    "nombre": "GMO RESOURCES",
+    "tipo": "aparece",
+    "fecha": "2026-08-21T00:28:24.844Z"
+  },
+  {
+    "codigo": "080065626",
+    "nombre": "LOTUS VALLEY II",
+    "tipo": "aparece",
+    "fecha": "2026-08-21T00:28:24.844Z"
   }
 ]
