@@ -208,5 +208,155 @@
     "nombre": "HUARI DOS",
     "tipo": "aparece",
     "fecha": "2026-08-22T00:25:28.750Z"
+  },
+  {
+    "codigo": "010138025",
+    "nombre": "EL REJO 9",
+    "tipo": "desaparece",
+    "fecha": "2026-08-23T00:27:21.322Z"
+  },
+  {
+    "codigo": "030031726",
+    "nombre": "OMARCITO 1",
+    "tipo": "desaparece",
+    "fecha": "2026-08-23T00:27:21.322Z"
+  },
+  {
+    "codigo": "010113325",
+    "nombre": "NIÑO HUANCA 2",
+    "tipo": "desaparece",
+    "fecha": "2026-08-23T00:27:21.322Z"
+  },
+  {
+    "codigo": "050019726",
+    "nombre": "CUMBRE DE ORO",
+    "tipo": "desaparece",
+    "fecha": "2026-08-23T00:27:21.322Z"
+  },
+  {
+    "codigo": "040007626",
+    "nombre": "COMITE APOYO SOCIAL KALLPITOPATA 1",
+    "tipo": "desaparece",
+    "fecha": "2026-08-23T00:27:21.322Z"
+  },
+  {
+    "codigo": "030085626",
+    "nombre": "BIERZO 16",
+    "tipo": "aparece",
+    "fecha": "2026-08-23T00:27:21.322Z"
+  },
+  {
+    "codigo": "030085826",
+    "nombre": "BIERZO 18",
+    "tipo": "aparece",
+    "fecha": "2026-08-23T00:27:21.322Z"
+  },
+  {
+    "codigo": "030085526",
+    "nombre": "BIERZO 15",
+    "tipo": "aparece",
+    "fecha": "2026-08-23T00:27:21.322Z"
+  },
+  {
+    "codigo": "030085926",
+    "nombre": "BIERZO 19",
+    "tipo": "aparece",
+    "fecha": "2026-08-23T00:27:21.322Z"
+  },
+  {
+    "codigo": "030086026",
+    "nombre": "GEOLEO",
+    "tipo": "aparece",
+    "fecha": "2026-08-23T00:27:21.322Z"
+  },
+  {
+    "codigo": "700003626",
+    "nombre": "ODISEO 2026",
+    "tipo": "aparece",
+    "fecha": "2026-08-23T00:27:21.322Z"
+  },
+  {
+    "codigo": "010499326",
+    "nombre": "MTJ 1",
+    "tipo": "aparece",
+    "fecha": "2026-08-23T00:27:21.322Z"
+  },
+  {
+    "codigo": "030085726",
+    "nombre": "BIERZO 17",
+    "tipo": "aparece",
+    "fecha": "2026-08-23T00:27:21.322Z"
+  },
+  {
+    "codigo": "010498726",
+    "nombre": "COPPER SUR 10",
+    "tipo": "aparece",
+    "fecha": "2026-08-23T00:27:21.322Z"
+  },
+  {
+    "codigo": "010498826",
+    "nombre": "COPPER SUR 11",
+    "tipo": "aparece",
+    "fecha": "2026-08-23T00:27:21.322Z"
+  },
+  {
+    "codigo": "010499126",
+    "nombre": "MORO LINDO",
+    "tipo": "aparece",
+    "fecha": "2026-08-23T00:27:21.322Z"
+  },
+  {
+    "codigo": "050106726",
+    "nombre": "HORIZONTE AHZ",
+    "tipo": "aparece",
+    "fecha": "2026-08-23T00:27:21.322Z"
+  },
+  {
+    "codigo": "070040226",
+    "nombre": "SANTA RAIMUNDA I",
+    "tipo": "aparece",
+    "fecha": "2026-08-23T00:27:21.322Z"
+  },
+  {
+    "codigo": "010498926",
+    "nombre": "COPPER SUR 9",
+    "tipo": "aparece",
+    "fecha": "2026-08-23T00:27:21.322Z"
+  },
+  {
+    "codigo": "660002826",
+    "nombre": "LADRILLERA SAN JUAN",
+    "tipo": "aparece",
+    "fecha": "2026-08-23T00:27:21.322Z"
+  },
+  {
+    "codigo": "050106826",
+    "nombre": "IMPERIAL AHZ",
+    "tipo": "aparece",
+    "fecha": "2026-08-23T00:27:21.322Z"
+  },
+  {
+    "codigo": "050106926",
+    "nombre": "INTI 014",
+    "tipo": "aparece",
+    "fecha": "2026-08-23T00:27:21.322Z"
+  },
+  {
+    "codigo": "530018226",
+    "nombre": "JLC",
+    "tipo": "aparece",
+    "fecha": "2026-08-23T00:27:21.322Z"
+  },
+  {
+    "codigo": "020017726",
+    "nombre": "MINERA YORICH SAC 03",
+    "tipo": "aparece",
+    "fecha": "2026-08-23T00:27:21.322Z"
+  },
+  {
+    "codigo": "080066426",
+    "nombre": "BELLA DORADA I",
+    "tipo": "aparece",
+    "fecha": "2026-08-23T00:27:21.322Z"
   }
 ]
