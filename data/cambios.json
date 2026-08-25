@@ -358,5 +358,71 @@
     "nombre": "BELLA DORADA I",
     "tipo": "aparece",
     "fecha": "2026-08-23T00:27:21.322Z"
+  },
+  {
+    "codigo": "530004526",
+    "nombre": "HIERRO LOS ANGELES",
+    "tipo": "desaparece",
+    "fecha": "2026-08-25T00:26:25.510Z"
+  },
+  {
+    "codigo": "530005026",
+    "nombre": "KATARA 201",
+    "tipo": "desaparece",
+    "fecha": "2026-08-25T00:26:25.510Z"
+  },
+  {
+    "codigo": "530008424",
+    "nombre": "CONDOR TIANAN",
+    "tipo": "desaparece",
+    "fecha": "2026-08-25T00:26:25.510Z"
+  },
+  {
+    "codigo": "530010626",
+    "nombre": "GRUPO CHIPAYO",
+    "tipo": "desaparece",
+    "fecha": "2026-08-25T00:26:25.510Z"
+  },
+  {
+    "codigo": "030086426",
+    "nombre": "MINERIA E INVERSIONES ALASKA",
+    "tipo": "aparece",
+    "fecha": "2026-08-25T00:26:25.510Z"
+  },
+  {
+    "codigo": "010499426",
+    "nombre": "ANGIE MABEL 2026",
+    "tipo": "aparece",
+    "fecha": "2026-08-25T00:26:25.510Z"
+  },
+  {
+    "codigo": "040044026",
+    "nombre": "DIVINA CARMEN",
+    "tipo": "aparece",
+    "fecha": "2026-08-25T00:26:25.510Z"
+  },
+  {
+    "codigo": "590004626",
+    "nombre": "PROYECTO VOL 2026_1",
+    "tipo": "aparece",
+    "fecha": "2026-08-25T00:26:25.510Z"
+  },
+  {
+    "codigo": "590004726",
+    "nombre": "PROYECTO VOL 2026",
+    "tipo": "aparece",
+    "fecha": "2026-08-25T00:26:25.510Z"
+  },
+  {
+    "codigo": "610009926",
+    "nombre": "CONCESION JRAMI 2026",
+    "tipo": "aparece",
+    "fecha": "2026-08-25T00:26:25.510Z"
+  },
+  {
+    "codigo": "030086526",
+    "nombre": "CHUCCHUPOZO GOLD",
+    "tipo": "aparece",
+    "fecha": "2026-08-25T00:26:25.510Z"
   }
 ]
