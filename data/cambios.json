@@ -424,5 +424,221 @@
     "nombre": "CHUCCHUPOZO GOLD",
     "tipo": "aparece",
     "fecha": "2026-08-25T00:26:25.510Z"
+  },
+  {
+    "codigo": "540010824",
+    "nombre": "GONZALES 6",
+    "tipo": "desaparece",
+    "fecha": "2026-08-26T00:28:13.104Z"
+  },
+  {
+    "codigo": "040009625",
+    "nombre": "MINERA QOLQE6",
+    "tipo": "desaparece",
+    "fecha": "2026-08-26T00:28:13.104Z"
+  },
+  {
+    "codigo": "050024625",
+    "nombre": "GOLD OMEGA I",
+    "tipo": "desaparece",
+    "fecha": "2026-08-26T00:28:13.104Z"
+  },
+  {
+    "codigo": "040023026",
+    "nombre": "CCORI ORCCO II",
+    "tipo": "desaparece",
+    "fecha": "2026-08-26T00:28:13.104Z"
+  },
+  {
+    "codigo": "050037826",
+    "nombre": "FATIMA 2",
+    "tipo": "desaparece",
+    "fecha": "2026-08-26T00:28:13.104Z"
+  },
+  {
+    "codigo": "110008326",
+    "nombre": "LUISA V",
+    "tipo": "desaparece",
+    "fecha": "2026-08-26T00:28:13.104Z"
+  },
+  {
+    "codigo": "050054826",
+    "nombre": "EL CRUZERO GOLD",
+    "tipo": "desaparece",
+    "fecha": "2026-08-26T00:28:13.104Z"
+  },
+  {
+    "codigo": "050054926",
+    "nombre": "MOLLE DORADO I",
+    "tipo": "desaparece",
+    "fecha": "2026-08-26T00:28:13.104Z"
+  },
+  {
+    "codigo": "050055326",
+    "nombre": "GRANADA 2026",
+    "tipo": "desaparece",
+    "fecha": "2026-08-26T00:28:13.104Z"
+  },
+  {
+    "codigo": "080033526",
+    "nombre": "ROCA FIRME",
+    "tipo": "desaparece",
+    "fecha": "2026-08-26T00:28:13.104Z"
+  },
+  {
+    "codigo": "050054026",
+    "nombre": "EL DORADO RSZ III",
+    "tipo": "desaparece",
+    "fecha": "2026-08-26T00:28:13.104Z"
+  },
+  {
+    "codigo": "010113826",
+    "nombre": "CUEVITA I",
+    "tipo": "desaparece",
+    "fecha": "2026-08-26T00:28:13.104Z"
+  },
+  {
+    "codigo": "080030126",
+    "nombre": "CORI PERU",
+    "tipo": "desaparece",
+    "fecha": "2026-08-26T00:28:13.104Z"
+  },
+  {
+    "codigo": "080033026",
+    "nombre": "MINVOLCA CM1",
+    "tipo": "desaparece",
+    "fecha": "2026-08-26T00:28:13.104Z"
+  },
+  {
+    "codigo": "710000324",
+    "nombre": "CENCOMIT JLC II",
+    "tipo": "desaparece",
+    "fecha": "2026-08-26T00:28:13.104Z"
+  },
+  {
+    "codigo": "080014825",
+    "nombre": "EL DORADO 2025",
+    "tipo": "desaparece",
+    "fecha": "2026-08-26T00:28:13.104Z"
+  },
+  {
+    "codigo": "010500826",
+    "nombre": "GHEISHA ORO",
+    "tipo": "aparece",
+    "fecha": "2026-08-26T00:28:13.104Z"
+  },
+  {
+    "codigo": "110013926",
+    "nombre": "ADRIEL 2026",
+    "tipo": "aparece",
+    "fecha": "2026-08-26T00:28:13.104Z"
+  },
+  {
+    "codigo": "740000826",
+    "nombre": "BENTILIO",
+    "tipo": "aparece",
+    "fecha": "2026-08-26T00:28:13.104Z"
+  },
+  {
+    "codigo": "010500126",
+    "nombre": "PIEDRA AMARILLA",
+    "tipo": "aparece",
+    "fecha": "2026-08-26T00:28:13.104Z"
+  },
+  {
+    "codigo": "010500226",
+    "nombre": "TURICARA 91",
+    "tipo": "aparece",
+    "fecha": "2026-08-26T00:28:13.104Z"
+  },
+  {
+    "codigo": "010500326",
+    "nombre": "TURICARA 24",
+    "tipo": "aparece",
+    "fecha": "2026-08-26T00:28:13.104Z"
+  },
+  {
+    "codigo": "010500426",
+    "nombre": "TURICARA 90",
+    "tipo": "aparece",
+    "fecha": "2026-08-26T00:28:13.104Z"
+  },
+  {
+    "codigo": "010500626",
+    "nombre": "TURICARA 18",
+    "tipo": "aparece",
+    "fecha": "2026-08-26T00:28:13.104Z"
+  },
+  {
+    "codigo": "050107526",
+    "nombre": "GRUPO MINERO ALCAPARROSA",
+    "tipo": "aparece",
+    "fecha": "2026-08-26T00:28:13.104Z"
+  },
+  {
+    "codigo": "010500526",
+    "nombre": "TURICARA 16",
+    "tipo": "aparece",
+    "fecha": "2026-08-26T00:28:13.104Z"
+  },
+  {
+    "codigo": "010501026",
+    "nombre": "OTAPARA PASIVO",
+    "tipo": "aparece",
+    "fecha": "2026-08-26T00:28:13.104Z"
+  },
+  {
+    "codigo": "010500926",
+    "nombre": "CHONTA DE ORO DOS",
+    "tipo": "aparece",
+    "fecha": "2026-08-26T00:28:13.104Z"
+  },
+  {
+    "codigo": "530018326",
+    "nombre": "MUQUI DE CAYHUACHUA III",
+    "tipo": "aparece",
+    "fecha": "2026-08-26T00:28:13.104Z"
+  },
+  {
+    "codigo": "010499826",
+    "nombre": "VICTORIA PAPA 02",
+    "tipo": "aparece",
+    "fecha": "2026-08-26T00:28:13.104Z"
+  },
+  {
+    "codigo": "010499926",
+    "nombre": "MILAGROS VERO",
+    "tipo": "aparece",
+    "fecha": "2026-08-26T00:28:13.104Z"
+  },
+  {
+    "codigo": "020017826",
+    "nombre": "RIO ANGOMAYO",
+    "tipo": "aparece",
+    "fecha": "2026-08-26T00:28:13.104Z"
+  },
+  {
+    "codigo": "550006526",
+    "nombre": "FREYSER 03",
+    "tipo": "aparece",
+    "fecha": "2026-08-26T00:28:13.104Z"
+  },
+  {
+    "codigo": "080067026",
+    "nombre": "NUEVO HORIZONTE S&L",
+    "tipo": "aparece",
+    "fecha": "2026-08-26T00:28:13.104Z"
+  },
+  {
+    "codigo": "080067126",
+    "nombre": "AMANECER ANDINO",
+    "tipo": "aparece",
+    "fecha": "2026-08-26T00:28:13.104Z"
+  },
+  {
+    "codigo": "080067226",
+    "nombre": "SEÑOR DE CALVARIO",
+    "tipo": "aparece",
+    "fecha": "2026-08-26T00:28:13.104Z"
   }
 ]
