@@ -886,5 +886,155 @@
     "nombre": "LIBERTAD TI",
     "tipo": "aparece",
     "fecha": "2026-08-27T05:10:07.961Z"
+  },
+  {
+    "codigo": "060005525",
+    "nombre": "SAN ALFONSO",
+    "tipo": "desaparece",
+    "fecha": "2026-08-28T07:09:02.773Z"
+  },
+  {
+    "codigo": "010002126",
+    "nombre": "ORO PERU 2",
+    "tipo": "desaparece",
+    "fecha": "2026-08-28T07:09:02.773Z"
+  },
+  {
+    "codigo": "030002926",
+    "nombre": "GUILLECITO 05",
+    "tipo": "desaparece",
+    "fecha": "2026-08-28T07:09:02.773Z"
+  },
+  {
+    "codigo": "030001826",
+    "nombre": "GUILLECITO 02",
+    "tipo": "desaparece",
+    "fecha": "2026-08-28T07:09:02.773Z"
+  },
+  {
+    "codigo": "540006925",
+    "nombre": "ANGELES DE DIOS",
+    "tipo": "desaparece",
+    "fecha": "2026-08-28T07:09:02.773Z"
+  },
+  {
+    "codigo": "610017024",
+    "nombre": "MINDU 137A",
+    "tipo": "desaparece",
+    "fecha": "2026-08-28T07:09:02.773Z"
+  },
+  {
+    "codigo": "010278425",
+    "nombre": "CUPRIFERA 2",
+    "tipo": "desaparece",
+    "fecha": "2026-08-28T07:09:02.773Z"
+  },
+  {
+    "codigo": "050027925",
+    "nombre": "AURUM GROUP I",
+    "tipo": "desaparece",
+    "fecha": "2026-08-28T07:09:02.773Z"
+  },
+  {
+    "codigo": "010178125",
+    "nombre": "SEÑOR DE MURUHUAY",
+    "tipo": "desaparece",
+    "fecha": "2026-08-28T07:09:02.773Z"
+  },
+  {
+    "codigo": "010063324",
+    "nombre": "LUNA BELLA",
+    "tipo": "desaparece",
+    "fecha": "2026-08-28T07:09:02.773Z"
+  },
+  {
+    "codigo": "050060125",
+    "nombre": "NIKKOLA3",
+    "tipo": "desaparece",
+    "fecha": "2026-08-28T07:09:02.773Z"
+  },
+  {
+    "codigo": "010112325",
+    "nombre": "COASA II",
+    "tipo": "desaparece",
+    "fecha": "2026-08-28T07:09:02.773Z"
+  },
+  {
+    "codigo": "060021026",
+    "nombre": "TRUPAS PACHAM",
+    "tipo": "aparece",
+    "fecha": "2026-08-28T07:09:02.773Z"
+  },
+  {
+    "codigo": "060020926",
+    "nombre": "SUMAQ ORQO",
+    "tipo": "aparece",
+    "fecha": "2026-08-28T07:09:02.773Z"
+  },
+  {
+    "codigo": "100007626",
+    "nombre": "TAMBO 2026 I",
+    "tipo": "aparece",
+    "fecha": "2026-08-28T07:09:02.773Z"
+  },
+  {
+    "codigo": "100007726",
+    "nombre": "CANTERA SHAYEL",
+    "tipo": "aparece",
+    "fecha": "2026-08-28T07:09:02.773Z"
+  },
+  {
+    "codigo": "060021126",
+    "nombre": "MINA LEON DORADO",
+    "tipo": "aparece",
+    "fecha": "2026-08-28T07:09:02.773Z"
+  },
+  {
+    "codigo": "010502426",
+    "nombre": "DONSILVIO2",
+    "tipo": "aparece",
+    "fecha": "2026-08-28T07:09:02.773Z"
+  },
+  {
+    "codigo": "010502226",
+    "nombre": "SALVACION",
+    "tipo": "aparece",
+    "fecha": "2026-08-28T07:09:02.773Z"
+  },
+  {
+    "codigo": "040044226",
+    "nombre": "AURUM IMPERIUM PERU",
+    "tipo": "aparece",
+    "fecha": "2026-08-28T07:09:02.773Z"
+  },
+  {
+    "codigo": "010501626",
+    "nombre": "NANDY 1 2026",
+    "tipo": "aparece",
+    "fecha": "2026-08-28T07:09:02.773Z"
+  },
+  {
+    "codigo": "010501726",
+    "nombre": "LUBOR",
+    "tipo": "aparece",
+    "fecha": "2026-08-28T07:09:02.773Z"
+  },
+  {
+    "codigo": "010502326",
+    "nombre": "GOLDON BLUE I",
+    "tipo": "aparece",
+    "fecha": "2026-08-28T07:09:02.773Z"
+  },
+  {
+    "codigo": "710010426",
+    "nombre": "HANCOCALANI",
+    "tipo": "aparece",
+    "fecha": "2026-08-28T07:09:02.773Z"
+  },
+  {
+    "codigo": "080067526",
+    "nombre": "NUEVA ESPERANZA I",
+    "tipo": "aparece",
+    "fecha": "2026-08-28T07:09:02.773Z"
   }
 ]
