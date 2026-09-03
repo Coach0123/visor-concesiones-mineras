@@ -826,5 +826,89 @@
     "nombre": "MINERA TORREBLANCA I",
     "tipo": "aparece",
     "fecha": "2026-09-02T01:30:14.912Z"
+  },
+  {
+    "codigo": "P140000115",
+    "nombre": "EL PEDREGAL DEL NORTE",
+    "tipo": "desaparece",
+    "fecha": "2026-09-03T01:33:39.387Z"
+  },
+  {
+    "codigo": "010506626",
+    "nombre": "NIKOLAI",
+    "tipo": "aparece",
+    "fecha": "2026-09-03T01:33:39.387Z"
+  },
+  {
+    "codigo": "110014226",
+    "nombre": "ALTAMIRA ASOCIADOS",
+    "tipo": "aparece",
+    "fecha": "2026-09-03T01:33:39.387Z"
+  },
+  {
+    "codigo": "030087926",
+    "nombre": "MINERA KALETH 05",
+    "tipo": "aparece",
+    "fecha": "2026-09-03T01:33:39.387Z"
+  },
+  {
+    "codigo": "010506926",
+    "nombre": "YURACWASI 1",
+    "tipo": "aparece",
+    "fecha": "2026-09-03T01:33:39.387Z"
+  },
+  {
+    "codigo": "010507026",
+    "nombre": "YURACWASI 2",
+    "tipo": "aparece",
+    "fecha": "2026-09-03T01:33:39.387Z"
+  },
+  {
+    "codigo": "010507126",
+    "nombre": "YURACWASI 3",
+    "tipo": "aparece",
+    "fecha": "2026-09-03T01:33:39.387Z"
+  },
+  {
+    "codigo": "050109126",
+    "nombre": "THE FUNDO",
+    "tipo": "aparece",
+    "fecha": "2026-09-03T01:33:39.387Z"
+  },
+  {
+    "codigo": "530018826",
+    "nombre": "SUMAQ CHINCHILLINKUCHA I",
+    "tipo": "aparece",
+    "fecha": "2026-09-03T01:33:39.387Z"
+  },
+  {
+    "codigo": "010507226",
+    "nombre": "YURACWASI 4",
+    "tipo": "aparece",
+    "fecha": "2026-09-03T01:33:39.387Z"
+  },
+  {
+    "codigo": "020018426",
+    "nombre": "MINERA NEW HIDROMETALES",
+    "tipo": "aparece",
+    "fecha": "2026-09-03T01:33:39.387Z"
+  },
+  {
+    "codigo": "010506726",
+    "nombre": "LOS CALDERONES 1",
+    "tipo": "aparece",
+    "fecha": "2026-09-03T01:33:39.387Z"
+  },
+  {
+    "codigo": "070040526",
+    "nombre": "DE LA CRUZ",
+    "tipo": "aparece",
+    "fecha": "2026-09-03T01:33:39.387Z"
+  },
+  {
+    "codigo": "080068726",
+    "nombre": "PROYECTO ANGELES",
+    "tipo": "aparece",
+    "fecha": "2026-09-03T01:33:39.387Z"
   }
 ]
