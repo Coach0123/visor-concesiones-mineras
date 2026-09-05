@@ -1102,5 +1102,179 @@
     "nombre": "MINING COMPANY TICSA 01",
     "tipo": "aparece",
     "fecha": "2026-09-04T01:30:51.422Z"
+  },
+  {
+    "codigo": "P030000519",
+    "nombre": "PLANTA DE BENEFICIO PROGRESO",
+    "tipo": "desaparece",
+    "fecha": "2026-09-05T01:29:11.625Z"
+  },
+  {
+    "codigo": "010511026",
+    "nombre": "SAN EXPEDITO 2026",
+    "tipo": "aparece",
+    "fecha": "2026-09-05T01:29:11.625Z"
+  },
+  {
+    "codigo": "010511226",
+    "nombre": "MARAVILLA 01 26",
+    "tipo": "aparece",
+    "fecha": "2026-09-05T01:29:11.625Z"
+  },
+  {
+    "codigo": "640003526",
+    "nombre": "YACIMIENTO LA ABEJA IV",
+    "tipo": "aparece",
+    "fecha": "2026-09-05T01:29:11.625Z"
+  },
+  {
+    "codigo": "640003626",
+    "nombre": "YACIMIENTO LA ABEJA V",
+    "tipo": "aparece",
+    "fecha": "2026-09-05T01:29:11.625Z"
+  },
+  {
+    "codigo": "060022126",
+    "nombre": "MINERGIA EL CALABOZO",
+    "tipo": "aparece",
+    "fecha": "2026-09-05T01:29:11.625Z"
+  },
+  {
+    "codigo": "010509426",
+    "nombre": "SALPO VII",
+    "tipo": "aparece",
+    "fecha": "2026-09-05T01:29:11.625Z"
+  },
+  {
+    "codigo": "010510826",
+    "nombre": "CORDILLERA DORADA",
+    "tipo": "aparece",
+    "fecha": "2026-09-05T01:29:11.625Z"
+  },
+  {
+    "codigo": "530018926",
+    "nombre": "SUMAQ ORCCO I",
+    "tipo": "aparece",
+    "fecha": "2026-09-05T01:29:11.625Z"
+  },
+  {
+    "codigo": "010511126",
+    "nombre": "TERESINA",
+    "tipo": "aparece",
+    "fecha": "2026-09-05T01:29:11.625Z"
+  },
+  {
+    "codigo": "010510326",
+    "nombre": "GEOSATMIN III",
+    "tipo": "aparece",
+    "fecha": "2026-09-05T01:29:11.626Z"
+  },
+  {
+    "codigo": "050109526",
+    "nombre": "TAIWAN GOLD MINE",
+    "tipo": "aparece",
+    "fecha": "2026-09-05T01:29:11.626Z"
+  },
+  {
+    "codigo": "050109626",
+    "nombre": "VIRGEN INMACULADA CONCEPCION",
+    "tipo": "aparece",
+    "fecha": "2026-09-05T01:29:11.626Z"
+  },
+  {
+    "codigo": "540022226",
+    "nombre": "PLANTICAS I",
+    "tipo": "aparece",
+    "fecha": "2026-09-05T01:29:11.626Z"
+  },
+  {
+    "codigo": "540022326",
+    "nombre": "PLATEROS DEMASIA 2026",
+    "tipo": "aparece",
+    "fecha": "2026-09-05T01:29:11.626Z"
+  },
+  {
+    "codigo": "010510426",
+    "nombre": "GEOSATMIN IV",
+    "tipo": "aparece",
+    "fecha": "2026-09-05T01:29:11.626Z"
+  },
+  {
+    "codigo": "010510226",
+    "nombre": "LOS HELADOS 3",
+    "tipo": "aparece",
+    "fecha": "2026-09-05T01:29:11.626Z"
+  },
+  {
+    "codigo": "010509326",
+    "nombre": "RONDAYOC III",
+    "tipo": "aparece",
+    "fecha": "2026-09-05T01:29:11.626Z"
+  },
+  {
+    "codigo": "010509826",
+    "nombre": "GEOPERSA 01",
+    "tipo": "aparece",
+    "fecha": "2026-09-05T01:29:11.626Z"
+  },
+  {
+    "codigo": "010509026",
+    "nombre": "MI ALBA I",
+    "tipo": "aparece",
+    "fecha": "2026-09-05T01:29:11.626Z"
+  },
+  {
+    "codigo": "010509126",
+    "nombre": "MI LUZ I",
+    "tipo": "aparece",
+    "fecha": "2026-09-05T01:29:11.626Z"
+  },
+  {
+    "codigo": "010509926",
+    "nombre": "SAN LORENZO 03092026",
+    "tipo": "aparece",
+    "fecha": "2026-09-05T01:29:11.626Z"
+  },
+  {
+    "codigo": "010510026",
+    "nombre": "SAN LORENZO 04092026",
+    "tipo": "aparece",
+    "fecha": "2026-09-05T01:29:11.626Z"
+  },
+  {
+    "codigo": "050109426",
+    "nombre": "DORADO-ARC-26",
+    "tipo": "aparece",
+    "fecha": "2026-09-05T01:29:11.626Z"
+  },
+  {
+    "codigo": "010510526",
+    "nombre": "RICARDO I 2026",
+    "tipo": "aparece",
+    "fecha": "2026-09-05T01:29:11.626Z"
+  },
+  {
+    "codigo": "650009026",
+    "nombre": "XIPHOS V",
+    "tipo": "aparece",
+    "fecha": "2026-09-05T01:29:11.626Z"
+  },
+  {
+    "codigo": "020018626",
+    "nombre": "H&M",
+    "tipo": "aparece",
+    "fecha": "2026-09-05T01:29:11.626Z"
+  },
+  {
+    "codigo": "010510726",
+    "nombre": "SAN JUAN DE CASTROVIRREYNA",
+    "tipo": "aparece",
+    "fecha": "2026-09-05T01:29:11.626Z"
+  },
+  {
+    "codigo": "070040726",
+    "nombre": "MILAMORES",
+    "tipo": "aparece",
+    "fecha": "2026-09-05T01:29:11.626Z"
   }
 ]
