@@ -1276,5 +1276,107 @@
     "nombre": "MILAMORES",
     "tipo": "aparece",
     "fecha": "2026-09-05T01:29:11.626Z"
+  },
+  {
+    "codigo": "020011026",
+    "nombre": "MINERA FLORIDA 03",
+    "tipo": "desaparece",
+    "fecha": "2026-09-06T01:23:15.003Z"
+  },
+  {
+    "codigo": "050006126",
+    "nombre": "LOMADA",
+    "tipo": "desaparece",
+    "fecha": "2026-09-06T01:23:15.003Z"
+  },
+  {
+    "codigo": "020000126",
+    "nombre": "ANITA 2026",
+    "tipo": "desaparece",
+    "fecha": "2026-09-06T01:23:15.003Z"
+  },
+  {
+    "codigo": "010054926",
+    "nombre": "VIRGINA GOLD 1",
+    "tipo": "desaparece",
+    "fecha": "2026-09-06T01:23:15.003Z"
+  },
+  {
+    "codigo": "020002826",
+    "nombre": "FELIPE26",
+    "tipo": "desaparece",
+    "fecha": "2026-09-06T01:23:15.003Z"
+  },
+  {
+    "codigo": "050055225",
+    "nombre": "BEYONCE 1",
+    "tipo": "desaparece",
+    "fecha": "2026-09-06T01:23:15.003Z"
+  },
+  {
+    "codigo": "050087425",
+    "nombre": "GRUPO JOY 1",
+    "tipo": "desaparece",
+    "fecha": "2026-09-06T01:23:15.003Z"
+  },
+  {
+    "codigo": "010285426",
+    "nombre": "JALAPAMPA",
+    "tipo": "desaparece",
+    "fecha": "2026-09-06T01:23:15.003Z"
+  },
+  {
+    "codigo": "010317826",
+    "nombre": "JHENSON 93",
+    "tipo": "desaparece",
+    "fecha": "2026-09-06T01:23:15.003Z"
+  },
+  {
+    "codigo": "080079125",
+    "nombre": "BIANCO01",
+    "tipo": "desaparece",
+    "fecha": "2026-09-06T01:23:15.003Z"
+  },
+  {
+    "codigo": "010511726",
+    "nombre": "TUZICARA 2026",
+    "tipo": "aparece",
+    "fecha": "2026-09-06T01:23:15.003Z"
+  },
+  {
+    "codigo": "530019026",
+    "nombre": "RUPAY 2",
+    "tipo": "aparece",
+    "fecha": "2026-09-06T01:23:15.003Z"
+  },
+  {
+    "codigo": "010511426",
+    "nombre": "GEOPERSA 02",
+    "tipo": "aparece",
+    "fecha": "2026-09-06T01:23:15.003Z"
+  },
+  {
+    "codigo": "010511626",
+    "nombre": "DECA FOMENTA",
+    "tipo": "aparece",
+    "fecha": "2026-09-06T01:23:15.003Z"
+  },
+  {
+    "codigo": "050109726",
+    "nombre": "GRUPO LLAMOCCA IV",
+    "tipo": "aparece",
+    "fecha": "2026-09-06T01:23:15.003Z"
+  },
+  {
+    "codigo": "050109826",
+    "nombre": "HERMANOS CHALLA",
+    "tipo": "aparece",
+    "fecha": "2026-09-06T01:23:15.003Z"
+  },
+  {
+    "codigo": "660003026",
+    "nombre": "RIAMFER",
+    "tipo": "aparece",
+    "fecha": "2026-09-06T01:23:15.003Z"
   }
 ]
