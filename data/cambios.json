@@ -1378,5 +1378,41 @@
     "nombre": "RIAMFER",
     "tipo": "aparece",
     "fecha": "2026-09-06T01:23:15.003Z"
+  },
+  {
+    "codigo": "010512226",
+    "nombre": "COMPAÑIA MINERA WTH III",
+    "tipo": "aparece",
+    "fecha": "2026-09-08T01:31:00.771Z"
+  },
+  {
+    "codigo": "020018726",
+    "nombre": "FJ FORTUNA II",
+    "tipo": "aparece",
+    "fecha": "2026-09-08T01:31:00.771Z"
+  },
+  {
+    "codigo": "620007226",
+    "nombre": "MI NAATE NNA1",
+    "tipo": "aparece",
+    "fecha": "2026-09-08T01:31:00.771Z"
+  },
+  {
+    "codigo": "750001326",
+    "nombre": "CERAMICOS APOSTOL SANTIAGO I",
+    "tipo": "aparece",
+    "fecha": "2026-09-08T01:31:00.771Z"
+  },
+  {
+    "codigo": "750001426",
+    "nombre": "CERAMICOS APOSTOL SANTIAGO II",
+    "tipo": "aparece",
+    "fecha": "2026-09-08T01:31:00.771Z"
+  },
+  {
+    "codigo": "010511926",
+    "nombre": "CHOACHÍ II",
+    "tipo": "aparece",
+    "fecha": "2026-09-08T01:31:00.771Z"
   }
 ]
