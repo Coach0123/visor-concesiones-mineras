@@ -1648,5 +1648,221 @@
     "nombre": "MONTE BELLO",
     "tipo": "aparece",
     "fecha": "2026-09-09T01:39:12.649Z"
+  },
+  {
+    "codigo": "010035226",
+    "nombre": "VETA REAL 21",
+    "tipo": "desaparece",
+    "fecha": "2026-09-10T01:33:30.942Z"
+  },
+  {
+    "codigo": "060000826",
+    "nombre": "LUNA 2026 VI",
+    "tipo": "desaparece",
+    "fecha": "2026-09-10T01:33:30.942Z"
+  },
+  {
+    "codigo": "020000426",
+    "nombre": "CORPORACIÓN METALESA TRES",
+    "tipo": "desaparece",
+    "fecha": "2026-09-10T01:33:30.942Z"
+  },
+  {
+    "codigo": "610001609",
+    "nombre": "JAKAMA CONCEPCION",
+    "tipo": "desaparece",
+    "fecha": "2026-09-10T01:33:30.942Z"
+  },
+  {
+    "codigo": "690003225",
+    "nombre": "NADIE I",
+    "tipo": "desaparece",
+    "fecha": "2026-09-10T01:33:30.942Z"
+  },
+  {
+    "codigo": "010041426",
+    "nombre": "SAUCE LILA A",
+    "tipo": "desaparece",
+    "fecha": "2026-09-10T01:33:30.942Z"
+  },
+  {
+    "codigo": "P610000110",
+    "nombre": "PLANTA PILOTO TULIN",
+    "tipo": "desaparece",
+    "fecha": "2026-09-10T01:33:30.942Z"
+  },
+  {
+    "codigo": "610000914",
+    "nombre": "DIOS ETERNO 2 2014",
+    "tipo": "desaparece",
+    "fecha": "2026-09-10T01:33:30.942Z"
+  },
+  {
+    "codigo": "010358525",
+    "nombre": "SANTA CRUZ 001",
+    "tipo": "desaparece",
+    "fecha": "2026-09-10T01:33:30.942Z"
+  },
+  {
+    "codigo": "050048325",
+    "nombre": "HILLARY GOLD 7",
+    "tipo": "desaparece",
+    "fecha": "2026-09-10T01:33:30.942Z"
+  },
+  {
+    "codigo": "050091225",
+    "nombre": "ARTEMIS 2025",
+    "tipo": "desaparece",
+    "fecha": "2026-09-10T01:33:30.942Z"
+  },
+  {
+    "codigo": "080079325",
+    "nombre": "AMANECER 2026",
+    "tipo": "desaparece",
+    "fecha": "2026-09-10T01:33:30.942Z"
+  },
+  {
+    "codigo": "100008426",
+    "nombre": "PALO BLANCO 2026",
+    "tipo": "aparece",
+    "fecha": "2026-09-10T01:33:30.942Z"
+  },
+  {
+    "codigo": "010513826",
+    "nombre": "CICLODEORO3",
+    "tipo": "aparece",
+    "fecha": "2026-09-10T01:33:30.942Z"
+  },
+  {
+    "codigo": "030088526",
+    "nombre": "AURA DORADA",
+    "tipo": "aparece",
+    "fecha": "2026-09-10T01:33:30.942Z"
+  },
+  {
+    "codigo": "030088426",
+    "nombre": "AGROCHEMICALS MINING UNO",
+    "tipo": "aparece",
+    "fecha": "2026-09-10T01:33:30.942Z"
+  },
+  {
+    "codigo": "030088626",
+    "nombre": "MINAS MARZA & JJRM AA PERU",
+    "tipo": "aparece",
+    "fecha": "2026-09-10T01:33:30.942Z"
+  },
+  {
+    "codigo": "700003926",
+    "nombre": "COPITO 2026",
+    "tipo": "aparece",
+    "fecha": "2026-09-10T01:33:30.942Z"
+  },
+  {
+    "codigo": "030088826",
+    "nombre": "MINA MARZA & JJRM AA",
+    "tipo": "aparece",
+    "fecha": "2026-09-10T01:33:30.942Z"
+  },
+  {
+    "codigo": "100008326",
+    "nombre": "INDUSTRIAS TERRA SAC",
+    "tipo": "aparece",
+    "fecha": "2026-09-10T01:33:30.942Z"
+  },
+  {
+    "codigo": "030088726",
+    "nombre": "MINA MARZA & JJRM AA PERU",
+    "tipo": "aparece",
+    "fecha": "2026-09-10T01:33:30.942Z"
+  },
+  {
+    "codigo": "010513726",
+    "nombre": "CICLODEORO4",
+    "tipo": "aparece",
+    "fecha": "2026-09-10T01:33:30.942Z"
+  },
+  {
+    "codigo": "010513226",
+    "nombre": "PUCACCASA 7",
+    "tipo": "aparece",
+    "fecha": "2026-09-10T01:33:30.942Z"
+  },
+  {
+    "codigo": "010513326",
+    "nombre": "ESTRELLA DORADA DEL SUR",
+    "tipo": "aparece",
+    "fecha": "2026-09-10T01:33:30.942Z"
+  },
+  {
+    "codigo": "010514726",
+    "nombre": "ESTRELLA YJ 5",
+    "tipo": "aparece",
+    "fecha": "2026-09-10T01:33:30.942Z"
+  },
+  {
+    "codigo": "010514526",
+    "nombre": "RONDAYOC TRES",
+    "tipo": "aparece",
+    "fecha": "2026-09-10T01:33:30.942Z"
+  },
+  {
+    "codigo": "010514126",
+    "nombre": "ANDES DORADO VIII",
+    "tipo": "aparece",
+    "fecha": "2026-09-10T01:33:30.942Z"
+  },
+  {
+    "codigo": "590005426",
+    "nombre": "LAGUNA BRAVA",
+    "tipo": "aparece",
+    "fecha": "2026-09-10T01:33:30.942Z"
+  },
+  {
+    "codigo": "010514026",
+    "nombre": "COPPER NINE 511",
+    "tipo": "aparece",
+    "fecha": "2026-09-10T01:33:30.942Z"
+  },
+  {
+    "codigo": "010514426",
+    "nombre": "EXPLORACIONES PUKAPUKA",
+    "tipo": "aparece",
+    "fecha": "2026-09-10T01:33:30.942Z"
+  },
+  {
+    "codigo": "010514226",
+    "nombre": "ROXANA TRES",
+    "tipo": "aparece",
+    "fecha": "2026-09-10T01:33:30.942Z"
+  },
+  {
+    "codigo": "040045426",
+    "nombre": "HUAYRURO2",
+    "tipo": "aparece",
+    "fecha": "2026-09-10T01:33:30.942Z"
+  },
+  {
+    "codigo": "040045326",
+    "nombre": "HUAYRURO1",
+    "tipo": "aparece",
+    "fecha": "2026-09-10T01:33:30.942Z"
+  },
+  {
+    "codigo": "010514326",
+    "nombre": "ANDES DORADOS IX",
+    "tipo": "aparece",
+    "fecha": "2026-09-10T01:33:30.942Z"
+  },
+  {
+    "codigo": "010513926",
+    "nombre": "METALLIFER",
+    "tipo": "aparece",
+    "fecha": "2026-09-10T01:33:30.942Z"
+  },
+  {
+    "codigo": "010513426",
+    "nombre": "GEOSATMIN V",
+    "tipo": "aparece",
+    "fecha": "2026-09-10T01:33:30.942Z"
   }
 ]
