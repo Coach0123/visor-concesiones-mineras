@@ -1,1868 +1,218 @@
 [
   {
-    "codigo": "060000626",
-    "nombre": "LUNA 2026 IV",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "030032926",
-    "nombre": "SANTA ANA 3 2026",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "030032726",
-    "nombre": "SANTA ANA 5 2026",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "030032826",
-    "nombre": "SANTA ANA 4 2026",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "030033426",
-    "nombre": "CORPORACION MR1",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010394725",
-    "nombre": "EL TERRUÑO 5",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "030081125",
-    "nombre": "AVALOS 2025",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010399925",
-    "nombre": "GUZMANGO 5 2025",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010405225",
-    "nombre": "CLELIA",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "040029025",
-    "nombre": "CARMENDORIS 1",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010037626",
-    "nombre": "INCAPACCHA 26-2",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010038526",
-    "nombre": "ROSSANA CHANITA",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010036126",
-    "nombre": "VETA REAL 12",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "030001926",
-    "nombre": "GUILLECITO 03",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "050010223",
-    "nombre": "RAYOS GAMA II",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010044126",
-    "nombre": "EL GUAYABAL 002",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010029626",
-    "nombre": "SANTO TOMAS 2",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010075423",
-    "nombre": "MARIA LOURDES",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "040002826",
-    "nombre": "CRESPO 7",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "040047125",
-    "nombre": "TESORO DE LOS ANDES",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010216222",
-    "nombre": "CAHUACHO TG 2",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010258525",
-    "nombre": "TORNIQUETE 25-01",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "540007225",
-    "nombre": "ALLIN CORP",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "540004425",
-    "nombre": "ROSA MERCEDES I",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010134926",
-    "nombre": "CJURO 28",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "050019626",
-    "nombre": "AMAEV",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010161926",
-    "nombre": "MINERA ALEJANDRA 2026Z",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "050023826",
-    "nombre": "JAQUI 2026",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "020007526",
-    "nombre": "AMANDITA1",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "080045224",
-    "nombre": "GRUPO RIO DORADO",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "540004625",
-    "nombre": "ACHONI II",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010272225",
-    "nombre": "PAPA FRANCISCO 2025",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010280325",
-    "nombre": "KQORI 3",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "080075825",
-    "nombre": "VIRGEN DE CHAPI",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010390325",
-    "nombre": "CHAPI 01",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "080076325",
-    "nombre": "PALANTIL 2",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010393425",
-    "nombre": "FEINAN V",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010390825",
-    "nombre": "TINA 21",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "050082025",
-    "nombre": "CH SALOMON II",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "050082625",
-    "nombre": "SOL DORADO II",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010237726",
-    "nombre": "RATON 6",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "050055026",
-    "nombre": "ESPERANZA GOLD",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "080016026",
-    "nombre": "BELLIDOS MINING",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "070012726",
-    "nombre": "SAN CARLOS I",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "070012526",
-    "nombre": "GUAPO",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "710000124",
-    "nombre": "LUZ DE ORO CUATRO",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "710000624",
-    "nombre": "BAM JARDILAN SEIS",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "080037525",
-    "nombre": "MICON INGENIEROS",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "080068825",
-    "nombre": "IV AMIGOS",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "070023426",
-    "nombre": "PRINCESA 1",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "080032626",
-    "nombre": "MANANTIAL DE ORO",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "080026626",
-    "nombre": "JAPUPATJA CHURO PAMPA",
-    "tipo": "desaparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010504726",
-    "nombre": "GOLDARA",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010117824A",
-    "nombre": "LA PROVIDENCIA 2 2024",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "030087326",
-    "nombre": "BRAJOT MINING II",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "060021226",
-    "nombre": "CORDILLERA X",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010504826",
-    "nombre": "GOLDMONT",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010503526",
-    "nombre": "GD GOLD MINE 3",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "030087426",
-    "nombre": "COMPANY GOLD PERUVIAN",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "060021326",
-    "nombre": "CORDILLERA XI",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "030087526",
-    "nombre": "MATHIGOLD",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "060021426",
-    "nombre": "CORDILLERA XII",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "100007826",
-    "nombre": "MOCHIS 1 2026",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010503626",
-    "nombre": "MARAÑON DORADO",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "030087726",
-    "nombre": "GUILLE 2026 I",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "060021626",
-    "nombre": "LA PERLA DE SAWINZA II",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "030087826",
-    "nombre": "AKA UNIGAMBAL 001",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "060021726",
-    "nombre": "BETAS DORADAS",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010505026",
-    "nombre": "PERSEVERANCIA HVP",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "530018726",
-    "nombre": "SALVADOR 19",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "540022026",
-    "nombre": "KALLPA OCOÑA 2",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010505326",
-    "nombre": "LAS JIRAFAS",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010505526",
-    "nombre": "ELRADIANTE-19",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "530018626",
-    "nombre": "RGJ ANTONELLA SUR II",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "050108226",
-    "nombre": "MOISES I",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010505226",
-    "nombre": "TORONTEL",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "020018226",
-    "nombre": "QUIMIRIQUI",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010504926",
-    "nombre": "DONATO 1",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010505726",
-    "nombre": "CORLLAM",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010505126",
-    "nombre": "GRECO ROMA III",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010505626",
-    "nombre": "GENERO MARTIN",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010505926",
-    "nombre": "ALEJO-VIII",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010506026",
-    "nombre": "ALEJO-IX",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010506126",
-    "nombre": "LEVIEM",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "050108326",
-    "nombre": "YAKUMAMA R1",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010504626",
-    "nombre": "CHONTA DE ORO TRES",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "110014126",
-    "nombre": "GALENA SIETE",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "020018326",
-    "nombre": "SAN FRANCISCO 2026",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "530018526",
-    "nombre": "FORTUNA 01",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "550006626",
-    "nombre": "CHICALLYNA 1",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "610011126",
-    "nombre": "PALTO 2026",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010002626AF",
-    "nombre": "CANTERA DE ROCA CCONA",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010002526AF",
-    "nombre": "CANTERA DE TALUD CHALLHUAMAYO",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010002726AF",
-    "nombre": "CANTERA DE ROCA YANAMONTE",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010002926AF",
-    "nombre": "CANTERA DE TALUD AYNA",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010002826AF",
-    "nombre": "CANTERA DE TALUD CALICANTO",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "590005326",
-    "nombre": "MINERA YESO WASI",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "050108626",
-    "nombre": "GATITO",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "590005026",
-    "nombre": "MINDU E223",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "590005126",
-    "nombre": "MINDU E224",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "590005226",
-    "nombre": "MINDU E225",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "690003326",
-    "nombre": "SOLEDAD GOLD",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "610011226",
-    "nombre": "MOSCATEL",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "610011326",
-    "nombre": "TIA MILA",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010506226",
-    "nombre": "TESORO ESCONDIDO UNO",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "610011426",
-    "nombre": "CORREVIENTO SUR",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010506326",
-    "nombre": "KARLA 02",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010506426",
-    "nombre": "JOSELYN 02",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010503926",
-    "nombre": "ESPACIO DE VIENTO 1",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "050108526",
-    "nombre": "MINING BELLUCI",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "610010626",
-    "nombre": "MINDU E216",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "590004926",
-    "nombre": "MINDU E222",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "530018426",
-    "nombre": "RGJ ANTONELLA SUR I",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "610011026",
-    "nombre": "MINDU E221",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "610010326",
-    "nombre": "MINDU E212",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010503826",
-    "nombre": "ESPACIO DE VIENTO 3",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010504026",
-    "nombre": "ESPACIO DE VIENTO 4",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "610010726",
-    "nombre": "MINDU E217",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "610010826",
-    "nombre": "MINDU E218",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "610010926",
-    "nombre": "MINDU E219",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010503726",
-    "nombre": "ESPACIO DE VIENTO 2",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010504126",
-    "nombre": "BUENOS PASOS",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "610010026",
-    "nombre": "MINDU E214",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "610010126",
-    "nombre": "MINDU E210",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "610010226",
-    "nombre": "MINDU E211",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010504426",
-    "nombre": "TITAN VI 2026",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "610010426",
-    "nombre": "MINDU E213",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "610010526",
-    "nombre": "MINDU E215",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "690003226",
-    "nombre": "SILVER GOLD 3",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "710010626",
-    "nombre": "CUNUYO ALAYA",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "080068126",
-    "nombre": "TERESA DORADA",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010504526",
-    "nombre": "TRIUNFADOR 16",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "080068226",
-    "nombre": "CORAZON LOMA I",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "080068326",
-    "nombre": "CORAZON LOMA II",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "080067626",
-    "nombre": "LUNA LLENA",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "010505826",
-    "nombre": "MINERA LIONS GOLD SAC",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "080068426",
-    "nombre": "QORI CANCHA I",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "080068526",
-    "nombre": "MINERA TORREBLANCA I",
-    "tipo": "aparece",
-    "fecha": "2026-09-02T01:30:14.912Z"
-  },
-  {
-    "codigo": "P140000115",
-    "nombre": "EL PEDREGAL DEL NORTE",
-    "tipo": "desaparece",
-    "fecha": "2026-09-03T01:33:39.387Z"
-  },
-  {
-    "codigo": "010506626",
-    "nombre": "NIKOLAI",
-    "tipo": "aparece",
-    "fecha": "2026-09-03T01:33:39.387Z"
-  },
-  {
-    "codigo": "110014226",
-    "nombre": "ALTAMIRA ASOCIADOS",
-    "tipo": "aparece",
-    "fecha": "2026-09-03T01:33:39.387Z"
-  },
-  {
-    "codigo": "030087926",
-    "nombre": "MINERA KALETH 05",
-    "tipo": "aparece",
-    "fecha": "2026-09-03T01:33:39.387Z"
-  },
-  {
-    "codigo": "010506926",
-    "nombre": "YURACWASI 1",
-    "tipo": "aparece",
-    "fecha": "2026-09-03T01:33:39.387Z"
-  },
-  {
-    "codigo": "010507026",
-    "nombre": "YURACWASI 2",
-    "tipo": "aparece",
-    "fecha": "2026-09-03T01:33:39.387Z"
-  },
-  {
-    "codigo": "010507126",
-    "nombre": "YURACWASI 3",
-    "tipo": "aparece",
-    "fecha": "2026-09-03T01:33:39.387Z"
-  },
-  {
-    "codigo": "050109126",
-    "nombre": "THE FUNDO",
-    "tipo": "aparece",
-    "fecha": "2026-09-03T01:33:39.387Z"
-  },
-  {
-    "codigo": "530018826",
-    "nombre": "SUMAQ CHINCHILLINKUCHA I",
-    "tipo": "aparece",
-    "fecha": "2026-09-03T01:33:39.387Z"
-  },
-  {
-    "codigo": "010507226",
-    "nombre": "YURACWASI 4",
-    "tipo": "aparece",
-    "fecha": "2026-09-03T01:33:39.387Z"
-  },
-  {
-    "codigo": "020018426",
-    "nombre": "MINERA NEW HIDROMETALES",
-    "tipo": "aparece",
-    "fecha": "2026-09-03T01:33:39.387Z"
-  },
-  {
-    "codigo": "010506726",
-    "nombre": "LOS CALDERONES 1",
-    "tipo": "aparece",
-    "fecha": "2026-09-03T01:33:39.387Z"
-  },
-  {
-    "codigo": "070040526",
-    "nombre": "DE LA CRUZ",
-    "tipo": "aparece",
-    "fecha": "2026-09-03T01:33:39.387Z"
-  },
-  {
-    "codigo": "080068726",
-    "nombre": "PROYECTO ANGELES",
-    "tipo": "aparece",
-    "fecha": "2026-09-03T01:33:39.387Z"
-  },
-  {
-    "codigo": "030088026",
-    "nombre": "CHOPESITO I",
-    "tipo": "aparece",
-    "fecha": "2026-09-04T01:30:51.422Z"
-  },
-  {
-    "codigo": "050109226",
-    "nombre": "POMARFOT",
-    "tipo": "aparece",
-    "fecha": "2026-09-04T01:30:51.422Z"
-  },
-  {
-    "codigo": "010507626",
-    "nombre": "CESARYLUISX",
-    "tipo": "aparece",
-    "fecha": "2026-09-04T01:30:51.422Z"
-  },
-  {
-    "codigo": "060021826",
-    "nombre": "CHAMAYA 02",
-    "tipo": "aparece",
-    "fecha": "2026-09-04T01:30:51.422Z"
-  },
-  {
-    "codigo": "060021926",
-    "nombre": "CHAMAYA 01",
-    "tipo": "aparece",
-    "fecha": "2026-09-04T01:30:51.422Z"
-  },
-  {
-    "codigo": "060022026",
-    "nombre": "CIELITO LINDO 01",
-    "tipo": "aparece",
-    "fecha": "2026-09-04T01:30:51.422Z"
-  },
-  {
-    "codigo": "010508726",
-    "nombre": "NORTE 577",
-    "tipo": "aparece",
-    "fecha": "2026-09-04T01:30:51.422Z"
-  },
-  {
-    "codigo": "010507826",
-    "nombre": "ABEJA 3",
-    "tipo": "aparece",
-    "fecha": "2026-09-04T01:30:51.422Z"
-  },
-  {
-    "codigo": "010507926",
-    "nombre": "ABEJA 2",
-    "tipo": "aparece",
-    "fecha": "2026-09-04T01:30:51.422Z"
-  },
-  {
-    "codigo": "010508226",
-    "nombre": "ESMART V",
-    "tipo": "aparece",
-    "fecha": "2026-09-04T01:30:51.422Z"
-  },
-  {
-    "codigo": "010507326",
-    "nombre": "ESMART III",
-    "tipo": "aparece",
-    "fecha": "2026-09-04T01:30:51.422Z"
-  },
-  {
-    "codigo": "040044826",
-    "nombre": "BTT 01",
-    "tipo": "aparece",
-    "fecha": "2026-09-04T01:30:51.422Z"
-  },
-  {
-    "codigo": "040044926",
-    "nombre": "ANDEAN PERU",
-    "tipo": "aparece",
-    "fecha": "2026-09-04T01:30:51.422Z"
-  },
-  {
-    "codigo": "010508026",
-    "nombre": "ABEJA 1",
-    "tipo": "aparece",
-    "fecha": "2026-09-04T01:30:51.422Z"
-  },
-  {
-    "codigo": "010507426",
-    "nombre": "ESMART IV",
-    "tipo": "aparece",
-    "fecha": "2026-09-04T01:30:51.422Z"
-  },
-  {
-    "codigo": "010507726",
-    "nombre": "LOS CALDERONES 2",
-    "tipo": "aparece",
-    "fecha": "2026-09-04T01:30:51.422Z"
-  },
-  {
-    "codigo": "010507526",
-    "nombre": "PAMPA DE VACA UNO",
-    "tipo": "aparece",
-    "fecha": "2026-09-04T01:30:51.422Z"
-  },
-  {
-    "codigo": "020018526",
-    "nombre": "MINERA KUNTUR",
-    "tipo": "aparece",
-    "fecha": "2026-09-04T01:30:51.422Z"
-  },
-  {
-    "codigo": "540022126",
-    "nombre": "BERRAQUERA 2026-980",
-    "tipo": "aparece",
-    "fecha": "2026-09-04T01:30:51.422Z"
-  },
-  {
-    "codigo": "040044626",
-    "nombre": "QORIPAQAREQ",
-    "tipo": "aparece",
-    "fecha": "2026-09-04T01:30:51.422Z"
-  },
-  {
-    "codigo": "010508826",
-    "nombre": "ALFAJOR",
-    "tipo": "aparece",
-    "fecha": "2026-09-04T01:30:51.422Z"
-  },
-  {
-    "codigo": "610011526",
-    "nombre": "AERJEB 1",
-    "tipo": "aparece",
-    "fecha": "2026-09-04T01:30:51.422Z"
-  },
-  {
-    "codigo": "660002926",
-    "nombre": "AGUA NEGRA",
-    "tipo": "aparece",
-    "fecha": "2026-09-04T01:30:51.422Z"
-  },
-  {
-    "codigo": "040044726",
-    "nombre": "ESTRELLITA DE ORO",
-    "tipo": "aparece",
-    "fecha": "2026-09-04T01:30:51.422Z"
-  },
-  {
-    "codigo": "010508326",
-    "nombre": "PLAYA LUGFLOEN I",
-    "tipo": "aparece",
-    "fecha": "2026-09-04T01:30:51.422Z"
-  },
-  {
-    "codigo": "010508426",
-    "nombre": "GRUPO BEJARANANO7",
-    "tipo": "aparece",
-    "fecha": "2026-09-04T01:30:51.422Z"
-  },
-  {
-    "codigo": "010508526",
-    "nombre": "PLAYA LUGFLOEN II",
-    "tipo": "aparece",
-    "fecha": "2026-09-04T01:30:51.422Z"
-  },
-  {
-    "codigo": "050109326",
-    "nombre": "MINERA PACIFICO",
-    "tipo": "aparece",
-    "fecha": "2026-09-04T01:30:51.422Z"
-  },
-  {
-    "codigo": "080069026",
-    "nombre": "TERRACOM 6NK",
-    "tipo": "aparece",
-    "fecha": "2026-09-04T01:30:51.422Z"
-  },
-  {
-    "codigo": "080068826",
-    "nombre": "COPO DE NIEVE DORADO II",
-    "tipo": "aparece",
-    "fecha": "2026-09-04T01:30:51.422Z"
-  },
-  {
-    "codigo": "080068926",
-    "nombre": "PUERTA DE ORO I",
-    "tipo": "aparece",
-    "fecha": "2026-09-04T01:30:51.422Z"
-  },
-  {
-    "codigo": "710010826",
-    "nombre": "MINING COMPANY TICSA 01",
-    "tipo": "aparece",
-    "fecha": "2026-09-04T01:30:51.422Z"
-  },
-  {
-    "codigo": "P030000519",
-    "nombre": "PLANTA DE BENEFICIO PROGRESO",
-    "tipo": "desaparece",
-    "fecha": "2026-09-05T01:29:11.625Z"
-  },
-  {
-    "codigo": "010511026",
-    "nombre": "SAN EXPEDITO 2026",
-    "tipo": "aparece",
-    "fecha": "2026-09-05T01:29:11.625Z"
-  },
-  {
-    "codigo": "010511226",
-    "nombre": "MARAVILLA 01 26",
-    "tipo": "aparece",
-    "fecha": "2026-09-05T01:29:11.625Z"
-  },
-  {
-    "codigo": "640003526",
-    "nombre": "YACIMIENTO LA ABEJA IV",
-    "tipo": "aparece",
-    "fecha": "2026-09-05T01:29:11.625Z"
-  },
-  {
-    "codigo": "640003626",
-    "nombre": "YACIMIENTO LA ABEJA V",
-    "tipo": "aparece",
-    "fecha": "2026-09-05T01:29:11.625Z"
-  },
-  {
-    "codigo": "060022126",
-    "nombre": "MINERGIA EL CALABOZO",
-    "tipo": "aparece",
-    "fecha": "2026-09-05T01:29:11.625Z"
-  },
-  {
-    "codigo": "010509426",
-    "nombre": "SALPO VII",
-    "tipo": "aparece",
-    "fecha": "2026-09-05T01:29:11.625Z"
-  },
-  {
-    "codigo": "010510826",
-    "nombre": "CORDILLERA DORADA",
-    "tipo": "aparece",
-    "fecha": "2026-09-05T01:29:11.625Z"
-  },
-  {
-    "codigo": "530018926",
-    "nombre": "SUMAQ ORCCO I",
-    "tipo": "aparece",
-    "fecha": "2026-09-05T01:29:11.625Z"
-  },
-  {
-    "codigo": "010511126",
-    "nombre": "TERESINA",
-    "tipo": "aparece",
-    "fecha": "2026-09-05T01:29:11.625Z"
-  },
-  {
-    "codigo": "010510326",
-    "nombre": "GEOSATMIN III",
-    "tipo": "aparece",
-    "fecha": "2026-09-05T01:29:11.626Z"
-  },
-  {
-    "codigo": "050109526",
-    "nombre": "TAIWAN GOLD MINE",
-    "tipo": "aparece",
-    "fecha": "2026-09-05T01:29:11.626Z"
-  },
-  {
-    "codigo": "050109626",
-    "nombre": "VIRGEN INMACULADA CONCEPCION",
-    "tipo": "aparece",
-    "fecha": "2026-09-05T01:29:11.626Z"
-  },
-  {
-    "codigo": "540022226",
-    "nombre": "PLANTICAS I",
-    "tipo": "aparece",
-    "fecha": "2026-09-05T01:29:11.626Z"
-  },
-  {
-    "codigo": "540022326",
-    "nombre": "PLATEROS DEMASIA 2026",
-    "tipo": "aparece",
-    "fecha": "2026-09-05T01:29:11.626Z"
-  },
-  {
-    "codigo": "010510426",
-    "nombre": "GEOSATMIN IV",
-    "tipo": "aparece",
-    "fecha": "2026-09-05T01:29:11.626Z"
-  },
-  {
-    "codigo": "010510226",
-    "nombre": "LOS HELADOS 3",
-    "tipo": "aparece",
-    "fecha": "2026-09-05T01:29:11.626Z"
-  },
-  {
-    "codigo": "010509326",
-    "nombre": "RONDAYOC III",
-    "tipo": "aparece",
-    "fecha": "2026-09-05T01:29:11.626Z"
-  },
-  {
-    "codigo": "010509826",
-    "nombre": "GEOPERSA 01",
-    "tipo": "aparece",
-    "fecha": "2026-09-05T01:29:11.626Z"
-  },
-  {
-    "codigo": "010509026",
-    "nombre": "MI ALBA I",
-    "tipo": "aparece",
-    "fecha": "2026-09-05T01:29:11.626Z"
-  },
-  {
-    "codigo": "010509126",
-    "nombre": "MI LUZ I",
-    "tipo": "aparece",
-    "fecha": "2026-09-05T01:29:11.626Z"
-  },
-  {
-    "codigo": "010509926",
-    "nombre": "SAN LORENZO 03092026",
-    "tipo": "aparece",
-    "fecha": "2026-09-05T01:29:11.626Z"
-  },
-  {
-    "codigo": "010510026",
-    "nombre": "SAN LORENZO 04092026",
-    "tipo": "aparece",
-    "fecha": "2026-09-05T01:29:11.626Z"
-  },
-  {
-    "codigo": "050109426",
-    "nombre": "DORADO-ARC-26",
-    "tipo": "aparece",
-    "fecha": "2026-09-05T01:29:11.626Z"
-  },
-  {
-    "codigo": "010510526",
-    "nombre": "RICARDO I 2026",
-    "tipo": "aparece",
-    "fecha": "2026-09-05T01:29:11.626Z"
-  },
-  {
-    "codigo": "650009026",
-    "nombre": "XIPHOS V",
-    "tipo": "aparece",
-    "fecha": "2026-09-05T01:29:11.626Z"
-  },
-  {
-    "codigo": "020018626",
-    "nombre": "H&M",
-    "tipo": "aparece",
-    "fecha": "2026-09-05T01:29:11.626Z"
-  },
-  {
-    "codigo": "010510726",
-    "nombre": "SAN JUAN DE CASTROVIRREYNA",
-    "tipo": "aparece",
-    "fecha": "2026-09-05T01:29:11.626Z"
-  },
-  {
-    "codigo": "070040726",
-    "nombre": "MILAMORES",
-    "tipo": "aparece",
-    "fecha": "2026-09-05T01:29:11.626Z"
-  },
-  {
-    "codigo": "020011026",
-    "nombre": "MINERA FLORIDA 03",
-    "tipo": "desaparece",
-    "fecha": "2026-09-06T01:23:15.003Z"
-  },
-  {
-    "codigo": "050006126",
-    "nombre": "LOMADA",
-    "tipo": "desaparece",
-    "fecha": "2026-09-06T01:23:15.003Z"
-  },
-  {
-    "codigo": "020000126",
-    "nombre": "ANITA 2026",
-    "tipo": "desaparece",
-    "fecha": "2026-09-06T01:23:15.003Z"
-  },
-  {
-    "codigo": "010054926",
-    "nombre": "VIRGINA GOLD 1",
-    "tipo": "desaparece",
-    "fecha": "2026-09-06T01:23:15.003Z"
-  },
-  {
-    "codigo": "020002826",
-    "nombre": "FELIPE26",
-    "tipo": "desaparece",
-    "fecha": "2026-09-06T01:23:15.003Z"
-  },
-  {
-    "codigo": "050055225",
-    "nombre": "BEYONCE 1",
-    "tipo": "desaparece",
-    "fecha": "2026-09-06T01:23:15.003Z"
-  },
-  {
-    "codigo": "050087425",
-    "nombre": "GRUPO JOY 1",
-    "tipo": "desaparece",
-    "fecha": "2026-09-06T01:23:15.003Z"
-  },
-  {
-    "codigo": "010285426",
-    "nombre": "JALAPAMPA",
-    "tipo": "desaparece",
-    "fecha": "2026-09-06T01:23:15.003Z"
-  },
-  {
-    "codigo": "010317826",
-    "nombre": "JHENSON 93",
-    "tipo": "desaparece",
-    "fecha": "2026-09-06T01:23:15.003Z"
-  },
-  {
-    "codigo": "080079125",
-    "nombre": "BIANCO01",
-    "tipo": "desaparece",
-    "fecha": "2026-09-06T01:23:15.003Z"
-  },
-  {
-    "codigo": "010511726",
-    "nombre": "TUZICARA 2026",
-    "tipo": "aparece",
-    "fecha": "2026-09-06T01:23:15.003Z"
-  },
-  {
-    "codigo": "530019026",
-    "nombre": "RUPAY 2",
-    "tipo": "aparece",
-    "fecha": "2026-09-06T01:23:15.003Z"
-  },
-  {
-    "codigo": "010511426",
-    "nombre": "GEOPERSA 02",
-    "tipo": "aparece",
-    "fecha": "2026-09-06T01:23:15.003Z"
-  },
-  {
-    "codigo": "010511626",
-    "nombre": "DECA FOMENTA",
-    "tipo": "aparece",
-    "fecha": "2026-09-06T01:23:15.003Z"
-  },
-  {
-    "codigo": "050109726",
-    "nombre": "GRUPO LLAMOCCA IV",
-    "tipo": "aparece",
-    "fecha": "2026-09-06T01:23:15.003Z"
-  },
-  {
-    "codigo": "050109826",
-    "nombre": "HERMANOS CHALLA",
-    "tipo": "aparece",
-    "fecha": "2026-09-06T01:23:15.003Z"
-  },
-  {
-    "codigo": "660003026",
-    "nombre": "RIAMFER",
-    "tipo": "aparece",
-    "fecha": "2026-09-06T01:23:15.003Z"
-  },
-  {
-    "codigo": "010512226",
-    "nombre": "COMPAÑIA MINERA WTH III",
-    "tipo": "aparece",
-    "fecha": "2026-09-08T01:31:00.771Z"
-  },
-  {
-    "codigo": "020018726",
-    "nombre": "FJ FORTUNA II",
-    "tipo": "aparece",
-    "fecha": "2026-09-08T01:31:00.771Z"
-  },
-  {
-    "codigo": "620007226",
-    "nombre": "MI NAATE NNA1",
-    "tipo": "aparece",
-    "fecha": "2026-09-08T01:31:00.771Z"
-  },
-  {
-    "codigo": "750001326",
-    "nombre": "CERAMICOS APOSTOL SANTIAGO I",
-    "tipo": "aparece",
-    "fecha": "2026-09-08T01:31:00.771Z"
-  },
-  {
-    "codigo": "750001426",
-    "nombre": "CERAMICOS APOSTOL SANTIAGO II",
-    "tipo": "aparece",
-    "fecha": "2026-09-08T01:31:00.771Z"
-  },
-  {
-    "codigo": "010511926",
-    "nombre": "CHOACHÍ II",
-    "tipo": "aparece",
-    "fecha": "2026-09-08T01:31:00.771Z"
-  },
-  {
-    "codigo": "050033225",
-    "nombre": "MONTE CASINO",
-    "tipo": "desaparece",
-    "fecha": "2026-09-09T01:39:12.649Z"
-  },
-  {
-    "codigo": "010404825",
-    "nombre": "OMAY 201",
-    "tipo": "desaparece",
-    "fecha": "2026-09-09T01:39:12.649Z"
-  },
-  {
-    "codigo": "010076526",
-    "nombre": "CALICANTO 1",
-    "tipo": "desaparece",
-    "fecha": "2026-09-09T01:39:12.649Z"
-  },
-  {
-    "codigo": "010444525",
-    "nombre": "DOBLE DRAGON DE ORO VI",
-    "tipo": "desaparece",
-    "fecha": "2026-09-09T01:39:12.649Z"
-  },
-  {
-    "codigo": "010202425",
-    "nombre": "MARTHAGRACIELA2025",
-    "tipo": "desaparece",
-    "fecha": "2026-09-09T01:39:12.649Z"
-  },
-  {
-    "codigo": "010196525",
-    "nombre": "BOLOLLON 2",
-    "tipo": "desaparece",
-    "fecha": "2026-09-09T01:39:12.649Z"
-  },
-  {
-    "codigo": "050051825",
-    "nombre": "WAQUKANY MINING II",
-    "tipo": "desaparece",
-    "fecha": "2026-09-09T01:39:12.649Z"
-  },
-  {
-    "codigo": "050073625",
-    "nombre": "ESTRELLA DE CHAPARRA 25",
-    "tipo": "desaparece",
-    "fecha": "2026-09-09T01:39:12.649Z"
-  },
-  {
-    "codigo": "050055126",
-    "nombre": "MINERA FLOREZ GOLD",
-    "tipo": "desaparece",
-    "fecha": "2026-09-09T01:39:12.649Z"
-  },
-  {
-    "codigo": "030049226",
-    "nombre": "NUEVA ESPERANZA 2026",
-    "tipo": "desaparece",
-    "fecha": "2026-09-09T01:39:12.649Z"
-  },
-  {
-    "codigo": "010512926",
-    "nombre": "J-F MOLRALES",
-    "tipo": "aparece",
-    "fecha": "2026-09-09T01:39:12.649Z"
-  },
-  {
-    "codigo": "060022226",
-    "nombre": "EL MAGNATE 02",
-    "tipo": "aparece",
-    "fecha": "2026-09-09T01:39:12.649Z"
-  },
-  {
-    "codigo": "030088326",
-    "nombre": "REAL PARAISO PERU",
-    "tipo": "aparece",
-    "fecha": "2026-09-09T01:39:12.649Z"
-  },
-  {
-    "codigo": "630005926",
-    "nombre": "SILVERGOLD-J&J2026",
-    "tipo": "aparece",
-    "fecha": "2026-09-09T01:39:12.649Z"
-  },
-  {
-    "codigo": "010512426",
-    "nombre": "CESARYLUIS",
-    "tipo": "aparece",
-    "fecha": "2026-09-09T01:39:12.649Z"
-  },
-  {
-    "codigo": "100008226",
-    "nombre": "MADRENORTE",
-    "tipo": "aparece",
-    "fecha": "2026-09-09T01:39:12.649Z"
-  },
-  {
-    "codigo": "100008126",
-    "nombre": "MOCHIS 2 2026",
-    "tipo": "aparece",
-    "fecha": "2026-09-09T01:39:12.649Z"
-  },
-  {
-    "codigo": "050110126",
-    "nombre": "LA CHEROKY 30A",
-    "tipo": "aparece",
-    "fecha": "2026-09-09T01:39:12.649Z"
-  },
-  {
-    "codigo": "610000125L",
-    "nombre": "JAKAMA CONCEPCION",
-    "tipo": "aparece",
-    "fecha": "2026-09-09T01:39:12.649Z"
-  },
-  {
-    "codigo": "050109926",
-    "nombre": "COPPERCOM",
-    "tipo": "aparece",
-    "fecha": "2026-09-09T01:39:12.649Z"
-  },
-  {
-    "codigo": "020018826",
-    "nombre": "COBREAZUL 1",
-    "tipo": "aparece",
-    "fecha": "2026-09-09T01:39:12.649Z"
-  },
-  {
-    "codigo": "010512526",
-    "nombre": "AUQUIATO",
-    "tipo": "aparece",
-    "fecha": "2026-09-09T01:39:12.649Z"
-  },
-  {
-    "codigo": "020018926",
-    "nombre": "BÓREAS",
-    "tipo": "aparece",
-    "fecha": "2026-09-09T01:39:12.649Z"
-  },
-  {
-    "codigo": "080069226",
-    "nombre": "PROYECTO QCORI",
-    "tipo": "aparece",
-    "fecha": "2026-09-09T01:39:12.649Z"
-  },
-  {
-    "codigo": "050110026",
-    "nombre": "COOPERCOM 2",
-    "tipo": "aparece",
-    "fecha": "2026-09-09T01:39:12.649Z"
-  },
-  {
-    "codigo": "050110226",
-    "nombre": "ASLAN VIII",
-    "tipo": "aparece",
-    "fecha": "2026-09-09T01:39:12.649Z"
-  },
-  {
-    "codigo": "530019126",
-    "nombre": "RUPAY 4",
-    "tipo": "aparece",
-    "fecha": "2026-09-09T01:39:12.649Z"
-  },
-  {
-    "codigo": "050110326",
-    "nombre": "MONTE REAL MCH II",
-    "tipo": "aparece",
-    "fecha": "2026-09-09T01:39:12.649Z"
-  },
-  {
-    "codigo": "050110426",
-    "nombre": "BETA MISTI VEHA II",
-    "tipo": "aparece",
-    "fecha": "2026-09-09T01:39:12.649Z"
-  },
-  {
-    "codigo": "580009826",
-    "nombre": "INTI 101",
-    "tipo": "aparece",
-    "fecha": "2026-09-09T01:39:12.649Z"
-  },
-  {
-    "codigo": "010512726",
-    "nombre": "MAJESAL",
-    "tipo": "aparece",
-    "fecha": "2026-09-09T01:39:12.649Z"
-  },
-  {
-    "codigo": "600005526",
-    "nombre": "RAMIT CU",
-    "tipo": "aparece",
-    "fecha": "2026-09-09T01:39:12.649Z"
-  },
-  {
-    "codigo": "010512826",
-    "nombre": "AMPER GOLD",
-    "tipo": "aparece",
-    "fecha": "2026-09-09T01:39:12.649Z"
-  },
-  {
-    "codigo": "010513026",
-    "nombre": "IMPERIAL ANDES GOLD",
-    "tipo": "aparece",
-    "fecha": "2026-09-09T01:39:12.649Z"
-  },
-  {
-    "codigo": "550006726",
-    "nombre": "MACHAWAY",
-    "tipo": "aparece",
-    "fecha": "2026-09-09T01:39:12.649Z"
-  },
-  {
-    "codigo": "010513126",
-    "nombre": "ORELY",
-    "tipo": "aparece",
-    "fecha": "2026-09-09T01:39:12.649Z"
-  },
-  {
-    "codigo": "020019026",
-    "nombre": "RIO D P 04",
-    "tipo": "aparece",
-    "fecha": "2026-09-09T01:39:12.649Z"
-  },
-  {
-    "codigo": "050110626",
-    "nombre": "PRISMA 2026",
-    "tipo": "aparece",
-    "fecha": "2026-09-09T01:39:12.649Z"
-  },
-  {
-    "codigo": "710010926",
-    "nombre": "MONTE BELLO",
-    "tipo": "aparece",
-    "fecha": "2026-09-09T01:39:12.649Z"
-  },
-  {
     "codigo": "010035226",
     "nombre": "VETA REAL 21",
     "tipo": "desaparece",
-    "fecha": "2026-09-10T01:33:30.942Z"
+    "fecha": "2026-09-11T00:27:00.672Z"
   },
   {
     "codigo": "060000826",
     "nombre": "LUNA 2026 VI",
     "tipo": "desaparece",
-    "fecha": "2026-09-10T01:33:30.942Z"
+    "fecha": "2026-09-11T00:27:00.672Z"
   },
   {
     "codigo": "020000426",
     "nombre": "CORPORACIÓN METALESA TRES",
     "tipo": "desaparece",
-    "fecha": "2026-09-10T01:33:30.942Z"
+    "fecha": "2026-09-11T00:27:00.672Z"
   },
   {
     "codigo": "610001609",
     "nombre": "JAKAMA CONCEPCION",
     "tipo": "desaparece",
-    "fecha": "2026-09-10T01:33:30.942Z"
+    "fecha": "2026-09-11T00:27:00.672Z"
   },
   {
     "codigo": "690003225",
     "nombre": "NADIE I",
     "tipo": "desaparece",
-    "fecha": "2026-09-10T01:33:30.942Z"
+    "fecha": "2026-09-11T00:27:00.672Z"
   },
   {
     "codigo": "010041426",
     "nombre": "SAUCE LILA A",
     "tipo": "desaparece",
-    "fecha": "2026-09-10T01:33:30.942Z"
+    "fecha": "2026-09-11T00:27:00.672Z"
   },
   {
     "codigo": "P610000110",
     "nombre": "PLANTA PILOTO TULIN",
     "tipo": "desaparece",
-    "fecha": "2026-09-10T01:33:30.942Z"
+    "fecha": "2026-09-11T00:27:00.672Z"
   },
   {
     "codigo": "610000914",
     "nombre": "DIOS ETERNO 2 2014",
     "tipo": "desaparece",
-    "fecha": "2026-09-10T01:33:30.942Z"
+    "fecha": "2026-09-11T00:27:00.672Z"
   },
   {
     "codigo": "010358525",
     "nombre": "SANTA CRUZ 001",
     "tipo": "desaparece",
-    "fecha": "2026-09-10T01:33:30.942Z"
+    "fecha": "2026-09-11T00:27:00.672Z"
   },
   {
     "codigo": "050048325",
     "nombre": "HILLARY GOLD 7",
     "tipo": "desaparece",
-    "fecha": "2026-09-10T01:33:30.942Z"
+    "fecha": "2026-09-11T00:27:00.672Z"
   },
   {
     "codigo": "050091225",
     "nombre": "ARTEMIS 2025",
     "tipo": "desaparece",
-    "fecha": "2026-09-10T01:33:30.942Z"
+    "fecha": "2026-09-11T00:27:00.672Z"
   },
   {
     "codigo": "080079325",
     "nombre": "AMANECER 2026",
     "tipo": "desaparece",
-    "fecha": "2026-09-10T01:33:30.942Z"
+    "fecha": "2026-09-11T00:27:00.672Z"
   },
   {
     "codigo": "100008426",
     "nombre": "PALO BLANCO 2026",
     "tipo": "aparece",
-    "fecha": "2026-09-10T01:33:30.942Z"
+    "fecha": "2026-09-11T00:27:00.672Z"
   },
   {
     "codigo": "010513826",
     "nombre": "CICLODEORO3",
     "tipo": "aparece",
-    "fecha": "2026-09-10T01:33:30.942Z"
+    "fecha": "2026-09-11T00:27:00.672Z"
   },
   {
     "codigo": "030088526",
     "nombre": "AURA DORADA",
     "tipo": "aparece",
-    "fecha": "2026-09-10T01:33:30.942Z"
+    "fecha": "2026-09-11T00:27:00.672Z"
   },
   {
     "codigo": "030088426",
     "nombre": "AGROCHEMICALS MINING UNO",
     "tipo": "aparece",
-    "fecha": "2026-09-10T01:33:30.942Z"
+    "fecha": "2026-09-11T00:27:00.672Z"
   },
   {
     "codigo": "030088626",
     "nombre": "MINAS MARZA & JJRM AA PERU",
     "tipo": "aparece",
-    "fecha": "2026-09-10T01:33:30.942Z"
+    "fecha": "2026-09-11T00:27:00.672Z"
   },
   {
     "codigo": "700003926",
     "nombre": "COPITO 2026",
     "tipo": "aparece",
-    "fecha": "2026-09-10T01:33:30.942Z"
+    "fecha": "2026-09-11T00:27:00.672Z"
   },
   {
     "codigo": "030088826",
     "nombre": "MINA MARZA & JJRM AA",
     "tipo": "aparece",
-    "fecha": "2026-09-10T01:33:30.942Z"
+    "fecha": "2026-09-11T00:27:00.672Z"
   },
   {
     "codigo": "100008326",
     "nombre": "INDUSTRIAS TERRA SAC",
     "tipo": "aparece",
-    "fecha": "2026-09-10T01:33:30.942Z"
+    "fecha": "2026-09-11T00:27:00.672Z"
   },
   {
     "codigo": "030088726",
     "nombre": "MINA MARZA & JJRM AA PERU",
     "tipo": "aparece",
-    "fecha": "2026-09-10T01:33:30.942Z"
+    "fecha": "2026-09-11T00:27:00.672Z"
   },
   {
     "codigo": "010513726",
     "nombre": "CICLODEORO4",
     "tipo": "aparece",
-    "fecha": "2026-09-10T01:33:30.942Z"
+    "fecha": "2026-09-11T00:27:00.672Z"
   },
   {
     "codigo": "010513226",
     "nombre": "PUCACCASA 7",
     "tipo": "aparece",
-    "fecha": "2026-09-10T01:33:30.942Z"
+    "fecha": "2026-09-11T00:27:00.672Z"
   },
   {
     "codigo": "010513326",
     "nombre": "ESTRELLA DORADA DEL SUR",
     "tipo": "aparece",
-    "fecha": "2026-09-10T01:33:30.942Z"
+    "fecha": "2026-09-11T00:27:00.672Z"
   },
   {
     "codigo": "010514726",
     "nombre": "ESTRELLA YJ 5",
     "tipo": "aparece",
-    "fecha": "2026-09-10T01:33:30.942Z"
+    "fecha": "2026-09-11T00:27:00.672Z"
   },
   {
     "codigo": "010514526",
     "nombre": "RONDAYOC TRES",
     "tipo": "aparece",
-    "fecha": "2026-09-10T01:33:30.942Z"
+    "fecha": "2026-09-11T00:27:00.672Z"
   },
   {
     "codigo": "010514126",
     "nombre": "ANDES DORADO VIII",
     "tipo": "aparece",
-    "fecha": "2026-09-10T01:33:30.942Z"
+    "fecha": "2026-09-11T00:27:00.672Z"
   },
   {
     "codigo": "590005426",
     "nombre": "LAGUNA BRAVA",
     "tipo": "aparece",
-    "fecha": "2026-09-10T01:33:30.942Z"
+    "fecha": "2026-09-11T00:27:00.672Z"
   },
   {
     "codigo": "010514026",
     "nombre": "COPPER NINE 511",
     "tipo": "aparece",
-    "fecha": "2026-09-10T01:33:30.942Z"
+    "fecha": "2026-09-11T00:27:00.672Z"
   },
   {
     "codigo": "010514426",
     "nombre": "EXPLORACIONES PUKAPUKA",
     "tipo": "aparece",
-    "fecha": "2026-09-10T01:33:30.942Z"
+    "fecha": "2026-09-11T00:27:00.672Z"
   },
   {
     "codigo": "010514226",
     "nombre": "ROXANA TRES",
     "tipo": "aparece",
-    "fecha": "2026-09-10T01:33:30.942Z"
+    "fecha": "2026-09-11T00:27:00.672Z"
   },
   {
     "codigo": "040045426",
     "nombre": "HUAYRURO2",
     "tipo": "aparece",
-    "fecha": "2026-09-10T01:33:30.942Z"
+    "fecha": "2026-09-11T00:27:00.672Z"
   },
   {
     "codigo": "040045326",
     "nombre": "HUAYRURO1",
     "tipo": "aparece",
-    "fecha": "2026-09-10T01:33:30.942Z"
+    "fecha": "2026-09-11T00:27:00.672Z"
   },
   {
     "codigo": "010514326",
     "nombre": "ANDES DORADOS IX",
     "tipo": "aparece",
-    "fecha": "2026-09-10T01:33:30.942Z"
+    "fecha": "2026-09-11T00:27:00.672Z"
   },
   {
     "codigo": "010513926",
     "nombre": "METALLIFER",
     "tipo": "aparece",
-    "fecha": "2026-09-10T01:33:30.942Z"
+    "fecha": "2026-09-11T00:27:00.672Z"
   },
   {
     "codigo": "010513426",
     "nombre": "GEOSATMIN V",
     "tipo": "aparece",
-    "fecha": "2026-09-10T01:33:30.942Z"
+    "fecha": "2026-09-11T00:27:00.672Z"
   }
 ]
