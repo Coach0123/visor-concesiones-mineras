@@ -214,5 +214,221 @@
     "nombre": "GEOSATMIN V",
     "tipo": "aparece",
     "fecha": "2026-09-11T00:27:00.672Z"
+  },
+  {
+    "codigo": "110004120",
+    "nombre": "CM FENIX XI",
+    "tipo": "desaparece",
+    "fecha": "2026-09-11T01:32:38.167Z"
+  },
+  {
+    "codigo": "520006023",
+    "nombre": "EL IMPERIO",
+    "tipo": "desaparece",
+    "fecha": "2026-09-11T01:32:38.167Z"
+  },
+  {
+    "codigo": "540011224",
+    "nombre": "KRISTELL 2024",
+    "tipo": "desaparece",
+    "fecha": "2026-09-11T01:32:38.167Z"
+  },
+  {
+    "codigo": "530003726",
+    "nombre": "AKEMY II",
+    "tipo": "desaparece",
+    "fecha": "2026-09-11T01:32:38.167Z"
+  },
+  {
+    "codigo": "530005726",
+    "nombre": "MINERA CCOSNI TORO 3",
+    "tipo": "desaparece",
+    "fecha": "2026-09-11T01:32:38.167Z"
+  },
+  {
+    "codigo": "540010524",
+    "nombre": "FRANK JOSE II",
+    "tipo": "desaparece",
+    "fecha": "2026-09-11T01:32:38.167Z"
+  },
+  {
+    "codigo": "110009225",
+    "nombre": "IRUROS2",
+    "tipo": "desaparece",
+    "fecha": "2026-09-11T01:32:38.167Z"
+  },
+  {
+    "codigo": "550006425",
+    "nombre": "EL PANCHO II",
+    "tipo": "desaparece",
+    "fecha": "2026-09-11T01:32:38.167Z"
+  },
+  {
+    "codigo": "530008526",
+    "nombre": "CHACOCHE 2",
+    "tipo": "desaparece",
+    "fecha": "2026-09-11T01:32:38.167Z"
+  },
+  {
+    "codigo": "560001826",
+    "nombre": "JOSE GALVEZ II",
+    "tipo": "aparece",
+    "fecha": "2026-09-11T01:32:38.167Z"
+  },
+  {
+    "codigo": "010514826",
+    "nombre": "CANTERA JC LLAGAS",
+    "tipo": "aparece",
+    "fecha": "2026-09-11T01:32:38.167Z"
+  },
+  {
+    "codigo": "030089226",
+    "nombre": "EL TRIUNFO",
+    "tipo": "aparece",
+    "fecha": "2026-09-11T01:32:38.167Z"
+  },
+  {
+    "codigo": "060022426",
+    "nombre": "PROYECTO MINERO SAN CRISTOBAL IV",
+    "tipo": "aparece",
+    "fecha": "2026-09-11T01:32:38.167Z"
+  },
+  {
+    "codigo": "110014426",
+    "nombre": "ALTAMIRA MINERALES",
+    "tipo": "aparece",
+    "fecha": "2026-09-11T01:32:38.167Z"
+  },
+  {
+    "codigo": "030089326",
+    "nombre": "RADIANT TERRA I",
+    "tipo": "aparece",
+    "fecha": "2026-09-11T01:32:38.167Z"
+  },
+  {
+    "codigo": "060022326",
+    "nombre": "SERGIO I",
+    "tipo": "aparece",
+    "fecha": "2026-09-11T01:32:38.167Z"
+  },
+  {
+    "codigo": "030088926",
+    "nombre": "SANTA LUCIA1",
+    "tipo": "aparece",
+    "fecha": "2026-09-11T01:32:38.167Z"
+  },
+  {
+    "codigo": "030089026",
+    "nombre": "JPC 1",
+    "tipo": "aparece",
+    "fecha": "2026-09-11T01:32:38.167Z"
+  },
+  {
+    "codigo": "030089126",
+    "nombre": "JPC 2",
+    "tipo": "aparece",
+    "fecha": "2026-09-11T01:32:38.167Z"
+  },
+  {
+    "codigo": "010515926",
+    "nombre": "EXCALIBUR 01",
+    "tipo": "aparece",
+    "fecha": "2026-09-11T01:32:38.167Z"
+  },
+  {
+    "codigo": "010516226",
+    "nombre": "CHAYOCC 2",
+    "tipo": "aparece",
+    "fecha": "2026-09-11T01:32:38.167Z"
+  },
+  {
+    "codigo": "010516326",
+    "nombre": "EITAN10",
+    "tipo": "aparece",
+    "fecha": "2026-09-11T01:32:38.167Z"
+  },
+  {
+    "codigo": "010515726",
+    "nombre": "AURORA MARIAFE",
+    "tipo": "aparece",
+    "fecha": "2026-09-11T01:32:38.167Z"
+  },
+  {
+    "codigo": "600005626",
+    "nombre": "POTOSI KISWARI",
+    "tipo": "aparece",
+    "fecha": "2026-09-11T01:32:38.167Z"
+  },
+  {
+    "codigo": "610011626",
+    "nombre": "EDEN",
+    "tipo": "aparece",
+    "fecha": "2026-09-11T01:32:38.167Z"
+  },
+  {
+    "codigo": "660003126",
+    "nombre": "FUNDO AMY GABRIELA",
+    "tipo": "aparece",
+    "fecha": "2026-09-11T01:32:38.167Z"
+  },
+  {
+    "codigo": "050111126",
+    "nombre": "MI CALACO 6",
+    "tipo": "aparece",
+    "fecha": "2026-09-11T01:32:38.167Z"
+  },
+  {
+    "codigo": "010515226",
+    "nombre": "NAYDEGIS",
+    "tipo": "aparece",
+    "fecha": "2026-09-11T01:32:38.167Z"
+  },
+  {
+    "codigo": "620007326",
+    "nombre": "MINATENNA2",
+    "tipo": "aparece",
+    "fecha": "2026-09-11T01:32:38.167Z"
+  },
+  {
+    "codigo": "010515526",
+    "nombre": "ESPACIO DE VIENTO 6",
+    "tipo": "aparece",
+    "fecha": "2026-09-11T01:32:38.167Z"
+  },
+  {
+    "codigo": "010515626",
+    "nombre": "ESPACIO DE VIENTO 5",
+    "tipo": "aparece",
+    "fecha": "2026-09-11T01:32:38.167Z"
+  },
+  {
+    "codigo": "010515326",
+    "nombre": "MINACELINA",
+    "tipo": "aparece",
+    "fecha": "2026-09-11T01:32:38.167Z"
+  },
+  {
+    "codigo": "010516026",
+    "nombre": "CHALA 100",
+    "tipo": "aparece",
+    "fecha": "2026-09-11T01:32:38.167Z"
+  },
+  {
+    "codigo": "050111326",
+    "nombre": "EL RUMBO 1",
+    "tipo": "aparece",
+    "fecha": "2026-09-11T01:32:38.167Z"
+  },
+  {
+    "codigo": "080069926",
+    "nombre": "CHILE CRUZ",
+    "tipo": "aparece",
+    "fecha": "2026-09-11T01:32:38.167Z"
+  },
+  {
+    "codigo": "050111226",
+    "nombre": "EL RUMBO 2",
+    "tipo": "aparece",
+    "fecha": "2026-09-11T01:32:38.167Z"
   }
 ]
