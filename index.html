@@ -7,11 +7,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: 'Segoe UI', Arial, sans-serif; 
-            overflow: hidden;
-            background: #0a1628;
-        }
+        body { font-family: 'Segoe UI', Arial, sans-serif; overflow: hidden; background: #0a1628; }
         .container { display: flex; height: 100vh; width: 100vw; }
         
         .sidebar { 
@@ -104,34 +100,32 @@
             box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
         }
         
-        .btn-guardar { background: linear-gradient(135deg, #0284c7, #0891b2) !important; }
-        .btn-guardar:hover { background: linear-gradient(135deg, #0891b2, #06b6d4) !important; }
-        .btn-monitorear { background: linear-gradient(135deg, #d97706, #f59e0b) !important; }
-        .btn-monitorear:hover { background: linear-gradient(135deg, #f59e0b, #fbbf24) !important; }
-        .btn-cancelar { background: linear-gradient(135deg, #dc2626, #ef4444) !important; }
-        .btn-cancelar:hover { background: linear-gradient(135deg, #ef4444, #f87171) !important; }
-        .btn-verificar { background: linear-gradient(135deg, #059669, #10b981) !important; }
-        .btn-verificar:hover { background: linear-gradient(135deg, #10b981, #34d399) !important; }
-        .btn-descargar { background: linear-gradient(135deg, #7c3aed, #8b5cf6) !important; }
-        .btn-descargar:hover { background: linear-gradient(135deg, #8b5cf6, #a78bfa) !important; }
-        .btn-limpiar { background: linear-gradient(135deg, #475569, #64748b) !important; }
-        .btn-limpiar:hover { background: linear-gradient(135deg, #64748b, #94a3b8) !important; }
         .btn-dibujar { background: linear-gradient(135deg, #ea580c, #f97316) !important; }
         .btn-dibujar:hover { background: linear-gradient(135deg, #f97316, #fb923c) !important; }
-        .btn-informe { background: linear-gradient(135deg, #0369a1, #0284c7) !important; }
-        .btn-informe:hover { background: linear-gradient(135deg, #0284c7, #0ea5e9) !important; }
+        .btn-limpiar { background: linear-gradient(135deg, #475569, #64748b) !important; }
+        .btn-limpiar:hover { background: linear-gradient(135deg, #64748b, #94a3b8) !important; }
+        .btn-monitorear { background: linear-gradient(135deg, #d97706, #f59e0b) !important; }
+        .btn-monitorear:hover { background: linear-gradient(135deg, #f59e0b, #fbbf24) !important; }
+        .btn-verificar { background: linear-gradient(135deg, #059669, #10b981) !important; }
+        .btn-verificar:hover { background: linear-gradient(135deg, #10b981, #34d399) !important; }
+        .btn-html { background: linear-gradient(135deg, #7c3aed, #8b5cf6) !important; }
+        .btn-html:hover { background: linear-gradient(135deg, #8b5cf6, #a78bfa) !important; }
         
         .btn-group { display: flex; flex-wrap: wrap; gap: 6px; }
         .btn-group button { flex: 1; min-width: 120px; margin-bottom: 6px; }
         
+        .leyenda-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
         .leyenda-item { 
             display: flex; 
             align-items: center; 
-            margin-bottom: 8px;
-            font-size: 13px;
+            font-size: 12px;
             color: #cbd5e1;
         }
-        .color-box { width: 18px; height: 18px; margin-right: 10px; border-radius: 4px; border: 1px solid #334155; }
+        .color-box { width: 16px; height: 16px; margin-right: 8px; border-radius: 4px; border: 1px solid #334155; flex-shrink: 0; }
         .gris { background: #888; }
         .rojo { background: #ff4444; }
         .azul { background: #4444ff; }
@@ -227,13 +221,7 @@
             border: 1px solid #1e3a5f;
             box-shadow: 0 4px 20px rgba(0,0,0,0.4);
             font-size: 13px;
-            animation: fadeInOut 4s ease-in-out;
-        }
-        @keyframes fadeInOut {
-            0% { opacity: 0; transform: translateY(20px); }
-            10% { opacity: 1; transform: translateY(0); }
-            90% { opacity: 1; transform: translateY(0); }
-            100% { opacity: 0; transform: translateY(-20px); }
+            display: none;
         }
         
         .dibujo-activo { cursor: crosshair !important; }
@@ -261,8 +249,6 @@
             color: #86efac;
         }
         .status-monitoreo.activo { display: block; }
-        
-        .search-section small { color: #64748b; font-size: 11px; }
     </style>
 </head>
 <body>
@@ -282,16 +268,20 @@
             
             <div class="leyenda-section">
                 <h3>Leyenda</h3>
-                <div class="leyenda-item"><span class="color-box gris"></span> Sin cambios</div>
-                <div class="leyenda-item"><span class="color-box rojo"></span> Desapareció</div>
-                <div class="leyenda-item"><span class="color-box azul"></span> Apareció</div>
-                <div class="leyenda-item"><span class="color-box verde"></span> Búsqueda/Área</div>
+                <div class="leyenda-grid">
+                    <div class="leyenda-item"><span class="color-box gris"></span> Sin cambios</div>
+                    <div class="leyenda-item"><span class="color-box rojo"></span> Desapareció</div>
+                    <div class="leyenda-item"><span class="color-box azul"></span> Apareció</div>
+                    <div class="leyenda-item"><span class="color-box verde"></span> Área</div>
+                </div>
             </div>
             
             <div class="acciones-area">
                 <h3>Dibujar área</h3>
-                <button class="btn-dibujar" onclick="activarDibujoRectangulo()">✏️ Dibujar área (2 clics)</button>
-                <button class="btn-limpiar" onclick="limpiarDibujo()">🗑️ Limpiar dibujo</button>
+                <div class="btn-group">
+                    <button class="btn-dibujar" onclick="activarDibujoRectangulo()">✏️ Dibujar (2 clics)</button>
+                    <button class="btn-limpiar" onclick="limpiarDibujo()">🗑️ Limpiar</button>
+                </div>
                 
                 <div id="area-info" class="area-info">
                     <strong>Área dibujada:</strong><br>
@@ -303,15 +293,11 @@
                 </div>
             </div>
             
+            <h3>Acciones</h3>
             <div class="btn-group">
-                <button class="btn-monitorear" onclick="guardarAreaParaMonitoreo()">🔔 Monitorear (correo)</button>
-                <button class="btn-verificar" onclick="verificarCambiosYEnviarAlerta()">📧 Verificar cambios ahora</button>
-            </div>
-            
-            <h3>Generar informe</h3>
-            <div class="btn-group">
-                <button class="btn-informe" onclick="generarInforme('1507')">📊 Informe vs 15/07</button>
-                <button class="btn-informe" onclick="generarInforme('2207')">📊 Informe vs 22/07</button>
+                <button class="btn-monitorear" onclick="guardarAreaParaMonitoreo()">🔔 Monitorear</button>
+                <button class="btn-verificar" onclick="verificarCambiosYEnviarAlerta()">📧 Verificar</button>
+                <button class="btn-html" onclick="descargarInformeHTML()">📄 HTML</button>
             </div>
             
             <div class="cambios-section">
@@ -342,7 +328,7 @@
         </div>
     </div>
     
-    <div id="mensaje-emergente" class="mensaje-emergente" style="display: none;"></div>
+    <div id="mensaje-emergente" class="mensaje-emergente"></div>
     
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.8.0/proj4.js"></script>
