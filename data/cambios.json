@@ -430,5 +430,221 @@
     "nombre": "EL RUMBO 2",
     "tipo": "aparece",
     "fecha": "2026-09-11T01:32:38.167Z"
+  },
+  {
+    "codigo": "100000226",
+    "nombre": "TRONPITO TRES",
+    "tipo": "desaparece",
+    "fecha": "2026-09-12T01:38:51.269Z"
+  },
+  {
+    "codigo": "060002626",
+    "nombre": "SANTA 2026",
+    "tipo": "desaparece",
+    "fecha": "2026-09-12T01:38:51.269Z"
+  },
+  {
+    "codigo": "030022126",
+    "nombre": "GEMELOS 1",
+    "tipo": "desaparece",
+    "fecha": "2026-09-12T01:38:51.269Z"
+  },
+  {
+    "codigo": "520000724",
+    "nombre": "LAS DUNAS",
+    "tipo": "desaparece",
+    "fecha": "2026-09-12T01:38:51.269Z"
+  },
+  {
+    "codigo": "010404625",
+    "nombre": "MANDY 2",
+    "tipo": "desaparece",
+    "fecha": "2026-09-12T01:38:51.269Z"
+  },
+  {
+    "codigo": "030049426",
+    "nombre": "RIOALFA I",
+    "tipo": "desaparece",
+    "fecha": "2026-09-12T01:38:51.269Z"
+  },
+  {
+    "codigo": "010040126",
+    "nombre": "SAJAPAMPA 2601",
+    "tipo": "desaparece",
+    "fecha": "2026-09-12T01:38:51.269Z"
+  },
+  {
+    "codigo": "010041026",
+    "nombre": "PAMPA ARPISTA D",
+    "tipo": "desaparece",
+    "fecha": "2026-09-12T01:38:51.269Z"
+  },
+  {
+    "codigo": "610001617",
+    "nombre": "HERNESTINA III",
+    "tipo": "desaparece",
+    "fecha": "2026-09-12T01:38:51.269Z"
+  },
+  {
+    "codigo": "540009723",
+    "nombre": "LA NEGRITA MALU",
+    "tipo": "desaparece",
+    "fecha": "2026-09-12T01:38:51.269Z"
+  },
+  {
+    "codigo": "550003925",
+    "nombre": "LAS TRES MARIAS 2025 01",
+    "tipo": "desaparece",
+    "fecha": "2026-09-12T01:38:51.269Z"
+  },
+  {
+    "codigo": "540016223",
+    "nombre": "COROMIN I 2023",
+    "tipo": "desaparece",
+    "fecha": "2026-09-12T01:38:51.269Z"
+  },
+  {
+    "codigo": "010199325",
+    "nombre": "ALESSIA UNO",
+    "tipo": "desaparece",
+    "fecha": "2026-09-12T01:38:51.269Z"
+  },
+  {
+    "codigo": "550005824",
+    "nombre": "LA CUMBRE DORADA 1",
+    "tipo": "desaparece",
+    "fecha": "2026-09-12T01:38:51.269Z"
+  },
+  {
+    "codigo": "530010225",
+    "nombre": "CONSORCIO TARACCASA",
+    "tipo": "desaparece",
+    "fecha": "2026-09-12T01:38:51.269Z"
+  },
+  {
+    "codigo": "010403325",
+    "nombre": "MI BUENA SUERTE DOS",
+    "tipo": "desaparece",
+    "fecha": "2026-09-12T01:38:51.269Z"
+  },
+  {
+    "codigo": "010447925",
+    "nombre": "ARCANA FOSSA AUREA I",
+    "tipo": "desaparece",
+    "fecha": "2026-09-12T01:38:51.269Z"
+  },
+  {
+    "codigo": "050055226",
+    "nombre": "ESTACION 42",
+    "tipo": "desaparece",
+    "fecha": "2026-09-12T01:38:51.269Z"
+  },
+  {
+    "codigo": "050058026",
+    "nombre": "MISCANA TOCCOROCRUZ",
+    "tipo": "desaparece",
+    "fecha": "2026-09-12T01:38:51.269Z"
+  },
+  {
+    "codigo": "050060026",
+    "nombre": "ITALO Y GRINGA",
+    "tipo": "desaparece",
+    "fecha": "2026-09-12T01:38:51.269Z"
+  },
+  {
+    "codigo": "710003222",
+    "nombre": "SOL NACIENTE CGZ",
+    "tipo": "desaparece",
+    "fecha": "2026-09-12T01:38:51.269Z"
+  },
+  {
+    "codigo": "030089426",
+    "nombre": "ARENA GOLD IV",
+    "tipo": "aparece",
+    "fecha": "2026-09-12T01:38:51.269Z"
+  },
+  {
+    "codigo": "010516626",
+    "nombre": "EMILIO MANUEL",
+    "tipo": "aparece",
+    "fecha": "2026-09-12T01:38:51.269Z"
+  },
+  {
+    "codigo": "100008626",
+    "nombre": "MONTE DE GRACIA",
+    "tipo": "aparece",
+    "fecha": "2026-09-12T01:38:51.269Z"
+  },
+  {
+    "codigo": "010516726",
+    "nombre": "LA FE DE MAXIMO 2026",
+    "tipo": "aparece",
+    "fecha": "2026-09-12T01:38:51.269Z"
+  },
+  {
+    "codigo": "550006826",
+    "nombre": "JENNY CP 2026",
+    "tipo": "aparece",
+    "fecha": "2026-09-12T01:38:51.269Z"
+  },
+  {
+    "codigo": "050111426",
+    "nombre": "CORPORACION MINERA LIRCAY",
+    "tipo": "aparece",
+    "fecha": "2026-09-12T01:38:51.269Z"
+  },
+  {
+    "codigo": "550006926",
+    "nombre": "ROSARIO DE ORO I",
+    "tipo": "aparece",
+    "fecha": "2026-09-12T01:38:51.269Z"
+  },
+  {
+    "codigo": "010516826",
+    "nombre": "IVAN2",
+    "tipo": "aparece",
+    "fecha": "2026-09-12T01:38:51.269Z"
+  },
+  {
+    "codigo": "050111826",
+    "nombre": "ALCCAVIC TORIA_2026",
+    "tipo": "aparece",
+    "fecha": "2026-09-12T01:38:51.269Z"
+  },
+  {
+    "codigo": "050111626",
+    "nombre": "RIO DORADO II",
+    "tipo": "aparece",
+    "fecha": "2026-09-12T01:38:51.269Z"
+  },
+  {
+    "codigo": "050111526",
+    "nombre": "RIO DORAD I",
+    "tipo": "aparece",
+    "fecha": "2026-09-12T01:38:51.269Z"
+  },
+  {
+    "codigo": "040045626",
+    "nombre": "MINERAS NAYLI II",
+    "tipo": "aparece",
+    "fecha": "2026-09-12T01:38:51.269Z"
+  },
+  {
+    "codigo": "040045526",
+    "nombre": "MINERAS NAYLI I",
+    "tipo": "aparece",
+    "fecha": "2026-09-12T01:38:51.269Z"
+  },
+  {
+    "codigo": "050111726",
+    "nombre": "ANTAPUNCO_2026",
+    "tipo": "aparece",
+    "fecha": "2026-09-12T01:38:51.269Z"
+  },
+  {
+    "codigo": "080070226",
+    "nombre": "QORI CANCHA II",
+    "tipo": "aparece",
+    "fecha": "2026-09-12T01:38:51.269Z"
   }
 ]
