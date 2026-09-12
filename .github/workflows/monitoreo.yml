@@ -5,16 +5,19 @@ on:
     - cron: '0 0 * * *'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   monitoreo:
     runs-on: ubuntu-latest
     
     steps:
       - name: Checkout repositorio
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         
       - name: Configurar Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '18'
           
@@ -38,7 +41,16 @@ jobs:
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
-          git add data/*.geojson data/cambios.json data/ultima_limpieza.json
+          git add -f data/*.geojson data/cambios.json data/ultima_limpieza.json
+          git add -f data/informes/*.html || echo "Sin informes nuevos"
           git commit -m "Actualizar automático - $(date +'%Y-%m-%d %H:%M')" || echo "No hay cambios para commit"
           git push
           
+      - name: Borrar informes antiguos
+        run: |
+          find data/informes/ -name "informe_*.html" -mtime +5 -delete 2>/dev/null || true
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add -A data/informes/ 2>/dev/null || true
+          git commit -m "Limpiar informes antiguos" 2>/dev/null || echo "Nada que limpiar"
+          git push 2>/dev/null || echo "Nada que subir"

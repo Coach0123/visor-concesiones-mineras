@@ -4,22 +4,18 @@ const https = require('https');
 const nodemailer = require('nodemailer');
 const proj4 = require('proj4');
 
-// Definir proyecciones UTM
 proj4.defs([
     ['EPSG:32717', '+proj=utm +zone=17 +south +datum=WGS84 +units=m +no_defs'],
     ['EPSG:32718', '+proj=utm +zone=18 +south +datum=WGS84 +units=m +no_defs'],
     ['EPSG:32719', '+proj=utm +zone=19 +south +datum=WGS84 +units=m +no_defs']
 ]);
 
-// Configuración
 const DATA_DIR = path.join(__dirname, '..', 'data');
 const CAMBIOS_FILE = path.join(DATA_DIR, 'cambios.json');
 const LIMPIEZA_FILE = path.join(DATA_DIR, 'ultima_limpieza.json');
 const AREA_FILE = path.join(DATA_DIR, 'area_monitoreada.json');
+const INFORMES_DIR = path.join(DATA_DIR, 'informes');
 
-// ============================================================
-// FUNCIÓN: Verificar si hay que limpiar cambios (cada 10 días)
-// ============================================================
 async function verificarYLimpiarCambios() {
     const hoy = new Date();
     hoy.setHours(0, 0, 0, 0);
@@ -52,9 +48,6 @@ async function verificarYLimpiarCambios() {
     return false;
 }
 
-// ============================================================
-// FUNCIÓN: Convertir UTM a WGS84
-// ============================================================
 function convertirUTM_A_WGS84(x, y, zona) {
     try {
         let projSrc;
@@ -71,9 +64,6 @@ function convertirUTM_A_WGS84(x, y, zona) {
     }
 }
 
-// ============================================================
-// FUNCIÓN: Verificar si un polígono está dentro del área
-// ============================================================
 function poligonoEnArea(feature, areaMonitoreada) {
     if (!areaMonitoreada || !feature.geometry) return true;
     
@@ -115,9 +105,6 @@ function poligonoEnArea(feature, areaMonitoreada) {
     }
 }
 
-// ============================================================
-// FUNCIÓN: Obtener el archivo más reciente para cada zona
-// ============================================================
 async function obtenerArchivoMasReciente(zona) {
     const hoy = new Date();
     const fechas = [];
@@ -139,18 +126,13 @@ async function obtenerArchivoMasReciente(zona) {
     return null;
 }
 
-// ============================================================
-// FUNCIÓN: Obtener archivo de hace 1 día (para comparar)
-// ============================================================
 async function obtenerArchivoDiaAnterior(zona, fechaActual, horaActual) {
-    const fecha = new Date();
     const diaActual = parseInt(fechaActual.slice(0, 2));
     const mesActual = parseInt(fechaActual.slice(2, 4));
     const anioActual = 2000 + parseInt(fechaActual.slice(4, 6));
     
     const fechaObj = new Date(anioActual, mesActual - 1, diaActual);
     
-    // Buscar hasta 10 días atrás si no encuentra el día anterior
     for (let i = 1; i <= 10; i++) {
         fechaObj.setDate(fechaObj.getDate() - 1);
         
@@ -170,9 +152,6 @@ async function obtenerArchivoDiaAnterior(zona, fechaActual, horaActual) {
     return null;
 }
 
-// ============================================================
-// FUNCIÓN: Comparar dos archivos y detectar cambios
-// ============================================================
 async function compararArchivos(archivoActual, archivoAnterior, areaMonitoreada) {
     const dataActual = await fs.readJson(archivoActual.filePath);
     const dataAnterior = await fs.readJson(archivoAnterior.filePath);
@@ -180,7 +159,6 @@ async function compararArchivos(archivoActual, archivoAnterior, areaMonitoreada)
     console.log(`   📁 Actual: ${dataActual.features.length} features`);
     console.log(`   📁 Anterior: ${dataAnterior.features.length} features`);
     
-    // Crear sets de códigos (igual que en R)
     const codigosActual = new Set();
     dataActual.features.forEach(f => {
         codigosActual.add(String(f.properties.CODIGOU).trim());
@@ -197,7 +175,6 @@ async function compararArchivos(archivoActual, archivoAnterior, areaMonitoreada)
     const desaparecidos = [];
     const aparecidos = [];
     
-    // Desaparecidos (estaban en anterior, no están en actual)
     dataAnterior.features.forEach(f => {
         const codigo = String(f.properties.CODIGOU).trim();
         if (!codigosActual.has(codigo)) {
@@ -207,7 +184,6 @@ async function compararArchivos(archivoActual, archivoAnterior, areaMonitoreada)
         }
     });
     
-    // Aparecidos (están en actual, no estaban en anterior)
     dataActual.features.forEach(f => {
         const codigo = String(f.properties.CODIGOU).trim();
         if (!codigosAnterior.has(codigo)) {
@@ -223,10 +199,174 @@ async function compararArchivos(archivoActual, archivoAnterior, areaMonitoreada)
     return { desaparecidos, aparecidos };
 }
 
-// ============================================================
-// FUNCIÓN: Enviar correo con los cambios
-// ============================================================
-async function enviarCorreoCambios(desaparecidos, aparecidos, fechaStr) {
+async function generarInformeHTML(desaparecidos, aparecidos, areaMonitoreada, fechaStr) {
+    try {
+        await fs.ensureDir(INFORMES_DIR);
+        
+        const convertirFeature = (f) => ({
+            type: 'Feature',
+            properties: f.properties,
+            geometry: f.geometry
+        });
+        
+        const fechaLegible = new Date().toLocaleDateString('es-PE', {
+            day: '2-digit', month: '2-digit', year: 'numeric'
+        });
+        
+        const html = `<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wvisor - Informe ${fechaStr}</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #0a1628; color: #e0e6f0; padding: 20px; }
+        .container { max-width: 1400px; margin: 0 auto; background: #0f1e3a; border-radius: 12px; box-shadow: 0 8px 40px rgba(0,0,0,0.5); overflow: hidden; border: 1px solid #1e3a5f; }
+        .header { background: linear-gradient(135deg, #1e3a8a, #1e40af); padding: 25px 30px; }
+        .header-top { display: flex; align-items: center; gap: 15px; margin-bottom: 10px; }
+        .logo-w { width: 45px; height: 45px; background: linear-gradient(135deg, #3b82f6, #1e40af); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 26px; font-weight: 800; color: #fff; font-family: Georgia, serif; }
+        .header h1 { font-size: 22px; font-weight: 600; color: #fff; }
+        .subtitle { font-size: 13px; color: #93c5fd; margin-bottom: 15px; }
+        .stats { display: flex; gap: 12px; flex-wrap: wrap; }
+        .stat-item { background: rgba(255,255,255,0.12); padding: 10px 18px; border-radius: 8px; font-size: 12px; color: #bfdbfe; }
+        .stat-item strong { font-size: 20px; display: block; color: #fff; }
+        .stat-item.danger { background: rgba(220, 38, 38, 0.3); }
+        .stat-item.danger strong { color: #fca5a5; }
+        .stat-item.success { background: rgba(59, 130, 246, 0.3); }
+        .stat-item.success strong { color: #93c5fd; }
+        .main-content { display: flex; flex-wrap: wrap; }
+        .map-column { flex: 2; min-width: 500px; padding: 20px; background: #0a1628; }
+        #map { border-radius: 8px; height: 550px; width: 100%; border: 1px solid #1e3a5f; }
+        .info-column { flex: 1; min-width: 320px; padding: 20px; background: #0f1e3a; border-left: 1px solid #1e3a5f; max-height: 600px; overflow-y: auto; }
+        .info-column h2 { font-size: 16px; margin-bottom: 15px; color: #93c5fd; padding-bottom: 8px; border-bottom: 1px solid #1e3a5f; }
+        .item-concesion { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; font-size: 12px; border-bottom: 1px solid #1e3a5f; }
+        .estado-badge { font-size: 10px; padding: 3px 8px; border-radius: 10px; color: white; font-weight: 600; }
+        .estado-badge.desaparecio { background: #dc2626; }
+        .estado-badge.aparecio { background: #2563eb; }
+        .tabla-container { padding: 20px 30px 30px; border-top: 1px solid #1e3a5f; }
+        .tabla-container h2 { font-size: 16px; margin-bottom: 15px; color: #93c5fd; }
+        .tabla-concesiones { width: 100%; border-collapse: collapse; font-size: 13px; }
+        .tabla-concesiones thead th { background: #152b4a; padding: 12px 15px; text-align: left; color: #93c5fd; border-bottom: 2px solid #1e3a5f; }
+        .tabla-concesiones tbody td { padding: 10px 15px; border-bottom: 1px solid #1e3a5f; color: #cbd5e1; }
+        .footer { background: #0a1628; padding: 15px 30px; text-align: center; font-size: 11px; color: #475569; border-top: 1px solid #1e3a5f; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-top">
+                <div class="logo-w">W</div>
+                <h1>Wvisor - Informe de Área</h1>
+            </div>
+            <div class="subtitle">Generado el ${fechaLegible}</div>
+            <div class="stats">
+                <div class="stat-item danger"><strong>${desaparecidos.length}</strong>Desaparecieron</div>
+                <div class="stat-item success"><strong>${aparecidos.length}</strong>Aparecieron</div>
+                <div class="stat-item"><strong>${desaparecidos.length + aparecidos.length}</strong>Total</div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="map-column">
+                <div id="map"></div>
+            </div>
+            <div class="info-column">
+                <h2>📋 Concesiones</h2>
+                ${desaparecidos.map(f => `
+                    <div class="item-concesion">
+                        <span>${f.properties.CONCESION || 'N/A'}</span>
+                        <span class="estado-badge desaparecio">DESAPARECIÓ</span>
+                    </div>
+                `).join('')}
+                ${aparecidos.map(f => `
+                    <div class="item-concesion">
+                        <span>${f.properties.CONCESION || 'N/A'}</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+        
+        <div class="tabla-container">
+            <h2>📋 Detalle Completo</h2>
+            <table class="tabla-concesiones">
+                <thead>
+                    <tr><th>Código</th><th>Concesión</th><th>Titular</th><th>Estado</th></tr>
+                </thead>
+                <tbody>
+                    ${desaparecidos.map(f => `
+                        <tr>
+                            <td>${f.properties.CODIGOU || 'N/A'}</td>
+                            <td>${f.properties.CONCESION || 'N/A'}</td>
+                            <td>${f.properties.TIT_CONCES || 'N/A'}</td>
+                            <td><span class="estado-badge desaparecio">DESAPARECIÓ</span></td>
+                        </tr>
+                    `).join('')}
+                    ${aparecidos.map(f => `
+                        <tr>
+                            <td>${f.properties.CODIGOU || 'N/A'}</td>
+                            <td>${f.properties.CONCESION || 'N/A'}</td>
+                            <td>${f.properties.TIT_CONCES || 'N/A'}</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    `).join('')}
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="footer">Wvisor · Datos INGEMMET · ${fechaLegible}</div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.8.0/proj4.js"></script>
+    <script>
+        const areaData = ${JSON.stringify(areaMonitoreada)};
+        const desaparecidosFeatures = ${JSON.stringify(desaparecidos.map(convertirFeature))};
+        const aparecidosFeatures = ${JSON.stringify(aparecidos.map(convertirFeature))};
+        
+        const map = L.map('map').setView([
+            (areaData.sw.lat + areaData.ne.lat) / 2,
+            (areaData.sw.lng + areaData.ne.lng) / 2
+        ], 10);
+        
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png').addTo(map);
+        
+        L.rectangle([
+            [areaData.sw.lat, areaData.sw.lng],
+            [areaData.ne.lat, areaData.ne.lng]
+        ], { color: '#ff44ff', weight: 3, opacity: 0.8, fillOpacity: 0.1 }).addTo(map);
+        
+        L.geoJSON({ type: 'FeatureCollection', features: desaparecidosFeatures }, {
+            style: { color: '#ff4444', weight: 2, opacity: 0.9, fillOpacity: 0.4 },
+            onEachFeature: (f, l) => l.bindPopup('<b>' + (f.properties.CONCESION || 'N/A') + '</b><br>🔴 Desapareció')
+        }).addTo(map);
+        
+        L.geoJSON({ type: 'FeatureCollection', features: aparecidosFeatures }, {
+            style: { color: '#4444ff', weight: 2, opacity: 0.9, fillOpacity: 0.4 },
+            onEachFeature: (f, l) => l.bindPopup('<b>' + (f.properties.CONCESION || 'N/A') + '</b><br>🔵 Apareció')
+        }).addTo(map);
+    </script>
+</body>
+</html>`;
+        
+        const nombreArchivo = `informe_${fechaStr}.html`;
+        const rutaArchivo = path.join(INFORMES_DIR, nombreArchivo);
+        await fs.writeFile(rutaArchivo, html, 'utf8');
+        
+        console.log(`📄 Informe HTML generado: ${rutaArchivo}`);
+        
+        const urlInforme = `https://coach0123.github.io/visor-concesiones-mineras/data/informes/${nombreArchivo}`;
+        return urlInforme;
+        
+    } catch (error) {
+        console.error('❌ Error generando informe:', error.message);
+        return null;
+    }
+}
+
+async function enviarCorreoCambios(desaparecidos, aparecidos, fechaStr, urlInforme) {
     const total = desaparecidos.length + aparecidos.length;
     
     const maxMostrar = 30;
@@ -264,6 +404,10 @@ async function enviarCorreoCambios(desaparecidos, aparecidos, fechaStr) {
         }
     }
     
+    if (urlInforme) {
+        mensaje += `\n📄 Ver informe completo en el mapa:\n${urlInforme}\n`;
+    }
+    
     mensaje += `\n🔗 Visor: https://coach0123.github.io/visor-concesiones-mineras/\n`;
     mensaje += `📅 ${new Date().toLocaleString('es-PE')}`;
     
@@ -288,9 +432,6 @@ async function enviarCorreoCambios(desaparecidos, aparecidos, fechaStr) {
     }
 }
 
-// ============================================================
-// FUNCIÓN: Guardar cambios en archivo JSON
-// ============================================================
 async function guardarCambiosJSON(desaparecidos, aparecidos) {
     let cambiosExistentes = [];
     try {
@@ -329,9 +470,6 @@ async function guardarCambiosJSON(desaparecidos, aparecidos) {
     console.log(`💾 Guardados ${cambiosFiltrados.length} nuevos cambios en cambios.json`);
 }
 
-// ============================================================
-// FUNCIÓN PRINCIPAL
-// ============================================================
 async function main() {
     console.log('🚀 Iniciando actualización de shapefiles...');
     
@@ -379,25 +517,22 @@ async function main() {
     
     console.log(`\n📊 TOTAL: ${todosDesaparecidos.length} desaparecidos, ${todosAparecidos.length} aparecidos`);
     
-    // ============================================================
-    // 4. GUARDAR CAMBIOS EN JSON (solo si hay cambios)
-    // ============================================================
     if (todosDesaparecidos.length > 0 || todosAparecidos.length > 0) {
         await guardarCambiosJSON(todosDesaparecidos, todosAparecidos);
     } else {
-        console.log('📭 Sin cambios, pero se enviará correo con 0 cambios');
+        console.log('📭 Sin cambios');
     }
     
-    // ============================================================
-    // 5. ENVIAR CORREO SIEMPRE (incluso con 0 cambios)
-    // ============================================================
     const fechaStr = new Date().toISOString().slice(0, 10).replace(/-/g, '');
-    await enviarCorreoCambios(todosDesaparecidos, todosAparecidos, fechaStr);
+    
+    let urlInforme = null;
+    if (todosDesaparecidos.length > 0 || todosAparecidos.length > 0) {
+        urlInforme = await generarInformeHTML(todosDesaparecidos, todosAparecidos, areaMonitoreada, fechaStr);
+    }
+    
+    await enviarCorreoCambios(todosDesaparecidos, todosAparecidos, fechaStr, urlInforme);
     
     console.log('🎉 Proceso completado');
 }
 
-// ============================================================
-// EJECUTAR
-// ============================================================
 main().catch(console.error);
