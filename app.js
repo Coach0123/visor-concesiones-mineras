@@ -1,4 +1,6 @@
-// Configuración del mapa
+// ============================================================
+// CONFIGURACIÓN DEL MAPA
+// ============================================================
 let map;
 let capas = {};
 let popupAbierto = false;
@@ -8,11 +10,11 @@ let rectanguloDibujo = null;
 let capaDibujo = null;
 let marcadorBusqueda;
 let capaAreaInteres;
+let areaMonitoreada = null;
 
-// Función para corregir caracteres especiales
+// Corregir caracteres especiales
 function corregirTexto(texto) {
     if (!texto || texto === 'N/A') return 'N/A';
-    
     const reemplazos = {
         'Ã‘': 'Ñ', 'Ã±': 'ñ', 'Ã‰': 'É', 'Ã©': 'é', 'Ã ': 'Á', 'Ã¡': 'á',
         'Ã“': 'Ó', 'Ã³': 'ó', 'Ãš': 'Ú', 'Ãº': 'ú', 'Ã ': 'Í', 'Ã­': 'í',
@@ -21,7 +23,6 @@ function corregirTexto(texto) {
         'â€œ': '"', 'â€': '"', 'Â´': "'", 'Ã': 'í', '³': 'ó', '±': 'ñ',
         'estÃ¡ndar': 'estándar', 'PerÃº': 'Perú'
     };
-    
     let textoCorregido = texto.toString();
     for (const [mal, bien] of Object.entries(reemplazos)) {
         textoCorregido = textoCorregido.replace(new RegExp(mal, 'g'), bien);
@@ -29,24 +30,7 @@ function corregirTexto(texto) {
     return textoCorregido;
 }
 
-function corregirTextoCSV(texto) {
-    if (!texto) return '';
-    let t = texto.toString();
-    const reemplazos = {
-        'Ã‘': 'Ñ', 'Ã±': 'ñ', 'Ã‰': 'É', 'Ã©': 'é', 'Ã ': 'Á', 'Ã¡': 'á',
-        'Ã“': 'Ó', 'Ã³': 'ó', 'Ãš': 'Ú', 'Ãº': 'ú', 'Ã ': 'Í', 'Ã­': 'í',
-        'Ãœ': 'Ü', 'Ã¼': 'ü', 'Ã€': 'À', 'Ã ': 'à', 'ÃŠ': 'Ê', 'Ãª': 'ê',
-        'Ã‡': 'Ç', 'Ã§': 'ç', 'Â¿': '¿', 'Â¡': '¡', 'Â°': '°', 'â€™': "'",
-        'â€œ': '"', 'â€': '"', 'Â´': "'", 'Ã': 'í', '³': 'ó', '±': 'ñ',
-        'estÃ¡ndar': 'estándar', 'PerÃº': 'Perú'
-    };
-    for (const [mal, bien] of Object.entries(reemplazos)) {
-        t = t.replace(new RegExp(mal, 'g'), bien);
-    }
-    return t;
-}
-
-// Definir proyecciones UTM
+// Proyecciones UTM
 proj4.defs([
     ['EPSG:32717', '+proj=utm +zone=17 +south +datum=WGS84 +units=m +no_defs'],
     ['EPSG:32718', '+proj=utm +zone=18 +south +datum=WGS84 +units=m +no_defs'],
@@ -74,12 +58,6 @@ const baseURL = window.location.hostname.includes('github.io')
     : '';
 
 const fechaHoy = new Date();
-const dia = fechaHoy.getDate().toString().padStart(2, '0');
-const mes = (fechaHoy.getMonth() + 1).toString().padStart(2, '0');
-const anio = fechaHoy.getFullYear().toString().slice(-2);
-const fechaStr = `${dia}${mes}${anio}`;
-console.log(`📅 Fecha actual: ${fechaStr}`);
-
 const fechasUltimosDias = [];
 for (let i = 0; i < 10; i++) {
     const fecha = new Date();
@@ -89,89 +67,34 @@ for (let i = 0; i < 10; i++) {
     const a = fecha.getFullYear().toString().slice(-2);
     fechasUltimosDias.push(`${d}${m}${a}`);
 }
-console.log(`📅 Buscando en fechas: ${fechasUltimosDias.join(', ')}`);
 
-function obtenerHorariosActuales() {
-    const ahora = new Date();
-    const horaUTC = ahora.getUTCHours();
-    const minutoUTC = ahora.getUTCMinutes();
-    const horaPeru = (horaUTC - 5 + 24) % 24;
-    
-    const horarios = [];
-    for (let i = 0; i < 24; i++) {
-        horarios.push(i.toString().padStart(2, '0'));
-    }
-    
-    let horarioActual = '23';
-    for (let i = horarios.length - 1; i >= 0; i--) {
-        if (horaUTC >= parseInt(horarios[i])) {
-            horarioActual = horarios[i];
-            break;
-        }
-    }
-    
-    const indexActual = horarios.indexOf(horarioActual);
-    const horarioAnterior = indexActual > 0 ? horarios[indexActual - 1] : horarios[horarios.length - 1];
-    
-    console.log(`Hora Perú: ${horaPeru}:${minutoUTC.toString().padStart(2, '0')}`);
-    
-    return { actual: horarioActual, anterior: horarioAnterior };
-}
-
-const horarios = obtenerHorariosActuales();
 const zonas = ['17s', '18s', '19s'];
 
 const COLORES = {
     SIN_CAMBIO: '#888888',
     APARECE: '#4444ff',
-    DESAPARECE: '#ff4444',
-    HISTORICO_APARECE: '#44ff44',
-    HISTORICO_DESAPARECE: '#ff44ff'
+    DESAPARECE: '#ff4444'
 };
 
+// ============================================================
+// INICIALIZAR MAPA
+// ============================================================
 function initMap() {
     console.log('🗺️ Inicializando mapa...');
     map = L.map('map').setView([-9.5, -75], 6);
     
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
         attribution: '&copy; OpenStreetMap'
     }).addTo(map);
     
-    agregarBotonesPersonalizados();
-    agregarBotonMonitoreo();
     cargarAreaMonitoreada();
     cargarDatos();
     cargarCambios();
-    cargarHistorialMensual();
 }
 
-function agregarBotonesPersonalizados() {
-    const contenedor = document.querySelector('.carga-archivos');
-    if (!contenedor) return;
-    
-    const btnDibujar = document.createElement('button');
-    btnDibujar.textContent = '✏️ Dibujar área';
-    btnDibujar.style.marginTop = '10px';
-    btnDibujar.style.backgroundColor = '#2196F3';
-    btnDibujar.onclick = activarDibujoRectangulo;
-    
-    const btnCSV = document.createElement('button');
-    btnCSV.textContent = '📥 Descargar CSV del área';
-    btnCSV.style.marginTop = '10px';
-    btnCSV.style.backgroundColor = '#4CAF50';
-    btnCSV.onclick = descargarCSVArea;
-    
-    const btnLimpiar = document.createElement('button');
-    btnLimpiar.textContent = '🗑️ Limpiar dibujo';
-    btnLimpiar.style.marginTop = '10px';
-    btnLimpiar.style.backgroundColor = '#ff4444';
-    btnLimpiar.onclick = limpiarDibujo;
-    
-    contenedor.appendChild(btnDibujar);
-    contenedor.appendChild(btnCSV);
-    contenedor.appendChild(btnLimpiar);
-}
-
+// ============================================================
+// CARGAR DATOS
+// ============================================================
 async function cargarDatos() {
     console.log('📥 Cargando datos...');
     let cambiosMap = new Map();
@@ -209,16 +132,13 @@ async function cargarDatos() {
         }
         
         if (datosCargados) {
-            // ============================================================
-            // CONVERTIR TODOS LOS POLÍGONOS DE UTM A WGS84
-            // ============================================================
             const featuresWGS84 = datosCargados.features.map(feature => {
                 if (feature.geometry && feature.geometry.type === 'Polygon') {
                     try {
                         const coords = feature.geometry.coordinates[0];
                         const coordsWGS84 = coords.map(c => {
                             const [lat, lon] = convertirUTM_A_WGS84(c[0], c[1], zona);
-                            return [lon, lat]; // GeoJSON usa [lon, lat]
+                            return [lon, lat];
                         });
                         return {
                             ...feature,
@@ -228,7 +148,6 @@ async function cargarDatos() {
                             }
                         };
                     } catch (e) {
-                        console.warn('Error convirtiendo feature:', e);
                         return feature;
                     }
                 }
@@ -264,66 +183,12 @@ async function cargarDatos() {
                     layer.on('click', () => {
                         cerrarPopup();
                         const props = feature.properties;
-                        const codigo = props.CODIGOU;
-                        
-                        function mostrarPopup(fecha) {
-                            let fechaMostrar = fecha || 'N/A';
-                            if (fechaMostrar !== 'N/A' && fechaMostrar.includes('GMT')) {
-                                try {
-                                    const date = new Date(fechaMostrar);
-                                    fechaMostrar = date.toLocaleDateString('es-PE', {
-                                        year: 'numeric',
-                                        month: 'long',
-                                        day: 'numeric'
-                                    });
-                                } catch (e) {
-                                    fechaMostrar = fecha || 'N/A';
-                                }
-                            }
-                            
-                            document.getElementById('info-codigo').textContent = corregirTexto(codigo || 'N/A');
-                            document.getElementById('info-fecha').textContent = fechaMostrar;
-                            document.getElementById('info-concesion').textContent = corregirTexto(props.CONCESION || 'N/A');
-                            document.getElementById('info-titular').textContent = corregirTexto(props.TIT_CONCES || 'N/A');
-                            document.getElementById('info-popup').style.display = 'block';
-                            popupAbierto = true;
-                        }
-                        
-                        let fecha = props.FEC_DENU || '';
-                        if (fecha && fecha !== '') {
-                            mostrarPopup(fecha);
-                            return;
-                        }
-                        
-                        const mes = (new Date().getMonth() + 1).toString().padStart(2, '0');
-                        const anio = new Date().getFullYear();
-                        
-                        fetch(`${baseURL}/data/desaparecidos_${mes}_${anio}.geojson`)
-                            .then(r => {
-                                if (!r.ok) throw new Error('No existe');
-                                return r.json();
-                            })
-                            .then(d => {
-                                const f = d.features.find(f => f.properties.CODIGOU.trim() === codigo.trim());
-                                if (f && f.properties.FEC_DENU) {
-                                    mostrarPopup(f.properties.FEC_DENU);
-                                } else {
-                                    fetch(`${baseURL}/data/aparecidos_${mes}_${anio}.geojson`)
-                                        .then(r => r.json())
-                                        .then(d2 => {
-                                            const f2 = d2.features.find(f => f.properties.CODIGOU.trim() === codigo.trim());
-                                            if (f2 && f2.properties.FEC_DENU) {
-                                                mostrarPopup(f2.properties.FEC_DENU);
-                                            } else {
-                                                mostrarPopup('N/A');
-                                            }
-                                        })
-                                        .catch(() => mostrarPopup('N/A'));
-                                }
-                            })
-                            .catch(() => {
-                                mostrarPopup('N/A');
-                            });
+                        document.getElementById('info-codigo').textContent = corregirTexto(props.CODIGOU || 'N/A');
+                        document.getElementById('info-fecha').textContent = props.FEC_DENU || 'N/A';
+                        document.getElementById('info-concesion').textContent = corregirTexto(props.CONCESION || 'N/A');
+                        document.getElementById('info-titular').textContent = corregirTexto(props.TIT_CONCES || 'N/A');
+                        document.getElementById('info-popup').style.display = 'block';
+                        popupAbierto = true;
                     });
                 }
             }).addTo(map);
@@ -332,38 +197,9 @@ async function cargarDatos() {
     }
 }
 
-async function cargarHistorialMensual() {
-    try {
-        const mesActual = fechaHoy.getFullYear() + (fechaHoy.getMonth() + 1).toString().padStart(2, '0');
-        const response = await fetch(`${baseURL}/data/historial_${mesActual}.geojson`);
-        
-        if (response.ok) {
-            const historial = await response.json();
-            datosHistoricos = historial.features;
-            
-            L.geoJSON(historial, {
-                coordsToLatLng: (coords) => {
-                    const [lat, lon] = convertirUTM_A_WGS84(coords[0], coords[1], '17s');
-                    return L.latLng(lat, lon);
-                },
-                style: (feature) => ({
-                    color: feature.properties.TIPO_CAMBIO === 'aparece' ? COLORES.HISTORICO_APARECE : COLORES.HISTORICO_DESAPARECE,
-                    weight: 2,
-                    opacity: 0.7,
-                    fillOpacity: 0.1,
-                    dashArray: '5,5'
-                }),
-                onEachFeature: (feature, layer) => {
-                    layer.bindPopup(`
-                        <b>${corregirTexto(feature.properties.CONCESION)}</b><br>
-                        ${feature.properties.TIPO_CAMBIO} el ${feature.properties.FECHA_CAMBIO}
-                    `);
-                }
-            }).addTo(map);
-        }
-    } catch (error) {}
-}
-
+// ============================================================
+// CARGAR CAMBIOS
+// ============================================================
 async function cargarCambios() {
     try {
         const response = await fetch(`${baseURL}/data/cambios.json`);
@@ -392,15 +228,6 @@ async function cargarCambios() {
 }
 
 async function buscarYCentrarPoligono(codigo, nombre, tipo) {
-    console.log(`🔍 Buscando: ${codigo} - ${nombre} (${tipo})`);
-    
-    const ahora = new Date();
-    const mes = (ahora.getMonth() + 1).toString().padStart(2, '0');
-    const anio = ahora.getFullYear();
-    
-    // ============================================================
-    // PASO 1: Buscar PRIMERO en el archivo mensual (desaparecidos/ aparecidos)
-    // ============================================================
     const archivoMensual = `${tipo === 'desaparece' ? 'desaparecidos' : 'aparecidos'}_7d.geojson`;
     
     try {
@@ -410,25 +237,12 @@ async function buscarYCentrarPoligono(codigo, nombre, tipo) {
             const feature = geojson.features.find(f => f.properties.CODIGOU === codigo);
             
             if (feature && feature.geometry) {
-                console.log(`✅ Encontrado en archivo mensual: ${archivoMensual}`);
                 let lat, lon;
-                
-                if (feature.geometry.type === 'Polygon') {
-                    const coords = feature.geometry.coordinates[0];
-                    let sumLon = 0, sumLat = 0;
-                    coords.forEach(c => {
-                        sumLon += c[0];
-                        sumLat += c[1];
-                    });
-                    lon = sumLon / coords.length;
-                    lat = sumLat / coords.length;
-                } else if (feature.geometry.type === 'Point') {
-                    lon = feature.geometry.coordinates[0];
-                    lat = feature.geometry.coordinates[1];
-                } else {
-                    mostrarMensaje(`Geometría no soportada: ${nombre}`, 'error');
-                    return;
-                }
+                const coords = feature.geometry.coordinates[0];
+                let sumLon = 0, sumLat = 0;
+                coords.forEach(c => { sumLon += c[0]; sumLat += c[1]; });
+                lon = sumLon / coords.length;
+                lat = sumLat / coords.length;
                 
                 map.setView([lat, lon], 14);
                 
@@ -442,84 +256,30 @@ async function buscarYCentrarPoligono(codigo, nombre, tipo) {
                 }).addTo(map);
                 
                 mostrarMensaje(`📍 Centrando: ${corregirTexto(nombre)}`, 'exito');
-                cerrarPopup();
-                return;
             }
         }
-    } catch (error) {
-        console.log('No encontrado en archivo mensual, buscando en diarios...');
-    }
-    
-    // ============================================================
-    // PASO 2: Si no está en mensual, buscar en archivos diarios (respaldo)
-    // ============================================================
-    const fechaStr = ahora.toLocaleDateString('es-ES', {
-        day: '2-digit', month: '2-digit', year: '2-digit'
-    }).replace(/\//g, '');
-    
-    for (const zona of zonas) {
-        for (let h = 23; h >= 0; h--) {
-            const hora = h.toString().padStart(2, '0');
-            const url = `${baseURL}/data/${zona}_${fechaStr}_${hora}.geojson`;
-            try {
-                const response = await fetch(url);
-                if (response.ok) {
-                    const geojson = await response.json();
-                    const feature = geojson.features.find(f => f.properties.CODIGOU === codigo);
-                    
-                    if (feature && feature.geometry) {
-                        let sumX = 0, sumY = 0;
-                        let coords = [];
-                        
-                        if (feature.geometry.type === 'Polygon') {
-                            coords = feature.geometry.coordinates[0];
-                        } else if (feature.geometry.type === 'MultiPolygon') {
-                            coords = feature.geometry.coordinates[0][0];
-                        }
-                        
-                        coords.forEach(c => {
-                            sumX += c[0];
-                            sumY += c[1];
-                        });
-                        
-                        const centerX = sumX / coords.length;
-                        const centerY = sumY / coords.length;
-                        const [lat, lon] = convertirUTM_A_WGS84(centerX, centerY, zona);
-                        
-                        map.setView([lat, lon], 14);
-                        
-                        if (capaDibujo) map.removeLayer(capaDibujo);
-                        capaDibujo = L.circleMarker([lat, lon], {
-                            color: tipo === 'desaparece' ? '#ff4444' : '#4444ff',
-                            radius: 15,
-                            weight: 3,
-                            opacity: 1,
-                            fillOpacity: 0.3
-                        }).addTo(map);
-                        
-                        mostrarMensaje(`📍 Centrando: ${corregirTexto(nombre)}`, 'exito');
-                        cerrarPopup();
-                        return;
-                    }
-                }
-            } catch (e) {}
-        }
-    }
-    
-    mostrarMensaje(`No se encontró el polígono: ${nombre}`, 'error');
+    } catch (error) {}
 }
 
+// ============================================================
+// BUSCADOR
+// ============================================================
 async function buscarConcesion() {
     const texto = document.getElementById('buscador').value.trim().toLowerCase();
-    if (!texto) return;
+    if (!texto || texto.length < 2) {
+        mostrarMensaje('Ingresa al menos 2 caracteres', 'info');
+        return;
+    }
     
     const resultados = [];
     for (const zonaData of todosLosDatos) {
         for (const feature of zonaData.features) {
             const props = feature.properties;
-            if ((props.CONCESION || '').toLowerCase().includes(texto) ||
-                (props.TIT_CONCES || '').toLowerCase().includes(texto) ||
-                (props.CODIGOU || '').toLowerCase().includes(texto)) {
+            const conc = (props.CONCESION || '').toLowerCase();
+            const tit = (props.TIT_CONCES || '').toLowerCase();
+            const cod = (props.CODIGOU || '').toLowerCase();
+            
+            if (conc.includes(texto) || tit.includes(texto) || cod.includes(texto)) {
                 resultados.push({...feature, zona: zonaData.zona});
             }
         }
@@ -527,6 +287,7 @@ async function buscarConcesion() {
     
     const div = document.getElementById('resultados-busqueda');
     div.innerHTML = '';
+    
     if (resultados.length === 0) {
         div.innerHTML = '<div class="resultado-item">No se encontraron resultados</div>';
         return;
@@ -535,92 +296,66 @@ async function buscarConcesion() {
     resultados.slice(0, 20).forEach(r => {
         const item = document.createElement('div');
         item.className = 'resultado-item';
-        item.style.cursor = 'pointer';
         item.textContent = `${corregirTexto(r.properties.CONCESION)} - ${corregirTexto(r.properties.TIT_CONCES)}`;
         item.onclick = () => {
-            if (r.geometry.type === 'Polygon') {
-                const coords = r.geometry.coordinates[0];
-                let sumX = 0, sumY = 0;
-                coords.forEach(c => { sumX += c[0]; sumY += c[1]; });
-                const [lat, lon] = convertirUTM_A_WGS84(sumX/coords.length, sumY/coords.length, r.zona);
-                map.setView([lat, lon], 14);
-                cerrarPopup();
-            }
+            const coords = r.geometry.coordinates[0];
+            let sumLat = 0, sumLon = 0;
+            coords.forEach(c => { sumLat += c[1]; sumLon += c[0]; });
+            map.setView([sumLat/coords.length, sumLon/coords.length], 14);
         };
         div.appendChild(item);
     });
 }
 
-async function cargarArchivo() {
-    const input = document.getElementById('archivo-input');
-    const archivo = input.files[0];
-    if (!archivo) return;
-    
-    const extension = archivo.name.split('.').pop().toLowerCase();
-    
-    if (extension === 'geojson' || extension === 'json') {
-        const reader = new FileReader();
-        reader.onload = (e) => {
-            try {
-                const geojson = JSON.parse(e.target.result);
-                mostrarAreaInteres(geojson);
-                mostrarMensaje(`✅ GeoJSON cargado`, 'exito');
-            } catch (error) {
-                mostrarMensaje('Error al leer GeoJSON', 'error');
-            }
-        };
-        reader.readAsText(archivo);
-    } else if (extension === 'kml') {
-        mostrarMensaje('KML: conviértelo a GeoJSON en https://kml2geojson.netlify.app/', 'info');
-    } else if (extension === 'kmz') {
-        mostrarMensaje('KMZ: extrae y convierte a GeoJSON', 'info');
-    } else {
-        mostrarMensaje('Use GeoJSON', 'error');
-    }
-}
-
-function mostrarAreaInteres(geojson) {
-    if (capaAreaInteres) map.removeLayer(capaAreaInteres);
-    
-    capaAreaInteres = L.geoJSON(geojson, {
-        style: { color: '#44ff44', weight: 3, opacity: 0.8, fillOpacity: 0.1, dashArray: '5,10' }
-    }).addTo(map);
-    
-    map.fitBounds(capaAreaInteres.getBounds());
-    mostrarMensaje(`✅ Área cargada`, 'exito');
-}
-
+// ============================================================
+// DIBUJAR ÁREA (SOLO RECTÁNGULO CON 2 CLICS)
+// ============================================================
 let dibujando = false;
 let puntoInicio = null;
 
 function activarDibujoRectangulo() {
+    if (dibujando) {
+        mostrarMensaje('Ya estás dibujando. Haz clic en el mapa.', 'info');
+        return;
+    }
+    
     dibujando = true;
     puntoInicio = null;
     map.getContainer().style.cursor = 'crosshair';
-    mostrarMensaje('Haz clic para iniciar el rectángulo', 'info');
+    mostrarMensaje('Haz clic en la primera esquina del área', 'info');
     
-    const clickHandler = (e) => {
+    map.off('click');
+    map.on('click', function dibujarHandler(e) {
         if (!dibujando) return;
+        
         if (!puntoInicio) {
             puntoInicio = e.latlng;
             mostrarMensaje('Ahora haz clic en la esquina opuesta', 'info');
         } else {
             const bounds = L.latLngBounds(puntoInicio, e.latlng);
             if (capaDibujo) map.removeLayer(capaDibujo);
+            
             capaDibujo = L.rectangle(bounds, {
                 color: '#ff44ff',
                 weight: 3,
                 opacity: 0.8,
                 fillOpacity: 0.2
             }).addTo(map);
+            
             rectanguloDibujo = bounds;
+            areaMonitoreada = bounds;
             dibujando = false;
+            puntoInicio = null;
             map.getContainer().style.cursor = '';
-            map.off('click', clickHandler);
-            mostrarMensaje('Área dibujada', 'exito');
+            map.off('click', dibujarHandler);
+            
+            document.getElementById('area-info').style.display = 'block';
+            document.getElementById('area-coords').textContent = 
+                `SW: ${bounds.getSouthWest().lat.toFixed(4)}, ${bounds.getSouthWest().lng.toFixed(4)} | NE: ${bounds.getNorthEast().lat.toFixed(4)}, ${bounds.getNorthEast().lng.toFixed(4)}`;
+            
+            mostrarMensaje('✅ Área dibujada correctamente', 'exito');
         }
-    };
-    map.on('click', clickHandler);
+    });
 }
 
 function limpiarDibujo() {
@@ -630,296 +365,105 @@ function limpiarDibujo() {
         rectanguloDibujo = null;
     }
     dibujando = false;
+    puntoInicio = null;
     map.getContainer().style.cursor = '';
     map.off('click');
-    mostrarMensaje('Dibujo limpiado', 'info');
+    areaMonitoreada = null;
+    document.getElementById('area-info').style.display = 'none';
+    document.getElementById('status-monitoreo').classList.remove('activo');
+    mostrarMensaje('🗑️ Dibujo limpiado', 'info');
 }
 
-async function descargarCSVArea() {
-    if (!rectanguloDibujo) {
-        mostrarMensaje('Primero dibuja un área', 'error');
-        return;
-    }
-    
-    mostrarMensaje('📥 Cargando datos para el CSV...', 'info');
-    
-    // ============================================================
-    // CARGAR TODAS LAS CONCESIONES DE TODOS LOS ARCHIVOS DISPONIBLES
-    // ============================================================
-    let todasLasConcesiones = [];
-    const zonas = ['17s', '18s', '19s'];
-    
-    // Obtener fechas de los últimos 10 días
-    const fechas = [];
-    for (let i = 0; i < 10; i++) {
-        const fecha = new Date();
-        fecha.setDate(fecha.getDate() - i);
-        const d = fecha.getDate().toString().padStart(2, '0');
-        const m = (fecha.getMonth() + 1).toString().padStart(2, '0');
-        const a = fecha.getFullYear().toString().slice(-2);
-        fechas.push(`${d}${m}${a}`);
-    }
-    
-    console.log('📅 Buscando en fechas:', fechas.join(', '));
-    
-    for (const zona of zonas) {
-        for (const fecha of fechas) {
-            for (let h = 23; h >= 0; h--) {
-                const hora = h.toString().padStart(2, '0');
-                const url = `${baseURL}/data/${zona}_${fecha}_${hora}.geojson`;
-                try {
-                    const response = await fetch(url);
-                    if (response.ok) {
-                        const geojson = await response.json();
-                        console.log(`✅ Cargado: ${zona}_${fecha}_${hora}.geojson (${geojson.features.length} features)`);
-                        
-                        geojson.features.forEach(feature => {
-                            if (feature.geometry && feature.geometry.type === 'Polygon') {
-                                todasLasConcesiones.push({
-                                    ...feature,
-                                    zona: zona,
-                                    fecha: fecha,
-                                    hora: hora
-                                });
-                            }
-                        });
-                        break; // Salir del bucle de horas si encontramos un archivo
-                    }
-                } catch (e) {}
-            }
-        }
-    }
-    
-    console.log(`📊 Total de concesiones cargadas: ${todasLasConcesiones.length}`);
-    
-    if (todasLasConcesiones.length === 0) {
-        mostrarMensaje('❌ No se encontraron datos. Intenta más tarde.', 'error');
-        return;
-    }
-    
-    // ============================================================
-    // FILTRAR CONCESIONES DENTRO DEL ÁREA
-    // ============================================================
-    const poligonosEnArea = [];
-    
-    for (const feature of todasLasConcesiones) {
-        try {
-            const coords = feature.geometry.coordinates[0];
-            let sumX = 0, sumY = 0;
-            coords.forEach(c => {
-                sumX += c[0];
-                sumY += c[1];
-            });
-            const centerX = sumX / coords.length;
-            const centerY = sumY / coords.length;
-            
-            // Convertir a WGS84 si es UTM
-            let lat, lon;
-            if (centerX > 100000 || centerY > 100000) {
-                let zona = feature.zona || '18s';
-                const epsg = zona === '17s' ? 'EPSG:32717' : 
-                            (zona === '18s' ? 'EPSG:32718' : 'EPSG:32719');
-                try {
-                    const [lonWGS, latWGS] = proj4(epsg, 'EPSG:4326', [centerX, centerY]);
-                    lat = latWGS;
-                    lon = lonWGS;
-                } catch (e) {
-                    lat = centerY;
-                    lon = centerX;
-                }
-            } else {
-                lat = centerY;
-                lon = centerX;
-            }
-            
-            if (rectanguloDibujo.contains([lat, lon])) {
-                // ============================================================
-                // EXTRAER VÉRTICES DEL POLÍGONO Y CONVERTIR A WGS84
-                // ============================================================
-                let vertices = [];
-                const polygonCoords = feature.geometry.coordinates[0];
-                
-                for (const coord of polygonCoords) {
-                    let vLat, vLon;
-                    if (coord[0] > 100000 || coord[1] > 100000) {
-                        let zona = feature.zona || '18s';
-                        const epsg = zona === '17s' ? 'EPSG:32717' : 
-                                    (zona === '18s' ? 'EPSG:32718' : 'EPSG:32719');
-                        try {
-                            const [lonWGS, latWGS] = proj4(epsg, 'EPSG:4326', [coord[0], coord[1]]);
-                            vLat = latWGS;
-                            vLon = lonWGS;
-                        } catch (e) {
-                            vLat = coord[1];
-                            vLon = coord[0];
-                        }
-                    } else {
-                        vLat = coord[1];
-                        vLon = coord[0];
-                    }
-                    vertices.push(`${vLon.toFixed(6)},${vLat.toFixed(6)}`);
-                }
-                
-                poligonosEnArea.push({
-                    ...feature.properties,
-                    VERTICES: vertices.join(';')
-                });
-            }
-        } catch (e) {
-            console.warn('Error procesando feature:', e);
-        }
-    }
-    
-    console.log(`📍 Concesiones en el área: ${poligonosEnArea.length}`);
-    
-    if (poligonosEnArea.length === 0) {
-        mostrarMensaje('📭 No hay concesiones en el área dibujada', 'info');
-        return;
-    }
-    
-    // ============================================================
-    // GENERAR CSV CON COLUMNA DE VÉRTICES
-    // ============================================================
-    let csv = 'CODIGOU;FEC_DENU;CONCESION;TIT_CONCES;VERTICES\n';
-    poligonosEnArea.forEach(p => {
-        const codigo = (p.CODIGOU || '').replace(/"/g, '""');
-        const fecha = (p.FEC_DENU || '').replace(/"/g, '""');
-        const concesion = (p.CONCESION || '').replace(/"/g, '""');
-        const titular = (p.TIT_CONCES || '').replace(/"/g, '""');
-        const vertices = (p.VERTICES || '').replace(/"/g, '""');
-        
-        csv += `"${codigo}";"${fecha}";"${concesion}";"${titular}";"${vertices}"\n`;
-    });
-    
-    // ============================================================
-    // DESCARGAR CSV
-    // ============================================================
-    const blob = new Blob(["\uFEFF" + csv], { type: 'text/csv;charset=utf-8;' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `concesiones_area_${new Date().toISOString().slice(0,10)}.csv`;
-    a.click();
-    URL.revokeObjectURL(url);
-    
-    mostrarMensaje(`✅ ${poligonosEnArea.length} concesiones exportadas con vértices`, 'exito');
-}
-
-function cerrarPopup() {
-    document.getElementById('info-popup').style.display = 'none';
-    popupAbierto = false;
-}
-
-function buscarCoordenadas() {
-    const texto = document.getElementById('coordenadas-texto').value;
-    if (texto) {
-        const parts = texto.split(',').map(Number);
-        if (parts.length === 2) {
-            map.setView([parts[0], parts[1]], 12);
-            if (marcadorBusqueda) map.removeLayer(marcadorBusqueda);
-            marcadorBusqueda = L.marker([parts[0], parts[1]]).addTo(map);
-            cerrarPopup();
-        }
-    }
-}
-
-function mostrarMensaje(texto, tipo = 'info') {
-    const msgDiv = document.getElementById('mensaje-emergente');
-    if (!msgDiv) return;
-    msgDiv.textContent = texto;
-    msgDiv.style.backgroundColor = tipo === 'error' ? '#ff4444' : (tipo === 'exito' ? '#4CAF50' : '#333');
-    msgDiv.style.display = 'block';
-    setTimeout(() => { msgDiv.style.display = 'none'; }, 4000);
-}
-
+// ============================================================
 // MONITOREO
-let areaMonitoreada = null;
-let ultimosCambiosEnviados = new Set();
-
+// ============================================================
 function guardarAreaParaMonitoreo() {
     if (!rectanguloDibujo) {
         mostrarMensaje('Primero dibuja un área', 'error');
         return;
     }
     
-    const bounds = rectanguloDibujo.toBBoxString();
     const sw = rectanguloDibujo.getSouthWest();
     const ne = rectanguloDibujo.getNorthEast();
     
-    // Guardar en localStorage (para el visor)
-    localStorage.setItem('areaMonitoreada', bounds);
-    localStorage.setItem('areaMonitoreadaSW', JSON.stringify({lat: sw.lat, lng: sw.lng}));
-    localStorage.setItem('areaMonitoreadaNE', JSON.stringify({lat: ne.lat, lng: ne.lng}));
-    areaMonitoreada = rectanguloDibujo;
-    
-    // Guardar en un archivo JSON en el servidor (para el script de Node.js)
     const areaData = {
         sw: { lat: sw.lat, lng: sw.lng },
         ne: { lat: ne.lat, lng: ne.lng },
-        bounds: bounds,
+        bounds: rectanguloDibujo.toBBoxString(),
         fecha: new Date().toISOString()
     };
     
-    // Enviar el área al servidor para guardarla
-    fetch('/guardar-area', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(areaData)
-    }).then(response => {
-        if (response.ok) {
-            console.log('✅ Área guardada en el servidor');
-        } else {
-            console.log('⚠️ No se pudo guardar el área en el servidor');
-        }
-    }).catch(err => {
-        console.log('⚠️ Error al guardar el área:', err);
-    });
+    localStorage.setItem('areaMonitoreada', JSON.stringify(areaData));
+    areaMonitoreada = rectanguloDibujo;
     
-    mostrarMensaje('✅ Área guardada para monitoreo', 'exito');
+    document.getElementById('status-monitoreo').classList.add('activo');
+    document.getElementById('monitoreo-info').textContent = `Área: ${areaData.bounds}`;
     
-    const email = prompt('Ingresa tu correo para recibir alertas:');
+    mostrarMensaje('✅ Área guardada. Ahora ingresa tu correo.', 'exito');
+    
+    const emailGuardado = localStorage.getItem('emailAlertas');
+    const email = prompt('Ingresa tu correo para recibir alertas:', emailGuardado || '');
+    
     if (email && email.includes('@')) {
         localStorage.setItem('emailAlertas', email);
         mostrarMensaje(`📧 Alertas se enviarán a: ${email}`, 'exito');
-    }
-}
-function cargarAreaMonitoreada() {
-    const boundsString = localStorage.getItem('areaMonitoreada');
-    if (boundsString) {
-        const [minx, miny, maxx, maxy] = boundsString.split(',').map(Number);
-        const bounds = L.latLngBounds([miny, minx], [maxy, maxx]);
-        areaMonitoreada = bounds;
-        capaDibujo = L.rectangle(bounds, {
-            color: '#ff44ff', weight: 3, opacity: 0.8, fillOpacity: 0.2
-        }).addTo(map);
-        rectanguloDibujo = bounds;
-        mostrarMensaje('📌 Área de monitoreo cargada', 'info');
+    } else {
+        mostrarMensaje('⚠️ No se guardó el correo', 'error');
     }
 }
 
+function cargarAreaMonitoreada() {
+    const areaStr = localStorage.getItem('areaMonitoreada');
+    if (areaStr) {
+        try {
+            const areaData = JSON.parse(areaStr);
+            const bounds = L.latLngBounds(
+                [areaData.sw.lat, areaData.sw.lng],
+                [areaData.ne.lat, areaData.ne.lng]
+            );
+            areaMonitoreada = bounds;
+            rectanguloDibujo = bounds;
+            
+            capaDibujo = L.rectangle(bounds, {
+                color: '#ff44ff',
+                weight: 3,
+                opacity: 0.8,
+                fillOpacity: 0.2
+            }).addTo(map);
+            
+            document.getElementById('area-info').style.display = 'block';
+            document.getElementById('area-coords').textContent = 
+                `SW: ${bounds.getSouthWest().lat.toFixed(4)}, ${bounds.getSouthWest().lng.toFixed(4)} | NE: ${bounds.getNorthEast().lat.toFixed(4)}, ${bounds.getNorthEast().lng.toFixed(4)}`;
+            
+            document.getElementById('status-monitoreo').classList.add('activo');
+            document.getElementById('monitoreo-info').textContent = `Área: ${areaData.bounds}`;
+            
+            mostrarMensaje('📌 Área de monitoreo cargada', 'info');
+        } catch (e) {}
+    }
+}
+
+// ============================================================
+// VERIFICAR CAMBIOS Y ENVIAR ALERTA
+// ============================================================
 async function verificarCambiosYEnviarAlerta() {
     if (!areaMonitoreada) {
-        mostrarMensaje('Primero dibuja un área y actívala con "🔔 Monitorear esta área"', 'error');
+        mostrarMensaje('Primero dibuja un área y actívala con "🔔 Monitorear"', 'error');
         return;
     }
     
     const email = localStorage.getItem('emailAlertas');
     if (!email) {
-        mostrarMensaje('No hay correo guardado. Configura primero el monitoreo.', 'error');
+        mostrarMensaje('No hay correo guardado. Configura el monitoreo primero.', 'error');
         return;
     }
     
-    mostrarMensaje('🔍 Verificando cambios en el área...', 'info');
+    mostrarMensaje('🔍 Verificando cambios...', 'info');
     
     try {
         const response = await fetch(`${baseURL}/data/cambios.json`);
         if (!response.ok) throw new Error('Error al cargar cambios');
         const cambios = await response.json();
-        
-        console.log(`📊 Cambios totales: ${cambios.length}`);
-        console.log(`📦 Área: ${areaMonitoreada.toBBoxString()}`);
         
         function calcularCentro(feature) {
             if (!feature.geometry) return null;
@@ -929,23 +473,18 @@ async function verificarCambiosYEnviarAlerta() {
                 coords = feature.geometry.coordinates[0];
             } else if (feature.geometry.type === 'MultiPolygon') {
                 coords = feature.geometry.coordinates[0][0];
-            } else if (feature.geometry.type === 'Point') {
-                return { lat: feature.geometry.coordinates[1], lon: feature.geometry.coordinates[0] };
             }
             
             if (!coords || coords.length === 0) return null;
             
             let sumX = 0, sumY = 0;
-            coords.forEach(c => {
-                sumX += c[0];
-                sumY += c[1];
-            });
+            coords.forEach(c => { sumX += c[0]; sumY += c[1]; });
             
             const avgX = sumX / coords.length;
             const avgY = sumY / coords.length;
             
             if (avgX > 100000 || avgY > 100000) {
-                let zona;
+                let zona = '18s';
                 if (avgX >= 1000000) zona = '19s';
                 else if (avgX >= 700000) zona = '18s';
                 else zona = '17s';
@@ -982,13 +521,10 @@ async function verificarCambiosYEnviarAlerta() {
                             nombre: feature.properties.CONCESION || cambio.nombre,
                             geometry: feature.geometry
                         });
-                        console.log(`✅ ${cambio.nombre}: [${centro.lat}, ${centro.lon}] → DENTRO`);
                     }
                 }
             }
         }
-        
-        console.log(`📊 Cambios en el área: ${cambiosEnArea.length}`);
         
         if (cambiosEnArea.length === 0) {
             mostrarMensaje('📭 No hay cambios en el área monitoreada', 'info');
@@ -1025,25 +561,17 @@ async function verificarCambiosYEnviarAlerta() {
         mensajeTexto += `\n🔗 Visor: https://coach0123.github.io/visor-concesiones-mineras/`;
         mensajeTexto += `\n📅 ${new Date().toLocaleString('es-PE')}`;
         
-        // ============================================================
-        // ENVIAR CORREO CON FETCH (NO usa emailjs.send)
-        // ============================================================
         try {
-            console.log('📧 Enviando correo a:', email);
-            console.log('📧 Template: template_visor_alertas1');
-            
             const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     service_id: 'service_gmail_visor',
                     template_id: 'template_visor_alertas1',
                     user_id: '_PBGYuyGPuKRPK-_F',
                     template_params: {
                         to_email: email,
-                        name: 'Visor de Concesiones Mineras',
+                        name: 'Wvisor',
                         message: mensajeTexto,
                         total: total,
                         date: new Date().toLocaleString('es-PE')
@@ -1051,21 +579,13 @@ async function verificarCambiosYEnviarAlerta() {
                 })
             });
             
-            const responseText = await response.text();
-            console.log('📧 Respuesta del servidor:', response.status, responseText);
-            
             if (response.ok) {
-                console.log('✅ Correo enviado exitosamente');
                 mostrarMensaje(`📧 Correo enviado con ${total} cambios en el área`, 'exito');
             } else {
-                console.error('❌ Error en el envío:');
-                console.error('  - Código:', response.status);
-                console.error('  - Detalle:', responseText);
                 mostrarMensaje('Error al enviar correo. Revisa la consola.', 'error');
             }
         } catch (emailError) {
-            console.error('❌ Error de red:', emailError);
-            mostrarMensaje('Error de conexión.', 'error');
+            mostrarMensaje('Error de conexión al enviar correo.', 'error');
         }
         
     } catch (error) {
@@ -1074,40 +594,486 @@ async function verificarCambiosYEnviarAlerta() {
     }
 }
 
-
-function agregarBotonMonitoreo() {
-    const contenedor = document.querySelector('.carga-archivos');
-    if (!contenedor) return;
+// ============================================================
+// GENERAR INFORME HTML AUTÓNOMO
+// ============================================================
+async function generarInforme(fecha) {
+    if (!areaMonitoreada) {
+        mostrarMensaje('Primero dibuja un área', 'error');
+        return;
+    }
     
-    const btnMonitorear = document.createElement('button');
-    btnMonitorear.textContent = '🔔 Monitorear esta área';
-    btnMonitorear.style.marginTop = '10px';
-    btnMonitorear.style.backgroundColor = '#FF9800';
-    btnMonitorear.onclick = guardarAreaParaMonitoreo;
+    mostrarMensaje('📊 Generando informe...', 'info');
     
-    const btnVerificar = document.createElement('button');
-    btnVerificar.textContent = '📧 Verificar cambios ahora';
-    btnVerificar.style.marginTop = '10px';
-    btnVerificar.style.backgroundColor = '#9C27B0';
-    btnVerificar.onclick = verificarCambiosYEnviarAlerta;
-    
-    const btnCancelar = document.createElement('button');
-    btnCancelar.textContent = '🗑️ Cancelar monitoreo';
-    btnCancelar.style.marginTop = '10px';
-    btnCancelar.style.backgroundColor = '#f44336';
-    btnCancelar.onclick = cancelarMonitoreo;
-    
-    contenedor.appendChild(btnMonitorear);
-    contenedor.appendChild(btnVerificar);
-    contenedor.appendChild(btnCancelar);
+    try {
+        const response = await fetch(`${baseURL}/data/cambios.json`);
+        const cambios = await response.json();
+        
+        // Cargar datos base (1706) y de comparación
+        let datosBase = null;
+        let datosComparar = null;
+        
+        const archivoFecha = fecha === '1507' ? '150726' : '220726';
+        
+        // Cargar datos de las 3 zonas para ambas fechas
+        const zonasData = { base: [], comparar: [] };
+        
+        for (const zona of zonas) {
+            // Cargar base (170626)
+            try {
+                const respBase = await fetch(`${baseURL}/data/${zona}_170626_23.geojson`);
+                if (respBase.ok) {
+                    const data = await respBase.json();
+                    zonasData.base.push({ zona, features: data.features });
+                }
+            } catch (e) {}
+            
+            // Cargar comparación
+            try {
+                const respComp = await fetch(`${baseURL}/data/${zona}_${archivoFecha}_23.geojson`);
+                if (respComp.ok) {
+                    const data = await respComp.json();
+                    zonasData.comparar.push({ zona, features: data.features });
+                }
+            } catch (e) {}
+        }
+        
+        // Crear HTML autónomo
+        const htmlContent = generarHTMLAutonomo(zonasData, fecha, cambios);
+        
+        // Descargar
+        const blob = new Blob([htmlContent], { type: 'text/html;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `informe_${fecha}_${new Date().toISOString().slice(0,10)}.html`;
+        a.click();
+        URL.revokeObjectURL(url);
+        
+        mostrarMensaje('✅ Informe descargado correctamente', 'exito');
+        
+    } catch (error) {
+        console.error(error);
+        mostrarMensaje('Error al generar informe', 'error');
+    }
 }
 
-function cancelarMonitoreo() {
-    localStorage.removeItem('areaMonitoreada');
-    localStorage.removeItem('emailAlertas');
-    areaMonitoreada = null;
-    limpiarDibujo();
-    mostrarMensaje('🗑️ Monitoreo cancelado', 'info');
+function generarHTMLAutonomo(zonasData, fecha, cambios) {
+    const areaData = JSON.parse(localStorage.getItem('areaMonitoreada'));
+    const fechaTexto = fecha === '1507' ? '15/07/2026' : '22/07/2026';
+    
+    // Filtrar features dentro del área
+    const filtrarPorArea = (features, zona) => {
+        return features.filter(f => {
+            if (!f.geometry || f.geometry.type !== 'Polygon') return false;
+            try {
+                const coords = f.geometry.coordinates[0];
+                let sumLat = 0, sumLon = 0;
+                coords.forEach(c => { sumLat += c[1]; sumLon += c[0]; });
+                const lat = sumLat / coords.length;
+                const lon = sumLon / coords.length;
+                
+                return lat >= areaData.sw.lat && lat <= areaData.ne.lat &&
+                       lon >= areaData.sw.lng && lon <= areaData.ne.lng;
+            } catch (e) { return false; }
+        });
+    };
+    
+    // Extraer datos
+    let baseEnArea = [];
+    let aparecidosEnArea = [];
+    let desaparecidosEnArea = [];
+    
+    for (const zd of zonasData.base) {
+        baseEnArea.push(...filtrarPorArea(zd.features, zd.zona));
+    }
+    
+    // Detectar aparecidos y desaparecidos
+    const codigosBase = new Set(baseEnArea.map(f => f.properties.CODIGOU));
+    const codigosComparar = new Set();
+    
+    for (const zd of zonasData.comparar) {
+        zd.features.forEach(f => codigosComparar.add(f.properties.CODIGOU));
+    }
+    
+    // Desaparecidos: en base pero no en comparar
+    baseEnArea.forEach(f => {
+        if (!codigosComparar.has(f.properties.CODIGOU)) {
+            desaparecidosEnArea.push(f);
+        }
+    });
+    
+    // Aparecidos: en comparar pero no en base, y dentro del área
+    for (const zd of zonasData.comparar) {
+        const enArea = filtrarPorArea(zd.features, zd.zona);
+        enArea.forEach(f => {
+            if (!codigosBase.has(f.properties.CODIGOU)) {
+                aparecidosEnArea.push(f);
+            }
+        });
+    }
+    
+    const totalBase = baseEnArea.length - desaparecidosEnArea.length;
+    const totalDesap = desaparecidosEnArea.length;
+    const totalAp = aparecidosEnArea.length;
+    const total = totalBase + totalDesap + totalAp;
+    
+    // Generar HTML
+    return `<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wvisor - Informe ${fechaTexto}</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #0a1628;
+            color: #e0e6f0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: #0f1e3a;
+            border-radius: 12px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+            overflow: hidden;
+            border: 1px solid #1e3a5f;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e3a8a, #1e40af);
+            padding: 25px 30px;
+        }
+        .header-top {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+        .logo-w {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #3b82f6, #1e40af);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            font-weight: 800;
+            color: #fff;
+            font-family: Georgia, serif;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+        }
+        .header h1 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #fff;
+        }
+        .header .subtitle {
+            font-size: 13px;
+            color: #93c5fd;
+            margin-bottom: 15px;
+        }
+        .stats {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .stat-item {
+            background: rgba(255,255,255,0.12);
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-size: 12px;
+            color: #bfdbfe;
+        }
+        .stat-item strong {
+            font-size: 20px;
+            display: block;
+            color: #fff;
+        }
+        .stat-item.danger { background: rgba(220, 38, 38, 0.3); }
+        .stat-item.danger strong { color: #fca5a5; }
+        .stat-item.success { background: rgba(59, 130, 246, 0.3); }
+        .stat-item.success strong { color: #93c5fd; }
+        
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .map-column {
+            flex: 2;
+            min-width: 500px;
+            padding: 20px;
+            background: #0a1628;
+        }
+        #map {
+            border-radius: 8px;
+            height: 550px;
+            width: 100%;
+            border: 1px solid #1e3a5f;
+        }
+        .info-column {
+            flex: 1;
+            min-width: 320px;
+            padding: 20px;
+            background: #0f1e3a;
+            border-left: 1px solid #1e3a5f;
+            max-height: 600px;
+            overflow-y: auto;
+        }
+        .info-column h2 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #93c5fd;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #1e3a5f;
+        }
+        .resumen-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #1e3a5f;
+            font-size: 13px;
+        }
+        .resumen-item .label { color: #94a3b8; }
+        .resumen-item .value { font-weight: 600; }
+        .value.sin-cambios { color: #cbd5e1; }
+        .value.desaparecio { color: #f87171; }
+        .value.aparecio { color: #60a5fa; }
+        
+        .lista-concesiones { margin-top: 15px; }
+        .item-concesion {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            font-size: 12px;
+            border-bottom: 1px solid #1e3a5f;
+        }
+        .estado-badge {
+            font-size: 10px;
+            padding: 3px 8px;
+            border-radius: 10px;
+            color: white;
+            font-weight: 600;
+        }
+        .estado-badge.sin-cambios { background: #475569; }
+        .estado-badge.desaparecio { background: #dc2626; }
+        .estado-badge.aparecio { background: #2563eb; }
+        
+        .tabla-container {
+            padding: 20px 30px 30px;
+            border-top: 1px solid #1e3a5f;
+        }
+        .tabla-container h2 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #93c5fd;
+        }
+        .tabla-concesiones {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+        .tabla-concesiones thead th {
+            background: #152b4a;
+            padding: 12px 15px;
+            text-align: left;
+            color: #93c5fd;
+            border-bottom: 2px solid #1e3a5f;
+        }
+        .tabla-concesiones tbody td {
+            padding: 10px 15px;
+            border-bottom: 1px solid #1e3a5f;
+            color: #cbd5e1;
+        }
+        .tabla-concesiones tbody tr:hover { background: #152b4a; }
+        
+        .footer {
+            background: #0a1628;
+            padding: 15px 30px;
+            text-align: center;
+            font-size: 11px;
+            color: #475569;
+            border-top: 1px solid #1e3a5f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-top">
+                <div class="logo-w">W</div>
+                <h1>Wvisor - Informe de Área</h1>
+            </div>
+            <div class="subtitle">Comparación con ${fechaTexto} · Generado el ${new Date().toLocaleString('es-PE')}</div>
+            <div class="stats">
+                <div class="stat-item"><strong>${totalBase}</strong>Sin cambios</div>
+                <div class="stat-item danger"><strong>${totalDesap}</strong>Desaparecieron</div>
+                <div class="stat-item success"><strong>${totalAp}</strong>Aparecieron</div>
+                <div class="stat-item"><strong>${total}</strong>Total</div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="map-column">
+                <div id="map"></div>
+            </div>
+            <div class="info-column">
+                <h2>📊 Resumen</h2>
+                <div class="resumen-item">
+                    <span class="label">✅ Sin cambios</span>
+                    <span class="value sin-cambios">${totalBase}</span>
+                </div>
+                <div class="resumen-item">
+                    <span class="label">🔴 Desaparecieron</span>
+                    <span class="value desaparecio">${totalDesap}</span>
+                </div>
+                <div class="resumen-item">
+                    <span class="label">🔵 Aparecieron</span>
+                    <span class="value aparecio">${totalAp}</span>
+                </div>
+                
+                <h2 style="margin-top:20px;">📋 Concesiones</h2>
+                <div class="lista-concesiones">
+                    ${desaparecidosEnArea.map(f => `
+                        <div class="item-concesion">
+                            <span>${f.properties.CONCESION || 'N/A'}</span>
+                            <span class="estado-badge desaparecio">DESAPARECIÓ</span>
+                        </div>
+                    `).join('')}
+                    ${aparecidosEnArea.map(f => `
+                        <div class="item-concesion">
+                            <span>${f.properties.CONCESION || 'N/A'}</span>
+                            <span class="estado-badge aparecio">APARECIÓ</span>
+                        </div>
+                    `).join('')}
+                    ${baseEnArea.filter(f => !desaparecidosEnArea.includes(f)).map(f => `
+                        <div class="item-concesion">
+                            <span>${f.properties.CONCESION || 'N/A'}</span>
+                            <span class="estado-badge sin-cambios">SIN CAMBIOS</span>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+        </div>
+        
+        <div class="tabla-container">
+            <h2>📋 Detalle Completo</h2>
+            <table class="tabla-concesiones">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Concesión</th>
+                        <th>Titular</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${desaparecidosEnArea.map(f => `
+                        <tr>
+                            <td>${f.properties.CODIGOU || 'N/A'}</td>
+                            <td>${f.properties.CONCESION || 'N/A'}</td>
+                            <td>${f.properties.TIT_CONCES || 'N/A'}</td>
+                            <td><span class="estado-badge desaparecio">DESAPARECIÓ</span></td>
+                        </tr>
+                    `).join('')}
+                    ${aparecidosEnArea.map(f => `
+                        <tr>
+                            <td>${f.properties.CODIGOU || 'N/A'}</td>
+                            <td>${f.properties.CONCESION || 'N/A'}</td>
+                            <td>${f.properties.TIT_CONCES || 'N/A'}</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    `).join('')}
+                    ${baseEnArea.filter(f => !desaparecidosEnArea.includes(f)).map(f => `
+                        <tr>
+                            <td>${f.properties.CODIGOU || 'N/A'}</td>
+                            <td>${f.properties.CONCESION || 'N/A'}</td>
+                            <td>${f.properties.TIT_CONCES || 'N/A'}</td>
+                            <td><span class="estado-badge sin-cambios">SIN CAMBIOS</span></td>
+                        </tr>
+                    `).join('')}
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="footer">
+            Wvisor · Datos INGEMMET · ${new Date().toLocaleString('es-PE')}
+        </div>
+    </div>
+    
+    <script>
+        const areaData = ${JSON.stringify(areaData)};
+        const baseFeatures = ${JSON.stringify(baseEnArea)};
+        const desaparecidosFeatures = ${JSON.stringify(desaparecidosEnArea)};
+        const aparecidosFeatures = ${JSON.stringify(aparecidosEnArea)};
+        
+        const map = L.map('map').setView([
+            (areaData.sw.lat + areaData.ne.lat) / 2,
+            (areaData.sw.lng + areaData.ne.lng) / 2
+        ], 12);
+        
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; OpenStreetMap'
+        }).addTo(map);
+        
+        // Área
+        L.rectangle([
+            [areaData.sw.lat, areaData.sw.lng],
+            [areaData.ne.lat, areaData.ne.lng]
+        ], {
+            color: '#ff44ff',
+            weight: 3,
+            opacity: 0.8,
+            fillOpacity: 0.1
+        }).addTo(map);
+        
+        // Sin cambios
+        L.geoJSON({ type: 'FeatureCollection', features: baseFeatures }, {
+            style: { color: '#888888', weight: 1.5, opacity: 0.6, fillOpacity: 0.2 },
+            onEachFeature: (f, l) => l.bindPopup('<b>' + (f.properties.CONCESION || 'N/A') + '</b><br>✅ Sin cambios')
+        }).addTo(map);
+        
+        // Desaparecidos
+        L.geoJSON({ type: 'FeatureCollection', features: desaparecidosFeatures }, {
+            style: { color: '#ff4444', weight: 2, opacity: 0.9, fillOpacity: 0.4 },
+            onEachFeature: (f, l) => l.bindPopup('<b style="color:#ff4444;">' + (f.properties.CONCESION || 'N/A') + '</b><br>🔴 Desapareció')
+        }).addTo(map);
+        
+        // Aparecidos
+        L.geoJSON({ type: 'FeatureCollection', features: aparecidosFeatures }, {
+            style: { color: '#4444ff', weight: 2, opacity: 0.9, fillOpacity: 0.4 },
+            onEachFeature: (f, l) => l.bindPopup('<b style="color:#4444ff;">' + (f.properties.CONCESION || 'N/A') + '</b><br>🔵 Apareció')
+        }).addTo(map);
+    </script>
+</body>
+</html>`;
+}
+
+function cerrarPopup() {
+    document.getElementById('info-popup').style.display = 'none';
+    popupAbierto = false;
+}
+
+function mostrarMensaje(texto, tipo = 'info') {
+    const msgDiv = document.getElementById('mensaje-emergente');
+    if (!msgDiv) return;
+    msgDiv.textContent = texto;
+    const colores = {
+        error: '#dc2626',
+        exito: '#059669',
+        info: '#1e40af'
+    };
+    msgDiv.style.backgroundColor = colores[tipo] || '#1e40af';
+    msgDiv.style.display = 'block';
+    clearTimeout(msgDiv._timeout);
+    msgDiv._timeout = setTimeout(() => { msgDiv.style.display = 'none'; }, 4000);
 }
 
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') cerrarPopup(); });
