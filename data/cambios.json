@@ -646,5 +646,161 @@
     "nombre": "QORI CANCHA II",
     "tipo": "aparece",
     "fecha": "2026-09-12T01:38:51.269Z"
+  },
+  {
+    "codigo": "030011626",
+    "nombre": "ACEITE DE PIEDRA",
+    "tipo": "desaparece",
+    "fecha": "2026-09-15T01:57:29.205Z"
+  },
+  {
+    "codigo": "010147425",
+    "nombre": "PIERI II",
+    "tipo": "desaparece",
+    "fecha": "2026-09-15T01:57:29.205Z"
+  },
+  {
+    "codigo": "010038426",
+    "nombre": "ANGYL",
+    "tipo": "desaparece",
+    "fecha": "2026-09-15T01:57:29.205Z"
+  },
+  {
+    "codigo": "050027125",
+    "nombre": "KILLA 2",
+    "tipo": "desaparece",
+    "fecha": "2026-09-15T01:57:29.205Z"
+  },
+  {
+    "codigo": "050036026",
+    "nombre": "SOLEDAD 3 2026",
+    "tipo": "desaparece",
+    "fecha": "2026-09-15T01:57:29.205Z"
+  },
+  {
+    "codigo": "050034126",
+    "nombre": "MI CHILCAYOC IV",
+    "tipo": "desaparece",
+    "fecha": "2026-09-15T01:57:29.205Z"
+  },
+  {
+    "codigo": "010320826",
+    "nombre": "LBA 26",
+    "tipo": "desaparece",
+    "fecha": "2026-09-15T01:57:29.205Z"
+  },
+  {
+    "codigo": "100008726",
+    "nombre": "PEDRO HUANCA ALFA",
+    "tipo": "aparece",
+    "fecha": "2026-09-15T01:57:29.205Z"
+  },
+  {
+    "codigo": "030089726",
+    "nombre": "HERITAGE I",
+    "tipo": "aparece",
+    "fecha": "2026-09-15T01:57:29.205Z"
+  },
+  {
+    "codigo": "010517826",
+    "nombre": "SAN JACINTO 2026",
+    "tipo": "aparece",
+    "fecha": "2026-09-15T01:57:29.205Z"
+  },
+  {
+    "codigo": "110014526",
+    "nombre": "WALDANI 1904",
+    "tipo": "aparece",
+    "fecha": "2026-09-15T01:57:29.205Z"
+  },
+  {
+    "codigo": "030089626",
+    "nombre": "VIRGINIA 2026",
+    "tipo": "aparece",
+    "fecha": "2026-09-15T01:57:29.205Z"
+  },
+  {
+    "codigo": "110014626",
+    "nombre": "CATAGUA 0910",
+    "tipo": "aparece",
+    "fecha": "2026-09-15T01:57:29.205Z"
+  },
+  {
+    "codigo": "560001926",
+    "nombre": "TOTORILLA",
+    "tipo": "aparece",
+    "fecha": "2026-09-15T01:57:29.205Z"
+  },
+  {
+    "codigo": "010518126",
+    "nombre": "RENI IMG 2",
+    "tipo": "aparece",
+    "fecha": "2026-09-15T01:57:29.205Z"
+  },
+  {
+    "codigo": "010000418P1",
+    "nombre": "Z> AREA EXTINGUIDA",
+    "tipo": "aparece",
+    "fecha": "2026-09-15T01:57:29.205Z"
+  },
+  {
+    "codigo": "010518426",
+    "nombre": "QUILCA EL FUTURO",
+    "tipo": "aparece",
+    "fecha": "2026-09-15T01:57:29.205Z"
+  },
+  {
+    "codigo": "010517226",
+    "nombre": "TAKIMA01",
+    "tipo": "aparece",
+    "fecha": "2026-09-15T01:57:29.205Z"
+  },
+  {
+    "codigo": "080070326",
+    "nombre": "VANYA26",
+    "tipo": "aparece",
+    "fecha": "2026-09-15T01:57:29.205Z"
+  },
+  {
+    "codigo": "010517926",
+    "nombre": "ARL II",
+    "tipo": "aparece",
+    "fecha": "2026-09-15T01:57:29.205Z"
+  },
+  {
+    "codigo": "010518226",
+    "nombre": "ALISON PACHITEA UNO",
+    "tipo": "aparece",
+    "fecha": "2026-09-15T01:57:29.205Z"
+  },
+  {
+    "codigo": "010517126",
+    "nombre": "JARAN I",
+    "tipo": "aparece",
+    "fecha": "2026-09-15T01:57:29.205Z"
+  },
+  {
+    "codigo": "080070426",
+    "nombre": "SURMIN 3",
+    "tipo": "aparece",
+    "fecha": "2026-09-15T01:57:29.205Z"
+  },
+  {
+    "codigo": "010517026",
+    "nombre": "CALIZAS DE PACCHA",
+    "tipo": "aparece",
+    "fecha": "2026-09-15T01:57:29.205Z"
+  },
+  {
+    "codigo": "010517526",
+    "nombre": "MARIA CRISTINA VERA RONDAN",
+    "tipo": "aparece",
+    "fecha": "2026-09-15T01:57:29.205Z"
+  },
+  {
+    "codigo": "080070526",
+    "nombre": "QOYLLUR GOLD 1",
+    "tipo": "aparece",
+    "fecha": "2026-09-15T01:57:29.205Z"
   }
 ]
