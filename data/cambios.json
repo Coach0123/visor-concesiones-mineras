@@ -802,5 +802,65 @@
     "nombre": "QOYLLUR GOLD 1",
     "tipo": "aparece",
     "fecha": "2026-09-15T01:57:29.205Z"
+  },
+  {
+    "codigo": "010519126",
+    "nombre": "MOROCHITA",
+    "tipo": "aparece",
+    "fecha": "2026-09-16T01:48:00.204Z"
+  },
+  {
+    "codigo": "030089926",
+    "nombre": "JULCANERA SILVER",
+    "tipo": "aparece",
+    "fecha": "2026-09-16T01:48:00.204Z"
+  },
+  {
+    "codigo": "700004226",
+    "nombre": "GLADYS 2026",
+    "tipo": "aparece",
+    "fecha": "2026-09-16T01:48:00.204Z"
+  },
+  {
+    "codigo": "030089826",
+    "nombre": "SPARTACUS MUNCHUGO",
+    "tipo": "aparece",
+    "fecha": "2026-09-16T01:48:00.204Z"
+  },
+  {
+    "codigo": "700004026",
+    "nombre": "DOMY N2026",
+    "tipo": "aparece",
+    "fecha": "2026-09-16T01:48:00.204Z"
+  },
+  {
+    "codigo": "700004126",
+    "nombre": "CHOTANO",
+    "tipo": "aparece",
+    "fecha": "2026-09-16T01:48:00.204Z"
+  },
+  {
+    "codigo": "010519526",
+    "nombre": "CHAI BRAVO V 2026",
+    "tipo": "aparece",
+    "fecha": "2026-09-16T01:48:00.204Z"
+  },
+  {
+    "codigo": "620007426",
+    "nombre": "MINATENNA3",
+    "tipo": "aparece",
+    "fecha": "2026-09-16T01:48:00.204Z"
+  },
+  {
+    "codigo": "010519326",
+    "nombre": "SONCCO I",
+    "tipo": "aparece",
+    "fecha": "2026-09-16T01:48:00.204Z"
+  },
+  {
+    "codigo": "710011226",
+    "nombre": "ESPERANZA",
+    "tipo": "aparece",
+    "fecha": "2026-09-16T01:48:00.204Z"
   }
 ]
