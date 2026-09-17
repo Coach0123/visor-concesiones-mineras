@@ -862,5 +862,107 @@
     "nombre": "ESPERANZA",
     "tipo": "aparece",
     "fecha": "2026-09-16T01:48:00.204Z"
+  },
+  {
+    "codigo": "010520326",
+    "nombre": "VALE & SALO",
+    "tipo": "aparece",
+    "fecha": "2026-09-17T01:51:44.331Z"
+  },
+  {
+    "codigo": "010520526",
+    "nombre": "NORTE 588",
+    "tipo": "aparece",
+    "fecha": "2026-09-17T01:51:44.331Z"
+  },
+  {
+    "codigo": "560002026",
+    "nombre": "RIO CANCHIS CORP II",
+    "tipo": "aparece",
+    "fecha": "2026-09-17T01:51:44.331Z"
+  },
+  {
+    "codigo": "610011726",
+    "nombre": "CORLEONE ANDOLINE I",
+    "tipo": "aparece",
+    "fecha": "2026-09-17T01:51:44.331Z"
+  },
+  {
+    "codigo": "010520226",
+    "nombre": "GEOSATMIN VI",
+    "tipo": "aparece",
+    "fecha": "2026-09-17T01:51:44.331Z"
+  },
+  {
+    "codigo": "010519726",
+    "nombre": "FORTALEZA JM I",
+    "tipo": "aparece",
+    "fecha": "2026-09-17T01:51:44.331Z"
+  },
+  {
+    "codigo": "010519626",
+    "nombre": "CHAI BRAVO VI 2026",
+    "tipo": "aparece",
+    "fecha": "2026-09-17T01:51:44.331Z"
+  },
+  {
+    "codigo": "010520026",
+    "nombre": "LIBECI",
+    "tipo": "aparece",
+    "fecha": "2026-09-17T01:51:44.331Z"
+  },
+  {
+    "codigo": "010520126",
+    "nombre": "GEOSATMIN VII",
+    "tipo": "aparece",
+    "fecha": "2026-09-17T01:51:44.331Z"
+  },
+  {
+    "codigo": "010519926",
+    "nombre": "ZOIVIR MINING II",
+    "tipo": "aparece",
+    "fecha": "2026-09-17T01:51:44.331Z"
+  },
+  {
+    "codigo": "010519826",
+    "nombre": "FORTALEZA JM II",
+    "tipo": "aparece",
+    "fecha": "2026-09-17T01:51:44.331Z"
+  },
+  {
+    "codigo": "010520626",
+    "nombre": "SAULITO_4",
+    "tipo": "aparece",
+    "fecha": "2026-09-17T01:51:44.331Z"
+  },
+  {
+    "codigo": "010520726",
+    "nombre": "BLESSING OF GOD",
+    "tipo": "aparece",
+    "fecha": "2026-09-17T01:51:44.331Z"
+  },
+  {
+    "codigo": "010520826",
+    "nombre": "MINERA BOGDAN KROLL 1",
+    "tipo": "aparece",
+    "fecha": "2026-09-17T01:51:44.331Z"
+  },
+  {
+    "codigo": "540022426",
+    "nombre": "AGUSTINA 1",
+    "tipo": "aparece",
+    "fecha": "2026-09-17T01:51:44.331Z"
+  },
+  {
+    "codigo": "070041426",
+    "nombre": "SAN BERNARDO I",
+    "tipo": "aparece",
+    "fecha": "2026-09-17T01:51:44.331Z"
+  },
+  {
+    "codigo": "080070926",
+    "nombre": "LUCIRITO DE KÓYAPATILLA KÁMANI",
+    "tipo": "aparece",
+    "fecha": "2026-09-17T01:51:44.331Z"
   }
 ]
