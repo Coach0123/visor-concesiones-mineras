@@ -1108,5 +1108,119 @@
     "nombre": "PUTINA 76",
     "tipo": "aparece",
     "fecha": "2026-09-18T01:39:20.164Z"
+  },
+  {
+    "codigo": "630013424A",
+    "nombre": "MINERALES IVERA - A",
+    "tipo": "aparece",
+    "fecha": "2026-09-19T01:43:35.084Z"
+  },
+  {
+    "codigo": "100009026",
+    "nombre": "VERDE ESPERANZA 2026",
+    "tipo": "aparece",
+    "fecha": "2026-09-19T01:43:35.084Z"
+  },
+  {
+    "codigo": "100008926",
+    "nombre": "INDUSTRIAS TERRA SAC II",
+    "tipo": "aparece",
+    "fecha": "2026-09-19T01:43:35.084Z"
+  },
+  {
+    "codigo": "030090326",
+    "nombre": "SERVILLETAS MMM",
+    "tipo": "aparece",
+    "fecha": "2026-09-19T01:43:35.084Z"
+  },
+  {
+    "codigo": "010523426",
+    "nombre": "EUDOCIA",
+    "tipo": "aparece",
+    "fecha": "2026-09-19T01:43:35.084Z"
+  },
+  {
+    "codigo": "010523926",
+    "nombre": "ALMACEN 14",
+    "tipo": "aparece",
+    "fecha": "2026-09-19T01:43:35.084Z"
+  },
+  {
+    "codigo": "010524026",
+    "nombre": "CERRO HUARANGO 1",
+    "tipo": "aparece",
+    "fecha": "2026-09-19T01:43:35.084Z"
+  },
+  {
+    "codigo": "010523526",
+    "nombre": "CERRO HUARANGO 4",
+    "tipo": "aparece",
+    "fecha": "2026-09-19T01:43:35.084Z"
+  },
+  {
+    "codigo": "010523626",
+    "nombre": "CERRO HUARANGO 2",
+    "tipo": "aparece",
+    "fecha": "2026-09-19T01:43:35.084Z"
+  },
+  {
+    "codigo": "010523726",
+    "nombre": "CERRO HUARANGO 3",
+    "tipo": "aparece",
+    "fecha": "2026-09-19T01:43:35.084Z"
+  },
+  {
+    "codigo": "010523826",
+    "nombre": "ALMACEN 13",
+    "tipo": "aparece",
+    "fecha": "2026-09-19T01:43:35.084Z"
+  },
+  {
+    "codigo": "040046226",
+    "nombre": "VLADIOR AUREUM",
+    "tipo": "aparece",
+    "fecha": "2026-09-19T01:43:35.084Z"
+  },
+  {
+    "codigo": "050112826",
+    "nombre": "MINA HAWAI II",
+    "tipo": "aparece",
+    "fecha": "2026-09-19T01:43:35.084Z"
+  },
+  {
+    "codigo": "550007026",
+    "nombre": "LA ENCANTADORA",
+    "tipo": "aparece",
+    "fecha": "2026-09-19T01:43:35.084Z"
+  },
+  {
+    "codigo": "050112926",
+    "nombre": "MINA HAWAI I",
+    "tipo": "aparece",
+    "fecha": "2026-09-19T01:43:35.084Z"
+  },
+  {
+    "codigo": "040046126",
+    "nombre": "SINCHI",
+    "tipo": "aparece",
+    "fecha": "2026-09-19T01:43:35.084Z"
+  },
+  {
+    "codigo": "020019126",
+    "nombre": "OXAMIN",
+    "tipo": "aparece",
+    "fecha": "2026-09-19T01:43:35.084Z"
+  },
+  {
+    "codigo": "580010126",
+    "nombre": "SAN ROQUE DE MOSOCLLACTA",
+    "tipo": "aparece",
+    "fecha": "2026-09-19T01:43:35.084Z"
+  },
+  {
+    "codigo": "050024325A",
+    "nombre": "SERPIENTE DE ORO I",
+    "tipo": "aparece",
+    "fecha": "2026-09-19T01:43:35.084Z"
   }
 ]
