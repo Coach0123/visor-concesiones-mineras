@@ -1222,5 +1222,167 @@
     "nombre": "SERPIENTE DE ORO I",
     "tipo": "aparece",
     "fecha": "2026-09-19T01:43:35.084Z"
+  },
+  {
+    "codigo": "110016325",
+    "nombre": "SAMAHARA",
+    "tipo": "desaparece",
+    "fecha": "2026-09-20T01:45:09.277Z"
+  },
+  {
+    "codigo": "010120425",
+    "nombre": "SERPIENTE EMPLUMADA",
+    "tipo": "desaparece",
+    "fecha": "2026-09-20T01:45:09.277Z"
+  },
+  {
+    "codigo": "050083225",
+    "nombre": "CHARPA I",
+    "tipo": "desaparece",
+    "fecha": "2026-09-20T01:45:09.277Z"
+  },
+  {
+    "codigo": "010191025",
+    "nombre": "RENANCER 2025",
+    "tipo": "desaparece",
+    "fecha": "2026-09-20T01:45:09.277Z"
+  },
+  {
+    "codigo": "020008126",
+    "nombre": "MOSHITO",
+    "tipo": "desaparece",
+    "fecha": "2026-09-20T01:45:09.277Z"
+  },
+  {
+    "codigo": "010342826",
+    "nombre": "RCM II",
+    "tipo": "desaparece",
+    "fecha": "2026-09-20T01:45:09.277Z"
+  },
+  {
+    "codigo": "010309526",
+    "nombre": "JUAN LUIS",
+    "tipo": "desaparece",
+    "fecha": "2026-09-20T01:45:09.277Z"
+  },
+  {
+    "codigo": "010525026",
+    "nombre": "LM29",
+    "tipo": "aparece",
+    "fecha": "2026-09-20T01:45:09.277Z"
+  },
+  {
+    "codigo": "010525326",
+    "nombre": "VETA NORTE III",
+    "tipo": "aparece",
+    "fecha": "2026-09-20T01:45:09.277Z"
+  },
+  {
+    "codigo": "010524926",
+    "nombre": "LM30",
+    "tipo": "aparece",
+    "fecha": "2026-09-20T01:45:09.277Z"
+  },
+  {
+    "codigo": "010525126",
+    "nombre": "LM28",
+    "tipo": "aparece",
+    "fecha": "2026-09-20T01:45:09.277Z"
+  },
+  {
+    "codigo": "010525426",
+    "nombre": "VETA NORTE II",
+    "tipo": "aparece",
+    "fecha": "2026-09-20T01:45:09.277Z"
+  },
+  {
+    "codigo": "060022626",
+    "nombre": "CALIZAS DEL NORTE I",
+    "tipo": "aparece",
+    "fecha": "2026-09-20T01:45:09.277Z"
+  },
+  {
+    "codigo": "030090626",
+    "nombre": "HAMSA JAMSA KHAMSA 2026",
+    "tipo": "aparece",
+    "fecha": "2026-09-20T01:45:09.277Z"
+  },
+  {
+    "codigo": "550007126",
+    "nombre": "CRISTINA V",
+    "tipo": "aparece",
+    "fecha": "2026-09-20T01:45:09.277Z"
+  },
+  {
+    "codigo": "530019226",
+    "nombre": "NOVIA01",
+    "tipo": "aparece",
+    "fecha": "2026-09-20T01:45:09.277Z"
+  },
+  {
+    "codigo": "530019526",
+    "nombre": "CARMENCITA",
+    "tipo": "aparece",
+    "fecha": "2026-09-20T01:45:09.277Z"
+  },
+  {
+    "codigo": "580010326",
+    "nombre": "MACHAKA MARKA DOS",
+    "tipo": "aparece",
+    "fecha": "2026-09-20T01:45:09.277Z"
+  },
+  {
+    "codigo": "010525226",
+    "nombre": "CRISTO REY 2026",
+    "tipo": "aparece",
+    "fecha": "2026-09-20T01:45:09.277Z"
+  },
+  {
+    "codigo": "010524626",
+    "nombre": "MINERA FORTALEZA DORADA",
+    "tipo": "aparece",
+    "fecha": "2026-09-20T01:45:09.277Z"
+  },
+  {
+    "codigo": "580010226",
+    "nombre": "WINCHU PATA",
+    "tipo": "aparece",
+    "fecha": "2026-09-20T01:45:09.277Z"
+  },
+  {
+    "codigo": "020019226",
+    "nombre": "SILVERMINING",
+    "tipo": "aparece",
+    "fecha": "2026-09-20T01:45:09.277Z"
+  },
+  {
+    "codigo": "530019326",
+    "nombre": "DELITA02",
+    "tipo": "aparece",
+    "fecha": "2026-09-20T01:45:09.277Z"
+  },
+  {
+    "codigo": "530019426",
+    "nombre": "DELITA01",
+    "tipo": "aparece",
+    "fecha": "2026-09-20T01:45:09.277Z"
+  },
+  {
+    "codigo": "010524526",
+    "nombre": "MINERA ENRIQUE V",
+    "tipo": "aparece",
+    "fecha": "2026-09-20T01:45:09.277Z"
+  },
+  {
+    "codigo": "080071526",
+    "nombre": "NUEVA NARANJA",
+    "tipo": "aparece",
+    "fecha": "2026-09-20T01:45:09.277Z"
+  },
+  {
+    "codigo": "080071626",
+    "nombre": "CORPORATIVO JASC",
+    "tipo": "aparece",
+    "fecha": "2026-09-20T01:45:09.277Z"
   }
 ]
