@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wvisor - Informe 20260920</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #0a1628; color: #e0e6f0; padding: 20px; }
+        .container { max-width: 1400px; margin: 0 auto; background: #0f1e3a; border-radius: 12px; box-shadow: 0 8px 40px rgba(0,0,0,0.5); overflow: hidden; border: 1px solid #1e3a5f; }
+        .header { background: linear-gradient(135deg, #1e3a8a, #1e40af); padding: 25px 30px; }
+        .header-top { display: flex; align-items: center; gap: 15px; margin-bottom: 10px; }
+        .logo-w { width: 45px; height: 45px; background: linear-gradient(135deg, #3b82f6, #1e40af); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 26px; font-weight: 800; color: #fff; font-family: Georgia, serif; }
+        .header h1 { font-size: 22px; font-weight: 600; color: #fff; }
+        .subtitle { font-size: 13px; color: #93c5fd; margin-bottom: 15px; }
+        .stats { display: flex; gap: 12px; flex-wrap: wrap; }
+        .stat-item { background: rgba(255,255,255,0.12); padding: 10px 18px; border-radius: 8px; font-size: 12px; color: #bfdbfe; }
+        .stat-item strong { font-size: 20px; display: block; color: #fff; }
+        .stat-item.danger { background: rgba(220, 38, 38, 0.3); }
+        .stat-item.danger strong { color: #fca5a5; }
+        .stat-item.success { background: rgba(59, 130, 246, 0.3); }
+        .stat-item.success strong { color: #93c5fd; }
+        .main-content { display: flex; flex-wrap: wrap; }
+        .map-column { flex: 2; min-width: 500px; padding: 20px; background: #0a1628; }
+        #map { border-radius: 8px; height: 550px; width: 100%; border: 1px solid #1e3a5f; }
+        .info-column { flex: 1; min-width: 320px; padding: 20px; background: #0f1e3a; border-left: 1px solid #1e3a5f; max-height: 600px; overflow-y: auto; }
+        .info-column h2 { font-size: 16px; margin-bottom: 15px; color: #93c5fd; padding-bottom: 8px; border-bottom: 1px solid #1e3a5f; }
+        .item-concesion { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; font-size: 12px; border-bottom: 1px solid #1e3a5f; }
+        .estado-badge { font-size: 10px; padding: 3px 8px; border-radius: 10px; color: white; font-weight: 600; }
+        .estado-badge.desaparecio { background: #dc2626; }
+        .estado-badge.aparecio { background: #2563eb; }
+        .tabla-container { padding: 20px 30px 30px; border-top: 1px solid #1e3a5f; }
+        .tabla-container h2 { font-size: 16px; margin-bottom: 15px; color: #93c5fd; }
+        .tabla-concesiones { width: 100%; border-collapse: collapse; font-size: 13px; }
+        .tabla-concesiones thead th { background: #152b4a; padding: 12px 15px; text-align: left; color: #93c5fd; border-bottom: 2px solid #1e3a5f; }
+        .tabla-concesiones tbody td { padding: 10px 15px; border-bottom: 1px solid #1e3a5f; color: #cbd5e1; }
+        .footer { background: #0a1628; padding: 15px 30px; text-align: center; font-size: 11px; color: #475569; border-top: 1px solid #1e3a5f; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-top">
+                <div class="logo-w">W</div>
+                <h1>Wvisor - Informe de Área</h1>
+            </div>
+            <div class="subtitle">Generado el 20/09/2026</div>
+            <div class="stats">
+                <div class="stat-item danger"><strong>0</strong>Desaparecieron</div>
+                <div class="stat-item success"><strong>19</strong>Aparecieron</div>
+                <div class="stat-item"><strong>19</strong>Total</div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="map-column">
+                <div id="map"></div>
+            </div>
+            <div class="info-column">
+                <h2>📋 Concesiones</h2>
+                
+                
+                    <div class="item-concesion">
+                        <span>MINERALES IVERA - A</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>VERDE ESPERANZA 2026</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>INDUSTRIAS TERRA SAC II</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>SERVILLETAS MMM</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>EUDOCIA</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>ALMACEN 14</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>CERRO HUARANGO 1</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>CERRO HUARANGO 4</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>CERRO HUARANGO 2</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>CERRO HUARANGO 3</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>ALMACEN 13</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>VLADIOR AUREUM</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>MINA HAWAI II</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>LA ENCANTADORA</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>MINA HAWAI I</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>SINCHI</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>OXAMIN</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>SAN ROQUE DE MOSOCLLACTA</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>SERPIENTE DE ORO I</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+            </div>
+        </div>
+        
+        <div class="tabla-container">
+            <h2>📋 Detalle Completo</h2>
+            <table class="tabla-concesiones">
+                <thead>
+                    <tr><th>Código</th><th>Concesión</th><th>Titular</th><th>Estado</th></tr>
+                </thead>
+                <tbody>
+                    
+                    
+                        <tr>
+                            <td>630013424A</td>
+                            <td>MINERALES IVERA - A</td>
+                            <td>INVERSIONES TRASDEY E.I.R.L.</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>100009026</td>
+                            <td>VERDE ESPERANZA 2026</td>
+                            <td>FLOR YASMIN YAJAHUANCA HUAMAN</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>100008926</td>
+                            <td>INDUSTRIAS TERRA SAC II</td>
+                            <td>INDUSTRIAS TERRA S.A.C.</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>030090326</td>
+                            <td>SERVILLETAS MMM</td>
+                            <td>BEPCOC MINING SAC</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010523426</td>
+                            <td>EUDOCIA</td>
+                            <td>MONICA ELSA MAZUELOS ZABALA</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010523926</td>
+                            <td>ALMACEN 14</td>
+                            <td>NEXA RESOURCES PERU S.A.A.</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010524026</td>
+                            <td>CERRO HUARANGO 1</td>
+                            <td>NEXA RESOURCES PERU S.A.A.</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010523526</td>
+                            <td>CERRO HUARANGO 4</td>
+                            <td>NEXA RESOURCES PERU S.A.A.</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010523626</td>
+                            <td>CERRO HUARANGO 2</td>
+                            <td>NEXA RESOURCES PERU S.A.A.</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010523726</td>
+                            <td>CERRO HUARANGO 3</td>
+                            <td>NEXA RESOURCES PERU S.A.A.</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010523826</td>
+                            <td>ALMACEN 13</td>
+                            <td>NEXA RESOURCES PERU S.A.A.</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>040046226</td>
+                            <td>VLADIOR AUREUM</td>
+                            <td>CONSULTORES Y EJECUTORES INGMOTEC S.A.C.</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>050112826</td>
+                            <td>MINA HAWAI II</td>
+                            <td>JAVIER ISAAC LAURA HUALPA Y OTROS</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>550007026</td>
+                            <td>LA ENCANTADORA</td>
+                            <td>ARNOLD JUNIOR GAVILANO MENESES</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>050112926</td>
+                            <td>MINA HAWAI I</td>
+                            <td>JAVIER ISAAC LAURA HUALPA Y OTROS</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>040046126</td>
+                            <td>SINCHI</td>
+                            <td>ROY SALVADOR CONTRERAS OSCCO Y OTROS</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>020019126</td>
+                            <td>OXAMIN</td>
+                            <td>RAMON LEONIDAS VILLENA PARDAVE</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>580010126</td>
+                            <td>SAN ROQUE DE MOSOCLLACTA</td>
+                            <td>COMUNIDAD CAMPESINA DE MOSOCLLACTA AYLLO SANCO</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>050024325A</td>
+                            <td>SERPIENTE DE ORO I</td>
+                            <td>LEONELA SONCO SACACA y Otros</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="footer">Wvisor · Datos INGEMMET · 20/09/2026</div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.8.0/proj4.js"></script>
+    <script>
+        const areaData = {"sw":{"lat":-18,"lng":-82},"ne":{"lat":-2,"lng":-68},"bounds":"-82,-18,-68,-2","fecha":"2026-07-15T21:30:00.000Z"};
+        const desaparecidosFeatures = [];
+        const aparecidosFeatures = [{"type":"Feature","properties":{"CODIGOU":"630013424A","FEC_DENU":"2024-11-04","CONCESION":"MINERALES IVERA - A","TIT_CONCES":"INVERSIONES TRASDEY E.I.R.L.","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"16-G","ZONA":"17","SUSTANCIA":null,"DEPA":"LA LIBERTAD","PROVI":"OTUZCO","DISTRI":"USQUIL","HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[793000,9140000],[794000,9140000],[794000,9139000],[793000,9139000],[793000,9140000]]]}},{"type":"Feature","properties":{"CODIGOU":"100009026","FEC_DENU":"2026-09-17","CONCESION":"VERDE ESPERANZA 2026","TIT_CONCES":"FLOR YASMIN YAJAHUANCA HUAMAN","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"10-C","ZONA":"17","SUSTANCIA":"N","DEPA":"PIURA","PROVI":"PIURA","DISTRI":"TAMBO GRANDE","HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[591000,9458000],[591000,9457000],[590000,9457000],[590000,9458000],[591000,9458000]]]}},{"type":"Feature","properties":{"CODIGOU":"100008926","FEC_DENU":"2026-09-17","CONCESION":"INDUSTRIAS TERRA SAC II","TIT_CONCES":"INDUSTRIAS TERRA S.A.C.","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"13-E","ZONA":"17","SUSTANCIA":"N","DEPA":"CAJAMARCA","PROVI":"JAEN","DISTRI":"PUCARA","HASDATUM":800},"geometry":{"type":"Polygon","coordinates":[[[715000,9335000],[715000,9331000],[713000,9331000],[713000,9335000],[715000,9335000]]]}},{"type":"Feature","properties":{"CODIGOU":"030090326","FEC_DENU":"2026-09-18","CONCESION":"SERVILLETAS MMM","TIT_CONCES":"BEPCOC MINING SAC","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"09-C","ZONA":"17","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":0},"geometry":{"type":"Polygon","coordinates":[[[606000,9505000],[606000,9504000],[605000,9504000],[605000,9505000],[606000,9505000]]]}},{"type":"Feature","properties":{"CODIGOU":"010523426","FEC_DENU":"2026-09-17","CONCESION":"EUDOCIA","TIT_CONCES":"MONICA ELSA MAZUELOS ZABALA","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"12-D","ZONA":"17","SUSTANCIA":"M","DEPA":"LAMBAYEQUE","PROVI":"LAMBAYEQUE","DISTRI":"OLMOS","HASDATUM":500},"geometry":{"type":"Polygon","coordinates":[[[642000,9347000],[642000,9346000],[641000,9346000],[641000,9345000],[642000,9345000],[642000,9344000],[640000,9344000],[640000,9347000],[642000,9347000]]]}},{"type":"Feature","properties":{"CODIGOU":"010523926","FEC_DENU":"2026-09-18","CONCESION":"ALMACEN 14","TIT_CONCES":"NEXA RESOURCES PERU S.A.A.","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"27-L","ZONA":"18","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":0},"geometry":{"type":"Polygon","coordinates":[[[401000,8532000],[401000,8531000],[399000,8531000],[399000,8529000],[398000,8529000],[398000,8532000],[401000,8532000]]]}},{"type":"Feature","properties":{"CODIGOU":"010524026","FEC_DENU":"2026-09-18","CONCESION":"CERRO HUARANGO 1","TIT_CONCES":"NEXA RESOURCES PERU S.A.A.","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"27-L","ZONA":"18","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":0},"geometry":{"type":"Polygon","coordinates":[[[414000,8537000],[414000,8534000],[413000,8534000],[413000,8535000],[411000,8535000],[411000,8537000],[414000,8537000]]]}},{"type":"Feature","properties":{"CODIGOU":"010523526","FEC_DENU":"2026-09-18","CONCESION":"CERRO HUARANGO 4","TIT_CONCES":"NEXA RESOURCES PERU S.A.A.","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"27-L","ZONA":"18","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":0},"geometry":{"type":"Polygon","coordinates":[[[418000,8532000],[418000,8530000],[413000,8530000],[413000,8532000],[418000,8532000]]]}},{"type":"Feature","properties":{"CODIGOU":"010523626","FEC_DENU":"2026-09-18","CONCESION":"CERRO HUARANGO 2","TIT_CONCES":"NEXA RESOURCES PERU S.A.A.","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"27-L","ZONA":"18","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":0},"geometry":{"type":"Polygon","coordinates":[[[413000,8535000],[413000,8530000],[411000,8530000],[411000,8535000],[413000,8535000]]]}},{"type":"Feature","properties":{"CODIGOU":"010523726","FEC_DENU":"2026-09-18","CONCESION":"CERRO HUARANGO 3","TIT_CONCES":"NEXA RESOURCES PERU S.A.A.","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"27-L","ZONA":"18","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":0},"geometry":{"type":"Polygon","coordinates":[[[418000,8534000],[418000,8532000],[413000,8532000],[413000,8534000],[418000,8534000]]]}},{"type":"Feature","properties":{"CODIGOU":"010523826","FEC_DENU":"2026-09-18","CONCESION":"ALMACEN 13","TIT_CONCES":"NEXA RESOURCES PERU S.A.A.","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"27-L","ZONA":"18","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":0},"geometry":{"type":"Polygon","coordinates":[[[398000,8532000],[398000,8531000],[397000,8531000],[397000,8529000],[396000,8529000],[396000,8532000],[398000,8532000]]]}},{"type":"Feature","properties":{"CODIGOU":"040046226","FEC_DENU":"2026-09-17","CONCESION":"VLADIOR AUREUM","TIT_CONCES":"CONSULTORES Y EJECUTORES INGMOTEC S.A.C.","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"28-Q","ZONA":"18","SUSTANCIA":"M","DEPA":"APURIMAC","PROVI":"ABANCAY / GRAU","DISTRI":"CURPAHUASI / LAMBRAMA","HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[744000,8457000],[744000,8456000],[743000,8456000],[743000,8457000],[744000,8457000]]]}},{"type":"Feature","properties":{"CODIGOU":"050112826","FEC_DENU":"2026-09-17","CONCESION":"MINA HAWAI II","TIT_CONCES":"JAVIER ISAAC LAURA HUALPA Y OTROS","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"33-Q","ZONA":"18","SUSTANCIA":"M","DEPA":"AREQUIPA","PROVI":"CAMANA","DISTRI":"MARISCAL CACERES","HASDATUM":1000},"geometry":{"type":"Polygon","coordinates":[[[733000,8186000],[733000,8183000],[732000,8183000],[732000,8182000],[731000,8182000],[731000,8183000],[729000,8183000],[729000,8184000],[730000,8184000],[730000,8185000],[731000,8185000],[731000,8186000],[733000,8186000]]]}},{"type":"Feature","properties":{"CODIGOU":"550007026","FEC_DENU":"2026-09-17","CONCESION":"LA ENCANTADORA","TIT_CONCES":"ARNOLD JUNIOR GAVILANO MENESES","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"28-1","ZONA":"18","SUSTANCIA":"M","DEPA":"AYACUCHO","PROVI":"CANGALLO","DISTRI":"TOTOS","HASDATUM":200},"geometry":{"type":"Polygon","coordinates":[[[556000,8504000],[556000,8503000],[554000,8503000],[554000,8504000],[556000,8504000]]]}},{"type":"Feature","properties":{"CODIGOU":"050112926","FEC_DENU":"2026-09-17","CONCESION":"MINA HAWAI I","TIT_CONCES":"JAVIER ISAAC LAURA HUALPA Y OTROS","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"33-Q","ZONA":"18","SUSTANCIA":"M","DEPA":"AREQUIPA","PROVI":"CAMANA","DISTRI":"MARISCAL CACERES","HASDATUM":1000},"geometry":{"type":"Polygon","coordinates":[[[732000,8182000],[732000,8180000],[731000,8180000],[731000,8179000],[729000,8179000],[729000,8183000],[731000,8183000],[731000,8182000],[732000,8182000]]]}},{"type":"Feature","properties":{"CODIGOU":"040046126","FEC_DENU":"2026-09-17","CONCESION":"SINCHI","TIT_CONCES":"ROY SALVADOR CONTRERAS OSCCO Y OTROS","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"28-P","ZONA":"18","SUSTANCIA":"M","DEPA":"APURIMAC","PROVI":"AYMARAES","DISTRI":"TINTAY","HASDATUM":200},"geometry":{"type":"Polygon","coordinates":[[[705000,8465000],[705000,8464000],[703000,8464000],[703000,8465000],[705000,8465000]]]}},{"type":"Feature","properties":{"CODIGOU":"020019126","FEC_DENU":"2026-09-17","CONCESION":"OXAMIN","TIT_CONCES":"RAMON LEONIDAS VILLENA PARDAVE","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"22-M","ZONA":"18","SUSTANCIA":"M","DEPA":"JUNIN / PASCO","PROVI":"JUNIN / OXAPAMPA","DISTRI":"CHONTABAMBA / ULCUMAYO","HASDATUM":200},"geometry":{"type":"Polygon","coordinates":[[[447000,8812000],[447000,8810000],[446000,8810000],[446000,8812000],[447000,8812000]]]}},{"type":"Feature","properties":{"CODIGOU":"580010126","FEC_DENU":"2026-09-17","CONCESION":"SAN ROQUE DE MOSOCLLACTA","TIT_CONCES":"COMUNIDAD CAMPESINA DE MOSOCLLACTA AYLLO SANCO","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"27-R","ZONA":"18","SUSTANCIA":"N","DEPA":"CUSCO","PROVI":"ANTA","DISTRI":"ANTA","HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[807000,8512000],[807000,8511000],[806000,8511000],[806000,8512000],[807000,8512000]]]}},{"type":"Feature","properties":{"CODIGOU":"050024325A","FEC_DENU":"2025-05-05","CONCESION":"SERPIENTE DE ORO I","TIT_CONCES":"LEONELA SONCO SACACA y Otros","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"29-X","ZONA":"19","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":0},"geometry":{"type":"Polygon","coordinates":[[[422000,8451000],[422000,8450000],[421000,8450000],[421000,8451000],[422000,8451000]]]}}];
+        
+        const map = L.map('map').setView([
+            (areaData.sw.lat + areaData.ne.lat) / 2,
+            (areaData.sw.lng + areaData.ne.lng) / 2
+        ], 10);
+        
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png').addTo(map);
+        
+        L.rectangle([
+            [areaData.sw.lat, areaData.sw.lng],
+            [areaData.ne.lat, areaData.ne.lng]
+        ], { color: '#ff44ff', weight: 3, opacity: 0.8, fillOpacity: 0.1 }).addTo(map);
+        
+        L.geoJSON({ type: 'FeatureCollection', features: desaparecidosFeatures }, {
+            style: { color: '#ff4444', weight: 2, opacity: 0.9, fillOpacity: 0.4 },
+            onEachFeature: (f, l) => l.bindPopup('<b>' + (f.properties.CONCESION || 'N/A') + '</b><br>🔴 Desapareció')
+        }).addTo(map);
+        
+        L.geoJSON({ type: 'FeatureCollection', features: aparecidosFeatures }, {
+            style: { color: '#4444ff', weight: 2, opacity: 0.9, fillOpacity: 0.4 },
+            onEachFeature: (f, l) => l.bindPopup('<b>' + (f.properties.CONCESION || 'N/A') + '</b><br>🔵 Apareció')
+        }).addTo(map);
+    </script>
+</body>
+</html>
