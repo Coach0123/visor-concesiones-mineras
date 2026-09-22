@@ -166,5 +166,23 @@
     "nombre": "CORPORATIVO JASC",
     "tipo": "aparece",
     "fecha": "2026-09-21T01:25:35.782Z"
+  },
+  {
+    "codigo": "010526426",
+    "nombre": "CHAUPIMAYO 01",
+    "tipo": "aparece",
+    "fecha": "2026-09-22T01:57:50.933Z"
+  },
+  {
+    "codigo": "010525626",
+    "nombre": "VALENTINA SF 2",
+    "tipo": "aparece",
+    "fecha": "2026-09-22T01:57:50.933Z"
+  },
+  {
+    "codigo": "010525726",
+    "nombre": "GOLD FAJOCAY 2",
+    "tipo": "aparece",
+    "fecha": "2026-09-22T01:57:50.933Z"
   }
 ]
