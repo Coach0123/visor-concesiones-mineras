@@ -184,5 +184,59 @@
     "nombre": "GOLD FAJOCAY 2",
     "tipo": "aparece",
     "fecha": "2026-09-22T01:57:50.933Z"
+  },
+  {
+    "codigo": "700001025",
+    "nombre": "PIRATA DEL INDIO",
+    "tipo": "desaparece",
+    "fecha": "2026-09-23T01:53:28.956Z"
+  },
+  {
+    "codigo": "700001526",
+    "nombre": "ASOCIACION DE COMUNEROS SAN JORGE LUIS",
+    "tipo": "desaparece",
+    "fecha": "2026-09-23T01:53:28.956Z"
+  },
+  {
+    "codigo": "030091526",
+    "nombre": "LAS AMAPOLAS",
+    "tipo": "aparece",
+    "fecha": "2026-09-23T01:53:28.956Z"
+  },
+  {
+    "codigo": "060022726",
+    "nombre": "EL COLORAO I",
+    "tipo": "aparece",
+    "fecha": "2026-09-23T01:53:28.956Z"
+  },
+  {
+    "codigo": "010526926",
+    "nombre": "CANTERA CARMELITA",
+    "tipo": "aparece",
+    "fecha": "2026-09-23T01:53:28.956Z"
+  },
+  {
+    "codigo": "010526526",
+    "nombre": "WK202601",
+    "tipo": "aparece",
+    "fecha": "2026-09-23T01:53:28.956Z"
+  },
+  {
+    "codigo": "010527026",
+    "nombre": "ZOIVIR MINING III",
+    "tipo": "aparece",
+    "fecha": "2026-09-23T01:53:28.956Z"
+  },
+  {
+    "codigo": "050113226",
+    "nombre": "LEGADO 1",
+    "tipo": "aparece",
+    "fecha": "2026-09-23T01:53:28.956Z"
+  },
+  {
+    "codigo": "070041926",
+    "nombre": "LOS ALIADOS I",
+    "tipo": "aparece",
+    "fecha": "2026-09-23T01:53:28.956Z"
   }
 ]
