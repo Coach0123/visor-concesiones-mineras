@@ -238,5 +238,143 @@
     "nombre": "LOS ALIADOS I",
     "tipo": "aparece",
     "fecha": "2026-09-23T01:53:28.956Z"
+  },
+  {
+    "codigo": "060007523",
+    "nombre": "EL TORO 2023",
+    "tipo": "desaparece",
+    "fecha": "2026-09-24T01:42:51.173Z"
+  },
+  {
+    "codigo": "010104126",
+    "nombre": "DE NUEVO 2",
+    "tipo": "desaparece",
+    "fecha": "2026-09-24T01:42:51.173Z"
+  },
+  {
+    "codigo": "540003321",
+    "nombre": "MARIANITA 2021",
+    "tipo": "desaparece",
+    "fecha": "2026-09-24T01:42:51.173Z"
+  },
+  {
+    "codigo": "050062026",
+    "nombre": "MINAXA 003",
+    "tipo": "desaparece",
+    "fecha": "2026-09-24T01:42:51.173Z"
+  },
+  {
+    "codigo": "010310226",
+    "nombre": "NUEVO AMANECER 26",
+    "tipo": "desaparece",
+    "fecha": "2026-09-24T01:42:51.173Z"
+  },
+  {
+    "codigo": "050061726",
+    "nombre": "MINAXA 002",
+    "tipo": "desaparece",
+    "fecha": "2026-09-24T01:42:51.173Z"
+  },
+  {
+    "codigo": "010527326",
+    "nombre": "FENIX DORADO",
+    "tipo": "aparece",
+    "fecha": "2026-09-24T01:42:51.173Z"
+  },
+  {
+    "codigo": "520006726",
+    "nombre": "CULEBRAS DEL NORTE III",
+    "tipo": "aparece",
+    "fecha": "2026-09-24T01:42:51.173Z"
+  },
+  {
+    "codigo": "060022926",
+    "nombre": "CAFE DORADO",
+    "tipo": "aparece",
+    "fecha": "2026-09-24T01:42:51.173Z"
+  },
+  {
+    "codigo": "030091626",
+    "nombre": "LOS CUCHOS",
+    "tipo": "aparece",
+    "fecha": "2026-09-24T01:42:51.173Z"
+  },
+  {
+    "codigo": "030091826",
+    "nombre": "MINERA AURIFERA AUREA I",
+    "tipo": "aparece",
+    "fecha": "2026-09-24T01:42:51.173Z"
+  },
+  {
+    "codigo": "040046526",
+    "nombre": "SUMAQ HUILCARANA I",
+    "tipo": "aparece",
+    "fecha": "2026-09-24T01:42:51.173Z"
+  },
+  {
+    "codigo": "050113526",
+    "nombre": "ANGELITO 2026 I",
+    "tipo": "aparece",
+    "fecha": "2026-09-24T01:42:51.173Z"
+  },
+  {
+    "codigo": "620007526",
+    "nombre": "XIOMARA 2026",
+    "tipo": "aparece",
+    "fecha": "2026-09-24T01:42:51.173Z"
+  },
+  {
+    "codigo": "530019726",
+    "nombre": "QORY RICCHARY UNO",
+    "tipo": "aparece",
+    "fecha": "2026-09-24T01:42:51.173Z"
+  },
+  {
+    "codigo": "530019626",
+    "nombre": "MINERA RADIANTE SEIS",
+    "tipo": "aparece",
+    "fecha": "2026-09-24T01:42:51.173Z"
+  },
+  {
+    "codigo": "040046626",
+    "nombre": "SUMAQ HUILCARANA II",
+    "tipo": "aparece",
+    "fecha": "2026-09-24T01:42:51.173Z"
+  },
+  {
+    "codigo": "060022826",
+    "nombre": "SOCIEDAD MINERA ORKO DORADO",
+    "tipo": "aparece",
+    "fecha": "2026-09-24T01:42:51.173Z"
+  },
+  {
+    "codigo": "070042226",
+    "nombre": "JAMES 2",
+    "tipo": "aparece",
+    "fecha": "2026-09-24T01:42:51.173Z"
+  },
+  {
+    "codigo": "070042126",
+    "nombre": "JAMES 1",
+    "tipo": "aparece",
+    "fecha": "2026-09-24T01:42:51.173Z"
+  },
+  {
+    "codigo": "010527226",
+    "nombre": "KALAMINA ONE",
+    "tipo": "aparece",
+    "fecha": "2026-09-24T01:42:51.173Z"
+  },
+  {
+    "codigo": "070042026",
+    "nombre": "TRES AMIGOS",
+    "tipo": "aparece",
+    "fecha": "2026-09-24T01:42:51.173Z"
+  },
+  {
+    "codigo": "080071726",
+    "nombre": "VLADISUR UNO DIAZ",
+    "tipo": "aparece",
+    "fecha": "2026-09-24T01:42:51.173Z"
   }
 ]
