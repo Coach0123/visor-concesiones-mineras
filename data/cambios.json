@@ -376,5 +376,269 @@
     "nombre": "VLADISUR UNO DIAZ",
     "tipo": "aparece",
     "fecha": "2026-09-24T01:42:51.173Z"
+  },
+  {
+    "codigo": "010211624",
+    "nombre": "CEREZOS 2 2024",
+    "tipo": "desaparece",
+    "fecha": "2026-09-25T02:00:08.393Z"
+  },
+  {
+    "codigo": "010211524",
+    "nombre": "LA CRUZ A",
+    "tipo": "desaparece",
+    "fecha": "2026-09-25T02:00:08.393Z"
+  },
+  {
+    "codigo": "030055026",
+    "nombre": "YANIANTHRA 5",
+    "tipo": "desaparece",
+    "fecha": "2026-09-25T02:00:08.393Z"
+  },
+  {
+    "codigo": "010291926",
+    "nombre": "SARAGOZA I",
+    "tipo": "desaparece",
+    "fecha": "2026-09-25T02:00:08.393Z"
+  },
+  {
+    "codigo": "540005125",
+    "nombre": "MINERA ARMANDOS II",
+    "tipo": "desaparece",
+    "fecha": "2026-09-25T02:00:08.393Z"
+  },
+  {
+    "codigo": "010220526",
+    "nombre": "PERSPECTIVA 2",
+    "tipo": "desaparece",
+    "fecha": "2026-09-25T02:00:08.393Z"
+  },
+  {
+    "codigo": "540001924",
+    "nombre": "NATIVIDAD IX",
+    "tipo": "desaparece",
+    "fecha": "2026-09-25T02:00:08.393Z"
+  },
+  {
+    "codigo": "540012924",
+    "nombre": "GONZALO 2003",
+    "tipo": "desaparece",
+    "fecha": "2026-09-25T02:00:08.393Z"
+  },
+  {
+    "codigo": "010342526",
+    "nombre": "AKJJA II",
+    "tipo": "desaparece",
+    "fecha": "2026-09-25T02:00:08.393Z"
+  },
+  {
+    "codigo": "050062826",
+    "nombre": "DON CARLOS 2026",
+    "tipo": "desaparece",
+    "fecha": "2026-09-25T02:00:08.393Z"
+  },
+  {
+    "codigo": "070023526",
+    "nombre": "ROSITA II",
+    "tipo": "desaparece",
+    "fecha": "2026-09-25T02:00:08.393Z"
+  },
+  {
+    "codigo": "010528426",
+    "nombre": "PEREZVIVAR",
+    "tipo": "aparece",
+    "fecha": "2026-09-25T02:00:08.393Z"
+  },
+  {
+    "codigo": "010527726",
+    "nombre": "INTI QORI ISKAY",
+    "tipo": "aparece",
+    "fecha": "2026-09-25T02:00:08.393Z"
+  },
+  {
+    "codigo": "030091926",
+    "nombre": "CORPORACION ROCA DEL NORTE",
+    "tipo": "aparece",
+    "fecha": "2026-09-25T02:00:08.393Z"
+  },
+  {
+    "codigo": "030092026",
+    "nombre": "MINA MARZA & JJRM & MPC PERU",
+    "tipo": "aparece",
+    "fecha": "2026-09-25T02:00:08.393Z"
+  },
+  {
+    "codigo": "030092126",
+    "nombre": "MINA MARZA & JJRM & MPC",
+    "tipo": "aparece",
+    "fecha": "2026-09-25T02:00:08.393Z"
+  },
+  {
+    "codigo": "030092226",
+    "nombre": "MINAS MARZA & JJRM AA",
+    "tipo": "aparece",
+    "fecha": "2026-09-25T02:00:08.393Z"
+  },
+  {
+    "codigo": "030092326",
+    "nombre": "MINAS MARZA & JJRM & MPC",
+    "tipo": "aparece",
+    "fecha": "2026-09-25T02:00:08.393Z"
+  },
+  {
+    "codigo": "550007226",
+    "nombre": "VALEMIL I",
+    "tipo": "aparece",
+    "fecha": "2026-09-25T02:00:08.393Z"
+  },
+  {
+    "codigo": "010528726",
+    "nombre": "ANTAPAKARY",
+    "tipo": "aparece",
+    "fecha": "2026-09-25T02:00:08.393Z"
+  },
+  {
+    "codigo": "020019326",
+    "nombre": "LA ESPERANZA NA",
+    "tipo": "aparece",
+    "fecha": "2026-09-25T02:00:08.393Z"
+  },
+  {
+    "codigo": "010528326",
+    "nombre": "ZF2026-47",
+    "tipo": "aparece",
+    "fecha": "2026-09-25T02:00:08.393Z"
+  },
+  {
+    "codigo": "070042426",
+    "nombre": "NICOLAS R",
+    "tipo": "aparece",
+    "fecha": "2026-09-25T02:00:08.393Z"
+  },
+  {
+    "codigo": "010528126",
+    "nombre": "ZF2026-46",
+    "tipo": "aparece",
+    "fecha": "2026-09-25T02:00:08.393Z"
+  },
+  {
+    "codigo": "070042326",
+    "nombre": "MAURCIO I",
+    "tipo": "aparece",
+    "fecha": "2026-09-25T02:00:08.393Z"
+  },
+  {
+    "codigo": "010341726A",
+    "nombre": "PROYECTO HUARI 2026-1",
+    "tipo": "aparece",
+    "fecha": "2026-09-25T02:00:08.393Z"
+  },
+  {
+    "codigo": "010527826",
+    "nombre": "ZF2026-43",
+    "tipo": "aparece",
+    "fecha": "2026-09-25T02:00:08.393Z"
+  },
+  {
+    "codigo": "040046726",
+    "nombre": "METAL EMPORIUM 1",
+    "tipo": "aparece",
+    "fecha": "2026-09-25T02:00:08.393Z"
+  },
+  {
+    "codigo": "010527526",
+    "nombre": "MANTOS DE CHAPIMARCA",
+    "tipo": "aparece",
+    "fecha": "2026-09-25T02:00:08.393Z"
+  },
+  {
+    "codigo": "010527926",
+    "nombre": "ZF2026-44",
+    "tipo": "aparece",
+    "fecha": "2026-09-25T02:00:08.393Z"
+  },
+  {
+    "codigo": "010528526",
+    "nombre": "GEOSATMIN VIII",
+    "tipo": "aparece",
+    "fecha": "2026-09-25T02:00:08.393Z"
+  },
+  {
+    "codigo": "010528226",
+    "nombre": "ZF2026-48",
+    "tipo": "aparece",
+    "fecha": "2026-09-25T02:00:08.393Z"
+  },
+  {
+    "codigo": "010528026",
+    "nombre": "ZF2026-45",
+    "tipo": "aparece",
+    "fecha": "2026-09-25T02:00:08.393Z"
+  },
+  {
+    "codigo": "010528626",
+    "nombre": "RYMEXPLO 3",
+    "tipo": "aparece",
+    "fecha": "2026-09-25T02:00:08.393Z"
+  },
+  {
+    "codigo": "550007326",
+    "nombre": "VALEMIL II",
+    "tipo": "aparece",
+    "fecha": "2026-09-25T02:00:08.393Z"
+  },
+  {
+    "codigo": "010527626",
+    "nombre": "GRUPO PROGRESO TRES",
+    "tipo": "aparece",
+    "fecha": "2026-09-25T02:00:08.393Z"
+  },
+  {
+    "codigo": "010528826",
+    "nombre": "CCORCHAQ 1",
+    "tipo": "aparece",
+    "fecha": "2026-09-25T02:00:08.393Z"
+  },
+  {
+    "codigo": "010528926",
+    "nombre": "CCORCHAQ 2",
+    "tipo": "aparece",
+    "fecha": "2026-09-25T02:00:08.393Z"
+  },
+  {
+    "codigo": "050113726",
+    "nombre": "AQUADA LOMAS",
+    "tipo": "aparece",
+    "fecha": "2026-09-25T02:00:08.393Z"
+  },
+  {
+    "codigo": "550007426",
+    "nombre": "LAPASOY2026",
+    "tipo": "aparece",
+    "fecha": "2026-09-25T02:00:08.393Z"
+  },
+  {
+    "codigo": "080071926",
+    "nombre": "DIANA DOS",
+    "tipo": "aparece",
+    "fecha": "2026-09-25T02:00:08.393Z"
+  },
+  {
+    "codigo": "080071826",
+    "nombre": "JM OVIEDO UNO",
+    "tipo": "aparece",
+    "fecha": "2026-09-25T02:00:08.393Z"
+  },
+  {
+    "codigo": "060023026",
+    "nombre": "SOCIEDAD MINERA ORKO DORADO 2",
+    "tipo": "aparece",
+    "fecha": "2026-09-25T02:00:08.393Z"
+  },
+  {
+    "codigo": "010300426A",
+    "nombre": "MUÑANI 44",
+    "tipo": "aparece",
+    "fecha": "2026-09-25T02:00:08.393Z"
   }
 ]
