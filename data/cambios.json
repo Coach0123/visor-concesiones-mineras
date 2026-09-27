@@ -688,5 +688,47 @@
     "nombre": "LOS TRES TESOROS I",
     "tipo": "aparece",
     "fecha": "2026-09-26T02:05:12.217Z"
+  },
+  {
+    "codigo": "060023226",
+    "nombre": "LOS PINOS I",
+    "tipo": "aparece",
+    "fecha": "2026-09-27T01:57:14.952Z"
+  },
+  {
+    "codigo": "060023126",
+    "nombre": "EL PEPINILLO",
+    "tipo": "aparece",
+    "fecha": "2026-09-27T01:57:14.952Z"
+  },
+  {
+    "codigo": "010530026",
+    "nombre": "BELLEZA ANDINA",
+    "tipo": "aparece",
+    "fecha": "2026-09-27T01:57:14.952Z"
+  },
+  {
+    "codigo": "010529726",
+    "nombre": "CAROLINA I",
+    "tipo": "aparece",
+    "fecha": "2026-09-27T01:57:14.952Z"
+  },
+  {
+    "codigo": "550007526",
+    "nombre": "TITAN II",
+    "tipo": "aparece",
+    "fecha": "2026-09-27T01:57:14.952Z"
+  },
+  {
+    "codigo": "040046926",
+    "nombre": "EZA SABAINO I",
+    "tipo": "aparece",
+    "fecha": "2026-09-27T01:57:14.952Z"
+  },
+  {
+    "codigo": "040046826",
+    "nombre": "DIDI 77",
+    "tipo": "aparece",
+    "fecha": "2026-09-27T01:57:14.952Z"
   }
 ]
