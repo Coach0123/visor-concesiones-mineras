@@ -730,5 +730,83 @@
     "nombre": "DIDI 77",
     "tipo": "aparece",
     "fecha": "2026-09-27T01:57:14.952Z"
+  },
+  {
+    "codigo": "010112725",
+    "nombre": "SANVILHUAS",
+    "tipo": "desaparece",
+    "fecha": "2026-09-29T02:49:21.688Z"
+  },
+  {
+    "codigo": "050066225",
+    "nombre": "QUIMPER 2025",
+    "tipo": "desaparece",
+    "fecha": "2026-09-29T02:49:21.688Z"
+  },
+  {
+    "codigo": "030093126",
+    "nombre": "MARIA JOSE 26",
+    "tipo": "aparece",
+    "fecha": "2026-09-29T02:49:21.688Z"
+  },
+  {
+    "codigo": "030093226",
+    "nombre": "JOSEFINA LA FINA",
+    "tipo": "aparece",
+    "fecha": "2026-09-29T02:49:21.688Z"
+  },
+  {
+    "codigo": "540008922A",
+    "nombre": "MINING UNO 2022 A",
+    "tipo": "aparece",
+    "fecha": "2026-09-29T02:49:21.688Z"
+  },
+  {
+    "codigo": "030092726",
+    "nombre": "APU CHAPIMARCA",
+    "tipo": "aparece",
+    "fecha": "2026-09-29T02:49:21.688Z"
+  },
+  {
+    "codigo": "030092826",
+    "nombre": "APU SAÑAYCA",
+    "tipo": "aparece",
+    "fecha": "2026-09-29T02:49:21.688Z"
+  },
+  {
+    "codigo": "030092926",
+    "nombre": "APU CHALHUANCA",
+    "tipo": "aparece",
+    "fecha": "2026-09-29T02:49:21.688Z"
+  },
+  {
+    "codigo": "030093026",
+    "nombre": "APU PAMPACHIRI",
+    "tipo": "aparece",
+    "fecha": "2026-09-29T02:49:21.688Z"
+  },
+  {
+    "codigo": "080072126",
+    "nombre": "TITAN CM 1",
+    "tipo": "aparece",
+    "fecha": "2026-09-29T02:49:21.688Z"
+  },
+  {
+    "codigo": "590005526",
+    "nombre": "AZUL DORADO",
+    "tipo": "aparece",
+    "fecha": "2026-09-29T02:49:21.688Z"
+  },
+  {
+    "codigo": "010531126",
+    "nombre": "YOMI YAD",
+    "tipo": "aparece",
+    "fecha": "2026-09-29T02:49:21.688Z"
+  },
+  {
+    "codigo": "010531326",
+    "nombre": "PUTINA 75 A",
+    "tipo": "aparece",
+    "fecha": "2026-09-29T02:49:21.688Z"
   }
 ]
