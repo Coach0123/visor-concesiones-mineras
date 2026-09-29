@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wvisor - Informe 20260929</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #0a1628; color: #e0e6f0; padding: 20px; }
+        .container { max-width: 1400px; margin: 0 auto; background: #0f1e3a; border-radius: 12px; box-shadow: 0 8px 40px rgba(0,0,0,0.5); overflow: hidden; border: 1px solid #1e3a5f; }
+        .header { background: linear-gradient(135deg, #1e3a8a, #1e40af); padding: 25px 30px; }
+        .header-top { display: flex; align-items: center; gap: 15px; margin-bottom: 10px; }
+        .logo-w { width: 45px; height: 45px; background: linear-gradient(135deg, #3b82f6, #1e40af); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 26px; font-weight: 800; color: #fff; font-family: Georgia, serif; }
+        .header h1 { font-size: 22px; font-weight: 600; color: #fff; }
+        .subtitle { font-size: 13px; color: #93c5fd; margin-bottom: 15px; }
+        .stats { display: flex; gap: 12px; flex-wrap: wrap; }
+        .stat-item { background: rgba(255,255,255,0.12); padding: 10px 18px; border-radius: 8px; font-size: 12px; color: #bfdbfe; }
+        .stat-item strong { font-size: 20px; display: block; color: #fff; }
+        .stat-item.danger { background: rgba(220, 38, 38, 0.3); }
+        .stat-item.danger strong { color: #fca5a5; }
+        .stat-item.success { background: rgba(59, 130, 246, 0.3); }
+        .stat-item.success strong { color: #93c5fd; }
+        .main-content { display: flex; flex-wrap: wrap; }
+        .map-column { flex: 2; min-width: 500px; padding: 20px; background: #0a1628; }
+        #map { border-radius: 8px; height: 550px; width: 100%; border: 1px solid #1e3a5f; }
+        .info-column { flex: 1; min-width: 320px; padding: 20px; background: #0f1e3a; border-left: 1px solid #1e3a5f; max-height: 600px; overflow-y: auto; }
+        .info-column h2 { font-size: 16px; margin-bottom: 15px; color: #93c5fd; padding-bottom: 8px; border-bottom: 1px solid #1e3a5f; }
+        .item-concesion { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; font-size: 12px; border-bottom: 1px solid #1e3a5f; }
+        .estado-badge { font-size: 10px; padding: 3px 8px; border-radius: 10px; color: white; font-weight: 600; }
+        .estado-badge.desaparecio { background: #dc2626; }
+        .estado-badge.aparecio { background: #2563eb; }
+        .tabla-container { padding: 20px 30px 30px; border-top: 1px solid #1e3a5f; }
+        .tabla-container h2 { font-size: 16px; margin-bottom: 15px; color: #93c5fd; }
+        .tabla-concesiones { width: 100%; border-collapse: collapse; font-size: 13px; }
+        .tabla-concesiones thead th { background: #152b4a; padding: 12px 15px; text-align: left; color: #93c5fd; border-bottom: 2px solid #1e3a5f; }
+        .tabla-concesiones tbody td { padding: 10px 15px; border-bottom: 1px solid #1e3a5f; color: #cbd5e1; }
+        .footer { background: #0a1628; padding: 15px 30px; text-align: center; font-size: 11px; color: #475569; border-top: 1px solid #1e3a5f; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-top">
+                <div class="logo-w">W</div>
+                <h1>Wvisor - Informe de Área</h1>
+            </div>
+            <div class="subtitle">Generado el 29/09/2026</div>
+            <div class="stats">
+                <div class="stat-item danger"><strong>2</strong>Desaparecieron</div>
+                <div class="stat-item success"><strong>11</strong>Aparecieron</div>
+                <div class="stat-item"><strong>13</strong>Total</div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="map-column">
+                <div id="map"></div>
+            </div>
+            <div class="info-column">
+                <h2>📋 Concesiones</h2>
+                
+                    <div class="item-concesion">
+                        <span>SANVILHUAS</span>
+                        <span class="estado-badge desaparecio">DESAPARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>QUIMPER 2025</span>
+                        <span class="estado-badge desaparecio">DESAPARECIÓ</span>
+                    </div>
+                
+                
+                    <div class="item-concesion">
+                        <span>MARIA JOSE 26</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>JOSEFINA LA FINA</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>MINING UNO 2022 A</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>APU CHAPIMARCA</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>APU SAÑAYCA</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>APU CHALHUANCA</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>APU PAMPACHIRI</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>TITAN CM 1</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>AZUL DORADO</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>YOMI YAD</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>PUTINA 75 A</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+            </div>
+        </div>
+        
+        <div class="tabla-container">
+            <h2>📋 Detalle Completo</h2>
+            <table class="tabla-concesiones">
+                <thead>
+                    <tr><th>Código</th><th>Concesión</th><th>Titular</th><th>Estado</th></tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>010112725</td>
+                            <td>SANVILHUAS</td>
+                            <td>CARLOS SANCHEZ PARIONA Y OTROS</td>
+                            <td><span class="estado-badge desaparecio">DESAPARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>050066225</td>
+                            <td>QUIMPER 2025</td>
+                            <td>MIRUAS MINING S.A.C.</td>
+                            <td><span class="estado-badge desaparecio">DESAPARECIÓ</span></td>
+                        </tr>
+                    
+                    
+                        <tr>
+                            <td>030093126</td>
+                            <td>MARIA JOSE 26</td>
+                            <td>TALOS MINING INDUSTRIES S.A.</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>030093226</td>
+                            <td>JOSEFINA LA FINA</td>
+                            <td>TALOS MINING INDUSTRIES S.A.</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>540008922A</td>
+                            <td>MINING UNO 2022 A</td>
+                            <td>MINING PERU TRADERS S.A.</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>030092726</td>
+                            <td>APU CHAPIMARCA</td>
+                            <td>FREDDY ORDUÑA MEJIA</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>030092826</td>
+                            <td>APU SAÑAYCA</td>
+                            <td>FREDDY ORDUÑA MEJIA</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>030092926</td>
+                            <td>APU CHALHUANCA</td>
+                            <td>FREDDY ORDUÑA MEJIA</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>030093026</td>
+                            <td>APU PAMPACHIRI</td>
+                            <td>FREDDY ORDUÑA MEJIA</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>080072126</td>
+                            <td>TITAN CM 1</td>
+                            <td>COSME VICENTE CULQUE MOLINA</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>590005526</td>
+                            <td>AZUL DORADO</td>
+                            <td>EMPRESA MINERA DEL CENTRO ZEVALLOS E.I.R.L.</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010531126</td>
+                            <td>YOMI YAD</td>
+                            <td>RUBEN PROSPERO QUISPE GUERRA</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010531326</td>
+                            <td>PUTINA 75 A</td>
+                            <td>CUMBRES DEL SUR S.A.C.</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="footer">Wvisor · Datos INGEMMET · 29/09/2026</div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.8.0/proj4.js"></script>
+    <script>
+        const areaData = {"sw":{"lat":-18,"lng":-82},"ne":{"lat":-2,"lng":-68},"bounds":"-82,-18,-68,-2","fecha":"2026-07-15T21:30:00.000Z"};
+        const desaparecidosFeatures = [{"type":"Feature","properties":{"CODIGOU":"010112725","FEC_DENU":"2025-05-05","CONCESION":"SANVILHUAS","TIT_CONCES":"CARLOS SANCHEZ PARIONA Y OTROS","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"29-L","ZONA":"18","SUSTANCIA":"M","DEPA":"ICA","PROVI":"ICA","DISTRI":"YAUCA DEL ROSARIO","HASDATUM":300},"geometry":{"type":"Polygon","coordinates":[[[447000,8446000],[447000,8444000],[446000,8444000],[446000,8445000],[445000,8445000],[445000,8446000],[447000,8446000]]]}},{"type":"Feature","properties":{"CODIGOU":"050066225","FEC_DENU":"2025-09-01","CONCESION":"QUIMPER 2025","TIT_CONCES":"MIRUAS MINING S.A.C.","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"31-O","ZONA":"18","SUSTANCIA":"M","DEPA":"AYACUCHO","PROVI":"PARINACOCHAS","DISTRI":"PUYUSCA","HASDATUM":200},"geometry":{"type":"Polygon","coordinates":[[[647000,8298000],[647000,8297000],[645000,8297000],[645000,8298000],[647000,8298000]]]}}];
+        const aparecidosFeatures = [{"type":"Feature","properties":{"CODIGOU":"030093126","FEC_DENU":"2026-09-28","CONCESION":"MARIA JOSE 26","TIT_CONCES":"TALOS MINING INDUSTRIES S.A.","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"17-G","ZONA":"17","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":0},"geometry":{"type":"Polygon","coordinates":[[[785000,9062000],[785000,9061000],[784000,9061000],[784000,9062000],[785000,9062000]]]}},{"type":"Feature","properties":{"CODIGOU":"030093226","FEC_DENU":"2026-09-28","CONCESION":"JOSEFINA LA FINA","TIT_CONCES":"TALOS MINING INDUSTRIES S.A.","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"17-G","ZONA":"17","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":0},"geometry":{"type":"Polygon","coordinates":[[[783000,9065000],[783000,9063000],[782000,9063000],[782000,9065000],[783000,9065000]]]}},{"type":"Feature","properties":{"CODIGOU":"540008922A","FEC_DENU":"2022-06-27","CONCESION":"MINING UNO 2022 A","TIT_CONCES":"MINING PERU TRADERS S.A.","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"32-O","ZONA":"18","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":0},"geometry":{"type":"Polygon","coordinates":[[[619000,8264000],[620000,8264000],[620000,8263000],[619000,8263000],[619000,8264000]]]}},{"type":"Feature","properties":{"CODIGOU":"030092726","FEC_DENU":"2026-09-28","CONCESION":"APU CHAPIMARCA","TIT_CONCES":"FREDDY ORDUÑA MEJIA","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"28-P","ZONA":"18","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":0},"geometry":{"type":"Polygon","coordinates":[[[702000,8452000],[702000,8451000],[700000,8451000],[700000,8452000],[702000,8452000]]]}},{"type":"Feature","properties":{"CODIGOU":"030092826","FEC_DENU":"2026-09-28","CONCESION":"APU SAÑAYCA","TIT_CONCES":"FREDDY ORDUÑA MEJIA","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"29-P","ZONA":"18","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":0},"geometry":{"type":"Polygon","coordinates":[[[676000,8431000],[676000,8429000],[675000,8429000],[675000,8430000],[674000,8430000],[674000,8431000],[676000,8431000]]]}},{"type":"Feature","properties":{"CODIGOU":"030092926","FEC_DENU":"2026-09-28","CONCESION":"APU CHALHUANCA","TIT_CONCES":"FREDDY ORDUÑA MEJIA","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"29-P","ZONA":"18","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":0},"geometry":{"type":"Polygon","coordinates":[[[692000,8425000],[692000,8424000],[690000,8424000],[690000,8426000],[691000,8426000],[691000,8425000],[692000,8425000]]]}},{"type":"Feature","properties":{"CODIGOU":"030093026","FEC_DENU":"2026-09-28","CONCESION":"APU PAMPACHIRI","TIT_CONCES":"FREDDY ORDUÑA MEJIA","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"29-P","ZONA":"18","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":0},"geometry":{"type":"Polygon","coordinates":[[[662000,8429000],[662000,8428000],[660000,8428000],[660000,8430000],[661000,8430000],[661000,8429000],[662000,8429000]]]}},{"type":"Feature","properties":{"CODIGOU":"080072126","FEC_DENU":"2026-09-28","CONCESION":"TITAN CM 1","TIT_CONCES":"COSME VICENTE CULQUE MOLINA","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"29-P","ZONA":"18","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":0},"geometry":{"type":"Polygon","coordinates":[[[667000,8439000],[667000,8438000],[666000,8438000],[666000,8439000],[667000,8439000]]]}},{"type":"Feature","properties":{"CODIGOU":"590005526","FEC_DENU":"2026-09-28","CONCESION":"AZUL DORADO","TIT_CONCES":"EMPRESA MINERA DEL CENTRO ZEVALLOS E.I.R.L.","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"26-N","ZONA":"18","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":0},"geometry":{"type":"Polygon","coordinates":[[[537000,8576000],[537000,8575000],[536000,8575000],[536000,8576000],[537000,8576000]]]}},{"type":"Feature","properties":{"CODIGOU":"010531126","FEC_DENU":"2026-09-28","CONCESION":"YOMI YAD","TIT_CONCES":"RUBEN PROSPERO QUISPE GUERRA","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"28-M","ZONA":"18","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":0},"geometry":{"type":"Polygon","coordinates":[[[453000,8506000],[453000,8505000],[451000,8505000],[451000,8506000],[453000,8506000]]]}},{"type":"Feature","properties":{"CODIGOU":"010531326","FEC_DENU":"2026-09-28","CONCESION":"PUTINA 75 A","TIT_CONCES":"CUMBRES DEL SUR S.A.C.","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"30-X","ZONA":"19","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":0},"geometry":{"type":"Polygon","coordinates":[[[403000,8360000],[403000,8359000],[398000,8359000],[398000,8360000],[399000,8360000],[399000,8364000],[400000,8364000],[400000,8361000],[401000,8361000],[401000,8360000],[403000,8360000]]]}}];
+        
+        const map = L.map('map').setView([
+            (areaData.sw.lat + areaData.ne.lat) / 2,
+            (areaData.sw.lng + areaData.ne.lng) / 2
+        ], 10);
+        
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png').addTo(map);
+        
+        L.rectangle([
+            [areaData.sw.lat, areaData.sw.lng],
+            [areaData.ne.lat, areaData.ne.lng]
+        ], { color: '#ff44ff', weight: 3, opacity: 0.8, fillOpacity: 0.1 }).addTo(map);
+        
+        L.geoJSON({ type: 'FeatureCollection', features: desaparecidosFeatures }, {
+            style: { color: '#ff4444', weight: 2, opacity: 0.9, fillOpacity: 0.4 },
+            onEachFeature: (f, l) => l.bindPopup('<b>' + (f.properties.CONCESION || 'N/A') + '</b><br>🔴 Desapareció')
+        }).addTo(map);
+        
+        L.geoJSON({ type: 'FeatureCollection', features: aparecidosFeatures }, {
+            style: { color: '#4444ff', weight: 2, opacity: 0.9, fillOpacity: 0.4 },
+            onEachFeature: (f, l) => l.bindPopup('<b>' + (f.properties.CONCESION || 'N/A') + '</b><br>🔵 Apareció')
+        }).addTo(map);
+    </script>
+</body>
+</html>
