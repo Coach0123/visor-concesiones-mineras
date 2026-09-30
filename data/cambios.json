@@ -808,5 +808,89 @@
     "nombre": "PUTINA 75 A",
     "tipo": "aparece",
     "fecha": "2026-09-29T02:49:21.688Z"
+  },
+  {
+    "codigo": "030093426",
+    "nombre": "A&G ROSAS",
+    "tipo": "aparece",
+    "fecha": "2026-09-30T02:30:44.968Z"
+  },
+  {
+    "codigo": "560002126",
+    "nombre": "XIMENA 26",
+    "tipo": "aparece",
+    "fecha": "2026-09-30T02:30:44.969Z"
+  },
+  {
+    "codigo": "030093326",
+    "nombre": "MINERA URUMALQUI I",
+    "tipo": "aparece",
+    "fecha": "2026-09-30T02:30:44.969Z"
+  },
+  {
+    "codigo": "540022626",
+    "nombre": "VIRGEN DEL CARMEN",
+    "tipo": "aparece",
+    "fecha": "2026-09-30T02:30:44.969Z"
+  },
+  {
+    "codigo": "050113926",
+    "nombre": "GOLDEN JAQUI 1 2026",
+    "tipo": "aparece",
+    "fecha": "2026-09-30T02:30:44.969Z"
+  },
+  {
+    "codigo": "590005626",
+    "nombre": "SEÑOR DE POTOCCHI J&Z HERMANOS",
+    "tipo": "aparece",
+    "fecha": "2026-09-30T02:30:44.969Z"
+  },
+  {
+    "codigo": "620007726",
+    "nombre": "ANANKE",
+    "tipo": "aparece",
+    "fecha": "2026-09-30T02:30:44.969Z"
+  },
+  {
+    "codigo": "010532426",
+    "nombre": "LOGAN 369 B",
+    "tipo": "aparece",
+    "fecha": "2026-09-30T02:30:44.969Z"
+  },
+  {
+    "codigo": "010532226",
+    "nombre": "CATALINA 25",
+    "tipo": "aparece",
+    "fecha": "2026-09-30T02:30:44.969Z"
+  },
+  {
+    "codigo": "550007626",
+    "nombre": "SUMAQ RUMI TACAMIN",
+    "tipo": "aparece",
+    "fecha": "2026-09-30T02:30:44.969Z"
+  },
+  {
+    "codigo": "010532126",
+    "nombre": "ISABELLA 25",
+    "tipo": "aparece",
+    "fecha": "2026-09-30T02:30:44.969Z"
+  },
+  {
+    "codigo": "010532026",
+    "nombre": "SAMANGUI 2026",
+    "tipo": "aparece",
+    "fecha": "2026-09-30T02:30:44.969Z"
+  },
+  {
+    "codigo": "010532326",
+    "nombre": "ROCIO 4",
+    "tipo": "aparece",
+    "fecha": "2026-09-30T02:30:44.969Z"
+  },
+  {
+    "codigo": "040047026",
+    "nombre": "CM MOLLEBAMBA",
+    "tipo": "aparece",
+    "fecha": "2026-09-30T02:30:44.969Z"
   }
 ]
