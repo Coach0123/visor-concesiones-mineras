@@ -82,5 +82,281 @@
     "nombre": "CM MOLLEBAMBA",
     "tipo": "aparece",
     "fecha": "2026-10-01T01:29:36.600Z"
+  },
+  {
+    "codigo": "030013826",
+    "nombre": "LLACTABAMBA",
+    "tipo": "desaparece",
+    "fecha": "2026-10-01T02:33:43.415Z"
+  },
+  {
+    "codigo": "030051425",
+    "nombre": "ADIHS COAL VII",
+    "tipo": "desaparece",
+    "fecha": "2026-10-01T02:33:43.415Z"
+  },
+  {
+    "codigo": "060009125",
+    "nombre": "JJL I",
+    "tipo": "desaparece",
+    "fecha": "2026-10-01T02:33:43.415Z"
+  },
+  {
+    "codigo": "010268325",
+    "nombre": "VISTA ALEGRE X",
+    "tipo": "desaparece",
+    "fecha": "2026-10-01T02:33:43.415Z"
+  },
+  {
+    "codigo": "010428125",
+    "nombre": "PEDRO HUANCA GOLD SKARN",
+    "tipo": "desaparece",
+    "fecha": "2026-10-01T02:33:43.415Z"
+  },
+  {
+    "codigo": "030055726",
+    "nombre": "JORGE WASHINGTON QUIROZ RAVINES",
+    "tipo": "desaparece",
+    "fecha": "2026-10-01T02:33:43.415Z"
+  },
+  {
+    "codigo": "040005326",
+    "nombre": "BATAN DE ORO UNO",
+    "tipo": "desaparece",
+    "fecha": "2026-10-01T02:33:43.415Z"
+  },
+  {
+    "codigo": "580002123",
+    "nombre": "MINERIA BRUNO RENE",
+    "tipo": "desaparece",
+    "fecha": "2026-10-01T02:33:43.415Z"
+  },
+  {
+    "codigo": "540016724",
+    "nombre": "FUTURO MILAGROSO",
+    "tipo": "desaparece",
+    "fecha": "2026-10-01T02:33:43.415Z"
+  },
+  {
+    "codigo": "050049725",
+    "nombre": "PROYECTO MEYER",
+    "tipo": "desaparece",
+    "fecha": "2026-10-01T02:33:43.415Z"
+  },
+  {
+    "codigo": "020010226",
+    "nombre": "FATIMA LA HUAYCHA",
+    "tipo": "desaparece",
+    "fecha": "2026-10-01T02:33:43.415Z"
+  },
+  {
+    "codigo": "050059726",
+    "nombre": "MINERA ALTIPLANO",
+    "tipo": "desaparece",
+    "fecha": "2026-10-01T02:33:43.415Z"
+  },
+  {
+    "codigo": "080018725",
+    "nombre": "VITHA VM",
+    "tipo": "desaparece",
+    "fecha": "2026-10-01T02:33:43.415Z"
+  },
+  {
+    "codigo": "710005723",
+    "nombre": "RECUPERACION PAMPILLA",
+    "tipo": "desaparece",
+    "fecha": "2026-10-01T02:33:43.415Z"
+  },
+  {
+    "codigo": "710012022",
+    "nombre": "FERNANDO 2022",
+    "tipo": "desaparece",
+    "fecha": "2026-10-01T02:33:43.415Z"
+  },
+  {
+    "codigo": "070028325",
+    "nombre": "DAYELYUNO",
+    "tipo": "desaparece",
+    "fecha": "2026-10-01T02:33:43.415Z"
+  },
+  {
+    "codigo": "070025825",
+    "nombre": "DAYELY",
+    "tipo": "desaparece",
+    "fecha": "2026-10-01T02:33:43.415Z"
+  },
+  {
+    "codigo": "080051325",
+    "nombre": "ALPACATO9",
+    "tipo": "desaparece",
+    "fecha": "2026-10-01T02:33:43.415Z"
+  },
+  {
+    "codigo": "030093626",
+    "nombre": "SOL ORIENTE DOS",
+    "tipo": "aparece",
+    "fecha": "2026-10-01T02:33:43.415Z"
+  },
+  {
+    "codigo": "010532926",
+    "nombre": "KIMBA I",
+    "tipo": "aparece",
+    "fecha": "2026-10-01T02:33:43.415Z"
+  },
+  {
+    "codigo": "060023326",
+    "nombre": "LA PIRAMIDE REAL",
+    "tipo": "aparece",
+    "fecha": "2026-10-01T02:33:43.415Z"
+  },
+  {
+    "codigo": "540022726",
+    "nombre": "ANGELICA 26 I",
+    "tipo": "aparece",
+    "fecha": "2026-10-01T02:33:43.415Z"
+  },
+  {
+    "codigo": "550007726",
+    "nombre": "CUMBRE DORADA 2026",
+    "tipo": "aparece",
+    "fecha": "2026-10-01T02:33:43.415Z"
+  },
+  {
+    "codigo": "010532726",
+    "nombre": "ASG 008",
+    "tipo": "aparece",
+    "fecha": "2026-10-01T02:33:43.415Z"
+  },
+  {
+    "codigo": "010533626",
+    "nombre": "SAN VICENTE 287",
+    "tipo": "aparece",
+    "fecha": "2026-10-01T02:33:43.415Z"
+  },
+  {
+    "codigo": "010534226",
+    "nombre": "IVAN3",
+    "tipo": "aparece",
+    "fecha": "2026-10-01T02:33:43.415Z"
+  },
+  {
+    "codigo": "010534326",
+    "nombre": "GOCOCO ANTACOCHA",
+    "tipo": "aparece",
+    "fecha": "2026-10-01T02:33:43.415Z"
+  },
+  {
+    "codigo": "010534426",
+    "nombre": "MARTINO I",
+    "tipo": "aparece",
+    "fecha": "2026-10-01T02:33:43.415Z"
+  },
+  {
+    "codigo": "040047326",
+    "nombre": "GOLD MC CORP II",
+    "tipo": "aparece",
+    "fecha": "2026-10-01T02:33:43.415Z"
+  },
+  {
+    "codigo": "010532826",
+    "nombre": "ASG 009",
+    "tipo": "aparece",
+    "fecha": "2026-10-01T02:33:43.415Z"
+  },
+  {
+    "codigo": "010532626",
+    "nombre": "ASG 007",
+    "tipo": "aparece",
+    "fecha": "2026-10-01T02:33:43.415Z"
+  },
+  {
+    "codigo": "040047426",
+    "nombre": "SORPRESITA HUAYLLURA",
+    "tipo": "aparece",
+    "fecha": "2026-10-01T02:33:43.415Z"
+  },
+  {
+    "codigo": "010533926",
+    "nombre": "OROYA 25",
+    "tipo": "aparece",
+    "fecha": "2026-10-01T02:33:43.415Z"
+  },
+  {
+    "codigo": "010532526",
+    "nombre": "ASG 006",
+    "tipo": "aparece",
+    "fecha": "2026-10-01T02:33:43.415Z"
+  },
+  {
+    "codigo": "010533826",
+    "nombre": "OROYA 24",
+    "tipo": "aparece",
+    "fecha": "2026-10-01T02:33:43.415Z"
+  },
+  {
+    "codigo": "660003426",
+    "nombre": "LADRILLERA CIUDAD DE BURGOS",
+    "tipo": "aparece",
+    "fecha": "2026-10-01T02:33:43.415Z"
+  },
+  {
+    "codigo": "010533226",
+    "nombre": "SAN VICENTE 283",
+    "tipo": "aparece",
+    "fecha": "2026-10-01T02:33:43.415Z"
+  },
+  {
+    "codigo": "010533326",
+    "nombre": "SAN VICENTE 284",
+    "tipo": "aparece",
+    "fecha": "2026-10-01T02:33:43.415Z"
+  },
+  {
+    "codigo": "010533526",
+    "nombre": "SAN VICENTE 286",
+    "tipo": "aparece",
+    "fecha": "2026-10-01T02:33:43.415Z"
+  },
+  {
+    "codigo": "010534026",
+    "nombre": "OROYA 26",
+    "tipo": "aparece",
+    "fecha": "2026-10-01T02:33:43.415Z"
+  },
+  {
+    "codigo": "010533126",
+    "nombre": "SAN VICENTE 282",
+    "tipo": "aparece",
+    "fecha": "2026-10-01T02:33:43.415Z"
+  },
+  {
+    "codigo": "010533726",
+    "nombre": "SAN VICENTE 288",
+    "tipo": "aparece",
+    "fecha": "2026-10-01T02:33:43.415Z"
+  },
+  {
+    "codigo": "010534126",
+    "nombre": "OROYA 27",
+    "tipo": "aparece",
+    "fecha": "2026-10-01T02:33:43.415Z"
+  },
+  {
+    "codigo": "010533426",
+    "nombre": "SAN VICENTE 285",
+    "tipo": "aparece",
+    "fecha": "2026-10-01T02:33:43.415Z"
+  },
+  {
+    "codigo": "080072326",
+    "nombre": "MINERA CAMI & LEA I",
+    "tipo": "aparece",
+    "fecha": "2026-10-01T02:33:43.415Z"
+  },
+  {
+    "codigo": "070042926",
+    "nombre": "VYL I",
+    "tipo": "aparece",
+    "fecha": "2026-10-01T02:33:43.415Z"
   }
 ]
