@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wvisor - Informe 20261001</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #0a1628; color: #e0e6f0; padding: 20px; }
+        .container { max-width: 1400px; margin: 0 auto; background: #0f1e3a; border-radius: 12px; box-shadow: 0 8px 40px rgba(0,0,0,0.5); overflow: hidden; border: 1px solid #1e3a5f; }
+        .header { background: linear-gradient(135deg, #1e3a8a, #1e40af); padding: 25px 30px; }
+        .header-top { display: flex; align-items: center; gap: 15px; margin-bottom: 10px; }
+        .logo-w { width: 45px; height: 45px; background: linear-gradient(135deg, #3b82f6, #1e40af); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 26px; font-weight: 800; color: #fff; font-family: Georgia, serif; }
+        .header h1 { font-size: 22px; font-weight: 600; color: #fff; }
+        .subtitle { font-size: 13px; color: #93c5fd; margin-bottom: 15px; }
+        .stats { display: flex; gap: 12px; flex-wrap: wrap; }
+        .stat-item { background: rgba(255,255,255,0.12); padding: 10px 18px; border-radius: 8px; font-size: 12px; color: #bfdbfe; }
+        .stat-item strong { font-size: 20px; display: block; color: #fff; }
+        .stat-item.danger { background: rgba(220, 38, 38, 0.3); }
+        .stat-item.danger strong { color: #fca5a5; }
+        .stat-item.success { background: rgba(59, 130, 246, 0.3); }
+        .stat-item.success strong { color: #93c5fd; }
+        .main-content { display: flex; flex-wrap: wrap; }
+        .map-column { flex: 2; min-width: 500px; padding: 20px; background: #0a1628; }
+        #map { border-radius: 8px; height: 550px; width: 100%; border: 1px solid #1e3a5f; }
+        .info-column { flex: 1; min-width: 320px; padding: 20px; background: #0f1e3a; border-left: 1px solid #1e3a5f; max-height: 600px; overflow-y: auto; }
+        .info-column h2 { font-size: 16px; margin-bottom: 15px; color: #93c5fd; padding-bottom: 8px; border-bottom: 1px solid #1e3a5f; }
+        .item-concesion { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; font-size: 12px; border-bottom: 1px solid #1e3a5f; }
+        .estado-badge { font-size: 10px; padding: 3px 8px; border-radius: 10px; color: white; font-weight: 600; }
+        .estado-badge.desaparecio { background: #dc2626; }
+        .estado-badge.aparecio { background: #2563eb; }
+        .tabla-container { padding: 20px 30px 30px; border-top: 1px solid #1e3a5f; }
+        .tabla-container h2 { font-size: 16px; margin-bottom: 15px; color: #93c5fd; }
+        .tabla-concesiones { width: 100%; border-collapse: collapse; font-size: 13px; }
+        .tabla-concesiones thead th { background: #152b4a; padding: 12px 15px; text-align: left; color: #93c5fd; border-bottom: 2px solid #1e3a5f; }
+        .tabla-concesiones tbody td { padding: 10px 15px; border-bottom: 1px solid #1e3a5f; color: #cbd5e1; }
+        .footer { background: #0a1628; padding: 15px 30px; text-align: center; font-size: 11px; color: #475569; border-top: 1px solid #1e3a5f; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-top">
+                <div class="logo-w">W</div>
+                <h1>Wvisor - Informe de Área</h1>
+            </div>
+            <div class="subtitle">Generado el 01/10/2026</div>
+            <div class="stats">
+                <div class="stat-item danger"><strong>0</strong>Desaparecieron</div>
+                <div class="stat-item success"><strong>14</strong>Aparecieron</div>
+                <div class="stat-item"><strong>14</strong>Total</div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="map-column">
+                <div id="map"></div>
+            </div>
+            <div class="info-column">
+                <h2>📋 Concesiones</h2>
+                
+                
+                    <div class="item-concesion">
+                        <span>A&G ROSAS</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>XIMENA 26</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>MINERA URUMALQUI I</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>VIRGEN DEL CARMEN</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>GOLDEN JAQUI 1 2026</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>SEÑOR DE POTOCCHI J&Z HERMANOS</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>ANANKE</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>LOGAN 369 B</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>CATALINA 25</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>SUMAQ RUMI TACAMIN</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>ISABELLA 25</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>SAMANGUI 2026</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>ROCIO 4</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>CM MOLLEBAMBA</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+            </div>
+        </div>
+        
+        <div class="tabla-container">
+            <h2>📋 Detalle Completo</h2>
+            <table class="tabla-concesiones">
+                <thead>
+                    <tr><th>Código</th><th>Concesión</th><th>Titular</th><th>Estado</th></tr>
+                </thead>
+                <tbody>
+                    
+                    
+                        <tr>
+                            <td>030093426</td>
+                            <td>A&G ROSAS</td>
+                            <td>MANUEL ESTEBAN GARCIA ALVAREZ y Otros</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>560002126</td>
+                            <td>XIMENA 26</td>
+                            <td>GERARDO MIGUEL ROJAS ARMAS</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>030093326</td>
+                            <td>MINERA URUMALQUI I</td>
+                            <td>YUMER BEINER RODRIGUEZ MARIÑOS Y OTROS</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>540022626</td>
+                            <td>VIRGEN DEL CARMEN</td>
+                            <td>VICTOR HUGO FERNANDEZ DIAZ</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>050113926</td>
+                            <td>GOLDEN JAQUI 1 2026</td>
+                            <td>MINING & SERVICES LABRA E.I.R.L</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>590005626</td>
+                            <td>SEÑOR DE POTOCCHI J&Z HERMANOS</td>
+                            <td>EMPRESA HUAMANRAZUY CORPORACION E.I.R.L</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>620007726</td>
+                            <td>ANANKE</td>
+                            <td>MINAS DE PACHANCOTO S.A.</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010532426</td>
+                            <td>LOGAN 369 B</td>
+                            <td>JOHAN DAMIAN ARIVILCA VALENZUELA</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010532226</td>
+                            <td>CATALINA 25</td>
+                            <td>GONZALO ALONSO ALVA CHERO Y OTROS</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>550007626</td>
+                            <td>SUMAQ RUMI TACAMIN</td>
+                            <td>TACAMIN GLICERIO S.A.C.</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010532126</td>
+                            <td>ISABELLA 25</td>
+                            <td>GONZALO ALONSO ALVA CHERO Y OTROS</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010532026</td>
+                            <td>SAMANGUI 2026</td>
+                            <td>SILVANA SUSANA BENAVIDES CRUZ</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010532326</td>
+                            <td>ROCIO 4</td>
+                            <td>GONZALO ALONSO ALVA CHERO Y OTROS</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>040047026</td>
+                            <td>CM MOLLEBAMBA</td>
+                            <td>RELY LEON GUERREROS</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="footer">Wvisor · Datos INGEMMET · 01/10/2026</div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.8.0/proj4.js"></script>
+    <script>
+        const areaData = {"sw":{"lat":-18,"lng":-82},"ne":{"lat":-2,"lng":-68},"bounds":"-82,-18,-68,-2","fecha":"2026-07-15T21:30:00.000Z"};
+        const desaparecidosFeatures = [];
+        const aparecidosFeatures = [{"type":"Feature","properties":{"CODIGOU":"030093426","FEC_DENU":"2026-09-29","CONCESION":"A&G ROSAS","TIT_CONCES":"MANUEL ESTEBAN GARCIA ALVAREZ y Otros","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"16-G","ZONA":"17","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":0},"geometry":{"type":"Polygon","coordinates":[[[783000,9143000],[783000,9141000],[782000,9141000],[782000,9143000],[783000,9143000]]]}},{"type":"Feature","properties":{"CODIGOU":"560002126","FEC_DENU":"2026-09-28","CONCESION":"XIMENA 26","TIT_CONCES":"GERARDO MIGUEL ROJAS ARMAS","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"15-F","ZONA":"17","SUSTANCIA":"M","DEPA":"CAJAMARCA","PROVI":"CAJAMARCA","DISTRI":"MAGDALENA","HASDATUM":200},"geometry":{"type":"Polygon","coordinates":[[[765000,9200000],[765000,9199000],[763000,9199000],[763000,9200000],[765000,9200000]]]}},{"type":"Feature","properties":{"CODIGOU":"030093326","FEC_DENU":"2026-09-28","CONCESION":"MINERA URUMALQUI I","TIT_CONCES":"YUMER BEINER RODRIGUEZ MARIÑOS Y OTROS","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"17-G","ZONA":"17","SUSTANCIA":"M","DEPA":"LA LIBERTAD","PROVI":"JULCAN","DISTRI":"JULCAN","HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[779000,9104000],[779000,9103000],[778000,9103000],[778000,9104000],[779000,9104000]]]}},{"type":"Feature","properties":{"CODIGOU":"540022626","FEC_DENU":"2026-09-29","CONCESION":"VIRGEN DEL CARMEN","TIT_CONCES":"VICTOR HUGO FERNANDEZ DIAZ","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"32-Q","ZONA":"18","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":0},"geometry":{"type":"Polygon","coordinates":[[[718000,8250000],[718000,8249000],[717000,8249000],[717000,8250000],[718000,8250000]]]}},{"type":"Feature","properties":{"CODIGOU":"050113926","FEC_DENU":"2026-09-29","CONCESION":"GOLDEN JAQUI 1 2026","TIT_CONCES":"MINING & SERVICES LABRA E.I.R.L","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"31-1","ZONA":"18","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":0},"geometry":{"type":"Polygon","coordinates":[[[561000,8287000],[561000,8286000],[560000,8286000],[560000,8287000],[561000,8287000]]]}},{"type":"Feature","properties":{"CODIGOU":"590005626","FEC_DENU":"2026-09-29","CONCESION":"SEÑOR DE POTOCCHI J&Z HERMANOS","TIT_CONCES":"EMPRESA HUAMANRAZUY CORPORACION E.I.R.L","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"26-N","ZONA":"18","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":0},"geometry":{"type":"Polygon","coordinates":[[[521000,8565000],[521000,8564000],[520000,8564000],[520000,8565000],[521000,8565000]]]}},{"type":"Feature","properties":{"CODIGOU":"620007726","FEC_DENU":"2026-09-29","CONCESION":"ANANKE","TIT_CONCES":"MINAS DE PACHANCOTO S.A.","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"24-M","ZONA":"18","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":0},"geometry":{"type":"Polygon","coordinates":[[[485000,8700000],[485000,8699000],[484000,8699000],[484000,8700000],[485000,8700000]]]}},{"type":"Feature","properties":{"CODIGOU":"010532426","FEC_DENU":"2026-09-28","CONCESION":"LOGAN 369 B","TIT_CONCES":"JOHAN DAMIAN ARIVILCA VALENZUELA","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"31-1","ZONA":"18","SUSTANCIA":"M","DEPA":"AYACUCHO","PROVI":"LUCANAS","DISTRI":"SANCOS","HASDATUM":600},"geometry":{"type":"Polygon","coordinates":[[[573000,8314000],[573000,8311000],[574000,8311000],[574000,8309000],[573000,8309000],[573000,8310000],[572000,8310000],[572000,8314000],[573000,8314000]]]}},{"type":"Feature","properties":{"CODIGOU":"010532226","FEC_DENU":"2026-09-28","CONCESION":"CATALINA 25","TIT_CONCES":"GONZALO ALONSO ALVA CHERO Y OTROS","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"32-R","ZONA":"18","SUSTANCIA":"M","DEPA":"AREQUIPA","PROVI":"CAYLLOMA","DISTRI":"HUAMBO","HASDATUM":200},"geometry":{"type":"Polygon","coordinates":[[[790000,8251000],[791000,8251000],[791000,8249000],[790000,8249000],[790000,8251000]]]}},{"type":"Feature","properties":{"CODIGOU":"550007626","FEC_DENU":"2026-09-28","CONCESION":"SUMAQ RUMI TACAMIN","TIT_CONCES":"TACAMIN GLICERIO S.A.C.","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"28-O","ZONA":"18","SUSTANCIA":"M","DEPA":"AYACUCHO","PROVI":"SUCRE / VICTOR FAJARDO","DISTRI":"CANARIA / QUEROBAMBA","HASDATUM":200},"geometry":{"type":"Polygon","coordinates":[[[622000,8456000],[622000,8455000],[620000,8455000],[620000,8456000],[622000,8456000]]]}},{"type":"Feature","properties":{"CODIGOU":"010532126","FEC_DENU":"2026-09-28","CONCESION":"ISABELLA 25","TIT_CONCES":"GONZALO ALONSO ALVA CHERO Y OTROS","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"32-R","ZONA":"18","SUSTANCIA":"M","DEPA":"AREQUIPA","PROVI":"CASTILLA","DISTRI":"UÑON","HASDATUM":200},"geometry":{"type":"Polygon","coordinates":[[[781000,8256000],[783000,8256000],[783000,8255000],[781000,8255000],[781000,8256000]]]}},{"type":"Feature","properties":{"CODIGOU":"010532026","FEC_DENU":"2026-09-28","CONCESION":"SAMANGUI 2026","TIT_CONCES":"SILVANA SUSANA BENAVIDES CRUZ","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"22-M","ZONA":"18","SUSTANCIA":"N","DEPA":"JUNIN","PROVI":"JUNIN","DISTRI":"ULCUMAYO","HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[456000,8811000],[456000,8810000],[455000,8810000],[455000,8811000],[456000,8811000]]]}},{"type":"Feature","properties":{"CODIGOU":"010532326","FEC_DENU":"2026-09-28","CONCESION":"ROCIO 4","TIT_CONCES":"GONZALO ALONSO ALVA CHERO Y OTROS","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"32-R","ZONA":"18","SUSTANCIA":"M","DEPA":"AREQUIPA","PROVI":"CAYLLOMA","DISTRI":"HUAMBO","HASDATUM":800},"geometry":{"type":"Polygon","coordinates":[[[800000,8256000],[807000,8256000],[807000,8254000],[806000,8254000],[806000,8255000],[800000,8255000],[800000,8256000]]]}},{"type":"Feature","properties":{"CODIGOU":"040047026","FEC_DENU":"2026-09-28","CONCESION":"CM MOLLEBAMBA","TIT_CONCES":"RELY LEON GUERREROS","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"28-R","ZONA":"18","SUSTANCIA":"N","DEPA":"APURIMAC / CUSCO","PROVI":"COTABAMBAS / PARURO","DISTRI":"CCAPI / MARA","HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[817000,8460000],[817000,8459000],[816000,8459000],[816000,8460000],[817000,8460000]]]}}];
+        
+        const map = L.map('map').setView([
+            (areaData.sw.lat + areaData.ne.lat) / 2,
+            (areaData.sw.lng + areaData.ne.lng) / 2
+        ], 10);
+        
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png').addTo(map);
+        
+        L.rectangle([
+            [areaData.sw.lat, areaData.sw.lng],
+            [areaData.ne.lat, areaData.ne.lng]
+        ], { color: '#ff44ff', weight: 3, opacity: 0.8, fillOpacity: 0.1 }).addTo(map);
+        
+        L.geoJSON({ type: 'FeatureCollection', features: desaparecidosFeatures }, {
+            style: { color: '#ff4444', weight: 2, opacity: 0.9, fillOpacity: 0.4 },
+            onEachFeature: (f, l) => l.bindPopup('<b>' + (f.properties.CONCESION || 'N/A') + '</b><br>🔴 Desapareció')
+        }).addTo(map);
+        
+        L.geoJSON({ type: 'FeatureCollection', features: aparecidosFeatures }, {
+            style: { color: '#4444ff', weight: 2, opacity: 0.9, fillOpacity: 0.4 },
+            onEachFeature: (f, l) => l.bindPopup('<b>' + (f.properties.CONCESION || 'N/A') + '</b><br>🔵 Apareció')
+        }).addTo(map);
+    </script>
+</body>
+</html>
