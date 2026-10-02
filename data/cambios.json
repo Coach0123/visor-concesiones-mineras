@@ -358,5 +358,119 @@
     "nombre": "VYL I",
     "tipo": "aparece",
     "fecha": "2026-10-01T02:33:43.415Z"
+  },
+  {
+    "codigo": "010288624",
+    "nombre": "SAN SEBASTIAN JG",
+    "tipo": "desaparece",
+    "fecha": "2026-10-02T02:38:17.537Z"
+  },
+  {
+    "codigo": "050025625",
+    "nombre": "JUAN",
+    "tipo": "desaparece",
+    "fecha": "2026-10-02T02:38:17.537Z"
+  },
+  {
+    "codigo": "010245925",
+    "nombre": "SANTA DONCELLA2",
+    "tipo": "desaparece",
+    "fecha": "2026-10-02T02:38:17.537Z"
+  },
+  {
+    "codigo": "030093726",
+    "nombre": "MIGUELITO XX",
+    "tipo": "aparece",
+    "fecha": "2026-10-02T02:38:17.538Z"
+  },
+  {
+    "codigo": "010535426",
+    "nombre": "PERSIGUIENDO UN SUEÑO",
+    "tipo": "aparece",
+    "fecha": "2026-10-02T02:38:17.538Z"
+  },
+  {
+    "codigo": "010535526",
+    "nombre": "NUEVO PARAISO I",
+    "tipo": "aparece",
+    "fecha": "2026-10-02T02:38:17.538Z"
+  },
+  {
+    "codigo": "010535026",
+    "nombre": "SULLUNJA 2026",
+    "tipo": "aparece",
+    "fecha": "2026-10-02T02:38:17.538Z"
+  },
+  {
+    "codigo": "020019626",
+    "nombre": "VICTORIA 02",
+    "tipo": "aparece",
+    "fecha": "2026-10-02T02:38:17.538Z"
+  },
+  {
+    "codigo": "010534626",
+    "nombre": "LOS TRES ANGELES 2026",
+    "tipo": "aparece",
+    "fecha": "2026-10-02T02:38:17.538Z"
+  },
+  {
+    "codigo": "530019826",
+    "nombre": "QOCHA-3E",
+    "tipo": "aparece",
+    "fecha": "2026-10-02T02:38:17.538Z"
+  },
+  {
+    "codigo": "010214224B",
+    "nombre": "TAMBOJASA 24-01",
+    "tipo": "aparece",
+    "fecha": "2026-10-02T02:38:17.538Z"
+  },
+  {
+    "codigo": "010534526",
+    "nombre": "MI ARCANGEL 2026",
+    "tipo": "aparece",
+    "fecha": "2026-10-02T02:38:17.538Z"
+  },
+  {
+    "codigo": "010534826",
+    "nombre": "GEOSATMIN XV",
+    "tipo": "aparece",
+    "fecha": "2026-10-02T02:38:17.538Z"
+  },
+  {
+    "codigo": "010214224A",
+    "nombre": "TAMBOJASA 24-01",
+    "tipo": "aparece",
+    "fecha": "2026-10-02T02:38:17.538Z"
+  },
+  {
+    "codigo": "660003526",
+    "nombre": "FUNDO EL MANANTIAL",
+    "tipo": "aparece",
+    "fecha": "2026-10-02T02:38:17.538Z"
+  },
+  {
+    "codigo": "690003526",
+    "nombre": "TORREBAMBA",
+    "tipo": "aparece",
+    "fecha": "2026-10-02T02:38:17.538Z"
+  },
+  {
+    "codigo": "060023426",
+    "nombre": "CONDOR SOLITARIO",
+    "tipo": "aparece",
+    "fecha": "2026-10-02T02:38:17.538Z"
+  },
+  {
+    "codigo": "010534726",
+    "nombre": "GEOSATMIN XII",
+    "tipo": "aparece",
+    "fecha": "2026-10-02T02:38:17.538Z"
+  },
+  {
+    "codigo": "080072526",
+    "nombre": "TRIUNFO DE DIVINO NIÑO JESUS",
+    "tipo": "aparece",
+    "fecha": "2026-10-02T02:38:17.538Z"
   }
 ]
