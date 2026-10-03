@@ -472,5 +472,137 @@
     "nombre": "TRIUNFO DE DIVINO NIÑO JESUS",
     "tipo": "aparece",
     "fecha": "2026-10-02T02:38:17.538Z"
+  },
+  {
+    "codigo": "030023126",
+    "nombre": "CIELITO 2026",
+    "tipo": "desaparece",
+    "fecha": "2026-10-03T02:25:24.166Z"
+  },
+  {
+    "codigo": "010350026",
+    "nombre": "CARDENAS-Y-ASOCIADOS",
+    "tipo": "desaparece",
+    "fecha": "2026-10-03T02:25:24.166Z"
+  },
+  {
+    "codigo": "690002524",
+    "nombre": "MINDU 146",
+    "tipo": "desaparece",
+    "fecha": "2026-10-03T02:25:24.166Z"
+  },
+  {
+    "codigo": "010219325",
+    "nombre": "MARGARITA 1",
+    "tipo": "desaparece",
+    "fecha": "2026-10-03T02:25:24.166Z"
+  },
+  {
+    "codigo": "010312826",
+    "nombre": "MELISSA-26",
+    "tipo": "desaparece",
+    "fecha": "2026-10-03T02:25:24.166Z"
+  },
+  {
+    "codigo": "080061125",
+    "nombre": "ANDINO AMORAY 1",
+    "tipo": "desaparece",
+    "fecha": "2026-10-03T02:25:24.166Z"
+  },
+  {
+    "codigo": "010303926",
+    "nombre": "GOLDEN NEW",
+    "tipo": "desaparece",
+    "fecha": "2026-10-03T02:25:24.166Z"
+  },
+  {
+    "codigo": "080047825",
+    "nombre": "PRINCESITAS PORSIEMPRE",
+    "tipo": "desaparece",
+    "fecha": "2026-10-03T02:25:24.166Z"
+  },
+  {
+    "codigo": "630006126",
+    "nombre": "ABC JUSTINO",
+    "tipo": "aparece",
+    "fecha": "2026-10-03T02:25:24.166Z"
+  },
+  {
+    "codigo": "630006226",
+    "nombre": "APU TABLACHACA",
+    "tipo": "aparece",
+    "fecha": "2026-10-03T02:25:24.166Z"
+  },
+  {
+    "codigo": "040047626",
+    "nombre": "BOVEDA DORADA 2",
+    "tipo": "aparece",
+    "fecha": "2026-10-03T02:25:24.166Z"
+  },
+  {
+    "codigo": "700004326",
+    "nombre": "BOCA TIBURON",
+    "tipo": "aparece",
+    "fecha": "2026-10-03T02:25:24.166Z"
+  },
+  {
+    "codigo": "660003626",
+    "nombre": "SELVA MIA",
+    "tipo": "aparece",
+    "fecha": "2026-10-03T02:25:24.166Z"
+  },
+  {
+    "codigo": "010536726",
+    "nombre": "PACCHAPATA",
+    "tipo": "aparece",
+    "fecha": "2026-10-03T02:25:24.166Z"
+  },
+  {
+    "codigo": "010536326",
+    "nombre": "GEOSATMIN XIV",
+    "tipo": "aparece",
+    "fecha": "2026-10-03T02:25:24.166Z"
+  },
+  {
+    "codigo": "010536226",
+    "nombre": "GEOSATMIN XI",
+    "tipo": "aparece",
+    "fecha": "2026-10-03T02:25:24.166Z"
+  },
+  {
+    "codigo": "010536026",
+    "nombre": "GEOSATMIN XVI",
+    "tipo": "aparece",
+    "fecha": "2026-10-03T02:25:24.166Z"
+  },
+  {
+    "codigo": "010536126",
+    "nombre": "GEOSATMIN XIII",
+    "tipo": "aparece",
+    "fecha": "2026-10-03T02:25:24.166Z"
+  },
+  {
+    "codigo": "010536526",
+    "nombre": "AURUM IX",
+    "tipo": "aparece",
+    "fecha": "2026-10-03T02:25:24.166Z"
+  },
+  {
+    "codigo": "050114326",
+    "nombre": "TMQ POCOHUANCA",
+    "tipo": "aparece",
+    "fecha": "2026-10-03T02:25:24.166Z"
+  },
+  {
+    "codigo": "010536626",
+    "nombre": "AURUM VIII",
+    "tipo": "aparece",
+    "fecha": "2026-10-03T02:25:24.166Z"
+  },
+  {
+    "codigo": "010536426",
+    "nombre": "GEOSATMIN IX",
+    "tipo": "aparece",
+    "fecha": "2026-10-03T02:25:24.166Z"
   }
 ]
