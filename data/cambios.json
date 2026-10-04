@@ -604,5 +604,83 @@
     "nombre": "GEOSATMIN IX",
     "tipo": "aparece",
     "fecha": "2026-10-03T02:25:24.166Z"
+  },
+  {
+    "codigo": "010452625",
+    "nombre": "JAPAN CITY VG",
+    "tipo": "desaparece",
+    "fecha": "2026-10-04T02:54:56.657Z"
+  },
+  {
+    "codigo": "050114426",
+    "nombre": "CANTERAS DE JAYHUICHE",
+    "tipo": "aparece",
+    "fecha": "2026-10-04T02:54:56.657Z"
+  },
+  {
+    "codigo": "550007826",
+    "nombre": "ZEUS CUATRO ANGELES I",
+    "tipo": "aparece",
+    "fecha": "2026-10-04T02:54:56.657Z"
+  },
+  {
+    "codigo": "020019726",
+    "nombre": "COMPAÑIA MINERA ZAPALLAR",
+    "tipo": "aparece",
+    "fecha": "2026-10-04T02:54:56.657Z"
+  },
+  {
+    "codigo": "010537026",
+    "nombre": "SM 01",
+    "tipo": "aparece",
+    "fecha": "2026-10-04T02:54:56.657Z"
+  },
+  {
+    "codigo": "020019926",
+    "nombre": "GROUP INNA",
+    "tipo": "aparece",
+    "fecha": "2026-10-04T02:54:56.657Z"
+  },
+  {
+    "codigo": "010536926",
+    "nombre": "SANTA MAGDALENA",
+    "tipo": "aparece",
+    "fecha": "2026-10-04T02:54:56.657Z"
+  },
+  {
+    "codigo": "080072726",
+    "nombre": "HOLTRASUR MINING",
+    "tipo": "aparece",
+    "fecha": "2026-10-04T02:54:56.657Z"
+  },
+  {
+    "codigo": "040047726",
+    "nombre": "VLADIOR AUREUM 2",
+    "tipo": "aparece",
+    "fecha": "2026-10-04T02:54:56.657Z"
+  },
+  {
+    "codigo": "010537426",
+    "nombre": "VIRGEN DEL ROSARIO",
+    "tipo": "aparece",
+    "fecha": "2026-10-04T02:54:56.657Z"
+  },
+  {
+    "codigo": "020020026",
+    "nombre": "PULGAR DOS",
+    "tipo": "aparece",
+    "fecha": "2026-10-04T02:54:56.657Z"
+  },
+  {
+    "codigo": "020019826",
+    "nombre": "EXPLORACION GOLS 2026",
+    "tipo": "aparece",
+    "fecha": "2026-10-04T02:54:56.657Z"
+  },
+  {
+    "codigo": "550007926",
+    "nombre": "ZEUS CUATRO ANGELES II",
+    "tipo": "aparece",
+    "fecha": "2026-10-04T02:54:56.657Z"
   }
 ]
