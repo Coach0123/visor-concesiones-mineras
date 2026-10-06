@@ -682,5 +682,71 @@
     "nombre": "ZEUS CUATRO ANGELES II",
     "tipo": "aparece",
     "fecha": "2026-10-04T02:54:56.657Z"
+  },
+  {
+    "codigo": "010538426",
+    "nombre": "VILLA",
+    "tipo": "aparece",
+    "fecha": "2026-10-06T03:23:15.210Z"
+  },
+  {
+    "codigo": "040009018A",
+    "nombre": "SA3001-A",
+    "tipo": "aparece",
+    "fecha": "2026-10-06T03:23:15.210Z"
+  },
+  {
+    "codigo": "010537626",
+    "nombre": "YARITA 9",
+    "tipo": "aparece",
+    "fecha": "2026-10-06T03:23:15.210Z"
+  },
+  {
+    "codigo": "010538226",
+    "nombre": "KUNTUR 2",
+    "tipo": "aparece",
+    "fecha": "2026-10-06T03:23:15.210Z"
+  },
+  {
+    "codigo": "010538526",
+    "nombre": "MICOBYSA",
+    "tipo": "aparece",
+    "fecha": "2026-10-06T03:23:15.210Z"
+  },
+  {
+    "codigo": "020020126",
+    "nombre": "ANTA URQU I",
+    "tipo": "aparece",
+    "fecha": "2026-10-06T03:23:15.210Z"
+  },
+  {
+    "codigo": "050114526",
+    "nombre": "TRES ESTRELLAS",
+    "tipo": "aparece",
+    "fecha": "2026-10-06T03:23:15.210Z"
+  },
+  {
+    "codigo": "010537726",
+    "nombre": "ERELY VI",
+    "tipo": "aparece",
+    "fecha": "2026-10-06T03:23:15.210Z"
+  },
+  {
+    "codigo": "010537926",
+    "nombre": "ERELY VII",
+    "tipo": "aparece",
+    "fecha": "2026-10-06T03:23:15.210Z"
+  },
+  {
+    "codigo": "010538026",
+    "nombre": "ERELY VIII",
+    "tipo": "aparece",
+    "fecha": "2026-10-06T03:23:15.210Z"
+  },
+  {
+    "codigo": "010538126",
+    "nombre": "STRONGER D",
+    "tipo": "aparece",
+    "fecha": "2026-10-06T03:23:15.210Z"
   }
 ]
