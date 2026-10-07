@@ -748,5 +748,137 @@
     "nombre": "STRONGER D",
     "tipo": "aparece",
     "fecha": "2026-10-06T03:23:15.210Z"
+  },
+  {
+    "codigo": "030054125",
+    "nombre": "LJC MINING",
+    "tipo": "desaparece",
+    "fecha": "2026-10-07T02:46:31.160Z"
+  },
+  {
+    "codigo": "010053826",
+    "nombre": "GIANCARLITOS",
+    "tipo": "desaparece",
+    "fecha": "2026-10-07T02:46:31.160Z"
+  },
+  {
+    "codigo": "010070526",
+    "nombre": "SOLID GOLDII",
+    "tipo": "desaparece",
+    "fecha": "2026-10-07T02:46:31.160Z"
+  },
+  {
+    "codigo": "010102126",
+    "nombre": "PACO ORCO 32",
+    "tipo": "desaparece",
+    "fecha": "2026-10-07T02:46:31.160Z"
+  },
+  {
+    "codigo": "010214424",
+    "nombre": "RIO GRANDE 2024",
+    "tipo": "desaparece",
+    "fecha": "2026-10-07T02:46:31.160Z"
+  },
+  {
+    "codigo": "010230421",
+    "nombre": "FANTOMAS COPPER 1",
+    "tipo": "desaparece",
+    "fecha": "2026-10-07T02:46:31.160Z"
+  },
+  {
+    "codigo": "010251926",
+    "nombre": "PUNTA NEGRA C",
+    "tipo": "desaparece",
+    "fecha": "2026-10-07T02:46:31.160Z"
+  },
+  {
+    "codigo": "010330426",
+    "nombre": "SUPARAURA VI",
+    "tipo": "desaparece",
+    "fecha": "2026-10-07T02:46:31.160Z"
+  },
+  {
+    "codigo": "010343026",
+    "nombre": "PROYECTO MW MINERALES",
+    "tipo": "desaparece",
+    "fecha": "2026-10-07T02:46:31.160Z"
+  },
+  {
+    "codigo": "010341326",
+    "nombre": "SAN JOSE I",
+    "tipo": "desaparece",
+    "fecha": "2026-10-07T02:46:31.160Z"
+  },
+  {
+    "codigo": "040037125",
+    "nombre": "GOLDEN AMAZONIC I",
+    "tipo": "desaparece",
+    "fecha": "2026-10-07T02:46:31.160Z"
+  },
+  {
+    "codigo": "100009126",
+    "nombre": "EMILIA I 2026",
+    "tipo": "aparece",
+    "fecha": "2026-10-07T02:46:31.160Z"
+  },
+  {
+    "codigo": "060023526",
+    "nombre": "SERGIO 3 2026",
+    "tipo": "aparece",
+    "fecha": "2026-10-07T02:46:31.160Z"
+  },
+  {
+    "codigo": "030094626",
+    "nombre": "RESERVA IMPERIAL",
+    "tipo": "aparece",
+    "fecha": "2026-10-07T02:46:31.160Z"
+  },
+  {
+    "codigo": "010539626",
+    "nombre": "ORO BELLA UNION",
+    "tipo": "aparece",
+    "fecha": "2026-10-07T02:46:31.160Z"
+  },
+  {
+    "codigo": "010540026",
+    "nombre": "GOCOCO PICHIRHUA",
+    "tipo": "aparece",
+    "fecha": "2026-10-07T02:46:31.160Z"
+  },
+  {
+    "codigo": "530019926",
+    "nombre": "COMEXDA02",
+    "tipo": "aparece",
+    "fecha": "2026-10-07T02:46:31.160Z"
+  },
+  {
+    "codigo": "040048226",
+    "nombre": "MINER MONZT GOLD",
+    "tipo": "aparece",
+    "fecha": "2026-10-07T02:46:31.160Z"
+  },
+  {
+    "codigo": "010538626",
+    "nombre": "MINERA LARITA",
+    "tipo": "aparece",
+    "fecha": "2026-10-07T02:46:31.160Z"
+  },
+  {
+    "codigo": "020020226",
+    "nombre": "ROCA ANDINA 01",
+    "tipo": "aparece",
+    "fecha": "2026-10-07T02:46:31.160Z"
+  },
+  {
+    "codigo": "080073026",
+    "nombre": "SAN MARTIN DE TOURS DOS",
+    "tipo": "aparece",
+    "fecha": "2026-10-07T02:46:31.160Z"
+  },
+  {
+    "codigo": "080072926",
+    "nombre": "SANMARTINDETURS",
+    "tipo": "aparece",
+    "fecha": "2026-10-07T02:46:31.160Z"
   }
 ]
