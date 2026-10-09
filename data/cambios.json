@@ -1060,5 +1060,131 @@
     "nombre": "EL LOCO LUIS",
     "tipo": "aparece",
     "fecha": "2026-10-08T03:04:24.560Z"
+  },
+  {
+    "codigo": "030021426",
+    "nombre": "ESCORIA DE ORO XX",
+    "tipo": "desaparece",
+    "fecha": "2026-10-09T03:11:07.541Z"
+  },
+  {
+    "codigo": "100002626",
+    "nombre": "KHALEESI 2026",
+    "tipo": "desaparece",
+    "fecha": "2026-10-09T03:11:07.541Z"
+  },
+  {
+    "codigo": "010283126",
+    "nombre": "PINARES 1",
+    "tipo": "desaparece",
+    "fecha": "2026-10-09T03:11:07.541Z"
+  },
+  {
+    "codigo": "010281726",
+    "nombre": "RUFINA 2",
+    "tipo": "desaparece",
+    "fecha": "2026-10-09T03:11:07.541Z"
+  },
+  {
+    "codigo": "050054626",
+    "nombre": "MINE K",
+    "tipo": "desaparece",
+    "fecha": "2026-10-09T03:11:07.541Z"
+  },
+  {
+    "codigo": "030052426",
+    "nombre": "FERIADO",
+    "tipo": "desaparece",
+    "fecha": "2026-10-09T03:11:07.541Z"
+  },
+  {
+    "codigo": "010342626",
+    "nombre": "RCM I",
+    "tipo": "desaparece",
+    "fecha": "2026-10-09T03:11:07.541Z"
+  },
+  {
+    "codigo": "080032826",
+    "nombre": "LUCERO DE ORO",
+    "tipo": "desaparece",
+    "fecha": "2026-10-09T03:11:07.541Z"
+  },
+  {
+    "codigo": "080032726",
+    "nombre": "QORI TUNKI",
+    "tipo": "desaparece",
+    "fecha": "2026-10-09T03:11:07.541Z"
+  },
+  {
+    "codigo": "010325326",
+    "nombre": "GUSTAVO 03",
+    "tipo": "desaparece",
+    "fecha": "2026-10-09T03:11:07.541Z"
+  },
+  {
+    "codigo": "010542726",
+    "nombre": "CHARYC 2026",
+    "tipo": "aparece",
+    "fecha": "2026-10-09T03:11:07.541Z"
+  },
+  {
+    "codigo": "060023626",
+    "nombre": "LA PORTADA DE JESUS",
+    "tipo": "aparece",
+    "fecha": "2026-10-09T03:11:07.541Z"
+  },
+  {
+    "codigo": "010542226",
+    "nombre": "MAXIMILIANO 102026",
+    "tipo": "aparece",
+    "fecha": "2026-10-09T03:11:07.541Z"
+  },
+  {
+    "codigo": "050115426",
+    "nombre": "GOLD MINING DENNIS XII",
+    "tipo": "aparece",
+    "fecha": "2026-10-09T03:11:07.541Z"
+  },
+  {
+    "codigo": "040048426",
+    "nombre": "MINERA-MINFER",
+    "tipo": "aparece",
+    "fecha": "2026-10-09T03:11:07.541Z"
+  },
+  {
+    "codigo": "050115326",
+    "nombre": "SALAMANCA 2026",
+    "tipo": "aparece",
+    "fecha": "2026-10-09T03:11:07.541Z"
+  },
+  {
+    "codigo": "010542826",
+    "nombre": "TONEKA",
+    "tipo": "aparece",
+    "fecha": "2026-10-09T03:11:07.541Z"
+  },
+  {
+    "codigo": "010542926",
+    "nombre": "BRIGIDA II",
+    "tipo": "aparece",
+    "fecha": "2026-10-09T03:11:07.541Z"
+  },
+  {
+    "codigo": "010543126",
+    "nombre": "CELIA FERNANDA II",
+    "tipo": "aparece",
+    "fecha": "2026-10-09T03:11:07.541Z"
+  },
+  {
+    "codigo": "040048526",
+    "nombre": "SUMAQ SCAD I",
+    "tipo": "aparece",
+    "fecha": "2026-10-09T03:11:07.541Z"
+  },
+  {
+    "codigo": "050115526",
+    "nombre": "ANTONELLA18",
+    "tipo": "aparece",
+    "fecha": "2026-10-09T03:11:07.541Z"
   }
 ]
