@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wvisor - Informe 20261013</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #0a1628; color: #e0e6f0; padding: 20px; }
+        .container { max-width: 1400px; margin: 0 auto; background: #0f1e3a; border-radius: 12px; box-shadow: 0 8px 40px rgba(0,0,0,0.5); overflow: hidden; border: 1px solid #1e3a5f; }
+        .header { background: linear-gradient(135deg, #1e3a8a, #1e40af); padding: 25px 30px; }
+        .header-top { display: flex; align-items: center; gap: 15px; margin-bottom: 10px; }
+        .logo-w { width: 45px; height: 45px; background: linear-gradient(135deg, #3b82f6, #1e40af); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 26px; font-weight: 800; color: #fff; font-family: Georgia, serif; }
+        .header h1 { font-size: 22px; font-weight: 600; color: #fff; }
+        .subtitle { font-size: 13px; color: #93c5fd; margin-bottom: 15px; }
+        .stats { display: flex; gap: 12px; flex-wrap: wrap; }
+        .stat-item { background: rgba(255,255,255,0.12); padding: 10px 18px; border-radius: 8px; font-size: 12px; color: #bfdbfe; }
+        .stat-item strong { font-size: 20px; display: block; color: #fff; }
+        .stat-item.danger { background: rgba(220, 38, 38, 0.3); }
+        .stat-item.danger strong { color: #fca5a5; }
+        .stat-item.success { background: rgba(59, 130, 246, 0.3); }
+        .stat-item.success strong { color: #93c5fd; }
+        .main-content { display: flex; flex-wrap: wrap; }
+        .map-column { flex: 2; min-width: 500px; padding: 20px; background: #0a1628; }
+        #map { border-radius: 8px; height: 550px; width: 100%; border: 1px solid #1e3a5f; }
+        .info-column { flex: 1; min-width: 320px; padding: 20px; background: #0f1e3a; border-left: 1px solid #1e3a5f; max-height: 600px; overflow-y: auto; }
+        .info-column h2 { font-size: 16px; margin-bottom: 15px; color: #93c5fd; padding-bottom: 8px; border-bottom: 1px solid #1e3a5f; }
+        .item-concesion { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; font-size: 12px; border-bottom: 1px solid #1e3a5f; }
+        .estado-badge { font-size: 10px; padding: 3px 8px; border-radius: 10px; color: white; font-weight: 600; }
+        .estado-badge.desaparecio { background: #dc2626; }
+        .estado-badge.aparecio { background: #2563eb; }
+        .tabla-container { padding: 20px 30px 30px; border-top: 1px solid #1e3a5f; }
+        .tabla-container h2 { font-size: 16px; margin-bottom: 15px; color: #93c5fd; }
+        .tabla-concesiones { width: 100%; border-collapse: collapse; font-size: 13px; }
+        .tabla-concesiones thead th { background: #152b4a; padding: 12px 15px; text-align: left; color: #93c5fd; border-bottom: 2px solid #1e3a5f; }
+        .tabla-concesiones tbody td { padding: 10px 15px; border-bottom: 1px solid #1e3a5f; color: #cbd5e1; }
+        .footer { background: #0a1628; padding: 15px 30px; text-align: center; font-size: 11px; color: #475569; border-top: 1px solid #1e3a5f; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-top">
+                <div class="logo-w">W</div>
+                <h1>Wvisor - Informe de Área</h1>
+            </div>
+            <div class="subtitle">Generado el 13/10/2026</div>
+            <div class="stats">
+                <div class="stat-item danger"><strong>0</strong>Desaparecieron</div>
+                <div class="stat-item success"><strong>12</strong>Aparecieron</div>
+                <div class="stat-item"><strong>12</strong>Total</div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="map-column">
+                <div id="map"></div>
+            </div>
+            <div class="info-column">
+                <h2>📋 Concesiones</h2>
+                
+                
+                    <div class="item-concesion">
+                        <span>AMAZON</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>EL DIA DE MI SUERTE 02</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>SAN CARLOS DE PAMPAHUIRI</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>CALLANCA_2026</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>ARIAN-I</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>CHOACHÍ III</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>WAYRA II</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>RIO SECO XXV</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>MAZAN I</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>SARAIMISAEL</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>EL DORADO EMX</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>SOL DORADO DL</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+            </div>
+        </div>
+        
+        <div class="tabla-container">
+            <h2>📋 Detalle Completo</h2>
+            <table class="tabla-concesiones">
+                <thead>
+                    <tr><th>Código</th><th>Concesión</th><th>Titular</th><th>Estado</th></tr>
+                </thead>
+                <tbody>
+                    
+                    
+                        <tr>
+                            <td>010544226</td>
+                            <td>AMAZON</td>
+                            <td>CRISTIAN IBERICO ROJAS</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>030095326</td>
+                            <td>EL DIA DE MI SUERTE 02</td>
+                            <td>SERVICIOS MINEROS M & CH S.A.C.</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010543726</td>
+                            <td>SAN CARLOS DE PAMPAHUIRI</td>
+                            <td>ALEXANDER CONDORPUZA CHUIMA y Otros</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010543826</td>
+                            <td>CALLANCA_2026</td>
+                            <td>SAUL GONZALES SACSI y Otros</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>020020726</td>
+                            <td>ARIAN-I</td>
+                            <td>ARIAN JOSE CHAVEZ PECHO</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010544026</td>
+                            <td>CHOACHÍ III</td>
+                            <td>DANNY SANTIAGO HERNANDEZ CARDENAS</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>040048626</td>
+                            <td>WAYRA II</td>
+                            <td>PAOLO CARLOS MACETAS PORRAS y Otros</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010544326</td>
+                            <td>RIO SECO XXV</td>
+                            <td>ANA MARIA RUIZ RAMIREZ</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>660003826</td>
+                            <td>MAZAN I</td>
+                            <td>INTERNATIONAL INKA OCEAN EIRL</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010543926</td>
+                            <td>SARAIMISAEL</td>
+                            <td>SANDRA PINARES HANCCO</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>080073326</td>
+                            <td>EL DORADO EMX</td>
+                            <td>ELISBAN HUANCA TURPO</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>080073426</td>
+                            <td>SOL DORADO DL</td>
+                            <td>NASARIO HUANCA TURPO</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="footer">Wvisor · Datos INGEMMET · 13/10/2026</div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.8.0/proj4.js"></script>
+    <script>
+        const areaData = {"sw":{"lat":-18,"lng":-82},"ne":{"lat":-2,"lng":-68},"bounds":"-82,-18,-68,-2","fecha":"2026-07-15T21:30:00.000Z"};
+        const desaparecidosFeatures = [];
+        const aparecidosFeatures = [{"type":"Feature","properties":{"CODIGOU":"010544226","FEC_DENU":"2026-10-12","CONCESION":"AMAZON","TIT_CONCES":"CRISTIAN IBERICO ROJAS","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"12-D","ZONA":"17","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":300},"geometry":{"type":"Polygon","coordinates":[[[645000,9347000],[645000,9345000],[643000,9345000],[643000,9346000],[644000,9346000],[644000,9347000],[645000,9347000]]]}},{"type":"Feature","properties":{"CODIGOU":"030095326","FEC_DENU":"2026-10-12","CONCESION":"EL DIA DE MI SUERTE 02","TIT_CONCES":"SERVICIOS MINEROS M & CH S.A.C.","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"17-G","ZONA":"17","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[826000,9082000],[826000,9081000],[825000,9081000],[825000,9082000],[826000,9082000]]]}},{"type":"Feature","properties":{"CODIGOU":"010543726","FEC_DENU":"2026-10-12","CONCESION":"SAN CARLOS DE PAMPAHUIRI","TIT_CONCES":"ALEXANDER CONDORPUZA CHUIMA y Otros","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"28-Q","ZONA":"18","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[758000,8452000],[758000,8451000],[757000,8451000],[757000,8452000],[758000,8452000]]]}},{"type":"Feature","properties":{"CODIGOU":"010543826","FEC_DENU":"2026-10-12","CONCESION":"CALLANCA_2026","TIT_CONCES":"SAUL GONZALES SACSI y Otros","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"30-R","ZONA":"18","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":200},"geometry":{"type":"Polygon","coordinates":[[[813000,8364000],[813000,8363000],[811000,8363000],[811000,8364000],[813000,8364000]]]}},{"type":"Feature","properties":{"CODIGOU":"020020726","FEC_DENU":"2026-10-12","CONCESION":"ARIAN-I","TIT_CONCES":"ARIAN JOSE CHAVEZ PECHO","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"24-M","ZONA":"18","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[475000,8687000],[475000,8686000],[474000,8686000],[474000,8687000],[475000,8687000]]]}},{"type":"Feature","properties":{"CODIGOU":"010544026","FEC_DENU":"2026-10-12","CONCESION":"CHOACHÍ III","TIT_CONCES":"DANNY SANTIAGO HERNANDEZ CARDENAS","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"29-M","ZONA":"18","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[486000,8422000],[486000,8421000],[485000,8421000],[485000,8422000],[486000,8422000]]]}},{"type":"Feature","properties":{"CODIGOU":"040048626","FEC_DENU":"2026-10-12","CONCESION":"WAYRA II","TIT_CONCES":"PAOLO CARLOS MACETAS PORRAS y Otros","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"28-Q","ZONA":"18","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":200},"geometry":{"type":"Polygon","coordinates":[[[731000,8477000],[731000,8475000],[730000,8475000],[730000,8477000],[731000,8477000]]]}},{"type":"Feature","properties":{"CODIGOU":"010544326","FEC_DENU":"2026-10-12","CONCESION":"RIO SECO XXV","TIT_CONCES":"ANA MARIA RUIZ RAMIREZ","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"28-L","ZONA":"18","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":200},"geometry":{"type":"Polygon","coordinates":[[[426000,8470000],[426000,8469000],[424000,8469000],[424000,8470000],[426000,8470000]]]}},{"type":"Feature","properties":{"CODIGOU":"660003826","FEC_DENU":"2026-10-12","CONCESION":"MAZAN I","TIT_CONCES":"INTERNATIONAL INKA OCEAN EIRL","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"08-P","ZONA":"18","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":300},"geometry":{"type":"Polygon","coordinates":[[[695000,9599000],[695000,9597000],[693000,9597000],[693000,9598000],[694000,9598000],[694000,9599000],[695000,9599000]]]}},{"type":"Feature","properties":{"CODIGOU":"010543926","FEC_DENU":"2026-10-12","CONCESION":"SARAIMISAEL","TIT_CONCES":"SANDRA PINARES HANCCO","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"29-Y","ZONA":"19","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[484000,8428000],[484000,8427000],[483000,8427000],[483000,8428000],[484000,8428000]]]}},{"type":"Feature","properties":{"CODIGOU":"080073326","FEC_DENU":"2026-10-12","CONCESION":"EL DORADO EMX","TIT_CONCES":"ELISBAN HUANCA TURPO","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"29-Y","ZONA":"19","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":200},"geometry":{"type":"Polygon","coordinates":[[[494000,8439000],[494000,8438000],[492000,8438000],[492000,8439000],[494000,8439000]]]}},{"type":"Feature","properties":{"CODIGOU":"080073426","FEC_DENU":"2026-10-12","CONCESION":"SOL DORADO DL","TIT_CONCES":"NASARIO HUANCA TURPO","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"29-Y","ZONA":"19","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":300},"geometry":{"type":"Polygon","coordinates":[[[493000,8438000],[493000,8435000],[492000,8435000],[492000,8438000],[493000,8438000]]]}}];
+        
+        const map = L.map('map').setView([
+            (areaData.sw.lat + areaData.ne.lat) / 2,
+            (areaData.sw.lng + areaData.ne.lng) / 2
+        ], 10);
+        
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png').addTo(map);
+        
+        L.rectangle([
+            [areaData.sw.lat, areaData.sw.lng],
+            [areaData.ne.lat, areaData.ne.lng]
+        ], { color: '#ff44ff', weight: 3, opacity: 0.8, fillOpacity: 0.1 }).addTo(map);
+        
+        L.geoJSON({ type: 'FeatureCollection', features: desaparecidosFeatures }, {
+            style: { color: '#ff4444', weight: 2, opacity: 0.9, fillOpacity: 0.4 },
+            onEachFeature: (f, l) => l.bindPopup('<b>' + (f.properties.CONCESION || 'N/A') + '</b><br>🔴 Desapareció')
+        }).addTo(map);
+        
+        L.geoJSON({ type: 'FeatureCollection', features: aparecidosFeatures }, {
+            style: { color: '#4444ff', weight: 2, opacity: 0.9, fillOpacity: 0.4 },
+            onEachFeature: (f, l) => l.bindPopup('<b>' + (f.properties.CONCESION || 'N/A') + '</b><br>🔵 Apareció')
+        }).addTo(map);
+    </script>
+</body>
+</html>
