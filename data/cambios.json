@@ -400,5 +400,77 @@
     "nombre": "GIORVANA II",
     "tipo": "aparece",
     "fecha": "2026-10-11T02:18:40.799Z"
+  },
+  {
+    "codigo": "010544226",
+    "nombre": "AMAZON",
+    "tipo": "aparece",
+    "fecha": "2026-10-13T04:00:26.090Z"
+  },
+  {
+    "codigo": "030095326",
+    "nombre": "EL DIA DE MI SUERTE 02",
+    "tipo": "aparece",
+    "fecha": "2026-10-13T04:00:26.090Z"
+  },
+  {
+    "codigo": "010543726",
+    "nombre": "SAN CARLOS DE PAMPAHUIRI",
+    "tipo": "aparece",
+    "fecha": "2026-10-13T04:00:26.090Z"
+  },
+  {
+    "codigo": "010543826",
+    "nombre": "CALLANCA_2026",
+    "tipo": "aparece",
+    "fecha": "2026-10-13T04:00:26.090Z"
+  },
+  {
+    "codigo": "020020726",
+    "nombre": "ARIAN-I",
+    "tipo": "aparece",
+    "fecha": "2026-10-13T04:00:26.090Z"
+  },
+  {
+    "codigo": "010544026",
+    "nombre": "CHOACHÍ III",
+    "tipo": "aparece",
+    "fecha": "2026-10-13T04:00:26.090Z"
+  },
+  {
+    "codigo": "040048626",
+    "nombre": "WAYRA II",
+    "tipo": "aparece",
+    "fecha": "2026-10-13T04:00:26.090Z"
+  },
+  {
+    "codigo": "010544326",
+    "nombre": "RIO SECO XXV",
+    "tipo": "aparece",
+    "fecha": "2026-10-13T04:00:26.090Z"
+  },
+  {
+    "codigo": "660003826",
+    "nombre": "MAZAN I",
+    "tipo": "aparece",
+    "fecha": "2026-10-13T04:00:26.090Z"
+  },
+  {
+    "codigo": "010543926",
+    "nombre": "SARAIMISAEL",
+    "tipo": "aparece",
+    "fecha": "2026-10-13T04:00:26.090Z"
+  },
+  {
+    "codigo": "080073326",
+    "nombre": "EL DORADO EMX",
+    "tipo": "aparece",
+    "fecha": "2026-10-13T04:00:26.090Z"
+  },
+  {
+    "codigo": "080073426",
+    "nombre": "SOL DORADO DL",
+    "tipo": "aparece",
+    "fecha": "2026-10-13T04:00:26.090Z"
   }
 ]
