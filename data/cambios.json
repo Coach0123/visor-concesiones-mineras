@@ -472,5 +472,227 @@
     "nombre": "SOL DORADO DL",
     "tipo": "aparece",
     "fecha": "2026-10-13T04:00:26.090Z"
+  },
+  {
+    "codigo": "010073426",
+    "nombre": "RETROACTIVO 2",
+    "tipo": "desaparece",
+    "fecha": "2026-10-14T02:14:51.295Z"
+  },
+  {
+    "codigo": "010251525",
+    "nombre": "CAMINO DE ORO I",
+    "tipo": "desaparece",
+    "fecha": "2026-10-14T02:14:51.295Z"
+  },
+  {
+    "codigo": "010032226",
+    "nombre": "TRIPULANTE ESPACIAL MOLIWASI 6",
+    "tipo": "desaparece",
+    "fecha": "2026-10-14T02:14:51.295Z"
+  },
+  {
+    "codigo": "010122126",
+    "nombre": "HNOS. ESPINOZA",
+    "tipo": "desaparece",
+    "fecha": "2026-10-14T02:14:51.295Z"
+  },
+  {
+    "codigo": "010187526",
+    "nombre": "SANTA RAQUEL",
+    "tipo": "desaparece",
+    "fecha": "2026-10-14T02:14:51.295Z"
+  },
+  {
+    "codigo": "050068525",
+    "nombre": "GENARO MONTOYA",
+    "tipo": "desaparece",
+    "fecha": "2026-10-14T02:14:51.296Z"
+  },
+  {
+    "codigo": "010378325",
+    "nombre": "HANAQ COLLA 7",
+    "tipo": "desaparece",
+    "fecha": "2026-10-14T02:14:51.296Z"
+  },
+  {
+    "codigo": "710001617",
+    "nombre": "NUEVA ESTRELLA II",
+    "tipo": "desaparece",
+    "fecha": "2026-10-14T02:14:51.296Z"
+  },
+  {
+    "codigo": "710003523",
+    "nombre": "MI FAVORITA I",
+    "tipo": "desaparece",
+    "fecha": "2026-10-14T02:14:51.296Z"
+  },
+  {
+    "codigo": "710003623",
+    "nombre": "MI FAVORITA II",
+    "tipo": "desaparece",
+    "fecha": "2026-10-14T02:14:51.296Z"
+  },
+  {
+    "codigo": "710009922",
+    "nombre": "PANDY GROUP I",
+    "tipo": "desaparece",
+    "fecha": "2026-10-14T02:14:51.296Z"
+  },
+  {
+    "codigo": "710000625",
+    "nombre": "CACLLUNI LA COMUNA",
+    "tipo": "desaparece",
+    "fecha": "2026-10-14T02:14:51.296Z"
+  },
+  {
+    "codigo": "710007925",
+    "nombre": "PLAYA 1 FR",
+    "tipo": "desaparece",
+    "fecha": "2026-10-14T02:14:51.296Z"
+  },
+  {
+    "codigo": "080077225",
+    "nombre": "SELVA DORADA 2025",
+    "tipo": "desaparece",
+    "fecha": "2026-10-14T02:14:51.296Z"
+  },
+  {
+    "codigo": "010322526",
+    "nombre": "GUSTAVO 02",
+    "tipo": "desaparece",
+    "fecha": "2026-10-14T02:14:51.296Z"
+  },
+  {
+    "codigo": "010545526",
+    "nombre": "HUALA 4",
+    "tipo": "aparece",
+    "fecha": "2026-10-14T02:14:51.296Z"
+  },
+  {
+    "codigo": "100009226",
+    "nombre": "SAN JUAN PABLO II 2026",
+    "tipo": "aparece",
+    "fecha": "2026-10-14T02:14:51.296Z"
+  },
+  {
+    "codigo": "010544426",
+    "nombre": "EDWAR2013",
+    "tipo": "aparece",
+    "fecha": "2026-10-14T02:14:51.296Z"
+  },
+  {
+    "codigo": "060023726",
+    "nombre": "ARLEMAN",
+    "tipo": "aparece",
+    "fecha": "2026-10-14T02:14:51.296Z"
+  },
+  {
+    "codigo": "010545226",
+    "nombre": "SAN PEDRO 26-1",
+    "tipo": "aparece",
+    "fecha": "2026-10-14T02:14:51.296Z"
+  },
+  {
+    "codigo": "010545326",
+    "nombre": "JELLOJASA 26",
+    "tipo": "aparece",
+    "fecha": "2026-10-14T02:14:51.296Z"
+  },
+  {
+    "codigo": "010545426",
+    "nombre": "VCHAPPIH",
+    "tipo": "aparece",
+    "fecha": "2026-10-14T02:14:51.296Z"
+  },
+  {
+    "codigo": "020020826",
+    "nombre": "LA FORTUNA DE KEFREN 1",
+    "tipo": "aparece",
+    "fecha": "2026-10-14T02:14:51.296Z"
+  },
+  {
+    "codigo": "070044226",
+    "nombre": "SANTA LUCIA I",
+    "tipo": "aparece",
+    "fecha": "2026-10-14T02:14:51.296Z"
+  },
+  {
+    "codigo": "010544626",
+    "nombre": "MARIA PHANTHOG 2",
+    "tipo": "aparece",
+    "fecha": "2026-10-14T02:14:51.296Z"
+  },
+  {
+    "codigo": "070044026",
+    "nombre": "SANTA EULALIA I",
+    "tipo": "aparece",
+    "fecha": "2026-10-14T02:14:51.296Z"
+  },
+  {
+    "codigo": "010544726",
+    "nombre": "MARIA PHANTAHOG 1",
+    "tipo": "aparece",
+    "fecha": "2026-10-14T02:14:51.296Z"
+  },
+  {
+    "codigo": "070044126",
+    "nombre": "SANTA MARTA I",
+    "tipo": "aparece",
+    "fecha": "2026-10-14T02:14:51.296Z"
+  },
+  {
+    "codigo": "070044326",
+    "nombre": "SANTA ROSA I",
+    "tipo": "aparece",
+    "fecha": "2026-10-14T02:14:51.296Z"
+  },
+  {
+    "codigo": "050116026",
+    "nombre": "COLCA TINKUY II",
+    "tipo": "aparece",
+    "fecha": "2026-10-14T02:14:51.296Z"
+  },
+  {
+    "codigo": "050116126",
+    "nombre": "EL BARBON CHUQUI 2026",
+    "tipo": "aparece",
+    "fecha": "2026-10-14T02:14:51.296Z"
+  },
+  {
+    "codigo": "010544826",
+    "nombre": "ALEJANDRA-2027",
+    "tipo": "aparece",
+    "fecha": "2026-10-14T02:14:51.296Z"
+  },
+  {
+    "codigo": "070044426",
+    "nombre": "SABINO G",
+    "tipo": "aparece",
+    "fecha": "2026-10-14T02:14:51.296Z"
+  },
+  {
+    "codigo": "010545126",
+    "nombre": "FABIANKA",
+    "tipo": "aparece",
+    "fecha": "2026-10-14T02:14:51.296Z"
+  },
+  {
+    "codigo": "040048726",
+    "nombre": "SEBAS II",
+    "tipo": "aparece",
+    "fecha": "2026-10-14T02:14:51.296Z"
+  },
+  {
+    "codigo": "040048826",
+    "nombre": "SEBAS III",
+    "tipo": "aparece",
+    "fecha": "2026-10-14T02:14:51.296Z"
+  },
+  {
+    "codigo": "080073526",
+    "nombre": "RIO CORONA GOLD",
+    "tipo": "aparece",
+    "fecha": "2026-10-14T02:14:51.296Z"
   }
 ]
