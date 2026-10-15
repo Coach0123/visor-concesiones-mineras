@@ -694,5 +694,107 @@
     "nombre": "RIO CORONA GOLD",
     "tipo": "aparece",
     "fecha": "2026-10-14T02:14:51.296Z"
+  },
+  {
+    "codigo": "010545626",
+    "nombre": "HUALA 3",
+    "tipo": "aparece",
+    "fecha": "2026-10-15T01:56:03.222Z"
+  },
+  {
+    "codigo": "010546226",
+    "nombre": "TECHNOLOGIES 2026",
+    "tipo": "aparece",
+    "fecha": "2026-10-15T01:56:03.222Z"
+  },
+  {
+    "codigo": "010546526",
+    "nombre": "PROYECTO COOPER NORTH COMPANY SAC",
+    "tipo": "aparece",
+    "fecha": "2026-10-15T01:56:03.222Z"
+  },
+  {
+    "codigo": "060023826",
+    "nombre": "CHATARRITA",
+    "tipo": "aparece",
+    "fecha": "2026-10-15T01:56:03.222Z"
+  },
+  {
+    "codigo": "050116226",
+    "nombre": "TAIWAN GOLD MINE I",
+    "tipo": "aparece",
+    "fecha": "2026-10-15T01:56:03.222Z"
+  },
+  {
+    "codigo": "050116326",
+    "nombre": "CESAR ALEJANDRO II 2026",
+    "tipo": "aparece",
+    "fecha": "2026-10-15T01:56:03.222Z"
+  },
+  {
+    "codigo": "010546026",
+    "nombre": "AZ1",
+    "tipo": "aparece",
+    "fecha": "2026-10-15T01:56:03.222Z"
+  },
+  {
+    "codigo": "010546126",
+    "nombre": "AZ2",
+    "tipo": "aparece",
+    "fecha": "2026-10-15T01:56:03.222Z"
+  },
+  {
+    "codigo": "070044626",
+    "nombre": "BRUNO ISAIAS",
+    "tipo": "aparece",
+    "fecha": "2026-10-15T01:56:03.222Z"
+  },
+  {
+    "codigo": "010545926",
+    "nombre": "LUIS LYAM II",
+    "tipo": "aparece",
+    "fecha": "2026-10-15T01:56:03.222Z"
+  },
+  {
+    "codigo": "020020926",
+    "nombre": "EL RETORNO YESPERANZA",
+    "tipo": "aparece",
+    "fecha": "2026-10-15T01:56:03.222Z"
+  },
+  {
+    "codigo": "010546826",
+    "nombre": "GEOSATMIN X",
+    "tipo": "aparece",
+    "fecha": "2026-10-15T01:56:03.222Z"
+  },
+  {
+    "codigo": "050116526",
+    "nombre": "ASOCIADOS  EMY I",
+    "tipo": "aparece",
+    "fecha": "2026-10-15T01:56:03.222Z"
+  },
+  {
+    "codigo": "620007826",
+    "nombre": "HOPE-2027",
+    "tipo": "aparece",
+    "fecha": "2026-10-15T01:56:03.222Z"
+  },
+  {
+    "codigo": "010546426",
+    "nombre": "PLANTA SOL DE ORO",
+    "tipo": "aparece",
+    "fecha": "2026-10-15T01:56:03.222Z"
+  },
+  {
+    "codigo": "010546326",
+    "nombre": "OROPESA I",
+    "tipo": "aparece",
+    "fecha": "2026-10-15T01:56:03.222Z"
+  },
+  {
+    "codigo": "050116426",
+    "nombre": "CESAR ALEJANDRO 2026",
+    "tipo": "aparece",
+    "fecha": "2026-10-15T01:56:03.222Z"
   }
 ]
