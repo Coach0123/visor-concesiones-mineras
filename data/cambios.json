@@ -1084,5 +1084,185 @@
     "nombre": "GRUPO HUAMANTINCO",
     "tipo": "aparece",
     "fecha": "2026-10-17T01:40:35.901Z"
+  },
+  {
+    "codigo": "060010026",
+    "nombre": "TAMBORAPA BLACKROCK 01",
+    "tipo": "desaparece",
+    "fecha": "2026-10-18T01:36:25.871Z"
+  },
+  {
+    "codigo": "010448026",
+    "nombre": "FLAMENCO DORADO",
+    "tipo": "desaparece",
+    "fecha": "2026-10-18T01:36:25.871Z"
+  },
+  {
+    "codigo": "010032026",
+    "nombre": "MINERA CERRO GRISS",
+    "tipo": "desaparece",
+    "fecha": "2026-10-18T01:36:25.871Z"
+  },
+  {
+    "codigo": "010096624",
+    "nombre": "MINERA TAMI 2024",
+    "tipo": "desaparece",
+    "fecha": "2026-10-18T01:36:25.871Z"
+  },
+  {
+    "codigo": "010113726",
+    "nombre": "CUEVITA II",
+    "tipo": "desaparece",
+    "fecha": "2026-10-18T01:36:25.871Z"
+  },
+  {
+    "codigo": "020009424",
+    "nombre": "NUEVO AMANECER 2024",
+    "tipo": "desaparece",
+    "fecha": "2026-10-18T01:36:25.871Z"
+  },
+  {
+    "codigo": "010390525",
+    "nombre": "JULIANA 25",
+    "tipo": "desaparece",
+    "fecha": "2026-10-18T01:36:25.871Z"
+  },
+  {
+    "codigo": "050065926",
+    "nombre": "EDGAR CHAVEZ NEYRA III",
+    "tipo": "desaparece",
+    "fecha": "2026-10-18T01:36:25.871Z"
+  },
+  {
+    "codigo": "010345426",
+    "nombre": "HUIPANI I",
+    "tipo": "desaparece",
+    "fecha": "2026-10-18T01:36:25.871Z"
+  },
+  {
+    "codigo": "050058926",
+    "nombre": "SILVER COOPER I",
+    "tipo": "desaparece",
+    "fecha": "2026-10-18T01:36:25.871Z"
+  },
+  {
+    "codigo": "730002524",
+    "nombre": "MINA LOPEZ II",
+    "tipo": "desaparece",
+    "fecha": "2026-10-18T01:36:25.871Z"
+  },
+  {
+    "codigo": "080044725",
+    "nombre": "PITON DE ORO 2025",
+    "tipo": "desaparece",
+    "fecha": "2026-10-18T01:36:25.871Z"
+  },
+  {
+    "codigo": "080043325",
+    "nombre": "PROYECTO ANGOLA UNO",
+    "tipo": "desaparece",
+    "fecha": "2026-10-18T01:36:25.871Z"
+  },
+  {
+    "codigo": "010551126",
+    "nombre": "BINI 01",
+    "tipo": "aparece",
+    "fecha": "2026-10-18T01:36:25.871Z"
+  },
+  {
+    "codigo": "030095726",
+    "nombre": "PAIMAR UNO",
+    "tipo": "aparece",
+    "fecha": "2026-10-18T01:36:25.871Z"
+  },
+  {
+    "codigo": "060024026",
+    "nombre": "OFIR DORADO",
+    "tipo": "aparece",
+    "fecha": "2026-10-18T01:36:25.871Z"
+  },
+  {
+    "codigo": "010551526",
+    "nombre": "JOSHUA I 2026",
+    "tipo": "aparece",
+    "fecha": "2026-10-18T01:36:25.871Z"
+  },
+  {
+    "codigo": "010549826",
+    "nombre": "CHAVIÑA_01",
+    "tipo": "aparece",
+    "fecha": "2026-10-18T01:36:25.871Z"
+  },
+  {
+    "codigo": "010549926",
+    "nombre": "CHAVIÑA_02",
+    "tipo": "aparece",
+    "fecha": "2026-10-18T01:36:25.871Z"
+  },
+  {
+    "codigo": "010550226",
+    "nombre": "CHAVIÑA_10",
+    "tipo": "aparece",
+    "fecha": "2026-10-18T01:36:25.871Z"
+  },
+  {
+    "codigo": "010550326",
+    "nombre": "CHAVIÑA_11",
+    "tipo": "aparece",
+    "fecha": "2026-10-18T01:36:25.871Z"
+  },
+  {
+    "codigo": "010550126",
+    "nombre": "CHAVIÑA_09",
+    "tipo": "aparece",
+    "fecha": "2026-10-18T01:36:25.871Z"
+  },
+  {
+    "codigo": "010550026",
+    "nombre": "CHAVIÑA_07",
+    "tipo": "aparece",
+    "fecha": "2026-10-18T01:36:25.871Z"
+  },
+  {
+    "codigo": "530004724",
+    "nombre": "AURIUM-1",
+    "tipo": "aparece",
+    "fecha": "2026-10-18T01:36:25.871Z"
+  },
+  {
+    "codigo": "010551426",
+    "nombre": "ANDES GOLD",
+    "tipo": "aparece",
+    "fecha": "2026-10-18T01:36:25.871Z"
+  },
+  {
+    "codigo": "010550426",
+    "nombre": "CHAVIÑA_22",
+    "tipo": "aparece",
+    "fecha": "2026-10-18T01:36:25.871Z"
+  },
+  {
+    "codigo": "050117626",
+    "nombre": "MARCO AQP I",
+    "tipo": "aparece",
+    "fecha": "2026-10-18T01:36:25.871Z"
+  },
+  {
+    "codigo": "050117726",
+    "nombre": "NARCISOS",
+    "tipo": "aparece",
+    "fecha": "2026-10-18T01:36:25.871Z"
+  },
+  {
+    "codigo": "010549726",
+    "nombre": "GLADYS MARIA 2026",
+    "tipo": "aparece",
+    "fecha": "2026-10-18T01:36:25.871Z"
+  },
+  {
+    "codigo": "070045126",
+    "nombre": "PUNTO DE ORO",
+    "tipo": "aparece",
+    "fecha": "2026-10-18T01:36:25.871Z"
   }
 ]
