@@ -22,5 +22,119 @@
     "nombre": "MAGICO 24",
     "tipo": "desaparece",
     "fecha": "2026-10-21T01:52:42.227Z"
+  },
+  {
+    "codigo": "P030000317",
+    "nombre": "AURIFERA CHOLITO",
+    "tipo": "aparece",
+    "fecha": "2026-10-21T02:06:13.350Z"
+  },
+  {
+    "codigo": "010551826",
+    "nombre": "SAN CRISTOBAL 2026",
+    "tipo": "aparece",
+    "fecha": "2026-10-21T02:06:13.350Z"
+  },
+  {
+    "codigo": "010552026",
+    "nombre": "SANTA ROSA CF",
+    "tipo": "aparece",
+    "fecha": "2026-10-21T02:06:13.350Z"
+  },
+  {
+    "codigo": "010552826",
+    "nombre": "SANTA SABINA FAP",
+    "tipo": "aparece",
+    "fecha": "2026-10-21T02:06:13.350Z"
+  },
+  {
+    "codigo": "010552926",
+    "nombre": "ROSITA D",
+    "tipo": "aparece",
+    "fecha": "2026-10-21T02:06:13.350Z"
+  },
+  {
+    "codigo": "010553226",
+    "nombre": "PROYECTO COPPER II",
+    "tipo": "aparece",
+    "fecha": "2026-10-21T02:06:13.350Z"
+  },
+  {
+    "codigo": "040049226",
+    "nombre": "MESITO",
+    "tipo": "aparece",
+    "fecha": "2026-10-21T02:06:13.350Z"
+  },
+  {
+    "codigo": "530020326",
+    "nombre": "QORAWIRI-75",
+    "tipo": "aparece",
+    "fecha": "2026-10-21T02:06:13.350Z"
+  },
+  {
+    "codigo": "530020426",
+    "nombre": "SUPARAURA VII",
+    "tipo": "aparece",
+    "fecha": "2026-10-21T02:06:13.350Z"
+  },
+  {
+    "codigo": "550008026",
+    "nombre": "HUALLANCAYOCC 2",
+    "tipo": "aparece",
+    "fecha": "2026-10-21T02:06:13.350Z"
+  },
+  {
+    "codigo": "590005726",
+    "nombre": "ALALA 2026",
+    "tipo": "aparece",
+    "fecha": "2026-10-21T02:06:13.350Z"
+  },
+  {
+    "codigo": "020021326",
+    "nombre": "REINA 2027",
+    "tipo": "aparece",
+    "fecha": "2026-10-21T02:06:13.350Z"
+  },
+  {
+    "codigo": "550008126",
+    "nombre": "HUALLANCAYOCC 3",
+    "tipo": "aparece",
+    "fecha": "2026-10-21T02:06:13.350Z"
+  },
+  {
+    "codigo": "050024325A",
+    "nombre": "SERPIENTE DE ORO I",
+    "tipo": "aparece",
+    "fecha": "2026-10-21T02:06:13.350Z"
+  },
+  {
+    "codigo": "010551626",
+    "nombre": "STARVILLE IV",
+    "tipo": "aparece",
+    "fecha": "2026-10-21T02:06:13.350Z"
+  },
+  {
+    "codigo": "010552426",
+    "nombre": "ATENEA 1 2026",
+    "tipo": "aparece",
+    "fecha": "2026-10-21T02:06:13.350Z"
+  },
+  {
+    "codigo": "010552726",
+    "nombre": "ATENEA 4 2026",
+    "tipo": "aparece",
+    "fecha": "2026-10-21T02:06:13.350Z"
+  },
+  {
+    "codigo": "010552526",
+    "nombre": "ATENEA 2 2026",
+    "tipo": "aparece",
+    "fecha": "2026-10-21T02:06:13.350Z"
+  },
+  {
+    "codigo": "010552626",
+    "nombre": "ATENEA 3 2026",
+    "tipo": "aparece",
+    "fecha": "2026-10-21T02:06:13.350Z"
   }
 ]
