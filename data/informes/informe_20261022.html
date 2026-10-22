@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wvisor - Informe 20261022</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #0a1628; color: #e0e6f0; padding: 20px; }
+        .container { max-width: 1400px; margin: 0 auto; background: #0f1e3a; border-radius: 12px; box-shadow: 0 8px 40px rgba(0,0,0,0.5); overflow: hidden; border: 1px solid #1e3a5f; }
+        .header { background: linear-gradient(135deg, #1e3a8a, #1e40af); padding: 25px 30px; }
+        .header-top { display: flex; align-items: center; gap: 15px; margin-bottom: 10px; }
+        .logo-w { width: 45px; height: 45px; background: linear-gradient(135deg, #3b82f6, #1e40af); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 26px; font-weight: 800; color: #fff; font-family: Georgia, serif; }
+        .header h1 { font-size: 22px; font-weight: 600; color: #fff; }
+        .subtitle { font-size: 13px; color: #93c5fd; margin-bottom: 15px; }
+        .stats { display: flex; gap: 12px; flex-wrap: wrap; }
+        .stat-item { background: rgba(255,255,255,0.12); padding: 10px 18px; border-radius: 8px; font-size: 12px; color: #bfdbfe; }
+        .stat-item strong { font-size: 20px; display: block; color: #fff; }
+        .stat-item.danger { background: rgba(220, 38, 38, 0.3); }
+        .stat-item.danger strong { color: #fca5a5; }
+        .stat-item.success { background: rgba(59, 130, 246, 0.3); }
+        .stat-item.success strong { color: #93c5fd; }
+        .main-content { display: flex; flex-wrap: wrap; }
+        .map-column { flex: 2; min-width: 500px; padding: 20px; background: #0a1628; }
+        #map { border-radius: 8px; height: 550px; width: 100%; border: 1px solid #1e3a5f; }
+        .info-column { flex: 1; min-width: 320px; padding: 20px; background: #0f1e3a; border-left: 1px solid #1e3a5f; max-height: 600px; overflow-y: auto; }
+        .info-column h2 { font-size: 16px; margin-bottom: 15px; color: #93c5fd; padding-bottom: 8px; border-bottom: 1px solid #1e3a5f; }
+        .item-concesion { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; font-size: 12px; border-bottom: 1px solid #1e3a5f; }
+        .estado-badge { font-size: 10px; padding: 3px 8px; border-radius: 10px; color: white; font-weight: 600; }
+        .estado-badge.desaparecio { background: #dc2626; }
+        .estado-badge.aparecio { background: #2563eb; }
+        .tabla-container { padding: 20px 30px 30px; border-top: 1px solid #1e3a5f; }
+        .tabla-container h2 { font-size: 16px; margin-bottom: 15px; color: #93c5fd; }
+        .tabla-concesiones { width: 100%; border-collapse: collapse; font-size: 13px; }
+        .tabla-concesiones thead th { background: #152b4a; padding: 12px 15px; text-align: left; color: #93c5fd; border-bottom: 2px solid #1e3a5f; }
+        .tabla-concesiones tbody td { padding: 10px 15px; border-bottom: 1px solid #1e3a5f; color: #cbd5e1; }
+        .footer { background: #0a1628; padding: 15px 30px; text-align: center; font-size: 11px; color: #475569; border-top: 1px solid #1e3a5f; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-top">
+                <div class="logo-w">W</div>
+                <h1>Wvisor - Informe de Área</h1>
+            </div>
+            <div class="subtitle">Generado el 22/10/2026</div>
+            <div class="stats">
+                <div class="stat-item danger"><strong>0</strong>Desaparecieron</div>
+                <div class="stat-item success"><strong>19</strong>Aparecieron</div>
+                <div class="stat-item"><strong>19</strong>Total</div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="map-column">
+                <div id="map"></div>
+            </div>
+            <div class="info-column">
+                <h2>📋 Concesiones</h2>
+                
+                
+                    <div class="item-concesion">
+                        <span>AURIFERA CHOLITO</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>SAN CRISTOBAL 2026</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>SANTA ROSA CF</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>SANTA SABINA FAP</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>ROSITA D</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>PROYECTO COPPER II</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>MESITO</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>QORAWIRI-75</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>SUPARAURA VII</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>HUALLANCAYOCC 2</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>ALALA 2026</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>REINA 2027</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>HUALLANCAYOCC 3</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>SERPIENTE DE ORO I</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>STARVILLE IV</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>ATENEA 1 2026</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>ATENEA 4 2026</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>ATENEA 2 2026</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>ATENEA 3 2026</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+            </div>
+        </div>
+        
+        <div class="tabla-container">
+            <h2>📋 Detalle Completo</h2>
+            <table class="tabla-concesiones">
+                <thead>
+                    <tr><th>Código</th><th>Concesión</th><th>Titular</th><th>Estado</th></tr>
+                </thead>
+                <tbody>
+                    
+                    
+                        <tr>
+                            <td>P030000317</td>
+                            <td>AURIFERA CHOLITO</td>
+                            <td>EMPRESA MINERA AURIFERA CHOLITO S.A.</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010551826</td>
+                            <td>SAN CRISTOBAL 2026</td>
+                            <td>YHOJAN YONATAN ORIZANO CARHUA</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010552026</td>
+                            <td>SANTA ROSA CF</td>
+                            <td>JOSE FELIX MARIN LUDEÑA</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010552826</td>
+                            <td>SANTA SABINA FAP</td>
+                            <td>LENNIN FIDEL ATOC CRUZ</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010552926</td>
+                            <td>ROSITA D</td>
+                            <td>LENNIN FIDEL ATOC CRUZ</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010553226</td>
+                            <td>PROYECTO COPPER II</td>
+                            <td>ABEL DE LA CRUZ ESPINAL</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>040049226</td>
+                            <td>MESITO</td>
+                            <td>CONSTRUC INVERSIONES MULTISERVICIOS E.I.R.L</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>530020326</td>
+                            <td>QORAWIRI-75</td>
+                            <td>YUDIN MAUCAYLLE BUITRON</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>530020426</td>
+                            <td>SUPARAURA VII</td>
+                            <td>AKEMYFIORELLA FERNANDA MIRANDA ALANOCCA</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>550008026</td>
+                            <td>HUALLANCAYOCC 2</td>
+                            <td>JAIME RICHARD MEJIA ESCAJADILLO</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>590005726</td>
+                            <td>ALALA 2026</td>
+                            <td>WILDER JANAMPA MARTINEZ</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>020021326</td>
+                            <td>REINA 2027</td>
+                            <td>AROMAS DEL CAMPO SOCIEDAD ANÓNIMA CERRADA</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>550008126</td>
+                            <td>HUALLANCAYOCC 3</td>
+                            <td>JAIME RICHARD MEJIA ESCAJADILLO</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>050024325A</td>
+                            <td>SERPIENTE DE ORO I</td>
+                            <td>LEONELA SONCO SACACA Y OTROS</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010551626</td>
+                            <td>STARVILLE IV</td>
+                            <td>STARVILLE E.I.R.L.</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010552426</td>
+                            <td>ATENEA 1 2026</td>
+                            <td>CORI PUNO S.R.L.</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010552726</td>
+                            <td>ATENEA 4 2026</td>
+                            <td>N/A</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010552526</td>
+                            <td>ATENEA 2 2026</td>
+                            <td>CORI PUNO S.R.L.</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010552626</td>
+                            <td>ATENEA 3 2026</td>
+                            <td>CORI PUNO S.R.L.</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="footer">Wvisor · Datos INGEMMET · 22/10/2026</div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.8.0/proj4.js"></script>
+    <script>
+        const areaData = {"sw":{"lat":-18,"lng":-82},"ne":{"lat":-2,"lng":-68},"bounds":"-82,-18,-68,-2","fecha":"2026-07-15T21:30:00.000Z"};
+        const desaparecidosFeatures = [];
+        const aparecidosFeatures = [{"type":"Feature","properties":{"CODIGOU":"P030000317","FEC_DENU":"2017-12-19","CONCESION":"AURIFERA CHOLITO","TIT_CONCES":"EMPRESA MINERA AURIFERA CHOLITO S.A.","D_ESTADO":"Planta de Beneficio","CARTA":"32-O","ZONA":"18","SUSTANCIA":"M","DEPA":"AREQUIPA","PROVI":"CARAVELI","DISTRI":"CHAPARRA","HASDATUM":0.2335},"geometry":{"type":"Polygon","coordinates":[[[619436,8258401],[619481,8258378],[619464,8258340],[619415,8258355],[619436,8258401]]]}},{"type":"Feature","properties":{"CODIGOU":"010551826","FEC_DENU":"2026-10-19","CONCESION":"SAN CRISTOBAL 2026","TIT_CONCES":"YHOJAN YONATAN ORIZANO CARHUA","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"21-L","ZONA":"18","SUSTANCIA":"M","DEPA":"HUANUCO","PROVI":"PACHITEA","DISTRI":"PANAO","HASDATUM":200},"geometry":{"type":"Polygon","coordinates":[[[403000,8876000],[403000,8874000],[402000,8874000],[402000,8876000],[403000,8876000]]]}},{"type":"Feature","properties":{"CODIGOU":"010552026","FEC_DENU":"2026-10-19","CONCESION":"SANTA ROSA CF","TIT_CONCES":"JOSE FELIX MARIN LUDEÑA","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"22-M","ZONA":"18","SUSTANCIA":"M","DEPA":"JUNIN / PASCO","PROVI":"CHANCHAMAYO / OXAPAMPA","DISTRI":"PERENE / VILLA RICA","HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[488000,8814000],[488000,8813000],[487000,8813000],[487000,8814000],[488000,8814000]]]}},{"type":"Feature","properties":{"CODIGOU":"010552826","FEC_DENU":"2026-10-19","CONCESION":"SANTA SABINA FAP","TIT_CONCES":"LENNIN FIDEL ATOC CRUZ","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"23-L","ZONA":"18","SUSTANCIA":"M","DEPA":"JUNIN","PROVI":"TARMA","DISTRI":"HUASAHUASI","HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[432000,8756000],[432000,8755000],[431000,8755000],[431000,8756000],[432000,8756000]]]}},{"type":"Feature","properties":{"CODIGOU":"010552926","FEC_DENU":"2026-10-19","CONCESION":"ROSITA D","TIT_CONCES":"LENNIN FIDEL ATOC CRUZ","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"23-L","ZONA":"18","SUSTANCIA":"N","DEPA":"JUNIN","PROVI":"TARMA","DISTRI":"HUASAHUASI","HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[431000,8756000],[431000,8755000],[430000,8755000],[430000,8756000],[431000,8756000]]]}},{"type":"Feature","properties":{"CODIGOU":"010553226","FEC_DENU":"2026-10-19","CONCESION":"PROYECTO COPPER II","TIT_CONCES":"ABEL DE LA CRUZ ESPINAL","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"25-N","ZONA":"18","SUSTANCIA":"M","DEPA":"HUANCAVELICA / JUNIN","PROVI":"HUANCAYO / TAYACAJA","DISTRI":"PARIAHUANCA / SAN MARCOS DE ROCCHAC","HASDATUM":300},"geometry":{"type":"Polygon","coordinates":[[[511000,8670000],[511000,8668000],[510000,8668000],[510000,8669000],[509000,8669000],[509000,8670000],[511000,8670000]]]}},{"type":"Feature","properties":{"CODIGOU":"040049226","FEC_DENU":"2026-10-19","CONCESION":"MESITO","TIT_CONCES":"CONSTRUC INVERSIONES MULTISERVICIOS E.I.R.L","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"29-P","ZONA":"18","SUSTANCIA":"M","DEPA":"APURIMAC","PROVI":"AYMARAES","DISTRI":"CHALHUANCA","HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[692000,8422000],[692000,8421000],[691000,8421000],[691000,8422000],[692000,8422000]]]}},{"type":"Feature","properties":{"CODIGOU":"530020326","FEC_DENU":"2026-10-19","CONCESION":"QORAWIRI-75","TIT_CONCES":"YUDIN MAUCAYLLE BUITRON","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"28-P","ZONA":"18","SUSTANCIA":"M","DEPA":"APURIMAC","PROVI":"ANDAHUAYLAS","DISTRI":"SAN JERONIMO","HASDATUM":500},"geometry":{"type":"Polygon","coordinates":[[[691000,8482000],[691000,8478000],[690000,8478000],[690000,8481000],[689000,8481000],[689000,8482000],[691000,8482000]]]}},{"type":"Feature","properties":{"CODIGOU":"530020426","FEC_DENU":"2026-10-19","CONCESION":"SUPARAURA VII","TIT_CONCES":"AKEMYFIORELLA FERNANDA MIRANDA ALANOCCA","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"29-P","ZONA":"18","SUSTANCIA":"M","DEPA":"APURIMAC","PROVI":"AYMARAES","DISTRI":"CHAPIMARCA","HASDATUM":300},"geometry":{"type":"Polygon","coordinates":[[[712000,8449000],[712000,8448000],[711000,8448000],[711000,8447000],[710000,8447000],[710000,8449000],[712000,8449000]]]}},{"type":"Feature","properties":{"CODIGOU":"550008026","FEC_DENU":"2026-10-19","CONCESION":"HUALLANCAYOCC 2","TIT_CONCES":"JAIME RICHARD MEJIA ESCAJADILLO","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"29-O","ZONA":"18","SUSTANCIA":"M","DEPA":"AYACUCHO","PROVI":"LUCANAS / VICTOR FAJARDO","DISTRI":"AUCARA / APONGO","HASDATUM":500},"geometry":{"type":"Polygon","coordinates":[[[611000,8434000],[611000,8432000],[607000,8432000],[607000,8433000],[610000,8433000],[610000,8434000],[611000,8434000]]]}},{"type":"Feature","properties":{"CODIGOU":"590005726","FEC_DENU":"2026-10-19","CONCESION":"ALALA 2026","TIT_CONCES":"WILDER JANAMPA MARTINEZ","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"27-N","ZONA":"18","SUSTANCIA":"M","DEPA":"HUANCAVELICA","PROVI":"ANGARAES","DISTRI":"LIRCAY","HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[537000,8562000],[537000,8561000],[536000,8561000],[536000,8562000],[537000,8562000]]]}},{"type":"Feature","properties":{"CODIGOU":"020021326","FEC_DENU":"2026-10-19","CONCESION":"REINA 2027","TIT_CONCES":"AROMAS DEL CAMPO SOCIEDAD ANÓNIMA CERRADA","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"21-L","ZONA":"18","SUSTANCIA":"M","DEPA":"HUANUCO / PASCO","PROVI":"OXAPAMPA / PACHITEA","DISTRI":"PANAO / POZUZO","HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[425000,8885000],[425000,8884000],[424000,8884000],[424000,8885000],[425000,8885000]]]}},{"type":"Feature","properties":{"CODIGOU":"550008126","FEC_DENU":"2026-10-19","CONCESION":"HUALLANCAYOCC 3","TIT_CONCES":"JAIME RICHARD MEJIA ESCAJADILLO","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"29-O","ZONA":"18","SUSTANCIA":"M","DEPA":"AYACUCHO","PROVI":"LUCANAS / VICTOR FAJARDO","DISTRI":"APONGO / AUCARA","HASDATUM":200},"geometry":{"type":"Polygon","coordinates":[[[609000,8436000],[609000,8435000],[607000,8435000],[607000,8436000],[609000,8436000]]]}},{"type":"Feature","properties":{"CODIGOU":"050024325A","FEC_DENU":"2025-05-05","CONCESION":"SERPIENTE DE ORO I","TIT_CONCES":"LEONELA SONCO SACACA Y OTROS","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"29-X","ZONA":"19","SUSTANCIA":"M","DEPA":"PUNO","PROVI":"CARABAYA / SANDIA","DISTRI":"COASA / LIMBANI","HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[422000,8451000],[422000,8450000],[421000,8450000],[421000,8451000],[422000,8451000]]]}},{"type":"Feature","properties":{"CODIGOU":"010551626","FEC_DENU":"2026-10-19","CONCESION":"STARVILLE IV","TIT_CONCES":"STARVILLE E.I.R.L.","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"36-X","ZONA":"19","SUSTANCIA":"M","DEPA":"TACNA","PROVI":"TACNA","DISTRI":"PALCA / PACHIA","HASDATUM":400},"geometry":{"type":"Polygon","coordinates":[[[397000,8040000],[397000,8038000],[395000,8038000],[395000,8040000],[397000,8040000]]]}},{"type":"Feature","properties":{"CODIGOU":"010552426","FEC_DENU":"2026-10-19","CONCESION":"ATENEA 1 2026","TIT_CONCES":"CORI PUNO S.R.L.","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"29-Y","ZONA":"19","SUSTANCIA":"M","DEPA":"PUNO","PROVI":"SAN ANTONIO DE PUTINA","DISTRI":"SINA","HASDATUM":700},"geometry":{"type":"Polygon","coordinates":[[[484000,8400000],[484000,8397000],[481000,8397000],[481000,8399000],[483000,8399000],[483000,8400000],[484000,8400000]]]}},{"type":"Feature","properties":{"CODIGOU":"010552726","FEC_DENU":"2026-10-19","CONCESION":"ATENEA 4 2026","TIT_CONCES":null,"D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"30-Y","ZONA":"19","SUSTANCIA":"M","DEPA":"FUERA DEL PERU / PUNO","PROVI":"FUERA DEL PERU / SAN ANTONIO DE PUTINA","DISTRI":"SINA / FUERA DEL PERU","HASDATUM":400},"geometry":{"type":"Polygon","coordinates":[[[485000,8394000],[485000,8393000],[484000,8393000],[484000,8391000],[483000,8391000],[483000,8394000],[485000,8394000]]]}},{"type":"Feature","properties":{"CODIGOU":"010552526","FEC_DENU":"2026-10-19","CONCESION":"ATENEA 2 2026","TIT_CONCES":"CORI PUNO S.R.L.","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"29-Y","ZONA":"19","SUSTANCIA":"M","DEPA":"FUERA DEL PERU / PUNO","PROVI":"FUERA DEL PERU / SAN ANTONIO DE PUTINA","DISTRI":"SINA / FUERA DEL PERU","HASDATUM":700},"geometry":{"type":"Polygon","coordinates":[[[486000,8398000],[486000,8396000],[487000,8396000],[487000,8395000],[484000,8395000],[484000,8398000],[486000,8398000]]]}},{"type":"Feature","properties":{"CODIGOU":"010552626","FEC_DENU":"2026-10-19","CONCESION":"ATENEA 3 2026","TIT_CONCES":"CORI PUNO S.R.L.","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"30-Y","ZONA":"19","SUSTANCIA":"M","DEPA":"FUERA DEL PERU / PUNO","PROVI":"FUERA DEL PERU / SAN ANTONIO DE PUTINA","DISTRI":"SINA / FUERA DEL PERU","HASDATUM":900},"geometry":{"type":"Polygon","coordinates":[[[481000,8396000],[481000,8395000],[484000,8395000],[484000,8394000],[483000,8394000],[483000,8393000],[481000,8393000],[481000,8392000],[480000,8392000],[480000,8396000],[481000,8396000]]]}}];
+        
+        const map = L.map('map').setView([
+            (areaData.sw.lat + areaData.ne.lat) / 2,
+            (areaData.sw.lng + areaData.ne.lng) / 2
+        ], 10);
+        
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png').addTo(map);
+        
+        L.rectangle([
+            [areaData.sw.lat, areaData.sw.lng],
+            [areaData.ne.lat, areaData.ne.lng]
+        ], { color: '#ff44ff', weight: 3, opacity: 0.8, fillOpacity: 0.1 }).addTo(map);
+        
+        L.geoJSON({ type: 'FeatureCollection', features: desaparecidosFeatures }, {
+            style: { color: '#ff4444', weight: 2, opacity: 0.9, fillOpacity: 0.4 },
+            onEachFeature: (f, l) => l.bindPopup('<b>' + (f.properties.CONCESION || 'N/A') + '</b><br>🔴 Desapareció')
+        }).addTo(map);
+        
+        L.geoJSON({ type: 'FeatureCollection', features: aparecidosFeatures }, {
+            style: { color: '#4444ff', weight: 2, opacity: 0.9, fillOpacity: 0.4 },
+            onEachFeature: (f, l) => l.bindPopup('<b>' + (f.properties.CONCESION || 'N/A') + '</b><br>🔵 Apareció')
+        }).addTo(map);
+    </script>
+</body>
+</html>
