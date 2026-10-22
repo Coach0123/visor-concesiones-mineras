@@ -136,5 +136,155 @@
     "nombre": "ATENEA 3 2026",
     "tipo": "aparece",
     "fecha": "2026-10-21T02:06:13.350Z"
+  },
+  {
+    "codigo": "060010126",
+    "nombre": "TAMBORAPA BLACKROCK 02",
+    "tipo": "desaparece",
+    "fecha": "2026-10-22T02:00:17.802Z"
+  },
+  {
+    "codigo": "010553726",
+    "nombre": "VEME UNO",
+    "tipo": "aparece",
+    "fecha": "2026-10-22T02:00:17.802Z"
+  },
+  {
+    "codigo": "010554026",
+    "nombre": "GASIL",
+    "tipo": "aparece",
+    "fecha": "2026-10-22T02:00:17.802Z"
+  },
+  {
+    "codigo": "010554126",
+    "nombre": "DEMARO",
+    "tipo": "aparece",
+    "fecha": "2026-10-22T02:00:17.802Z"
+  },
+  {
+    "codigo": "030096226",
+    "nombre": "SILVER MINE 47",
+    "tipo": "aparece",
+    "fecha": "2026-10-22T02:00:17.802Z"
+  },
+  {
+    "codigo": "040049626",
+    "nombre": "AJUTAP NUGKA",
+    "tipo": "aparece",
+    "fecha": "2026-10-22T02:00:17.802Z"
+  },
+  {
+    "codigo": "010553526",
+    "nombre": "PODEROSA 7",
+    "tipo": "aparece",
+    "fecha": "2026-10-22T02:00:17.802Z"
+  },
+  {
+    "codigo": "010553426",
+    "nombre": "KATY 2026",
+    "tipo": "aparece",
+    "fecha": "2026-10-22T02:00:17.802Z"
+  },
+  {
+    "codigo": "030096126",
+    "nombre": "JULCA & DE LA CRUZ 2026",
+    "tipo": "aparece",
+    "fecha": "2026-10-22T02:00:17.802Z"
+  },
+  {
+    "codigo": "050118426",
+    "nombre": "CORPORACION I",
+    "tipo": "aparece",
+    "fecha": "2026-10-22T02:00:17.802Z"
+  },
+  {
+    "codigo": "540023126",
+    "nombre": "CANTERA DEL CASTILLO",
+    "tipo": "aparece",
+    "fecha": "2026-10-22T02:00:17.802Z"
+  },
+  {
+    "codigo": "620007926",
+    "nombre": "EL GAVILAN 2026",
+    "tipo": "aparece",
+    "fecha": "2026-10-22T02:00:17.802Z"
+  },
+  {
+    "codigo": "550008226",
+    "nombre": "ROSARIO DE ORO",
+    "tipo": "aparece",
+    "fecha": "2026-10-22T02:00:17.802Z"
+  },
+  {
+    "codigo": "040049326",
+    "nombre": "BINARIUS GOLD",
+    "tipo": "aparece",
+    "fecha": "2026-10-22T02:00:17.802Z"
+  },
+  {
+    "codigo": "540022926",
+    "nombre": "MINERA HARTUR",
+    "tipo": "aparece",
+    "fecha": "2026-10-22T02:00:17.802Z"
+  },
+  {
+    "codigo": "040049426",
+    "nombre": "COMPAÑIA MINERA CGM V",
+    "tipo": "aparece",
+    "fecha": "2026-10-22T02:00:17.802Z"
+  },
+  {
+    "codigo": "040049526",
+    "nombre": "COMPAÑIA MINERA CGM I",
+    "tipo": "aparece",
+    "fecha": "2026-10-22T02:00:17.802Z"
+  },
+  {
+    "codigo": "040049726",
+    "nombre": "JEANICK VALERIA",
+    "tipo": "aparece",
+    "fecha": "2026-10-22T02:00:17.802Z"
+  },
+  {
+    "codigo": "050118526",
+    "nombre": "CORPORACION II",
+    "tipo": "aparece",
+    "fecha": "2026-10-22T02:00:17.802Z"
+  },
+  {
+    "codigo": "050118626",
+    "nombre": "LA ESPERANZA I",
+    "tipo": "aparece",
+    "fecha": "2026-10-22T02:00:17.802Z"
+  },
+  {
+    "codigo": "070045426",
+    "nombre": "KILLARY",
+    "tipo": "aparece",
+    "fecha": "2026-10-22T02:00:17.802Z"
+  },
+  {
+    "codigo": "020021426",
+    "nombre": "MINERA ORIHUAZ 03",
+    "tipo": "aparece",
+    "fecha": "2026-10-22T02:00:17.802Z"
+  },
+  {
+    "codigo": "540023026",
+    "nombre": "MINERA CALIXTO 2026",
+    "tipo": "aparece",
+    "fecha": "2026-10-22T02:00:17.802Z"
+  },
+  {
+    "codigo": "530020526",
+    "nombre": "FELICITAS 2",
+    "tipo": "aparece",
+    "fecha": "2026-10-22T02:00:17.802Z"
+  },
+  {
+    "codigo": "050118326",
+    "nombre": "MINERVIL",
+    "tipo": "aparece",
+    "fecha": "2026-10-22T02:00:17.802Z"
   }
 ]
