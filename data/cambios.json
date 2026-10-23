@@ -286,5 +286,107 @@
     "nombre": "MINERVIL",
     "tipo": "aparece",
     "fecha": "2026-10-22T02:00:17.802Z"
+  },
+  {
+    "codigo": "550005924",
+    "nombre": "CONDOR DE YANAHORCCO 1",
+    "tipo": "desaparece",
+    "fecha": "2026-10-23T02:04:13.335Z"
+  },
+  {
+    "codigo": "610017824",
+    "nombre": "CANTERA KANSAS",
+    "tipo": "desaparece",
+    "fecha": "2026-10-23T02:04:13.335Z"
+  },
+  {
+    "codigo": "550001825",
+    "nombre": "LAYKA VII",
+    "tipo": "desaparece",
+    "fecha": "2026-10-23T02:04:13.335Z"
+  },
+  {
+    "codigo": "550007325",
+    "nombre": "PRINCESAS ABRIL Y MIA",
+    "tipo": "desaparece",
+    "fecha": "2026-10-23T02:04:13.335Z"
+  },
+  {
+    "codigo": "550007425",
+    "nombre": "QURI URQU",
+    "tipo": "desaparece",
+    "fecha": "2026-10-23T02:04:13.335Z"
+  },
+  {
+    "codigo": "010554326",
+    "nombre": "LA RIQUEZA III",
+    "tipo": "aparece",
+    "fecha": "2026-10-23T02:04:13.335Z"
+  },
+  {
+    "codigo": "010555026",
+    "nombre": "BUSCANDO UN FUTURO DER",
+    "tipo": "aparece",
+    "fecha": "2026-10-23T02:04:13.335Z"
+  },
+  {
+    "codigo": "640003826",
+    "nombre": "CONSTRUPACA",
+    "tipo": "aparece",
+    "fecha": "2026-10-23T02:04:13.335Z"
+  },
+  {
+    "codigo": "010554726",
+    "nombre": "GALLO 11",
+    "tipo": "aparece",
+    "fecha": "2026-10-23T02:04:13.335Z"
+  },
+  {
+    "codigo": "010554426",
+    "nombre": "TAQSANA",
+    "tipo": "aparece",
+    "fecha": "2026-10-23T02:04:13.335Z"
+  },
+  {
+    "codigo": "020021526",
+    "nombre": "REYNA 2028",
+    "tipo": "aparece",
+    "fecha": "2026-10-23T02:04:13.335Z"
+  },
+  {
+    "codigo": "070045726",
+    "nombre": "ZARCOFAGO 1",
+    "tipo": "aparece",
+    "fecha": "2026-10-23T02:04:13.335Z"
+  },
+  {
+    "codigo": "020021626",
+    "nombre": "SANTA MARIA 2026",
+    "tipo": "aparece",
+    "fecha": "2026-10-23T02:04:13.335Z"
+  },
+  {
+    "codigo": "590005826",
+    "nombre": "PUCA CORRAL",
+    "tipo": "aparece",
+    "fecha": "2026-10-23T02:04:13.335Z"
+  },
+  {
+    "codigo": "010554926",
+    "nombre": "BALSA GRANDE",
+    "tipo": "aparece",
+    "fecha": "2026-10-23T02:04:13.335Z"
+  },
+  {
+    "codigo": "010555126",
+    "nombre": "AZ4",
+    "tipo": "aparece",
+    "fecha": "2026-10-23T02:04:13.335Z"
+  },
+  {
+    "codigo": "010554526",
+    "nombre": "TERRAREX GUANACO AUDAZ II",
+    "tipo": "aparece",
+    "fecha": "2026-10-23T02:04:13.335Z"
   }
 ]
