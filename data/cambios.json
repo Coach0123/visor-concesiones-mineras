@@ -388,5 +388,95 @@
     "nombre": "TERRAREX GUANACO AUDAZ II",
     "tipo": "aparece",
     "fecha": "2026-10-23T02:04:13.335Z"
+  },
+  {
+    "codigo": "030096626",
+    "nombre": "MINERA EL HOLGER",
+    "tipo": "aparece",
+    "fecha": "2026-10-24T02:02:58.472Z"
+  },
+  {
+    "codigo": "060024126",
+    "nombre": "MINERALES INTEGRADOS II",
+    "tipo": "aparece",
+    "fecha": "2026-10-24T02:02:58.472Z"
+  },
+  {
+    "codigo": "010556126",
+    "nombre": "EMILIA LC",
+    "tipo": "aparece",
+    "fecha": "2026-10-24T02:02:58.472Z"
+  },
+  {
+    "codigo": "010556326",
+    "nombre": "ALESSIA TRES",
+    "tipo": "aparece",
+    "fecha": "2026-10-24T02:02:58.472Z"
+  },
+  {
+    "codigo": "040050126",
+    "nombre": "ANKANIHEE III",
+    "tipo": "aparece",
+    "fecha": "2026-10-24T02:02:58.472Z"
+  },
+  {
+    "codigo": "050118726",
+    "nombre": "ABRAXAS I 2026",
+    "tipo": "aparece",
+    "fecha": "2026-10-24T02:02:58.472Z"
+  },
+  {
+    "codigo": "010556726",
+    "nombre": "CHENGFENG 2606",
+    "tipo": "aparece",
+    "fecha": "2026-10-24T02:02:58.472Z"
+  },
+  {
+    "codigo": "010555426",
+    "nombre": "GIANCARLO I",
+    "tipo": "aparece",
+    "fecha": "2026-10-24T02:02:58.472Z"
+  },
+  {
+    "codigo": "010555826",
+    "nombre": "AZ5",
+    "tipo": "aparece",
+    "fecha": "2026-10-24T02:02:58.472Z"
+  },
+  {
+    "codigo": "010555726",
+    "nombre": "CANTERA EM I",
+    "tipo": "aparece",
+    "fecha": "2026-10-24T02:02:58.472Z"
+  },
+  {
+    "codigo": "010555926",
+    "nombre": "MIRAL 1",
+    "tipo": "aparece",
+    "fecha": "2026-10-24T02:02:58.472Z"
+  },
+  {
+    "codigo": "020021826",
+    "nombre": "ALEJANDRA 04",
+    "tipo": "aparece",
+    "fecha": "2026-10-24T02:02:58.472Z"
+  },
+  {
+    "codigo": "010555626",
+    "nombre": "CHASKA G1",
+    "tipo": "aparece",
+    "fecha": "2026-10-24T02:02:58.472Z"
+  },
+  {
+    "codigo": "010556226",
+    "nombre": "M Y A MINERIA SANDIA 1",
+    "tipo": "aparece",
+    "fecha": "2026-10-24T02:02:58.472Z"
+  },
+  {
+    "codigo": "080074126",
+    "nombre": "BOUNTY SHIRO LORD",
+    "tipo": "aparece",
+    "fecha": "2026-10-24T02:02:58.472Z"
   }
 ]
