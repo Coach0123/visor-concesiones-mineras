@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wvisor - Informe 20261106</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #0a1628; color: #e0e6f0; padding: 20px; }
+        .container { max-width: 1400px; margin: 0 auto; background: #0f1e3a; border-radius: 12px; box-shadow: 0 8px 40px rgba(0,0,0,0.5); overflow: hidden; border: 1px solid #1e3a5f; }
+        .header { background: linear-gradient(135deg, #1e3a8a, #1e40af); padding: 25px 30px; }
+        .header-top { display: flex; align-items: center; gap: 15px; margin-bottom: 10px; }
+        .logo-w { width: 45px; height: 45px; background: linear-gradient(135deg, #3b82f6, #1e40af); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 26px; font-weight: 800; color: #fff; font-family: Georgia, serif; }
+        .header h1 { font-size: 22px; font-weight: 600; color: #fff; }
+        .subtitle { font-size: 13px; color: #93c5fd; margin-bottom: 15px; }
+        .stats { display: flex; gap: 12px; flex-wrap: wrap; }
+        .stat-item { background: rgba(255,255,255,0.12); padding: 10px 18px; border-radius: 8px; font-size: 12px; color: #bfdbfe; }
+        .stat-item strong { font-size: 20px; display: block; color: #fff; }
+        .stat-item.danger { background: rgba(220, 38, 38, 0.3); }
+        .stat-item.danger strong { color: #fca5a5; }
+        .stat-item.success { background: rgba(59, 130, 246, 0.3); }
+        .stat-item.success strong { color: #93c5fd; }
+        .main-content { display: flex; flex-wrap: wrap; }
+        .map-column { flex: 2; min-width: 500px; padding: 20px; background: #0a1628; }
+        #map { border-radius: 8px; height: 550px; width: 100%; border: 1px solid #1e3a5f; }
+        .info-column { flex: 1; min-width: 320px; padding: 20px; background: #0f1e3a; border-left: 1px solid #1e3a5f; max-height: 600px; overflow-y: auto; }
+        .info-column h2 { font-size: 16px; margin-bottom: 15px; color: #93c5fd; padding-bottom: 8px; border-bottom: 1px solid #1e3a5f; }
+        .item-concesion { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; font-size: 12px; border-bottom: 1px solid #1e3a5f; }
+        .estado-badge { font-size: 10px; padding: 3px 8px; border-radius: 10px; color: white; font-weight: 600; }
+        .estado-badge.desaparecio { background: #dc2626; }
+        .estado-badge.aparecio { background: #2563eb; }
+        .tabla-container { padding: 20px 30px 30px; border-top: 1px solid #1e3a5f; }
+        .tabla-container h2 { font-size: 16px; margin-bottom: 15px; color: #93c5fd; }
+        .tabla-concesiones { width: 100%; border-collapse: collapse; font-size: 13px; }
+        .tabla-concesiones thead th { background: #152b4a; padding: 12px 15px; text-align: left; color: #93c5fd; border-bottom: 2px solid #1e3a5f; }
+        .tabla-concesiones tbody td { padding: 10px 15px; border-bottom: 1px solid #1e3a5f; color: #cbd5e1; }
+        .footer { background: #0a1628; padding: 15px 30px; text-align: center; font-size: 11px; color: #475569; border-top: 1px solid #1e3a5f; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-top">
+                <div class="logo-w">W</div>
+                <h1>Wvisor - Informe de Área</h1>
+            </div>
+            <div class="subtitle">Generado el 06/11/2026</div>
+            <div class="stats">
+                <div class="stat-item danger"><strong>2</strong>Desaparecieron</div>
+                <div class="stat-item success"><strong>41</strong>Aparecieron</div>
+                <div class="stat-item"><strong>43</strong>Total</div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="map-column">
+                <div id="map"></div>
+            </div>
+            <div class="info-column">
+                <h2>📋 Concesiones</h2>
+                
+                    <div class="item-concesion">
+                        <span>CANTERA SUPER JOSTIN</span>
+                        <span class="estado-badge desaparecio">DESAPARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>CANTERA QUEBRADA CORRALES</span>
+                        <span class="estado-badge desaparecio">DESAPARECIÓ</span>
+                    </div>
+                
+                
+                    <div class="item-concesion">
+                        <span>EL SOL1</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>EL SOL2</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>SILVER COPPER 1</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>CLABEL ANNY</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>CANTERA DE ROCA IZCUCHACA</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>CANTERA DE CERRO KM 4+500</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>CANTERA DE CERRO MEJORADA</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>CANTERA CERRO KM 48+100</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>APUKUNA 17</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>APUKUNA 18</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>VIRINA V</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>ADAN I</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>LOMANSUR</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>MURALLA DE ORO</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>MISKILLA</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>COPPER SUCHAN I</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>COORPORACION VILLANUEVA</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>APUKUNA 6</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>APUKUNA 9</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>IVAKO DOS</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>APUKUNA 13</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>CANTERA FIMAR</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>VIRINA IV</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>REY DAVID 2026</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>LAMBRAS</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>AJR FAMILIA</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>APUKUNA 12</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>CHS - I</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>SAMI PACHA 3</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>SAMI PACHA 4</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>SAMI PACHA 5</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>APUKUNA 7</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>APUKUNA 8</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>APUKUNA 10</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>APUKUNA 11</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>APUKUNA 14</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>APUKUNA 15</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>APUKUNA 16</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>QORI CHASKA III</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>CHARPERO I</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>NICOPLA B-A</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+            </div>
+        </div>
+        
+        <div class="tabla-container">
+            <h2>📋 Detalle Completo</h2>
+            <table class="tabla-concesiones">
+                <thead>
+                    <tr><th>Código</th><th>Concesión</th><th>Titular</th><th>Estado</th></tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>010000624AF</td>
+                            <td>CANTERA SUPER JOSTIN</td>
+                            <td>MINISTERIO DE TRANSPORTES Y COMUNICACIONES</td>
+                            <td><span class="estado-badge desaparecio">DESAPARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010000324AF</td>
+                            <td>CANTERA QUEBRADA CORRALES</td>
+                            <td>MINISTERIO DE TRANSPORTES Y COMUNICACIONES</td>
+                            <td><span class="estado-badge desaparecio">DESAPARECIÓ</span></td>
+                        </tr>
+                    
+                    
+                        <tr>
+                            <td>030110926</td>
+                            <td>EL SOL1</td>
+                            <td>MR ANDES DORADOS PERU S.A.C.</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>030111026</td>
+                            <td>EL SOL2</td>
+                            <td>MR ANDES DORADOS PERU S.A.C.</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>030111226</td>
+                            <td>SILVER COPPER 1</td>
+                            <td>REPRESENTACIONES SILVER COPPER SAC</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>560002526</td>
+                            <td>CLABEL ANNY</td>
+                            <td>ANNY LYLY HUILLCA CERVANTES</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010024925AF</td>
+                            <td>CANTERA DE ROCA IZCUCHACA</td>
+                            <td>N/A</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010025025AF</td>
+                            <td>CANTERA DE CERRO KM 4+500</td>
+                            <td>N/A</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010025125AF</td>
+                            <td>CANTERA DE CERRO MEJORADA</td>
+                            <td>N/A</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010025225AF</td>
+                            <td>CANTERA CERRO KM 48+100</td>
+                            <td>N/A</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010631026</td>
+                            <td>APUKUNA 17</td>
+                            <td>RIO TINTO MINING AND EXPLORATION S.A.C.</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010631126</td>
+                            <td>APUKUNA 18</td>
+                            <td>RIO TINTO MINING AND EXPLORATION S.A.C.</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010631626</td>
+                            <td>VIRINA V</td>
+                            <td>MAWIMA SOCIEDAD ANONIMA CERRADA</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>030111126</td>
+                            <td>ADAN I</td>
+                            <td>ADAN GRAUS RIOS</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>040061826</td>
+                            <td>LOMANSUR</td>
+                            <td>SERPPEK CARGO S.A.C</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>040062126</td>
+                            <td>MURALLA DE ORO</td>
+                            <td>CARLOS TORREBLANCA OLIVERA Y OTROS</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>020024726</td>
+                            <td>MISKILLA</td>
+                            <td>VALERIA SAORI INGA GARCIA</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>050139426</td>
+                            <td>COPPER SUCHAN I</td>
+                            <td>EMPRESA MINERA SUR DEL PERU S.A.C.</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010629526</td>
+                            <td>COORPORACION VILLANUEVA</td>
+                            <td>PEDRO JOSE VILLANUEVA CHUQUIMIA</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010629926</td>
+                            <td>APUKUNA 6</td>
+                            <td>RIO TINTO MINING AND EXPLORATION S.A.C.</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010630226</td>
+                            <td>APUKUNA 9</td>
+                            <td>RIO TINTO MINING AND EXPLORATION S.A.C.</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>040061726</td>
+                            <td>IVAKO DOS</td>
+                            <td>GEDEON QUISPE HUARCAYA</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010630626</td>
+                            <td>APUKUNA 13</td>
+                            <td>RIO TINTO MINING AND EXPLORATION S.A.C.</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010631226</td>
+                            <td>CANTERA FIMAR</td>
+                            <td>WINNY MILENA AYBAR VILLAREAL</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010631726</td>
+                            <td>VIRINA IV</td>
+                            <td>MAWIMA SOCIEDAD ANONIMA CERRADA</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>070050326</td>
+                            <td>REY DAVID 2026</td>
+                            <td>WILSON PILLCO TINTA</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>020024626</td>
+                            <td>LAMBRAS</td>
+                            <td>NEIL DENNIS ESPINAL DE LA CRUZ</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>040062226</td>
+                            <td>AJR FAMILIA</td>
+                            <td>ADELMA MACHADO PANIORA</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010630526</td>
+                            <td>APUKUNA 12</td>
+                            <td>RIO TINTO MINING AND EXPLORATION S.A.C.</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010631826</td>
+                            <td>CHS - I</td>
+                            <td>CELSO HUACCHARAQUI SARMIENTO</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010629626</td>
+                            <td>SAMI PACHA 3</td>
+                            <td>RIO TINTO MINING AND EXPLORATION S.A.C.</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010629726</td>
+                            <td>SAMI PACHA 4</td>
+                            <td>RIO TINTO MINING AND EXPLORATION S.A.C.</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010629826</td>
+                            <td>SAMI PACHA 5</td>
+                            <td>RIO TINTO MINING AND EXPLORATION S.A.C.</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010630026</td>
+                            <td>APUKUNA 7</td>
+                            <td>RIO TINTO MINING AND EXPLORATION S.A.C.</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010630126</td>
+                            <td>APUKUNA 8</td>
+                            <td>RIO TINTO MINING AND EXPLORATION S.A.C.</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010630326</td>
+                            <td>APUKUNA 10</td>
+                            <td>RIO TINTO MINING AND EXPLORATION S.A.C.</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010630426</td>
+                            <td>APUKUNA 11</td>
+                            <td>RIO TINTO MINING AND EXPLORATION S.A.C.</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010630726</td>
+                            <td>APUKUNA 14</td>
+                            <td>RIO TINTO MINING AND EXPLORATION S.A.C.</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010630826</td>
+                            <td>APUKUNA 15</td>
+                            <td>RIO TINTO MINING AND EXPLORATION S.A.C.</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010630926</td>
+                            <td>APUKUNA 16</td>
+                            <td>RIO TINTO MINING AND EXPLORATION S.A.C.</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>050027622A</td>
+                            <td>QORI CHASKA III</td>
+                            <td>MINERA QORICHASKA S.A.</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010632026</td>
+                            <td>CHARPERO I</td>
+                            <td>JHELISVAN JHONNER MENDOZA CONTRERAS</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010629326</td>
+                            <td>NICOPLA B-A</td>
+                            <td>CORPORACION PACHA S & F EMPRESA INDIVIDUAL DE RESPONSABILIDA</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="footer">Wvisor · Datos INGEMMET · 06/11/2026</div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.8.0/proj4.js"></script>
+    <script>
+        const areaData = {"sw":{"lat":-18,"lng":-82},"ne":{"lat":-2,"lng":-68},"bounds":"-82,-18,-68,-2","fecha":"2026-07-15T21:30:00.000Z"};
+        const desaparecidosFeatures = [{"type":"Feature","properties":{"CODIGOU":"010000624AF","FEC_DENU":"2024-05-15","CONCESION":"CANTERA SUPER JOSTIN","TIT_CONCES":"MINISTERIO DE TRANSPORTES Y COMUNICACIONES","D_ESTADO":"Cantera D.S. 037-96-EM","CARTA":"08-C","ZONA":"17","SUSTANCIA":"N","DEPA":"TUMBES","PROVI":"TUMBES","DISTRI":"SAN JACINTO","HASDATUM":2.0074},"geometry":{"type":"Polygon","coordinates":[[[560108.0899999999,9585443.03],[560146.4699999997,9585355.87],[560105.8700000001,9585307.67],[560008.4699999997,9585311.7],[559983.2599999998,9585359.86],[559980.1200000001,9585406.84],[559996.5,9585442.39],[560048.2000000002,9585472.93],[560108.0899999999,9585443.03]]]}},{"type":"Feature","properties":{"CODIGOU":"010000324AF","FEC_DENU":"2024-05-15","CONCESION":"CANTERA QUEBRADA CORRALES","TIT_CONCES":"MINISTERIO DE TRANSPORTES Y COMUNICACIONES","D_ESTADO":"Cantera D.S. 037-96-EM","CARTA":"08-C","ZONA":"17","SUSTANCIA":"N","DEPA":"TUMBES","PROVI":"TUMBES","DISTRI":"CORRALES","HASDATUM":4.0034},"geometry":{"type":"Polygon","coordinates":[[[556161.7599999998,9599150.83],[556179.8099999996,9598947.93],[556207.9800000004,9598904.56],[556182.2000000002,9598853.57],[556165.2199999997,9598726.25],[556163.71,9598689.56],[556135.1799999997,9598639.69],[556137.6200000001,9598571.05],[556130.7599999998,9598505.76],[556073.7400000002,9598530.48],[555992.6399999997,9598616.05],[556056.04,9598680.66],[556104.7699999996,9598775.12],[556149.0700000003,9598835.69],[556132.3499999996,9598953.81],[556152.3600000003,9599043.62],[556128.9699999997,9599152.26],[556161.7599999998,9599150.83]]]}}];
+        const aparecidosFeatures = [{"type":"Feature","properties":{"CODIGOU":"030110926","FEC_DENU":"2026-11-04","CONCESION":"EL SOL1","TIT_CONCES":"MR ANDES DORADOS PERU S.A.C.","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"15-F","ZONA":"17","SUSTANCIA":"M","DEPA":"CAJAMARCA","PROVI":"CONTUMAZA / SAN PABLO","DISTRI":"SAN BERNARDINO / CHILETE","HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[739000,9202000],[739000,9201000],[738000,9201000],[738000,9202000],[739000,9202000]]]}},{"type":"Feature","properties":{"CODIGOU":"030111026","FEC_DENU":"2026-11-04","CONCESION":"EL SOL2","TIT_CONCES":"MR ANDES DORADOS PERU S.A.C.","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"15-F","ZONA":"17","SUSTANCIA":"M","DEPA":"CAJAMARCA","PROVI":"CONTUMAZA / SAN PABLO","DISTRI":"SAN BERNARDINO / CHILETE","HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[738000,9202000],[738000,9201000],[737000,9201000],[737000,9202000],[738000,9202000]]]}},{"type":"Feature","properties":{"CODIGOU":"030111226","FEC_DENU":"2026-11-04","CONCESION":"SILVER COPPER 1","TIT_CONCES":"REPRESENTACIONES SILVER COPPER SAC","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"17-F","ZONA":"17","SUSTANCIA":"M","DEPA":"LA LIBERTAD","PROVI":"TRUJILLO","DISTRI":"LAREDO","HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[735000,9111000],[735000,9110000],[734000,9110000],[734000,9111000],[735000,9111000]]]}},{"type":"Feature","properties":{"CODIGOU":"560002526","FEC_DENU":"2026-11-04","CONCESION":"CLABEL ANNY","TIT_CONCES":"ANNY LYLY HUILLCA CERVANTES","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"10-F","ZONA":"17","SUSTANCIA":"M","DEPA":"CAJAMARCA","PROVI":"SAN IGNACIO","DISTRI":"SAN JOSE DE LOURDES","HASDATUM":600},"geometry":{"type":"Polygon","coordinates":[[[731000,9451000],[731000,9450000],[727000,9450000],[727000,9449000],[726000,9449000],[726000,9451000],[731000,9451000]]]}},{"type":"Feature","properties":{"CODIGOU":"010024925AF","FEC_DENU":"2025-07-09","CONCESION":"CANTERA DE ROCA IZCUCHACA","TIT_CONCES":null,"D_ESTADO":"Cantera D.S. 037-96-EM","CARTA":"26-N","ZONA":"18","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":1.9906},"geometry":{"type":"Polygon","coordinates":[[[502804,8617403.73],[502658.26999999955,8617460.47],[502687.45999999996,8617505.21],[502766.2599999998,8617502.01],[502945.4199999999,8617468.53],[502931.2000000002,8617407.79],[502804,8617403.73]]]}},{"type":"Feature","properties":{"CODIGOU":"010025025AF","FEC_DENU":"2025-07-09","CONCESION":"CANTERA DE CERRO KM 4+500","TIT_CONCES":null,"D_ESTADO":"Cantera D.S. 037-96-EM","CARTA":"26-N","ZONA":"18","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":0.9944},"geometry":{"type":"Polygon","coordinates":[[[504614.0599999996,8616925.64],[504692.75,8617003.38],[504719.7599999998,8617020.46],[504744.48000000045,8617034.69],[504764.2400000002,8617046.75],[504792.98000000045,8617059.18],[504859.0599999996,8617084.03],[504869.66000000015,8617056.69],[504791.95999999996,8617021.95],[504774.0999999996,8617011.52],[504761.7599999998,8617003.72],[504746.0099999998,8616993.02],[504733.54000000004,8616984.67],[504692.8700000001,8616951.78],[504686.7999999998,8616946.11],[504675.96999999974,8616936.4],[504645.8700000001,8616908.46],[504614.0599999996,8616925.64]]]}},{"type":"Feature","properties":{"CODIGOU":"010025125AF","FEC_DENU":"2025-07-09","CONCESION":"CANTERA DE CERRO MEJORADA","TIT_CONCES":null,"D_ESTADO":"Cantera D.S. 037-96-EM","CARTA":"26-N","ZONA":"18","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":0.9981},"geometry":{"type":"Polygon","coordinates":[[[510089.9299999997,8615588.79],[509997.08999999985,8615478.25],[509978.91000000015,8615495.56],[509961.26999999955,8615522.61],[510104.95999999996,8615662.67],[510137.66000000015,8615611.34],[510089.9299999997,8615588.79]]]}},{"type":"Feature","properties":{"CODIGOU":"010025225AF","FEC_DENU":"2025-07-09","CONCESION":"CANTERA CERRO KM 48+100","TIT_CONCES":null,"D_ESTADO":"Cantera D.S. 037-96-EM","CARTA":"26-N","ZONA":"18","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":2.0078},"geometry":{"type":"Polygon","coordinates":[[[531854.1500000004,8616153.57],[531848.0099999998,8616205.59],[531833.7999999998,8616216.61],[531901.96,8616274.93],[531947.4699999997,8616125.28],[531949.3499999996,8616063.83],[531952.6100000003,8615990.11],[531886.0099999998,8616003.14],[531875.7599999998,8616066.4],[531865.7800000003,8616093.71],[531846.0099999998,8616122.36],[531854.1500000004,8616153.57]]]}},{"type":"Feature","properties":{"CODIGOU":"010631026","FEC_DENU":"2026-11-04","CONCESION":"APUKUNA 17","TIT_CONCES":"RIO TINTO MINING AND EXPLORATION S.A.C.","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"28-R","ZONA":"18","SUSTANCIA":"M","DEPA":"CUSCO","PROVI":"ANTA","DISTRI":"CHINCHAYPUJIO","HASDATUM":1000},"geometry":{"type":"Polygon","coordinates":[[[800000,8497000],[800000,8495000],[795000,8495000],[795000,8497000],[800000,8497000]]]}},{"type":"Feature","properties":{"CODIGOU":"010631126","FEC_DENU":"2026-11-04","CONCESION":"APUKUNA 18","TIT_CONCES":"RIO TINTO MINING AND EXPLORATION S.A.C.","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"28-R","ZONA":"18","SUSTANCIA":"M","DEPA":"CUSCO","PROVI":"ANTA","DISTRI":"CHINCHAYPUJIO","HASDATUM":1000},"geometry":{"type":"Polygon","coordinates":[[[805000,8497000],[805000,8495000],[800000,8495000],[800000,8497000],[805000,8497000]]]}},{"type":"Feature","properties":{"CODIGOU":"010631626","FEC_DENU":"2026-11-04","CONCESION":"VIRINA V","TIT_CONCES":"MAWIMA SOCIEDAD ANONIMA CERRADA","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"30-1","ZONA":"18","SUSTANCIA":"M","DEPA":"AYACUCHO","PROVI":"LUCANAS","DISTRI":"SAISA","HASDATUM":800},"geometry":{"type":"Polygon","coordinates":[[[570000,8346000],[570000,8343000],[569000,8343000],[569000,8345000],[566000,8345000],[566000,8344000],[565000,8344000],[565000,8346000],[570000,8346000]]]}},{"type":"Feature","properties":{"CODIGOU":"030111126","FEC_DENU":"2026-11-04","CONCESION":"ADAN I","TIT_CONCES":"ADAN GRAUS RIOS","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"22-L","ZONA":"18","SUSTANCIA":"M","DEPA":"PASCO","PROVI":"PASCO","DISTRI":"PAUCARTAMBO / NINACACA","HASDATUM":200},"geometry":{"type":"Polygon","coordinates":[[[404000,8821000],[404000,8819000],[403000,8819000],[403000,8821000],[404000,8821000]]]}},{"type":"Feature","properties":{"CODIGOU":"040061826","FEC_DENU":"2026-11-04","CONCESION":"LOMANSUR","TIT_CONCES":"SERPPEK CARGO S.A.C","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"29-R","ZONA":"18","SUSTANCIA":"M","DEPA":"APURIMAC","PROVI":"COTABAMBAS","DISTRI":"HAQUIRA","HASDATUM":400},"geometry":{"type":"Polygon","coordinates":[[[799000,8420000],[799000,8418000],[797000,8418000],[797000,8420000],[799000,8420000]]]}},{"type":"Feature","properties":{"CODIGOU":"040062126","FEC_DENU":"2026-11-04","CONCESION":"MURALLA DE ORO","TIT_CONCES":"CARLOS TORREBLANCA OLIVERA Y OTROS","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"30-R","ZONA":"18","SUSTANCIA":"M","DEPA":"CUSCO","PROVI":"CHUMBIVILCAS","DISTRI":"SANTO TOMAS","HASDATUM":300},"geometry":{"type":"Polygon","coordinates":[[[808000,8389000],[808000,8388000],[805000,8388000],[805000,8389000],[808000,8389000]]]}},{"type":"Feature","properties":{"CODIGOU":"020024726","FEC_DENU":"2026-11-04","CONCESION":"MISKILLA","TIT_CONCES":"VALERIA SAORI INGA GARCIA","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"24-N","ZONA":"18","SUSTANCIA":"M","DEPA":"JUNIN","PROVI":"CONCEPCION","DISTRI":"ANDAMARCA / COMAS","HASDATUM":600},"geometry":{"type":"Polygon","coordinates":[[[510000,8709000],[510000,8706000],[508000,8706000],[508000,8707000],[509000,8707000],[509000,8708000],[507000,8708000],[507000,8709000],[510000,8709000]]]}},{"type":"Feature","properties":{"CODIGOU":"050139426","FEC_DENU":"2026-11-04","CONCESION":"COPPER SUCHAN I","TIT_CONCES":"EMPRESA MINERA SUR DEL PERU S.A.C.","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"32-R","ZONA":"18","SUSTANCIA":"M","DEPA":"AREQUIPA","PROVI":"CAYLLOMA","DISTRI":"HUAMBO","HASDATUM":300},"geometry":{"type":"Polygon","coordinates":[[[809000,8244000],[809000,8243000],[808000,8243000],[808000,8242000],[807000,8242000],[807000,8244000],[809000,8244000]]]}},{"type":"Feature","properties":{"CODIGOU":"010629526","FEC_DENU":"2026-11-04","CONCESION":"COORPORACION VILLANUEVA","TIT_CONCES":"PEDRO JOSE VILLANUEVA CHUQUIMIA","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"29-P","ZONA":"18","SUSTANCIA":"M","DEPA":"APURIMAC","PROVI":"AYMARAES","DISTRI":"COTARUSE","HASDATUM":700},"geometry":{"type":"Polygon","coordinates":[[[690000,8406000],[690000,8403000],[689000,8403000],[689000,8402000],[688000,8402000],[688000,8406000],[690000,8406000]]]}},{"type":"Feature","properties":{"CODIGOU":"010629926","FEC_DENU":"2026-11-04","CONCESION":"APUKUNA 6","TIT_CONCES":"RIO TINTO MINING AND EXPLORATION S.A.C.","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"28-R","ZONA":"18","SUSTANCIA":"M","DEPA":"CUSCO","PROVI":"ANTA","DISTRI":"ANCAHUASI / LIMATAMBO","HASDATUM":800},"geometry":{"type":"Polygon","coordinates":[[[788000,8506000],[788000,8504000],[784000,8504000],[784000,8506000],[788000,8506000]]]}},{"type":"Feature","properties":{"CODIGOU":"010630226","FEC_DENU":"2026-11-04","CONCESION":"APUKUNA 9","TIT_CONCES":"RIO TINTO MINING AND EXPLORATION S.A.C.","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"28-R","ZONA":"18","SUSTANCIA":"M","DEPA":"CUSCO","PROVI":"ANTA","DISTRI":"CHINCHAYPUJIO / ANCAHUASI","HASDATUM":1000},"geometry":{"type":"Polygon","coordinates":[[[795000,8505000],[795000,8503000],[790000,8503000],[790000,8505000],[795000,8505000]]]}},{"type":"Feature","properties":{"CODIGOU":"040061726","FEC_DENU":"2026-11-04","CONCESION":"IVAKO DOS","TIT_CONCES":"GEDEON QUISPE HUARCAYA","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"29-Q","ZONA":"18","SUSTANCIA":"M","DEPA":"APURIMAC","PROVI":"GRAU","DISTRI":"MICAELA BASTIDAS","HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[765000,8434000],[764000,8434000],[764000,8435000],[765000,8435000],[765000,8434000]]]}},{"type":"Feature","properties":{"CODIGOU":"010630626","FEC_DENU":"2026-11-04","CONCESION":"APUKUNA 13","TIT_CONCES":"RIO TINTO MINING AND EXPLORATION S.A.C.","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"28-R","ZONA":"18","SUSTANCIA":"M","DEPA":"CUSCO","PROVI":"ANTA","DISTRI":"CHINCHAYPUJIO","HASDATUM":1000},"geometry":{"type":"Polygon","coordinates":[[[797000,8501000],[797000,8499000],[792000,8499000],[792000,8501000],[797000,8501000]]]}},{"type":"Feature","properties":{"CODIGOU":"010631226","FEC_DENU":"2026-11-04","CONCESION":"CANTERA FIMAR","TIT_CONCES":"WINNY MILENA AYBAR VILLAREAL","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"29-L","ZONA":"18","SUSTANCIA":"N","DEPA":"ICA","PROVI":"ICA","DISTRI":"LA TINGUIÑA / PARCONA / LOS AQUIJES","HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[428000,8448000],[428000,8447000],[427000,8447000],[427000,8448000],[428000,8448000]]]}},{"type":"Feature","properties":{"CODIGOU":"010631726","FEC_DENU":"2026-11-04","CONCESION":"VIRINA IV","TIT_CONCES":"MAWIMA SOCIEDAD ANONIMA CERRADA","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"30-1","ZONA":"18","SUSTANCIA":"M","DEPA":"AYACUCHO","PROVI":"LUCANAS","DISTRI":"SAISA","HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[569000,8343000],[569000,8342000],[568000,8342000],[568000,8343000],[569000,8343000]]]}},{"type":"Feature","properties":{"CODIGOU":"070050326","FEC_DENU":"2026-11-04","CONCESION":"REY DAVID 2026","TIT_CONCES":"WILSON PILLCO TINTA","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"17-O","ZONA":"18","SUSTANCIA":"M","DEPA":"UCAYALI","PROVI":"CORONEL PORTILLO","DISTRI":"CALLERIA","HASDATUM":600},"geometry":{"type":"Polygon","coordinates":[[[624000,9072000],[624000,9070000],[623000,9070000],[623000,9069000],[621000,9069000],[621000,9071000],[623000,9071000],[623000,9072000],[624000,9072000]]]}},{"type":"Feature","properties":{"CODIGOU":"020024626","FEC_DENU":"2026-11-04","CONCESION":"LAMBRAS","TIT_CONCES":"NEIL DENNIS ESPINAL DE LA CRUZ","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"25-N","ZONA":"18","SUSTANCIA":"N","DEPA":"HUANCAVELICA / JUNIN","PROVI":"HUANCAYO / TAYACAJA","DISTRI":"PARIAHUANCA / LAMBRAS","HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[535000,8672000],[535000,8671000],[534000,8671000],[534000,8672000],[535000,8672000]]]}},{"type":"Feature","properties":{"CODIGOU":"040062226","FEC_DENU":"2026-11-04","CONCESION":"AJR FAMILIA","TIT_CONCES":"ADELMA MACHADO PANIORA","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"29-Q","ZONA":"18","SUSTANCIA":"M","DEPA":"APURIMAC","PROVI":"GRAU","DISTRI":"MICAELA BASTIDAS / CURASCO","HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[768000,8434000],[768000,8433000],[767000,8433000],[767000,8434000],[768000,8434000]]]}},{"type":"Feature","properties":{"CODIGOU":"010630526","FEC_DENU":"2026-11-04","CONCESION":"APUKUNA 12","TIT_CONCES":"RIO TINTO MINING AND EXPLORATION S.A.C.","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"28-R","ZONA":"18","SUSTANCIA":"M","DEPA":"CUSCO","PROVI":"ANTA","DISTRI":"CHINCHAYPUJIO","HASDATUM":1000},"geometry":{"type":"Polygon","coordinates":[[[797000,8503000],[797000,8501000],[792000,8501000],[792000,8503000],[797000,8503000]]]}},{"type":"Feature","properties":{"CODIGOU":"010631826","FEC_DENU":"2026-11-04","CONCESION":"CHS - I","TIT_CONCES":"CELSO HUACCHARAQUI SARMIENTO","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"29-Q","ZONA":"18","SUSTANCIA":"M","DEPA":"APURIMAC","PROVI":"ANTABAMBA","DISTRI":"PACHACONAS","HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[717000,8427000],[717000,8426000],[716000,8426000],[716000,8427000],[717000,8427000]]]}},{"type":"Feature","properties":{"CODIGOU":"010629626","FEC_DENU":"2026-11-04","CONCESION":"SAMI PACHA 3","TIT_CONCES":"RIO TINTO MINING AND EXPLORATION S.A.C.","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"28-P","ZONA":"18","SUSTANCIA":"M","DEPA":"APURIMAC","PROVI":"AYMARAES","DISTRI":"LUCRE / SAN JUAN DE CHACÑA / TINTAY","HASDATUM":700},"geometry":{"type":"Polygon","coordinates":[[[695000,8459000],[695000,8458000],[694000,8458000],[694000,8457000],[691000,8457000],[691000,8459000],[695000,8459000]]]}},{"type":"Feature","properties":{"CODIGOU":"010629726","FEC_DENU":"2026-11-04","CONCESION":"SAMI PACHA 4","TIT_CONCES":"RIO TINTO MINING AND EXPLORATION S.A.C.","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"28-P","ZONA":"18","SUSTANCIA":"M","DEPA":"APURIMAC","PROVI":"AYMARAES","DISTRI":"SAN JUAN DE CHACÑA / TINTAY","HASDATUM":800},"geometry":{"type":"Polygon","coordinates":[[[698000,8462000],[698000,8460000],[697000,8460000],[697000,8457000],[695000,8457000],[695000,8459000],[696000,8459000],[696000,8461000],[697000,8461000],[697000,8462000],[698000,8462000]]]}},{"type":"Feature","properties":{"CODIGOU":"010629826","FEC_DENU":"2026-11-04","CONCESION":"SAMI PACHA 5","TIT_CONCES":"RIO TINTO MINING AND EXPLORATION S.A.C.","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"28-P","ZONA":"18","SUSTANCIA":"M","DEPA":"APURIMAC","PROVI":"AYMARAES","DISTRI":"TINTAY / LUCRE","HASDATUM":600},"geometry":{"type":"Polygon","coordinates":[[[698000,8457000],[698000,8456000],[692000,8456000],[692000,8457000],[698000,8457000]]]}},{"type":"Feature","properties":{"CODIGOU":"010630026","FEC_DENU":"2026-11-04","CONCESION":"APUKUNA 7","TIT_CONCES":"RIO TINTO MINING AND EXPLORATION S.A.C.","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"28-R","ZONA":"18","SUSTANCIA":"M","DEPA":"CUSCO","PROVI":"ANTA","DISTRI":"LIMATAMBO / ANCAHUASI / CHINCHAYPUJIO","HASDATUM":700},"geometry":{"type":"Polygon","coordinates":[[[790000,8505000],[790000,8503000],[785000,8503000],[785000,8504000],[788000,8504000],[788000,8505000],[790000,8505000]]]}},{"type":"Feature","properties":{"CODIGOU":"010630126","FEC_DENU":"2026-11-04","CONCESION":"APUKUNA 8","TIT_CONCES":"RIO TINTO MINING AND EXPLORATION S.A.C.","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"28-R","ZONA":"18","SUSTANCIA":"M","DEPA":"CUSCO","PROVI":"ANTA","DISTRI":"CHINCHAYPUJIO / LIMATAMBO","HASDATUM":700},"geometry":{"type":"Polygon","coordinates":[[[792000,8503000],[792000,8502000],[785000,8502000],[785000,8503000],[792000,8503000]]]}},{"type":"Feature","properties":{"CODIGOU":"010630326","FEC_DENU":"2026-11-04","CONCESION":"APUKUNA 10","TIT_CONCES":"RIO TINTO MINING AND EXPLORATION S.A.C.","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"28-R","ZONA":"18","SUSTANCIA":"M","DEPA":"CUSCO","PROVI":"ANTA","DISTRI":"ZURITE / ANTA / CHINCHAYPUJIO / ANCAHUASI","HASDATUM":1000},"geometry":{"type":"Polygon","coordinates":[[[800000,8505000],[800000,8503000],[795000,8503000],[795000,8505000],[800000,8505000]]]}},{"type":"Feature","properties":{"CODIGOU":"010630426","FEC_DENU":"2026-11-04","CONCESION":"APUKUNA 11","TIT_CONCES":"RIO TINTO MINING AND EXPLORATION S.A.C.","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"28-R","ZONA":"18","SUSTANCIA":"M","DEPA":"CUSCO","PROVI":"ANTA","DISTRI":"ANTA","HASDATUM":1000},"geometry":{"type":"Polygon","coordinates":[[[805000,8505000],[805000,8503000],[800000,8503000],[800000,8505000],[805000,8505000]]]}},{"type":"Feature","properties":{"CODIGOU":"010630726","FEC_DENU":"2026-11-04","CONCESION":"APUKUNA 14","TIT_CONCES":"RIO TINTO MINING AND EXPLORATION S.A.C.","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"28-R","ZONA":"18","SUSTANCIA":"M","DEPA":"CUSCO","PROVI":"ANTA","DISTRI":"CHINCHAYPUJIO","HASDATUM":1000},"geometry":{"type":"Polygon","coordinates":[[[797000,8499000],[797000,8497000],[792000,8497000],[792000,8499000],[797000,8499000]]]}},{"type":"Feature","properties":{"CODIGOU":"010630826","FEC_DENU":"2026-11-04","CONCESION":"APUKUNA 15","TIT_CONCES":"RIO TINTO MINING AND EXPLORATION S.A.C.","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"28-R","ZONA":"18","SUSTANCIA":"M","DEPA":"CUSCO","PROVI":"ANTA","DISTRI":"CHINCHAYPUJIO","HASDATUM":300},"geometry":{"type":"Polygon","coordinates":[[[791000,8496000],[791000,8495000],[788000,8495000],[788000,8496000],[791000,8496000]]]}},{"type":"Feature","properties":{"CODIGOU":"010630926","FEC_DENU":"2026-11-04","CONCESION":"APUKUNA 16","TIT_CONCES":"RIO TINTO MINING AND EXPLORATION S.A.C.","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"28-R","ZONA":"18","SUSTANCIA":"M","DEPA":"CUSCO","PROVI":"ANTA","DISTRI":"CHINCHAYPUJIO","HASDATUM":800},"geometry":{"type":"Polygon","coordinates":[[[795000,8497000],[795000,8495000],[791000,8495000],[791000,8497000],[795000,8497000]]]}},{"type":"Feature","properties":{"CODIGOU":"050027622A","FEC_DENU":"2022-08-01","CONCESION":"QORI CHASKA III","TIT_CONCES":"MINERA QORICHASKA S.A.","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"32-O","ZONA":"18","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[620000,8268000],[620000,8267000],[619000,8267000],[619000,8268000],[620000,8268000]]]}},{"type":"Feature","properties":{"CODIGOU":"010632026","FEC_DENU":"2026-11-04","CONCESION":"CHARPERO I","TIT_CONCES":"JHELISVAN JHONNER MENDOZA CONTRERAS","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"30-X","ZONA":"19","SUSTANCIA":"M","DEPA":"PUNO","PROVI":"SANDIA","DISTRI":"CUYOCUYO","HASDATUM":200},"geometry":{"type":"Polygon","coordinates":[[[442000,8386000],[442000,8385000],[440000,8385000],[440000,8386000],[442000,8386000]]]}},{"type":"Feature","properties":{"CODIGOU":"010629326","FEC_DENU":"2026-11-04","CONCESION":"NICOPLA B-A","TIT_CONCES":"CORPORACION PACHA S & F EMPRESA INDIVIDUAL DE RESPONSABILIDA","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"30-Y","ZONA":"19","SUSTANCIA":"M","DEPA":"PUNO","PROVI":"SAN ANTONIO DE PUTINA","DISTRI":"ANANEA","HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[455000,8366000],[455000,8365000],[454000,8365000],[454000,8366000],[455000,8366000]]]}}];
+        
+        const map = L.map('map').setView([
+            (areaData.sw.lat + areaData.ne.lat) / 2,
+            (areaData.sw.lng + areaData.ne.lng) / 2
+        ], 10);
+        
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png').addTo(map);
+        
+        L.rectangle([
+            [areaData.sw.lat, areaData.sw.lng],
+            [areaData.ne.lat, areaData.ne.lng]
+        ], { color: '#ff44ff', weight: 3, opacity: 0.8, fillOpacity: 0.1 }).addTo(map);
+        
+        L.geoJSON({ type: 'FeatureCollection', features: desaparecidosFeatures }, {
+            style: { color: '#ff4444', weight: 2, opacity: 0.9, fillOpacity: 0.4 },
+            onEachFeature: (f, l) => l.bindPopup('<b>' + (f.properties.CONCESION || 'N/A') + '</b><br>🔴 Desapareció')
+        }).addTo(map);
+        
+        L.geoJSON({ type: 'FeatureCollection', features: aparecidosFeatures }, {
+            style: { color: '#4444ff', weight: 2, opacity: 0.9, fillOpacity: 0.4 },
+            onEachFeature: (f, l) => l.bindPopup('<b>' + (f.properties.CONCESION || 'N/A') + '</b><br>🔵 Apareció')
+        }).addTo(map);
+    </script>
+</body>
+</html>
