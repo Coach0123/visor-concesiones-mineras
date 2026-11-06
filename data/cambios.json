@@ -10780,5 +10780,263 @@
     "nombre": "GEMELOS J-D I",
     "tipo": "aparece",
     "fecha": "2026-11-05T03:49:09.329Z"
+  },
+  {
+    "codigo": "010000624AF",
+    "nombre": "CANTERA SUPER JOSTIN",
+    "tipo": "desaparece",
+    "fecha": "2026-11-06T03:45:56.866Z"
+  },
+  {
+    "codigo": "010000324AF",
+    "nombre": "CANTERA QUEBRADA CORRALES",
+    "tipo": "desaparece",
+    "fecha": "2026-11-06T03:45:56.866Z"
+  },
+  {
+    "codigo": "030110926",
+    "nombre": "EL SOL1",
+    "tipo": "aparece",
+    "fecha": "2026-11-06T03:45:56.866Z"
+  },
+  {
+    "codigo": "030111026",
+    "nombre": "EL SOL2",
+    "tipo": "aparece",
+    "fecha": "2026-11-06T03:45:56.866Z"
+  },
+  {
+    "codigo": "030111226",
+    "nombre": "SILVER COPPER 1",
+    "tipo": "aparece",
+    "fecha": "2026-11-06T03:45:56.866Z"
+  },
+  {
+    "codigo": "560002526",
+    "nombre": "CLABEL ANNY",
+    "tipo": "aparece",
+    "fecha": "2026-11-06T03:45:56.866Z"
+  },
+  {
+    "codigo": "010024925AF",
+    "nombre": "CANTERA DE ROCA IZCUCHACA",
+    "tipo": "aparece",
+    "fecha": "2026-11-06T03:45:56.866Z"
+  },
+  {
+    "codigo": "010025025AF",
+    "nombre": "CANTERA DE CERRO KM 4+500",
+    "tipo": "aparece",
+    "fecha": "2026-11-06T03:45:56.866Z"
+  },
+  {
+    "codigo": "010025125AF",
+    "nombre": "CANTERA DE CERRO MEJORADA",
+    "tipo": "aparece",
+    "fecha": "2026-11-06T03:45:56.866Z"
+  },
+  {
+    "codigo": "010025225AF",
+    "nombre": "CANTERA CERRO KM 48+100",
+    "tipo": "aparece",
+    "fecha": "2026-11-06T03:45:56.866Z"
+  },
+  {
+    "codigo": "010631026",
+    "nombre": "APUKUNA 17",
+    "tipo": "aparece",
+    "fecha": "2026-11-06T03:45:56.866Z"
+  },
+  {
+    "codigo": "010631126",
+    "nombre": "APUKUNA 18",
+    "tipo": "aparece",
+    "fecha": "2026-11-06T03:45:56.866Z"
+  },
+  {
+    "codigo": "010631626",
+    "nombre": "VIRINA V",
+    "tipo": "aparece",
+    "fecha": "2026-11-06T03:45:56.866Z"
+  },
+  {
+    "codigo": "030111126",
+    "nombre": "ADAN I",
+    "tipo": "aparece",
+    "fecha": "2026-11-06T03:45:56.866Z"
+  },
+  {
+    "codigo": "040061826",
+    "nombre": "LOMANSUR",
+    "tipo": "aparece",
+    "fecha": "2026-11-06T03:45:56.866Z"
+  },
+  {
+    "codigo": "040062126",
+    "nombre": "MURALLA DE ORO",
+    "tipo": "aparece",
+    "fecha": "2026-11-06T03:45:56.866Z"
+  },
+  {
+    "codigo": "020024726",
+    "nombre": "MISKILLA",
+    "tipo": "aparece",
+    "fecha": "2026-11-06T03:45:56.866Z"
+  },
+  {
+    "codigo": "050139426",
+    "nombre": "COPPER SUCHAN I",
+    "tipo": "aparece",
+    "fecha": "2026-11-06T03:45:56.866Z"
+  },
+  {
+    "codigo": "010629526",
+    "nombre": "COORPORACION VILLANUEVA",
+    "tipo": "aparece",
+    "fecha": "2026-11-06T03:45:56.866Z"
+  },
+  {
+    "codigo": "010629926",
+    "nombre": "APUKUNA 6",
+    "tipo": "aparece",
+    "fecha": "2026-11-06T03:45:56.866Z"
+  },
+  {
+    "codigo": "010630226",
+    "nombre": "APUKUNA 9",
+    "tipo": "aparece",
+    "fecha": "2026-11-06T03:45:56.866Z"
+  },
+  {
+    "codigo": "040061726",
+    "nombre": "IVAKO DOS",
+    "tipo": "aparece",
+    "fecha": "2026-11-06T03:45:56.866Z"
+  },
+  {
+    "codigo": "010630626",
+    "nombre": "APUKUNA 13",
+    "tipo": "aparece",
+    "fecha": "2026-11-06T03:45:56.866Z"
+  },
+  {
+    "codigo": "010631226",
+    "nombre": "CANTERA FIMAR",
+    "tipo": "aparece",
+    "fecha": "2026-11-06T03:45:56.866Z"
+  },
+  {
+    "codigo": "010631726",
+    "nombre": "VIRINA IV",
+    "tipo": "aparece",
+    "fecha": "2026-11-06T03:45:56.866Z"
+  },
+  {
+    "codigo": "070050326",
+    "nombre": "REY DAVID 2026",
+    "tipo": "aparece",
+    "fecha": "2026-11-06T03:45:56.866Z"
+  },
+  {
+    "codigo": "020024626",
+    "nombre": "LAMBRAS",
+    "tipo": "aparece",
+    "fecha": "2026-11-06T03:45:56.866Z"
+  },
+  {
+    "codigo": "040062226",
+    "nombre": "AJR FAMILIA",
+    "tipo": "aparece",
+    "fecha": "2026-11-06T03:45:56.866Z"
+  },
+  {
+    "codigo": "010630526",
+    "nombre": "APUKUNA 12",
+    "tipo": "aparece",
+    "fecha": "2026-11-06T03:45:56.866Z"
+  },
+  {
+    "codigo": "010631826",
+    "nombre": "CHS - I",
+    "tipo": "aparece",
+    "fecha": "2026-11-06T03:45:56.866Z"
+  },
+  {
+    "codigo": "010629626",
+    "nombre": "SAMI PACHA 3",
+    "tipo": "aparece",
+    "fecha": "2026-11-06T03:45:56.866Z"
+  },
+  {
+    "codigo": "010629726",
+    "nombre": "SAMI PACHA 4",
+    "tipo": "aparece",
+    "fecha": "2026-11-06T03:45:56.866Z"
+  },
+  {
+    "codigo": "010629826",
+    "nombre": "SAMI PACHA 5",
+    "tipo": "aparece",
+    "fecha": "2026-11-06T03:45:56.866Z"
+  },
+  {
+    "codigo": "010630026",
+    "nombre": "APUKUNA 7",
+    "tipo": "aparece",
+    "fecha": "2026-11-06T03:45:56.866Z"
+  },
+  {
+    "codigo": "010630126",
+    "nombre": "APUKUNA 8",
+    "tipo": "aparece",
+    "fecha": "2026-11-06T03:45:56.867Z"
+  },
+  {
+    "codigo": "010630326",
+    "nombre": "APUKUNA 10",
+    "tipo": "aparece",
+    "fecha": "2026-11-06T03:45:56.867Z"
+  },
+  {
+    "codigo": "010630426",
+    "nombre": "APUKUNA 11",
+    "tipo": "aparece",
+    "fecha": "2026-11-06T03:45:56.867Z"
+  },
+  {
+    "codigo": "010630726",
+    "nombre": "APUKUNA 14",
+    "tipo": "aparece",
+    "fecha": "2026-11-06T03:45:56.867Z"
+  },
+  {
+    "codigo": "010630826",
+    "nombre": "APUKUNA 15",
+    "tipo": "aparece",
+    "fecha": "2026-11-06T03:45:56.867Z"
+  },
+  {
+    "codigo": "010630926",
+    "nombre": "APUKUNA 16",
+    "tipo": "aparece",
+    "fecha": "2026-11-06T03:45:56.867Z"
+  },
+  {
+    "codigo": "050027622A",
+    "nombre": "QORI CHASKA III",
+    "tipo": "aparece",
+    "fecha": "2026-11-06T03:45:56.867Z"
+  },
+  {
+    "codigo": "010632026",
+    "nombre": "CHARPERO I",
+    "tipo": "aparece",
+    "fecha": "2026-11-06T03:45:56.867Z"
+  },
+  {
+    "codigo": "010629326",
+    "nombre": "NICOPLA B-A",
+    "tipo": "aparece",
+    "fecha": "2026-11-06T03:45:56.867Z"
   }
 ]
