@@ -11038,5 +11038,221 @@
     "nombre": "NICOPLA B-A",
     "tipo": "aparece",
     "fecha": "2026-11-06T03:45:56.867Z"
+  },
+  {
+    "codigo": "620000526",
+    "nombre": "MINERA RESOURCES GALVAN",
+    "tipo": "desaparece",
+    "fecha": "2026-11-07T03:18:27.227Z"
+  },
+  {
+    "codigo": "030111326",
+    "nombre": "ALRAYAN ESCUDO",
+    "tipo": "aparece",
+    "fecha": "2026-11-07T03:18:27.227Z"
+  },
+  {
+    "codigo": "010633426",
+    "nombre": "MINAS CERRO VERDE",
+    "tipo": "aparece",
+    "fecha": "2026-11-07T03:18:27.227Z"
+  },
+  {
+    "codigo": "050139926",
+    "nombre": "ZABDIEL 01 2026",
+    "tipo": "aparece",
+    "fecha": "2026-11-07T03:18:27.227Z"
+  },
+  {
+    "codigo": "010632626",
+    "nombre": "JONATHAN ANTONY SERVAT CISNEROS",
+    "tipo": "aparece",
+    "fecha": "2026-11-07T03:18:27.227Z"
+  },
+  {
+    "codigo": "110017826",
+    "nombre": "GORKAS1",
+    "tipo": "aparece",
+    "fecha": "2026-11-07T03:18:27.227Z"
+  },
+  {
+    "codigo": "630006926",
+    "nombre": "FEMEN 1",
+    "tipo": "aparece",
+    "fecha": "2026-11-07T03:18:27.227Z"
+  },
+  {
+    "codigo": "740000926",
+    "nombre": "DELVIN I",
+    "tipo": "aparece",
+    "fecha": "2026-11-07T03:18:27.227Z"
+  },
+  {
+    "codigo": "010025625AF",
+    "nombre": "CANTERA SANTA ELENA",
+    "tipo": "aparece",
+    "fecha": "2026-11-07T03:18:27.227Z"
+  },
+  {
+    "codigo": "010003626AF",
+    "nombre": "CANTERA CHAMANJATA",
+    "tipo": "aparece",
+    "fecha": "2026-11-07T03:18:27.227Z"
+  },
+  {
+    "codigo": "010003826AF",
+    "nombre": "CANTERA FLORES I",
+    "tipo": "aparece",
+    "fecha": "2026-11-07T03:18:27.227Z"
+  },
+  {
+    "codigo": "530023726",
+    "nombre": "GRUPO MARTELO",
+    "tipo": "aparece",
+    "fecha": "2026-11-07T03:18:27.227Z"
+  },
+  {
+    "codigo": "750002226",
+    "nombre": "MANUEL 01",
+    "tipo": "aparece",
+    "fecha": "2026-11-07T03:18:27.227Z"
+  },
+  {
+    "codigo": "010632726",
+    "nombre": "MINERA CCONTUNYA",
+    "tipo": "aparece",
+    "fecha": "2026-11-07T03:18:27.227Z"
+  },
+  {
+    "codigo": "010632826",
+    "nombre": "GALENA 01 2026",
+    "tipo": "aparece",
+    "fecha": "2026-11-07T03:18:27.227Z"
+  },
+  {
+    "codigo": "010632926",
+    "nombre": "MECHITA",
+    "tipo": "aparece",
+    "fecha": "2026-11-07T03:18:27.227Z"
+  },
+  {
+    "codigo": "050139626",
+    "nombre": "GRAN APURIMEÑITA",
+    "tipo": "aparece",
+    "fecha": "2026-11-07T03:18:27.227Z"
+  },
+  {
+    "codigo": "050139726",
+    "nombre": "GOLD MINING DENNIS XII",
+    "tipo": "aparece",
+    "fecha": "2026-11-07T03:18:27.227Z"
+  },
+  {
+    "codigo": "070050426",
+    "nombre": "DIAMANTES TURQUESA",
+    "tipo": "aparece",
+    "fecha": "2026-11-07T03:18:27.227Z"
+  },
+  {
+    "codigo": "750002326",
+    "nombre": "MANUEL 02",
+    "tipo": "aparece",
+    "fecha": "2026-11-07T03:18:27.227Z"
+  },
+  {
+    "codigo": "530023626",
+    "nombre": "GRUPO MARTELO I",
+    "tipo": "aparece",
+    "fecha": "2026-11-07T03:18:27.227Z"
+  },
+  {
+    "codigo": "010632526",
+    "nombre": "CONSORCIO MINERO CHUMINCO V 2026",
+    "tipo": "aparece",
+    "fecha": "2026-11-07T03:18:27.227Z"
+  },
+  {
+    "codigo": "050139526",
+    "nombre": "GRAN HUANCARQUILLO",
+    "tipo": "aparece",
+    "fecha": "2026-11-07T03:18:27.227Z"
+  },
+  {
+    "codigo": "010626026",
+    "nombre": "WAYRA QORI 1",
+    "tipo": "aparece",
+    "fecha": "2026-11-07T03:18:27.227Z"
+  },
+  {
+    "codigo": "050140126",
+    "nombre": "ASLAN IX",
+    "tipo": "aparece",
+    "fecha": "2026-11-07T03:18:27.227Z"
+  },
+  {
+    "codigo": "690004026",
+    "nombre": "SKY II 2026",
+    "tipo": "aparece",
+    "fecha": "2026-11-07T03:18:27.227Z"
+  },
+  {
+    "codigo": "010633026",
+    "nombre": "MINERA CHOCLLOTA",
+    "tipo": "aparece",
+    "fecha": "2026-11-07T03:18:27.227Z"
+  },
+  {
+    "codigo": "030111726",
+    "nombre": "NUVAL PANAO",
+    "tipo": "aparece",
+    "fecha": "2026-11-07T03:18:27.227Z"
+  },
+  {
+    "codigo": "050140026",
+    "nombre": "ALEJANDRITA V",
+    "tipo": "aparece",
+    "fecha": "2026-11-07T03:18:27.227Z"
+  },
+  {
+    "codigo": "080096026",
+    "nombre": "BOSQUE DE ROCAS I",
+    "tipo": "aparece",
+    "fecha": "2026-11-07T03:18:27.227Z"
+  },
+  {
+    "codigo": "080096126",
+    "nombre": "BOSQUE DE ROCAS II",
+    "tipo": "aparece",
+    "fecha": "2026-11-07T03:18:27.227Z"
+  },
+  {
+    "codigo": "080095826",
+    "nombre": "LUZ DE ORO URT",
+    "tipo": "aparece",
+    "fecha": "2026-11-07T03:18:27.227Z"
+  },
+  {
+    "codigo": "010633126",
+    "nombre": "COMPAÑIA MINERA APUKUNA III",
+    "tipo": "aparece",
+    "fecha": "2026-11-07T03:18:27.227Z"
+  },
+  {
+    "codigo": "010633326",
+    "nombre": "PURUMPATA BRYAN 26 FORTUNA DORADO",
+    "tipo": "aparece",
+    "fecha": "2026-11-07T03:18:27.227Z"
+  },
+  {
+    "codigo": "080096226",
+    "nombre": "PALMA DORADA ONCE",
+    "tipo": "aparece",
+    "fecha": "2026-11-07T03:18:27.227Z"
+  },
+  {
+    "codigo": "080096326",
+    "nombre": "ALFA GRACIA",
+    "tipo": "aparece",
+    "fecha": "2026-11-07T03:18:27.227Z"
   }
 ]
