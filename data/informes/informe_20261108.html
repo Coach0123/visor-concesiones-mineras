@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wvisor - Informe 20261108</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #0a1628; color: #e0e6f0; padding: 20px; }
+        .container { max-width: 1400px; margin: 0 auto; background: #0f1e3a; border-radius: 12px; box-shadow: 0 8px 40px rgba(0,0,0,0.5); overflow: hidden; border: 1px solid #1e3a5f; }
+        .header { background: linear-gradient(135deg, #1e3a8a, #1e40af); padding: 25px 30px; }
+        .header-top { display: flex; align-items: center; gap: 15px; margin-bottom: 10px; }
+        .logo-w { width: 45px; height: 45px; background: linear-gradient(135deg, #3b82f6, #1e40af); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 26px; font-weight: 800; color: #fff; font-family: Georgia, serif; }
+        .header h1 { font-size: 22px; font-weight: 600; color: #fff; }
+        .subtitle { font-size: 13px; color: #93c5fd; margin-bottom: 15px; }
+        .stats { display: flex; gap: 12px; flex-wrap: wrap; }
+        .stat-item { background: rgba(255,255,255,0.12); padding: 10px 18px; border-radius: 8px; font-size: 12px; color: #bfdbfe; }
+        .stat-item strong { font-size: 20px; display: block; color: #fff; }
+        .stat-item.danger { background: rgba(220, 38, 38, 0.3); }
+        .stat-item.danger strong { color: #fca5a5; }
+        .stat-item.success { background: rgba(59, 130, 246, 0.3); }
+        .stat-item.success strong { color: #93c5fd; }
+        .main-content { display: flex; flex-wrap: wrap; }
+        .map-column { flex: 2; min-width: 500px; padding: 20px; background: #0a1628; }
+        #map { border-radius: 8px; height: 550px; width: 100%; border: 1px solid #1e3a5f; }
+        .info-column { flex: 1; min-width: 320px; padding: 20px; background: #0f1e3a; border-left: 1px solid #1e3a5f; max-height: 600px; overflow-y: auto; }
+        .info-column h2 { font-size: 16px; margin-bottom: 15px; color: #93c5fd; padding-bottom: 8px; border-bottom: 1px solid #1e3a5f; }
+        .item-concesion { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; font-size: 12px; border-bottom: 1px solid #1e3a5f; }
+        .estado-badge { font-size: 10px; padding: 3px 8px; border-radius: 10px; color: white; font-weight: 600; }
+        .estado-badge.desaparecio { background: #dc2626; }
+        .estado-badge.aparecio { background: #2563eb; }
+        .tabla-container { padding: 20px 30px 30px; border-top: 1px solid #1e3a5f; }
+        .tabla-container h2 { font-size: 16px; margin-bottom: 15px; color: #93c5fd; }
+        .tabla-concesiones { width: 100%; border-collapse: collapse; font-size: 13px; }
+        .tabla-concesiones thead th { background: #152b4a; padding: 12px 15px; text-align: left; color: #93c5fd; border-bottom: 2px solid #1e3a5f; }
+        .tabla-concesiones tbody td { padding: 10px 15px; border-bottom: 1px solid #1e3a5f; color: #cbd5e1; }
+        .footer { background: #0a1628; padding: 15px 30px; text-align: center; font-size: 11px; color: #475569; border-top: 1px solid #1e3a5f; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-top">
+                <div class="logo-w">W</div>
+                <h1>Wvisor - Informe de Área</h1>
+            </div>
+            <div class="subtitle">Generado el 08/11/2026</div>
+            <div class="stats">
+                <div class="stat-item danger"><strong>1</strong>Desaparecieron</div>
+                <div class="stat-item success"><strong>35</strong>Aparecieron</div>
+                <div class="stat-item"><strong>36</strong>Total</div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="map-column">
+                <div id="map"></div>
+            </div>
+            <div class="info-column">
+                <h2>📋 Concesiones</h2>
+                
+                    <div class="item-concesion">
+                        <span>MINERA RESOURCES GALVAN</span>
+                        <span class="estado-badge desaparecio">DESAPARECIÓ</span>
+                    </div>
+                
+                
+                    <div class="item-concesion">
+                        <span>ALRAYAN ESCUDO</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>MINAS CERRO VERDE</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>ZABDIEL 01 2026</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>JONATHAN ANTONY SERVAT CISNEROS</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>GORKAS1</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>FEMEN 1</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>DELVIN I</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>CANTERA SANTA ELENA</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>CANTERA CHAMANJATA</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>CANTERA FLORES I</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>GRUPO MARTELO</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>MANUEL 01</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>MINERA CCONTUNYA</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>GALENA 01 2026</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>MECHITA</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>GRAN APURIMEÑITA</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>GOLD MINING DENNIS XII</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>DIAMANTES TURQUESA</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>MANUEL 02</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>GRUPO MARTELO I</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>CONSORCIO MINERO CHUMINCO V 2026</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>GRAN HUANCARQUILLO</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>WAYRA QORI 1</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>ASLAN IX</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>SKY II 2026</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>MINERA CHOCLLOTA</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>NUVAL PANAO</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>ALEJANDRITA V</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>BOSQUE DE ROCAS I</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>BOSQUE DE ROCAS II</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>LUZ DE ORO URT</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>COMPAÑIA MINERA APUKUNA III</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>PURUMPATA BRYAN 26 FORTUNA DORADO</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>PALMA DORADA ONCE</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>ALFA GRACIA</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+            </div>
+        </div>
+        
+        <div class="tabla-container">
+            <h2>📋 Detalle Completo</h2>
+            <table class="tabla-concesiones">
+                <thead>
+                    <tr><th>Código</th><th>Concesión</th><th>Titular</th><th>Estado</th></tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>620000526</td>
+                            <td>MINERA RESOURCES GALVAN</td>
+                            <td>VENANCIO LORENZO GALVAN ESPINOZA</td>
+                            <td><span class="estado-badge desaparecio">DESAPARECIÓ</span></td>
+                        </tr>
+                    
+                    
+                        <tr>
+                            <td>030111326</td>
+                            <td>ALRAYAN ESCUDO</td>
+                            <td>35 GLOBAL LINKS LATINOAMERICA</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010633426</td>
+                            <td>MINAS CERRO VERDE</td>
+                            <td>ELENA ROMERO ANTICONA</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>050139926</td>
+                            <td>ZABDIEL 01 2026</td>
+                            <td>ELARD JOSE CHOQUE VILCA</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010632626</td>
+                            <td>JONATHAN ANTONY SERVAT CISNEROS</td>
+                            <td>JONATHAN CISNEROS SERVAT CISNEROS</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>110017826</td>
+                            <td>GORKAS1</td>
+                            <td>JESUS MOISES SOLORZALO VERDE</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>630006926</td>
+                            <td>FEMEN 1</td>
+                            <td>JULIO ANTONIO MENDOZA GONZALES</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>740000926</td>
+                            <td>DELVIN I</td>
+                            <td>FELIX EDUARDO RAUL DELGADO VASQUEZ</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010025625AF</td>
+                            <td>CANTERA SANTA ELENA</td>
+                            <td>N/A</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010003626AF</td>
+                            <td>CANTERA CHAMANJATA</td>
+                            <td>N/A</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010003826AF</td>
+                            <td>CANTERA FLORES I</td>
+                            <td>N/A</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>530023726</td>
+                            <td>GRUPO MARTELO</td>
+                            <td>JHULDAR ANTONY HURTADO PEREIRA Y OTROS</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>750002226</td>
+                            <td>MANUEL 01</td>
+                            <td>EDUARDO MANUEL CHIQUE MAMANI</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010632726</td>
+                            <td>MINERA CCONTUNYA</td>
+                            <td>EMPRESA DE TRANSPORTES & SERVICIOS MULTIPLES TRIVEÑO S.A.</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010632826</td>
+                            <td>GALENA 01 2026</td>
+                            <td>CESAR ENRIQUE JUAN DAVILA DIAZ</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010632926</td>
+                            <td>MECHITA</td>
+                            <td>CRISTIAN IBERICO ROJAS</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>050139626</td>
+                            <td>GRAN APURIMEÑITA</td>
+                            <td>MINERA FLOR ANDINA E.I.R.L</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>050139726</td>
+                            <td>GOLD MINING DENNIS XII</td>
+                            <td>GRUPO D´DENNIS FAMSOLLAY S.R.L. Y OTROS</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>070050426</td>
+                            <td>DIAMANTES TURQUESA</td>
+                            <td>JHONNY CAVIEDES FLORES</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>750002326</td>
+                            <td>MANUEL 02</td>
+                            <td>EDUARDO MANUEL CHIQUE MAMANI</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>530023626</td>
+                            <td>GRUPO MARTELO I</td>
+                            <td>JHULDAR ANTONY HURTADO PEREIRA Y OTROS</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010632526</td>
+                            <td>CONSORCIO MINERO CHUMINCO V 2026</td>
+                            <td>JUDITH OMAYRA MENDOZA ROCA Y OTROS</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>050139526</td>
+                            <td>GRAN HUANCARQUILLO</td>
+                            <td>MINERA FLOR ANDINA E.I.R.L</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010626026</td>
+                            <td>WAYRA QORI 1</td>
+                            <td>CESAR AUGUSTO OSORIO HUAYHUA</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>050140126</td>
+                            <td>ASLAN IX</td>
+                            <td>IMPORTACIONES KILLAINTY SAC</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>690004026</td>
+                            <td>SKY II 2026</td>
+                            <td>ANGEL SMITH CAHUAYA CHOQUE</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010633026</td>
+                            <td>MINERA CHOCLLOTA</td>
+                            <td>FILOMENA YALLERCCO MENDOZA</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>030111726</td>
+                            <td>NUVAL PANAO</td>
+                            <td>NUGAR LD S.A.C. y Otros</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>050140026</td>
+                            <td>ALEJANDRITA V</td>
+                            <td>WISMAN HUBER CHAVEZ CARDENAS</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>080096026</td>
+                            <td>BOSQUE DE ROCAS I</td>
+                            <td>JIM DAVID CACERES INOFUENTE</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>080096126</td>
+                            <td>BOSQUE DE ROCAS II</td>
+                            <td>JIM DAVID CACERES INOFUENTE</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>080095826</td>
+                            <td>LUZ DE ORO URT</td>
+                            <td>VIRGINIA PARI CHAMBI Y OTROS</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010633126</td>
+                            <td>COMPAÑIA MINERA APUKUNA III</td>
+                            <td>JHON HEMERSON VARELA CUEVAS</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010633326</td>
+                            <td>PURUMPATA BRYAN 26 FORTUNA DORADO</td>
+                            <td>ELBIO DAVID CHEJE MAMANI</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>080096226</td>
+                            <td>PALMA DORADA ONCE</td>
+                            <td>JESARELA JOSABET CCOARITE HUAQUISTO</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>080096326</td>
+                            <td>ALFA GRACIA</td>
+                            <td>UBALDO VEGAS ORTIZ PALERO</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="footer">Wvisor · Datos INGEMMET · 08/11/2026</div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.8.0/proj4.js"></script>
+    <script>
+        const areaData = {"sw":{"lat":-18,"lng":-82},"ne":{"lat":-2,"lng":-68},"bounds":"-82,-18,-68,-2","fecha":"2026-07-15T21:30:00.000Z"};
+        const desaparecidosFeatures = [{"type":"Feature","properties":{"CODIGOU":"620000526","FEC_DENU":"2026-01-21","CONCESION":"MINERA RESOURCES GALVAN","TIT_CONCES":"VENANCIO LORENZO GALVAN ESPINOZA","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"23-L","ZONA":"18","SUSTANCIA":"M","DEPA":"JUNIN","PROVI":"TARMA","DISTRI":"PALCA","HASDATUM":400},"geometry":{"type":"Polygon","coordinates":[[[443000,8755000],[443000,8752000],[442000,8752000],[442000,8754000],[441000,8754000],[441000,8755000],[443000,8755000]]]}}];
+        const aparecidosFeatures = [{"type":"Feature","properties":{"CODIGOU":"030111326","FEC_DENU":"2026-11-05","CONCESION":"ALRAYAN ESCUDO","TIT_CONCES":"35 GLOBAL LINKS LATINOAMERICA","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"16-E","ZONA":"17","SUSTANCIA":"M","DEPA":"LA LIBERTAD","PROVI":"ASCOPE","DISTRI":"CHICAMA","HASDATUM":400},"geometry":{"type":"Polygon","coordinates":[[[713000,9132000],[713000,9130000],[711000,9130000],[711000,9132000],[713000,9132000]]]}},{"type":"Feature","properties":{"CODIGOU":"010633426","FEC_DENU":"2026-11-06","CONCESION":"MINAS CERRO VERDE","TIT_CONCES":"ELENA ROMERO ANTICONA","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"17-G","ZONA":"17","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[797000,9114000],[797000,9113000],[796000,9113000],[796000,9114000],[797000,9114000]]]}},{"type":"Feature","properties":{"CODIGOU":"050139926","FEC_DENU":"2026-11-05","CONCESION":"ZABDIEL 01 2026","TIT_CONCES":"ELARD JOSE CHOQUE VILCA","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"14-D","ZONA":"17","SUSTANCIA":"M","DEPA":"LAMBAYEQUE","PROVI":"CHICLAYO","DISTRI":"SAÑA","HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[656000,9249000],[656000,9248000],[655000,9248000],[655000,9249000],[656000,9249000]]]}},{"type":"Feature","properties":{"CODIGOU":"010632626","FEC_DENU":"2026-11-05","CONCESION":"JONATHAN ANTONY SERVAT CISNEROS","TIT_CONCES":"JONATHAN CISNEROS SERVAT CISNEROS","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"19-G","ZONA":"17","SUSTANCIA":"M","DEPA":"ANCASH","PROVI":"SANTA","DISTRI":"NEPEÑA","HASDATUM":600},"geometry":{"type":"Polygon","coordinates":[[[783000,8982000],[783000,8981000],[781000,8981000],[781000,8982000],[780000,8982000],[780000,8984000],[782000,8984000],[782000,8982000],[783000,8982000]]]}},{"type":"Feature","properties":{"CODIGOU":"110017826","FEC_DENU":"2026-11-05","CONCESION":"GORKAS1","TIT_CONCES":"JESUS MOISES SOLORZALO VERDE","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"19-G","ZONA":"17","SUSTANCIA":"M","DEPA":"ANCASH","PROVI":"SANTA","DISTRI":"MORO","HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[819000,8992000],[819000,8991000],[818000,8991000],[818000,8992000],[819000,8992000]]]}},{"type":"Feature","properties":{"CODIGOU":"630006926","FEC_DENU":"2026-11-05","CONCESION":"FEMEN 1","TIT_CONCES":"JULIO ANTONIO MENDOZA GONZALES","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"17-G","ZONA":"17","SUSTANCIA":"M","DEPA":"LA LIBERTAD","PROVI":"SANTIAGO DE CHUCO","DISTRI":"SANTIAGO DE CHUCO","HASDATUM":300},"geometry":{"type":"Polygon","coordinates":[[[803000,9085000],[803000,9083000],[802000,9083000],[802000,9084000],[801000,9084000],[801000,9085000],[803000,9085000]]]}},{"type":"Feature","properties":{"CODIGOU":"740000926","FEC_DENU":"2026-11-05","CONCESION":"DELVIN I","TIT_CONCES":"FELIX EDUARDO RAUL DELGADO VASQUEZ","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"08-B","ZONA":"17","SUSTANCIA":"N","DEPA":"TUMBES","PROVI":"TUMBES","DISTRI":"LA CRUZ","HASDATUM":200},"geometry":{"type":"Polygon","coordinates":[[[546000,9594000],[545000,9594000],[545000,9596000],[546000,9596000],[546000,9594000]]]}},{"type":"Feature","properties":{"CODIGOU":"010025625AF","FEC_DENU":"2025-07-09","CONCESION":"CANTERA SANTA ELENA","TIT_CONCES":null,"D_ESTADO":"Cantera D.S. 037-96-EM","CARTA":"26-N","ZONA":"18","SUSTANCIA":null,"DEPA":"HUANCAVELICA","PROVI":"CHURCAMPA","DISTRI":"ANCO","HASDATUM":3.0216},"geometry":{"type":"Polygon","coordinates":[[[549070.7199999997,8594371.08],[548955.71,8594436.19],[549032.8200000003,8594474.82],[549121.75,8594432.69],[549192.8099999996,8594318.63],[549223.6699999999,8594268.35],[549246.2699999996,8594208],[549249.0300000003,8594101.62],[549197.0700000003,8594108.14],[549194.3600000003,8594137.69],[549196.9400000004,8594161.88],[549166.2000000002,8594257.2],[549092.0099999998,8594315.69],[549070.7199999997,8594371.08]]]}},{"type":"Feature","properties":{"CODIGOU":"010003626AF","FEC_DENU":"2026-02-26","CONCESION":"CANTERA CHAMANJATA","TIT_CONCES":null,"D_ESTADO":"Cantera D.S. 037-96-EM","CARTA":"28-R","ZONA":"18","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":0.324},"geometry":{"type":"Polygon","coordinates":[[[773612.7999999998,8469595.68],[773584.3799999999,8469569.96],[773554.79,8469554.58],[773527.9299999997,8469529.32],[773506.0599999996,8469517.06],[773491.9800000004,8469515.88],[773481.5899999999,8469538.26],[773528.1100000003,8469557.11],[773551.6500000004,8469576.35],[773597.6900000004,8469608.4],[773612.7999999998,8469595.68]]]}},{"type":"Feature","properties":{"CODIGOU":"010003826AF","FEC_DENU":"2026-06-05","CONCESION":"CANTERA FLORES I","TIT_CONCES":null,"D_ESTADO":"Cantera D.S. 037-96-EM","CARTA":"08-P","ZONA":"18","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":9.6317},"geometry":{"type":"Polygon","coordinates":[[[693790.6900000004,9598374.72],[693653,9598402],[693531,9598471],[693453,9598501],[693509,9598561],[693595,9598644],[693671,9598719],[693777,9598685],[693882,9598653],[693954,9598639],[693921,9598599],[693903,9598588],[693803,9598554],[693735,9598508],[693721,9598481],[693875,9598504],[693896,9598470],[693902,9598442],[693889,9598390],[693878,9598349],[693832,9598364],[693790.6900000004,9598374.72]]]}},{"type":"Feature","properties":{"CODIGOU":"530023726","FEC_DENU":"2026-11-05","CONCESION":"GRUPO MARTELO","TIT_CONCES":"JHULDAR ANTONY HURTADO PEREIRA Y OTROS","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"29-P","ZONA":"18","SUSTANCIA":"N","DEPA":"APURIMAC","PROVI":"AYMARAES","DISTRI":"CHALHUANCA / SAÑAYCA","HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[684000,8424000],[684000,8423000],[683000,8423000],[683000,8424000],[684000,8424000]]]}},{"type":"Feature","properties":{"CODIGOU":"750002226","FEC_DENU":"2026-11-05","CONCESION":"MANUEL 01","TIT_CONCES":"EDUARDO MANUEL CHIQUE MAMANI","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"18-M","ZONA":"18","SUSTANCIA":"M","DEPA":"UCAYALI","PROVI":"PADRE ABAD","DISTRI":"IRAZOLA","HASDATUM":800},"geometry":{"type":"Polygon","coordinates":[[[477000,9018000],[477000,9016000],[478000,9016000],[478000,9015000],[474000,9015000],[474000,9016000],[475000,9016000],[475000,9018000],[477000,9018000]]]}},{"type":"Feature","properties":{"CODIGOU":"010632726","FEC_DENU":"2026-11-05","CONCESION":"MINERA CCONTUNYA","TIT_CONCES":"EMPRESA DE TRANSPORTES & SERVICIOS MULTIPLES TRIVEÑO S.A.","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"30-R","ZONA":"18","SUSTANCIA":"M","DEPA":"CUSCO","PROVI":"CHUMBIVILCAS","DISTRI":"LLUSCO","HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[797000,8392000],[797000,8391000],[796000,8391000],[796000,8392000],[797000,8392000]]]}},{"type":"Feature","properties":{"CODIGOU":"010632826","FEC_DENU":"2026-11-05","CONCESION":"GALENA 01 2026","TIT_CONCES":"CESAR ENRIQUE JUAN DAVILA DIAZ","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"29-M","ZONA":"18","SUSTANCIA":"M","DEPA":"AYACUCHO","PROVI":"LUCANAS","DISTRI":"OCAÑA","HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[500000,8400000],[500000,8399000],[499000,8399000],[499000,8400000],[500000,8400000]]]}},{"type":"Feature","properties":{"CODIGOU":"010632926","FEC_DENU":"2026-11-05","CONCESION":"MECHITA","TIT_CONCES":"CRISTIAN IBERICO ROJAS","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"20-L","ZONA":"18","SUSTANCIA":"M","DEPA":"HUANUCO","PROVI":"PACHITEA","DISTRI":"CHAGLLA","HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[407000,8913000],[407000,8912000],[406000,8912000],[406000,8913000],[407000,8913000]]]}},{"type":"Feature","properties":{"CODIGOU":"050139626","FEC_DENU":"2026-11-05","CONCESION":"GRAN APURIMEÑITA","TIT_CONCES":"MINERA FLOR ANDINA E.I.R.L","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"30-O","ZONA":"18","SUSTANCIA":"M","DEPA":"APURIMAC","PROVI":"AYMARAES","DISTRI":"COTARUSE","HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[660000,8369000],[660000,8368000],[659000,8368000],[659000,8369000],[660000,8369000]]]}},{"type":"Feature","properties":{"CODIGOU":"050139726","FEC_DENU":"2026-11-05","CONCESION":"GOLD MINING DENNIS XII","TIT_CONCES":"GRUPO D´DENNIS FAMSOLLAY S.R.L. Y OTROS","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"30-R","ZONA":"18","SUSTANCIA":"M","DEPA":"CUSCO","PROVI":"CHUMBIVILCAS","DISTRI":"SANTO TOMAS","HASDATUM":200},"geometry":{"type":"Polygon","coordinates":[[[803000,8389000],[803000,8387000],[802000,8387000],[802000,8389000],[803000,8389000]]]}},{"type":"Feature","properties":{"CODIGOU":"070050426","FEC_DENU":"2026-11-05","CONCESION":"DIAMANTES TURQUESA","TIT_CONCES":"JHONNY CAVIEDES FLORES","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"11-L","ZONA":"18","SUSTANCIA":"M","DEPA":"LORETO","PROVI":"ALTO AMAZONAS","DISTRI":"LAGUNAS","HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[400000,9442000],[400000,9441000],[399000,9441000],[399000,9442000],[400000,9442000]]]}},{"type":"Feature","properties":{"CODIGOU":"750002326","FEC_DENU":"2026-11-05","CONCESION":"MANUEL 02","TIT_CONCES":"EDUARDO MANUEL CHIQUE MAMANI","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"17-O","ZONA":"18","SUSTANCIA":"M","DEPA":"UCAYALI","PROVI":"CORONEL PORTILLO","DISTRI":"CALLERIA","HASDATUM":400},"geometry":{"type":"Polygon","coordinates":[[[627000,9076000],[627000,9075000],[623000,9075000],[623000,9076000],[627000,9076000]]]}},{"type":"Feature","properties":{"CODIGOU":"530023626","FEC_DENU":"2026-11-05","CONCESION":"GRUPO MARTELO I","TIT_CONCES":"JHULDAR ANTONY HURTADO PEREIRA Y OTROS","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"28-Q","ZONA":"18","SUSTANCIA":"N","DEPA":"APURIMAC","PROVI":"ABANCAY","DISTRI":"PICHIRHUA / CIRCA","HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[720000,8471000],[720000,8470000],[719000,8470000],[719000,8471000],[720000,8471000]]]}},{"type":"Feature","properties":{"CODIGOU":"010632526","FEC_DENU":"2026-11-05","CONCESION":"CONSORCIO MINERO CHUMINCO V 2026","TIT_CONCES":"JUDITH OMAYRA MENDOZA ROCA Y OTROS","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"26-M","ZONA":"18","SUSTANCIA":"M","DEPA":"HUANCAVELICA","PROVI":"CASTROVIRREYNA","DISTRI":"CHUPAMARCA","HASDATUM":400},"geometry":{"type":"Polygon","coordinates":[[[451000,8584000],[451000,8583000],[453000,8583000],[453000,8582000],[450000,8582000],[450000,8584000],[451000,8584000]]]}},{"type":"Feature","properties":{"CODIGOU":"050139526","FEC_DENU":"2026-11-05","CONCESION":"GRAN HUANCARQUILLO","TIT_CONCES":"MINERA FLOR ANDINA E.I.R.L","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"32-R","ZONA":"18","SUSTANCIA":"M","DEPA":"AREQUIPA","PROVI":"CASTILLA","DISTRI":"UÑON","HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[777000,8247000],[777000,8246000],[776000,8246000],[776000,8247000],[777000,8247000]]]}},{"type":"Feature","properties":{"CODIGOU":"010626026","FEC_DENU":"2026-11-02","CONCESION":"WAYRA QORI 1","TIT_CONCES":"CESAR AUGUSTO OSORIO HUAYHUA","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"29-R","ZONA":"18","SUSTANCIA":"M","DEPA":"CUSCO","PROVI":"CHUMBIVILCAS","DISTRI":"COLQUEMARCA","HASDATUM":165.3189},"geometry":{"type":"Polygon","coordinates":[[[823000,8429000],[824666.0300000003,8428978.59],[824640.3300000001,8427978.91],[823000,8428000],[823000,8429000]]]}},{"type":"Feature","properties":{"CODIGOU":"050140126","FEC_DENU":"2026-11-06","CONCESION":"ASLAN IX","TIT_CONCES":"IMPORTACIONES KILLAINTY SAC","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"30-N","ZONA":"18","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":200},"geometry":{"type":"Polygon","coordinates":[[[523000,8356000],[523000,8354000],[522000,8354000],[522000,8356000],[523000,8356000]]]}},{"type":"Feature","properties":{"CODIGOU":"690004026","FEC_DENU":"2026-11-06","CONCESION":"SKY II 2026","TIT_CONCES":"ANGEL SMITH CAHUAYA CHOQUE","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"21-L","ZONA":"18","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":200},"geometry":{"type":"Polygon","coordinates":[[[427000,8887000],[427000,8885000],[426000,8885000],[426000,8887000],[427000,8887000]]]}},{"type":"Feature","properties":{"CODIGOU":"010633026","FEC_DENU":"2026-11-06","CONCESION":"MINERA CHOCLLOTA","TIT_CONCES":"FILOMENA YALLERCCO MENDOZA","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"30-R","ZONA":"18","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":200},"geometry":{"type":"Polygon","coordinates":[[[798000,8388000],[798000,8387000],[796000,8387000],[796000,8388000],[798000,8388000]]]}},{"type":"Feature","properties":{"CODIGOU":"030111726","FEC_DENU":"2026-11-06","CONCESION":"NUVAL PANAO","TIT_CONCES":"NUGAR LD S.A.C. y Otros","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"21-L","ZONA":"18","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":800},"geometry":{"type":"Polygon","coordinates":[[[402000,8879000],[404000,8879000],[404000,8876000],[405000,8876000],[405000,8875000],[403000,8875000],[403000,8876000],[402000,8876000],[402000,8879000]]]}},{"type":"Feature","properties":{"CODIGOU":"050140026","FEC_DENU":"2026-11-06","CONCESION":"ALEJANDRITA V","TIT_CONCES":"WISMAN HUBER CHAVEZ CARDENAS","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"33-R","ZONA":"18","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[819000,8222000],[819000,8221000],[818000,8221000],[818000,8222000],[819000,8222000]]]}},{"type":"Feature","properties":{"CODIGOU":"080096026","FEC_DENU":"2026-11-05","CONCESION":"BOSQUE DE ROCAS I","TIT_CONCES":"JIM DAVID CACERES INOFUENTE","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"30-X","ZONA":"19","SUSTANCIA":"M","DEPA":"PUNO","PROVI":"CARABAYA / SAN ANTONIO DE PUTINA","DISTRI":"PUTINA / CRUCERO","HASDATUM":300},"geometry":{"type":"Polygon","coordinates":[[[421000,8397000],[421000,8396000],[422000,8396000],[422000,8395000],[420000,8395000],[420000,8397000],[421000,8397000]]]}},{"type":"Feature","properties":{"CODIGOU":"080096126","FEC_DENU":"2026-11-05","CONCESION":"BOSQUE DE ROCAS II","TIT_CONCES":"JIM DAVID CACERES INOFUENTE","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"30-X","ZONA":"19","SUSTANCIA":"M","DEPA":"PUNO","PROVI":"CARABAYA / SAN ANTONIO DE PUTINA","DISTRI":"PUTINA / ANANEA / CRUCERO","HASDATUM":200},"geometry":{"type":"Polygon","coordinates":[[[424000,8396000],[424000,8395000],[422000,8395000],[422000,8396000],[424000,8396000]]]}},{"type":"Feature","properties":{"CODIGOU":"080095826","FEC_DENU":"2026-11-05","CONCESION":"LUZ DE ORO URT","TIT_CONCES":"VIRGINIA PARI CHAMBI Y OTROS","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"29-X","ZONA":"19","SUSTANCIA":"M","DEPA":"PUNO","PROVI":"SANDIA","DISTRI":"LIMBANI","HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[415000,8444000],[415000,8443000],[414000,8443000],[414000,8444000],[415000,8444000]]]}},{"type":"Feature","properties":{"CODIGOU":"010633126","FEC_DENU":"2026-11-06","CONCESION":"COMPAÑIA MINERA APUKUNA III","TIT_CONCES":"JHON HEMERSON VARELA CUEVAS","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"29-X","ZONA":"19","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[419000,8445000],[419000,8444000],[418000,8444000],[418000,8445000],[419000,8445000]]]}},{"type":"Feature","properties":{"CODIGOU":"010633326","FEC_DENU":"2026-11-06","CONCESION":"PURUMPATA BRYAN 26 FORTUNA DORADO","TIT_CONCES":"ELBIO DAVID CHEJE MAMANI","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"29-Y","ZONA":"19","SUSTANCIA":null,"DEPA":null,"PROVI":null,"DISTRI":null,"HASDATUM":200},"geometry":{"type":"Polygon","coordinates":[[[476000,8421000],[476000,8419000],[475000,8419000],[475000,8421000],[476000,8421000]]]}},{"type":"Feature","properties":{"CODIGOU":"080096226","FEC_DENU":"2026-11-05","CONCESION":"PALMA DORADA ONCE","TIT_CONCES":"JESARELA JOSABET CCOARITE HUAQUISTO","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"28-X","ZONA":"19","SUSTANCIA":"M","DEPA":"PUNO","PROVI":"CARABAYA","DISTRI":"ITUATA","HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[403000,8481000],[403000,8480000],[402000,8480000],[402000,8481000],[403000,8481000]]]}},{"type":"Feature","properties":{"CODIGOU":"080096326","FEC_DENU":"2026-11-05","CONCESION":"ALFA GRACIA","TIT_CONCES":"UBALDO VEGAS ORTIZ PALERO","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"29-Y","ZONA":"19","SUSTANCIA":"M","DEPA":"PUNO","PROVI":"SANDIA","DISTRI":"ALTO INAMBARI","HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[473000,8433000],[473000,8432000],[472000,8432000],[472000,8433000],[473000,8433000]]]}}];
+        
+        const map = L.map('map').setView([
+            (areaData.sw.lat + areaData.ne.lat) / 2,
+            (areaData.sw.lng + areaData.ne.lng) / 2
+        ], 10);
+        
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png').addTo(map);
+        
+        L.rectangle([
+            [areaData.sw.lat, areaData.sw.lng],
+            [areaData.ne.lat, areaData.ne.lng]
+        ], { color: '#ff44ff', weight: 3, opacity: 0.8, fillOpacity: 0.1 }).addTo(map);
+        
+        L.geoJSON({ type: 'FeatureCollection', features: desaparecidosFeatures }, {
+            style: { color: '#ff4444', weight: 2, opacity: 0.9, fillOpacity: 0.4 },
+            onEachFeature: (f, l) => l.bindPopup('<b>' + (f.properties.CONCESION || 'N/A') + '</b><br>🔴 Desapareció')
+        }).addTo(map);
+        
+        L.geoJSON({ type: 'FeatureCollection', features: aparecidosFeatures }, {
+            style: { color: '#4444ff', weight: 2, opacity: 0.9, fillOpacity: 0.4 },
+            onEachFeature: (f, l) => l.bindPopup('<b>' + (f.properties.CONCESION || 'N/A') + '</b><br>🔵 Apareció')
+        }).addTo(map);
+    </script>
+</body>
+</html>
