@@ -11254,5 +11254,131 @@
     "nombre": "ALFA GRACIA",
     "tipo": "aparece",
     "fecha": "2026-11-07T03:18:27.227Z"
+  },
+  {
+    "codigo": "010226126",
+    "nombre": "COLIBRI 2026",
+    "tipo": "desaparece",
+    "fecha": "2026-11-08T02:47:51.533Z"
+  },
+  {
+    "codigo": "530014825",
+    "nombre": "VIRGENCITA DE GUADALUPE 2",
+    "tipo": "desaparece",
+    "fecha": "2026-11-08T02:47:51.533Z"
+  },
+  {
+    "codigo": "010069325",
+    "nombre": "CMZ-ZF2025-22",
+    "tipo": "desaparece",
+    "fecha": "2026-11-08T02:47:51.533Z"
+  },
+  {
+    "codigo": "010341226",
+    "nombre": "EL DIEGO 2",
+    "tipo": "desaparece",
+    "fecha": "2026-11-08T02:47:51.533Z"
+  },
+  {
+    "codigo": "080042926",
+    "nombre": "M&M WENGEN",
+    "tipo": "desaparece",
+    "fecha": "2026-11-08T02:47:51.533Z"
+  },
+  {
+    "codigo": "030111826",
+    "nombre": "MINERA REAL",
+    "tipo": "aparece",
+    "fecha": "2026-11-08T02:47:51.533Z"
+  },
+  {
+    "codigo": "010634826",
+    "nombre": "TORAH 3",
+    "tipo": "aparece",
+    "fecha": "2026-11-08T02:47:51.533Z"
+  },
+  {
+    "codigo": "060026726",
+    "nombre": "EL COLORAO II",
+    "tipo": "aparece",
+    "fecha": "2026-11-08T02:47:51.533Z"
+  },
+  {
+    "codigo": "010634426",
+    "nombre": "AGREGADOS BOMBOM 1",
+    "tipo": "aparece",
+    "fecha": "2026-11-08T02:47:51.533Z"
+  },
+  {
+    "codigo": "010634626",
+    "nombre": "TORAH 4",
+    "tipo": "aparece",
+    "fecha": "2026-11-08T02:47:51.533Z"
+  },
+  {
+    "codigo": "010634726",
+    "nombre": "TORAH 2",
+    "tipo": "aparece",
+    "fecha": "2026-11-08T02:47:51.533Z"
+  },
+  {
+    "codigo": "010634226",
+    "nombre": "PATA B2",
+    "tipo": "aparece",
+    "fecha": "2026-11-08T02:47:51.533Z"
+  },
+  {
+    "codigo": "070050526",
+    "nombre": "LUCHITO IV",
+    "tipo": "aparece",
+    "fecha": "2026-11-08T02:47:51.533Z"
+  },
+  {
+    "codigo": "010634126",
+    "nombre": "PATA B1",
+    "tipo": "aparece",
+    "fecha": "2026-11-08T02:47:51.533Z"
+  },
+  {
+    "codigo": "010634326",
+    "nombre": "MORO B3",
+    "tipo": "aparece",
+    "fecha": "2026-11-08T02:47:51.533Z"
+  },
+  {
+    "codigo": "010634526",
+    "nombre": "MISION VIDA",
+    "tipo": "aparece",
+    "fecha": "2026-11-08T02:47:51.533Z"
+  },
+  {
+    "codigo": "040030124A",
+    "nombre": "APU PURQUINCILLA 1",
+    "tipo": "aparece",
+    "fecha": "2026-11-08T02:47:51.533Z"
+  },
+  {
+    "codigo": "020024826",
+    "nombre": "LOS ANDES 2027",
+    "tipo": "aparece",
+    "fecha": "2026-11-08T02:47:51.533Z"
+  },
+  {
+    "codigo": "010633626",
+    "nombre": "DON SIMON Y GLADYS TRES",
+    "tipo": "aparece",
+    "fecha": "2026-11-08T02:47:51.533Z"
+  },
+  {
+    "codigo": "080096426",
+    "nombre": "GRUPO NUEVA ESPERANZA",
+    "tipo": "aparece",
+    "fecha": "2026-11-08T02:47:51.533Z"
+  },
+  {
+    "codigo": "010634026",
+    "nombre": "PLAYA NATI 1",
+    "tipo": "aparece",
+    "fecha": "2026-11-08T02:47:51.533Z"
   }
 ]
