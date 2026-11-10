@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "codigo": "010635026",
+    "nombre": "MINERA JAQUI GOLD I",
+    "tipo": "aparece",
+    "fecha": "2026-11-10T04:50:09.281Z"
+  },
+  {
+    "codigo": "010635126",
+    "nombre": "CCOOIPACCHA",
+    "tipo": "aparece",
+    "fecha": "2026-11-10T04:50:09.281Z"
+  },
+  {
+    "codigo": "010635226",
+    "nombre": "MINERA JAQUI GOLD II",
+    "tipo": "aparece",
+    "fecha": "2026-11-10T04:50:09.281Z"
+  },
+  {
+    "codigo": "010635326",
+    "nombre": "PROYECTO TUPAC AMARU 2026",
+    "tipo": "aparece",
+    "fecha": "2026-11-10T04:50:09.281Z"
+  }
+]
