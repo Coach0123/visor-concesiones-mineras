@@ -22,5 +22,131 @@
     "nombre": "PROYECTO TUPAC AMARU 2026",
     "tipo": "aparece",
     "fecha": "2026-11-10T04:50:09.281Z"
+  },
+  {
+    "codigo": "030020126",
+    "nombre": "LA PESQUERIA 26",
+    "tipo": "desaparece",
+    "fecha": "2026-11-11T03:13:27.512Z"
+  },
+  {
+    "codigo": "010310726",
+    "nombre": "RESTAURACION I",
+    "tipo": "desaparece",
+    "fecha": "2026-11-11T03:13:27.512Z"
+  },
+  {
+    "codigo": "010360326",
+    "nombre": "ALEJO-VII",
+    "tipo": "desaparece",
+    "fecha": "2026-11-11T03:13:27.512Z"
+  },
+  {
+    "codigo": "040031226",
+    "nombre": "KAYRA II",
+    "tipo": "desaparece",
+    "fecha": "2026-11-11T03:13:27.512Z"
+  },
+  {
+    "codigo": "070002426",
+    "nombre": "OLINDA 2026",
+    "tipo": "desaparece",
+    "fecha": "2026-11-11T03:13:27.512Z"
+  },
+  {
+    "codigo": "070003526",
+    "nombre": "PROYECTO MINERO NOAH",
+    "tipo": "desaparece",
+    "fecha": "2026-11-11T03:13:27.512Z"
+  },
+  {
+    "codigo": "010635626",
+    "nombre": "PERICO 1",
+    "tipo": "aparece",
+    "fecha": "2026-11-11T03:13:27.512Z"
+  },
+  {
+    "codigo": "060026826",
+    "nombre": "COR MIN KELITA",
+    "tipo": "aparece",
+    "fecha": "2026-11-11T03:13:27.512Z"
+  },
+  {
+    "codigo": "060026926",
+    "nombre": "J VASQUEZ",
+    "tipo": "aparece",
+    "fecha": "2026-11-11T03:13:27.512Z"
+  },
+  {
+    "codigo": "100010326",
+    "nombre": "FORTUNA 2 2026",
+    "tipo": "aparece",
+    "fecha": "2026-11-11T03:13:27.512Z"
+  },
+  {
+    "codigo": "010635426",
+    "nombre": "LESLY",
+    "tipo": "aparece",
+    "fecha": "2026-11-11T03:13:27.512Z"
+  },
+  {
+    "codigo": "010636126",
+    "nombre": "MARILYN 1262",
+    "tipo": "aparece",
+    "fecha": "2026-11-11T03:13:27.512Z"
+  },
+  {
+    "codigo": "040062626",
+    "nombre": "MUQUI DE CAYHUACHAHUA IV",
+    "tipo": "aparece",
+    "fecha": "2026-11-11T03:13:27.512Z"
+  },
+  {
+    "codigo": "580013226",
+    "nombre": "MARURI II",
+    "tipo": "aparece",
+    "fecha": "2026-11-11T03:13:27.512Z"
+  },
+  {
+    "codigo": "590007226",
+    "nombre": "COMPAÑIA MINERA QORIQAA",
+    "tipo": "aparece",
+    "fecha": "2026-11-11T03:13:27.512Z"
+  },
+  {
+    "codigo": "600008026",
+    "nombre": "TERE UNO",
+    "tipo": "aparece",
+    "fecha": "2026-11-11T03:13:27.512Z"
+  },
+  {
+    "codigo": "010635826",
+    "nombre": "MINERA MINASNIYOCC",
+    "tipo": "aparece",
+    "fecha": "2026-11-11T03:13:27.512Z"
+  },
+  {
+    "codigo": "010635926",
+    "nombre": "SAMI PACHA 6",
+    "tipo": "aparece",
+    "fecha": "2026-11-11T03:13:27.512Z"
+  },
+  {
+    "codigo": "010635526",
+    "nombre": "MARGARITA II",
+    "tipo": "aparece",
+    "fecha": "2026-11-11T03:13:27.512Z"
+  },
+  {
+    "codigo": "020024926",
+    "nombre": "VILLAKIRYA 1RA ETAPA",
+    "tipo": "aparece",
+    "fecha": "2026-11-11T03:13:27.512Z"
+  },
+  {
+    "codigo": "040062326",
+    "nombre": "MINERA LEONEL GONZALES",
+    "tipo": "aparece",
+    "fecha": "2026-11-11T03:13:27.512Z"
   }
 ]
