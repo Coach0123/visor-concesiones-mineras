@@ -412,5 +412,155 @@
     "nombre": "QUENAQUENA VETA",
     "tipo": "aparece",
     "fecha": "2026-11-12T04:25:08.055Z"
+  },
+  {
+    "codigo": "540014324",
+    "nombre": "LUZMAR RUNRUN 1",
+    "tipo": "desaparece",
+    "fecha": "2026-11-13T03:41:28.076Z"
+  },
+  {
+    "codigo": "620000826",
+    "nombre": "YANACCOCHA II",
+    "tipo": "desaparece",
+    "fecha": "2026-11-13T03:41:28.076Z"
+  },
+  {
+    "codigo": "620001526",
+    "nombre": "CANTERA ARENA CHOCON",
+    "tipo": "desaparece",
+    "fecha": "2026-11-13T03:41:28.076Z"
+  },
+  {
+    "codigo": "620004924",
+    "nombre": "ELVIS 2",
+    "tipo": "desaparece",
+    "fecha": "2026-11-13T03:41:28.076Z"
+  },
+  {
+    "codigo": "690003325",
+    "nombre": "ANNY LIÑAN 2025",
+    "tipo": "desaparece",
+    "fecha": "2026-11-13T03:41:28.076Z"
+  },
+  {
+    "codigo": "590006525",
+    "nombre": "HUAMAN ORCCO 1",
+    "tipo": "desaparece",
+    "fecha": "2026-11-13T03:41:28.076Z"
+  },
+  {
+    "codigo": "620005625",
+    "nombre": "MINERA TOROLUMI X",
+    "tipo": "desaparece",
+    "fecha": "2026-11-13T03:41:28.076Z"
+  },
+  {
+    "codigo": "590006425",
+    "nombre": "HUAMAN ORCCO",
+    "tipo": "desaparece",
+    "fecha": "2026-11-13T03:41:28.076Z"
+  },
+  {
+    "codigo": "040045725",
+    "nombre": "VIRGENCITA DE CHAPI CONSTANCIA",
+    "tipo": "desaparece",
+    "fecha": "2026-11-13T03:41:28.076Z"
+  },
+  {
+    "codigo": "530012226",
+    "nombre": "CHINCHI DE LLIUPA I",
+    "tipo": "desaparece",
+    "fecha": "2026-11-13T03:41:28.076Z"
+  },
+  {
+    "codigo": "660001626",
+    "nombre": "YOLIMAR",
+    "tipo": "desaparece",
+    "fecha": "2026-11-13T03:41:28.076Z"
+  },
+  {
+    "codigo": "530016726",
+    "nombre": "LOS AYLLUS",
+    "tipo": "desaparece",
+    "fecha": "2026-11-13T03:41:28.076Z"
+  },
+  {
+    "codigo": "070033026",
+    "nombre": "SAN CARLOS I",
+    "tipo": "desaparece",
+    "fecha": "2026-11-13T03:41:28.076Z"
+  },
+  {
+    "codigo": "010638126",
+    "nombre": "LAPONDEROSA",
+    "tipo": "aparece",
+    "fecha": "2026-11-13T03:41:28.076Z"
+  },
+  {
+    "codigo": "060027326",
+    "nombre": "WALBORE I",
+    "tipo": "aparece",
+    "fecha": "2026-11-13T03:41:28.076Z"
+  },
+  {
+    "codigo": "110017926",
+    "nombre": "PORTAL & VERAMENDI IV",
+    "tipo": "aparece",
+    "fecha": "2026-11-13T03:41:28.076Z"
+  },
+  {
+    "codigo": "060027226",
+    "nombre": "CORPORACION ANTAQORI SAC III",
+    "tipo": "aparece",
+    "fecha": "2026-11-13T03:41:28.076Z"
+  },
+  {
+    "codigo": "010638026",
+    "nombre": "WILLKANI 1",
+    "tipo": "aparece",
+    "fecha": "2026-11-13T03:41:28.076Z"
+  },
+  {
+    "codigo": "070050826",
+    "nombre": "DIAMANTES MARRON",
+    "tipo": "aparece",
+    "fecha": "2026-11-13T03:41:28.076Z"
+  },
+  {
+    "codigo": "530023926",
+    "nombre": "APUAMARU",
+    "tipo": "aparece",
+    "fecha": "2026-11-13T03:41:28.076Z"
+  },
+  {
+    "codigo": "530024026",
+    "nombre": "LOS AYLLUS 2026",
+    "tipo": "aparece",
+    "fecha": "2026-11-13T03:41:28.076Z"
+  },
+  {
+    "codigo": "620008426",
+    "nombre": "FANTOMAS COPPER 2",
+    "tipo": "aparece",
+    "fecha": "2026-11-13T03:41:28.076Z"
+  },
+  {
+    "codigo": "010638226",
+    "nombre": "GJCC - GRUPO JIREH CARITAS CASTRO",
+    "tipo": "aparece",
+    "fecha": "2026-11-13T03:41:28.076Z"
+  },
+  {
+    "codigo": "070050726",
+    "nombre": "CRISTOREY",
+    "tipo": "aparece",
+    "fecha": "2026-11-13T03:41:28.076Z"
+  },
+  {
+    "codigo": "070050926",
+    "nombre": "SAN ISIDRO",
+    "tipo": "aparece",
+    "fecha": "2026-11-13T03:41:28.076Z"
   }
 ]
