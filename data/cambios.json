@@ -724,5 +724,101 @@
     "nombre": "KIMO 24",
     "tipo": "aparece",
     "fecha": "2026-11-14T03:40:33.638Z"
+  },
+  {
+    "codigo": "010641726",
+    "nombre": "QUERCUS ROURA MINING",
+    "tipo": "aparece",
+    "fecha": "2026-11-15T03:14:57.956Z"
+  },
+  {
+    "codigo": "020025326",
+    "nombre": "CLAREN II",
+    "tipo": "aparece",
+    "fecha": "2026-11-15T03:14:57.956Z"
+  },
+  {
+    "codigo": "010641526",
+    "nombre": "MINA VERDE I",
+    "tipo": "aparece",
+    "fecha": "2026-11-15T03:14:57.956Z"
+  },
+  {
+    "codigo": "010641926",
+    "nombre": "DALTON UNO 2026",
+    "tipo": "aparece",
+    "fecha": "2026-11-15T03:14:57.956Z"
+  },
+  {
+    "codigo": "050140926",
+    "nombre": "MAJO GOLDEN ORE VI",
+    "tipo": "aparece",
+    "fecha": "2026-11-15T03:14:57.956Z"
+  },
+  {
+    "codigo": "010641626",
+    "nombre": "QUERCUS ROURA MINING",
+    "tipo": "aparece",
+    "fecha": "2026-11-15T03:14:57.956Z"
+  },
+  {
+    "codigo": "010641826",
+    "nombre": "CORINA SC UNO",
+    "tipo": "aparece",
+    "fecha": "2026-11-15T03:14:57.956Z"
+  },
+  {
+    "codigo": "010640526",
+    "nombre": "LEB P09",
+    "tipo": "aparece",
+    "fecha": "2026-11-15T03:14:57.956Z"
+  },
+  {
+    "codigo": "010640826",
+    "nombre": "LEB P11",
+    "tipo": "aparece",
+    "fecha": "2026-11-15T03:14:57.956Z"
+  },
+  {
+    "codigo": "010641026",
+    "nombre": "LEB P13",
+    "tipo": "aparece",
+    "fecha": "2026-11-15T03:14:57.956Z"
+  },
+  {
+    "codigo": "010641226",
+    "nombre": "LEB P15",
+    "tipo": "aparece",
+    "fecha": "2026-11-15T03:14:57.956Z"
+  },
+  {
+    "codigo": "070051326",
+    "nombre": "LA NUEVA BARBA DE LOS 6  SOCIOS",
+    "tipo": "aparece",
+    "fecha": "2026-11-15T03:14:57.956Z"
+  },
+  {
+    "codigo": "010640726",
+    "nombre": "LEB P14",
+    "tipo": "aparece",
+    "fecha": "2026-11-15T03:14:57.956Z"
+  },
+  {
+    "codigo": "010640926",
+    "nombre": "LEB P12",
+    "tipo": "aparece",
+    "fecha": "2026-11-15T03:14:57.956Z"
+  },
+  {
+    "codigo": "010640626",
+    "nombre": "LEB P10",
+    "tipo": "aparece",
+    "fecha": "2026-11-15T03:14:57.956Z"
+  },
+  {
+    "codigo": "070051226",
+    "nombre": "HUAYTA UNO",
+    "tipo": "aparece",
+    "fecha": "2026-11-15T03:14:57.956Z"
   }
 ]
