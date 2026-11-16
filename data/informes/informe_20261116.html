@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wvisor - Informe 20261116</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #0a1628; color: #e0e6f0; padding: 20px; }
+        .container { max-width: 1400px; margin: 0 auto; background: #0f1e3a; border-radius: 12px; box-shadow: 0 8px 40px rgba(0,0,0,0.5); overflow: hidden; border: 1px solid #1e3a5f; }
+        .header { background: linear-gradient(135deg, #1e3a8a, #1e40af); padding: 25px 30px; }
+        .header-top { display: flex; align-items: center; gap: 15px; margin-bottom: 10px; }
+        .logo-w { width: 45px; height: 45px; background: linear-gradient(135deg, #3b82f6, #1e40af); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 26px; font-weight: 800; color: #fff; font-family: Georgia, serif; }
+        .header h1 { font-size: 22px; font-weight: 600; color: #fff; }
+        .subtitle { font-size: 13px; color: #93c5fd; margin-bottom: 15px; }
+        .stats { display: flex; gap: 12px; flex-wrap: wrap; }
+        .stat-item { background: rgba(255,255,255,0.12); padding: 10px 18px; border-radius: 8px; font-size: 12px; color: #bfdbfe; }
+        .stat-item strong { font-size: 20px; display: block; color: #fff; }
+        .stat-item.danger { background: rgba(220, 38, 38, 0.3); }
+        .stat-item.danger strong { color: #fca5a5; }
+        .stat-item.success { background: rgba(59, 130, 246, 0.3); }
+        .stat-item.success strong { color: #93c5fd; }
+        .main-content { display: flex; flex-wrap: wrap; }
+        .map-column { flex: 2; min-width: 500px; padding: 20px; background: #0a1628; }
+        #map { border-radius: 8px; height: 550px; width: 100%; border: 1px solid #1e3a5f; }
+        .info-column { flex: 1; min-width: 320px; padding: 20px; background: #0f1e3a; border-left: 1px solid #1e3a5f; max-height: 600px; overflow-y: auto; }
+        .info-column h2 { font-size: 16px; margin-bottom: 15px; color: #93c5fd; padding-bottom: 8px; border-bottom: 1px solid #1e3a5f; }
+        .item-concesion { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; font-size: 12px; border-bottom: 1px solid #1e3a5f; }
+        .estado-badge { font-size: 10px; padding: 3px 8px; border-radius: 10px; color: white; font-weight: 600; }
+        .estado-badge.desaparecio { background: #dc2626; }
+        .estado-badge.aparecio { background: #2563eb; }
+        .tabla-container { padding: 20px 30px 30px; border-top: 1px solid #1e3a5f; }
+        .tabla-container h2 { font-size: 16px; margin-bottom: 15px; color: #93c5fd; }
+        .tabla-concesiones { width: 100%; border-collapse: collapse; font-size: 13px; }
+        .tabla-concesiones thead th { background: #152b4a; padding: 12px 15px; text-align: left; color: #93c5fd; border-bottom: 2px solid #1e3a5f; }
+        .tabla-concesiones tbody td { padding: 10px 15px; border-bottom: 1px solid #1e3a5f; color: #cbd5e1; }
+        .footer { background: #0a1628; padding: 15px 30px; text-align: center; font-size: 11px; color: #475569; border-top: 1px solid #1e3a5f; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-top">
+                <div class="logo-w">W</div>
+                <h1>Wvisor - Informe de Área</h1>
+            </div>
+            <div class="subtitle">Generado el 16/11/2026</div>
+            <div class="stats">
+                <div class="stat-item danger"><strong>0</strong>Desaparecieron</div>
+                <div class="stat-item success"><strong>16</strong>Aparecieron</div>
+                <div class="stat-item"><strong>16</strong>Total</div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="map-column">
+                <div id="map"></div>
+            </div>
+            <div class="info-column">
+                <h2>📋 Concesiones</h2>
+                
+                
+                    <div class="item-concesion">
+                        <span>QUERCUS ROURA MINING</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>CLAREN II</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>MINA VERDE I</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>DALTON UNO 2026</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>MAJO GOLDEN ORE VI</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>QUERCUS ROURA MINING</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>CORINA SC UNO</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>LEB P09</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>LEB P11</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>LEB P13</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>LEB P15</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>LA NUEVA BARBA DE LOS 6  SOCIOS</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>LEB P14</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>LEB P12</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>LEB P10</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+                    <div class="item-concesion">
+                        <span>HUAYTA UNO</span>
+                        <span class="estado-badge aparecio">APARECIÓ</span>
+                    </div>
+                
+            </div>
+        </div>
+        
+        <div class="tabla-container">
+            <h2>📋 Detalle Completo</h2>
+            <table class="tabla-concesiones">
+                <thead>
+                    <tr><th>Código</th><th>Concesión</th><th>Titular</th><th>Estado</th></tr>
+                </thead>
+                <tbody>
+                    
+                    
+                        <tr>
+                            <td>010641726</td>
+                            <td>QUERCUS ROURA MINING</td>
+                            <td>ISMAEL EDUARDO ORDOÑEZ ROURA</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>020025326</td>
+                            <td>CLAREN II</td>
+                            <td>CLAREN CONTRATISTAS E.I.R.L</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010641526</td>
+                            <td>MINA VERDE I</td>
+                            <td>DANY CONDORI LEGUIA Y OTROS</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010641926</td>
+                            <td>DALTON UNO 2026</td>
+                            <td>DALTON TEOFILO VILCHEZ CHAVEZ</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>050140926</td>
+                            <td>MAJO GOLDEN ORE VI</td>
+                            <td>OSSIO INVERSIONES EMPRESA INDIVIDUAL DE RESPONSABILIDAD LIMI</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010641626</td>
+                            <td>QUERCUS ROURA MINING</td>
+                            <td>ISMAEL EDUARDO ORDOÑEZ ROURA</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010641826</td>
+                            <td>CORINA SC UNO</td>
+                            <td>CORINA SC S.A.C.</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010640526</td>
+                            <td>LEB P09</td>
+                            <td>LEOPOLDO ENRIQUEZ BLANCO</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010640826</td>
+                            <td>LEB P11</td>
+                            <td>LEOPOLDO ENRIQUEZ BLANCO</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010641026</td>
+                            <td>LEB P13</td>
+                            <td>LEOPOLDO ENRIQUEZ BLANCO</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010641226</td>
+                            <td>LEB P15</td>
+                            <td>LEOPOLDO ENRIQUEZ BLANCO</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>070051326</td>
+                            <td>LA NUEVA BARBA DE LOS 6  SOCIOS</td>
+                            <td>LINO AQUINO TTITO</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010640726</td>
+                            <td>LEB P14</td>
+                            <td>LEOPOLDO ENRIQUEZ BLANCO</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010640926</td>
+                            <td>LEB P12</td>
+                            <td>LEOPOLDO ENRIQUEZ BLANCO</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>010640626</td>
+                            <td>LEB P10</td>
+                            <td>LEOPOLDO ENRIQUEZ BLANCO</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                        <tr>
+                            <td>070051226</td>
+                            <td>HUAYTA UNO</td>
+                            <td>TONI ROBERTO HUAYTA CONDORI</td>
+                            <td><span class="estado-badge aparecio">APARECIÓ</span></td>
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="footer">Wvisor · Datos INGEMMET · 16/11/2026</div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.8.0/proj4.js"></script>
+    <script>
+        const areaData = {"sw":{"lat":-18,"lng":-82},"ne":{"lat":-2,"lng":-68},"bounds":"-82,-18,-68,-2","fecha":"2026-07-15T21:30:00.000Z"};
+        const desaparecidosFeatures = [];
+        const aparecidosFeatures = [{"type":"Feature","properties":{"CODIGOU":"010641726","FEC_DENU":"2026-11-13","CONCESION":"QUERCUS ROURA MINING","TIT_CONCES":"ISMAEL EDUARDO ORDOÑEZ ROURA","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"28-R","ZONA":"18","SUSTANCIA":"M","DEPA":"APURIMAC","PROVI":"COTABAMBAS","DISTRI":"COYLLURQUI","HASDATUM":600},"geometry":{"type":"Polygon","coordinates":[[[779000,8457000],[779000,8455000],[776000,8455000],[776000,8457000],[779000,8457000]]]}},{"type":"Feature","properties":{"CODIGOU":"020025326","FEC_DENU":"2026-11-13","CONCESION":"CLAREN II","TIT_CONCES":"CLAREN CONTRATISTAS E.I.R.L","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"24-L","ZONA":"18","SUSTANCIA":"N","DEPA":"JUNIN","PROVI":"JAUJA","DISTRI":"TUNAN MARCA / POMACANCHA","HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[435000,8704000],[435000,8703000],[434000,8703000],[434000,8704000],[435000,8704000]]]}},{"type":"Feature","properties":{"CODIGOU":"010641526","FEC_DENU":"2026-11-13","CONCESION":"MINA VERDE I","TIT_CONCES":"DANY CONDORI LEGUIA Y OTROS","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"27-P","ZONA":"18","SUSTANCIA":"M","DEPA":"AYACUCHO","PROVI":"LA MAR","DISTRI":"ORONCCOY","HASDATUM":300},"geometry":{"type":"Polygon","coordinates":[[[685000,8520000],[685000,8518000],[684000,8518000],[684000,8519000],[683000,8519000],[683000,8520000],[685000,8520000]]]}},{"type":"Feature","properties":{"CODIGOU":"010641926","FEC_DENU":"2026-11-13","CONCESION":"DALTON UNO 2026","TIT_CONCES":"DALTON TEOFILO VILCHEZ CHAVEZ","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"24-M","ZONA":"18","SUSTANCIA":"M","DEPA":"JUNIN","PROVI":"HUANCAYO","DISTRI":"PARIAHUANCA","HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[499000,8688000],[499000,8687000],[498000,8687000],[498000,8688000],[499000,8688000]]]}},{"type":"Feature","properties":{"CODIGOU":"050140926","FEC_DENU":"2026-11-13","CONCESION":"MAJO GOLDEN ORE VI","TIT_CONCES":"OSSIO INVERSIONES EMPRESA INDIVIDUAL DE RESPONSABILIDAD LIMI","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"32-O","ZONA":"18","SUSTANCIA":"M","DEPA":"AREQUIPA","PROVI":"CARAVELI","DISTRI":"CAHUACHO / QUICACHA","HASDATUM":200},"geometry":{"type":"Polygon","coordinates":[[[652000,8272000],[652000,8270000],[651000,8270000],[651000,8272000],[652000,8272000]]]}},{"type":"Feature","properties":{"CODIGOU":"010641626","FEC_DENU":"2026-11-13","CONCESION":"QUERCUS ROURA MINING","TIT_CONCES":"ISMAEL EDUARDO ORDOÑEZ ROURA","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"28-R","ZONA":"18","SUSTANCIA":"M","DEPA":"APURIMAC","PROVI":"COTABAMBAS","DISTRI":"COYLLURQUI","HASDATUM":600},"geometry":{"type":"Polygon","coordinates":[[[779000,8455000],[779000,8453000],[776000,8453000],[776000,8455000],[779000,8455000]]]}},{"type":"Feature","properties":{"CODIGOU":"010641826","FEC_DENU":"2026-11-13","CONCESION":"CORINA SC UNO","TIT_CONCES":"CORINA SC S.A.C.","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"31-O","ZONA":"18","SUSTANCIA":"M","DEPA":"AREQUIPA","PROVI":"CARAVELI","DISTRI":"QUICACHA","HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[624000,8296000],[624000,8297000],[625000,8297000],[625000,8296000],[624000,8296000]]]}},{"type":"Feature","properties":{"CODIGOU":"010640526","FEC_DENU":"2026-11-13","CONCESION":"LEB P09","TIT_CONCES":"LEOPOLDO ENRIQUEZ BLANCO","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"29-V","ZONA":"19","SUSTANCIA":"M","DEPA":"PUNO","PROVI":"AZANGARO / CARABAYA","DISTRI":"POTONI / CRUCERO","HASDATUM":800},"geometry":{"type":"Polygon","coordinates":[[[396000,8411000],[396000,8410000],[388000,8410000],[388000,8411000],[396000,8411000]]]}},{"type":"Feature","properties":{"CODIGOU":"010640826","FEC_DENU":"2026-11-13","CONCESION":"LEB P11","TIT_CONCES":"LEOPOLDO ENRIQUEZ BLANCO","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"29-X","ZONA":"19","SUSTANCIA":"M","DEPA":"PUNO","PROVI":"AZANGARO / CARABAYA","DISTRI":"POTONI / CRUCERO","HASDATUM":300},"geometry":{"type":"Polygon","coordinates":[[[398000,8409000],[398000,8408000],[395000,8408000],[395000,8409000],[398000,8409000]]]}},{"type":"Feature","properties":{"CODIGOU":"010641026","FEC_DENU":"2026-11-13","CONCESION":"LEB P13","TIT_CONCES":"LEOPOLDO ENRIQUEZ BLANCO","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"29-X","ZONA":"19","SUSTANCIA":"M","DEPA":"PUNO","PROVI":"AZANGARO / CARABAYA","DISTRI":"POTONI / CRUCERO","HASDATUM":700},"geometry":{"type":"Polygon","coordinates":[[[402000,8407000],[402000,8406000],[395000,8406000],[395000,8407000],[402000,8407000]]]}},{"type":"Feature","properties":{"CODIGOU":"010641226","FEC_DENU":"2026-11-13","CONCESION":"LEB P15","TIT_CONCES":"LEOPOLDO ENRIQUEZ BLANCO","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"29-X","ZONA":"19","SUSTANCIA":"M","DEPA":"PUNO","PROVI":"AZANGARO / CARABAYA","DISTRI":"POTONI / CRUCERO","HASDATUM":300},"geometry":{"type":"Polygon","coordinates":[[[404000,8405000],[404000,8404000],[401000,8404000],[401000,8405000],[404000,8405000]]]}},{"type":"Feature","properties":{"CODIGOU":"070051326","FEC_DENU":"2026-11-13","CONCESION":"LA NUEVA BARBA DE LOS 6  SOCIOS","TIT_CONCES":"LINO AQUINO TTITO","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"26-Y","ZONA":"19","SUSTANCIA":"M","DEPA":"MADRE DE DIOS","PROVI":"TAMBOPATA","DISTRI":"TAMBOPATA","HASDATUM":700},"geometry":{"type":"Polygon","coordinates":[[[456000,8603000],[456000,8601000],[453000,8601000],[453000,8604000],[454000,8604000],[454000,8603000],[456000,8603000]]]}},{"type":"Feature","properties":{"CODIGOU":"010640726","FEC_DENU":"2026-11-13","CONCESION":"LEB P14","TIT_CONCES":"LEOPOLDO ENRIQUEZ BLANCO","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"29-X","ZONA":"19","SUSTANCIA":"M","DEPA":"PUNO","PROVI":"AZANGARO / CARABAYA","DISTRI":"POTONI / CRUCERO","HASDATUM":800},"geometry":{"type":"Polygon","coordinates":[[[403000,8406000],[403000,8405000],[395000,8405000],[395000,8406000],[403000,8406000]]]}},{"type":"Feature","properties":{"CODIGOU":"010640926","FEC_DENU":"2026-11-13","CONCESION":"LEB P12","TIT_CONCES":"LEOPOLDO ENRIQUEZ BLANCO","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"29-X","ZONA":"19","SUSTANCIA":"M","DEPA":"PUNO","PROVI":"AZANGARO / CARABAYA","DISTRI":"POTONI / CRUCERO","HASDATUM":400},"geometry":{"type":"Polygon","coordinates":[[[399000,8408000],[399000,8407000],[395000,8407000],[395000,8408000],[399000,8408000]]]}},{"type":"Feature","properties":{"CODIGOU":"010640626","FEC_DENU":"2026-11-13","CONCESION":"LEB P10","TIT_CONCES":"LEOPOLDO ENRIQUEZ BLANCO","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"29-V","ZONA":"19","SUSTANCIA":"M","DEPA":"PUNO","PROVI":"AZANGARO / CARABAYA","DISTRI":"POTONI / CRUCERO","HASDATUM":900},"geometry":{"type":"Polygon","coordinates":[[[397000,8410000],[397000,8409000],[388000,8409000],[388000,8410000],[397000,8410000]]]}},{"type":"Feature","properties":{"CODIGOU":"070051226","FEC_DENU":"2026-11-13","CONCESION":"HUAYTA UNO","TIT_CONCES":"TONI ROBERTO HUAYTA CONDORI","D_ESTADO":"D.M. en Trámite D.L. 708","CARTA":"26-X","ZONA":"19","SUSTANCIA":"M","DEPA":"MADRE DE DIOS","PROVI":"TAMBOPATA","DISTRI":"LABERINTO","HASDATUM":100},"geometry":{"type":"Polygon","coordinates":[[[437000,8594000],[437000,8593000],[436000,8593000],[436000,8594000],[437000,8594000]]]}}];
+        
+        const map = L.map('map').setView([
+            (areaData.sw.lat + areaData.ne.lat) / 2,
+            (areaData.sw.lng + areaData.ne.lng) / 2
+        ], 10);
+        
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png').addTo(map);
+        
+        L.rectangle([
+            [areaData.sw.lat, areaData.sw.lng],
+            [areaData.ne.lat, areaData.ne.lng]
+        ], { color: '#ff44ff', weight: 3, opacity: 0.8, fillOpacity: 0.1 }).addTo(map);
+        
+        L.geoJSON({ type: 'FeatureCollection', features: desaparecidosFeatures }, {
+            style: { color: '#ff4444', weight: 2, opacity: 0.9, fillOpacity: 0.4 },
+            onEachFeature: (f, l) => l.bindPopup('<b>' + (f.properties.CONCESION || 'N/A') + '</b><br>🔴 Desapareció')
+        }).addTo(map);
+        
+        L.geoJSON({ type: 'FeatureCollection', features: aparecidosFeatures }, {
+            style: { color: '#4444ff', weight: 2, opacity: 0.9, fillOpacity: 0.4 },
+            onEachFeature: (f, l) => l.bindPopup('<b>' + (f.properties.CONCESION || 'N/A') + '</b><br>🔵 Apareció')
+        }).addTo(map);
+    </script>
+</body>
+</html>
