@@ -820,5 +820,35 @@
     "nombre": "HUAYTA UNO",
     "tipo": "aparece",
     "fecha": "2026-11-15T03:14:57.956Z"
+  },
+  {
+    "codigo": "030113226",
+    "nombre": "CLOTILDE 10",
+    "tipo": "aparece",
+    "fecha": "2026-11-17T05:18:19.828Z"
+  },
+  {
+    "codigo": "030113326",
+    "nombre": "BIGOTE 1",
+    "tipo": "aparece",
+    "fecha": "2026-11-17T05:18:19.828Z"
+  },
+  {
+    "codigo": "030113426",
+    "nombre": "MINNTAV 12",
+    "tipo": "aparece",
+    "fecha": "2026-11-17T05:18:19.828Z"
+  },
+  {
+    "codigo": "010642026",
+    "nombre": "TIKAJATA",
+    "tipo": "aparece",
+    "fecha": "2026-11-17T05:18:19.828Z"
+  },
+  {
+    "codigo": "010642226",
+    "nombre": "JESÚS Y MARIA",
+    "tipo": "aparece",
+    "fecha": "2026-11-17T05:18:19.828Z"
   }
 ]
