@@ -850,5 +850,161 @@
     "nombre": "JESÚS Y MARIA",
     "tipo": "aparece",
     "fecha": "2026-11-17T05:18:19.828Z"
+  },
+  {
+    "codigo": "530014324",
+    "nombre": "OSIRIS II",
+    "tipo": "desaparece",
+    "fecha": "2026-11-18T04:46:19.281Z"
+  },
+  {
+    "codigo": "060013925",
+    "nombre": "SANTA BEATRIZ 2025 I",
+    "tipo": "desaparece",
+    "fecha": "2026-11-18T04:46:19.281Z"
+  },
+  {
+    "codigo": "010292626",
+    "nombre": "G369-8",
+    "tipo": "desaparece",
+    "fecha": "2026-11-18T04:46:19.281Z"
+  },
+  {
+    "codigo": "030113826",
+    "nombre": "IGNACIO ESCUDERO I 2026",
+    "tipo": "aparece",
+    "fecha": "2026-11-18T04:46:19.281Z"
+  },
+  {
+    "codigo": "030113926",
+    "nombre": "IGNACIO ESCUDERO V 2026",
+    "tipo": "aparece",
+    "fecha": "2026-11-18T04:46:19.281Z"
+  },
+  {
+    "codigo": "030113626",
+    "nombre": "IGNACIO ESCUDERO II 2026",
+    "tipo": "aparece",
+    "fecha": "2026-11-18T04:46:19.281Z"
+  },
+  {
+    "codigo": "060027626",
+    "nombre": "SAN VICENTE 10",
+    "tipo": "aparece",
+    "fecha": "2026-11-18T04:46:19.281Z"
+  },
+  {
+    "codigo": "640004226",
+    "nombre": "CANTERA EL MARACUYA",
+    "tipo": "aparece",
+    "fecha": "2026-11-18T04:46:19.281Z"
+  },
+  {
+    "codigo": "030113526",
+    "nombre": "IGNACIO ESCUDERO III 2026",
+    "tipo": "aparece",
+    "fecha": "2026-11-18T04:46:19.281Z"
+  },
+  {
+    "codigo": "030114026",
+    "nombre": "IGNACIO ESCUDERO VI 2026",
+    "tipo": "aparece",
+    "fecha": "2026-11-18T04:46:19.281Z"
+  },
+  {
+    "codigo": "030113726",
+    "nombre": "IGNACIO ESCUDERO IV 2026",
+    "tipo": "aparece",
+    "fecha": "2026-11-18T04:46:19.281Z"
+  },
+  {
+    "codigo": "030114526",
+    "nombre": "PERLA DEL RIO",
+    "tipo": "aparece",
+    "fecha": "2026-11-18T04:46:19.281Z"
+  },
+  {
+    "codigo": "630007126",
+    "nombre": "CUPISNIQUE II 2026",
+    "tipo": "aparece",
+    "fecha": "2026-11-18T04:46:19.281Z"
+  },
+  {
+    "codigo": "050141126",
+    "nombre": "EILEEN 001 2026",
+    "tipo": "aparece",
+    "fecha": "2026-11-18T04:46:19.281Z"
+  },
+  {
+    "codigo": "050141226",
+    "nombre": "SARIT 001 2026",
+    "tipo": "aparece",
+    "fecha": "2026-11-18T04:46:19.281Z"
+  },
+  {
+    "codigo": "060027526",
+    "nombre": "CERRO HUAYTA 1",
+    "tipo": "aparece",
+    "fecha": "2026-11-18T04:46:19.281Z"
+  },
+  {
+    "codigo": "050141426",
+    "nombre": "VARSALY",
+    "tipo": "aparece",
+    "fecha": "2026-11-18T04:46:19.281Z"
+  },
+  {
+    "codigo": "050141526",
+    "nombre": "TACHITA",
+    "tipo": "aparece",
+    "fecha": "2026-11-18T04:46:19.281Z"
+  },
+  {
+    "codigo": "040063626",
+    "nombre": "ROCA RMH UNO",
+    "tipo": "aparece",
+    "fecha": "2026-11-18T04:46:19.281Z"
+  },
+  {
+    "codigo": "550009026",
+    "nombre": "DON CIRILO 2026",
+    "tipo": "aparece",
+    "fecha": "2026-11-18T04:46:19.281Z"
+  },
+  {
+    "codigo": "590007326",
+    "nombre": "ANA MARIA",
+    "tipo": "aparece",
+    "fecha": "2026-11-18T04:46:19.281Z"
+  },
+  {
+    "codigo": "020025426",
+    "nombre": "CANTERA ORATORIA",
+    "tipo": "aparece",
+    "fecha": "2026-11-18T04:46:19.281Z"
+  },
+  {
+    "codigo": "010642626",
+    "nombre": "PLAYA HUANCANEÑO",
+    "tipo": "aparece",
+    "fecha": "2026-11-18T04:46:19.281Z"
+  },
+  {
+    "codigo": "010642726",
+    "nombre": "DYLAN  UNO",
+    "tipo": "aparece",
+    "fecha": "2026-11-18T04:46:19.281Z"
+  },
+  {
+    "codigo": "070051426",
+    "nombre": "SAN ISIDRO 1",
+    "tipo": "aparece",
+    "fecha": "2026-11-18T04:46:19.281Z"
+  },
+  {
+    "codigo": "080097926",
+    "nombre": "CARMEN DE ORO",
+    "tipo": "aparece",
+    "fecha": "2026-11-18T04:46:19.281Z"
   }
 ]
