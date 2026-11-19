@@ -1006,5 +1006,125 @@
     "nombre": "CARMEN DE ORO",
     "tipo": "aparece",
     "fecha": "2026-11-18T04:46:19.281Z"
+  },
+  {
+    "codigo": "050070126",
+    "nombre": "ESPERANZA 1",
+    "tipo": "desaparece",
+    "fecha": "2026-11-19T04:37:03.401Z"
+  },
+  {
+    "codigo": "080042426",
+    "nombre": "ESPERANZA DE CARAVELI 26",
+    "tipo": "desaparece",
+    "fecha": "2026-11-19T04:37:03.401Z"
+  },
+  {
+    "codigo": "060027726",
+    "nombre": "GRANJA PORCON",
+    "tipo": "aparece",
+    "fecha": "2026-11-19T04:37:03.401Z"
+  },
+  {
+    "codigo": "060027826",
+    "nombre": "MINERA EL UNIVERSO",
+    "tipo": "aparece",
+    "fecha": "2026-11-19T04:37:03.401Z"
+  },
+  {
+    "codigo": "030114826",
+    "nombre": "CHACATO",
+    "tipo": "aparece",
+    "fecha": "2026-11-19T04:37:03.401Z"
+  },
+  {
+    "codigo": "010006926AF",
+    "nombre": "CANTERA TISUR",
+    "tipo": "aparece",
+    "fecha": "2026-11-19T04:37:03.401Z"
+  },
+  {
+    "codigo": "010025425AF",
+    "nombre": "CANTERA ROCA III A",
+    "tipo": "aparece",
+    "fecha": "2026-11-19T04:37:03.401Z"
+  },
+  {
+    "codigo": "010025525AF",
+    "nombre": "CANTERA CACHI CUCHO",
+    "tipo": "aparece",
+    "fecha": "2026-11-19T04:37:03.401Z"
+  },
+  {
+    "codigo": "010649226",
+    "nombre": "IJIME 4",
+    "tipo": "aparece",
+    "fecha": "2026-11-19T04:37:03.401Z"
+  },
+  {
+    "codigo": "750002426",
+    "nombre": "FUNDO SAN LUIS MAZARAY",
+    "tipo": "aparece",
+    "fecha": "2026-11-19T04:37:03.401Z"
+  },
+  {
+    "codigo": "010648626",
+    "nombre": "ÑAMAQUI",
+    "tipo": "aparece",
+    "fecha": "2026-11-19T04:37:03.401Z"
+  },
+  {
+    "codigo": "030114726",
+    "nombre": "SUSY & ARIANA",
+    "tipo": "aparece",
+    "fecha": "2026-11-19T04:37:03.401Z"
+  },
+  {
+    "codigo": "010648726",
+    "nombre": "JACZALL 2026",
+    "tipo": "aparece",
+    "fecha": "2026-11-19T04:37:03.401Z"
+  },
+  {
+    "codigo": "660004026",
+    "nombre": "SELVA MIA II",
+    "tipo": "aparece",
+    "fecha": "2026-11-19T04:37:03.401Z"
+  },
+  {
+    "codigo": "010648926",
+    "nombre": "CARMENCITA 1",
+    "tipo": "aparece",
+    "fecha": "2026-11-19T04:37:03.401Z"
+  },
+  {
+    "codigo": "010649026",
+    "nombre": "CARMENCITA 2",
+    "tipo": "aparece",
+    "fecha": "2026-11-19T04:37:03.401Z"
+  },
+  {
+    "codigo": "080098326",
+    "nombre": "SAN PEDRO AJAYUNI 1",
+    "tipo": "aparece",
+    "fecha": "2026-11-19T04:37:03.401Z"
+  },
+  {
+    "codigo": "080098426",
+    "nombre": "SAN PEDRO AJAYUNI 2",
+    "tipo": "aparece",
+    "fecha": "2026-11-19T04:37:03.401Z"
+  },
+  {
+    "codigo": "070051626",
+    "nombre": "QORI JUSTO II",
+    "tipo": "aparece",
+    "fecha": "2026-11-19T04:37:03.401Z"
+  },
+  {
+    "codigo": "070051526",
+    "nombre": "QORI JUSTO",
+    "tipo": "aparece",
+    "fecha": "2026-11-19T04:37:03.401Z"
   }
 ]
