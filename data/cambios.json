@@ -118,5 +118,197 @@
     "nombre": "QORI JUSTO",
     "tipo": "aparece",
     "fecha": "2026-11-20T01:24:22.972Z"
+  },
+  {
+    "codigo": "010375425",
+    "nombre": "RT TORRES MINING",
+    "tipo": "desaparece",
+    "fecha": "2026-11-20T04:27:28.611Z"
+  },
+  {
+    "codigo": "010247325",
+    "nombre": "CRUCERO DE HUANUHUANU N",
+    "tipo": "desaparece",
+    "fecha": "2026-11-20T04:27:28.611Z"
+  },
+  {
+    "codigo": "010156625",
+    "nombre": "ANTILLA 19",
+    "tipo": "desaparece",
+    "fecha": "2026-11-20T04:27:28.611Z"
+  },
+  {
+    "codigo": "010092026",
+    "nombre": "ETEN SOLUTIONS MINING",
+    "tipo": "desaparece",
+    "fecha": "2026-11-20T04:27:28.611Z"
+  },
+  {
+    "codigo": "010133225",
+    "nombre": "FERNANDO 5D",
+    "tipo": "desaparece",
+    "fecha": "2026-11-20T04:27:28.611Z"
+  },
+  {
+    "codigo": "530004924",
+    "nombre": "METAL EMPORIUM 2024",
+    "tipo": "desaparece",
+    "fecha": "2026-11-20T04:27:28.611Z"
+  },
+  {
+    "codigo": "010344426",
+    "nombre": "ALEJOII",
+    "tipo": "desaparece",
+    "fecha": "2026-11-20T04:27:28.611Z"
+  },
+  {
+    "codigo": "010282526",
+    "nombre": "MAYNA CORP",
+    "tipo": "desaparece",
+    "fecha": "2026-11-20T04:27:28.611Z"
+  },
+  {
+    "codigo": "040030526",
+    "nombre": "PLAYA 49 PINTOC",
+    "tipo": "desaparece",
+    "fecha": "2026-11-20T04:27:28.611Z"
+  },
+  {
+    "codigo": "010476826",
+    "nombre": "MARTIN III",
+    "tipo": "desaparece",
+    "fecha": "2026-11-20T04:27:28.611Z"
+  },
+  {
+    "codigo": "010477126",
+    "nombre": "MARTIN I",
+    "tipo": "desaparece",
+    "fecha": "2026-11-20T04:27:28.611Z"
+  },
+  {
+    "codigo": "050067626",
+    "nombre": "GRANULAR UNO 2026",
+    "tipo": "desaparece",
+    "fecha": "2026-11-20T04:27:28.611Z"
+  },
+  {
+    "codigo": "050067726",
+    "nombre": "GRANULAR DOS 2026",
+    "tipo": "desaparece",
+    "fecha": "2026-11-20T04:27:28.611Z"
+  },
+  {
+    "codigo": "010349926",
+    "nombre": "ALEJO-IV",
+    "tipo": "desaparece",
+    "fecha": "2026-11-20T04:27:28.611Z"
+  },
+  {
+    "codigo": "050061426",
+    "nombre": "SAN- MARTIN-2026",
+    "tipo": "desaparece",
+    "fecha": "2026-11-20T04:27:28.611Z"
+  },
+  {
+    "codigo": "010508526",
+    "nombre": "PLAYA LUGFLOEN II",
+    "tipo": "desaparece",
+    "fecha": "2026-11-20T04:27:28.611Z"
+  },
+  {
+    "codigo": "050048925",
+    "nombre": "FILON DE ORO II NET",
+    "tipo": "desaparece",
+    "fecha": "2026-11-20T04:27:28.611Z"
+  },
+  {
+    "codigo": "080047325",
+    "nombre": "AMANECER D UGARTE",
+    "tipo": "desaparece",
+    "fecha": "2026-11-20T04:27:28.611Z"
+  },
+  {
+    "codigo": "080048625",
+    "nombre": "ESTRELLA DORADA 2025",
+    "tipo": "desaparece",
+    "fecha": "2026-11-20T04:27:28.611Z"
+  },
+  {
+    "codigo": "080048425",
+    "nombre": "SANTA MARGARITA UNO",
+    "tipo": "desaparece",
+    "fecha": "2026-11-20T04:27:28.611Z"
+  },
+  {
+    "codigo": "030114926",
+    "nombre": "BENROD",
+    "tipo": "aparece",
+    "fecha": "2026-11-20T04:27:28.611Z"
+  },
+  {
+    "codigo": "030115026",
+    "nombre": "CEITANA",
+    "tipo": "aparece",
+    "fecha": "2026-11-20T04:27:28.611Z"
+  },
+  {
+    "codigo": "010649726",
+    "nombre": "CUY CHACTADO II",
+    "tipo": "aparece",
+    "fecha": "2026-11-20T04:27:28.611Z"
+  },
+  {
+    "codigo": "010649826",
+    "nombre": "CUY CHACTADO I",
+    "tipo": "aparece",
+    "fecha": "2026-11-20T04:27:28.611Z"
+  },
+  {
+    "codigo": "010649626",
+    "nombre": "NEUFITH",
+    "tipo": "aparece",
+    "fecha": "2026-11-20T04:27:28.611Z"
+  },
+  {
+    "codigo": "060027926",
+    "nombre": "CORPORACIÓN CALERA",
+    "tipo": "aparece",
+    "fecha": "2026-11-20T04:27:28.611Z"
+  },
+  {
+    "codigo": "010650126",
+    "nombre": "SOLARAM-GOLD",
+    "tipo": "aparece",
+    "fecha": "2026-11-20T04:27:28.611Z"
+  },
+  {
+    "codigo": "010003726AF",
+    "nombre": "CANTERA VILCARO",
+    "tipo": "aparece",
+    "fecha": "2026-11-20T04:27:28.611Z"
+  },
+  {
+    "codigo": "010258724P1",
+    "nombre": "Z> AREA EXTINGUIDA",
+    "tipo": "aparece",
+    "fecha": "2026-11-20T04:27:28.611Z"
+  },
+  {
+    "codigo": "540025926",
+    "nombre": "LUIS ARTURO VI",
+    "tipo": "aparece",
+    "fecha": "2026-11-20T04:27:28.611Z"
+  },
+  {
+    "codigo": "010649426",
+    "nombre": "LOS LEONES DOS",
+    "tipo": "aparece",
+    "fecha": "2026-11-20T04:27:28.611Z"
+  },
+  {
+    "codigo": "540026126",
+    "nombre": "TZ26-01",
+    "tipo": "aparece",
+    "fecha": "2026-11-20T04:27:28.611Z"
   }
 ]
