@@ -310,5 +310,119 @@
     "nombre": "TZ26-01",
     "tipo": "aparece",
     "fecha": "2026-11-20T04:27:28.611Z"
+  },
+  {
+    "codigo": "640004326",
+    "nombre": "SAN CRISTOBAL 2026",
+    "tipo": "aparece",
+    "fecha": "2026-11-21T04:20:27.644Z"
+  },
+  {
+    "codigo": "060028026",
+    "nombre": "CORREA",
+    "tipo": "aparece",
+    "fecha": "2026-11-21T04:20:27.644Z"
+  },
+  {
+    "codigo": "110018326",
+    "nombre": "CORI CAT",
+    "tipo": "aparece",
+    "fecha": "2026-11-21T04:20:27.644Z"
+  },
+  {
+    "codigo": "510001326",
+    "nombre": "KUYAS UNIDO EL APACHE",
+    "tipo": "aparece",
+    "fecha": "2026-11-21T04:20:27.644Z"
+  },
+  {
+    "codigo": "060028126",
+    "nombre": "EL REJO II",
+    "tipo": "aparece",
+    "fecha": "2026-11-21T04:20:27.644Z"
+  },
+  {
+    "codigo": "010650626",
+    "nombre": "ZAHAV ELOHIM MINING 587",
+    "tipo": "aparece",
+    "fecha": "2026-11-21T04:20:27.644Z"
+  },
+  {
+    "codigo": "010650726",
+    "nombre": "AITANA MIA",
+    "tipo": "aparece",
+    "fecha": "2026-11-21T04:20:27.644Z"
+  },
+  {
+    "codigo": "070051726",
+    "nombre": "CHOQUE01",
+    "tipo": "aparece",
+    "fecha": "2026-11-21T04:20:27.644Z"
+  },
+  {
+    "codigo": "010650826",
+    "nombre": "NUESTRA ESPERANZA",
+    "tipo": "aparece",
+    "fecha": "2026-11-21T04:20:27.644Z"
+  },
+  {
+    "codigo": "080099126",
+    "nombre": "SOUTHERN GOLD 001",
+    "tipo": "aparece",
+    "fecha": "2026-11-21T04:20:27.644Z"
+  },
+  {
+    "codigo": "010651326",
+    "nombre": "JUAN ARNALDO",
+    "tipo": "aparece",
+    "fecha": "2026-11-21T04:20:27.644Z"
+  },
+  {
+    "codigo": "010651726",
+    "nombre": "QORIHUAYTA PALCCA 2026",
+    "tipo": "aparece",
+    "fecha": "2026-11-21T04:20:27.644Z"
+  },
+  {
+    "codigo": "010652026",
+    "nombre": "COOPERGOLD",
+    "tipo": "aparece",
+    "fecha": "2026-11-21T04:20:27.644Z"
+  },
+  {
+    "codigo": "010652126",
+    "nombre": "LINDA DOS",
+    "tipo": "aparece",
+    "fecha": "2026-11-21T04:20:27.644Z"
+  },
+  {
+    "codigo": "010652226",
+    "nombre": "LINDA CUATRO",
+    "tipo": "aparece",
+    "fecha": "2026-11-21T04:20:27.644Z"
+  },
+  {
+    "codigo": "010652326",
+    "nombre": "LINDA TRES",
+    "tipo": "aparece",
+    "fecha": "2026-11-21T04:20:27.644Z"
+  },
+  {
+    "codigo": "010652426",
+    "nombre": "DOS CLAVOS 2026",
+    "tipo": "aparece",
+    "fecha": "2026-11-21T04:20:27.644Z"
+  },
+  {
+    "codigo": "010651626",
+    "nombre": "EL BUNKER DE ORO",
+    "tipo": "aparece",
+    "fecha": "2026-11-21T04:20:27.644Z"
+  },
+  {
+    "codigo": "080099226",
+    "nombre": "CERRO VERDE CORP FLOREZ",
+    "tipo": "aparece",
+    "fecha": "2026-11-21T04:20:27.644Z"
   }
 ]
