@@ -424,5 +424,131 @@
     "nombre": "CERRO VERDE CORP FLOREZ",
     "tipo": "aparece",
     "fecha": "2026-11-21T04:20:27.644Z"
+  },
+  {
+    "codigo": "010652826",
+    "nombre": "TORO 2SC",
+    "tipo": "aparece",
+    "fecha": "2026-11-22T03:35:31.465Z"
+  },
+  {
+    "codigo": "010652926",
+    "nombre": "TORO 25D",
+    "tipo": "aparece",
+    "fecha": "2026-11-22T03:35:31.465Z"
+  },
+  {
+    "codigo": "010653226",
+    "nombre": "LOGAN 369 C",
+    "tipo": "aparece",
+    "fecha": "2026-11-22T03:35:31.465Z"
+  },
+  {
+    "codigo": "620008526",
+    "nombre": "ROSARIO DOS 2026",
+    "tipo": "aparece",
+    "fecha": "2026-11-22T03:35:31.465Z"
+  },
+  {
+    "codigo": "660004126",
+    "nombre": "LADRILLERA DON COZQUITO",
+    "tipo": "aparece",
+    "fecha": "2026-11-22T03:35:31.465Z"
+  },
+  {
+    "codigo": "010653326",
+    "nombre": "LOGAN 369 E",
+    "tipo": "aparece",
+    "fecha": "2026-11-22T03:35:31.465Z"
+  },
+  {
+    "codigo": "010653426",
+    "nombre": "LOGAN 369 D",
+    "tipo": "aparece",
+    "fecha": "2026-11-22T03:35:31.465Z"
+  },
+  {
+    "codigo": "020026026",
+    "nombre": "MINERA CHAUPIRCAN",
+    "tipo": "aparece",
+    "fecha": "2026-11-22T03:35:31.465Z"
+  },
+  {
+    "codigo": "050142126",
+    "nombre": "ANDINO GXB",
+    "tipo": "aparece",
+    "fecha": "2026-11-22T03:35:31.465Z"
+  },
+  {
+    "codigo": "010652626",
+    "nombre": "TORO 25A",
+    "tipo": "aparece",
+    "fecha": "2026-11-22T03:35:31.465Z"
+  },
+  {
+    "codigo": "010652526",
+    "nombre": "SANTA RITA 2026",
+    "tipo": "aparece",
+    "fecha": "2026-11-22T03:35:31.465Z"
+  },
+  {
+    "codigo": "010653026",
+    "nombre": "TORO 2SE",
+    "tipo": "aparece",
+    "fecha": "2026-11-22T03:35:31.465Z"
+  },
+  {
+    "codigo": "050142426",
+    "nombre": "ENCANTADA II",
+    "tipo": "aparece",
+    "fecha": "2026-11-22T03:35:31.465Z"
+  },
+  {
+    "codigo": "010652726",
+    "nombre": "TORO 25B",
+    "tipo": "aparece",
+    "fecha": "2026-11-22T03:35:31.465Z"
+  },
+  {
+    "codigo": "010653126",
+    "nombre": "TORO 25F",
+    "tipo": "aparece",
+    "fecha": "2026-11-22T03:35:31.465Z"
+  },
+  {
+    "codigo": "010653826",
+    "nombre": "ECOMAQ XI",
+    "tipo": "aparece",
+    "fecha": "2026-11-22T03:35:31.465Z"
+  },
+  {
+    "codigo": "010653926",
+    "nombre": "IGUAZU VII",
+    "tipo": "aparece",
+    "fecha": "2026-11-22T03:35:31.465Z"
+  },
+  {
+    "codigo": "010654026",
+    "nombre": "XIADMIN II",
+    "tipo": "aparece",
+    "fecha": "2026-11-22T03:35:31.465Z"
+  },
+  {
+    "codigo": "010654126",
+    "nombre": "SOVIL XX",
+    "tipo": "aparece",
+    "fecha": "2026-11-22T03:35:31.465Z"
+  },
+  {
+    "codigo": "070051926",
+    "nombre": "DIANA DORADA",
+    "tipo": "aparece",
+    "fecha": "2026-11-22T03:35:31.465Z"
+  },
+  {
+    "codigo": "010653726",
+    "nombre": "CONSORCIO MINERO PACOPACUNI 1974",
+    "tipo": "aparece",
+    "fecha": "2026-11-22T03:35:31.465Z"
   }
 ]
