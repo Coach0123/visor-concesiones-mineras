@@ -550,5 +550,281 @@
     "nombre": "CONSORCIO MINERO PACOPACUNI 1974",
     "tipo": "aparece",
     "fecha": "2026-11-22T03:35:31.465Z"
+  },
+  {
+    "codigo": "030065226",
+    "nombre": "MINERA NAMOLE EL BICHO",
+    "tipo": "desaparece",
+    "fecha": "2026-11-25T05:44:11.528Z"
+  },
+  {
+    "codigo": "010475426",
+    "nombre": "MISION 1",
+    "tipo": "desaparece",
+    "fecha": "2026-11-25T05:44:11.528Z"
+  },
+  {
+    "codigo": "060018926",
+    "nombre": "VETA DORADA ANDINA",
+    "tipo": "desaparece",
+    "fecha": "2026-11-25T05:44:11.528Z"
+  },
+  {
+    "codigo": "010362026",
+    "nombre": "ENCANTO DORADO ARL",
+    "tipo": "desaparece",
+    "fecha": "2026-11-25T05:44:11.528Z"
+  },
+  {
+    "codigo": "010258123",
+    "nombre": "CMZ 44",
+    "tipo": "desaparece",
+    "fecha": "2026-11-25T05:44:11.528Z"
+  },
+  {
+    "codigo": "050066326",
+    "nombre": "HUAMBO 26",
+    "tipo": "desaparece",
+    "fecha": "2026-11-25T05:44:11.528Z"
+  },
+  {
+    "codigo": "050072626",
+    "nombre": "APOLO11",
+    "tipo": "desaparece",
+    "fecha": "2026-11-25T05:44:11.528Z"
+  },
+  {
+    "codigo": "050072426",
+    "nombre": "APOSTOL SAN ANDRES 02",
+    "tipo": "desaparece",
+    "fecha": "2026-11-25T05:44:11.528Z"
+  },
+  {
+    "codigo": "010483326",
+    "nombre": "FOEC 5",
+    "tipo": "desaparece",
+    "fecha": "2026-11-25T05:44:11.528Z"
+  },
+  {
+    "codigo": "010508326",
+    "nombre": "PLAYA LUGFLOEN I",
+    "tipo": "desaparece",
+    "fecha": "2026-11-25T05:44:11.528Z"
+  },
+  {
+    "codigo": "050062426",
+    "nombre": "UNION MISTI X",
+    "tipo": "desaparece",
+    "fecha": "2026-11-25T05:44:11.528Z"
+  },
+  {
+    "codigo": "080049825",
+    "nombre": "SAN FELIPE A",
+    "tipo": "desaparece",
+    "fecha": "2026-11-25T05:44:11.528Z"
+  },
+  {
+    "codigo": "080050725",
+    "nombre": "PROYECTO MINERO WMM 2025",
+    "tipo": "desaparece",
+    "fecha": "2026-11-25T05:44:11.528Z"
+  },
+  {
+    "codigo": "050066726",
+    "nombre": "BLANCA NIEVE VI",
+    "tipo": "desaparece",
+    "fecha": "2026-11-25T05:44:11.528Z"
+  },
+  {
+    "codigo": "060028426",
+    "nombre": "CIA MINERA PROMETIDA 01",
+    "tipo": "aparece",
+    "fecha": "2026-11-25T05:44:11.528Z"
+  },
+  {
+    "codigo": "060028226",
+    "nombre": "LURIAT",
+    "tipo": "aparece",
+    "fecha": "2026-11-25T05:44:11.528Z"
+  },
+  {
+    "codigo": "010654226",
+    "nombre": "CORPORACION RJ ASOSIADOS EL TINGO",
+    "tipo": "aparece",
+    "fecha": "2026-11-25T05:44:11.528Z"
+  },
+  {
+    "codigo": "010654726",
+    "nombre": "HILDA II",
+    "tipo": "aparece",
+    "fecha": "2026-11-25T05:44:11.528Z"
+  },
+  {
+    "codigo": "010654626",
+    "nombre": "HILDA I",
+    "tipo": "aparece",
+    "fecha": "2026-11-25T05:44:11.528Z"
+  },
+  {
+    "codigo": "010654926",
+    "nombre": "KINCA 6",
+    "tipo": "aparece",
+    "fecha": "2026-11-25T05:44:11.528Z"
+  },
+  {
+    "codigo": "010654426",
+    "nombre": "IGUAZU V",
+    "tipo": "aparece",
+    "fecha": "2026-11-25T05:44:11.528Z"
+  },
+  {
+    "codigo": "050142526",
+    "nombre": "SEBASTIAN V M",
+    "tipo": "aparece",
+    "fecha": "2026-11-25T05:44:11.528Z"
+  },
+  {
+    "codigo": "020026126",
+    "nombre": "CHULLA VILCO",
+    "tipo": "aparece",
+    "fecha": "2026-11-25T05:44:11.528Z"
+  },
+  {
+    "codigo": "610013026",
+    "nombre": "TINGUE 2025",
+    "tipo": "aparece",
+    "fecha": "2026-11-25T05:44:11.528Z"
+  },
+  {
+    "codigo": "010654326",
+    "nombre": "CELESTE IX",
+    "tipo": "aparece",
+    "fecha": "2026-11-25T05:44:11.528Z"
+  },
+  {
+    "codigo": "010655226",
+    "nombre": "CANTERA TOLERO 1",
+    "tipo": "aparece",
+    "fecha": "2026-11-25T05:44:11.528Z"
+  },
+  {
+    "codigo": "010655326",
+    "nombre": "ORONCCOY SILVER 2026",
+    "tipo": "aparece",
+    "fecha": "2026-11-25T05:44:11.528Z"
+  },
+  {
+    "codigo": "660004226",
+    "nombre": "SELVA MIA 2",
+    "tipo": "aparece",
+    "fecha": "2026-11-25T05:44:11.528Z"
+  },
+  {
+    "codigo": "020026226",
+    "nombre": "SAN JOSE 2027",
+    "tipo": "aparece",
+    "fecha": "2026-11-25T05:44:11.528Z"
+  },
+  {
+    "codigo": "050142826",
+    "nombre": "MINERA TETILLA II",
+    "tipo": "aparece",
+    "fecha": "2026-11-25T05:44:11.528Z"
+  },
+  {
+    "codigo": "050142926",
+    "nombre": "MINERA TETILLA III",
+    "tipo": "aparece",
+    "fecha": "2026-11-25T05:44:11.528Z"
+  },
+  {
+    "codigo": "530024126",
+    "nombre": "ORIANA I",
+    "tipo": "aparece",
+    "fecha": "2026-11-25T05:44:11.528Z"
+  },
+  {
+    "codigo": "530024226",
+    "nombre": "CHANITOS I",
+    "tipo": "aparece",
+    "fecha": "2026-11-25T05:44:11.528Z"
+  },
+  {
+    "codigo": "050142726",
+    "nombre": "MINERA TETILLA I",
+    "tipo": "aparece",
+    "fecha": "2026-11-25T05:44:11.528Z"
+  },
+  {
+    "codigo": "010655426",
+    "nombre": "COMPAÑIA MINERA ALSACIA PERU SAC",
+    "tipo": "aparece",
+    "fecha": "2026-11-25T05:44:11.528Z"
+  },
+  {
+    "codigo": "030115326",
+    "nombre": "QORITARUCA",
+    "tipo": "aparece",
+    "fecha": "2026-11-25T05:44:11.528Z"
+  },
+  {
+    "codigo": "010655626",
+    "nombre": "AURORA REAL",
+    "tipo": "aparece",
+    "fecha": "2026-11-25T05:44:11.528Z"
+  },
+  {
+    "codigo": "050143026",
+    "nombre": "MINERA GATITO 10",
+    "tipo": "aparece",
+    "fecha": "2026-11-25T05:44:11.528Z"
+  },
+  {
+    "codigo": "010655526",
+    "nombre": "CARLADANIELA",
+    "tipo": "aparece",
+    "fecha": "2026-11-25T05:44:11.528Z"
+  },
+  {
+    "codigo": "020005324P1",
+    "nombre": "N/A",
+    "tipo": "aparece",
+    "fecha": "2026-11-25T05:44:11.528Z"
+  },
+  {
+    "codigo": "010476726A",
+    "nombre": "MARTIN IV",
+    "tipo": "aparece",
+    "fecha": "2026-11-25T05:44:11.528Z"
+  },
+  {
+    "codigo": "010655926",
+    "nombre": "CHALLACA 26",
+    "tipo": "aparece",
+    "fecha": "2026-11-25T05:44:11.528Z"
+  },
+  {
+    "codigo": "060028326",
+    "nombre": "MINA LA ESPERANZA",
+    "tipo": "aparece",
+    "fecha": "2026-11-25T05:44:11.528Z"
+  },
+  {
+    "codigo": "550009126",
+    "nombre": "MINERA SUCRE",
+    "tipo": "aparece",
+    "fecha": "2026-11-25T05:44:11.528Z"
+  },
+  {
+    "codigo": "550009226",
+    "nombre": "EMMAMNUEL I",
+    "tipo": "aparece",
+    "fecha": "2026-11-25T05:44:11.528Z"
+  },
+  {
+    "codigo": "590007426",
+    "nombre": "RIO DE LA VIRGEN DOS",
+    "tipo": "aparece",
+    "fecha": "2026-11-25T05:44:11.528Z"
   }
 ]
