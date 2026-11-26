@@ -826,5 +826,335 @@
     "nombre": "RIO DE LA VIRGEN DOS",
     "tipo": "aparece",
     "fecha": "2026-11-25T05:44:11.528Z"
+  },
+  {
+    "codigo": "030039826",
+    "nombre": "LUNACURI VIII",
+    "tipo": "desaparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "030051525",
+    "nombre": "ADIHS COAL VIII",
+    "tipo": "desaparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "050053426",
+    "nombre": "KORI SONCO 5",
+    "tipo": "desaparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "010277226",
+    "nombre": "MAMA SILVER 4",
+    "tipo": "desaparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "030038226",
+    "nombre": "ILLAYRUMI VII",
+    "tipo": "desaparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "060018726",
+    "nombre": "EL CHINCHIN",
+    "tipo": "desaparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "530006025",
+    "nombre": "CRONOS II",
+    "tipo": "desaparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "550000125",
+    "nombre": "CCORI APU I",
+    "tipo": "desaparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "550003825",
+    "nombre": "CONDOR SAGRADO2025",
+    "tipo": "desaparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "550003725",
+    "nombre": "CCORI APU 2 2025",
+    "tipo": "desaparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "550003625",
+    "nombre": "CONDOR DE YANAHORCO 2 2025",
+    "tipo": "desaparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "550004225",
+    "nombre": "EL MIRADOR DEL CONDOR",
+    "tipo": "desaparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "550002524",
+    "nombre": "AMARU KATARI 2024",
+    "tipo": "desaparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "590003025",
+    "nombre": "LUCANTONIO",
+    "tipo": "desaparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "550002425",
+    "nombre": "LA CUMBRE DORADA 2",
+    "tipo": "desaparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "010350926",
+    "nombre": "FILOMENA 200",
+    "tipo": "desaparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "010411925",
+    "nombre": "GRINGO III",
+    "tipo": "desaparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "010314626",
+    "nombre": "CARLA 01",
+    "tipo": "desaparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "620002725",
+    "nombre": "UYUPAN I 2025",
+    "tipo": "desaparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "080042526",
+    "nombre": "MILAGROS DE CARAVELI 26",
+    "tipo": "desaparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "040027426",
+    "nombre": "VICTORIA XI",
+    "tipo": "desaparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "070022925",
+    "nombre": "VICTORIO I",
+    "tipo": "desaparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "070034826",
+    "nombre": "GIORVANA II",
+    "tipo": "desaparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "010656926",
+    "nombre": "CHAPERAL X",
+    "tipo": "aparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "010657026",
+    "nombre": "CHAPERAL IX",
+    "tipo": "aparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "010657226",
+    "nombre": "CHAPERAL VII",
+    "tipo": "aparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "010657326",
+    "nombre": "CHAPERAL V",
+    "tipo": "aparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "010656726",
+    "nombre": "CHAPERAL VI",
+    "tipo": "aparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "010656826",
+    "nombre": "CHAPERAL VIII",
+    "tipo": "aparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "030115426",
+    "nombre": "ELIDA GOLD I",
+    "tipo": "aparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "030115626",
+    "nombre": "CEIBOS 5",
+    "tipo": "aparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "030115526",
+    "nombre": "CEIBOS 6",
+    "tipo": "aparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "030115726",
+    "nombre": "CEIBOS 4",
+    "tipo": "aparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "030115926",
+    "nombre": "ED OFIR MIGNOT HAVILA",
+    "tipo": "aparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "560002626",
+    "nombre": "LA MORENITA TRAVIEZA I",
+    "tipo": "aparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "030116226",
+    "nombre": "PAMPA LOS BURROS",
+    "tipo": "aparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "560002726",
+    "nombre": "BLAK GOLD 2027",
+    "tipo": "aparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "100010526",
+    "nombre": "RATON MINERO 2026",
+    "tipo": "aparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "010656226",
+    "nombre": "AJUSJA",
+    "tipo": "aparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "010656326",
+    "nombre": "MOROMORO",
+    "tipo": "aparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "030115826",
+    "nombre": "NUVAL YURACMARCA",
+    "tipo": "aparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "600008226",
+    "nombre": "TITAN GOLD II",
+    "tipo": "aparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "010656526",
+    "nombre": "FORTALEZA JM V",
+    "tipo": "aparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "050143126",
+    "nombre": "OLIMPO 1 2026",
+    "tipo": "aparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "010656426",
+    "nombre": "FORTALEZA IM IV",
+    "tipo": "aparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "030116026",
+    "nombre": "VALERIA II 2026",
+    "tipo": "aparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "030116126",
+    "nombre": "VALERIA I 2026 I",
+    "tipo": "aparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "020026326",
+    "nombre": "REINA VALERA 2026",
+    "tipo": "aparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "600008426",
+    "nombre": "TITAN GOLD I",
+    "tipo": "aparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "070052026",
+    "nombre": "CRISTOREY01",
+    "tipo": "aparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "600008326",
+    "nombre": "SAMIR DEMIR",
+    "tipo": "aparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "010657426",
+    "nombre": "TACSANA 2026",
+    "tipo": "aparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "010657526",
+    "nombre": "SERANCAY",
+    "tipo": "aparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "070052126",
+    "nombre": "SAN BERNARDO II",
+    "tipo": "aparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "010656026",
+    "nombre": "ROCA DORADA 1956",
+    "tipo": "aparece",
+    "fecha": "2026-11-26T05:33:27.789Z"
   }
 ]
