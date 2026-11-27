@@ -1156,5 +1156,125 @@
     "nombre": "ROCA DORADA 1956",
     "tipo": "aparece",
     "fecha": "2026-11-26T05:33:27.789Z"
+  },
+  {
+    "codigo": "060028526",
+    "nombre": "LOS AMIGOS DE BAMBAMARCA",
+    "tipo": "aparece",
+    "fecha": "2026-11-27T05:28:14.564Z"
+  },
+  {
+    "codigo": "060028626",
+    "nombre": "SORPRESA COIPA",
+    "tipo": "aparece",
+    "fecha": "2026-11-27T05:28:14.564Z"
+  },
+  {
+    "codigo": "560002826",
+    "nombre": "CERRO DEL SOL 2027",
+    "tipo": "aparece",
+    "fecha": "2026-11-27T05:28:14.564Z"
+  },
+  {
+    "codigo": "010657826",
+    "nombre": "CANTERA TORRES II",
+    "tipo": "aparece",
+    "fecha": "2026-11-27T05:28:14.564Z"
+  },
+  {
+    "codigo": "010657926",
+    "nombre": "ADELAIDA VII",
+    "tipo": "aparece",
+    "fecha": "2026-11-27T05:28:14.564Z"
+  },
+  {
+    "codigo": "030116426",
+    "nombre": "MARANATHA II",
+    "tipo": "aparece",
+    "fecha": "2026-11-27T05:28:14.564Z"
+  },
+  {
+    "codigo": "550009326",
+    "nombre": "CAMILA01",
+    "tipo": "aparece",
+    "fecha": "2026-11-27T05:28:14.564Z"
+  },
+  {
+    "codigo": "660004326",
+    "nombre": "DILMAYA",
+    "tipo": "aparece",
+    "fecha": "2026-11-27T05:28:14.564Z"
+  },
+  {
+    "codigo": "010658026",
+    "nombre": "AURORA DE PLATA A",
+    "tipo": "aparece",
+    "fecha": "2026-11-27T05:28:14.564Z"
+  },
+  {
+    "codigo": "010657626",
+    "nombre": "GOLDEN FUTURE",
+    "tipo": "aparece",
+    "fecha": "2026-11-27T05:28:14.564Z"
+  },
+  {
+    "codigo": "010657726",
+    "nombre": "GEOSATMIN XXI",
+    "tipo": "aparece",
+    "fecha": "2026-11-27T05:28:14.564Z"
+  },
+  {
+    "codigo": "010658426",
+    "nombre": "COMERCIAL QR",
+    "tipo": "aparece",
+    "fecha": "2026-11-27T05:28:14.564Z"
+  },
+  {
+    "codigo": "010658526",
+    "nombre": "CARO-2",
+    "tipo": "aparece",
+    "fecha": "2026-11-27T05:28:14.564Z"
+  },
+  {
+    "codigo": "010658626",
+    "nombre": "MI BUENA SUERTE 2026 DOS",
+    "tipo": "aparece",
+    "fecha": "2026-11-27T05:28:14.564Z"
+  },
+  {
+    "codigo": "050143526",
+    "nombre": "MINERA TETILLA IV",
+    "tipo": "aparece",
+    "fecha": "2026-11-27T05:28:14.564Z"
+  },
+  {
+    "codigo": "540026226",
+    "nombre": "MISION FE",
+    "tipo": "aparece",
+    "fecha": "2026-11-27T05:28:14.564Z"
+  },
+  {
+    "codigo": "540026326",
+    "nombre": "MISION CALLES DE ORO",
+    "tipo": "aparece",
+    "fecha": "2026-11-27T05:28:14.564Z"
+  },
+  {
+    "codigo": "610013126",
+    "nombre": "RESCATE DE ICA 2026",
+    "tipo": "aparece",
+    "fecha": "2026-11-27T05:28:14.564Z"
+  },
+  {
+    "codigo": "010658226",
+    "nombre": "GRUPO GOLDEN 1",
+    "tipo": "aparece",
+    "fecha": "2026-11-27T05:28:14.564Z"
+  },
+  {
+    "codigo": "010658326",
+    "nombre": "BETA MORADA FCH",
+    "tipo": "aparece",
+    "fecha": "2026-11-27T05:28:14.564Z"
   }
 ]
