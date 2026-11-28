@@ -1276,5 +1276,161 @@
     "nombre": "BETA MORADA FCH",
     "tipo": "aparece",
     "fecha": "2026-11-27T05:28:14.564Z"
+  },
+  {
+    "codigo": "030116726",
+    "nombre": "CANTERA ALEXANDRA 1",
+    "tipo": "aparece",
+    "fecha": "2026-11-28T05:03:16.275Z"
+  },
+  {
+    "codigo": "010661426",
+    "nombre": "MINERA CALABRIA I",
+    "tipo": "aparece",
+    "fecha": "2026-11-28T05:03:16.275Z"
+  },
+  {
+    "codigo": "030116826",
+    "nombre": "AURENZA MINING",
+    "tipo": "aparece",
+    "fecha": "2026-11-28T05:03:16.275Z"
+  },
+  {
+    "codigo": "030116926",
+    "nombre": "SUBLIME 3",
+    "tipo": "aparece",
+    "fecha": "2026-11-28T05:03:16.275Z"
+  },
+  {
+    "codigo": "010659126",
+    "nombre": "CARAHUAYO I",
+    "tipo": "aparece",
+    "fecha": "2026-11-28T05:03:16.275Z"
+  },
+  {
+    "codigo": "100010626",
+    "nombre": "HALCON DEL NORTE",
+    "tipo": "aparece",
+    "fecha": "2026-11-28T05:03:16.275Z"
+  },
+  {
+    "codigo": "010659626",
+    "nombre": "QUERCUS ROURA MINING I",
+    "tipo": "aparece",
+    "fecha": "2026-11-28T05:03:16.275Z"
+  },
+  {
+    "codigo": "010659726",
+    "nombre": "QUERCUS ROURA MINING II",
+    "tipo": "aparece",
+    "fecha": "2026-11-28T05:03:16.275Z"
+  },
+  {
+    "codigo": "010659926",
+    "nombre": "QUERCUS ROURA MINING JV",
+    "tipo": "aparece",
+    "fecha": "2026-11-28T05:03:16.275Z"
+  },
+  {
+    "codigo": "010660126",
+    "nombre": "QUERCUS ROURA MINING VI",
+    "tipo": "aparece",
+    "fecha": "2026-11-28T05:03:16.275Z"
+  },
+  {
+    "codigo": "010660026",
+    "nombre": "QUERCUS ROURA MINING V",
+    "tipo": "aparece",
+    "fecha": "2026-11-28T05:03:16.275Z"
+  },
+  {
+    "codigo": "010660226",
+    "nombre": "QUERCUS ROURA MINING VII",
+    "tipo": "aparece",
+    "fecha": "2026-11-28T05:03:16.275Z"
+  },
+  {
+    "codigo": "040064626",
+    "nombre": "CORPORACION TECO",
+    "tipo": "aparece",
+    "fecha": "2026-11-28T05:03:16.275Z"
+  },
+  {
+    "codigo": "040064726",
+    "nombre": "APU CCACCIALLA RAYUSCCA",
+    "tipo": "aparece",
+    "fecha": "2026-11-28T05:03:16.275Z"
+  },
+  {
+    "codigo": "010659326",
+    "nombre": "YERBABUENA 1 2026",
+    "tipo": "aparece",
+    "fecha": "2026-11-28T05:03:16.275Z"
+  },
+  {
+    "codigo": "010659426",
+    "nombre": "YERBABUENA 2 2026",
+    "tipo": "aparece",
+    "fecha": "2026-11-28T05:03:16.275Z"
+  },
+  {
+    "codigo": "010659526",
+    "nombre": "YERBABUENA 3 2026",
+    "tipo": "aparece",
+    "fecha": "2026-11-28T05:03:16.275Z"
+  },
+  {
+    "codigo": "020026426",
+    "nombre": "JESUS MI BUEN PASTOR",
+    "tipo": "aparece",
+    "fecha": "2026-11-28T05:03:16.275Z"
+  },
+  {
+    "codigo": "540026426",
+    "nombre": "ANDY ABDEL I",
+    "tipo": "aparece",
+    "fecha": "2026-11-28T05:03:16.275Z"
+  },
+  {
+    "codigo": "540026526",
+    "nombre": "QORIMINAS 26",
+    "tipo": "aparece",
+    "fecha": "2026-11-28T05:03:16.275Z"
+  },
+  {
+    "codigo": "010660426",
+    "nombre": "CINTIA 2026",
+    "tipo": "aparece",
+    "fecha": "2026-11-28T05:03:16.275Z"
+  },
+  {
+    "codigo": "600008526",
+    "nombre": "TI TAN GOLD III",
+    "tipo": "aparece",
+    "fecha": "2026-11-28T05:03:16.275Z"
+  },
+  {
+    "codigo": "610013326",
+    "nombre": "SAN ALFONSO 2027",
+    "tipo": "aparece",
+    "fecha": "2026-11-28T05:03:16.275Z"
+  },
+  {
+    "codigo": "010659026",
+    "nombre": "AMBIORA IV",
+    "tipo": "aparece",
+    "fecha": "2026-11-28T05:03:16.275Z"
+  },
+  {
+    "codigo": "010658926",
+    "nombre": "AMBIORA III",
+    "tipo": "aparece",
+    "fecha": "2026-11-28T05:03:16.275Z"
+  },
+  {
+    "codigo": "610013226",
+    "nombre": "IGNACIO MATEO",
+    "tipo": "aparece",
+    "fecha": "2026-11-28T05:03:16.275Z"
   }
 ]
